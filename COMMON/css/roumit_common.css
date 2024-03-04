@@ -1,0 +1,84 @@
+@charset "utf-8";
+
+/* reset */
+@font-face {font-family: 'Pretendard'; font-weight: normal; src: url(../font/Pretendard-Medium.woff2) format('woff2');}
+@font-face {font-family: 'Pretendard'; font-weight: 600; src: url(../font/Pretendard-SemiBold.woff2) format('woff2');}
+@font-face {font-family: 'Pretendard'; font-weight: bold; src: url(../font/Pretendard-Bold.woff2) format('woff2');}
+
+html {position:relative;height:100%}
+html,body {font-family:'Pretendard'; color:#111; font-weight:normal; -webkit-text-size-adjust:none;-moz-text-size-adjust:none; -ms-text-size-adjust:none; -webkit-tap-highlight-color:transparent; -webkit-user-select:none; line-height: 1; font-size: 15px}
+html,body,div,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,address,cite,code,del,dfn,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,input,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video {margin:0; padding:0; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; -webkit-tap-highlight-color:transparent;-webkit-text-size-adjust:none; -webkit-touch-callout:none; -webkit-font-smoothing:antialiased}
+body,button,h1,h2,h3,h4,h5,input,select,table,textarea {font-family:'Pretendard'; margin:0; padding:0}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,legend,select,input,textarea,p,blockquote,th,td,menu,button,a,span,strong,label,header,footer,section,article,aside,nav,hgroup,details,figure,figcaption {word-break:break-word; box-sizing:border-box;-moz-box-sizing:border-box; -webkit-box-sizing:border-box; -ms-box-sizing:border-box} /* 여백을 포함한 사이즈 설정*/ 
+h1,h2,h3,h4,h5,h6,input,select,textarea,button,option {color:inherit; font-family:'Pretendard'; font-weight:normal}
+h1,h2,h3,h4,h5,h6,strong,b,th {font-weight:600}
+em,var,address,i {font-style:normal}
+ul,ol,li {list-style:none}
+legend,fieldset,button,img {border:0}
+img {max-width:100%; vertical-align:top}
+input,select,textarea,button,label,strong,a,time {vertical-align:inherit}
+input,select,textarea,button,option {font-family:inherit; font-weight:inherit}
+input,select,textarea {appearance:none; -webkit-appearance:none; border-radius: 0}
+input:focus, textarea:focus {outline-style: none; box-shadow: none; border: 0px}
+textarea {resize:none; border: none}
+button,select,option {color:inherit; text-transform:none} 
+table {table-layout:fixed; width:100%; border-collapse:collapse; border-spacing:0} 
+button {background:none; cursor:pointer; white-space: nowrap; overflow:visible; outline: none}
+a {color:inherit; font-size: inherit; text-decoration:none}
+
+/* 세모주치의 리스트 */
+.txSwiperWrap {position: relative; max-width: 940px; padding: 0 120px; box-sizing: content-box}
+.txSwiperWrap .txSwiperList li .taxAcnt {border-radius: 12px; border: 1px solid #d6d6d6; overflow: hidden}
+.txSwiperWrap .txSwiperList li .taxAcnt img {display: block}
+.txSwiperWrap .txSwiperList li .taxAcnt .txInfoBox .company {padding: 20px 0; text-align: center}
+.txSwiperWrap .txSwiperList li .taxAcnt .txInfoBox .company span {padding-left: 20px; color: #12997a; background: url(../img/ico/ico_sub2_home_green.png) no-repeat center left / 15px; vertical-align: middle}
+.txSwiperWrap .txSwiperList li .taxAcnt .txInfoBox .name {padding: 10px 0; text-align: center; background: #17bf98; color: #fff}
+.txSwiperWrap .txSwiperList li .taxAcnt .txInfoBox .name span {font-size: 17px}
+.txSwiperWrap .txSwiperList li .taxAcnt .txInfoBox .name span strong {font-size: 21px}
+.txSwiperWrap .areaBtn {position: absolute; display: flex; justify-content: space-between; top: 50%; left: 0; right: 0; transform: translateY(-50%)}
+.txSwiperWrap .areaBtn button {width: 58px; height: 149px; background: no-repeat center / contain}
+.txSwiperWrap .areaBtn .btnPrev {background-image: url(../img/btn/btn_prev_on_green.png)}
+.txSwiperWrap .areaBtn .btnPrev.swiper-button-disabled {background-image: url(../img/btn/btn_prev_off.png)}
+.txSwiperWrap .areaBtn .btnNext {background-image: url(../img/btn/btn_next_on_green.png)}
+.txSwiperWrap .areaBtn .btnNext.swiper-button-disabled {background-image: url(../img/btn/btn_next_off.png)}
+
+/* 세모주치의 리스트 : KT */
+/* .txSwiperWrap.ktActive .txSwiperList li .txInfoBox .company span {color: #30bcb8; background-image: url(../img/ico/ico_sub2_home_gray.png)}
+.txSwiperWrap.ktActive .txSwiperList li .txInfoBox .name {background: #30bcb8}
+.txSwiperWrap.ktActive .areaBtn .btnNext {background-image: url(../img/btn/btn_next_on_kt.png)}
+.txSwiperWrap.ktActive .areaBtn .btnPrev {background-image: url(../img/btn/btn_prev_on_kt.png)} */
+
+/* 세모주치의 리스트 : NH */
+/* .txSwiperWrap.nhActive .txSwiperList li .txInfoBox .company span {color: #135bbf; background-image: url(../img/ico/ico_sub2_home_gray.png)}
+.txSwiperWrap.nhActive .txSwiperList li .txInfoBox .name {background: #135bbf}
+.txSwiperWrap.nhActive .areaBtn .btnNext {background-image: url(../img/btn/btn_next_on_nh.png)}
+.txSwiperWrap.nhActive .areaBtn .btnPrev {background-image: url(../img/btn/btn_prev_on_nh.png)} */
+
+
+/* popWrap */
+.popWrap {display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1101}
+.dim {position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.7); font-size: 0}
+.popWrap .popInner {position: absolute; overflow: hidden; z-index: 1201}
+.popWrap .popInner .popTit h1 {font-size: 18px}
+.popWrap .popInner .popCont::-webkit-scrollbar {width: 5px}
+.popWrap .popInner .popCont::-webkit-scrollbar-thumb { background: #aaa; border-radius: 10px}
+.popWrap .popInner .popCont::-webkit-scrollbar-track {background-color: #f1f1f1;}
+.popWrap .popInner .popCont {overflow-y: auto; -webkit-overflow-scrolling: touch}
+
+/* 센터팝업 */
+.popWrap.centerLayer .popInner {max-width: 600px; width: calc(100% - 90px); top: 50%; left: 50%; transform: translate(-50%, -50%); border-radius: 20px}
+.popWrap.centerLayer .popInner .popTit {padding: 30px 20px 30px; text-align: center}
+.popWrap.centerLayer .popInner .popTit .errorCode {font-size: 15px; margin-bottom: 15px; color: #afafaf}
+.popWrap.centerLayer .popInner .popBtnWrap {display: flex; position: relative; background: #fff}
+.popWrap.centerLayer .popInner .popBtnWrap::before {content: ''; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 1px; height: 4.761vh; background: #939393}
+.popWrap.centerLayer .popInner .popBtnWrap button {flex: 1 1 100%; height: 5.5vh; font-size: 1.2rem; color: #5b5b5b}
+
+@media screen and (max-width: 1024px) {
+    /* popWrap */
+    .popWrap.centerLayer .popInner {max-width: 400px; width: calc(100% - 40px); border-radius: 20px}
+    .popWrap.centerLayer .popInner .popBtnWrap button {height: 50px}
+}
+
+@media screen and (max-device-height : 500px) {
+    .popWrap.centerLayer .popInner {max-width: 300px}
+}

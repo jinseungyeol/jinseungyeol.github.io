@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+    <g>
+        <path fill="#4e4e4e" d="M15 0a15.118 15.118 0 0 1 13.86 9.255A14.549 14.549 0 0 1 30 15 15 15 0 1 1 15 0z" transform="translate(-190 -954) translate(190 954)"/>
+        <text fill="#fff" font-family="HelveticaNeueLTStd-Md, Helvetica Neue LT Std" font-size="24px" font-weight="500" letter-spacing="-0.02em" transform="translate(-190 -954) translate(199 978)">
+            <tspan x="0" y="0">1</tspan>
+        </text>
+    </g>
+</svg>

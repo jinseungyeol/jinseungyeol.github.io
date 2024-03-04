@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../../css/semo_cont.css">
+  <!-- <link rel="stylesheet" href="../../css/semo_cont_nh.css"> -->
+  <link rel="stylesheet" href="../../css/test.css">
+  <script src="../../js/jquery-3.5.1.min.js"></script>
+  <script src="../../js/design.js"></script>
+  <title>SEMO</title>
+</head>
+<style>
+  body {
+    -webkit-touch-callout: none;
+    user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    /* -o-user-drag: none; */
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .popup_toast {
+    display: none;
+    bottom: -100%;
+  }
+
+  .popup_toast_bg {
+    display: none;
+  }
+
+  .btm_button>span.active {
+    background-color: #c8c8c8;
+    transition: 0.2s ease-in-out;
+  }
+
+  /* 
+  .terms_box.open ul>li {
+    margin-left: -30px;
+  } */
+</style>
+<script>
+  $(document).ready(function () {
+    $("#check").click(function () {
+      $(".terms_box > ul").slideToggle();
+      if ("#check".attr("checked", true) == true) {
+        $(".check_terms").attr("checked", true)
+      }
+    });
+    $('.btm_button > span').on({
+      'touchstart': function () {
+        $(this).addClass('active');
+      },
+      'touchend': function () {
+        $(this).removeClass('active');
+      }
+    });
+
+    $(".title").click(function () {
+      popUpShow();
+    });
+    $(".popup_toast_close").click(function(){
+      popupHide();
+    });
+    
+    popupBgHide(); 
+
+  });
+</script>
+
+<body>
+  <div class="new_content">
+    <div class="cont_bg cont_pd" style="height: calc(100% - 90px);">
+      <!-- 클래스 cont_pd fix_button header 포함 패딩-->
+      <!-- 상단 타이틀 -->
+      <div class="title">회원 가입</div>
+      <!-- //상단 타이틀 -->
+
+
+      <!-- 회원가입 -->
+      <div class="wrap join">
+      <h1 id="number1" style="font-size:30px; color:#222222; font-weight:bold; text-align:center; margin:10px 0;">0</h1>
+
+        <div class="join_box">
+
+          <div class="terms_tit">IBK 모바일자금관리를 이용하기 위해서<br />약관 동의가 필요합니다.</div>
+
+          <!-- 약관동의 -->
+          <div class="terms_box terms_pd open">
+            <!-- 전체 동의 -->
+            <div class="terms_li">
+              <input type="checkbox" class="check_terms" id="check">
+              <!--클릭하면 checked true-->
+              <span>약관 전체 동의</span>
+            </div>
+            <!-- //전체 동의 -->
+
+            <!-- 약관 -->
+            <ul>
+              <li class="terms_li">
+                <input type="checkbox" class="check_terms">
+                <!--클릭하면 checked true-->
+                <span>모바일자금관리 이용약관</span>
+                <a class="btn_term_move"><i class="ico_arr"></i><em class="new_blind">약관이동</em></a>
+              </li>
+              <li class="terms_li">
+                <input type="checkbox" class="check_terms">
+                <!--클릭하면 checked true-->
+                <span>개인정보 수집 및 취급 방침 동의</span>
+                <a class="btn_term_move"><i class="ico_arr"></i><em class="new_blind">약관이동</em></a>
+              </li>
+              <!--2020-08-13 개인(신용)정보 제3자 제공 동의 삭제-->
+              <!-- <li class="terms_li">
+                <input type="checkbox" class="check_terms"> 
+                <span>개인(신용)정보 제3자 제공 동의</span>
+                <a class="btn_term_move"><i class="ico_arr"></i><em class="new_blind">약관이동</em></a>
+              </li> -->
+              <!--2020-08-13 개인(신용)정보 제3자 제공 동의 삭제-->
+              <li class="terms_li">
+                <input type="checkbox" class="check_terms">
+                <!--클릭하면 checked true-->
+                <span>거래정보 조회 위임 동의</span>
+                <a class="btn_term_move"><i class="ico_arr"></i><em class="new_blind">약관이동</em></a>
+              </li>
+              <li class="terms_li">
+                <input type="checkbox" class="check_terms">
+                <!--클릭하면 checked true-->
+                <span>세모주치의 컨설팅 동의</span>
+                <a class="btn_term_move"><i class="ico_arr"></i><em class="new_blind">약관이동</em></a>
+              </li>
+            </ul>
+            <ul>
+              <li class="terms_li">
+                <input type="checkbox" class="check_terms">
+                <!--클릭하면 checked true-->
+                <span>모바일자금관리 이용약관</span>
+                <a class="btn_term_move"><i class="ico_arr"></i><em class="new_blind">약관이동</em></a>
+              </li>
+              <li class="terms_li">
+                <input type="checkbox" class="check_terms">
+                <!--클릭하면 checked true-->
+                <span>개인정보 수집 및 취급 방침 동의</span>
+                <a class="btn_term_move"><i class="ico_arr"></i><em class="new_blind">약관이동</em></a>
+              </li>
+              <!--2020-08-13 개인(신용)정보 제3자 제공 동의 삭제-->
+              <!-- <li class="terms_li">
+                <input type="checkbox" class="check_terms"> 
+                <span>개인(신용)정보 제3자 제공 동의</span>
+                <a class="btn_term_move"><i class="ico_arr"></i><em class="new_blind">약관이동</em></a>
+              </li> -->
+              <!--2020-08-13 개인(신용)정보 제3자 제공 동의 삭제-->
+              <li class="terms_li">
+                <input type="checkbox" class="check_terms">
+                <!--클릭하면 checked true-->
+                <span>거래정보 조회 위임 동의</span>
+                <a class="btn_term_move"><i class="ico_arr"></i><em class="new_blind">약관이동</em></a>
+              </li>
+              <li class="terms_li">
+                <input type="checkbox" class="check_terms">
+                <!--클릭하면 checked true-->
+                <span>세모주치의 컨설팅 동의</span>
+                <a class="btn_term_move"><i class="ico_arr"></i><em class="new_blind">약관이동</em></a>
+              </li>
+            </ul>
+            <ul>
+              <li class="terms_li">
+                <input type="checkbox" class="check_terms">
+                <!--클릭하면 checked true-->
+                <span>모바일자금관리 이용약관</span>
+                <a class="btn_term_move"><i class="ico_arr"></i><em class="new_blind">약관이동</em></a>
+              </li>
+              <li class="terms_li">
+                <input type="checkbox" class="check_terms">
+                <!--클릭하면 checked true-->
+                <span>개인정보 수집 및 취급 방침 동의</span>
+                <a class="btn_term_move"><i class="ico_arr"></i><em class="new_blind">약관이동</em></a>
+              </li>
+              <!--2020-08-13 개인(신용)정보 제3자 제공 동의 삭제-->
+              <!-- <li class="terms_li">
+                <input type="checkbox" class="check_terms"> 
+                <span>개인(신용)정보 제3자 제공 동의</span>
+                <a class="btn_term_move"><i class="ico_arr"></i><em class="new_blind">약관이동</em></a>
+              </li> -->
+              <!--2020-08-13 개인(신용)정보 제3자 제공 동의 삭제-->
+              <li class="terms_li">
+                <input type="checkbox" class="check_terms">
+                <!--클릭하면 checked true-->
+                <span>거래정보 조회 위임 동의</span>
+                <a class="btn_term_move"><i class="ico_arr"></i><em class="new_blind">약관이동</em></a>
+              </li>
+              <li class="terms_li">
+                <input type="checkbox" class="check_terms">
+                <!--클릭하면 checked true-->
+                <span>세모주치의 컨설팅 동의</span>
+                <a class="btn_term_move"><i class="ico_arr"></i><em class="new_blind">약관이동</em></a>
+              </li>
+            </ul>
+            <ul>
+              <li class="terms_li">
+                <input type="checkbox" class="check_terms">
+                <!--클릭하면 checked true-->
+                <span>모바일자금관리 이용약관</span>
+                <a class="btn_term_move"><i class="ico_arr"></i><em class="new_blind">약관이동</em></a>
+              </li>
+              <li class="terms_li">
+                <input type="checkbox" class="check_terms">
+                <!--클릭하면 checked true-->
+                <span>개인정보 수집 및 취급 방침 동의</span>
+                <a class="btn_term_move"><i class="ico_arr"></i><em class="new_blind">약관이동</em></a>
+              </li>
+              <!--2020-08-13 개인(신용)정보 제3자 제공 동의 삭제-->
+              <!-- <li class="terms_li">
+                <input type="checkbox" class="check_terms"> 
+                <span>개인(신용)정보 제3자 제공 동의</span>
+                <a class="btn_term_move"><i class="ico_arr"></i><em class="new_blind">약관이동</em></a>
+              </li> -->
+              <!--2020-08-13 개인(신용)정보 제3자 제공 동의 삭제-->
+              <li class="terms_li">
+                <input type="checkbox" class="check_terms">
+                <!--클릭하면 checked true-->
+                <span>거래정보 조회 위임 동의</span>
+                <a class="btn_term_move"><i class="ico_arr"></i><em class="new_blind">약관이동</em></a>
+              </li>
+              <li class="terms_li">
+                <input type="checkbox" class="check_terms">
+                <!--클릭하면 checked true-->
+                <span>세모주치의 컨설팅 동의</span>
+                <a class="btn_term_move"><i class="ico_arr"></i><em class="new_blind">약관이동</em></a>
+              </li>
+            </ul>
+            <ul>
+              <li class="terms_li">
+                <input type="checkbox" class="check_terms">
+                <!--클릭하면 checked true-->
+                <span>모바일자금관리 이용약관</span>
+                <a class="btn_term_move"><i class="ico_arr"></i><em class="new_blind">약관이동</em></a>
+              </li>
+              <li class="terms_li">
+                <input type="checkbox" class="check_terms">
+                <!--클릭하면 checked true-->
+                <span>개인정보 수집 및 취급 방침 동의</span>
+                <a class="btn_term_move"><i class="ico_arr"></i><em class="new_blind">약관이동</em></a>
+              </li>
+              <!--2020-08-13 개인(신용)정보 제3자 제공 동의 삭제-->
+              <!-- <li class="terms_li">
+                <input type="checkbox" class="check_terms"> 
+                <span>개인(신용)정보 제3자 제공 동의</span>
+                <a class="btn_term_move"><i class="ico_arr"></i><em class="new_blind">약관이동</em></a>
+              </li> -->
+              <!--2020-08-13 개인(신용)정보 제3자 제공 동의 삭제-->
+              <li class="terms_li">
+                <input type="checkbox" class="check_terms">
+                <!--클릭하면 checked true-->
+                <span>거래정보 조회 위임 동의</span>
+                <a class="btn_term_move"><i class="ico_arr"></i><em class="new_blind">약관이동</em></a>
+              </li>
+              <li class="terms_li">
+                <input type="checkbox" class="check_terms">
+                <!--클릭하면 checked true-->
+                <span>세모주치의 컨설팅 동의</span>
+                <a class="btn_term_move"><i class="ico_arr"></i><em class="new_blind">약관이동</em></a>
+              </li>
+            </ul>
+            <ul>
+              <li class="terms_li">
+                <input type="checkbox" class="check_terms">
+                <!--클릭하면 checked true-->
+                <span>모바일자금관리 이용약관</span>
+                <a class="btn_term_move"><i class="ico_arr"></i><em class="new_blind">약관이동</em></a>
+              </li>
+              <li class="terms_li">
+                <input type="checkbox" class="check_terms">
+                <!--클릭하면 checked true-->
+                <span>개인정보 수집 및 취급 방침 동의</span>
+                <a class="btn_term_move"><i class="ico_arr"></i><em class="new_blind">약관이동</em></a>
+              </li>
+              <!--2020-08-13 개인(신용)정보 제3자 제공 동의 삭제-->
+              <!-- <li class="terms_li">
+                <input type="checkbox" class="check_terms"> 
+                <span>개인(신용)정보 제3자 제공 동의</span>
+                <a class="btn_term_move"><i class="ico_arr"></i><em class="new_blind">약관이동</em></a>
+              </li> -->
+              <!--2020-08-13 개인(신용)정보 제3자 제공 동의 삭제-->
+              <li class="terms_li">
+                <input type="checkbox" class="check_terms">
+                <!--클릭하면 checked true-->
+                <span>거래정보 조회 위임 동의</span>
+                <a class="btn_term_move"><i class="ico_arr"></i><em class="new_blind">약관이동</em></a>
+              </li>
+              <li class="terms_li">
+                <input type="checkbox" class="check_terms">
+                <!--클릭하면 checked true-->
+                <span>세모주치의 컨설팅 동의</span>
+                <a class="btn_term_move"><i class="ico_arr"></i><em class="new_blind">약관이동</em></a>
+              </li>
+            </ul>
+            <!-- //약관 -->
+          </div>
+          <!-- //약관동의 -->
+
+        </div>
+      </div>
+      <!-- //회원가입 -->
+      <div class="popup_toast_bg" id="popup_bg">
+
+        <!-- 토스트 팝업 내용 -->
+        <div class="popup_toast set_pd_aus" id="popup">
+          <div class="popup_toast_head set_pdb15">
+            <!-- 2020-11-19 set_pdb15 추가 -->
+            <div class="popup_toast_tit">수입용도 전체보기</div>
+            <div>
+              <div class="popup_toast_close"></div>
+            </div>
+          </div>
+          <div>
+            <!-- 2020-11-19 div추가 -->
+            <p class="memo_input set_mgb16">
+              <!-- 2020-11-19 set_mgt20 클래스 삭제 -->
+              <input class="sri_input" type="text" placeholder="추가 메모(최대 20자 입력)">
+              <a><i class="ico_cen"></i><em class="new_blind">삭제</em></a>
+            </p>
+            <div class="account_use_check set_cent_le set_mgb20">
+              <input id="arc_check" type="checkbox" class="check_terms">
+              <!--클릭하면 checked true-->
+              <label for="arc_check">
+                <span>㈜알파문구로지스</span> 내역에 동일하게 적용
+              </label>
+            </div>
+            <div class="account_use_menu">
+              <!-- 2020-11-19 div태그 한개로 묶음 -->
+              <div>
+                <p>
+                  <i class="ico_cen dtl_in_1"></i>
+                  <span>카드매출</span>
+                </p>
+                <p>
+                  <i class="ico_cen dtl_in_2"></i>
+                  <span>현금매출</span>
+                </p>
+                <p>
+                  <i class="ico_cen dtl_in_3"></i>
+                  <span>세금계산서발행매출</span>
+                </p>
+                <p>
+                  <i class="ico_cen dtl_in_4"></i>
+                  <span>현금계산서발행매출</span>
+                </p>
+                <p>
+                  <i class="ico_cen dtl_in_5"></i>
+                  <span>배달매출</span>
+                </p>
+                <p>
+                  <i class="ico_cen dtl_in_6"></i>
+                  <span>온라인매출</span>
+                </p>
+                <p>
+                  <i class="ico_cen dtl_in_7"></i>
+                  <span>일반이체</span>
+                </p>
+                <p>
+                  <i class="ico_cen dtl_in_8"></i>
+                  <span>기타</span>
+                </p>
+                <p>
+                  <i class="ico_cen dtl_in_9"></i>
+                  <span>개인용도 (신고제외)</span>
+                </p>
+                <p>
+                  <i class="ico_cen dtl_def"></i>
+                  <span>미분류</span>
+                </p>
+                <p>
+                  <i class="ico_cen dtl_set"></i>
+                  <span>용도설정바로가기</span>
+                </p>
+              </div>
+
+            </div>
+          </div>
+          <!-- 토스트 팝업 내용 -->
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 토스트 팝업 -->
+    <!-- <div class="toast">
+      <span>모든 약관에 동의해야 서비스 이용이 가능합니다.</span>
+    </div> -->
+    <!-- 토스트 팝업 -->
+
+    <!-- 하단 fix 버튼 -->
+    <div class="btm_button">
+      <span class="bgc_green">다음</span>
+    </div>
+    <!-- 하단 fix 버튼 -->
+
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css_v2/semo_style.css">
+    <!-- <link rel="stylesheet" href="../../css_v2/ione_style.css"> -->
+  <script src="../../js_v2/jquery-3.5.1.min.js"></script>
+    <title>홈택스 연결하기</title>
+</head>
+<body>
+    <div class="title b_white">
+        <div class="title_left">
+            <i class="ico_cen left_arrow"></i>
+        </div>
+        <span class="title_text">홈택스 수집하기</span>
+    </div>
+    <div class="basic_wrapper">      
+        <div class="card_connect_wrap">
+             <!-- 생년월일-->
+            <section class="identi_wrap"  style="display: none;">
+                <header class="main_tit">
+                    <h1 class="txt01">
+                    홈택스 가입이 필요해요<br>
+                    가입부터 도와 드릴게요
+                    </h1>
+                    <h2 class="txt01">
+                      <span>공동인증서</span>로 홈텍스에 자동가입
+                    </h2>
+                </header>
+                <div class="content">
+                    <article class="birth">
+                        <div class="tit">
+                            <h1>생년월일</h1>
+                        </div>
+                        <div class="input_wrap">
+                            <div class="num long">
+                                <input type="number"  placeholder="주민등록 13자리">
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="bot_fix">
+                    <button type="button" class="type_A">
+                        <span>다음</span>
+                    </button>
+                </div>   
+            </section>
+            <!-- 아이디 만들기 -->
+            <section class="sign id_make">
+                <!-- 홈택스 수집하기 회원가입 상단 토스트 문구 -->
+                <div class="sign-toast_info">
+                    <div class="text">
+                        <span class="name elipsis">
+                            제로파스타 영등포 8호점
+                        </span>
+                        <span class="desc">
+                            인증서로는 가입한 적이 없어요
+                        </span>
+                    </div>
+                    <div class="btn_wrap">
+                        <button class="down_btn">
+                            <i class="ico_cont"></i>
+                        </button>
+                    </div>
+                </div>
+                <header class="main_tit">
+                    <h1 class="txt01">홈택스에서 사용할<br>
+                    아이디를 만들어 주세요
+                    </h1>
+                    <h2 class="txt01">
+                        <span>영문+숫자</span> 로 조합
+                    </h2>
+                </header>
+                <div class="content">
+                    <!-- article에 addClass error & success 로 실패 성공 분기처리 -->
+                    <article class="cont_wrap success">
+                        <div class="cont">
+                            <div class="item">
+                                <div class="select">
+                                    <span>아이디</span>
+                                </div>
+                                <div class="input_wrap">
+                                    <input type="text" placeholder="6자 이상">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info_01">
+                            <span>다른사람이 이미 사용 중이네요</span>
+                        </div>
+                        <div class="info_02">
+                            <span>멋진 아이디네요! 가입이 가능해요</span>
+                        </div>
+                    </article>
+                </div>
+                <!-- add Class active 활성화  -->
+                <div class="bot_fix">
+                    <button type="button" class="type_A active">
+                        <span>다음</span>
+                    </button>
+                </div>   
+
+                <!-- 홈택스 가입정책 안내 팝업 -->
+                <div class="popup_bg" style="display: block;">
+                    <div class="popup bottom" style="bottom: 0;">
+                        <div class="popup_header">
+                            <button class="pop_close_btn">
+                                <i class="ico_cont"></i>
+                            </button>
+                            <div class="popup_title">
+                                <h1>홈택스 가입정책 안내</h1>
+                            </div>
+                           
+                        </div>
+                        <section class="popup_link-section">
+                            <div class="popup_link-title">
+                                <h2>
+                                    이미 아이디가 있다면 ‘최요나 개인용 인증서'로<br> 가입한
+                                    경우에요. 두 가지 방법 중 선택할 수 있어요. 
+                                </h2>
+                            </div>
+                            <article class="popup_link-content">
+                                <div class="tit">
+                                    <h1>1. 개인용 인증서로 연결하기</h1>
+                                </div>
+                                <div class="desc">
+                                    <span>
+                                        지금 제출한 사업용 인증서가 아닌 개인용 인증서를<br>
+                                        제출하면 별도의 가입없이 홈택스 연결이 가능해요.
+                                    </span>
+                                </div>
+                                <div class="button_wrap">
+                                    <button class="btn_r_gray">
+                                        <em>인증서 변경하기</em>
+                                        <span class="ico_cen right_01"></span>
+                                        </button>
+                                </div>
+                            </article>
+                            <article class="popup_link-content">
+                                <div class="tit">
+                                    <h1>2. 사업용 인증서로 신규 가입하기</h1>
+                                </div>
+                                <div class="desc">
+                                    <span>
+                                        개인명의로 가입한 적이 있는 경우라도 사업장 명의<br> 
+                                        추가 가입이 가능해요. 세무업무를 하는 데에 문제가<br> 
+                                        발생하지 않으니 안심하세요.<br> 
+                                    </span>
+                                </div>
+                                <div class="button_wrap">
+                                    <button class="btn_r_gray">
+                                        <em>신규 가입하기</em>
+                                        <span class="ico_cen right_01"></span>
+                                        </button>
+                                </div>
+                            </article>
+                        </section>    
+                    </div>
+                </div>
+            </section>
+            <!-- 비밀번호 만들기 -->
+            <section class="sign pw_make"  style="display: none;">
+                <header class="main_tit">
+                    <h1 class="txt01">안전한 비밀번호를<br>
+                    입력해 주세요
+                    </h1>
+                    <h2 class="txt01">
+                        <span>영문+숫자+특수문자</span>로 조합
+                        <p>!@#$%^&*+=- 만 가능</p>
+                    </h2>
+                </header>
+                <div class="content">
+                    <article class="cont_wrap">
+                        <div class="cont">
+                            <div class="item">
+                                <div class="select">
+                                    <span>비밀번호</span>
+                                </div>
+                                <div class="input_wrap">
+                                    <input type="text" placeholder="9자 이상 15자 이내">
+                                   
+                                </div>
+                                <div class="btn">
+                                    <i class="ico_cont"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <!-- add Class active 활성화  -->
+                <div class="bot_fix">
+                    <button type="button" class="type_A active">
+                        <span>다음</span>
+                    </button>
+                </div>    
+            </section>
+            <!-- 본인확인 -->
+            <section class="identi_wrap" style="display: none;">
+            <header class="main_tit">
+                <h1 class="txt01">
+                    아래의 정보가 맞을까요?<br>
+                    클릭하면 수정이 가능해요
+                </h1>
+            </header>
+            <div class="content">
+                <article class="phone">
+                    <div class="tit">
+                        <h1>휴대폰번호</h1>
+                    </div>
+                    <div class="item">
+                        <!-- <div class="select">
+                            <span>통신사</span>
+                            <i class="ico_cont"></i>
+                        </div> -->
+                        <div class="input_wrap">
+                            <input type="number" value="010-3258-0000">
+                        </div>
+                    </div>
+                </article>
+                <article class="email">
+                    <div class="tit">
+                        <h1>이메일</h1>
+                    </div>
+                    <div class="input_wrap">
+                        <input type="email" placeholder="이메일 주소 전체입력">
+                    </div>
+                </article>
+            </div>
+            <div class="bot_fix">
+                <button type="button" class="type_A">
+                    <span>다음</span>
+                </button>
+            </div> 
+            <!-- 통신사선택 팝업  -->
+            <div class="popup_bg" id="slide_popup" style="display: none;">
+                <div class="popup bottom">
+                    <div class="popup_title">
+                        <b>통신사 선택</b>
+                        <i class="ico_cen del"></i>
+                    </div>
+                    <div class="popup_bottom_con">
+                        <span>
+                            <b>KT</b>
+                        </span>
+                        <span>
+                            <b>SKT</b>
+                        </span>
+                        <span>
+                            <b>LG U+</b>
+                        </span>
+                        <span>
+                            <b>KT 알뜰폰</b>
+                        </span>
+                        <span>
+                            <b>STK 알뜰폰</b>
+                        </span>
+                        <span>
+                            <b>LG U+ 알뜰폰</b>
+                        </span>
+                    </div>
+                </div>
+            </div> 
+            </section>
+            <!--사업자 번호 -->
+            <section class="identi_wrap"  style="display: none;">
+                <header class="main_tit">
+                    <h1 class="txt01">
+                    홈택스 가입이 필요해요<br>
+                    가입부터 도와 드릴게요
+                    </h1>
+                    <h2 class="txt01">
+                      공동인증서로 홈텍스에 자동가입
+                    </h2>
+                </header>
+                <div class="content">
+                    <article class="birth">
+                        <div class="tit">
+                            <h1>사업자번호</h1>
+                        </div>
+                        <div class="input_wrap">
+                            <div class="num">
+                                <input type="number"  placeholder="숫자10자리 입력">
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="bot_fix">
+                    <button type="button" class="type_A">
+                        <span>다음</span>
+                    </button>
+                </div>   
+            </section>
+        </div>       
+     </div>
+     <script>
+     // 팝업
+    $(document).ready(function () {
+        $(".select").click(function () {
+            $(".identi_wrap #slide_popup").fadeIn(500);
+            $(".identi_wrap  #slide_popup > .popup.bottom").css("bottom", "0");
+            $("html, body").css("overflow", "hidden");
+            $("html, body").css("height", "100%");
+            
+    });
+    // 팝업 배경터치하면 사라짐
+    $(document).click(function (e) {
+        if ($(".popup_bg, .del").is(e.target)) {
+            $(".popup_bg").hide();
+            $(".popup.bottom").show().animate({bottom: "-100%"}, 100);
+            }
+        });
+    });
+     </script>
+</body>
+</html>

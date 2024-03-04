@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css_v2/semo_style.css">
+    <link rel="stylesheet" href="../../css_v2/kt_style.css">
+  <script src="../../js_v2/jquery-3.5.1.min.js"></script>
+    <title>SB004_세모장부 회원가입 리뉴얼_SSU10B</title>
+</head>
+<body>
+  
+  <!-- ## 헤더타이틀 ## -->
+  <div class="title b_white">
+    <div class="title_left">
+      <i class="ico_cen left_arrow"></i>
+    </div>
+
+    <!-- 세모장부 -->
+    <!-- <span class="title_text">신용정보 수집 · 이용 동의</span> -->
+
+    <!-- KT -->
+    <span class="title_text">거래정보 조회 위임 동의</span>
+  </div>
+
+  <div class="basic_wrapper">
+
+    <!-- 세모장부 -->
+    <div class="popup_whole terms-wrap">
+      <section class="clause">
+        <article class="content">
+          <ul class="text_wrap">
+
+            <select class="select-box">
+              <option>거래정보 조회 위임 동의 (2022.08.01 개정)</option>
+            </select>
+
+            <li class="text">
+              <p class="txt02">
+                세무 모바일 장부(이하 “세모장부”)서비스에 등록된 금융기관 및 비 금융기관 로그인 및 거래정보 조회하기 위한 목적을 위해 회원의 거래정보 조회 위임에 대한 동의를 받고자 하오니, 아래의
+                내용을 읽어보시고 동의하여 주시기 바랍니다.
+              </p>
+            </li>
+            <li class="text">
+              <table class="common_table">
+                <tbody>
+                  <tr>
+                    <td class="ct_tit" colspan="3">정보 제공에 관한 사항</th>
+                  </tr>
+                  <tr>
+                    <td class="ct_txt">위임받는 자</td>
+                    <td class="ct_txt" colspan="2">웹케시(주), (주)쿠콘</td>
+                  </tr>
+                  <tr>
+                    <td class="ct_txt">위임내용</td>
+                    <td class="ct_txt" colspan="2">- 세모장부에 등록된 금융기관 및 비금융기관 로그인 및 거래정보 조회</td>
+                  </tr>
+                  <tr>
+                    <td class="ct_txt">등록 금융기관 ·비금융기관</td>
+                    <td class="ct_txt" colspan="2">
+                      - 은행(20개 기관) : IBK기업은행, KB국민은행, NH농협, 우리은행, 신한은행, KEB하나은행, SC은행, 씨티은행, 산업은행, 부산은행, 경남은행, 대구은행,
+                      광주은행, 전북은행, 제주은행, 수협, 신협, 우체국, 새마을금고, 케이뱅크<br>
+                      - 카드(9개 기관) : BC카드(기업, 우리, SC, 부산, 경남, 대구), 농협카드, 국민카드, 신한카드, 삼성카드, 현대카드, 롯데카드, KEB하나카드, 씨티카드<br>
+                      - 비금융기관 : 국세청 홈택스, 위택스, 이택스, 여신금융협회(가맹점 매출거래정보 통합조회서비스), 국민건강보험 요양기관 정보마당, 배달앱(배달의민족, 요기요 .배달통,
+                      배고파), 쇼핑몰(11번가, 네이버 스마트스토어, 옥션, 지마켓, 쿠팡, 인터파크, 위메프, 카카오톡 스토어, 티몬, CJ몰, 신세계몰, 롯데닷컴, 현대몰), 숙박앱(야놀자,
+                      여기어때, 익스피디아)
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="ct_txt" rowspan="3">조회 거래정보</td>
+                    <td class="ct_txt">은행</td>
+                    <td class="ct_txt">
+                      대상상품 : 예금, <br>
+                      조회정보 : 보유계좌, 잔액, 거래내역, 예금주, 등
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="ct_txt">카드</td>
+                    <td class="ct_txt">
+                      대상상품 : 신용카드 등<br>
+                      조회정보 : 보유카드, 카드 정보, 승인내역, 거래내역, 청구내역, 한도, 포인트, 결제일, 거래조건 등
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="ct_txt">비금융 기관</td>
+                    <td class="ct_txt">
+                      국세청 조회정보 : 회원정보, 사업장정보, 전자(세금)계산서, 카드내역, 현금영수증 등<br>
+                      홈택스 · 위택스 · 이택스 : 세금고지내역 및 납부내역<br>
+                      여신금융협회 조회정보 : 승인내역, 매입내역, 입금내역 등
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="ct_txt">동의를 거부할 권리 및 동의를 거부할 경우의 불이익</td>
+                    <td class="ct_txt" colspan="2">
+                      및 동의를 거부할 경우의 불이익 위 거래정보 조회 위임 동의는 계약의 체결 및 이행을 위하여 필수적이므로, 위 사항에 동의하셔야만 세모장부 서비스 이용이 가능합니다.
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <p class="txt02">
+                회원이 세모장부 서비스를 통해서 등록하는 기관의 정보에 한해서만 거래정보 조회 위임을 받습니다.<br><br>
+
+                - 공고일자: 2022년 06월 30일<br>
+                - 시행일자: 2022년 08월 01일
+              </p>
+            </li>
+          </ul>
+        </article>
+      </section>
+    </div>
+
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../css/semo_cont.css">
+    <!-- <link rel="stylesheet" href="../../css/semo_cont_ibk.css"> -->
+    <!-- <link rel="stylesheet" href="../../css/test.css"> -->
+    <!-- <link rel="stylesheet" href="../../css/semo_cont_ibk.css"> -->
+  <script src="../../js/jquery-3.5.1.min.js"></script>
+    <script src="../../js/design.js"></script>
+    <title>SEMO</title>
+
+
+</head>
+
+<body>
+    <!-- 2020-11-02 내용수정 -->
+
+    <div class="new_content">
+        <!--2020-11-04-->
+
+        <div class="cont_bg" style="background-color: #fafafa;">
+
+            <!-- 상단 타이틀 -->
+            <!-- <div class="title">직원관리</div> -->
+            <!-- //상단 타이틀 -->
+
+            <div class="wrap staff">
+                <div class="staff_wrapper" >
+                    <div class="staff_em_info absence">
+                        <div class="staff_em_info_title">
+                            <b style="font-size:18px;">휴직등록</b>
+                        </div>
+                        <div class="staff_etc_info show">
+                            <div class="staff_info_cell">
+                                <p>이름</p>
+                                <div>
+                                    <div class="staff_info_number disable">
+                                        <input type="text" placeholder="김세모">
+                                    </div>
+                                </div>
+                            </div>
+            
+                            <div class="staff_info_cell">
+                                <p class="dot">휴직일 설정</p>
+                                <div class="csd_calendar_box set_mgt10">
+                                    <p>2020-06-09</p>
+                                    <span>-</span>
+                                    <p>2020-07-09</p>
+                                </div>
+                            </div>
+                    
+                            <div class="staff_info_cell">
+                                <p class="dot">비고</p>
+                                <div class="salary_write_req">
+                                    <textarea placeholder="메모를 입력해 주세요."></textarea>
+                                </div>
+                            </div>
+                            <div class="staff_info_cell">
+                                <p>첨부 <em>(사직서 등)</em></p>
+                                <div class="staff_em_detail_info">
+                                    <div>
+                                        <i class="ico_cen staff_del"></i>
+                                        <i class="ico_cen"></i>
+                                    </div>
+        
+                                </div>
+                            </div>
+                            
+                            <div class="staff_info_radio">
+                                <p>급여처리</p>
+                                <div>
+                                    <input type="radio" name="pay" id="paid">
+                                    <label for="paid">유급휴가</label>
+                                    <input type="radio" name="pay" id="unpaid">
+                                    <label for="unpaid">무급휴가</label>
+                                </div>
+                            </div>
+
+                            <div class="staff_info_cell">
+
+                                <span class="staff_em_textbox">
+                                    <p class="dot">휴직사유</p>
+                                    <div class="staff_contract">
+
+                                        <div class="staff_info_date">
+                                            <select required="">
+                                                <option value="" disabled="" selected="" hidden="">휴직사유 선택</option>
+
+                                            </select>
+                                            <i class="ico_cen"></i>
+                                        </div>
+                                    </div>
+                                    <textarea
+                                        placeholder="근로자가 만 8세 이하 또는 초등학교 2학년 이하의 자녀(입양한 자녀를 포함)를 양육하기 위하여 휴직을 신청하는 경우에 이를 허용하여야 하며, 휴직기간은 최대 1년입니다."></textarea>
+                                    <div class="staff_reason_leave">
+                                        <input type="text" placeholder="휴직사유를 입력해 주세요">
+                                    </div>
+                                </span>
+                            </div>
+
+                              
+                            <div class="salary_name_list_con">
+                                    <input type="checkbox" checked>
+                                    <p>세무사에게 공유하기</p>
+                          
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btm_button disable">
+                    <span class="bgc_green">저장하기</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css_v2/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../../css_v2/semo_style.css">
+    <link rel="stylesheet" href="../../css_v2/main.css">
+        <!-- <link rel="stylesheet" href="../../css_v2/kt_style.css"> -->
+    <!-- <link rel="stylesheet" href="../../css_v2/ione_style.css"> -->
+    <link rel="stylesheet" href="../../css_v2/nh_style.css">
+  <script src="../../js_v2/jquery-3.5.1.min.js"></script>
+    <script src="../../js_v2/swiper-bundle.min.js"></script>
+
+
+    <title>CHT060</title>
+</head>
+<body>
+    <div class="title">
+        <div class="title_left">
+            <i class="ico_cen left_arrow"></i>
+        </div>
+        <span class="title_text">홈 편집하기</span>
+    </div>
+    <main class="semo-home_edit">
+        <ul class="edit-list_wrap">
+            <li class="edit-list">
+                <div class="edit-item account is-on">
+                    <div class="item-left">
+                        <i class="ico_cont"></i>
+                        <h1 class="item_tit">계좌</h1>
+                        <span class="item_desc">입출금 내역</span>
+                    </div>
+                    <div class="item-right">
+                        <i class="ico_cont"></i>
+                    </div>
+                </div>
+            </li>
+            <li class="edit-list">
+                <div class="edit-item sales is-on">
+                    <div class="item-left">
+                        <i class="ico_cont"></i>
+                        <h1 class="item_tit">매출</h1>
+                        <span class="item_desc">매출 내역</span>
+                    </div>
+                    <div class="item-right">
+                        <i class="ico_cont"></i>
+                    </div>
+                </div>
+            </li>
+            <li class="edit-list">
+                <div class="edit-item spend is-on">
+                    <div class="item-left">
+                        <i class="ico_cont"></i>
+                        <h1 class="item_tit">지출</h1>
+                        <span class="item_desc">지출 내역</span>
+                    </div>
+                    <div class="item-right">
+                        <i class="ico_cont"></i>
+                    </div>
+                </div>
+            </li>
+            <li class="edit-list">
+                <div class="edit-item deposit is-on">
+                    <div class="item-left">
+                        <i class="ico_cont"></i>
+                        <h1 class="item_tit">입금</h1>
+                        <span class="item_desc">카드 · 배달매출 정산내역</span>
+                    </div>
+                    <div class="item-right">
+                        <i class="ico_cont"></i>
+                    </div>
+                </div>
+            </li>
+            <li class="edit-list">
+                <div class="edit-item work is-on">
+                    <div class="item-left">
+                        <i class="ico_cont"></i>
+                        <h1 class="item_tit">근태</h1>
+                        <span class="item_desc">직원 출퇴근 내역</span>
+                    </div>
+                    <div class="item-right">
+                        <i class="ico_cont"></i>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div class="bot_fix_pd20">
+            <div class="semo-home_alarm">
+                <i class="ico_cont"></i>
+                <span>위 순서대로 홈 화면에 보여요</span>
+            </div>
+            <button class="type_B white is-active">
+                <span>저장하기</span>
+            </button>
+        </div>
+        <div class="popup_bg" id="slide_popup" style="display: none;">
+            <div class="popup bottom" style="bottom:0;">
+                <div class="popup_title">
+                    <b>근로계약서 작성하기</b>
+                    <i class="ico_cen del"></i>
+                </div>
+                   <div class="popup_title_desc">
+                       <span>
+                        근로계약서를 작성할 직원을 선택해주세요
+                       </span>
+                    </div>
+                <div class="popup_bottom_con choicebox">
+                    <span>
+                        <i class="ico_cont choice is-active"></i>
+                        <b>이세모</b>
+                    </span>
+                    <span class="is-active">
+                        <i class="ico_cont choice"></i>
+                        <b>제로파스타</b>
+                    </span>
+                    <span>
+                        <i class="ico_cont choice"></i>
+                        <b>원파스타</b>
+                    </span>
+                    <span>
+                        <i class="ico_cont choice"></i>
+                        <b>원파스타</b>
+                    </span>
+                     <div class="active_button">
+                        <i class="ico_cen plus_gray"></i>
+                        <span>서류 항목 추가</span>
+                    </div>
+                </div>
+               
+                <div class="bot_fix_pd20 db">
+                    <button class="double_rd">닫기</button>
+                    <button class="double_rd bgc_sig">선택하기</button>
+                </div> 
+            </div>
+            
+        </div>
+        <div class="popup_bg" style="display: none;">
+            <div class="popup alert">
+                <div class="alret_text">
+                    <h1 class="info">등록된 직원이 없어요<i class="ico_cont"></i></h1>
+                    <span class="txt01">
+                        직원관리 메뉴에서 직원등록 후<br>
+                        근로계약서를 작성해보세요.
+                    </span>
+                    <span class="txt03">
+                        직원관리 메뉴로 이동하시겠어요?
+                    </span>
+                </div>
+                <div class="btm_button">
+                    <span class="c_gray">닫기</span>
+                    <span class="bgc_sig flex-1">이동할래요</span>
+                </div>
+            </div>
+    </div>
+    </main>
+  
+     <script>
+     </script>
+</body>
+</html>

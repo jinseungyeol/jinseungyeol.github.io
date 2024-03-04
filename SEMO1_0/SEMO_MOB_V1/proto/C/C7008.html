@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../../css/semo_cont.css">
+
+  <title>SEMO</title>
+</head>
+
+
+<body>
+  <!-- 2020-11-02 내용수정 -->
+
+  <div class="new_content">
+
+    <div class="cont_bg">
+      <!-- 제로페이 매출증빙 확인 팝업 -->
+      <div class="popup_bg Proof " style="display: none;">
+        <div class="popup_content">
+          <div class="popup_close_btn ico_cen"></div>
+          <div class="popup_title">
+            <span>
+              <b>제로페이 매출증빙 확인하기</b>
+            </span>
+          </div>
+          <div class="popup_text">
+            <span>
+              <p>-</p>
+              <p>
+                제로페이 홈페이지 id/pw로 연동해야 합니다.</p>
+            </span>
+            <span>
+              <p>-</p>
+              <p>
+                최초 연결 시, 최근 3개월의 데이터를 불러옵니다.</p>
+            </span>
+            <span>
+              <p>-</p>
+              <p>
+                전일 내역이 익일 아침 자동으로 업데이트 됩니다. </p>
+            </span>
+          </div>
+        </div>
+      </div>
+      <!--// 제로페이 매출증빙 확인 팝업 //-->
+
+      <!-- 연결문제 발생 팝업 -->
+      <div class="popup_bg Proof" style="display: none;">
+        <div class="popup_content">
+          <div class="popup_close_btn ico_cen"></div>
+          <div class="popup_title">
+            <span>
+              <b>연결에 문제가 발생했습니다.</b>
+            </span>
+          </div>
+          <div class="popup_text">
+            <span>
+              <p>-</p>
+              <p>
+                <i class="ico_cen connect_ico"></i> 를 눌러 연결을 확인해 주세요
+              </p>
+            </span>
+            <span>
+              <p>-</p>
+              <p>
+                지속적으로 오류가 발생 시 오류코드를 캡쳐하여
+                고객센터 1:1문의에 접수해 주세요</p>
+            </span>
+
+
+          </div>
+        </div>
+      </div>
+      <!--// 연결문제 발생 팝업 //-->
+
+      <!-- 상단 타이틀 -->
+      <div class="title">제로페이 매출증빙</div>
+      <!-- //상단 타이틀 -->
+
+      <div class="wrap document zero_pay_main">
+        <div>
+          <div class="condition_head_wrap">
+            <div class="zeropay_wrap">
+              <div class="secound_tab_box set_mgb6">
+                <span class="on2">결제내역</span>
+                <span>정산</span>
+                <!--활성 클래스 on2-->
+              </div>
+            </div>
+            <div class="condition_date_wrap">
+              <!--날짜설정 박스 보이기 활성클래스 on-->
+              <div class="condition_date_border">
+                <div class="condition_date_box">
+                  <span>오늘</span>
+                  <span class="on">어제</span>
+                  <!--활성클래스 on-->
+                  <span>이번달</span>
+                  <span>지난달</span>
+                  <span>검색</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pay_detail_list_wrap set_mgt15 set_pdb15">
+            <div class="pay_detail_list_cell pay_detail_list_cell1">
+              <div class="pay_detail_list_con pay_detail_list_con_text pay_after pay_detail_list_con_text2">
+                <div class="pay_detail_list_con_left">
+                  <div class="pay_detail_list_con_left_text contents_align justify_unset">
+                    <div class="pay_detail_list_con_left_img pdll_img7"></div>
+                    <p>총 매출 <b>9999</b>건</p>
+                  </div>
+                  <div class="pay_detail_account1 green">
+                    <div class="ico_cen pay_detail_list_cell2_img green"></div>
+                    <!-- 
+                      pay_detail_account1 red 클래스 빨간색 글씨 
+                      pay_detail_list_cell3_img red 클래스 빨간색 느낌표
+                     -->
+                    <!-- 
+                      pay_detail_account1 green 클래스 초록색 글씨 
+                      pay_detail_list_cell2_img green 클래스 초록색 느낌표
+                     -->
+                    <span class="set_font13">제로페이</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="pay_cell2 set_mgt8">
+                <p>￦<b>0</b></p>
+                <div class="ico_cen pay_cell2_img"></div>
+              </div>
+              <div class="pay_detail_remark set_mgt7 red">
+                <div class="pay_detail_list_con_left_img pdll_img5 red"></div>
+                <span>연결문제로 인해 내역이 정확하지 않을 수 있습니다.</span>
+              </div>
+            </div>
+            <div class="pay_detail_list_cell pay_detail_list_cell3">
+
+            </div>
+          </div>
+
+          <div class="pay_zero_con">
+            <div class="pay_zero_detail">
+              <span class="down">가맹점 정보보기</span>
+              <!-- 
+                down 클래스 아래 ===> 내용 사라지기
+                up 클래스 위 ===> 내용 나오기
+               -->
+              <div class="pay_zero_data_show">
+                <ul class="pay_zero_list">
+                  <li class="pay_zero_list_cell">
+                    <span>사업자 등록번호</span>
+                    <span>847-87-00259</span>
+                  </li>
+                  <li class="pay_zero_list_cell">
+                    <span>가맹점 관리번호</span>
+                    <span>201911543119</span>
+                  </li>
+                  <li class="pay_zero_list_cell">
+                    <span>가맹점주명</span>
+                    <span>박승현</span>
+                  </li>
+                  <li class="pay_zero_list_cell">
+                    <span>상태</span>
+                    <span>정상가맹점</span>
+                  </li>
+                </ul>
+                <ul class="pay_zero_list">
+                  <li class="pay_zero_list_cell">
+                    <span>사업자 등록번호</span>
+                    <span>847-87-00259</span>
+                  </li>
+                  <li class="pay_zero_list_cell">
+                    <span>가맹점 관리번호</span>
+                    <span>201911543119</span>
+                  </li>
+                  <li class="pay_zero_list_cell">
+                    <span>가맹점주명</span>
+                    <span>박승현</span>
+                  </li>
+                  <li class="pay_zero_list_cell">
+                    <span>상태</span>
+                    <span>정상가맹점</span>
+                  </li>
+                </ul>
+
+                <span class="pay_zero_info">
+                  <i class="ico_cen"></i>
+                  <p>현재 로그인한 사업자번호와 다른 가맹점은 해당 사업자
+                    번호로 로그인한 후 확인해 주세요.</p>
+                </span>
+              </div>
+
+            </div>
+
+            <div class="zero_break">
+              <span>어제 거래내역</span>
+              <i class="ico_cen info"></i>
+            </div>
+          </div>
+
+
+          <div class="zero_day_price" style="display:none;">
+            <div class="zero_top_day">
+              <b>21.01.22 (금)</b>
+              <b>일 합계 : <b>￦11,200,000</b></b>
+            </div>
+            <div class="zero_contents">
+              <div class="zero_cells">
+                <div class="zero_bank_i">
+                  <i class="ico_cen z_bank_ico1"></i>
+                  <!-- 
+                    은행아이콘 리스트 
+
+                    ico_cen z_bank_ico1 우리은행
+                    ico_cen z_bank_ico2 우체국은행
+                    ico_cen z_bank_ico3 부산은행
+                    ico_cen z_bank_ico4 하나은행
+                    ico_cen z_bank_ico5 새마을은행
+                    ico_cen z_bank_ico6 대구은행
+                    ico_cen z_bank_ico7 뱅크페이
+                    ico_cen z_bank_ico8 광주은행
+                    ico_cen z_bank_ico9 수협은행
+                    ico_cen z_bank_ico10 신협은행
+                    ico_cen z_bank_ico11 전북은행
+                    ico_cen z_bank_ico12 신한은행
+                    ico_cen z_bank_ico13 국민은행
+                    ico_cen z_bank_ico14 농협올인원뱅크
+                    ico_cen z_bank_ico15 농협은행
+                    ico_cen z_bank_ico16 기업은행
+                    ico_cen z_bank_ico17 NH콕뱅크
+                    ico_cen z_bank_ico18 케이뱅크
+                    ico_cen z_bank_ico19 경남은행
+                   -->
+
+                  <!-- 
+
+                    은행아이콘 리스트 
+
+                    ico_cen z_pay_ico1 네이버
+                    ico_cen z_pay_ico2 우체국은행
+                    ico_cen z_pay_ico3 부산은행
+                    ico_cen z_pay_ico4 하나은행
+                    ico_cen z_pay_ico5 새마을은행
+                    ico_cen z_pay_ico6 대구은행
+                    ico_cen z_pay_ico7 뱅크페이
+                    ico_cen z_pay_ico8 광주은행
+                    ico_cen z_pay_ico9 수협은행
+                    ico_cen z_pay_ico10 신협은행
+                    ico_cen z_pay_ico11 전북은행
+                    ico_cen z_pay_ico12 신한은행
+                    ico_cen z_pay_ico13 국민은행
+                    ico_cen z_pay_ico14 농협올인원뱅크
+                    ico_cen z_pay_ico15 농협은행
+                    ico_cen z_pay_ico16 기업은행
+                    ico_cen z_pay_ico17 NH콕뱅크
+                    ico_cen z_pay_ico18 케이뱅크
+                    ico_cen z_pay_ico19 경남은행
+
+                   -->
+                  <span>우리은행</span>
+                </div>
+                <div class="zero_price">
+                  <div>
+                    <em class="pay">￦5,600,000</em>
+                    <!-- 
+                      up 위 화살표
+                      down 아래 화살표
+                     -->
+                  </div>
+                  <div>
+                    <em class="pay">￦5,600,000</em>
+                    <!-- 
+                      up 위 화살표
+                      down 아래 화살표
+                     -->
+                    <div class="pay_zero_detail">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="zero_cells cancel">
+                <!-- 
+                  cancel 금액 취소 활성화
+                 -->
+                <div class="zero_bank_i">
+                  <i class="ico_cen z_bank_ico13"></i>
+                  <span>국민은행</span>
+                </div>
+                <div class="zero_price">
+                  <div>
+                    <em class="cancel">￦5,600,000</em>
+                    <div class="pay_zero_detail ">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </div>
+                  </div>
+                  <!-- 
+                    cancel 취소 
+                    pay 결제
+                  -->
+                </div>
+              </div>
+            </div>
+            <div class="zero_top_day">
+              <b>21.01.21 (목)</b>
+              <b>일 합계 : <b>￦11,200,000</b></b>
+            </div>
+            <div class="zero_contents">
+              <div class="zero_cells">
+                <div class="zero_bank_i">
+                  <i class="ico_cen z_pay_ico13"></i>
+                  <span>비즈플레이</span>
+                </div>
+                <div class="zero_price">
+                  <div>
+                    <em class="pay">￦5,600,000</em>
+                  </div>
+                  <div>
+                    <em class="cancel">
+                      ￦5,600,000
+                    </em>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+
+          <div class="zero_day_price">
+            <div class="zero_top_day">
+              <b>21.01.22 (금)</b>
+              <b>일 합계 : <b>￦11,200,000</b></b>
+            </div>
+            <div class="zero_contents">
+              <div class="zero_cells">
+                <div class="zero_bank_i">
+                  <i class="ico_cen z_bank_ico1"></i>
+                  <span>우리은행</span>
+                </div>
+                <div class="zero_price">
+                  <div>
+                    <em class="pay down">￦5,600,000</em>
+                  </div>
+                  <div>
+                    <em class="pay up">￦5,600,000</em>
+                    <div class="pay_zero_detail">
+                      <span>건수 : <p>100</p>건</span>
+                      <span>수수료 : ￦<p>30,000</p></span>
+                      <span>부가세 : ￦<p>5,000</p></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="zero_cells cancel">
+                <!-- 
+                  cancel 금액 취소 활성화
+                 -->
+                <div class="zero_bank_i">
+                  <i class="ico_cen z_bank_ico13"></i>
+                  <span>국민은행</span>
+                </div>
+                <div class="zero_price">
+                  <div>
+                    <em class="cancel up">￦5,600,000</em>
+                    <div class="pay_zero_detail ">
+                      <span>건수 : <p>100</p>건</span>
+                      <span>수수료 : ￦<p>30,000</p></span>
+                      <span>부가세 : ￦<p>5,000</p></span>
+                    </div>
+                  </div>
+                  <!-- 
+                    cancel 취소 
+                    pay 결제
+                  -->
+                </div>
+              </div>
+            </div>
+            <div class="zero_top_day">
+              <b>21.01.21 (목)</b>
+              <b>일 합계 : <b>￦11,200,000</b></b>
+            </div>
+            <div class="zero_contents">
+              <div class="zero_cells">
+                <div class="zero_bank_i">
+                  <i class="ico_cen z_pay_ico13"></i>
+                  <span>비즈플레이</span>
+                </div>
+                <div class="zero_price">
+                  <div>
+                    <em class="pay down">￦5,600,000</em>
+                  </div>
+                  <div>
+                    <em class="cancel down">
+                      ￦5,600,000
+                    </em>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="blank" style="height: 20px;"></div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

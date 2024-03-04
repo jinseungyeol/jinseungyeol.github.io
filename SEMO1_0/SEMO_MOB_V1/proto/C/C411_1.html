@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../../css/semo_cont.css">
+  <title>SEMO</title>
+</head>
+<body>
+  <div class="new_content">
+
+    <div class="cont_bg cont_pd"> <!-- 클래스 cont_pd fix_button 포함 패딩-->
+
+      <!-- 상단 타이틀 -->
+      <div class="title">거래처 등록</div>
+      <!-- //상단 타이틀 -->
+            
+      <!-- 거래처 -->
+      <div class="wrap document">
+        <div class="document_box">
+
+          <!-- 거래처 등록 -->
+          <div class="branch_add_wrap">
+            <div class="branch_add_box">
+              <span class="bab_tit required">거래처명</span><!--2020-06-03 required 추가-->
+              <div>
+                <input class="bab_input" value="">
+              </div> 
+            </div>
+
+            <div class="branch_add_box bab_bank_pop al_start"> <!--2020-06-03 al_start 추가-->
+              <span class="bab_tit required">계좌 정보</span> <!--2020-06-03 required 추가-->
+              <button class="btn_owner">예금주 조회</button> <!--2020-06-03 예금주 조회 버튼 이동 / btn_owner 추가-->
+              <div class="bab_box_wrap "> 
+                <p class="bab_bank_box"> 
+                  <span class="bab_bank"><span class="placehplder">은행을 선택해 주세요</span></span>   <!--2020-06-03 <span class="placehplder">은행을 선택해 주세요</span>< 추가-->               
+                  <a class="btn_bank_list"><i class="ico_arr"></i><em class="new_blind">은행 리스트</em></a>
+                </p>
+                <input class="bab_input set_mgb5" type="text" placeholder="계좌번호를 입력해 주세요" value=""> 
+                <!-- 2020-06-03 bab_owner_wrap 이동 -->
+                <div class="bab_owner_wrap">
+                  <input class="bab_input" disabled>
+                </div> 
+                 <!-- //2020-06-03 bab_owner_wrap 이동 -->
+                <!-- 은행 목록 팝업 -->
+                <div class="popup_layer type3">
+                  <div class="pl_tit">은행 목록</div>
+                  <a class="btn_pl_close"><i></i><em class="new_blind">닫기</em></a>
+                  <div class="pl_bank_box">
+                    <span><i class="logo_bank ico_lb003"></i> <span class="plb_name">IBK기업</span></span>
+                    <span><i class="logo_bank ico_lb004"></i> <span class="plb_name">KB국민</span></span>
+                    <span><i class="logo_bank ico_lb020"></i> <span class="plb_name">우리은행</span></span>
+                    <span><i class="logo_bank ico_lb088"></i> <span class="plb_name">신한은행</span></span>
+                    <span><i class="logo_bank ico_lb081"></i> <span class="plb_name">하나은행</span></span>
+                    <span><i class="logo_bank ico_lb011"></i> <span class="plb_name">NH농협</span></span>
+                    <span><i class="logo_bank ico_lb023"></i> <span class="plb_name">SC은행</span></span>
+                    <span><i class="logo_bank ico_lb027"></i> <span class="plb_name">씨티은행</span></span>
+                    <span><i class="logo_bank ico_lb002"></i> <span class="plb_name">KDB산업</span></span>
+                    <span><i class="logo_bank ico_lb071"></i> <span class="plb_name">우체국</span></span>
+                    <span><i class="logo_bank ico_lb032"></i> <span class="plb_name">BNK부산</span></span>
+                    <span><i class="logo_bank ico_lb045"></i> <span class="plb_name">새마을금고</span></span>
+                    <span><i class="logo_bank ico_lb034"></i> <span class="plb_name">광주은행</span></span>
+                    <span><i class="logo_bank ico_lb007"></i> <span class="plb_name">수협은행</span></span>
+                    <span><i class="logo_bank ico_lb031"></i> <span class="plb_name">대구은행</span></span>
+                    <span><i class="logo_bank ico_lb039"></i> <span class="plb_name">BNK경남</span></span>
+                    <span><i class="logo_bank ico_lb035"></i> <span class="plb_name">제주은행</span></span>
+                    <span><i class="logo_bank ico_lb037"></i> <span class="plb_name">전북은행</span></span>
+                    <span><i class="logo_bank ico_lb089"></i> <span class="plb_name">K뱅크</span></span>
+                    <span><i class="logo_bank ico_lb090"></i> <span class="plb_name">카카오뱅크</span></span>
+                    <span><i class="logo_bank ico_lb050"></i> <span class="plb_name">저축은행</span></span>
+                    <span><i class="logo_bank ico_lb048"></i> <span class="plb_name">신협</span></span>
+                    <span><i class="logo_bank ico_lb055"></i> <span class="plb_name">도이치</span></span>
+                    <span><i class="logo_bank ico_lb064"></i> <span class="plb_name">산림조합</span></span>
+                    <span><i class="logo_bank ico_lb060"></i> <span class="plb_name">BOA</span></span>
+                    <span><i class="logo_bank ico_lb054"></i> <span class="plb_name">HSBC</span></span>
+                    <span><i class="logo_bank ico_lb061"></i> <span class="plb_name">BNP파리바</span></span>
+                    <span><i class="logo_bank ico_lb057"></i> <span class="plb_name">JP모건</span></span>
+                    <span><i class="logo_bank ico_lb067"></i> <span class="plb_name">중국건설</span></span>
+                    <span><i class="logo_bank ico_lb062"></i> <span class="plb_name">중국공상</span></span>
+                    <span><i class="logo_bank ico_lb063"></i> <span class="plb_name">중국은행</span></span>
+                  </div>
+                </div>
+                <!-- //은행 목록 팝업 -->
+
+              </div>
+              
+            </div>
+
+            <!-- 2020-06-03 삭제 -> bab_owner_wrap 이동 -->
+            <!-- <div class="branch_add_box">
+              <span class="bab_tit"></span>
+              <div class="bab_owner_wrap">
+                <input class="bab_input">
+                <button >예금주 조회</button>
+              </div>
+            </div> -->
+
+            <div class="branch_add_box">
+              <span class="bab_tit">사업자 번호</span>
+              <div>
+                <input class="bab_input" value="02-1234-5678">
+              </div>
+            </div>
+
+            <div class="branch_add_box">
+              <span class="bab_tit">대표자</span>
+              <div>
+                <input class="bab_input">
+              </div>
+            </div>
+
+            <div class="branch_add_box">
+              <span class="bab_tit">연락처</span>
+              <div>
+                <input class="bab_input">
+              </div>
+            </div>
+
+            <div class="branch_add_box al_base bab_code_pop">
+              <span class="bab_tit">주소</span>
+              <button class="btn_zip_code">우편번호 검색</button> <!--2020-06-03 우편번호 검색 버튼 이동-->
+              <div class="bab_adress_box">
+                <textarea class="bab_input"></textarea>
+              </div>
+            </div>
+
+            <div class="branch_add_box al_start"> <!--2020-06-03 al_start 추가-->
+              <span class="bab_tit">메모</span>
+              <div>
+                <textarea class="bab_input" placeholder="한글 25자까지 입력 가능"></textarea>
+              </div>
+            </div>
+          </div>
+          <!-- //거래처 등록 -->
+
+        </div>
+      </div>
+      <!-- //거래처 -->
+      
+    </div>
+
+    <!-- 토스트 팝업 -->
+    <div class="toast">
+      <span><i class="ico_t_check"></i> 거래처에 등록되었습니다.</span>
+    </div>
+    <!-- 토스트 팝업 -->
+
+    <!-- 하단 fix 버튼 -->
+    <div class="btm_fix">
+      <span class="bgc_green">거래처 등록하기</span> <!--클래스 bgc_green 배경색-->
+    </div>
+    <!-- 하단 fix 버튼 -->
+  </div>
+</body>
+</html>

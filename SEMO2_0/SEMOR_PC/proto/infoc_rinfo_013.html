@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<title>세모리포트</title>
+<link rel="stylesheet" href="../css/reset_taxp.css">
+<link rel="stylesheet" href="../css/app_header.css"><!-- [D] 세무대리인용 header -->
+<link rel="stylesheet" href="../css/content_taxp.css"><!-- [D] 세무대리인용 -->
+
+<!-- custom scrollbar plugin css -->
+<link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+  <script src="../js/lib/jquery/jquery-1.12.4.min.js"></script>
+<script src="../js/lib/jquery/jquery-ui-1.10.4.min.js"></script>
+<!-- custom scrollbar plugin -->
+<script src="../js/design/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../js/design/jquery.placeholder.min.js"></script>
+<script src="../js/lib/plugin/smart.popup.js"></script>
+<script src="../js/comm/common.js"></script>
+<script>
+$(function(){
+  // Invoke the plugin
+  $('input, textarea').placeholder({customClass:'my-placeholder'});
+  
+  
+  
+  // 보기설정 보기
+    $('#btn_showhide').on("click", function(event){
+    	if($(this).hasClass("down")){
+    		$("#tbl_area").show();
+    		$(this).removeClass("down");
+    	}else{
+    		$("#tbl_area").hide();
+    		$(this).addClass("down");
+    	}
+    });
+    
+});
+</script>
+
+</head>
+
+
+<body style="width:1000px;"><!-- 팝업 사이즈 600*497 -->
+
+<div class="pop_wrap" style="width:1000px;">
+
+  <!-- 팝업 헤더 -->
+  <div class="pop_header">
+    <h1>실시간 정보수집</h1>
+    <a href="#" onClick="close_smartPop();" class="btn_popclose"><img src="../img/txof/btn/btn_popclose_white.gif" alt="팝업닫기"></a>
+  </div>
+  <!-- //팝업 헤더 -->
+
+  <!-- 팝업 컨텐츠 -->
+  <div class="pop_container">
+
+    <div class="list_scroll" style="min-height:359px;height:359px;border-ottom:0;">
+
+      <div class="title_wrap mgb20">
+        <div class="left">
+          <h1>나라백반 외 10건 수집</h1>
+        </div>
+      </div>
+
+      <div class="tb_cust_dv cboth mgl0">
+        <div class="setinner">
+          <div class="settxt">
+            <span>수집기간</span>
+            <div class="select_date">
+              <div class="date_wrap">
+                <select>
+                  <option>2022</option>
+                </select>
+                <select>
+                  <option>1</option>
+                </select>
+              </div>
+              <span class="bar">~</span>
+              <div class="date_wrap">
+                <select>
+                  <option>2022</option>
+                </select>
+                <select>
+                  <option>12</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <table class="tbl_result mgt5 tac">
+        <caption></caption>
+        <colgroup>
+          <col style="width: 5%">
+          <col style="width: 12%">
+          <col style="width: 12%">
+          <col style="width: 15%">
+          <col style="width: 4%">
+        </colgroup>
+        <thead>
+          <tr>
+            <th>
+              <div class="tac">번호</div>
+            </th>
+            <th>
+              <div class="tac">거래처명</div>
+            </th>
+            <th>
+              <div class="tac">사업자번호</div>
+            </th>
+            <th>
+              <div class="tac">수집결과</div>
+            </th>
+            <th>
+              <div class="tac">수집</div>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><div>1</div></td>
+            <td>
+              <!-- 말줄임처리 -->
+              <div class="ellipsis">나라백반</div>
+            </td>
+            <td><div>123-45-67890</div></td>
+            <td><div class="txt_b">수집완료 (8/8)</div></td>
+            <td><input type="checkbox"></td>
+          </tr>
+          <tr>
+            <td><div>2</div></td>
+            <td>
+              <!-- 말줄임처리 -->
+              <div class="ellipsis">아리랑노래연습장</div>
+            </td>
+            <td><div>123-45-67890</div></td>
+            <td><div class="txt_r">일부실패 (6/8)</div></td>
+            <td><input type="checkbox"></td>
+          </tr>
+          <tr>
+            <td><div>3</div></td>
+            <td>
+              <!-- 말줄임처리 -->
+              <div class="ellipsis">자란다 수학학원</div>
+            </td>
+            <td><div>123-45-67890</div></td>
+            <td><div class="txt_r">수집실패 (0/8)</div></td>
+            <td><input type="checkbox"></td>
+          </tr>
+          <tr>
+            <td><div>3</div></td>
+            <td>
+              <!-- 말줄임처리 -->
+              <div class="ellipsis">차차차 카센터</div>
+            </td>
+            <td><div>123-45-67890</div></td>
+            <td><div class="txt_r">수집취소 (0/8)</div></td>
+            <td><input type="checkbox"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+
+
+    <!-- 하단버튼 -->
+    <div class="tac mgt20">
+      <div class="cofirmMsg">
+        <img src="../img/txof/ico/ico_ch_o.png">
+        <strong>실시간 정보수집이 완료되었습니다.</strong>
+      </div>
+      <a href="#none"  onClick="close_smartPop();" class="btn_style1"><span>닫기</span></a>
+      <a href="#none" class="btn_style1_b"><span>재수집</span></a>
+    </div>
+    <!-- //하단버튼 -->
+
+
+  </div>
+  <!-- //팝업 컨텐츠 -->
+</div>
+
+</body>
+</html>

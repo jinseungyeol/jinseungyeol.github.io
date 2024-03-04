@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../css_v2/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../../css_v2/semo_style.css">
+    <link rel="stylesheet" href="../../css_v2/main.css">
+    <link rel="stylesheet" href="../../css_v2/nh_style.css">
+    <!-- JS -->
+  <script src="../../js_v2/swiper-bundle.min.js"></script>
+    <script src="../../js_v2/jquery-3.5.1.min.js"></script>
+    <title>CAM000</title>
+</head>
+<body>
+    <main class="semo-whole">
+        <div class="semo-whole_header">
+            <h1>전체</h1>
+            <div class="head-icon">
+                <div class="icon01">
+                    <i class="ico_cont"></i>
+                </div>
+                <div class="icon02">
+                    <i class="ico_cont "></i>
+                </div>
+            </div>
+        </div>
+        <div class="semo-whole_focus">
+            <nav class="semo-whole_nav-wrap">
+                <ul class="semo-whole_nav">
+                    <li class="item_01">
+                        <i class="ico_cont"></i>
+                        <h2>내 정보</h2>
+                    </li>
+                    <li class="item_02">
+                        <i class="ico_cont"></i>
+                        <h2>세모주치의</h2>
+                    </li>
+                    <li class="item_03">
+                        <i class="ico_cont"></i>
+                        <h2>수집/연결</h2>
+                    </li>
+                </ul>
+            </nav>
+            <div class="semo-whole_focus-banner mySwiper">
+                <ul class="banner-list swiper-wrapper">
+                    <!-- li 1개 이상일 때 swiper 작동되게 jquery 처리 -->
+                    <li class="list_01 swiper-slide">
+                        <i class="ico_cont list01"></i>
+                    </li>
+                </ul>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+        <div class="semo-whole_category-wrap">
+            <div class="semo-whole_category list_01">
+                <div class="category_title">
+                    <i class="ico_cont"></i>
+                    <h3>최근 본</h3>
+                </div>
+                <ul class="semo-whole_category_list">
+                    <li class="item">
+                        <div class="item_01">
+                            <span>카드매출 내역</span>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="item_02">
+                            <span>계좌 내역</span>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="item_03">
+                            <span>카드지출 내역</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- 2022-08-23 NH 탭추가 jin -->
+            <div class="semo-whole_category list_09">
+                <div class="category_title">
+                    <i class="ico_cont"></i>
+                    <h3>NH</h3>
+                </div>
+                <ul class="semo-whole_category_list">
+                    <li class="item">
+                        <div class="item_01">
+                            <span>농협몰</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="semo-whole_category list_02">
+                <div class="category_title">
+                    <i class="ico_cont"></i>
+                    <h3>신규 오픈</h3>
+                </div>
+                <ul class="semo-whole_category_list">
+                    <li class="item">
+                        <div class="item_01">
+                            <span>카드지출 조회</span>
+                        </div>
+                        <!-- 상태확인 -->
+                        <div class="state">
+                            <span class="new">새로나온</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- 뱅킹 -->
+            <div class="semo-whole_category list_08">
+                <div class="category_title">
+                    <i class="ico_cont"></i>
+                    <h3>뱅킹</h3>
+                </div>
+                <ul class="semo-whole_category_list">
+                    <li class="item">
+                        <div class="item_01">
+                            <span>카드지출 조회</span>
+                        </div>
+                        <!-- 상태확인 -->
+                        <div class="state">
+                            <span class="new">새로나온</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="semo-whole_category list_03">
+                <div class="category_title">
+                    <i class="ico_cont"></i>
+                    <h3>업무</h3>
+                </div>
+                <ul class="semo-whole_category_list">
+                    <li class="item">
+                        <div class="item_01">
+                            <span>영수증관리</span>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="item_02">
+                            <span>서류관리</span>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="item_03">
+                            <span>거래처관리</span>
+                        </div>
+                    </li>                
+                </ul>
+            </div>
+            <div class="semo-whole_category list_04">
+                <div class="category_title">
+                    <i class="ico_cont"></i>
+                    <h3>직원</h3>
+                </div>
+                <ul class="semo-whole_category_list">
+                    <li class="item">
+                        <div class="item_01">
+                            <span>직원관리</span>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="item_02">
+                            <span>급여관리</span>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="item_03">
+                            <span>근태관리</span>
+                        </div>
+                    </li>                
+                    <li class="item">
+                        <div class="item_04">
+                            <span>전자근로계약서</span>
+                        </div>
+                    </li>                
+                </ul>
+            </div>
+            <div class="semo-whole_category list_05">
+                <div class="category_title">
+                    <i class="ico_cont"></i>
+                    <h3>수집</h3>
+                </div>
+                <ul class="semo-whole_category_list">
+                    <li class="item">
+                        <div class="item_01">
+                            <span>계좌내역</span>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="item_02">
+                            <span>카드지출 내역</span>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="item_03">
+                            <span>카드매출 내역</span>
+                        </div>
+                    </li>                
+                    <li class="item">
+                        <div class="item_04">
+                            <span>배달매출 내역</span>
+                        </div>
+                    </li>                
+                    <li class="item">
+                        <div class="item_05">
+                            <span>들어올 돈 내역</span>
+                        </div>
+                    </li>                
+                    <li class="item">
+                        <div class="item_06">
+                            <span>현금영수증 내역</span>
+                        </div>
+                    </li>                
+                    <li class="item">
+                        <div class="item_07">
+                            <span>세금계산서 내역</span>
+                        </div>
+                    </li>                
+                    <li class="item">
+                        <div class="item_08">
+                            <span>계산서 내역</span>
+                        </div>
+                    </li>                
+                    <li class="item">
+                        <div class="item_09">
+                            <span>건강보험 매출 내역</span>
+                        </div>
+                    </li>                
+                    <li class="item">
+                        <div class="item_10">
+                            <span>종합소득세 서류조회</span>
+                        </div>
+                    </li>                
+                    <li class="item">
+                        <div class="item_11">
+                            <span>거래내역 내보내기</span>
+                        </div>
+                    </li>                
+                </ul>
+            </div>
+            <div class="semo-whole_category list_06">
+                <div class="category_title">
+                    <i class="ico_cont"></i>
+                    <h3>진단</h3>
+                </div>
+                <ul class="semo-whole_category_list">
+                    <li class="item">
+                        <div class="item_01">
+                            <span>하루씀씀 보고서</span>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="item_02">
+                            <span>한주씀씀 보고서</span>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="item_03">
+                            <span>한달씀씀 보고서</span>
+                        </div>
+                    </li>                
+                    <li class="item">
+                        <div class="item_04">
+                            <span>한해씀씀 보고서</span>
+                        </div>
+                        <!-- 상태확인 -->
+                        <div class="state">
+                            <span class="update">업데이트</span>
+                        </div>
+                    </li>                
+                    <li class="item">
+                        <div class="item_05">
+                            <span>씀씀 종합처방전</span>
+                        </div>
+                    </li>                
+                    <li class="item">
+                        <div class="item_06">
+                            <span>우리동네 상권분석</span>
+                        </div>
+                    </li>                             
+                </ul>
+            </div>
+            <div class="semo-whole_category list_07">
+                <div class="category_title">
+                    <i class="ico_cont"></i>
+                    <h3>상담</h3>
+                </div>
+                <ul class="semo-whole_category_list">
+                    <li class="item">
+                        <div class="item_01">
+                            <span>전문가 상담</span>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <div class="item_02">
+                            <span>세무 정보</span>
+                        </div>
+                    </li>                            
+                </ul>
+            </div> 
+        </div>
+        <footer class="main_foot_layout">
+            <div class="semo-main_footer">
+                <nav class="foot-nav">
+                    <ul>
+                        <li class="foot-nav_item item_01">
+                            <i class="ico_cont">홈</i>
+                            <p>홈</p>
+                        </li>
+                        <li class="foot-nav_item item_02">
+                            <i class="ico_cont">달력</i>
+                            <p>달력</p>    
+                        </li>
+                        <li class="foot-nav_item item_03">
+                            <i class="ico_cont">진단</i>
+                            <p>진단</p>    
+                        </li>
+                        <li class="foot-nav_item item_04">
+                            <i class="ico_cont">상담</i>
+                            <p>상담</p>    
+                        </li>
+                        <li class="foot-nav_item item_05">
+                            <i class="ico_cont">전체</i>
+                            <p>전체</p>    
+                        </li>
+                    </ul>
+                </nav>
+            </div>  
+        </footer>
+    </main>
+
+    <script>
+
+        $(function(){
+            // 스크롤시 header box-shadow생기게 
+            $(window).scroll(function(){
+                if($(window).scrollTop() > 30) {
+                $('.semo-whole_header').addClass('is-active')
+                }
+                else {
+                $('.semo-whole_header').removeClass('is-active')
+                }   
+            })
+
+            // list 2개 이상일때 스와이퍼 슬라이드 적용
+            if( $(".semo-whole_focus-banner .banner-list li").length > 1 ) {
+                var wholeBanner = new Swiper(".semo-whole_focus-banner", {
+                    slidesPerView: 'auto',
+                    pagination: {
+                        el: ".swiper-pagination",
+                    },
+                });
+            }
+
+            // 슬라이드배너 있을때 회색배경 제거
+            if( $(".semo-whole_focus").children().hasClass("semo-whole_focus-banner") ) {
+                $(".semo-whole_nav li").addClass("is-transparent");
+            }
+        })
+    </script>
+</body>
+</html>

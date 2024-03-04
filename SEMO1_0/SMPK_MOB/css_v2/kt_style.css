@@ -1,0 +1,258 @@
+@charset "utf-8";
+/* smpk kt_style.css Ver 2 */
+/* 아이콘 */
+i.c_bi { background-image: url(../img_v2/kt_newlogo_color.png); width: 20.833vw; height: 4.722vw; background-size: contain; } 
+/* number */
+i.num_01 { background-image: url(../img_v2/num01_kt.svg); } 
+i.num_02 { background-image: url(../img_v2/num02_kt.svg); } 
+i.num_03 { background-image: url(../img_v2/num03_kt.svg); } 
+i.num_04 { background-image: url(../img_v2/num04_kt.svg); } 
+
+/* 컬러 */
+.bgc_sig { background-color: #2dbdb6 !important; color: #fff !important; } 
+.c_sig { color: #2dbdb6 !important; } 
+
+/* 이미지 */
+.ico_cen.check_sig { background-image: url(../img_v2/kt_check.svg) !important; } 
+
+/* 분기처리 css */
+.auth_con04 { background-color: #2dbdb6; border: 0.625vw solid #19958f; } 
+.al_pop_ment01.green { color: #2dbdb6; } 
+.f_l_green { color: #2dbdb6; } 
+
+/* 리스트 뷰 , 직원관리 */
+
+.content_info_share > span > i.bi { background-image: url(../img_v2/kt_newlogo_color.png); width: 20.833vw; height: 4.722vw; background-size: contain } 
+input[type="checkbox"]:checked { background-color: #2dbdb6; } 
+
+
+.accountant_share input[type="checkbox"]:checked { background-color: #2dbdb6; background-image: url(../img_v2/check_w.svg); border-color: #2dbdb6; } 
+.pa_tog_btn.active input[type="radio"] { background-color: #2dbdb6; background-image: url(../img_v2/check_w.svg); border-color: #2dbdb6; } 
+.popup_document.sec3 input[type="checkbox"]:checked { background-color: #2dbdb6; } 
+.popup_document_send input[type="checkbox"]:checked { background-color: #2dbdb6; background-image: url(../img_v2/check_w.svg); } 
+
+/* 버튼 */
+.btm_button.active > span { background-color: #2dbdb6; } 
+.btm_button span.c_green { background-color: #2dbdb6; } 
+.next_button.active p { background-color: #2dbdb6; border: 0.3125vw solid #19958f; } 
+.popup_bg.agree .btm_button.active span { background-color: #2dbdb6; } 
+.popup_bg.agree .popup_bottom_con > span > input[type="checkbox"]:checked { background-color: #2dbdb6; border: 0.625vw solid #2dbdb6; background-image: url(../img_v2/check_w.svg); } 
+
+.popup_bg.agree .popup_bottom_con > span > input[type="checkbox"]:checked { background-color: #2dbdb6; } 
+.popup_bg.agree .popup_bottom_con > span > input[type="radio"]:checked { background-color: #2dbdb6; border-color: #2dbdb6; background-image: url(../img_v2/check_w.svg); } 
+
+.active_button.active { background-color: #2dbdb6 } 
+.active_button.active > span { color: #ffffff; } 
+.active_button.active > i.plus_gray { background-image: url(../img_v2/plus_white.svg); } 
+
+.semo_look_banner { width: calc(100vw - 12.5vw); margin-left: -6.25vw; font-size: 1.125rem; padding: 6.562vw 6.25vw; background: #63e2c5 url(../img_v2/semo_look.webp) center right no-repeat; background-size: contain; display: none; } 
+.ione_look_banner { width: calc(100vw - 12.5vw); margin-left: -6.25vw; font-size: 1.125rem; padding: 6.562vw 6.25vw; background: #0095ff url(../img_v2/ione_look.webp) center right no-repeat; background-size: contain; color: #ffffff; display: none; } 
+.nh_look_banner { width: calc(100vw - 12.5vw); margin-left: -6.25vw; font-size: 1.125rem; padding: 6.562vw 6.25vw; background: #2dbdb6 url(../img_v2/nh_look.webp) center right no-repeat; background-size: contain; color: #ffffff; display:none; } 
+.kt_look_banner { width: calc(100vw - 12.5vw); margin-left: -6.25vw; font-size: 1.125rem; padding: 6.562vw 6.25vw; background: #2dbdb6 url(../img_v2/kt_look.webp) center right no-repeat; background-size: contain; color: #ffffff; display:none; } 
+
+.popup.alert .btm_button span.bgc_sig { flex: 1.5; color: #ffffff; background-color: #2dbdb6; } 
+
+
+.payslip_title .c_bi { width: 25.9vw; } 
+
+/* 다음버튼 */
+.next_button.active p { background-color: #2dbdb6; border: 0.3125vw solid #19958f; color: #ffffff; } 
+
+.popup_bg.agree .btm_button.double span.c_green { background-color: #2dbdb6; } 
+
+.trans_complete_pop .trans_com_img { background-color: #2dbdb6; } 
+.trans_complete_pop span { color: #2dbdb6; } 
+
+@media(min-width:1023px){
+ .basic_web_view .semo_look_banner { display: block; padding: 43px 29px; margin-left: 0; width: calc(100% - 58px); font-size: 37px; margin-top: 53px; cursor: pointer; display: none; } 
+.basic_web_view .ione_look_banner { display: block; padding: 43px 29px; margin-left: 0; width: calc(100% - 58px); font-size: 37px; margin-top: 53px; cursor: pointer; display: none; } 
+.basic_web_view .nh_look_banner { display: block; padding: 43px 29px; margin-left: 0; width: calc(100% - 58px); font-size: 37px; margin-top: 53px; cursor: pointer; display: none; } 
+.basic_web_view .kt_look_banner { display: block; padding: 43px 29px; margin-left: 0; width: calc(100% - 58px); font-size: 37px; margin-top: 53px; cursor: pointer; display: block; } 
+ }
+
+/* 토글버튼 */
+.onoff_input input[type=checkbox]:checked ~ .onoff_input_bg { background-color: #2dbdb6; } 
+
+/* C932 */
+.report_radio_wrap.sale .report_radio.active { background-color:#0f576d; } 
+.oth_sales_wrap .popup .btm_button.half_btn .half_right { background-color: #2dbdb6; border:none; } 
+.btm_plus { background-color:#2dbdb6; } 
+.oth_sales_wrap .popup .btm_button.double .half_right { background-color: #2dbdb6; border:none; color: #fff; } 
+
+
+/* ###### SSU100 KT 세모가게 이용약관 ###### */
+.kt_terms-accent { color: #0095ff; text-decoration: underline; } 
+
+/* SSU200 */
+.agree_wrap .all_wrap .all_checkbox input[id=all_check]:checked ~ label[for=all_check] { background-color: #2dbdb6; } 
+.agree_wrap .each_wrap .each .left .inner input:checked ~ label { background-image: url(../img_v2/kt_check.svg); } 
+.ness_info .info_box_wrap .mini.typeB.active { background-color: #2dbdb6; } 
+
+
+/* ###### KSU520 부가서비스 ###### */
+.added_service_header { padding-top: 8.333vw; text-align: center; } 
+.added_service_header .ico_cen { margin: auto; margin-bottom: 3.333vw; background-image: url(../img_v2/kt_newlogo_color_320x68.png); width: 44.444vw; height: 9.444vw; background-size: contain; } 
+.added_service_header span { font-size: 0.937rem; } 
+.added_service_content { margin: 3.055vw 0 5.416vw; } 
+.added_service_img { padding: 0 5.555vw; } 
+.added_service_img .ico_cen { height: 65.277vw; background-image: url(../img_v2/kt_added_service01.png); background-size: contain; margin: auto; } 
+.added_service_coupon { margin: 4.583vw 0 5.416vw; text-align: center; } 
+.added_service_coupon h1 { color: #4c4c4c; font-size: 1.125rem; font-weight: 600; margin-bottom: 2.847vw; } 
+.added_service_coupon .added_service_coupon_img { width: 77.513vw; height: 43.777vw; background: url(../img_v2/coupon.png) no-repeat; margin: auto; background-size: cover; padding-top: 12.3vw; box-sizing: border-box; color: #222; } 
+.added_service_coupon .added_service_coupon_img em { font-size: 1.531rem; font-weight: 600; } 
+.added_service_coupon .added_service_coupon_img p { font-size: 1.156rem; margin: 0.833vw 0 2.777vw; } 
+.added_service_coupon .added_service_coupon_img span { font-size: 0.812rem; color: #9b9b9b; } 
+
+/* 버튼 */
+.added_service_coupon .kt_btn_join { margin-top: 5.416vw; padding: 0 5.555vw; box-sizing: border-box; } 
+.added_service_coupon .kt_btn_join button { background-color: #222; color: #fff; width: 77.222vw; height: 18.055vw; border-radius: 2.222vw; font-size: 1.25rem; } 
+.added_service_coupon .kt_btn_join .added_service_desc { margin-top: 5.875vw; line-height: 1.44; } 
+
+
+
+/* ###### KSU12A 마케팅 활용 동의 ###### */
+.kt_terms-agree { color: #595757; font-weight: 600; } 
+
+
+/* ###### SB037_금융상품관_KIP000 ###### */
+.bank-product-wrap { margin-top: 16.935vw; padding-bottom: 27.633vw; } 
+.bank-product-wrap .tab-menu { position: fixed; top: 13.4vw; left: 0; right: 0; box-shadow: 0 1.5px 3px 0 rgba(0, 0, 0, 0.08); z-index: 2; } 
+.tab-menu { width: 100%; box-sizing: border-box; background-color: #fff; overflow-x: scroll; } 
+.tab-menu::-webkit-scrollbar { display: none; } 
+
+/* 슬라이드 메인 배너 */
+.bank-product-wrap .slide-banner { padding: 0 5.555vw; } 
+.bank-product_main .slide-banner_content { margin-bottom: 14.444vw; margin-top: -30vw; padding-top: 30vw; } 
+.bank-product_main .slide-banner_cover { height: 41.666vw; } 
+.bank-product_main .bank-product_join { background-color: #2dbdb6; border-radius: 4.166vw; padding: 5.833vw 0 5.833vw 4.722vw; box-sizing: border-box; display: flex; align-items: center; justify-content: space-between; } 
+.slide-banner.bank-product_main .slide-banner_list.free .ico_cont { background-image: url(../img_v2/bank-product_main-banner_free01.png); height: inherit; } 
+.slide-banner.bank-product_main .slide-banner_list.free .slide-banner_cover { height: 44.444vw; } 
+.bank-product_join_text { color: #fff; display: flex; flex-direction: column; justify-content: space-between; height: 100%; } 
+.bank-product_join_header_title { font-size: 0.937rem; } 
+.bank-product_join_name { font-size: 1.75rem; font-weight: 600; } 
+.bank-product_join_sub-title { font-size: 0.875rem; } 
+.bank-product_join_value { font-size: 1.312rem; font-weight: 600; margin-top: 6px; } 
+.bank-product_join .ico_cont { width: 38.611vw; height: 35.277vw; background-image: url(../img_v2/bank-product_main-banner.png); } 
+
+/* 대출 */
+.funds-loan { margin-top: -35.277vw; padding-top: 30vw } 
+.funds-loan_content { padding: 0 5.555vw; } 
+.funds-loan_header { margin-bottom: 5.555vw; } 
+.funds-loan_title { color: #000; font-weight: 600; font-size: 1.25rem; } 
+.funds-loan_sub-title { display: flex; align-items: center; } 
+.funds-loan_sub-title h2 { font-size: 1.125rem; font-weight: 600; } 
+.funds-loan_sub-title_left { display: flex; align-items: center; } 
+.funds-loan_sub-title_left .ico_cont { width: 1.944vw; height: 3.055vw; background: url(../img_v2/right_bold.svg) no-repeat center / contain; margin-left: 2.777vw; } 
+.funds-loan_sub-title_right { margin-left: auto; font-size: 1.125rem; color: #2dbdb6; font-weight: 600; } 
+.funds-loan_desc { font-size: 0.937rem; margin-top: 2.5vw; margin-bottom: 11.111vw; } 
+.funds-loan_desc_value { color: #979797; font-size: 0.875rem; } 
+.funds-loan .slide-banner .ico_cont { width: 88.888vw; height: 26.944vw; background: url(../img_v2/kt_funds-loan.png) no-repeat center / contain; } 
+
+/* active */
+.tab-menu_nav.active .tab-menu_name { color: #000; } 
+.bank-product-wrap .swiper-pagination { position: static; margin-top: 2.777vw; } 
+.bank-product-wrap .swiper-pagination-bullet-active { background-color: #2dbdb6; } 
+
+
+
+/* ###### SB037_금융상품관_KIP010 ###### */
+.loan-detail-info_content { padding: 0 5.555vw; margin-top: 2.777vw; margin-bottom: 12.5vw; } 
+.loan-detail-header_title { color: #222; font-size: 1.125rem; font-weight: 600; margin-bottom: 2.5vw; } 
+.loan-detail-header_price { color: #2dbdb6; font-weight: 600; font-size: 1.937rem; margin-bottom: 5.555vw; } 
+.loan-detail-box { background-color: #f4f5f7; padding: 5vw 6.944vw; border-radius: 4.166vw; display: flex; align-items: center; } 
+.loan-detail-desc.left { padding-right: 15px; position: relative; } 
+.loan-detail-desc.left::before { content: ''; position: absolute; right: 0; top: 50%; transform: translateY(-50%); width: 1px; height: 11.111vw; background-color: #cecece; } 
+.loan-detail-desc.right { padding-left: 15px; } 
+.loan-detail-desc_title { color: #5a5757; font-size: 1.062rem; margin-bottom: 0.833vw; } 
+.loan-detail-desc_value { font-size: 1.187rem; font-weight: 600; } 
+
+/* 납입내역 */
+.payment-history_content { padding: 0 5.555vw; } 
+.payment-history_header { margin-bottom: 5.555vw; } 
+.payment-history_header_title { font-size: 1.25rem; font-weight: 600; } 
+
+.payment-history-info + .payment-history-info { border-top: 1px solid #c1c1c1; padding-top: 11.319vw; } 
+.payment-history-info:not(:last-child) { padding-bottom: 13.888vw; } 
+.payment-history_sub-title { margin-bottom: 3.611vw; } 
+.payment-history_sub-title h2 { font-size: 1.437rem; font-weight: 600; color: #2dbdb6; } 
+.payment-history-main_list:not(:last-child) { margin-bottom: 8.611vw; } 
+.payment-history-main_date-wrap { display: flex; align-items: center; } 
+.payment-history-main_date { color: #414141; font-size: 0.875rem; } 
+.payment-history-main_date.left { padding-right: 2.222vw; position: relative; font-weight: 600; } 
+.payment-history-main_date.right { padding-left: 2.222vw; } 
+.payment-history-main_date-wrap { margin-bottom: 2.222vw; } 
+.payment-history_value { display: flex; justify-content: space-between; font-size: 1.125rem; } 
+.payment-history_account { color: #414141; font-weight: 600; } 
+
+/* 납입내역 없을때 */
+.payment-history.off .payment-history-info { display: none; } 
+.payment-history-info-none { height: 70vw; box-sizing: border-box; display: none; align-items: center; justify-content: center; } 
+.payment-history.off .payment-history-info-none { display: flex; } 
+.payment-history-info-none_cnt .emoji { margin: 0 auto; } 
+.payment-history-info-none_txt { margin-top: 5vw; color: #9e9e9e; font-size: 1.312rem; } 
+
+
+/* 버튼 */
+/* 공통 - semo_style 로 옮길듯 */
+.btn_pd-20-wrap { padding: 0 5.555vw; } 
+button.btn_bdrs-40 { border-radius: 11.111vw; border: 1px solid #000; width: 100%; height: 13.888vw; } 
+
+.bank-product-wrap .bot_fix { bottom: 7.5vw; } 
+.bank-product-wrap button.btn_bdrs-40 { border-color: #2dbdb6; font-size: 1.187rem; background-color: #fff; } 
+.bank-product-wrap .btn_txt { color: #2dbdb6; } 
+
+/* 근로계약서 작성하기 팝업 choicebox */
+.popup_bottom_con.choicebox span.is-active { background-color: #f3fffe; border-color: #19958f; color: #19958f; } 
+.popup_bottom_con.choicebox span.is-active i.choice { background-image: url(../img_v2/check_40-27_kt.svg); } 
+
+
+/* KIT01A */
+.kit01a { background-color: #2dbdb6; width: 100vw; height: 100vh; } 
+.kit01a_inner { background: url(../img_v2/kit01a_bg.png) center center no-repeat; background-size: 100vw 170.684vw; width: 100vw; height: 100%; position: relative; } 
+.kit01a_btn_wrap { position: absolute; /* bottom: 25.2777vw; */
+ padding: 0 5.555vw; bottom: 0; margin-bottom: 8.055vw; width: calc(100% - 11.111vw); } 
+.kit01a_btn_wrap .type_B { margin-bottom: 11.944vw; } 
+.kit01a_btn_wrap .toi_btn { margin-left: auto; } 
+.kit01a_btn_wrap .toi_btn .txt01 { color: #fff; } 
+
+
+/****************************** [SB140]_IEP010 ******************************/
+.jehyu-promotion .benefit .banner01 { background-image: url(../img_v2/jehyu-promotion_banner_kt.png); } 
+
+/* ### 코치마크 ### */
+/* ### KHT00A main ### */
+.coach-mark .kht00a .mark01 .cover i { background-image: url(../img_v2/kht00a_1.png); } 
+.coach-mark .kht00a .mark02 .cover i { background-image: url(../img_v2/kht00a_2.png); } 
+.coach-mark .kht00a .mark03 .cover i { background-image: url(../img_v2/kht00a_3.png); } 
+/* ### KHT00B 달력 ### */
+.coach-mark .kht00b .mark01 .cover i { background-image: url(../img_v2/kht00b_1.png); } 
+.coach-mark .kht00b .mark02 .cover i { background-image: url(../img_v2/kht00b_2.png); } 
+/* ### KHT00B 진단 ### */
+.coach-mark .kht00c .mark01 .cover i { background-image: url(../img_v2/kht00c_1.png); } 
+.coach-mark .kht00c .mark02 .cover i { background-image: url(../img_v2/kht00c_2.png); } 
+.coach-mark .swiper-pagination-bullet-active { width: 5.555vw; border-radius: 0.972vw; background-color: #2dbdb6; } 
+.coach-mark .cycle_close_btn i { width: 13.888vw; height: 13.888vw; background-image: url(../img_v2/rd_close_kt.svg); } 
+
+/* 메인화면 */
+.semo_logo i.ico_cont { background-image: url(../img_v2/kt_newlogo_gray.png); width: 20.833vw; height: 4.722vw; background-size: contain; } 
+.cr_toplist .foot_logo i { background-image: url(../img_v2/kt_newlogo_gray.png); width: 20.833vw; height: 4.722vw; background-size: contain; } 
+
+/* CSE00C 내정보 */
+.cse00c .list_wrap .list .cnt .text.code span.connect { color: #2dbdb6; } 
+
+/* 제휴 API 프리미엄 서비스 카드 */
+.premium-infinite .premium-introduce_table .ico_cont { background-image: url(../img_v2/bg_kt_premium_benefit_table.png); } 
+
+/* 프리미엄 서비스 소개 코치마크 */
+.coach-mark .kht00a .smpk_mark01 .cover i { background-image: url(../img_v2/coachMark_smpk_kt_01.png); } 
+.coach-mark .kht00a .smpk_mark02 .cover i { background-image: url(../img_v2/coachMark_smpk_kt_02.png); } 
+.coach-mark .kht00a .smpk_mark03 .cover i { background-image: url(../img_v2/coachMark_smpk_kt_03.png); } 
+.coach-mark .kht00a .smpk_mark04 .cover i { background-image: url(../img_v2/coachMark_smpk_kt_04.png); } 
+
+/* 프로모션 출석체크 이벤트 */
+.jehyu-promotion.attendance_check .benefit-content .ico_cont { background-image: url(../img_v2/card_kt_premiumService.png); } 
+.jehyu-promotion.attendance_check .table_premium-service .ico_cont { background-image: url(../img_v2/table_kt_premiumService.png); } 
+
+/* 체크박스 2뎁스 */
+.multi-check_wrap .checkboxAll input[type="checkbox"]:checked { background-image: url(../img_v2/check-bg_42x42_kt.svg); } 
+.checkboxEach .checkbox-item .checkbox input[type="checkbox"]:checked { background-image: url(../img_v2/check_42x42_kt.svg); } 

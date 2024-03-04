@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css_v2/semo_style.css">
+    <!-- <link rel="stylesheet" href="../../css_v2/ione_style.css"> -->
+  <script src="../../js_v2/jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".minus").click(function(){
+                $(this).parent().fadeOut(300);
+            });
+        });
+    </script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="title b_gray">
+        <div class="title_left">
+            <i class="ico_cen left_arrow"></i>
+        </div>
+        <span class="title_text">급여 작성하기</span>
+        <div class="title_right">
+            <i class="ico_cen info"></i>
+        </div>
+    </div>
+    <div class="basic_wrapper b_gray">
+      
+        <div class="padding_wrapper20 pb_btm_button set_mgt10">
+            <div class="pay_write_staff_title">
+                <b>김세모</b>
+                <b class="set_font28">2,000,000원</b>
+            </div>
+            <div class="pay_write_object set_mgt36">
+                <span>
+                    <b>근로내역</b>
+                    <div class="pay_write_object_plus">
+                        <i class="ico_cen plus_gray"></i>
+                        <span>근로일자 추가</span>
+                    </div>
+                </span>
+            </div>
+            <div class="section_content_wrap state set_mgt14">
+                <div class="section_content active">
+                    <input type="text" id="text1" required="required">
+                    <label for="text1">근로일수</label>
+                </div>
+                <div class="section_content">
+                    <input type="number" id="text2" required="required">
+                    <label for="text2">총 근로시간</label>
+                </div>
+
+            </div>
+            <div class="pay_write_object set_mgt36">
+                <span>
+                    <b>지급항목</b>
+                    <div class="pay_write_object_plus">
+                        <i class="ico_cen plus_gray"></i>
+                        <span>지급항목 추가</span>
+                    </div>
+                </span>
+            </div>
+            <div class="section_content_wrap total set_mgt14">
+                <div class="section_content active">
+                    <input type="text" id="text1" required="required">
+                    <label for="text1">기본급</label>
+                    <i class="ico_cen minus" id="minus"></i>
+                </div>
+                <div class="section_content">
+                    <input type="number" id="text2" required="required">
+                    <label for="text2">성과급</label>
+                    <i class="ico_cen minus" id="minus2"></i>
+
+                </div>
+                <div class="section_content">
+                    <input type="number" id="text3" required="required" value="123123123">
+                    <label for="text3">야근 / 초과</label>
+                    <i class="ico_cen minus" id="minus3"></i>
+                </div>
+                <div class="section_total_pay">
+                    <span>
+                        지급합계 :
+                        <b>2,000,000</b>
+                    </span>
+                </div>
+            </div>
+            <div class="pay_write_object set_mgt36">
+                <span>
+                    <b>공제항목</b>
+                    <div class="pay_write_object_plus">
+                        <i class="ico_cen plus_gray"></i>
+                        <span>공제항목 추가</span>
+                    </div>
+                </span>
+            </div>
+            <div class="section_content_wrap total set_mgt14">
+                <div class="section_content">
+                    <input type="text" id="text1" required="required">
+                    <label for="text1">기본급</label>
+                </div>
+                <div class="section_content">
+                    <input type="number" id="text2" required="required">
+                    <label for="text2">성과급</label>
+                </div>
+                <div class="section_content">
+                    <input type="number" id="text3" required="required" value="123123123">
+                    <label for="text3">야근 / 초과</label>
+                </div>
+                <div class="section_total_pay">
+                    <span>
+                        지급합계 :
+                        <b>2,000,000</b>
+                    </span>
+                </div>
+            </div>
+            <!-- <div class="active_button set_mgt14 b_d_gray">
+                <i class="ico_cen plus_gray"></i>
+                <span>비과세 수당 추가</span>
+            </div> -->
+            <div class="pay_write_req_con set_mgt31">
+                <span class="pay_write_req_title">직원 개인 급여 메모</span>
+                <textarea placeholder="근무시간, 휴가 내용을 메모해 주세요."></textarea>
+            </div>
+        </div>
+        <div class="btm_button bottom_fix">
+            <span class="c_green">저장하기</span>
+        </div>
+    </div>
+</body>
+
+</html>

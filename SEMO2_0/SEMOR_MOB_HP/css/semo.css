@@ -1,0 +1,285 @@
+@charset "utf-8"; 
+
+/* reset - Jin */
+.pointColor {color: #2965ff}
+
+/* Base */
+.defTit {font-size: 3.2rem; font-weight: 600}
+.defTit p + p {margin-top: 5px}
+.subTit {font-size: 2rem; font-weight: 500}
+.defTxt {font-size: 1.133rem}
+.inner {width: initial; max-width: 1200px; margin: 0 auto; padding: 0 20px}
+.btnMove {display: block; padding: 0 20px; height: 70px; line-height: 70px; text-align: center; font-size: 22px; background: #ffd600; color: #111; font-weight: 600}
+.btnTop {opacity: 0; visibility: hidden; position: fixed; bottom: 400px; right: 100px; width: 66px; transition: .35s; z-index: 10}
+.btnTop.active {opacity: 1; visibility: visible}
+
+/* Header */
+.wrapper .header {position: fixed; top: 0; left: 0; right: 0; z-index: 10; background: #111}
+.wrapper .header .inner {display: flex; align-items: center; justify-content: space-between; height: 70px}
+.wrapper .header nav {height: 100%}
+.wrapper .header nav :is(ul, li, a) {height: 100%}
+.wrapper .header nav ul li {display: inline-block}
+.wrapper .header nav ul li:first-child {margin-left: -10px}
+.wrapper .header nav ul li a {display: block; padding: 0 10px; line-height: 70px; font-size: 1.066rem; color: #fff}
+
+/* Header Active */
+.header.active .inner {background: rgba(0,0,0,0.4)}
+.header nav ul li.active a {color: #17bf98}
+
+/* 플로팅 버튼 */
+.areaBtmFixed .btnMove {width: 290px}
+.areaBtmFixed .btnMove.consult {position: fixed; bottom: 184px; right: 100px; height: 70px; line-height: 70px; border-radius: 60px; font-size: 24px; background: #12997a; color: #fff; z-index: 1}
+.areaBtmFixed .btnMove.news {position: fixed; bottom: 100px; right: 100px; height: 70px; line-height: 70px; border-radius: 60px; font-size: 24px; z-index: 1}
+
+/* secVisual */
+.secVisual {position: relative; margin-top: 70px}
+.secVisual .visualImg {height: calc(100vh - 140px); background: url(../img/visual.jpg) no-repeat center / cover}
+.secVisual .inner {position: absolute; top: 0; left: 0; right: 0; bottom: 0; height: inherit}
+.secVisual .visualTxt {margin-top: 50px}
+.secVisual .visualTxt p {width: fit-content; text-align: center; color: #fff; font-size: 20px}
+.secVisual .visualTxt img {width: 250px; margin-top: 20px}
+
+/* secCount */
+.secCount {padding: 50px 0; background: #17bf98; text-align: center; color: #fff}
+.secCount .odometer2 {font-size: 5.333rem; font-weight: 600}
+.secCount p {margin-top: 20px; font-size: 1.866rem}
+
+/* secPromotion */
+.secPromotion {padding-top: 130px}
+.secPromotion .areaTit {text-align: center}
+.secPromotion .areaTit .subTit {margin-bottom: 12px; font-size: 1.333rem}
+.secPromotion .areaTit .defTit {font-size: 2.666rem}
+.secPromotion .areaVideo {margin-top: 55px; border-radius: 16px; overflow: hidden; border: 1px solid #aaa; aspect-ratio: 16/9}
+.secPromotion .areaVideo video {max-width: 100%; cursor: pointer}
+
+/* secIntro */
+[class^="secIntro"] {padding: 130px 0}
+[class^="secIntro"] .inner {display: flex; justify-content: space-between; align-items: center; max-width: 900px}
+[class^="secIntro"]:nth-child(odd) {background: #F8F8F8}
+[class^="secIntro"]:nth-child(odd) > img {margin-right: -25px}
+[class^="secIntro"]:nth-child(even) .areaTit {order: 2}
+[class^="secIntro"]:nth-child(even) img {margin-left: -25px}
+[class^="secIntro"] .areaTit .defTit {font-size: 2.666rem}
+[class^="secIntro"] .areaTit .subTit {margin-bottom: 12px; font-size: 1.333rem}
+[class^="secIntro"] .areaTit .subTit p + p {margin-top: 4px}
+[class^="secIntro"] .areaTit .defTxt {margin: 22px 0 12px}
+
+/* secIntro01 */
+.secIntro01 .inner {display: block}
+.secIntro01 .inner .areaTit {text-align: center}
+.secIntro01 .serviceTable {max-width: 1160px; margin: 77px auto 0}
+.secIntro01 .serviceTable ul li {display: flex; align-items: center; text-align: center}
+.secIntro01 .serviceTable ul li + li {margin-top: 20px}
+.secIntro01 .serviceTable ul li :is(.basic, .premium) {flex: 1; padding: 15px; border-radius: 10px}
+.secIntro01 .serviceTable ul li:first-child :is(.basic, .premium) {padding: 0; background: none}
+.secIntro01 .serviceTable ul li .basic {background: #fff}
+.secIntro01 .serviceTable ul li .premium {background: #2965FF; color: #fff}
+.secIntro01 .serviceTable ul li .plus {width: 26px; margin: 0 16px}
+.secIntro01 .serviceTable ul li p {font-size: 1.333rem}
+.secIntro01 .serviceTable ul li p + p {margin-top: 5px}
+.secIntro01 .serviceTable ul li:first-child p {font-size: 1.2rem}
+
+/* secIntro02 */
+.secIntro02 .inner {display: block; text-align: center}
+.secIntro02 img {margin-top: 130px}
+
+/* secIntro03 */
+.secIntro03 .areaTit .defTxt {margin: 22px 0 12px}
+
+/* #news */
+#news {display: flex; flex-direction: column; justify-content: space-between; min-height: 100vh}
+
+/* secNewsVisual */
+.secNewsVisual {margin-top: 70px}
+.secNewsVisual .inner {max-width: 1160px; padding: 50px 20px; background: #17bf98; text-align: center; color: #fff}
+.secNewsVisual .inner .areaTxt {max-width: 500px; margin: 0 auto}
+.secNewsVisual .defTit {font-size: 32px}
+.secNewsVisual .defTxt {margin-top: 20px; font-size: 1.6rem}
+
+/* secNewsInfo */
+.secNewsInfo {padding: 60px 0}
+.secNewsInfo .defTit {font-size: 2rem}
+.secNewsInfo .areaContent {max-width: 500px; margin: 0 auto}
+.secNewsInfo .txtWrap {margin-top: 26px}
+.secNewsInfo .txtWrap .defTxt {margin-top: 5px; font-size: 1.2rem}
+.secNewsInfo .btnMove {margin-top: 40px; border-radius: 8px}
+
+/* main08 */
+.main08 .areaBtn { padding: 0 20px } 
+.main08 .areaBtn .btnMove.consult { margin: 100px auto 0; background: #12997a; color: #fff } 
+
+/* 메인 08 */
+.main08 { position: relative; width: 100%; padding: 124px 0; background-color: #f8f8f8; } 
+.main08 .inner { position: relative; padding: 0 20px; text-align: center; } 
+.main08 .inner .defTit span {display: block; font-size: 2.666rem } 
+.main08 .inner h2 { font-size: 40px; font-weight: 100; color: #222; letter-spacing: -3px; margin-bottom: 5px; margin-bottom: 15px; } 
+.main08 .inner h2 strong { font-weight: 600; color: var(--font_sig); } 
+.main08 .inner .count_box { font-size: 19px; font-weight: 400; color: #909090; letter-spacing: -0.5px; display: flex; align-items: center; justify-content: center; margin-bottom: 30px; } 
+.main08 .inner .count_box span { font-size: 26px; font-weight: 600; color: #222222; display: inline-block; width: fit-content; border: 1px solid #cecece; border-radius: 3px; padding: 6px 5px; background-color: #fff; text-align: center; -webkit-box-shadow: 3px 3px 0 0 #cecece; box-shadow: 3px 3px 0 0 #cecece; } 
+.main08 .inner .count_box span:nth-of-type(1) { margin: 0 5px 0 20px; } 
+.main08 .inner .count_box strong { font-size: 34px; font-weight: 600; color: #222222; display: inline-block; margin: 0 10px; } 
+.main08 .inner .con_box { display: flex; align-items: center; justify-content: space-between; gap: 50px; margin-bottom: 35px; } 
+.main08 .inner .con_box .slide_box { position: relative; width: 45%; border-radius: 8px; padding: 40px 80px 25px; box-sizing: border-box; background-color: #fff; -webkit-box-shadow: 0 0 15px 3px rgba(0,0,0,0.1); box-shadow: 0 0 15px 3px rgba(0,0,0,0.1); } 
+.main08 .inner .con_box .slide_box .swiper-container3 { width: 100%; height: 415px; overflow: hidden; } 
+
+/* 메인 08 slider_s1 */
+.main08 .swiper-container3 .swiper-slide.s1 h3 { font-size: 24px; font-weight: 600; color: #222222; margin-bottom: 24px; } 
+.main08 .swiper-container3 .swiper-slide.s1 h3 img { margin-right: 10px; } 
+.main08 .swiper-container3 .swiper-slide.s1 ol { text-align: left; } 
+.main08 .swiper-container3 .swiper-slide.s1 ol li { display: flex; align-items: center; margin-bottom: 15px; } 
+.main08 .swiper-container3 .swiper-slide.s1 ol li span { font-size: 11px; font-weight: 600; color: #3fdab5; display: inline-block; margin-right: 9px; } 
+.main08 .swiper-container3 .swiper-slide.s1 ol li strong { font-size: 14px; font-weight: 600; color: #222222; letter-spacing: -0.5px; display: inline-block; margin-right: 10px; } 
+.main08 .swiper-container3 .swiper-slide.s1 ol li p { font-size: 13.5px; font-weight: 400; color: #646464; letter-spacing: -0.5px; } 
+
+/* 메인 08 slider_s2 */
+.main08 .swiper-container3 .swiper-slide.s2 h3 { font-size: 24px; font-weight: 600; color: #222222; margin: 20px 0 38px; } 
+.main08 .swiper-container3 .swiper-slide.s2 h3 img { margin-right: 10px; } 
+.main08 .swiper-container3 .swiper-slide.s2 ol {width: fit-content; margin: 0 auto;  text-align: left;} 
+.main08 .swiper-container3 .swiper-slide.s2 ol li {display: flex; font-size: 17px; font-weight: 300; color: #222222; letter-spacing: -0.5px; margin-bottom: 18px; } 
+.main08 .swiper-container3 .swiper-slide.s2 ol li .areaImg {width: 28px; text-align: center; margin-right: 15px}
+.main08 .swiper-container3 .swiper-slide.s2 ol li .areaTxt {margin-top: 3px}
+.main08 .swiper-container3 .swiper-slide.s2 ol li strong { font-weight: 600; } 
+.main08 .swiper-container3 .swiper-slide.s2 ol li b { font-weight: 600; color: #f45959; } 
+
+/* 메인 08 - 페이저 */
+.main08 .swiper-pagination3 { position: absolute; left: 0; bottom: 20px; width: 100%; z-index: 1;} 
+.main08 .swiper-pagination3 .swiper-pagination-bullet { display: inline-block; width: 25px; height: 25px; background: url(../img/slider_pager_off.png) no-repeat center center; background-size: contain; opacity: 1; margin: 0 5px; } 
+.main08 .swiper-pagination3 .swiper-pagination-bullet.swiper-pagination-bullet-active { background: url(../img/slider_pager_on.png) no-repeat center center; background-size: contain; } 
+
+/* 메인 08 - 네비게이션 */
+.main08 .swiper-button-next3::after, .main08 .swiper-button-prev3::after { display: none; } 
+.main08 .swiper-button-next3 { position: absolute; top: 50%; right: 5%; transform: translateY(-50%); width: 25px; height: 37px; background: url(../img/slider_next03_on.png) no-repeat center center; background-size: contain; outline: none; cursor: pointer; z-index: 1;} 
+.main08 .swiper-button-prev3 { position: absolute; top: 50%; left: 5%; transform: translateY(-50%); width: 25px; height: 37px; background: url(../img/slider_prev03_on.png) no-repeat center center; background-size: contain; outline: none; cursor: pointer; z-index: 1;} 
+.main08 .swiper-button-next3.swiper-button-disabled { background: url(../img/slider_next03_off.png) no-repeat center center; background-size: contain; pointer-events: none} 
+.main08 .swiper-button-prev3.swiper-button-disabled { background: url(../img/slider_prev03_off.png) no-repeat center center; background-size: contain; pointer-events: none} 
+
+/* 메인 08 - 테이블박스 */
+.main08 .inner .con_box .table_box { width: 55%; height: 480px; overflow: hidden; } 
+.main08 .inner .con_box .table_box .table_top { display: flex; align-items: center; border-top: 2px solid #aaaaaa; } 
+.main08 .inner .con_box .table_box .table_top li { font-size: 17px; font-weight: 400; color: #222222; background-color: #f5f5f5; border-bottom: 1px solid #bcbcbc; padding: 15px 0; } 
+.main08 .inner .con_box .table_box .table_top li:nth-of-type(1) { width: 17%; } 
+.main08 .inner .con_box .table_box .table_top li:nth-of-type(2) { width: 60%; } 
+.main08 .inner .con_box .table_box .table_top li:nth-of-type(3) { width: 23%; } 
+.main08 .inner .con_box .table_box .swiper-container4 { width: 100%; height: 467px; overflow: hidden; } 
+.main08 .inner .con_box .table_box .swiper-container4 ul li { width: 100%; display: flex; align-items: flex-end; } 
+.main08 .inner .con_box .table_box .swiper-container4 ul li span { border-bottom: 1px solid #bcbcbc; padding: 15px 15px; font-size: 15px; font-weight: 300; color: #4c4c4c; display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; } 
+.main08 .inner .con_box .table_box .swiper-container4 ul li span:nth-of-type(1) { width: 17%; } 
+.main08 .inner .con_box .table_box .swiper-container4 ul li span:nth-of-type(2) { width: 60%; } 
+.main08 .inner .con_box .table_box .swiper-container4 ul li span:nth-of-type(3) { width: 23%; } 
+.main08 .inner .con_box .table_box .swiper-container4 ul li span p { width: 80%; font-size: 15px; font-weight: 300; color: #4c4c4c; vertical-align: middle; display: inline-block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; } 
+
+/* 메인 08 - 버튼박스 */
+.main08 .inner .btn_box { display: flex; align-items: center; justify-content: center; } 
+.main08 .inner .btn_box a, .main08 .inner .btn_box button { width: 399px; font-size: 22px; font-weight: 500; letter-spacing: -2px; line-height: 67px; text-align: center; border-radius: 8px; display: inline-block; } 
+.main08 .inner .btn_box button { background-color: var(--bg_sig); color: #fff; margin-right: 25px; border: none; } 
+.main08 .inner .btn_box button a { color: #fff; } 
+.main08 .inner .btn_box a { color: var(--font_sig); border: 1px solid var(--bg_sig); } 
+
+/* 트렌지션 */
+.main08 .inner > h2 { animation-delay: 0.1s; } 
+.main08 .inner > .count_box { animation-delay: 0.25s; } 
+.main08 .inner > .con_box { animation-delay: 0.4s; } 
+
+/* 새글 스킨 (latest) */
+.lat_main08 table { width: 100%; border-collapse: collapse;} 
+.main08 .scrollTopWrap {width: calc(100% - 10px)}
+.main08 .scrollTopWrap table thead tr th { font-size: 15px; font-weight: 400; color: #222222; background-color: #e7e7e7; border-bottom: 1px solid #bcbcbc; padding: 11px 0; border-top: 2px solid #5c5c5c; text-align: center;} 
+.main08 .scrollTopWrap table thead tr th:nth-of-type(1) { width: 40%; } 
+.main08 .scrollTopWrap table thead tr th:nth-of-type(2) { width: 60%; } 
+.lat_main08 table tbody tr td { font-size: 14px; font-weight: 300; color: #4c4c4c; border-bottom: 1px solid #bcbcbc; padding: 12px 6px; } 
+.lat_main08 table tbody tr td:nth-child(1) {width: 40%}
+.lat_main08 table tbody tr td:nth-child(2) {width: 60%; text-align: left}
+/*
+.lat_main08 table tbody tr td:nth-of-type(2) { display: flex; align-items: center; justify-content: center; } 
+.lat_main08 table tbody tr td:nth-of-type(2) p { width: 70%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; } 
+*/
+.lat_main08 .scrollWrap { display: block; width: 100%; height: 434px; overflow-y: scroll; } 
+.lat_main08 .scrollWrap::-webkit-scrollbar { width: 10px; } 
+.lat_main08 .scrollWrap::-webkit-scrollbar-thumb { background-color: #4d4d4d; border-radius: 10px; background-clip: padding-box; border: 2px solid transparent; } 
+.lat_main08 .scrollWrap::-webkit-scrollbar-track { background-color: #e7e7e7; border-radius: 10px; box-shadow: inset 0px 0px 5px white; } 
+.lat_main08 table tbody tr td .new_icon { display: inline-block; width: 32px; line-height: 12px; font-size: 0.5em; color: #fff; background: #f92b2b; text-align: center; border-radius: 10px; margin-left: 2px; font-weight: 400; vertical-align: middle}
+
+/* footer */
+.footer {padding: 46px 0; background: #343f55}
+.footer .snsList {display: flex; align-items: center; margin-bottom: 40px}
+.footer .snsList li + li {margin-left: 10px}
+.footer .info .termsWrap {margin-bottom: 14px}
+.footer .info .termsWrap :is(a, .divide) {color: #949EB2; font-size: 0.933rem}
+.footer .info .termsWrap .terms02 {color: #fff}
+.footer .info .infoDetail p {color: #949eb2; font-size: 0.933rem}
+.footer .info .infoDetail p + p {margin-top: 6px}
+
+/* 미디어쿼리 */
+@media screen and (max-width: 536px) {
+    .main08 .swiper-button-next3 {display: none}
+    .main08 .swiper-button-prev3 {display: none}
+}
+
+@media screen and (max-width: 767px) {
+    .btnTop {bottom: 250px; right: 20px;}
+    .areaBtmFixed .btnMove.consult {right: 20px; bottom: 100px; font-size: 18px; height: 50px; line-height: 50px; width: 230px}
+    .areaBtmFixed .btnMove.news {right: 20px; bottom: 40px; font-size: 18px; height: 50px; line-height: 50px; width: 230px}
+    
+    /* secPromotion */
+    .secPromotion .areaTit .defTit {font-size: 28px}
+    .secPromotion .areaTit .defTit span {display: block}
+
+    [class^="secIntro"] .areaTit .defTit {font-size: 28px}
+    #moMain [class^="secIntro"] .areaTit .subTit {font-size: 18px}
+    [class^="secIntro"] .areaTit .defTit span {display: block}
+    
+    .secIntro01 .serviceTable ul li p {font-size: 18px}
+
+    /* main08 */
+    .main08 {padding: 60px 0}
+    .main08 .areaBtn .btnMove.consult { height: 60px; line-height: 60px; margin-top: 50px; font-size: 20px } 
+    .main08 .inner .defTit span {font-size: 28px}
+    .main08 .inner .con_box .slide_box {padding: 40px 20px 80px}
+    .main08 .swiper-container3 .swiper-slide.s1 h3 {font-size: 20px}
+    .main08 .swiper-container3 .swiper-slide.s1 ol {width: fit-content; margin: 0 auto}
+    .main08 .swiper-container3 .swiper-slide.s1 ol li {align-items: flex-start}
+    .main08 .swiper-container3 .swiper-slide.s1 ol li strong {flex: 0 0 70px}
+    .main08 .swiper-container3 .swiper-slide.s2 h3 {font-size: 20px}
+    .main08 .inner .con_box .table_box {height: 319px}
+    .lat_main08 .scrollWrap {height: 271px}
+}
+
+@media (min-width: 768px) {
+    .secVisual .visualTxt p {font-size: 2.343vw}
+    .secVisual .visualTxt img {width: 32.552vw}
+}
+
+@media screen and (max-width: 992px) {
+    .secIntro02 .inner .areaTit {text-align: center}
+    
+    [class^="secIntro"] .inner {display: block; text-align: center}
+    [class^="secIntro"] .areaTit {width: fit-content; margin: 0 auto 23px; text-align: left}
+    [class^="secIntro"]:nth-child(odd) img {margin-right: 0}
+    [class^="secIntro"]:nth-child(even) img {margin-left: 0}
+
+    .secNewsVisual .inner .areaTxt .defTit span {display: block}
+    .secNewsVisual .defTxt {font-size: 18px}
+
+    .secNewsInfo .areaContent .defTit {font-size: 26px}
+    .secNewsInfo .txtWrap .defTxt {font-size: 16px}
+}
+
+@media screen and (max-width: 1160px){
+    .main08 .inner .defTit em {display: block}
+    .main08 .inner .con_box {display: block}
+    .main08 .inner .con_box .slide_box {width: initial; max-width: 700px; margin: 0 auto; margin-bottom: 60px}
+    .main08 .inner .con_box .table_box {width: initial; max-width: 700px; margin: 0 auto}
+}
+
+/* 애니메이션 */
+@-webkit-keyframes twinkle { 
+    0% { opacity: 0; transition: 0.1s; transform: scale(0.8); } 
+    100% { opacity: 1; transition: 0.1s; transform: scale(1); } 
+}
+
+@keyframes slideRTL { 
+    0% { opacity: 0; visibility: hidden; transform: translateX(-50px) } 
+    100% { opacity: 1; visibility: visible; transform: translateX(0) } 
+}
+
+#popIframe {position: fixed; display: none; top: 0; left: 0; width: 100%; height: 100vh; z-index: 9999}

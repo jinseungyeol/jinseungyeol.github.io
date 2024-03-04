@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="54.438" height="66.807">
+    <defs>
+        <style>
+            .cls-2{stroke:#000;fill:#fcfcfc;stroke-width:3px}
+        </style>
+    </defs>
+    <g id="그룹_57660" data-name="그룹 57660" transform="translate(-69.61 -2875.01)">
+        <path id="합치기_33" data-name="합치기 33" d="M6304 17658.945c0-5.494 7.192-9.945 16.07-9.945 7.065 0 13.063 2.818 15.217 6.74h8.174v-3.549l11.228 6.484-11.228 6.482v-3.547h-7.905c-1.882 4.2-8.1 7.275-15.485 7.275-8.877.002-16.071-4.449-16.071-9.94z" transform="translate(-6233.142 -14728.32)" style="stroke:#000;fill:#ff6d21;stroke-width:2.5px"/>
+        <g id="그룹_57650" data-name="그룹 57650" transform="translate(75.696 2876.51)">
+            <path id="패스_45775" data-name="패스 45775" class="cls-2" d="M326.667 609.32a6.3 6.3 0 1 1-6.3-6.3 6.3 6.3 0 0 1 6.3 6.3z" transform="translate(-309.138 -603.023)"/>
+            <path id="사각형_13472" data-name="사각형 13472" class="cls-2" d="M5.385 0h11.694a5.385 5.385 0 0 1 5.385 5.385V18.1a5.384 5.384 0 0 1-5.384 5.384H5.385A5.385 5.385 0 0 1 0 18.1V5.385A5.385 5.385 0 0 1 5.385 0z" transform="translate(0 16.679)"/>
+            <path id="패스_45776" data-name="패스 45776" class="cls-2" d="M327.011 626.245v30.626h-13.274v-30.626" transform="translate(-309.142 -602.759)"/>
+            <path id="선_1874" data-name="선 1874" transform="translate(11.006 36.013)" style="fill:none;stroke-width:3px;stroke:#000" d="M0 0v18.099"/>
+        </g>
+    </g>
+</svg>

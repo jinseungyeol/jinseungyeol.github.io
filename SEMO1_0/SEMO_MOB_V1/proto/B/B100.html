@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../../css/semo_cont.css">
+  <link rel="stylesheet" href="../../css/semo_cont_ibk.css" />
+  <title>SEMO</title>
+</head>
+<style>
+    .info_detail_list{transition: 0.2s ease-in-out;}
+
+  .info_detail_list:active{transform: scale(0.95);}
+</style>
+<body>
+  <div class="new_content">
+
+    <div class="cont_bg">
+      
+      <!-- 상단 타이틀 -->
+      <div class="title">전체계좌</div>
+      <!-- //상단 타이틀 -->
+
+      <!-- 상단 새로고침 -->
+      <!-- 2020-07-23 refresh_box 추가 -->
+      <div class="refresh_box set_cen_cen">
+        <span class="refresh_date">18.12.12  13:00</span>
+        <a class="btn_refresh_t set_cen_cen"> <!--20200612 클래스 btn_refresh -> btn_refresh_t로 변경-->
+          <i class="ico_cen"></i>
+          <em class="new_blind">상단 새로고침 버튼</em>
+        </a> 
+      </div>
+      <!-- 2020-07-23 refresh_box 추가 -->
+      <!-- 상단 새로고침 -->
+
+      <div class="wrap account"> 
+        <!-- 계좌 목록 -->
+        <div class="info_detail_list_wrap">
+            <!-- 이체계좌 목록 총계-->
+          <div class="info_detail_total_list set_mgb13"> 
+            <p class="set_cen_cen">
+              <i class="ico_cen info_mark bankbook"></i>
+              <span class="account_info set_cent_le">입출금계좌 <em class="account_number">1</em>개</span>
+              <span class="agent_info set_cent_le">(<em class="agent_number">1</em>개 은행)</span>
+            </p> 
+          </div>
+          <!-- //이체계좌 목록 총계-->
+
+          <!-- 계좌-->
+          <div class="info_detail_list_box">  
+            <ul>
+              <li class="info_detail_list">
+                <!-- 2020-07-23 mark_box 추가 다른 리스트도 일괄 적용-->
+                <div class="mark_box">
+              <!-- 2020-11-16 내용수정 -->
+                  <div class="user_mark bussi">기업</div> <!--사업 활성화 클래스 bussi-->
+                  <div class="user_mark trans">송금</div> <!--송금 활성화 클래스 trans-->
+                  <div class="user_mark share">공유</div> <!--공유 활성화 클래스 share-->
+                </div>
+                <!-- 2020-07-23 mark_box 추가 다른 리스트도 일괄 적용 -->
+                <div>
+                  <p>
+                    <span class="bank_mark">
+                      <i class="logo_bank ico_lb003"></i> <span>IBK 기업은행</span>
+                    </span>
+                    <span class="info_date">18.12.12  13:00</span>
+                  </p>
+                  <p class="set_fl_col">
+                    <span class="info_acnt_class">IBK주거래우대통장</span>
+                    <span class="info_acnt">1234-5678-12345-52</span>
+                  </p> 
+                  <p>
+                    <span class="info_won"><em>43,200,00</em> 원</span>
+                    <span class="info_fail">조회실패</span>
+                  </p>
+                </div>
+              </li>
+              <li class="info_detail_list off"> <!--비활성화 클래스 off-->
+                <div class="mark_box">
+                  <div class="user_mark bussi">기업</div> <!--사업 활성화 클래스 bussi-->
+                </div>
+                <div>
+                  <p>
+                    <span class="bank_mark">
+                      <i class="logo_bank ico_lb003"></i> <span>IBK 기업은행</span>
+                    </span>
+                    <span class="info_date">18.12.12  13:00</span>
+                  </p>
+                  <p class="set_fl_col">
+                    <span class="info_acnt_class">IBK주거래우대통장</span>
+                    <span class="info_acnt">1234-5678-12345-52</span>
+                  </p> 
+                  <p>
+                    <span class="info_won"><em>43,200,00</em> 원</span>
+                    <span class="info_fail">조회실패</span>
+                  </p>
+                </div>
+              </li>
+              <li class="info_detail_list">
+                <div class="mark_box">
+                  <!-- 2020-11-16 내용수정 -->
+                  <div class="user_mark bussi">기업</div> <!--사업 활성화 클래스 bussi-->
+                  <div class="user_mark trans">송금</div> <!--송금 활성화 클래스 trans-->
+                  <div class="user_mark share">공유</div> <!--공유 활성화 클래스 share-->
+                </div>
+                <div>
+                  <p>
+                    <span class="bank_mark">
+                      <i class="logo_bank ico_lb003"></i> <span>IBK 기업은행</span>
+                    </span>
+                    <span class="info_date">18.12.12  13:00</span>
+                  </p>
+                  <p class="set_fl_col">
+                    <span class="info_acnt_class">IBK주거래우대통장</span>
+                    <span class="info_acnt">1234-5678-12345-52</span>
+                  </p> 
+                  <p>
+                    <span class="info_won"><em>43,200,00</em> 원</span>
+                    <span class="info_fail">조회실패</span>
+                  </p>
+                </div>
+              </li>
+              <li class="info_detail_list off"> <!--비활성화 클래스 off-->
+                <div class="mark_box">
+                  <div class="user_mark indi">개인</div> <!--사업 활성화 클래스 indi-->
+                </div>
+                <div>
+                  <p>
+                    <span class="bank_mark">
+                      <i class="logo_bank ico_lb003"></i> <span>IBK 기업은행</span>
+                    </span>
+                    <span class="info_date">18.12.12  13:00</span>
+                  </p>
+                  <p class="set_fl_col">
+                    <span class="info_acnt_class">IBK주거래우대통장</span>
+                    <span class="info_acnt">1234-5678-12345-52</span>
+                  </p> 
+                  <p>
+                    <span class="info_won"><em>43,200,00</em> 원</span>
+                    <span class="info_fail">조회실패</span>
+                  </p>
+                </div>
+              </li> 
+            </ul>
+          </div>
+          <!-- //계좌-->
+        </div>
+        <!-- //계좌 목록 --> 
+      </div>
+      
+    </div>
+  </div>
+</body>
+</html>

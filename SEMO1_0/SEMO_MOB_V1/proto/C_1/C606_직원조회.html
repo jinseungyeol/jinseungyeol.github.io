@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="user-scalable=yes, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+	<link rel="stylesheet" href="../../css/semo_cont.css">
+</head>
+<body>
+
+	<!-- content -->
+	<div class="content">
+      <!-- 2020-06-24 상단 타이틀 -->
+      <div class="title">직원관리</div>
+      <!-- //2020-06-24 상단 타이틀 -->
+		<div class="m_cont"><!-- 하단 버튼 있는경우 m_cont_pd 추가 -->
+
+			<div class="m_info_wrap">
+				<div class="set_eylbx">
+          <table>
+            <colgroup><col style="width:72px;"><col></colgroup>
+            <tbody>
+              <tr>
+                <th><i class="c_red">*</i> 회사명</th>
+                <td>홍길동</td>
+              </tr>
+              <tr>
+                <th><i class="c_tran">*</i> 핸드폰 번호</th>
+                <td>010-1234-5678</td>
+              </tr>
+              <tr>
+                <th><i class="c_red">*</i> 주민번호</th>
+                <td class="reg">
+                  <input type="number" class="reg_b" value="850212" disabled/>  <!--조회시 disabled 속성 추가-->
+                  - 
+                  <input type="number" class="reg_s" value="1" disabled/> ****** <!--조회시 disabled 속성 추가-->
+                </td>
+              </tr>
+              <tr>
+                <th><i class="c_red">*</i> 입사일자</th>
+                <td>2019.05.31</td>
+              </tr>
+              <tr>
+                <th class="vtc_al"><i class="c_red">*</i> 월급여액</th>
+                <td>
+                  <p><em>2,000,000</em> 원</p>
+                  <div class="rdbx type1">
+                    <label>
+                      <input type="radio" name="salary" checked> <!--조회시 선택된 사항 checked 속성 추가-->
+                      <span>세전 (세금포함)</span>
+                    </label>
+                    <label>
+                      <input type="radio" name="salary">
+                      <span>세후</span>
+                    </label>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th><i class="c_red">*</i> 소득구분</th>
+                <td>
+                  <div class="rdbx type2">
+                    <label>
+                      <input type="radio" name="income" checked> <!--조회시 선택된 사항 checked 속성 추가-->
+                      <span>근로소득</span>
+                    </label>
+                    <label>
+                      <input type="radio" name="income">
+                      <span>사업소득</span>
+                    </label>
+                    <label>
+                      <input type="radio" name="income">
+                      <span>기타</span>
+                    </label>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th><i class="c_tran">*</i> 소득공제</th>
+                <td>
+                  <div class="ckbox">
+                    <label>
+                      <input type="checkbox" name="deduction" checked> <!--조회시 선택된 사항 checked 속성 추가-->
+                      <span>식대</span>
+                    </label>
+                    <label>
+                      <input type="checkbox" name="deduction">
+                      <span>본인명의 차량</span>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th><i class="c_tran">*</i> 부양가족수</th>
+                <td>2명</td>
+              </tr>
+              <tr>
+                <th class="vtc_al"><i class="c_tran">*</i> 메모</th>
+                <td>
+                  <textarea placeholder="직원관련 메모를 작성하실 수 있습니다." disabled>직원관련 메모 작성하기</textarea> <!--조회시 disabled 속성 추가-->
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <table>
+            <colgroup><col style="width:200px;"><col></colgroup>
+            <tbody>
+              <tr>
+                <th><i class="c_tran">*</i> 첨부서류</th>
+                <td class="arr"></td>
+              </tr>
+            </tbody>
+          </table>
+				</div>
+			</div>
+    </div>
+ 
+    <!-- 토스트 팝업 -->
+		<div class="toast_pop">
+			<div class="inner">
+				<span>정보를 변경하려면 수정하기를 눌러주세요.</span>
+			</div>
+		</div>
+    <!-- //토스트 팝업 -->
+ 
+	</div>
+	<!-- //content -->
+
+</body>
+</html>

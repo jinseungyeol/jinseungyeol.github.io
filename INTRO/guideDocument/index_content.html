@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/intro.css">
+    <title>퍼블리셔 가이드</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <!-- wrapper -->
+    <div class="wrapper">
+        <!-- introCont -->
+        <div class="introCont">
+            <h1 class="mainTit">상품리스트</h1>
+            <div class="infoNotice">
+                <p class="infoTit">프로젝트 구조 <span class="ps">(svn 참고)</span></p>
+                <div class="infoTxtWrap">
+                    <p>1) _HP - 홈페이지(적응형 or 반응형)</p>
+                    <p>2) _MOB_HP - 모바일 홈페이지</p>
+                    <p>3) _PC - 상품 Web</p>
+                    <p>4) _MOB - 상품 App</p>
+                </div>
+            </div>
+            <div class="moveGuideWrap">
+                <div class="col">
+                    <strong>Filter.</strong>
+                    <div class="cont">
+                        <input id="searchInput" type="text" placeholder="검색어를 입력해 주세요.">
+                    </div>
+                </div>
+            </div>
+            <nav>
+                <ul class="tabMenuList">
+                    <!-- 활성화시 active -->
+                    <li class="all active">
+                        <a href="javascript:;" class="btnTab" role="button">전체</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="btnTab" role="button">세모리포트(ver2.0)</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="btnTab" role="button">세모장부(ver1.0)</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="btnTab" role="button">로움아이티</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="btnTab" role="button">매뉴얼</a>
+                    </li>
+                </ul>
+            </nav>
+            <p id="noResultsMsg" style="display: none;">검색 결과가 없습니다.</p>
+            <div class="product">
+                <h2 class="subTit">세모리포트(ver2.0)</h2>
+                <table class="tblReference">
+                    <colgroup>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col width="30%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>상품명</th>
+                            <th>카테고리</th>
+                            <th>반응형</th>
+                            <th>링크이동</th>
+                            <th>비고</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="update">
+                            <td>세모리포트 수임처용 PC</td>
+                            <td>홈페이지</td>
+                            <td>-</td>
+                            <td class="linkTd">
+                                <div>
+                                    <a href="https://publ.smjb.co.kr/SEMO2_0/SEMOR_HP_V2/start.html" target="_blank" class="moveLink">개발</a>
+                                </div>
+                                <div>
+                                    <a href="https://www.semoreport.com/" target="_blank" class="moveLink">운영</a>
+                                </div>
+                            </td>
+                            <td>[SD008] 설 연휴 명절인사 팝업</td>
+                        </tr>
+                        <tr class="update">
+                            <td>세모리포트 수임처용 Mobile</td>
+                            <td>홈페이지</td>
+                            <td>-</td>
+                            <td class="linkTd">
+                                <div>
+                                    <a href="https://publ.smjb.co.kr/SEMO2_0/SEMOR_MOB_HP/" target="_blank" class="moveLink dev">개발</a>
+                                </div>
+                                <div>
+                                    <a href="https://m.semoreport.com/" target="_blank" class="moveLink">운영</a>
+                                </div>
+                            </td>
+                            <td>
+                                PC에서 접속시 세모리포트 수임처용 PC 홈페이지로 리다이렉트<br>
+                                [SD008] 설 연휴 명절인사 팝업
+                            </td>
+                        </tr>
+                        <tr class="update">
+                            <td>세모리포트 세무사용</td>
+                            <td>홈페이지</td>
+                            <td>
+                                <div>
+                                    <a href="javascript:;" target="_blank" class="moveLink movePreview">미리보기</a>
+                                </div>
+                            </td>
+                            <td class="linkTd">
+                                <div>
+                                    <a href="https://publ.smjb.co.kr/SEMO2_0/SEMOR_HP/" target="_blank" class="moveLink dev">개발</a>
+                                </div>
+                                <div>
+                                    <a href="https://tax.semoreport.com/" target="_blank" class="moveLink">운영</a>
+                                </div>
+                            </td>
+                            <td>[SD008] 설 연휴 명절인사 팝업</td>
+                        </tr>
+                        <tr>
+                            <td>세모리포트 브릿지</td>
+                            <td>홈페이지</td>
+                            <td>
+                                <div>
+                                    <a href="javascript:;" target="_blank" class="moveLink movePreview">미리보기</a>
+                                </div>
+                            </td>
+                            <td class="linkTd">
+                                <div>
+                                    <a href="https://publ.smjb.co.kr/SEMO2_0/SEMOR_HP_V2/bridge/intro.html" target="_blank" class="moveLink dev">개발</a>
+                                </div>
+                                <div>
+                                    <a href="https://www.semoreport.com/bridge/intro.html" target="_blank" class="moveLink">운영</a>
+                                </div>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr class="">
+                            <td>세모리포트 부가세 환급</td>
+                            <td>홈페이지</td>
+                            <td>
+                                <div>
+                                    <a href="javascript:;" target="_blank" class="moveLink movePreview">미리보기</a>
+                                </div>
+                            </td>
+                            <td class="linkTd">
+                                <div>
+                                    <a href="https://publ.smjb.co.kr/SEMO2_0/SEMOR_HP_V2/vatsv/?TXAC_BSNO=8478700259" target="_blank" class="moveLink dev">개발</a>
+                                </div>
+                                <div>
+                                    <a href="https://www.semoreport.com/vatsv/index.html?TXAC_BSNO=8478700259" target="_blank" class="moveLink">운영</a>
+                                </div>
+                            </td>
+                            <td>URL에 TXAC_BSNO=세무사무소사업자번호</td>
+                        </tr>
+                        <tr>
+                            <td>우리은행 마케팅용 랜딩</td>
+                            <td>홈페이지</td>
+                            <td>
+                                <div>
+                                    <a href="javascript:;" target="_blank" class="moveLink movePreview">미리보기</a>
+                                </div>
+                            </td>
+                            <td class="linkTd">
+                                <div>
+                                    <a href="https://publ.smjb.co.kr/SEMO2_0/SEMOR_HP_V2/bridge/html/woori_mkt.html" target="_blank" class="moveLink dev">개발</a>
+                                </div>
+                                <div>
+                                    <a href="https://www.semoreport.com/bridge/html/woori_mkt.html?PATH_CD=WOORI" target="_blank" class="moveLink">운영</a>
+                                </div>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr class="">
+                            <td>고객센터 상담 만족도 조사</td>
+                            <td>홈페이지</td>
+                            <td>
+                                <div>
+                                    <a href="javascript:;" target="_blank" class="moveLink movePreview">미리보기</a>
+                                </div>
+                            </td>
+                            <td class="linkTd">
+                                <div>
+                                    <a href="https://publ.smjb.co.kr/SEMO2_0/SEMOR_HP_V2/html/cs_suvy.html" target="_blank" class="moveLink dev">개발</a>
+                                </div>
+                                <div>
+                                    <a href="https://www.semoreport.com/html/cs_suvy.html" target="_blank" class="moveLink">운영</a>
+                                </div>
+                            </td>
+                            <td>2023-12-29 [만족도조사] 개선 요청</td>
+                        </tr>
+                        <tr class="">
+                            <td>서비스 만족도 조사</td>
+                            <td>홈페이지</td>
+                            <td>
+                                <div>
+                                    <a href="javascript:;" target="_blank" class="moveLink movePreview">미리보기</a>
+                                </div>
+                            </td>
+                            <td class="linkTd">
+                                <div>
+                                    <a href="https://publ.smjb.co.kr/SEMO2_0/SEMOR_HP_V2/html/sv_suvy.html" target="_blank" class="moveLink dev">개발</a>
+                                </div>
+                                <div>
+                                    <a href="https://www.semoreport.com/html/sv_suvy.html" target="_blank" class="moveLink">운영</a>
+                                </div>
+                            </td>
+                            <td>2023-12-29 [만족도조사] 개선 요청</td>
+                        </tr>
+                        <tr>
+                            <td>세모리포트 상품</td>
+                            <td>App</td>
+                            <td>-</td>
+                            <td>
+                                <div>
+                                    <a href="https://publ.smjb.co.kr/SEMO2_0/SEMOR_MOB/index.html" target="_blank" class="moveLink">HTML 마크업 페이지</a>
+                                </div>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>세모리포트 상품</td>
+                            <td>Web</td>
+                            <td>-</td>
+                            <td>
+                                <div>
+                                    <a href="https://publ.smjb.co.kr/SEMO2_0/SEMOR_PC/index.html" target="_blank" class="moveLink">HTML 마크업 페이지</a>
+                                </div>
+                            </td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="product">
+                <h2 class="subTit">세모장부(ver1.0)</h2>
+                <table class="tblReference">
+                    <colgroup>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col width="30%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>상품명</th>
+                            <th>카테고리</th>
+                            <th>반응형</th>
+                            <th>링크이동</th>
+                            <th>비고</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="update">
+                            <td>세모장부</td>
+                            <td>홈페이지</td>
+                            <td>-</td>
+                            <td class="linkTd">
+                                <div>
+                                    <a href="https://publ.smjb.co.kr/SEMO1_0/SEMO_HP/" target="_blank" class="moveLink dev">개발</a>
+                                </div>
+                                <div>
+                                    <a href="https://www.semojangbu.com/" target="_blank" class="moveLink">운영</a>
+                                </div>
+                            </td>
+                            <td>[SD008] 설 연휴 명절인사 팝업</td>
+                        </tr>
+                        <tr class="update">
+                            <td>I-ONE 소상공인</td>
+                            <td>홈페이지</td>
+                            <td>
+                                <div>
+                                    <a href="javascript:;" target="_blank" class="moveLink movePreview">미리보기</a>
+                                </div>
+                            </td>
+                            <td class="linkTd">
+                                <div>
+                                    <a href="https://publ.smjb.co.kr/SEMO1_0/IONE_HP/" target="_blank" class="moveLink dev">개발</a>
+                                </div>
+                                <div>
+                                    <a href="https://www.ionesoho.co.kr/" target="_blank" class="moveLink">운영</a>
+                                </div>
+                            </td>
+                            <td>[SD008] 설 연휴 명절인사 팝업</td>
+                        </tr>
+                        <tr class="update">
+                            <td>NH 소상공인 파트너</td>
+                            <td>홈페이지</td>
+                            <td>-</td>
+                            <td class="linkTd">
+                                <div>
+                                    <a href="https://publ.smjb.co.kr/SEMO1_0/NH_HP/" target="_blank" class="moveLink dev">개발</a>
+                                </div>
+                                <div>
+                                    <a href="https://www.nhsoho.co.kr/" target="_blank" class="moveLink">운영</a>
+                                </div>
+                            </td>
+                            <td>[SD008] 설 연휴 명절인사 팝업</td>
+                        </tr>
+                        <tr class="update">
+                            <td>KT 장부비서 PC</td>
+                            <td>홈페이지</td>
+                            <td>-</td>
+                            <td class="linkTd">
+                                <div>
+                                    <a href="https://publ.smjb.co.kr/SEMO1_0/KT_HP/" target="_blank" class="moveLink dev">개발</a>
+                                </div>
+                                <div>
+                                    <a href="https://www.xn--or3b2no4ee3j.com/" target="_blank" class="moveLink">운영</a>
+                                </div>
+                            </td>
+                            <td>[SD008] 설 연휴 명절인사 팝업</td>
+                        </tr>
+                        <tr class="update">
+                            <td>KT 장부비서 Mobile</td>
+                            <td>홈페이지</td>
+                            <td>-</td>
+                            <td class="linkTd">
+                                <div>
+                                    <a href="https://publ.smjb.co.kr/SEMO1_0/KT_MOB_HP/" target="_blank" class="moveLink dev">개발</a>
+                                </div>
+                                <div>
+                                    <a href="https://m.xn--or3b2no4ee3j.com/" target="_blank" class="moveLink">운영</a>
+                                </div>
+                            </td>
+                            <td>[SD008] 설 연휴 명절인사 팝업</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="product">
+                <h2 class="subTit">로움아이티</h2>
+                <table class="tblReference">
+                    <colgroup>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col width="30%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>상품명</th>
+                            <th>카테고리</th>
+                            <th>반응형</th>
+                            <th>링크이동</th>
+                            <th>비고</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="update">
+                            <td>로움아이티</td>
+                            <td>홈페이지</td>
+                            <td>
+                                <div>
+                                    <a href="javascript:;" target="_blank" class="moveLink movePreview">미리보기</a>
+                                </div>
+                            </td>
+                            <td class="linkTd">
+                                <div>
+                                    <a href="https://publ.smjb.co.kr/ROUMIT_HP/index.html" target="_blank" class="moveLink dev">개발</a>
+                                </div>
+                                <div>
+                                    <a href="https://www.roumit.com/" target="_blank" class="moveLink">운영</a>
+                                </div>
+                            </td>
+                            <td>[SD008] 설 연휴 명절인사 팝업</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="product">
+                <h2 class="subTit">매뉴얼</h2>
+                <table class="tblReference">
+                    <colgroup>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col width="30%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>상품명</th>
+                            <th>카테고리</th>
+                            <th>반응형</th>
+                            <th>링크이동</th>
+                            <th>비고</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="">
+                            <td>세모.CRM</td>
+                            <td>PDF</td>
+                            <td>
+                                <div>
+                                    <a href="javascript:;" target="_blank" class="moveLink movePreview">미리보기</a>
+                                </div>
+                            </td>
+                            <td class="linkTd">
+                                <div>
+                                    <a href="https://www.semoreport.com/pdf/CRM_manual.html" target="_blank" class="moveLink dev">운영</a>
+                                </div>
+                            </td>
+                            <td>
+                                v2.4 (24.01.02 기준)<br>
+                                담당자 - 세라
+                            </td>
+                        </tr>
+                        <tr class="update">
+                            <td>부가세 신고 활용법</td>
+                            <td>PDF</td>
+                            <td>
+                                <div>
+                                    <a href="javascript:;" target="_blank" class="moveLink movePreview">미리보기</a>
+                                </div>
+                            </td>
+                            <td class="linkTd">
+                                <div>
+                                    <a href="https://www.semoreport.com/pdf/vat_manual_v1.html" target="_blank" class="moveLink dev">운영</a>
+                                </div>
+                            </td>
+                            <td>
+                                v1.05 (24.01.16 기준)<br>
+                                담당자 - 세라
+                            </td>
+                        </tr>
+                        <tr class="">
+                            <td>세모리포트 기초 사용자 매뉴얼</td>
+                            <td>PDF</td>
+                            <td>
+                                <div>
+                                    <a href="javascript:;" target="_blank" class="moveLink movePreview">미리보기</a>
+                                </div>
+                            </td>
+                            <td class="linkTd">
+                                <div>
+                                    <a href="https://www.semoreport.com/pdf/basics_manual_v1.html " target="_blank" class="moveLink dev">운영</a>
+                                </div>
+                            </td>
+                            <td>
+                                v1.0 (24.01.09 기준)<br>
+                                담당자 - 로이드
+                            </td>
+                        </tr>
+                        <tr class="update">
+                            <td>세모리포트 고객요약분석 활용가이드</td>
+                            <td>PDF</td>
+                            <td>
+                                <div>
+                                    <a href="javascript:;" target="_blank" class="moveLink movePreview">미리보기</a>
+                                </div>
+                            </td>
+                            <td class="linkTd">
+                                <div>
+                                    <a href="https://www.semoreport.com/pdf/CSA_guide.html " target="_blank" class="moveLink dev">운영</a>
+                                </div>
+                            </td>
+                            <td>
+                                v1.03 (24.01.16 기준)<br>
+                                담당자 - 케빈
+                            </td>
+                        </tr>
+                        <tr class="update">
+                            <td>세모리포트 부가세 보고서 발송 메뉴얼</td>
+                            <td>PDF</td>
+                            <td>
+                                <div>
+                                    <a href="javascript:;" target="_blank" class="moveLink movePreview">미리보기</a>
+                                </div>
+                            </td>
+                            <td class="linkTd">
+                                <div>
+                                    <a href="https://www.semoreport.com/pdf/VAT_ERAR.html " target="_blank" class="moveLink dev">운영</a>
+                                </div>
+                            </td>
+                            <td>
+                                v1.02 (24.01.16 기준)<br>
+                                담당자 - 헤나
+                            </td>
+                        <tr class="update">
+                            <td>위멤버스 기초설정 방법 따라하기</td>
+                            <td>PDF</td>
+                            <td>
+                                <div>
+                                    <a href="javascript:;" target="_blank" class="moveLink movePreview">미리보기</a>
+                                </div>
+                            </td>
+                            <td class="linkTd">
+                                <div>
+                                    <a href="https://www.semoreport.com/pdf/WM_setup_manual.html " target="_blank" class="moveLink dev">운영</a>
+                                </div>
+                            </td>
+                            <td>
+                                v1.04 (24.01.24 기준)<br>
+                                담당자 - 토니
+                            </td>
+                        </tr>
+                        <tr class="update">
+                            <td>세모리포트 부가세 신고대비 활용 설명회</td>
+                            <td>PDF</td>
+                            <td>
+                                <div>
+                                    <a href="javascript:;" target="_blank" class="moveLink movePreview">미리보기</a>
+                                </div>
+                            </td>
+                            <td class="linkTd">
+                                <div>
+                                    <a href="https://www.semoreport.com/pdf/VAT_use.html " target="_blank" class="moveLink dev">운영</a>
+                                </div>
+                            </td>
+                            <td>
+                                v1.1 (24.01.17 기준)<br>
+                                담당자 - 헤나
+                            </td>
+                        </tr>
+                        <tr class="update">
+                            <td>세무사랑 활용가이드</td>
+                            <td>PDF</td>
+                            <td>
+                                <div>
+                                    <a href="javascript:;" target="_blank" class="moveLink movePreview">미리보기</a>
+                                </div>
+                            </td>
+                            <td class="linkTd">
+                                <div>
+                                    <a href="https://www.semoreport.com/pdf/ODOLJN0004.html" target="_blank" class="moveLink dev">운영</a>
+                                </div>
+                            </td>
+                            <td>
+                                v1.0 (24.01.24 기준)<br>
+                                담당자 - 하이
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- //introCont -->
+    </div>
+    <!-- //wrapper -->
+
+  <script src="../js/jquery-3.5.1.min.js"></script>
+    <script>
+        $(function() {
+            $(".product").attr('data-choice', 'Y');
+            
+            // 탭메뉴 active
+            $(".tabMenuList li").click(function () {
+                $(this).addClass("active").siblings().removeClass("active");
+                handleTabClick($(this).index());
+            });
+
+            $("#searchInput").on("input", handleSearchResults);
+
+            $(".movePreview").on('click', function(e) {
+                e.preventDefault()
+                var devLink = $(this).parents('td').siblings('.linkTd').find('.dev').attr('href')
+                window.open(`https://publ.smjb.co.kr/INTRO/prducts/html/rspv_preview.html?iframeURL=${devLink}`)
+            })
+
+            $(".linkTd a").hover(
+                function() {
+                    var url = $(this).attr("href");
+                    $("body").append('<div id="preview"><iframe src="' + url + '" frameBorder="0"></iframe></div>');
+                },
+                function() {
+                    $("#preview").remove();
+                }
+            );
+
+            // 초기에 한 번 호출하고, 화면 크기가 변경될 때마다 다시 호출
+            updateScale();
+            $(window).hover(updateScale);
+        })
+
+        // 화면 크기에 따라 scale 값을 계산하고 설정
+        function updateScale() {
+            var screenWidth = $(window).width();
+            var screenHeight = $(window).height();
+
+            // 여기에서 원하는 화면 비율에 따라 scale 값을 계산합니다.
+            var scale = Math.min(screenWidth / 1920) /1.6;
+            console.log(scale)
+            if (scale > 1) {
+            scale = 1;
+            }
+            $('#preview').css('transform', 'scale(' + scale + ')');
+        }
+
+        function handleTabClick(index) {
+            $(".product").eq(index-1).show().siblings(".product").hide();
+            $(".product").eq(index-1).attr('data-choice', 'Y').siblings(".product").attr('data-choice', 'N');
+
+            if (index === 0) {
+                $(".product").attr('data-choice', 'Y');
+                $(".product").show();
+            }
+
+            handleSearchResults();
+        }
+
+        function handleSearchResults() {
+            var searchValue = $("#searchInput").val().toLowerCase();
+            var tables = $(".product[data-choice=Y]");
+            var noResultsMessage = $("#noResultsMsg");
+            
+            // 모든 테이블 숨김
+            tables.hide();
+            // 검색 결과 메시지 숨김
+            noResultsMessage.hide();
+
+            // 각 테이블에 대해 검색 결과 확인
+            tables.each(function() {
+                var table = $(this);
+                var tableRows = table.find("tbody tr");
+
+                // 각 행을 반복하여 검색어와 일치하는 행을 보여주거나 숨깁니다.
+                var anyRowsVisible = false;
+                tableRows.each(function () {
+                    var rowText = $(this).text().toLowerCase();
+                    if (rowText.includes(searchValue)) {
+                        $(this).show();
+                        anyRowsVisible = true;
+                    } else {
+                        $(this).hide();
+                    }
+                });
+
+                // 검색 결과가 있는 경우 해당 테이블을 표시
+                if (anyRowsVisible) {
+                    table.show();
+                }
+            });
+
+            // 검색 결과가 없으면 메시지를 표시
+            if (!tables.is(":visible")) {
+                noResultsMessage.show();
+            }
+        }
+    </script>
+</body>
+
+</html>

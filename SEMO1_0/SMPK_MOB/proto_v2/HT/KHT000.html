@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css_v2/swiper-bundle.min.css">
+    
+    <link rel="stylesheet" href="../../css_v2/semo_style.css">
+    <link rel="stylesheet" href="../../css_v2/main.css">
+  <script src="../../js_v2/jquery-3.5.1.min.js"></script>
+    <script src="../../js_v2/swiper-bundle.min.js"></script>
+    <title>슬라이드팝업</title>
+</head>
+<body>
+    <div class="popup_bg">
+        <div class="banner-popup">
+            <!-- 배너가 하나 일때 swiper class 삭제 -->
+            <div class="banner-popup_inner swiper">
+                <section class="banner-popup_cover swiper-wrapper">
+                    <!-- 배너이미지 추가시 article  추가 -->
+                    <article class="cover_wrap swiper-slide">
+                        <div class="cover cep130">
+                            <i class="ico_cont"></i>
+                        </div>
+                    </article>
+                    <!-- 개발에서 요건에 따라 화면 show hide 처리할때 swiper-slide 제거 휴 요건 갖추면 addClass로 다시 집어 넣는 방식으로 처리 default 는 display: none -->
+             
+                </section>
+                <div class="swiper-pagination">
+                </div>
+            </div>
+            <footer class="banner-popup_footer">
+                <button class="left_btn" type="button">다시보지 않기</button>
+                <button class="right_btn" type="button">닫기</button>
+            </footer>
+        </div>
+    </div>
+     <script>
+        // loop: true 는 왠만하면 안쓰는걸로
+       var swiper = new Swiper(".swiper", {
+            effect: "fade",
+                fadeEffect: { crossFade: true },
+                 pagination: {
+                     el: ".swiper-pagination",
+                    clickable: true,
+                },
+            loop: false,
+
+      });
+    
+     </script>
+</body>
+</html>

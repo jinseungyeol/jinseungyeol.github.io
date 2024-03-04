@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../../css_v2/common.css">
+    <link rel="stylesheet" href="../../css_v2/semo_style.css">
+    <link rel="stylesheet" href="../../css_v2/main.css">
+    <link rel="stylesheet" href="../../css_v2/partner-product.css">
+    <link rel="stylesheet" href="../../css_v2/kt_style.css">
+  <script src="../../js_v2/jquery-3.5.1.min.js"></script>
+    <title>[SB140]_IEP010</title>
+</head>
+<body>
+    <div class="kep090_wrap">
+        <div class="kep090-cover">
+            <div class="cover">
+                <i class="ico_cont">
+
+                </i>
+            </div>
+            <div class="btn_wrap">
+                <button type="button">
+                    <i class="ico_cont"></i>
+                </button>
+            </div>
+        </div>
+        <div class="kep090-desc">
+            <ul class="desc_list">
+                <li class="list_01">
+                    <span class="tit">
+                        기간 :
+                    </span> 
+                    <span class="cont">
+                         22.10.05 ~ 22.11.30 까지
+                    </span>
+                <li class="list_02">
+                    <span class="tit">상품발송 :</span>
+                    <span class="cont">매월 3일 일괄 지급</span>
+                </li>
+                <li class="list_03">
+                    <span class="tit">대상 :</span>
+                    <span class="cont">이벤트 기간중 회원가입을 한 고객
+                        <br>(이벤트 기간 전 가입 이력이 있을 경우, 불가)
+                    </span>
+                    
+                </li>
+                
+            </ul>
+        </div>
+        <footer class="kep090-footer">
+              <!--  .kep090-complete show .check-wrap hide로 처리 -->
+            <div class="check-wrap">
+                <div class="check-area">
+                    <div class="checkbox-wrap">
+                    
+                        <div class="checkbox">
+                            <i class="ico_cont"></i>
+                        </div>
+                        <span class="info-text">
+                            마케팅 활용 동의
+                        </span>
+                    </div>
+                    <div class="btn-wrap">
+                        <button type="button">
+                             <span>자세히</span>
+                        </button>
+                    </div>
+                </div>
+                <button type="button" class="type_B">
+                    <span>신청하기</span>
+                </button>
+            </div>
+            <!-- 완료된 화면 -->
+            <div class="kep090-complete"  style="display: none;">
+                <div class="desc">
+                    <p>
+                        신규회원 가입 이벤트<br>
+                        신청이 완료되었습니다
+                    </p>
+                    
+                </div>
+            </div>
+
+            
+            
+        </footer>
+        <div class="popup_bg" style="display: none;">
+            <div class="popup bottom" style="bottom: 0;">
+                <div class="popup_header">
+                    <button class="pop_close_btn">
+                        <i class="ico_cont"></i>
+                    </button>
+                </div>
+                <div class="popup_bottom_con center_array">
+                    <div class="info-cover success">
+                        <i class="ico_cont"></i>
+                    </div>
+                    <div class="main_text">
+                        <h1>신규회원가입 이벤트<br>
+                        신청이 완료되었습니다
+                        </h1>
+                    </div>
+                   
+                </div>
+                <div class="pop_btn_wrap">
+                    <button type="button" class="type_B bgc_sig">
+                        <span>확인</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $(".checkbox-wrap").click(function () {
+                $(".checkbox").toggleClass('is-active');
+                $(".kep090-footer button.type_B").toggleClass('bgc_sig');
+            })
+
+           
+    });
+    </script>
+</body>
+
+</html>

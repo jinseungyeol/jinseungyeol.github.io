@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="ione소상공인" property="og:title">
+    <meta content="https://www.ionesoho.co.kr/" property="og:url">
+    <meta content="../img/ibk_thumb.png" property="og:image">
+    <meta content="사장님이 편해지는 뱅킹" property="og:description">
+    <title>ione소상공인</title>
+    <link rel="icon" href="../img/favi_ionesoho.png">
+    <!-- css -->
+    <link rel="stylesheet" href="../css/ionesoho.css">
+    <!-- js -->
+  <script src="../js/jquery-3.5.1.min.js"></script>
+    <script src="../js/swiper-bundle.min.js"></script>
+    <script src="../js/semo.api.js"></script>
+    <script src="../js/semoR_ui.js"></script>
+</head>
+
+<body>
+    <!-- wrapper -->
+    <div class="wrapper">
+        <!-- header -->
+        <header class="header active">
+            <div class="inner">
+                <h1 class="logo">
+                    <a href="../index.html">
+                        <img src="../img/logo.png" alt="ione소상공인 로고">
+                    </a>
+                </h1>
+                <nav class="gnb">
+                    <ul>
+                        <li>
+                            <a href="../index.html#serviceIntro" class="skill">기능소개</a>
+                        </li>
+                        <li>
+                            <a href="highpass.html">인증서 하이패스</a>
+                        </li>
+                        <li>
+                            <a href="https://qe398.channel.io/support-bots/36081" target="_blank">고객센터</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <!-- //header -->
+        <!-- contentWrap -->
+        <div class="contentWrap">
+            <div class="certiWrap">
+                <iframe class="frameCert" src="https://cert.bizplay.co.kr/bizbot/raonnx/install/install_nxcr.html?&url=https%3A%2F%2Fcert.bizplay.co.kr%2Fbizbot%2F" scrolling="no" frameborder="0" width="74%" height="100%"></iframe>
+            </div>
+        </div>
+        <!-- //contentWrap -->
+        <!-- footer -->
+        <footer class="footer">
+            <div class="inner">
+                <div class="companyInfo">
+                    <span class="name">웹케시(주)</span>
+                    <div class="channel">
+                        <a href="https://blog.naver.com/ibkmoja" class="blog" target="_blank">
+                            <img src="../img/footer_channel_blog.png" alt="네이버블로그">
+                        </a>
+                        <a href="https://pf.kakao.com/_Qxexoxixb" class="kakao" target="_blank">
+                            <img src="../img/footer_channel_kakao.png" alt="카카오 플러스친구">
+                        </a>
+                    </div>
+                </div>
+                <div class="termsWrap">
+                    <button id="terms01">이용약관</button>
+                    <span class="divide"></span>
+                    <button id="terms02">개인정보처리방침</button>
+                </div>
+                <div class="infoWrap">
+                    <span>대표이사 : 강원주</span>
+                    <span class="divide"></span>
+                    <span>주소 : 서울시 영등포구 영신로 220 KnK디지털타워 20층</span>
+                </div>
+                <div class="infoWrap">
+                    <span>사업자 등록번호 : 214-86-35102</span>
+                    <span class="divide"></span>
+                    <span>통신판매신고번호 : 제 19-3546호</span>
+                    <span class="divide"></span>
+                    <span>이메일 ione@roumit.com</span>
+                </div>
+                <div class="infoWrap">
+                    <span>로움아이티(주)</span>
+                    <span class="divide"></span>
+                    <span>대표이사 박승현</span>
+                </div>
+                <div class="copyright">Copyright 2020 WEBCASH / All rights reserved.</div>
+            </div>
+        </footer>
+        <!-- //footer -->
+    </div>
+    <!-- //wrapper -->
+
+    <script>
+        $("#terms01").on('click', function () {
+            window.open("/pdf/ibk_use.pdf", "_blank", "width=640, height=800");
+        });
+        $("#terms02").on('click', function () {
+            window.open("/pdf/ibk_privacy.pdf", "_blank", "width=640, height=800");
+        });
+    </script>
+</body>
+
+</html>

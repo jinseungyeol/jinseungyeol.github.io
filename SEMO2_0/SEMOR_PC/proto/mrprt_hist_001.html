@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<title>세모리포트</title>
+<link rel="stylesheet" href="../css/reset_taxp.css">
+<link rel="stylesheet" href="../css/app_header.css"><!-- [D] 세무대리인용 header -->
+<link rel="stylesheet" href="../css/content_taxp.css"><!-- [D] 세무대리인용 -->
+
+<!-- custom scrollbar plugin css -->
+<link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+  <script src="../js/lib/jquery/jquery-1.12.4.min.js"></script>
+<script src="../js/lib/jquery/jquery-ui-1.10.4.min.js"></script>
+<!-- custom scrollbar plugin -->
+<script src="../js/design/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../js/design/jquery.placeholder.min.js"></script>
+<script src="../js/lib/plugin/smart.popup.js"></script>
+<script src="../js/comm/common.js"></script>
+<script>
+$(function(){
+	// Invoke the plugin
+	$('input, textarea').placeholder({customClass:'my-placeholder'});
+});
+
+
+</script>
+
+</head>
+<body class="lnb_bg"><!-- [D] 메뉴영역(접기 : class="fold", 펼치기 : class="lnb_bg") -->
+
+<!-- header -->
+<div class="app_header">
+	<div class="app_header_inner">
+		<div class="ah_l">
+			<h1>user_info 현행화 화면</h1>
+		</div>
+
+		<div class="ah_r">
+			<ul class="ah_menu mgt10">
+				<li>
+					<!-- 알림 있을때 new 클래스 -->
+					<span class="weTalk newAlarm">
+						<a href="#none">We Talk
+							<span class="talk_conting_num" style="display: none;">N</span>
+						</a>
+					</span>
+				</li>
+				<li>
+					<span class="updateInfo">
+						<a href="#none">업데이트 안내
+							<span class="talk_conting_num" style="display: none;">N</span>
+						</a>
+					</span>
+				</li>
+                <li>
+                    <a class="hd_alarm" href="#none">
+						<img src="../img/txof/ico/bell_icon_18x18.png" alt="">
+						<span>알림</span>
+					
+					
+					
+						<div class="count">999+</div>
+					</a>
+                </li>
+				<li class="txtMenu">
+					<a href="https://qe398.channel.io/support-bots/50502" target="_blink">채팅상담</a>
+					<a href="https://semojangbu.notion.site/semojangbu/1fb5342cd4324ec99d471048fb437e92" target="_blink">도움말</a>
+					<a href="http://report.semojangbu.com" target="_blink">공지사항</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<!-- //header -->
+
+<div class="wrap"><!-- [D] 상세검색일 경우(class="mh") -->
+	<!-- Container -->
+	<div class="container">
+		<!-- lnb box -->
+		<div class="lnb_box">
+		
+			<!-- (modify)20220804 lnb_boxInn, mCustomScrollbar 추가 / 레이어 위치 이동 -->
+			<!-- lnb_boxInn -->
+			<div class="lnb_boxInn">
+					<!-- lnb top 추가 -->
+						<div class="lnb_top">
+							<!-- user view -->
+							<div class="user_view">
+								<div class="user_r_side">
+									<p class="icon_user"><strong>강윤아</strong> 님</p>
+									<!-- <a class="btn_set" title="환경설정"></a>2019-09-27 -->
+								</div>
+								
+								<!-- 관리자만 담당자 select 노출 -->
+								
+								
+								<!-- 법인, 개인 select -->
+								<div class="select_wrap">
+									<div class="area_select">
+										<span>사업자</span>
+										<div class="tabType01">
+											<ul class="cboth" id="sel_bzaq_gb_ul">
+												<!-- 활성화시 on 클래스 -->
+												<li class="on" id="li_biz" data-biz_dv="" style="border-radius: 3px 0px 0px 3px;">
+													<a href="#none">전체</a>
+												</li>
+												<li id="li_biz11" data-biz_dv="11">
+													<a href="#none">개인</a>
+												</li>
+												<li id="li_biz22" data-biz_dv="22" style="border-radius: 0px 3px 3px 0px;">
+													<a href="#none">법인</a>
+												</li>
+											</ul>
+										</div>
+				
+									</div>
+								</div>
+							</div>
+							<!-- //user view -->
+						</div>
+						<!-- //lnb top 추가 -->
+						
+						<div class="alarm_wrap">
+							<div class="mygroupLst">
+								<ul>
+									<!-- 그룹 -->
+									<li class="on" id="li_group"><!-- 활성화클래스 on -->
+										<div class="mygroupLst_tit">
+											<a href="#none" class="">
+												<img src="../img/txof/ico/ico_reptGroupManage.png" class="mCS_img_loaded">
+												그룹관리
+											</a>
+											<div class="mygroup_btn">
+												<i class="btn"></i>
+											</div>
+										</div>
+										<div class="mygroupCont">					
+										<!-- 20180906 수정 -->
+											<dl class="mygroup" id="grp_dl_area" style="display:;">
+												<dd class="off" name="GRP_AREA" code="0000000003" code_nm="dsfsdaf">
+													<a href="#none">
+														<div class="line tooltipWrap rt">
+															<div class="left grp_left_div">
+																<span class="txt" name="GRP_NM">dsfsdaf</span>
+																<div class="tooltip">
+																	<p class="tit" name="GRP_FULL_NM">dsfsdaf</p>
+																	<p></p>
+																</div>
+																<button type="button" class="btnEdit"><img src="../img/txof/btn/btn_edit_w3.png" width="14px" class="mCS_img_loaded"></button>
+															</div>
+															<div class="right">
+																<span class="groupCount" name="GRP_CNT">0</span>
+																<button type="button" class="btnEdit grp_edit_btn">
+																	<img src="../img/txof/btn/btn_edit_w3.png" width="14px" class="mCS_img_loaded">
+																</button>
+																
+															</div>
+														</div>
+													</a>
+													<div class="new_group" style="display:none;">
+														<a href="#none">
+															<input type="text" id="">
+														</a>
+														<a href="#none" class="tmp_grp_mod">
+															<img src="../img/txof/btn/btn_new_group_ok.gif" alt="확인" id="" class="mCS_img_loaded"></a>
+														<a href="#none" class="tmp_grp_calc">
+															<img src="../img/txof/btn/btn_new_group_cnl.gif" alt="취소" id="" class="mCS_img_loaded"></a>
+													</div>
+												</dd>
+											</dl>
+											<span class="btn_group_plus" id="">그룹추가</span>
+										</div>
+										<div class="new_group new_grp_add" style="display: none;">
+											<input type="text" id="">
+											<a href="#none" id="save_group">
+												<img src="../img/txof/btn/btn_new_group_ok.gif" alt="확인" id="" class="mCS_img_loaded">
+											</a>
+											<a href="#none" id="canc_group">
+												<img src="user_empl_001.html.bak" alt="취소" id="" class="mCS_img_loaded">
+											</a>
+										</div>
+										
+										<!-- //20180906 수정 -->
+									</li>
+									<!-- //그룹 -->
+						
+								</ul>
+							</div>
+						<!-- </div>
+						
+						<div class="alarm_wrap"> -->
+						
+							<div class="mygroupLst">
+								<dl id="trcoFirst" data-url="user_info_001.act">
+									<dd class="on" id="user_info"> 
+										<div class="line first" id="GRP0">
+											<a href="#none">
+												<img src="../img/txof/ico/ico_user_mgmt.png" class="mCS_img_loaded">
+												<span>고객 관리</span> 
+												<span class="badge2">
+												<strong id="GRP">138</strong></span>
+											</a>
+										</div>
+									</dd>
+								</dl>
+							
+							
+							<!-- <div class="mygroupLst"> -->
+								<ul>
+									<li class="on" id="grp_wrap_rprt"><!-- 활성화클래스 on -->
+										<div class="mygroupLst_tit">
+											<a href="#none" class="" name="btn_left_menu">
+												<img src="../img/txof/ico/ico_reptManage.png" class="mCS_img_loaded">보고서 관리
+											</a>
+											<div class="mygroup_btn">
+												<i class="btn"></i>
+											</div>
+										</div>
+										<div class="mygroupCont">
+											<dl class="mygroup">
+												<dd class="off" id="mrprt_send" data-nm="보고서 발송" data-url="mrprt_send_001.act">
+													<a href="#none">
+														<div class="line">보고서 발송</div>
+													</a>
+													<!-- <div class="line">
+														보고서 발송 <span class="badge2"><strong ></strong></span>
+													</div> -->
+												</dd>
+												<dd class="off" id="mrprt_hist" data-nm="리포트 이력" data-url="mrprt_hist_001.act">
+													<a href="#none">
+														<div class="line">보고서 이력</div>
+													</a>
+													<!-- <div class="line">
+														보고서 이력 <span class="badge2"><strong ></strong></span>
+													</div> -->
+												</dd>
+											</dl>
+										</div>
+									</li>
+								</ul>
+							<!--  </div> -->
+							</div>
+							
+							<div class="mygroupLst">
+								<dl id="grp_wrap_cafe">
+									<dt class="menu"><img src="../img/txof/ico/ico_taxCafe.png" class="mCS_img_loaded">세무지식</dt>
+									<dd class="off mgnt_cafe" id="mgnt_cafe" data-nm="세무지식 관리" data-url="mgnt_cafe_001.act" data-param="{&quot;blbd_id&quot;:&quot;TXOF_CAFE&quot;,&quot;blbd_nm&quot;:&quot;세무지식 관리&quot;}">
+										<div class="line first">세무지식 관리</div>
+									</dd>
+								</dl>
+							</div>
+							
+							<div class="mygroupLst">	
+								<ul>
+									<li class="on" id="grp_wrap_realTime"><!-- 활성화클래스 on -->
+										<div class="mygroupLst_tit">
+											<a href="#none" class="" name="btn_left_menu">
+												<img src="../img/txof/ico/ico_relatime.png" class="mCS_img_loaded">실시간정보수집
+											</a>
+											<div class="mygroup_btn">
+												<i class="btn"></i>
+											</div>
+										</div>
+										<div class="mygroupCont">
+											<dl class="mygroup">
+												<dd class="off" id="infoc_rinfo" data-nm="정보수집현황" data-url="infoc_rinfo_001.act">
+													<a href="#none">
+														<div class="line">정보수집현황</div>
+													</a>
+													<!-- <div class="line">
+														보고서 발송 <span class="badge2"><strong ></strong></span>
+													</div> -->
+												</dd>
+												<dd class="off" id="infoc_rcert" data-nm="수집정보설정" data-url="infoc_rcert_001.act">
+													<a href="#none">
+														
+													</a>
+													<!-- <div class="line">
+														보고서 이력 <span class="badge2"><strong ></strong></span>
+													</div> -->
+												<div class="tooltipWrap">
+												<div class="tooltipWrap">
+													<p class="txt line" name="MENU_NM" style="color: rgb(196, 196, 196);">수집정보설정</p>
+													<div class="tooltip">
+														<p class="tit" name="TOOLTIP_TEXT">해당 메뉴는 관리자만 이용 가능합니다.</p><p>
+													</p></div>
+												</div>
+												</div></dd>
+											</dl>
+										</div>
+									</li>
+								</ul>
+							</div>
+						
+							<div class="mygroupLst">
+								<ul>
+									<li class="off" id="grp_wrap_main"><!-- 활성화클래스 on -->
+										<div class="mygroupLst_tit">
+											<a href="#none" class="" name="btn_left_menu"><img src="../img/txof/ico/ico_set.png" class="mCS_img_loaded">환경 설정</a>
+											<div class="mygroup_btn">
+												<i class="btn"></i>
+											</div>
+										</div>
+										<div class="mygroupCont"><!-- style="display: none;" -->
+											<dl class="mygroup">
+												<dd class="off" id="mgnt_wpop" data-nm="웰컴팝업 관리" data-url="mgnt_wpop_001.act">
+													<!-- <div class="line">
+														웰컴팝업 관리 <span class="badge2"><strong></strong></span>
+													</div> -->
+													<a href="#none">
+														
+													</a>
+												<div class="tooltipWrap">
+												<div class="tooltipWrap">
+													<p class="txt line" name="MENU_NM" style="color: rgb(196, 196, 196);">웰컴팝업 관리</p>
+													<div class="tooltip">
+														<p class="tit" name="TOOLTIP_TEXT">해당 메뉴는 관리자만 이용 가능합니다.</p><p>
+													</p></div>
+												</div>
+												</div></dd>
+												<!-- <dd class="off" id="mgnt_pymt" data-nm="청구납부내역" data-url="mgnt_pymt_001.act" >
+													<span class=""></span>
+													<div class="line">
+														청구납부내역 <span class="badge2"><strong></strong></span>
+													</div>
+												</dd> -->
+												<dd class="off" id="mgnt_rept" data-nm="리포트 설정" data-url="mgnt_rept_001.act">
+													<a href="#none">
+														
+													</a>
+												<!--  <div class="line">
+														리포트 설정 <span class="badge2"><strong></strong></span>
+													</div> -->
+												<div class="tooltipWrap">
+												<div class="tooltipWrap">
+													<p class="txt line" name="MENU_NM" style="color: rgb(196, 196, 196);">리포트 설정</p>
+													<div class="tooltip">
+														<p class="tit" name="TOOLTIP_TEXT">해당 메뉴는 관리자만 이용 가능합니다.</p><p>
+													</p></div>
+												</div>
+												</div></dd>
+												<dd class="off" id="mgnt_sett" data-nm="세무사무소 설정" data-url="mgnt_sett_001.act">
+													<a href="#none">
+														
+													</a>
+													<!-- <div class="line">
+														세무사무소 설정 <span class="badge2"><strong></strong></span>
+													</div> -->
+												<div class="tooltipWrap">
+													<div class="tooltipWrap">
+														<p class="txt line" name="MENU_NM" style="color: rgb(196, 196, 196);">세무사무소 설정</p>
+														<div class="tooltip">
+															<p class="tit" name="TOOLTIP_TEXT">해당 메뉴는 관리자만 이용 가능합니다.</p><p>
+														</p></div>
+													</div>
+													</div>
+												</dd>
+												<dd class="off" id="mgnt_feld" data-nm="사용자필드 설정" data-url="mgnt_feld_001.act">
+													<!-- <span class=""></span> -->
+													<a href="#none">
+														<div class="line">사용자필드 설정 </div>
+													</a>
+													<!-- <div class="line">
+														사용자필드 설정 <span class="badge2"><strong></strong></span>
+													</div> -->
+												</dd>
+											</dl>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<!-- 관리자만 노출 -->
+							<div class="mygroupLst">
+								<ul>
+									<li class="on"><!-- 활성화클래스 on -->
+										<div class="mygroupLst_tit">
+											<a href="#none" class="" name="btn_left_menu"><img src="../img/txof/ico/ico_set.png" class="mCS_img_loaded">어드민</a>
+											<div class="mygroup_btn">
+												<i class="btn"></i>
+											</div>
+										</div>
+										<div class="mygroupCont">
+											<dl class="mygroup">
+												<dd class="off admin_menu" id="admn_cafe" data-nm="세모카페 어드민" data-url="mgnt_cafe_001.act" data-param="{&quot;blbd_id&quot;:&quot;MGNT_CAFE&quot;,&quot;blbd_nm&quot;:&quot;세모카페 어드민&quot;}">
+													<a href="#none">
+														<div class="line">세모카페 어드민</div>
+													</a>
+													<!-- <div class="line">
+														세모카페 어드민 <span class="badge2"><strong></strong></span>
+													</div> -->
+												</dd>
+												<dd class="off admin_menu" id="admn_noti" data-nm="공지사항 관리" data-url="admn_noti_001.act">
+													<!-- <div class="line">
+														공지사항 관리 <span class="badge2"><strong></strong></span>
+													</div> -->
+													<a href="#none">
+														<div class="line">공지사항 관리</div>
+													</a>
+												</dd>
+												<dd class="off admin_menu" id="admn_scrp" data-nm="클라이언트 스크래핑 조회" data-url="admn_scrp_001.act">
+													<!-- <span class=""></span> -->
+													<!-- <div class="line">
+														클라이언트 스크래핑 조회 <span class="badge2"><strong></strong></span>
+													</div> -->
+													<a href="#none">
+														<div class="line">클라이언트 스크래핑 조회</div>
+													</a>
+												</dd>
+											</dl>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+			</div>
+		</div>
+		<!-- //lnb box -->
+		
+
+
+		<!-- content -->
+		<div class="content">
+
+			<div class="content_wrap">
+				<div class="cust_dv_wrap nobd"><!-- [D] 편집기능 눌렀을때 class="edit_on" 추가 -->
+					<div class="title_wrap h1type">
+						<div class="left">
+							<h1>리포트 이력</h1>
+						</div>
+					
+						<div class="right">
+							<!-- 검색 -->
+							
+							<div class="cntalign">
+								<div class="input_box">
+									<input type="text" value="" placeholder="검색어를 입력하세요" style="width:180px;"><a href="#none"><img
+											src="../img/txof/btn/btn_topsearch.gif" alt="조회"></a>
+								</div>
+							</div><!-- //검색 -->
+						</div>
+					</div>		
+					<!-- 검색조건 -->
+					<div class="title_wrap">
+						<div class="left">
+							<div class="cntalign">
+								<div class="title">
+									<h2 class="tx_title">과세유형</h2>
+								</div>
+							</div>
+							<div class="cntalign">
+								<!-- 구분선택 -->
+								<div class="ly_filter type4">
+									<a href="#none" class="">전체</a>
+									<!-- 구분선택 주석 
+									<ul class="ly_filter_inner" style="min-width:100px !important;width:100px !important;">
+										<li><a href="#none">전체</a></li>
+										<li><a href="#none">일반</a></li>
+										<li><a href="#none">프리미엄</a></li>
+									</ul> -->
+									
+								</div>
+								<!-- //구분선택 -->
+							</div>
+							<div class="cntalign" style="margin-left:30px;">
+								<div class="title">
+									<h2 class="tx_title">과세구분</h2>
+								</div>
+							</div>
+							<div class="cntalign">
+								<!-- 기간 선택 -->
+								<div class="ly_filter type4">
+									<a href="#none" class="">전체</a>
+
+									<!-- 기간선택 주석 -->
+									<!-- <ul class="ly_filter_inner" style="display:;min-width:100px !important;width:100px !important;">
+										<li><a href="#none" class="on">전체</a></li>
+										<li><a href="#none">과세</a></li>
+										<li><a href="#none">면세</a></li>
+										<li><a href="#none">영세</a></li>
+										<li><a href="#none">미지정</a></li>
+									</ul> -->
+								</div>
+								<!-- //기간 선택 -->
+							</div>
+						</div>
+					</div>
+					<!-- //검색조건 -->
+					
+					<div class="list_scroll_top" style="overflow:hidden;"><!-- [D] 하단테이블 세로스크롤 발생시 pdr 클래스 추가 -->
+					<table class="tbl_result" summary="">
+						<caption></caption>
+						<colgroup>
+							<col style="width:200px;">  <!-- col1 좌측정렬 거래처명 -->
+							<col style="width: 120px;"> <!-- col2 사업자번호 숫자 10개 -->
+							<col style="width: 100px;">  <!-- col3 유형 세글자 -->
+							<col style="width: 80px;">  <!-- col4 계약상태 -->
+							<col style="width: 100px;"> <!-- col5 대표자 세글자 -->
+							<col style="width: 120px;"> <!-- col6 휴대폰번호 숫자 11개 -->
+							<col style="width: 150px;"> <!-- col7 발송건수 -->
+							<col style="width: 130px;"> <!-- col8 담당자 텍스트 긴 영역-->
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col" class="tal"><div>사업장명</div></th>
+								<th scope="col"><div>사업자번호</div></th>
+								<th scope="col"><div>유형</div></th>
+								<th scope="col"><div>계약상태</div></th>
+								<th scope="col"><div>대표자</div></th>
+								<th scope="col"><div>휴대폰번호</div></th>
+								<th scope="col"><div>발송건수</div></th>
+								<th scope="col"><div>담당자</div></th>
+							</tr>
+						</thead>
+					</table>
+				</div>
+
+				<table class="tbl_result" summary="">
+						<caption></caption>
+						<colgroup>
+							<col style="width:200px;">  <!-- col1 좌측정렬 거래처명 -->
+							<col style="width: 120px;"> <!-- col2 사업자번호 숫자 10개 -->
+							<col style="width: 100px;">  <!-- col3 유형 세글자 -->
+							<col style="width: 80px;">  <!-- col4 계약상태 -->
+							<col style="width: 100px;"> <!-- col5 대표자 세글자 -->
+							<col style="width: 120px;"> <!-- col6 휴대폰번호 숫자 11개 -->
+							<col style="width: 150px;"> <!-- col7 발송건수 -->
+							<col style="width: 130px;"> <!-- col8 담당자 텍스트 긴 영역-->
+						</colgroup>
+						<!--
+						<tfoot style="display:none;">
+							<tr class="no_hover">
+								<td colspan="8" class="no_info"><div>등록된 거래처가 없습니다.<br>'거래처추가'를 클릭하여 거래처를 추가하세요.</div></td>
+							</tr>
+						</tfoot>
+						-->
+						<tbody style="display: table-tbody;"><!-- [D] style="display: none / table-tbody;" -->
+							<tr>
+								<td><div style="position:relative;" class="tal t_hover">아리랑노래연습장</div></td>
+								<td><div class="t_center t_hover">123-45-67890</div></td>
+								<td><div class="t_center">일반</div></td>
+								<td><div class="t_center">기장법인</div></td>
+								<td><div class="tal">홍길동</div></td>
+								<td><div class="t_center">010-1234-5678</div></td>
+								<td><div class="t_center">6 (최근 23.05.16)</div></td>
+								<td><div class="t_center">김세모</div></td>
+							</tr>
+							<tr>
+								<td><div style="position:relative;" class="tal t_hover">가나상사</div></td>
+								<td><div class="t_center t_hover">123-45-67890</div></td>
+								<td><div class="t_center">미등록</div></td>
+								<td><div class="t_center">과세</div></td>
+								<td><div class="tal">김민경경</div></td>
+								<td><div class="t_center">010-1234-5678</div></td>
+								<td><div class="t_center">-</div></td>
+								<td><div class="t_center">이네모</div></td>
+							</tr>
+							<tr>
+								<td><div style="position:relative;" class="tal t_hover">가나상사</div></td>
+								<td><div class="t_center t_hover">123-45-67890</div></td>
+								<td><div class="t_center">미등록</div></td>
+								<td><div class="t_center">과세</div></td>
+								<td><div class="tal">김마크</div></td>
+								<td><div class="t_center">010-1234-5678</div></td>
+								<td><div class="t_center">29 (최근 23.05.20)</div></td>
+								<td><div class="t_center">이네모</div></td>
+							</tr>
+						</tbody>
+					</table>
+					<!-- //2021-04-22 -->
+					<!-- Paging wrap -->
+					<div class="paging_wrap">
+						<!-- combo -->
+						<div class="combo_wrap">
+							<div class="combo_style">
+								<a href="#none" class="btn_style btn_combo_down"><span>12</span></a>
+								<ul class="up" style="display: none;">
+									<li><a href="#none">200</a></li>
+									<li><a href="#none">150</a></li>
+									<li><a href="#none">100</a></li>
+									<li><a href="#none">50</a></li>
+									<li><a href="#none">12</a></li>
+								</ul>
+							</div>
+						</div>
+						<!-- //combo -->
+						<!-- pagination -->
+						<div class="paging"><!-- [D] 비활성상태는 on class 제거 -->
+							<a href="#none" class="btn_pag_cntr first"><span class="blind">first</span></a><a href="#none" class="btn_pag_cntr prev"><span class="blind">previous</span></a>
+							<span class="pag_num">
+								<a href="#none" class="on">1</a><a href="#none">2</a><a href="#none">3</a><a href="#none">4</a><a href="#none">5</a><a href="#none">6</a><a href="#none">7</a><a href="#none">8</a><a href="#none">9</a><a href="#none">10</a>
+							</span>
+							<a href="#none" class="btn_pag_cntr next on"><span class="blind">next</span></a><a href="#none" class="btn_pag_cntr last on"><span class="blind">last</span></a>
+						</div>
+						<!-- //pagination -->
+					</div>
+					<!-- //Paging wrap -->
+					
+
+				</div>
+				<!-- 자료 없는경우 아래 내용 보여 주면 됩니다. 
+				<div class="upbx2 bg_g">
+					<h4 class="fwb">수집된 거래증빙이 없습니다.</br></br>홈택스 자료를 수집할 수 있습니다.</h4>
+
+					<div class="tac"><a href="#none" class="btn_style_big"><span>홈택스 자료 수집하기</span></a></div>
+				</div>
+				-->
+			</div>
+		   <!-- //content_wrap -->
+			
+		</div>
+		<!-- //content -->
+
+	</div>
+	<!-- //Container -->
+	<!-- footer 추가 : 20180828 -->
+	<div class="footer">
+		<!-- Copy right -->
+		<div class="copyright_wrap">
+			<div class="copyright_box">
+				<p>Copyright(c) <strong>Webcash.</strong> All rights reserved.</p>
+			</div>
+			<div class="ft_menu"></div>
+		</div>
+		<!-- //Copy right -->
+	</div>
+	<!-- //footer -->
+</div>
+<!-- //wrap -->
+
+
+</body>
+</html>
+

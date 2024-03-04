@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="45" viewBox="0 0 40 45">
+    <defs>
+        <style>
+            .cls-1{fill:#249078}
+        </style>
+    </defs>
+    <g id="그룹_62753" data-name="그룹 62753" transform="translate(-369.5 -188.198)">
+        <path id="합치기_23" data-name="합치기 23" class="cls-1" d="m20 0 20 4.606-.217 21.113S39.552 38.09 20 45zM.215 25.719 0 4.606 20 0v45C.449 38.09.215 25.719.215 25.719z" transform="translate(369.5 188.198)"/>
+        <path id="합치기_24" data-name="합치기 24" d="M17.275 0 34.55 4.049l-.188 18.557s-.2 10.874-17.087 16.947zM.186 22.606 0 4.049 17.275 0v39.553C.387 33.48.186 22.606.186 22.606z" transform="translate(372.225 190.923)" style="fill:#fff"/>
+        <path id="합치기_22" data-name="합치기 22" class="cls-1" d="M6.121 14.792v-3.57H2.55a2.55 2.55 0 0 1 0-5.1h3.571V2.551a2.55 2.55 0 1 1 5.1 0v3.57h3.569a2.55 2.55 0 1 1 0 5.1h-3.569v3.57a2.55 2.55 0 0 1-5.1 0z" transform="translate(381.029 199.981)"/>
+    </g>
+</svg>

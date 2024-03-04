@@ -1,0 +1,160 @@
+@charset "utf-8";
+
+/* COMMON */
+.inner {position: relative; max-width: 1440px; padding: 0 20px; margin: 0 auto;}
+.defTit {font-weight: 600; font-size: 60px;}
+
+/* vatHeader */
+#vatHeader {position: fixed; top: 0; left: 0; right: 0; border-bottom: 1px solid #F0F0F0; background: #fff; z-index: 10;}
+#vatHeader .inner {display: flex; align-items: center; justify-content: space-between; height: 80px; }
+#vatHeader .inner .logoWrap .textLogo {display: none; font-size: 24px; color: #0057ff;}
+#vatHeader .inner .logoWrap .imgLogo {display: none; justify-content: center; align-items: center; height: 60px;}
+#vatHeader .inner .logoWrap .imgLogo img {height: inherit;}
+#vatHeader .inner nav {margin-right: -20px;}
+#vatHeader .inner nav > ul {display: flex; align-items: center;}
+#vatHeader .inner nav > ul > li.inquiry {display: none;}
+#vatHeader .inner nav > ul > li > a {display: block; padding: 0 20px; height: 80px; line-height: 80px; font-size: 18px;}
+
+/* vatHeader : ACTIVE */
+#vatHeader .inner .logoWrap .textLogo.active {display: block;}
+#vatHeader .inner .logoWrap .imgLogo.active {display: flex;}
+#vatHeader .inner nav > ul > li.inquiry.active {display: block;}
+
+/* CONTAINER */
+.container {padding-top: 80px;}
+
+
+/* ########## INDEX.HTML ########## */
+/* VISUAL */
+.visual .inner {display: flex; justify-content: center; align-items: center; flex-direction: column; min-height: calc(100vh - 80px); gap: 6.716vw;}
+.visual .inner .areaTxt {padding-top: 20px; text-align: center;}
+.visual .inner .areaTxt > p {color: #1400ff; font-size: 22px;}
+.visual .inner .areaTxt > p em {color: inherit;}
+.visual .inner .areaTxt .defTit {margin: 20px 0;}
+.visual .inner .areaTxt .defTit span {color: #2d74ff;}
+.visual .inner .areaTxt > em {display: block; color: #828282; font-size: 26px;}
+.visual .inner .visualImg {height: 40%; aspect-ratio: 305/436; text-align: center;}
+
+/* SAVE */
+.save {display: flex; align-items: center; min-height: calc(100vh - 80px); padding: 180px 0; background: #2957CE; overflow: hidden;}
+.save .info {display: flex; align-items: stretch; justify-content: space-between;}
+.save .info .left {display: flex; flex-direction: column;}
+.save .info .left .defTit {margin-bottom: 20px; color: #fff;}
+.save .info .left .defTit p {color: #76ceff;}
+.save .info .left .price {margin: auto 0 60px;}
+.save .info .left .price p {color: #D7E2FF; font-size: 36px;}
+.save .info .left .price p span {display: block;}
+.save .info .left .price p .odometer-digit {display: inline-block;}
+.save .info .left .price p strong {font-size: 70px; color: #fff;}
+.save .info .left .price p strong em {display: inline-block; margin-top: -10px;}
+.save .info .right {width: 45%; text-align: right;}
+.save .info .right.aos-animate {transition-delay: 1.35s;}
+.save .info .when {position: relative; width: fit-content;}
+.save .info .when button {color: #03FFC3; text-decoration: underline; font-size: 30px;}
+.save .info .when .tooltip {opacity: 0; visibility: hidden; display: flex; align-items: center; justify-content: center; position: absolute; top: 50%; transform: translateY(calc(-50% + 18px)); left: 100%; width: 410px; aspect-ratio: 443/322; background: url(../img/bg_tooltip.png) no-repeat center / cover; transition: .35s; z-index: 1;}
+.save .info .when .tooltip .dim {opacity: 0; visibility: hidden;}
+.save .info .when .tooltip .tooltipInner {padding-bottom: 26px; padding-left: 23px;}
+.save .info .when .tooltip .tooltipInner .areaBtn {display: none;}
+.save .info .when .tooltip .tooltipInner strong {display: block; margin-bottom: 10px; font-size: 32px;}
+.save .info .when .tooltip .tooltipInner ul > li {margin-top: 5px; font-size: 18px; color: #555;}
+
+/* SAVE : ACTIVE */
+.save .info .when.active .tooltip {opacity: 1; visibility: visible;}
+
+/* SERVICE */
+.service {min-height: calc(100vh - 80px); padding: 180px 0 300px;}
+.service .defTit {margin-bottom: 85px; text-align: center;}
+.service .defTit span {color: #2d74ff;}
+.service .serviceList {display: flex; gap: 32px;}
+.service .serviceList > li {flex: 1; background: no-repeat bottom 50px right 36px / 150px;}
+.service .serviceList > li:nth-child(1) {background-image: url(../img/ico_special.png); transition-delay: .15s;}
+.service .serviceList > li:nth-child(2) {background-image: url(../img/ico_special02.png); transition-delay: .3s;}
+.service .serviceList > li:nth-child(3) {background-image: url(../img/ico_special03.png); transition-delay: .45s;}
+.service .serviceList > li > div {height: 480px; padding: 50px 36px; border-radius: 40px; box-shadow: 0 0 20px 4px rgba(0,0,0,0.1); } 
+.service .serviceList > li > div p {font-size: 28px; color: #333;}
+.service .serviceList > li > div p span {display: block;}
+.service .serviceList > li > div p span strong {font-weight: 600;}
+
+/* FLOAT */
+.floatTxt {opacity: 0; visibility: hidden; position: fixed; bottom: 200px; left: 50%; transform: translateX(-50%); color: #828282; font-size: 24px; transition: .35s; z-index: 10;}
+.floatBtn {position: fixed; bottom: 100px; left: 50%; transform: translateX(-50%); height: 80px; padding: 0 69px; color: #3f4804; background: #33ED94; font-size: 32px; font-weight: 600; border-radius: 100px; z-index: 10;}
+
+/* FLOAT : ACTIVE */
+.floatTxt.active {opacity: 1; visibility: visible;}
+
+/* MEDIA QUERY */
+@media screen and (max-width : 767px) {
+  /* COMMON */
+  .defTit {font-size: 32px;}
+
+  /* vatHeader */
+  #vatHeader .inner {height: 60px;}
+  #vatHeader .inner .logoWrap .textLogo {font-size: 18px;}
+  #vatHeader .inner .logoWrap .imgLogo {height: 50px;}
+  #vatHeader .inner nav {margin-right: -10px;}
+  #vatHeader .inner nav > ul > li > a {height: 60px; line-height: 60px; padding: 0 10px; font-size: 16px;}
+
+  /* CONTAINER */
+  .container {padding-top: 60px;}
+
+
+  /* ########## INDEX.HTML ########## */
+  /* VISUAL */
+  .visual .inner .areaTxt > p {font-size: 18px;}
+  .visual .inner .areaTxt .defTit span {display: block;}
+  .visual .inner .areaTxt em {font-size: 16px;}
+
+  /* SAVE */
+  .save {padding: 90px 0;}
+  .save .info {display: block; overflow: hidden;}
+  .save .info .left {display: block; text-align: center;}
+  .save .info .left .defTit {margin-bottom: 50px;}
+  .save .info .left .defTit span {display: block;}
+  .save .info .left .price p {font-size: 20px;}
+  .save .info .left .price p strong {font-size: 42px;}
+  .save .info .when {width: 100%;}
+  .save .info .when button {font-size: 20px;}
+  .save .info .when .tooltip {all: unset;}
+  .save .info .when .tooltip .dim {position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 101; background: rgba(0,0,0,0.5); transition: .35s;}
+  .save .info .right {max-width: 400px; margin: 60px auto 0;}
+  .save .info .when .tooltip .tooltipInner {opacity: 1; visibility: visible; position: fixed; top: unset; bottom: 0; left: 0; right: 0; transform: translateY(100%); width: 100%; aspect-ratio: initial; background-image: none; background-color: #fff; z-index: 101; text-align: left; padding: 20px; border-radius: 36px 36px 0 0; transition: .35s;}
+  .save .info .when .tooltip .tooltipInner .areaBtn {display: block; text-align: right;}
+
+  /* SAVE : ACTIVE */
+  .save .info .when.active .dim {opacity: 1; visibility: visible;}
+  .save .info .when.active .tooltipInner {transform: translateY(0);}
+
+  /* SERVICE */
+  .service {padding: 90px 0 180px;}
+  .service .serviceList {display: block;}
+  .service .serviceList > li {margin-top: 30px; background-size: 120px; background-position: right 30px bottom 30px;}
+  .service .serviceList > li > div {height: 360px; padding: 30px; border-radius: 20px;}
+  .service .serviceList > li > div p {font-size: 20px;}
+
+  /* FLOAT */
+  .floatTxt {width: calc(100% - 40px); bottom: 120px; font-size: 18px; text-align: center;}
+  .floatBtn {bottom: 50px; width: calc(100% - 40px); height: 60px; padding: 0; font-size: 22px;}
+}
+
+@media (min-width : 768px) and (max-width : 1023px) {
+  /* COMMON */
+  .defTit {font-size: 42px;}
+
+  /* SAVE */
+  .save {padding: 120px 0;}
+  .save .info .left .defTit {margin-bottom: 0;}
+  .save .info .left .price {margin-top: 60px;}
+  .save .info .left .price p {font-size: 28px;}
+  .save .info .when button {font-size: 24px;}
+  .save .info .right {margin: auto 0; max-width: 400px;}
+
+  /* SERVICE */
+  .service {padding-bottom: 240px;}
+  .service .serviceList > li {background-size: 150px;}
+  .service .serviceList > li > div {height: 420px; padding: 40px 30px; border-radius: 30px;}
+  .service .serviceList > li > div p {font-size: 20px;}
+}
+
+@media screen and (max-width : 1300px) {
+  .service .serviceList > li > div p span {display: inline;}
+}

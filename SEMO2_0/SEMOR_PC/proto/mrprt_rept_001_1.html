@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<title>세모리포트</title>
+<link rel="stylesheet" href="../css/reset_taxp.css">
+<link rel="stylesheet" href="../css/app_header.css"><!-- [D] 세무대리인용 header -->
+<link rel="stylesheet" href="../css/content_taxp.css"><!-- [D] 세무대리인용 -->
+<link rel="stylesheet" href="../css/swiper-bundle.min.css" ><!-- [D] 세무대리인용 -->
+<link rel="stylesheet" href="../css/w2ui_2.0.css">
+<link rel="stylesheet" href="../css/semo_rept.css">
+
+<!-- custom scrollbar plugin css -->
+<link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+  <script src="../js/lib/jquery/jquery-1.12.4.min.js"></script>
+<script src="../js/lib/jquery/jquery-ui-1.10.4.min.js"></script>
+<script src="../js/lib/swiper/swiper-bundle.min.js"></script>
+<!-- custom scrollbar plugin -->
+<script src="../js/lib/plugin/w2ui.js"></script>
+<script src="../js/design/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../js/design/jquery.placeholder.min.js"></script>
+<script src="../js/lib/plugin/smart.popup.js"></script>
+<script src="../js/comm/common.js"></script>
+
+
+</head>
+<body style="width:1000px;"><!-- [D] 메뉴영역(접기 : class="fold", 펼치기 : class="lnb_bg") -->
+
+<!-- 그룹추가 팝업 -->
+	<div class="pop_wrap bd_round" style="width:1000px; display: block;">
+		<!-- 팝업 헤더 -->
+		<div class="pop_header">
+			<h1>그룹 추가</h1>
+			<a href="javascript:;" id="btn_topX" class="btn_popclose"><img src="../img/txof/btn/btn_popClose_white.gif" alt="팝업닫기"></a>
+		</div>
+
+		<!-- 팝업 컨텐츠 -->
+		<div class="pop_container">
+			<div class="title_wrap">
+				<h2>
+					보고서 그룹추가
+					<span>거래처는 하나의 그룹에만 소속 될 수 있습니다.</span>
+				</h2>
+			</div>
+
+			<div class="group_wrap">
+				<div class="top_srch">
+					<div class="left">
+						<p>그룹명</p>
+						<input type="text" value="" id="dtl_sch_word" placeholder="그룹명을 입력해주세요.(0/20자)" style="width: 780px;">
+					</div>
+					<div class="right">
+						<a href="#none" class="btn_style1 down"  id="dtl_sch_btn"><span>검색조건 상세</span></a>
+					</div>
+					
+				</div>
+				<!-- 고객 그룹상세 텍스트 추가 -->
+				<div class="top_srch" style="display: none;">
+					<span>• 거래처는 하나의 그룹에만 소속될 수 있습니다.</span>
+				</div>
+				<div class="table_wrap management" id="dtl_area" style="display: flex ;">
+					<div class="tbl_srch" style="width: 50%;">
+						<table class="" style="display: ;">
+							<caption></caption>
+							<colgroup>
+								<col style="width: 85px;">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">
+										<div>기간</div>
+									</th>
+									<td colspan="6">
+										<div id="div_calendar">
+											<label style="height:24px;">가입일자</label>
+											<div class="input_box2">
+												<input type="text" style="width:69px;" id="inp_str_dt" readonly="readonly" class="hasDatepicker"><img class="ui-datepicker-trigger" src="../img/txof/ico/ico_calendar.png" alt="..." title="...">
+											</div>
+											<span class="tx_swungDash">~</span>
+											<div class="input_box2">
+												<input type="text" style="width:69px;" id="inp_end_dt" readonly="readonly" class="hasDatepicker"><img class="ui-datepicker-trigger" src="../img/txof/ico/ico_calendar.png" alt="..." title="...">
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">
+										<div>설치상태</div>
+									</th>
+									<td colspan="6">
+										<div class="checklist">
+											<label style="height:24px;"><input type="checkbox">설치</label>
+											<label style="height:24px;"><input type="checkbox">미설치</label>
+										</div>
+									</td>
+								</tr>
+	
+								<tr>
+									<th scope="row">
+										<div>사업자 구분</div>
+									</th>
+									<td colspan="5">
+										<div class="checklist"><!-- 2020-07-17 -->
+											<label style="height:24px;"><input type="checkbox">개인</label>
+											<label style="height:24px;"><input type="checkbox">법인</label>
+	
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">
+										<div class="mgt2">계약상태</div>
+									</th>
+									<td colspan="7">
+										<div class="checklist"><!-- 2020-07-17 -->
+											<label style="height:24px;"><input type="checkbox">기장개인</label>
+											<label style="height:24px;"><input type="checkbox">신고개인</label>
+											<label style="height:24px;"><input type="checkbox">기장법인</label>
+											<label style="height:24px;"><input type="checkbox">신고법인</label>
+											<label style="height:24px;"><input type="checkbox">아우소싱</label>
+											<label style="height:24px;"><input type="checkbox">자문계약</label>
+											<label style="height:24px;"><input type="checkbox">조세불복</label>
+	
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">
+										<div class="mgt2">과세유형</div>
+									</th>
+									<td colspan="7">
+										<div class="checklist"><!-- 2020-07-17 -->
+											<div class="checklist"><!-- 2020-07-17 -->
+												<label style="height:24px;"><input type="checkbox">일반</label>
+												<label style="height:24px;"><input type="checkbox">간이</label>
+												<label style="height:24px;"><input type="checkbox">면세</label>
+												<label style="height:24px;"><input type="checkbox">비영리</label>
+												<label style="height:24px;"><input type="checkbox">휴업</label>
+												<label style="height:24px;"><input type="checkbox">폐업</label>
+												<label style="height:24px;"><input type="checkbox">미등록</label>
+											</div>
+	
+										</div>
+									</td>
+								</tr>
+							
+							</tbody>
+						</table>
+					</div>
+					
+					<div class="tbl_srch" style="width: 50%">
+						<table class="" style="display:;">
+							<caption></caption>
+							<colgroup>
+								<col style="width: 85px;">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">
+										<div>매출종류</div>
+									</th>
+									<td colspan="3">
+										<div class="checklist"><!-- 2020-07-17 -->
+											<label style="height:24px;"><input type="checkbox">PG•온라인</label>
+											<label style="height:24px;"><input type="checkbox">수출입</label>
+	
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">
+										<div>수기증빙</div>
+									</th>
+									<td colspan="3">
+										<div class="checklist"><!-- 2020-07-17 -->
+											<label style="height:24px;"><input type="checkbox">미확인</label>
+	
+										</div>
+									</td>
+								</tr>
+								<tr>    
+									<th scope="row">
+										<div>최초수집</div>
+									</th>
+									<td colspan="3">
+										<div class="checklist"><!-- 2020-07-17 -->
+											<label style="height:24px;"><input type="checkbox">수집완료</label>
+											<label style="height:24px;"><input type="checkbox">미완료</label>
+										</div>
+									</td>
+								</tr>
+								<tr>    
+									<th scope="row">
+										<div>경리나라</div>
+									</th>
+									<td colspan="3">
+										<div class="checklist"><!-- 2020-07-17 -->
+											<label style="height:24px;"><input type="checkbox">가입</label>
+											<label style="height:24px;"><input type="checkbox">미가입</label>
+										</div>
+									</td>
+								</tr>
+	
+								<tr>
+									<th scope="row">
+										<div>검색어</div>
+									</th>
+									<td colspan="3">
+										<input type="text" value=""  id="dtl_sch_word" placeholder="거래처, 사업자번호" style="width: 170px;">
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">
+										<div>보고서 그룹 설정</div>
+									</th>
+									<td colspan="7" class="flex_csb">
+										<div class="sel_checkBox">
+											<div class="box_title">
+												<span>보고서 발송 그룹을 선택해주세요.</span>
+												<!-- ul 노출시 addClass up -->
+												<button type="button" class="down"></button>
+											</div>
+											<div class="checkList" style="z-index: 2; display: none;">
+												<ul>
+													<li class="list_title">
+														<div class="left">
+															<label for="sel01"><input type="checkbox" name="" id="sel01">거래처 전체</label>
+														</div>
+														<div class="right">
+														</div>
+													</li>
+		
+													<li class="list_item">
+														<div class="left">
+															<label for="sel02"><input type="checkbox" name="" id="sel02">
+																간이과세자간이과세세세
+															</label>
+														</div>
+														<div class="right">
+															<span>(220명)</span>
+														</div>
+													</li>
+													<li class="list_item">
+														<div class="left">
+															<label for="sel03"><input type="checkbox" name="" id="sel03">설정한 그룹명 B</label>
+														</div>
+														<div class="right">
+															<span>(20명)</span>
+														</div>
+													</li>
+													<li class="list_item">
+														<div class="left">
+															<label for="sel04"><input type="checkbox" name="" id="sel04">설정한 그룹명 C</label>
+														</div>
+														<div class="right">
+															<span>(20명)</span>
+														</div>
+													</li>
+													<li class="list_item">
+														<div class="left">
+															<label for="sel05"><input type="checkbox" name="" id="sel05">설정한 그룹명 D</label>
+														</div>
+														<div class="right">
+															<span>(20명)</span>
+														</div>
+													</li>
+													<li class="list_item">
+														<div class="left">
+															<label for="sel05"><input type="checkbox" name="" id="sel05">설정한 그룹명 D</label>
+														</div>
+														<div class="right">
+															<span>(20명)</span>
+														</div>
+													</li>
+													<li class="list_item">
+														<div class="left">
+															<label for="sel02"><input type="checkbox" name="" id="sel02">간이과세자 그룹</label>
+														</div>
+														<div class="right">
+															<span>(20명)</span>
+														</div>
+													</li>
+													<li class="list_item">
+														<div class="left">
+															<label for="sel03"><input type="checkbox" name="" id="sel03">설정한 그룹명 B</label>
+														</div>
+														<div class="right">
+															<span>(20명)</span>
+														</div>
+													</li>
+													<li class="list_item">
+														<div class="left">
+															<label for="sel04"><input type="checkbox" name="" id="sel04">설정한 그룹명 C</label>
+														</div>
+														<div class="right">
+															<span>(20명)</span>
+														</div>
+													</li>
+													<li class="list_item">
+														<div class="left">
+															<label for="sel05"><input type="checkbox" name="" id="sel05">설정한 그룹명 D</label>
+														</div>
+														<div class="right">
+															<span>(20명)</span>
+														</div>
+													</li>
+													<li class="list_item">
+														<div class="left">
+															<label for="sel05"><input type="checkbox" name="" id="sel05">설정한 그룹명 D</label>
+														</div>
+														<div class="right">
+															<span>(20명)</span>
+														</div>
+													</li>
+													<li class="list_item">
+														<div class="left">
+															<label for="sel05"><input type="checkbox" name="" id="sel05">설정한 그룹명 D</label>
+														</div>
+														<div class="right">
+															<span>(20명)</span>
+														</div>
+													</li>
+													<li class="list_item">
+														<div class="left">
+															<label for="sel05"><input type="checkbox" name="" id="sel05">설정한 그룹명 D</label>
+														</div>
+														<div class="right">
+															<span>(20명)</span>
+														</div>
+													</li>
+												</ul>
+												
+											</div>
+										</div>
+										<div class="flex_ac mgl12" style="gap: 8px">
+											<button type="button" class="btn_style2_g"><span>초기화</span></button>
+											<button href="#none" class="btn_style1_b"><span>조회</span></button>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					
+				</div>
+				<div class="grid_multi_wrap">
+					<div class="grid_box col1">
+						<div id="grid_01" class="grid"></div>
+					</div>
+					<div class="toggle_btn_wrap">
+						<button class="toggle_add_btn">
+							<span>추가</span>
+							<img src="../img/txof/btn/arr_w_16.svg">
+						</button>
+						<button class="toggle_remove_btn">
+							<img src="../img/txof/btn/arr_g_left_16.svg">
+							<span>제거</span>
+						</button>
+					</div>
+					<div class="grid_box col2">
+						<div id="grid_02" class="grid"></div>
+					</div>
+				</div>
+				<div class="grid_foot_info">
+					<!-- 선택일시 span class gr_text_yellow / 조회시 span class gr_text_blue  -->
+					<p>
+						• 아래로 스크롤하면 더 많은 데이터를 조회할 수 있습니다. ( <span class="gr_text_blue">선택 데이터 100건</span>  / 전체 데이터 : 10,000건)
+					</p>
+				</div>
+			</div>
+			<div class="pop_db_btn">
+				<button type="button">취소</button>
+				<button type="button" class="active">다음</button>
+			</div>
+			 
+		<!-- //팝업 컨텐츠 -->
+	   </div>	  
+	</div>
+	<div class="pop_wrap bd_round" style="width:1000px; display: none;">
+		<div class="pop_header">
+			<h1>그룹 설정</h1>
+			<a href="javascript:;" id="btn_topX" class="btn_popclose"><img src="../img/txof/btn/btn_popClose_white.gif" alt="팝업닫기"></a>
+		</div>
+		<div class="pop_container">
+			<div class="group_custom">
+				<div class="title">
+				  <span><strong>‘ 새로운 그룹 A’</strong>에 생성하고 싶은 보고서를 선택하세요.</span>
+				</div>
+				<div class="custom_box">
+					<div class="top">
+						<ul>
+							<li class="name">보고서명</li>
+							<li>사업분석 보고서</li>
+							<li>매출 보고서</li>
+							<li>매입 보고서</li>
+							<li>예상 부가세 보고서</li>
+							
+							<li>인건비 보고서</li>
+							<li>부가세 신고분석 보고서</li>
+						</ul>
+					</div>
+					<div class="toggle_wrap">
+						<ul>
+							<li class="name">보고서 생성</li>
+							<li>
+								<input type="checkbox" class="onoff_tg"></input>
+							</li>
+							<li>
+								<input type="checkbox" class="onoff_tg"></input>
+							</li>
+							<li>
+								<input type="checkbox" class="onoff_tg"></input>
+							</li>
+							<li>
+								<input type="checkbox" class="onoff_tg"></input>
+							</li>
+							<li>
+								<input type="checkbox" class="onoff_tg"></input>
+							</li>
+							<li>
+								<input type="checkbox" class="onoff_tg"></input>
+							</li>
+						</ul>
+						
+						<ul>
+							<li class="name">자동발송 </li>
+							<li>
+								<input type="checkbox" class="onoff_tg"></input>
+							</li>
+							<li>
+								<input type="checkbox" class="onoff_tg"></input>
+							</li>
+							<li>
+								<input type="checkbox" class="onoff_tg"></input>
+							</li>
+							<li>
+								<input type="checkbox" class="onoff_tg"></input>
+							</li>
+							<li>
+								<span>해당없음</span>
+							</li>
+							<li>
+								<span>해당없음</span>
+							</li>
+						</ul>
+						<ul>
+							<li class="name">자동발송 주기 설정 </li>
+							<li>
+								<div class="optBox_wrap">
+									<!-- optBox open 제어 class active -->
+									<div class="optBox box01 active">
+										<div class="tit">
+											<span>매월</span>
+											<i class="icon"></i>
+										</div>
+										<div class="list">
+											<ul>
+												<li>
+													<input type="radio" name="opt" id="opt1">
+													<label for="opt1">매월</label>
+												</li>
+												<li>
+													<input type="radio" name="opt" id="opt2">
+													<label for="opt2">분기</label>
+												</li><li>
+													<input type="radio" name="opt" id="opt3">
+													<label for="opt3">반기</label>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="optBox_wrap">
+									<!-- optBox open 제어 class active -->
+									<div class="optBox box01 ">
+										<div class="tit">
+											<span>매월</span>
+											<i class="icon"></i>
+										</div>
+										<div class="list">
+											<ul>
+												<li>
+													<input type="radio" name="opt" id="opt1">
+													<label for="opt1">매월</label>
+												</li>
+												<li>
+													<input type="radio" name="opt" id="opt2">
+													<label for="opt2">분기</label>
+												</li><li>
+													<input type="radio" name="opt" id="opt3">
+													<label for="opt3">반기</label>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="optBox_wrap">
+									<!-- optBox open 제어 class active -->
+									<div class="optBox box01 active">
+										<div class="tit">
+											<span>매월</span>
+											<i class="icon"></i>
+										</div>
+										<div class="list">
+											<ul>
+												<li>
+													<input type="radio" name="opt" id="opt1">
+													<label for="opt1">매월</label>
+												</li>
+												<li>
+													<input type="radio" name="opt" id="opt2">
+													<label for="opt2">분기</label>
+												</li><li>
+													<input type="radio" name="opt" id="opt3">
+													<label for="opt3">반기</label>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="optBox_wrap">
+									<!-- optBox open 제어 class active -->
+									<div class="optBox box01 active">
+										<div class="tit">
+											<span>매월</span>
+											<i class="icon"></i>
+										</div>
+										<div class="list">
+											<ul>
+												<li>
+													<input type="radio" name="opt" id="opt1">
+													<label for="opt1">매월</label>
+												</li>
+												<li>
+													<input type="radio" name="opt" id="opt2">
+													<label for="opt2">분기</label>
+												</li><li>
+													<input type="radio" name="opt" id="opt3">
+													<label for="opt3">반기</label>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li>
+								<span>해당없음</span>
+							</li>
+							<li>
+								<span>해당없음</span>
+							</li>
+						</ul>
+					</div>
+
+				</div>
+			</div>
+			<div class="pop_db_btn">
+				<button type="button">이전</button>
+				<button type="button" class="active">저장</button>
+			</div>
+		</div>
+	</div>
+<!-- //그룹추가 팝업 -->
+
+	<!-- toast-message -->
+	<div class="toast-message type02" style="">
+		<p>이미 존재하는 그룹명입니다</p>
+	</div>
+	<!-- //toast-message -->
+
+<!-- //wrap -->
+<script type="module">
+    let grid_01 = new w2grid({
+		name: 'grid_01',
+		box: '#grid_01',
+		show: {
+			
+			selectColumn: true //체크박스 생성
+		},
+		columns: [
+			{ field: 'fname', text: 'No.', size: '40px' ,attr: 'align=center'}, // frozen: true 필드 고정
+			{ field: 'type', text: '종류', size: '80px',attr: 'align=center' },
+			{ field: 'th_03', text: '메뉴', size: '80px', style: 'text-align: center' },
+			{ field: 'th_04', text: '진행 기간', size: '150px', style: 'text-align: center'  },
+			{ field: 'th_05', text: '제목', size: '200px', style: 'text-align: left' },
+			{ field: 'th_06', text: '조회 수', size: '100px', style: 'text-align: center' }
+
+		],
+		records: [
+			{ "recid": 1, "fname": "12", "type": "PC", "th_03": "홈", "th_04": "22.06.10~", "th_05":"[설문] 세무사 피드백 공기청정기", "th_06": "25,000회", "th_07": "한지훈", "th_08": "22.06.10 08:46:00", "th_09":"한배찌", "th_10":"22.06.10 08:46:00"
+				, w2ui: { class:{ th_05:"t_hover_b", th_06:"txt_sig"}} },
+			{ "recid": 2, "fname": "11", "type": "APP", "th_03": "더보기", "th_04": "22.06.10~23.06.10", "th_05":"[광고] 비플식권 프로모션 배너", "th_06": "130회", "th_07": "한지훈", "th_08": "22.06.10 08:46:00", "th_09":"한배찌", "th_10":"22.06.10 08:46:00"
+				, w2ui: { class:{  th_05:"t_hover_b", th_06:"txt_sig" }} },
+			{ "recid": 3, "fname": "10", "type": "APP", "th_03": "더보기", "th_04": "22.06.10~23.06.10", "th_05":"[광고] 세모리포트 정기세미나 홍보", "th_06": "260회", "th_07": "한지훈", "th_08": "22.06.10 08:46:00", "th_09":"한배찌", "th_10":"22.06.10 08:46:00"
+				, w2ui: { class:{  th_05:"t_hover_b", th_06:"txt_sig" }} },
+			{ "recid": 4, "fname": "9", "type": "APP", "th_03": "더보기", "th_04": "22.06.10~23.06.10", "th_05":"[광고] 세모리포트 정기세미나 홍보", "th_06": "130회", "th_07": "한지훈", "th_08": "22.06.10 08:46:00", "th_09":"한배찌", "th_10":"22.06.10 08:46:00"
+				, w2ui: { class:{  th_05:"t_hover_b", th_06:"txt_sig" }} },
+			{ "recid": 5, "fname": "8", "type": "APP", "th_03": "더보기", "th_04": "22.06.10~23.06.10", "th_05":"제목", "th_06": "130회", "th_07": "한지훈", "th_08": "22.06.10 08:46:00", "th_09":"한배찌", "th_10":"22.06.10 08:46:00"
+				, w2ui: { class:{  th_05:"t_hover_b", th_06:"txt_sig" }} },
+				
+			{ "recid": 6, "fname": "7", "type": "PC", "th_03": "메인 메뉴", "th_04": "22.06.10~23.06.10", "th_05":"제목", "th_06": "130회", "th_07": "한지훈", "th_08": "22.06.10 08:46:00", "th_09":"한배찌", "th_10":"22.06.10 08:46:00"
+				, w2ui: { class:{  th_05:"t_hover_b", th_06:"txt_sig" }} },
+
+			{ "recid": 7, "fname": "7", "type": "PC", "th_03": "메인 메뉴", "th_04": "22.06.10~23.06.10", "th_05":"제목", "th_06": "130회", "th_07": "한지훈", "th_08": "22.06.10 08:46:00", "th_09":"한배찌", "th_10":"22.06.10 08:46:00"
+				, w2ui: { class:{  th_05:"t_hover_b", th_06:"txt_sig" }} },
+
+			{ "recid": 8, "fname": "7", "type": "PC", "th_03": "메인 메뉴", "th_04": "22.06.10~23.06.10", "th_05":"제목", "th_06": "130회", "th_07": "한지훈", "th_08": "22.06.10 08:46:00", "th_09":"한배찌", "th_10":"22.06.10 08:46:00"
+				, w2ui: { class:{  th_05:"t_hover_b", th_06:"txt_sig" }} },
+			{ "recid": 6, "fname": "7", "type": "PC", "th_03": "메인 메뉴", "th_04": "22.06.10~23.06.10", "th_05":"제목", "th_06": "130회", "th_07": "한지훈", "th_08": "22.06.10 08:46:00", "th_09":"한배찌", "th_10":"22.06.10 08:46:00"
+				, w2ui: { class:{  th_05:"t_hover_b", th_06:"txt_sig" }} },
+
+			{ "recid": 7, "fname": "7", "type": "PC", "th_03": "메인 메뉴", "th_04": "22.06.10~23.06.10", "th_05":"제목", "th_06": "130회", "th_07": "한지훈", "th_08": "22.06.10 08:46:00", "th_09":"한배찌", "th_10":"22.06.10 08:46:00"
+				, w2ui: { class:{  th_05:"t_hover_b", th_06:"txt_sig" }} },
+
+			{ "recid": 8, "fname": "7", "type": "PC", "th_03": "메인 메뉴", "th_04": "22.06.10~23.06.10", "th_05":"제목", "th_06": "130회", "th_07": "한지훈", "th_08": "22.06.10 08:46:00", "th_09":"한배찌", "th_10":"22.06.10 08:46:00"
+				, w2ui: { class:{  th_05:"t_hover_b", th_06:"txt_sig" }} },
+			{ "recid": 6, "fname": "7", "type": "PC", "th_03": "메인 메뉴", "th_04": "22.06.10~23.06.10", "th_05":"제목", "th_06": "130회", "th_07": "한지훈", "th_08": "22.06.10 08:46:00", "th_09":"한배찌", "th_10":"22.06.10 08:46:00"
+				, w2ui: { class:{  th_05:"t_hover_b", th_06:"txt_sig" }} },
+
+			{ "recid": 7, "fname": "7", "type": "PC", "th_03": "메인 메뉴", "th_04": "22.06.10~23.06.10", "th_05":"제목", "th_06": "130회", "th_07": "한지훈", "th_08": "22.06.10 08:46:00", "th_09":"한배찌", "th_10":"22.06.10 08:46:00"
+				, w2ui: { class:{  th_05:"t_hover_b", th_06:"txt_sig" }} },
+
+			{ "recid": 8, "fname": "7", "type": "PC", "th_03": "메인 메뉴", "th_04": "22.06.10~23.06.10", "th_05":"제목", "th_06": "130회", "th_07": "한지훈", "th_08": "22.06.10 08:46:00", "th_09":"한배찌", "th_10":"22.06.10 08:46:00"
+				, w2ui: { class:{  th_05:"t_hover_b", th_06:"txt_sig" }} },
+		]
+	})
+    let grid_02 = new w2grid({
+		name: 'grid_02',
+		box: '#grid_02',
+		show: {
+			selectColumn: true //체크박스 생성
+		},
+		columns: [
+			{ field: 'fname', text: '추가된 거래처명', size: '100%' , style: 'text-align: left'}
+
+		]
+	})
+
+</script>
+
+
+</body>
+</html>
+

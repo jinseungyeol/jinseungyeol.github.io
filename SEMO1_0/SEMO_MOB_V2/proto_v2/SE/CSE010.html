@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CSS-->
+  <link rel="stylesheet" href="../../css_v2/semo_style.css">
+  <link rel="stylesheet" href="../../css_v2/kt_style.css">
+  <title>CSE010</title>
+</head>
+<body>
+
+  <!-- 헤더 타이틀 -->
+  <div class="title b_white">
+    <div class="title_left">
+      <i class="ico_cen left_arrow"></i>
+    </div>
+    <span class="title_text">매출 · 지출 용도설정</span>
+  </div>
+
+  <div class="basic_wrapper">
+    <div class="usage_set">
+
+      <!-- 탭메뉴 -->
+      <section class="report_tab">
+        <div class="rt_list usage">
+          <div>
+            <span>매출</span>
+          </div>
+          <div class="active">
+            <span>지출</span>
+          </div>
+          <!-- active 클래스로 활성화 -->
+        </div>
+      </section>
+  
+      <!-- 서브텍스트 -->
+      <section class="sub_txt">
+        <span>* 자주쓰는 용도를 설정하면 증빙관리가 편해져요</span>
+      </section>
+
+      <!-- 목록 -->
+      <section class="set_list_wrap">
+        <article class="set_list">
+          <div class="tit bgc_sig">
+            <span class="ico_cen check_04"></span>
+            <p>ON으로 설정한 목록</p>
+          </div>
+          <ul>
+            <li>
+              <div class="set_list_cnt">
+                <div class="check_area">
+                  <span class="ico_cen trigger_01"></span>
+                </div>
+                <div class="list_kind">
+                  <p>구입</p>
+                  <span>물품, 서비스 등 구입비</span>
+                </div>
+                <div class="onoff_input_wrap">
+                  <div class="onoff_input">
+                    <input type="checkbox" id="slideOne1" name="check" checked>
+                    <label for="slideOne1"></label>
+                    <div class="onoff_input_bg"></div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="set_list_cnt">
+                <div class="check_area">
+                  <span class="ico_cen trigger_01"></span>
+                </div>
+                <div class="list_kind">
+                  <p>세금계산서발행매입</p>
+                  <span>세금계산서 발행 지출</span>
+                </div>
+                <div class="onoff_input_wrap">
+                  <div class="onoff_input">
+                    <input type="checkbox" id="slideOne2" name="check" checked>
+                    <label for="slideOne2"></label>
+                    <div class="onoff_input_bg"></div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="set_list_cnt">
+                <div class="check_area">
+                  <span class="ico_cen trigger_01"></span>
+                </div>
+                <div class="list_kind">
+                  <p>급여</p>
+                  <span>급여, 상여금</span>
+                </div>
+                <div class="onoff_input_wrap">
+                  <div class="onoff_input">
+                    <input type="checkbox" id="slideOne3" name="check" checked>
+                    <label for="slideOne3"></label>
+                    <div class="onoff_input_bg"></div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="set_list_cnt">
+                <div class="check_area">
+                  <span class="ico_cen trigger_01"></span>
+                </div>
+                <div class="list_kind">
+                  <p>임대료</p>
+                  <span>건물 임대료, 렌탈료 등</span>
+                </div>
+                <div class="onoff_input_wrap">
+                  <div class="onoff_input">
+                    <input type="checkbox" id="slideOne4" name="check" checked>
+                    <label for="slideOne4"></label>
+                    <div class="onoff_input_bg"></div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="set_list_cnt">
+                <div class="check_area">
+                  <span class="ico_cen trigger_01"></span>
+                </div>
+                <div class="list_kind">
+                  <p>관리비</p>
+                  <span>공과금, 청소비, 통신료 등</span>
+                </div>
+                <div class="onoff_input_wrap">
+                  <div class="onoff_input">
+                    <input type="checkbox" id="slideOne5" name="check" checked>
+                    <label for="slideOne5"></label>
+                    <div class="onoff_input_bg"></div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="set_list_cnt">
+                <div class="check_area">
+                  <span class="ico_cen trigger_01"></span>
+                </div>
+                <div class="list_kind">
+                  <p>세금</p>
+                  <span>세금, 4대보험</span>
+                </div>
+                <div class="onoff_input_wrap">
+                  <div class="onoff_input">
+                    <input type="checkbox" id="slideOne6" name="check" checked>
+                    <label for="slideOne6"></label>
+                    <div class="onoff_input_bg"></div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="set_list_cnt">
+                <div class="check_area">
+                  <span class="ico_cen trigger_01"></span>
+                </div>
+                <div class="list_kind">
+                  <p>접대비</p>
+                  <span>접대비, 경조사비</span>
+                </div>
+                <div class="onoff_input_wrap">
+                  <div class="onoff_input">
+                    <input type="checkbox" id="slideOne7" name="check" checked>
+                    <label for="slideOne7"></label>
+                    <div class="onoff_input_bg"></div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </article>
+        <article class="set_list off">
+          <div class="tit">
+            <span class="ico_cen check_04"></span>
+            <p>OFF로 설정한 목록</p>
+          </div>
+          <ul>
+            <li>
+              <div class="set_list_cnt">
+                <div class="check_area">
+                  <span class="ico_cen"></span>
+                </div>
+                <div class="list_kind">
+                  <p>교통출장비</p>
+                  <span>외근 및 출장교통비, 숙박비</span>
+                </div>
+                <div class="onoff_input_wrap">
+                  <div class="onoff_input">
+                    <input type="checkbox" id="slideOne8" name="check">
+                    <label for="slideOne8"></label>
+                    <div class="onoff_input_bg"></div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="set_list_cnt">
+                <div class="check_area">
+                  <span class="ico_cen"></span>
+                </div>
+                <div class="list_kind">
+                  <p>차량유지비</p>
+                  <span>유류, 주차, 통행료, 차량수선</span>
+                </div>
+                <div class="onoff_input_wrap">
+                  <div class="onoff_input">
+                    <input type="checkbox" id="slideOne9" name="check">
+                    <label for="slideOne9"></label>
+                    <div class="onoff_input_bg"></div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="set_list_cnt">
+                <div class="check_area">
+                  <span class="ico_cen"></span>
+                </div>
+                <div class="list_kind">
+                  <p>복리후생비</p>
+                  <span>식대, 생일, 회식, 도서구입 등</span>
+                </div>
+                <div class="onoff_input_wrap">
+                  <div class="onoff_input">
+                    <input type="checkbox" id="slideOne10" name="check">
+                    <label for="slideOne10"></label>
+                    <div class="onoff_input_bg"></div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="set_list_cnt">
+                <div class="check_area">
+                  <span class="ico_cen"></span>
+                </div>
+                <div class="list_kind">
+                  <p>일반이체</p>
+                  <span>내 계좌간 이체, 대금이체 등</span>
+                </div>
+                <div class="onoff_input_wrap">
+                  <div class="onoff_input">
+                    <input type="checkbox" id="slideOne11" name="check">
+                    <label for="slideOne11"></label>
+                    <div class="onoff_input_bg"></div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="set_list_cnt">
+                <div class="check_area">
+                  <span class="ico_cen"></span>
+                </div>
+                <div class="list_kind">
+                  <p>카드대금이체</p>
+                  <span>카드대금이체</span>
+                </div>
+                <div class="onoff_input_wrap">
+                  <div class="onoff_input">
+                    <input type="checkbox" id="slideOne12" name="check">
+                    <label for="slideOne12"></label>
+                    <div class="onoff_input_bg"></div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="set_list_cnt">
+                <div class="check_area">
+                  <span class="ico_cen"></span>
+                </div>
+                <div class="list_kind">
+                  <p>기타</p>
+                  <span>이자, 대출, 기부, 보험, 투자 등</span>
+                </div>
+                <div class="onoff_input_wrap">
+                  <div class="onoff_input">
+                    <input type="checkbox" id="slideOne13" name="check">
+                    <label for="slideOne13"></label>
+                    <div class="onoff_input_bg"></div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="set_list_cnt">
+                <div class="check_area">
+                  <span class="ico_cen"></span>
+                </div>
+                <div class="list_kind">
+                  <p>개인용도(신고제외)</p>
+                  <span>사업무관 지출로 신고제외</span>
+                </div>
+                <div class="onoff_input_wrap">
+                  <div class="onoff_input">
+                    <input type="checkbox" id="slideOne14" name="check">
+                    <label for="slideOne14"></label>
+                    <div class="onoff_input_bg"></div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="set_list_cnt">
+                <div class="check_area">
+                  <span class="ico_cen"></span>
+                </div>
+                <div class="list_kind">
+                  <p>미분류</p>
+                  <span>미분류</span>
+                </div>
+                <div class="onoff_input_wrap">
+                  <div class="onoff_input">
+                    <input type="checkbox" id="slideOne15" name="check">
+                    <label for="slideOne15"></label>
+                    <div class="onoff_input_bg"></div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </article>
+      </section>
+
+    </div>
+  </div>
+  
+</body>
+</html>

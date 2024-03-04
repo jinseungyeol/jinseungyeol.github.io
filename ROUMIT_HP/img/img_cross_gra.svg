@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="93.752" height="93.787" viewBox="0 0 93.752 93.787">
+    <defs>
+        <linearGradient id="9wsdqpm47a" x1=".915" x2=".105" y2=".877" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#d3c9fb"/>
+            <stop offset="1" stop-color="#b7e0e6"/>
+        </linearGradient>
+        <clipPath id="z55g10rymb">
+            <path data-name="패스 60987" d="m350.1 13.943 14.445 8.812a11.648 11.648 0 0 0 12.111 0l14.444-8.812c10.407-6.364 22.344 5.581 15.989 16.013l-8.8 14.44a11.609 11.609 0 0 0 0 12.123l8.8 14.448c6.355 10.425-5.582 22.362-15.989 16l-14.445-8.8a11.585 11.585 0 0 0-12.111 0l-14.445 8.8c-10.423 6.363-22.343-5.573-15.989-16l8.8-14.448a11.608 11.608 0 0 0 0-12.123l-8.8-14.44c-5.128-8.41 1.632-17.8 9.9-17.8a11.689 11.689 0 0 1 6.091 1.783" transform="translate(-332.334 -12.16)" style="fill:url(#9wsdqpm47a)"/>
+        </clipPath>
+    </defs>
+    <g data-name="그룹 87075" style="opacity:.7">
+        <g data-name="그룹 86975" style="clip-path:url(#z55g10rymb)" transform="rotate(14.98 9.877 75.236)">
+            <path data-name="사각형 24955" transform="translate(-4.574 -4.581)" style="fill:url(#9wsdqpm47a)" d="M0 0h85.693v85.749H0z"/>
+        </g>
+    </g>
+</svg>

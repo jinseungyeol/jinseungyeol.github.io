@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+        <link rel="stylesheet" href="../css/reset.css">
+        <link rel="stylesheet" href="../css/common.css">
+        <link rel="stylesheet" href="../css/kt.css">
+        <link rel="stylesheet" href="../css/swiper.min.css">
+        <link rel="stylesheet" href="../css/jquery.fullPage.css">
+        <link rel="stylesheet" href="../css/odometer-theme-default.css">
+  <script src="../js/jquery-3.5.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
+        <script src="../js/jquery.fullPage.js"></script>
+        <script src="../js/wow.min.js"></script>
+        <script src="../js/jquery.fullPage.js"></script>
+        <script src="../js/odometer.js"></script>
+        <script src="../js/kt.js"></script>
+        <script src="../js/kt.api.js"></script>
+        <!-- include js -->
+        <script src="https://publ.roumit.com/js/include.js"></script>
+        <title>사장님 장부비서</title>
+        <script>
+            $(document).ready(function () {
+                $(".sub_nav li").click(function () {
+                    var a = $(this).index();
+                    $(".sub_nav li").not($(this)).removeClass("active");
+                    $(this).addClass("active");
+                    $(".con_box .tab_con").removeClass("active");
+                    $(".con_box .tab_con").eq(a).addClass("active");
+                });
+     
+                $('.btn_pop02').click(function () {
+                     $('.pop02').fadeIn()
+                     $('.popBG').show()
+                 });
+                 $('.btn_close02').click(function () {
+                     $('.pop02').hide();
+                     $('.popBG').hide()
+                    
+                 });
+     
+                
+                 // 발송하기 버튼 클릭
+                 $('.pop_submit').click(function () {
+     
+                    var param = {};
+                    // 공통부
+                    param.API_ID    = "EXTN_KAKAO_C001"; // EXTN_KAKAO_C001 [홈페이지 설치하기 알림톡 발송] Ajax 호출
+
+                    // 개별부 REQ_DATA
+                    var PROD_CD     = $("input[name='PROD_CD']").val();
+                    var BIZ_NO      = $("input[name='BIZ_NO']").val();
+                    var CLPH_NO     = $("input[name='CLPH_NO']").val();
+                    var RPPR_NM     = $("input[name='RPPR_NM']").val();
+
+                    param.REQ_DATA              = {};
+                    param.REQ_DATA.PROD_CD      = PROD_CD;
+                    param.REQ_DATA.BIZ_NO       = BIZ_NO;
+                    param.REQ_DATA.CLPH_NO      = CLPH_NO;
+                    param.REQ_DATA.RPPR_NM      = RPPR_NM;
+
+                    semoApi.callAjax(param, function(data){
+                        // console.log(data);
+                        if (data.RSLT_CD == '0000') {
+                            alert('발송되었습니다.');
+                            $('.btn_close02').click();
+                        } else {
+                            alert(data.RSLT_MSG);
+                        }
+                    });
+                });
+
+                 // 파라미터 호출 
+                var urlParams = new URLSearchParams(window.location.search);
+                var index = urlParams.get('index');
+                
+                $(".sub1 .inner .sub_nav ul li").eq(index).addClass("active");
+                $(".sub1 .inner .con_box .tab_con").eq(index).addClass("active");
+
+                // 이용약관 load
+                $("#terms01").on('click', function () {
+                    window.open("../pdf/kt_terms.pdf", "_blank", "width=640, height=800");
+                });
+                // 개인정보처리방침 load
+                $("#terms02").on('click', function () {
+                    window.open("../pdf/kt_privacy_20231122.pdf", "_blank", "width=640, height=800");
+                });
+
+            })
+         </script>
+    </head> 
+<body>
+    <header id="header">
+        <div class="header_wrapper">
+            <h1 class="hd_logo">
+                <a href="../index.html"><img src="../img/logo.png" alt="장부비서"></a>
+            </h1>
+            <nav id="gnb">
+                <ul>
+                    <li  class="active">
+                        <a href="sub1.html">장부비서란</a>
+                    </li>
+                    <li>
+                        <a href="sub2.html">세모주치의</a>
+                    </li>
+                    <li>
+                        <a href="sub3.html">인증서 하이패스</a>
+                    </li>
+                    <li>
+                        <a href="https://qe398.channel.io/support-bots/36083" target="_blank">고객센터</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+       
+    <div id="wrapper">
+        <div id="container_wr">
+            <div id="container">
+                <section class="svisual sv01">
+                    <div class="txt_box">
+                        <img src="../img/img_stxt.png" alt="소상공인 사람들">
+                    </div>
+                </section>
+                <section class="sub_contents sub1 sub1-1">
+                    <div class="inner">
+                        <div class="sub_nav">
+                            <ul>
+                                <li class=""><a href="" onclick="return false;">매출관리</a></li>
+                                <li class=""><a href="" onclick="return false;">엑셀다운로드</a></li>
+                                <li class=""><a href="" onclick="return false;">경영진단서비스</a></li>
+                                <li class=""><a href="" onclick="return false;">직원 통합관리</a></li>
+                                <li class=""><a href="" onclick="return false;">상권분석</a></li>
+                                <li class=""><a href="" onclick="return false;">보안</a></li>
+                                <li class=""><a href="" onclick="return false;">상품가격</a></li>
+                            </ul>
+                        </div>
+                        <div class="con_box">
+                            <div class="tab_con cont03">
+                                <h2>매출, 매입, 현금흐름을 <b>달력으로 간편하게</b> 관리</h2>
+                                <p>매출, 매입, 현금흐름이 장부비서 캘린더에 자동으로 기입됩니다.<br>상세 내역조회는 물론 지난 내역과의 비교도 손쉽게 가능해요.</p>
+                                <div class="imgBox">
+                                    <img src="../img/img_sub1_301.png" alt="통합조회 지원 업체">
+                                    <img src="../img/img_sub1_302.png" alt="어플 증빙 사용화면">
+                                </div>
+                                <span class="ani_more"><img src="../img/img_sub1_303.png"></span>
+                            </div>
+                            <div class="tab_con cont05 ">
+                                <h2><b>엑셀 다운로드</b> 기능으로 간편하게 장부 관리</h2>
+                                <p>내 사업의 매출, 매입 내역을 PC에서도 정리하실 수 있도록 이메일로 보내드립니다.<br>장부비서가 꼼꼼히 기록한 거래 내역을 받기만 해도 하루 장부 작성 끝!</p>
+                                <div class="imgBox">
+                                    <img src="../img/img_sub1_501.png" alt="엑셀 장부 열람 화면">
+                                </div>
+                            </div>
+
+                        
+                            <div class="tab_con cont04 ">
+                                <h2>엄선된 세무, 회계 전문가가 분석하는 <b>경영 진단 서비스</b></h2>
+                                <p>장부비서가 엄선한 전문 세무사, 회계사가 사장님의 경영현황을 진단해드립니다.<br>업종, 상권 매출정보를 분석하여 매 월 1회 경영진단보고서를 보내드립니다.</p>
+                                <div class="imgBox">
+                                    <img src="../img/img_sub1_401.png" alt="어플 보고서 사용화면">
+                                </div>
+                            </div>
+                          
+
+                            <div class="tab_con cont07 ">
+                                <div class="section51">
+                                    <h2><b>직원관리</b>도 장부비서에게 맡겨주세요</h2>
+                                    <p>직원의 근로계약서 및 급여명세서 발송 기능으로 직원관리도 보다 간편하게 하실 수 있습니다.</p>
+                                    <div class="imgBox">
+                                        <img src="../img/img_sub1_701.png" alt="어플 직원관리 사용화면">
+                                    </div>
+                                    <!--<span class="ani_more"><img src="/img/ico_amore.png"></span>-->
+                                </div>
+ <!--                               <div class="section52">
+                                    <h2><b>근로계약서</b> 작성과 필요서류 요청</h2>
+                                    <p>온라인으로 간편하게 근로계약서 체결하고, 직원서류를 손쉽게 요청 및 관리할 수 있습니다</p>
+                                    <div class="imgBox">
+                                        <img src="/img/img_sub1_702.png" alt="어플 근로계약서 사용화면">
+                                    </div>-->
+<!--                                    <div class="txtBox01">
+                                        <strong>제출서류를 <b>온라인</b>으로<br>요청 및 제출</strong>
+                                        <p>
+                                            등록된 직원에게 온라인으로<br>
+                                            신분증, 통장 사본, 등본 등을 <br>
+                                            온라인으로 쉽고 편하게 요청하고<br>
+                                            제출 받을 수 있습니다.
+                                        </p>
+                                    </div>-->
+<!--                                    <div class="txtBox02">
+                                        <span>전자 근로계약서 작성 및 교부</span>
+                                        <ul>
+                                            <li>- 전자 근로계약서를 통해 간편하게 계약을 체결하고 보관할 수 있습니다.</li>
+                                            <li>- 중국어 및 영어버전 자동 번역기능이 지원됩니다.</li>
+                                        </ul>
+                                         <p>※ 해당 서비스는 7월 오픈 예정입니다.</p> 
+                                    </div>
+                                </div>-->
+                            </div>
+
+
+                            <!--<div class="tab_con cont01 ">
+                                <h2>K뱅크 계좌등록하고 <b>이체 수수료 없이 사용</b>하세요</h2>
+                                <p>사업용, 개인용 계좌 구분 없이, 보내는 횟수 제한 없이<br>K뱅크 계좌만 등록하면 송금기능을 무료로 사용하실 수 있습니다.</p>
+                                <div class="imgBox">
+                                    <img src="/img/img_sub1_101_new.png" alt="어플 보고서 사용화면">
+                                </div>
+                            </div>-->
+
+
+                            <div class="tab_con cont01 ">
+                                <h2>장부비서 <span style="font-weight: 100;">X</span> KT잘나가게로 <b>내 주변 상권정보를 한 눈에!</b></h2>
+                                <p>주변 유동인구 및 상주인구 데이터, 경쟁 점포 위치 수, 소상공인 뉴스 등을 제공합니다.</p>
+                                <div class="imgBox">
+                                    <img src="../img/img_sub1_101.png" alt="잘나가게 사용화면">
+                                </div>
+                            </div>
+
+
+                            <!-- <div class="tab_con cont06 ">
+                                <img src="/img/img_sub1_601.png">
+                                <div class="center">
+                                    <h2>세모주치의 <b>세무안심케어서비스</b></h2>
+                                    <p>엄격한 선별 기준과 교육 진행을 통해 세모주치의를 선발하고, 좋은 세무서비스로 운영합니다</p>
+
+                                    <div class="txtBox">
+                                        <span><img src="/img/ico_sub1_601.png" alt="신고 아이콘">부적합 세무서비스 신고</span>
+                                        <p>3아웃 시 상품권 보상</p>
+                                    </div>
+                                    <div class="txtBox">
+                                        <span><img src="/img/ico_sub1_602.png" alt="환불 아이콘">세모주치의 스마트기장 불만족</span>
+                                        <p><b>최우수 세무사</b> 우선 배정</p>
+                                    </div>
+
+                                    <ul>
+                                        <li>
+                                            <span class="listTop"><em>1</em> 엄격한 선발과정</span>
+                                            <ol>
+                                                <li><p>◆ 8시간 이상의 CS 및 컨설팅 교육 이수</p></li>
+                                                <li><p>◆ 시험을 통한 기준 통과 시 현장 실습</p></li>
+                                                <li><p>◆ 고객 현장 평가를 통한 검증 :<br>고객피드백 점수</p></li>
+                                            </ol>
+                                        </li>
+                                        <li>
+                                            <span class="listTop"><em>2</em>고객 피드백 및 평가 제도</span>
+                                            <ol>
+                                                <li><p>◆ 고객 피드백을 통한 활동 정지 제도</p></li>
+                                                <li><p>◆ 3아웃 제도 : 고객 클레임 3번 이상<br> 접수 시 활동 정지</p></li>
+                                                <li><p>◆ 최우수 전문가 제도 : 90점 이상의<br> 고객 평가</p></li>
+                                            </ol>
+                                        </li>
+                                        <li>
+                                            <span class="listTop"><em>3</em>정기 교육 및 성장하는 전문가</span>
+                                            <ol>
+                                                <li><p>◆ 매월 정기세미나를 통한 사례 나눔 및<br> 우수 세무사 시상</p></li>
+                                                <li><p>◆ 팀 및 센터별 학습을 통한 컨설팅 능력<br> 향상</p></li>
+                                                <li><p>◆ 고객의 문제 스터디 & 토론을 통한<br>지속적 컨설팅 정보 제공</p></li>
+                                            </ol>
+                                        </li>
+                                    </ul>
+
+                                    <p>사장님이 믿고 찾을수 있는, <span class="txtLine">좋은 세무서비스를 제공</span>합니다.</p>
+                                </div>
+                            </div> -->
+                            
+
+                            <!--<div class="tab_con cont02 ">
+                                <h2>개인/사업용 거래 <b>간편이체</b></h2>
+                                <p>한번의 클릭으로 급여, 세금·공과금, 거래처 이체를 쉽고 간편하게</p>
+                                <div class="center">
+                                    <div class="imgBox">
+                                        <img src="/img/img_sub1_201_new.png" alt="어플 간편송금 사용화면">
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            <span class="listTop"><img src="/img/ico_sub1_201.png" alt="계좌 아이콘">급여 간편이체</span>
+                                            <p>
+                                                세모주치의가 드리는 급여명세서를 확인하고
+                                                급여이체를 선택하시면, 직원의 계좌번호로 간편하게 이체가 됩니다.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <span class="listTop"><img src="/img/ico_sub1_202.png" alt="화폐 아이콘">거래처 대금 바로 이체</span>
+                                            <p>
+                                                매입 세금계산서 발급 확인 후 이체를 클릭하면 거래처 결제대금이
+                                                바로 이체됩니다.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <span class="listTop"><img src="/img/ico_sub1_203.png" alt="자물쇠 아이콘">간편비밀번호 사용</span>
+                                            <p>6자리 간편비밀번호를 사용하여 쉽고 간편하게 이체가 가능합니다.</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>-->
+                         
+                           
+                            <div class="tab_con cont08 ">
+                                <h2><b>금융기관 수준</b>의 보안 체계</h2>
+                                <p>금융 보안 클라우드 센터를 통해 전문적이면서도 신뢰성 높고 안전한 서비스를 제공합니다</p>
+                                <div class="center">
+                                    <ul>
+                                        <li>
+                                            <span class="listTop"><img src="../img/ico_sub1_801.png" alt="클라우드 아이콘"> 금융보안 클라우드센터</span>
+                                            <img src="../img/img_sub1_801.png" alt="보안센터 이미지">
+                                            <p>은행 수준의 금융보안센터<br>(목동/강남 IDC센터 이중화)</p>
+                                        </li>
+                                        <li>
+                                            <span class="listTop"><img src="../img/ico_sub1_802.png" alt="24시간 아이콘"> 24/365 모니터링</span>
+                                            <img src="../img/img_sub1_802.png" alt="모니터링 이미지">
+                                        </li>
+                                    </ul>
+
+                                    <ol>
+                                        <li><img src="../img/ico_sub1_803.png" alt="방패 아이콘"> 국내 <b>최고 수준</b> 의 정보센터</li>
+                                        <li><img src="../img/ico_sub1_803.png" alt="방패 아이콘"> 보안관제 시스템 (24/365)</li>
+                                        <li><img src="../img/ico_sub1_803.png" alt="방패 아이콘"> 이중화 시스템 운영</li>
+                                        <li><img src="../img/ico_sub1_803.png" alt="방패 아이콘"> <b>보안성심의 인증</b> 취득</li>
+                                    </ol>
+                                </div>
+                            </div>
+
+
+                            <div class="tab_con cont09 ">
+                                <div class="center">
+                                    <div class="txtBox">
+                                        <h2><b>커피 한 잔 값</b>으로<br>세무, 경영관리를<br><strong>혁신</strong>하세요</h2>
+                                        <ul>
+                                            <div class="promotionList">
+                                              <!--<li>* <b style="color: #F61400">KT 세모가게 가입 후 90일</b>동안 무료로 체험하실 수 있습니다. <br>(2021년 12월 27일까지 가입한 고객 대상)</li>-->
+                                              <li>* KT <b style="color: #F61400">사장님 성공팩</b>으로 결합 가입하시면 <br>장부비서를 월 <b style="color: #F61400">3,850원</b>에 이용하실 수 있습니다. <br>(1,100원 할인 적용/VAT포함 가격)</li>
+                                            </div>
+                                            <li id="normalList">* <b style="color: #2cbbb6">100번</b>을 통해 부가서비스 가입 후  <br>모바일 어플리케이션 설치하시어 이용할 수 있습니다.</li>
+                                            <!--<li>* 해당 가격은 <b style="color: #2cbbb6">VAT 포함가</b> 입니다.</li>-->
+                                            <li><a href="#"><button class="btn_pop02">장부비서 앱 다운로드 하기</button></a></li>
+                                        </ul>
+                                    </div>
+                                    <img src="../img/img_sub1_902.png">
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </section>
+               
+
+                <div class="popBG">
+                    <div class="popBox pop02" style="display: none;">
+                        <button class="btn_close02"><img src="../img/btn_close02.png"></button>
+                        <div class="pop_wrap">
+                            <img src="../img/logo.png">
+                            <h2><strong>설치 링크 발송</strong></h2>
+                            <img src="../img/img_install.png">
+                            <input type="hidden" name="PROD_CD" value="SEMO_061"/>
+                            <input type="text" name="RPPR_NM" class="pop_input" required="" placeholder="성함입력">
+                            <input type="text" name="BIZ_NO" class="pop_input" required="" placeholder="사업자번호 입력 ( ‘ - ’  제외)" minlength="1" maxlength="10" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" autocomplete="off">
+                            <input type="tel" name="CLPH_NO" class="pop_input" required="" placeholder="휴대폰 번호 입력 ( ‘ - ’  제외)" minlength="10" maxlength="11" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" autocomplete="off">
+                            <input type="submit" value="발송하기" class="pop_submit">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer id="footer">
+        <div class="inner">
+            <div class="ft_top">
+                <ul>
+                    <li><a href="#none" id="terms01">이용약관</a></li>
+                    <li><a href="#none" id="terms02">개인정보처리방침</a></li>
+                </ul>
+                <ul class="follow">
+                    <li><a href="https://blog.naver.com/ktsemogage" target="_blank"><img src="../img/ico_sns01.png" alt="블로그 아이콘" title=""></a></li>
+                    <li><a href="https://pf.kakao.com/_etexhs" target="_blank"><img src="../img/ico_sns05.png" alt="카카오톡 아이콘"></a></li>
+                </ul>
+            </div>
+            <div class="ft_middle">
+                <ul class="follow">
+                    <li><img src="../img/042.png" alt="블로그 아이콘"></li>
+                </ul>
+            </div>
+            <div class="ft_info">
+                <ul>
+                    <li>로움아이티(주) </li>
+                    <li>팩스 : 070-7950-5114</li>
+                    <li>주소 : 서울시 영등포구 영신로 220 KnK디지털타워 11층 1112호</li>
+                    <li>대표 : 박승현</li>
+                    <li>사업자등록번호 : 847-87-00259</li>
+                    <li>통신판매업종신고증 : 2019-서울영등포-1992호</li>
+                </ul>
+    
+                <p>© Roumit. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+</html>

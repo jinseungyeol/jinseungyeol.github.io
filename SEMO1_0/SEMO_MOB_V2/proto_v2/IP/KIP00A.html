@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CSS-->
+  <link rel="stylesheet" href="../../css_v2/semo_style.css">
+  <link rel="stylesheet" href="../../css_v2/kt_style.css">
+  <link rel="stylesheet" href="../../css_v2/swiper-bundle.min.css">
+  <script src="../../js_v2/swiper-bundle.min.js"></script>
+  <script src="../../js_v2/jquery-3.5.1.min.js"></script>
+  <title>SB037_금융상품관_KIP000</title>
+</head>
+<style>
+</style>
+<body>
+  
+  <!-- 헤더 타이틀 -->
+  <div class="title b_white">
+    <div class="title_left">
+      <i class="ico_cen left_arrow"></i>
+    </div>
+    <span class="title_text">금융상품관</span>
+  </div>
+
+  <!-- 컨텐츠 시작 -->
+  <div class="basic_wrapper">
+    <div class="bank-product-wrap">
+      
+      <nav class="tab-menu">
+        <div class="tab-menu_content">
+          <ul class="tab-menu_list">
+            <!-- active 클래스로 제어 -->
+            <li class="tab-menu_nav">
+              <button class="tab-menu_name" type="button">전체</button>
+            </li>
+            <li class="tab-menu_nav">
+              <button class="tab-menu_name" type="button">대출</button>
+            </li>
+            <p class="tab-menu-bar"></p>
+          </ul>
+        </div>
+      </nav>
+
+      <article class="slide-banner bank-product_main" id="entire">
+        <div class="slide-banner_content bank-product-swiper">
+          <!-- 유료회원일 때 -->
+          <ul class="slide-banner_list" style="display: none;">
+            <li class="slide-banner_cover bank-product_join">
+              <div class="bank-product_join_text">
+                <div class="bank-product_join_header">
+                  <h1 class="bank-product_join_header_title"><span class="bank-product_join_name">한지훈</span> 님의 가입상품</h1>
+                </div>
+                <div class="bank-product_join_content">
+                  <h2 class="bank-product_join_sub-title">소상공인 운전자금 대출</h2>
+                  <p class="bank-product_join_value">30,000,000원</p>
+                </div>
+              </div>
+              <i class="ico_cont"></i>
+            </li>
+          </ul>
+          <!-- 무료회원일 때 -->
+          <ul class="slide-banner_list free swiper-wrapper">
+            <li class="slide-banner_cover swiper-slide">
+              <i class="ico_cont"></i>
+            </li>
+            <li class="slide-banner_cover swiper-slide">
+              <i class="ico_cont"></i>
+            </li>
+          </ul>
+          <div class="swiper-pagination"></div>
+        </div>
+      </article>
+
+      <section class="funds-loan" id="loan">
+        <article class="funds-loan_content">
+          <div class="funds-loan_header">
+            <h1 class="funds-loan_title">대출</h1>
+          </div>
+          <div class="funds-loan_intro">
+            <div class="funds-loan_sub-title">
+              <div class="funds-loan_sub-title_left">
+                <h2>소상공인 운전자금 대출</h2>
+                <i class="ico_cont"></i>
+              </div>
+              <div class="funds-loan_sub-title_right">
+                <span class="funds-loan_sub-title_value">연 3.00%</span>
+              </div>
+            </div>
+            <div class="funds-loan_desc">
+              <p class="funds-loan_desc_value">사장님 장부비서에서는 1개월 이자 면제!</p>
+            </div>
+          </div>
+        </article>
+        <article class="slide-banner ">
+          <div class="slide-banner_content funds-loan_swiper">
+            <ul class="slide-banner_list swiper-wrapper">
+              <li class="slide-banner_cover swiper-slide">
+                <i class="ico_cont"></i>
+              </li>
+              <li class="slide-banner_cover swiper-slide">
+                <i class="ico_cont"></i>
+              </li>
+            </ul>
+            <div class="swiper-pagination"></div>
+          </div>
+        </article>
+      </section>
+      
+      <!-- ## 버튼 ## -->
+      <div class="bot_fix">
+        <div class="btn_pd-20-wrap">
+          <button type="button" class="btn_bdrs-40">
+            <span class="btn_txt">고객센터 상담</span>
+          </button>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+  <script>
+    var swiper = new Swiper ('.bank-product-swiper', {
+  speed: 500,
+  spaceBetween: 100,
+  pagination: {
+    el: ".swiper-pagination"
+  },
+  autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+  },
+  loop: true,
+  watchSlidesProgress: true
+});
+
+    var swiper2 = new Swiper ('.funds-loan_swiper', {
+  speed: 500,
+  spaceBetween: 100,
+  pagination: {
+    el: ".swiper-pagination"
+  },
+  autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+  },
+  loop: true
+});
+
+    $(".tab-menu_nav").click(function() {
+      var $this = $(this);
+      var index = $this.index();
+      $this.addClass("active").siblings().removeClass("active");
+      $(".tab-menu-bar").css("transform", "translateX(" + index * 15.177 + "vw)");
+    }).eq(0).trigger("click");
+
+  </script>
+
+</body>
+</html>

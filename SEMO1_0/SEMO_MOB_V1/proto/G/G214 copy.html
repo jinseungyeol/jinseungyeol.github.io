@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../css/semo_cont.css">
+    <!-- <link rel="stylesheet" href="../../css/semo_cont_kt.css"> -->
+  <script src="../../js/jquery-3.5.1.min.js"></script>
+    <script src="../../js/design.js"></script>  
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollTrigger/1.0.4/ScrollTrigger.min.js"></script> -->
+    <script src="../../js/ScrollTrigger.min.js"></script>
+<script>
+     $(document).ready(function () {
+        fadeRight();
+      });
+    </script>
+    <style>
+        [data-trigger]{
+            opacity: 0;
+            position: relative;
+            right: 40px;
+            transition: 0.8s ease-in-out;
+        }
+        [data-trigger].visible{
+            opacity: 1; 
+            right: 0;
+        }
+    </style>
+    <title>SEMO</title>
+</head>
+
+<body>
+    <div class="new_content">
+        <div class="cont_bg ">
+            <!-- 클래스 cont_pd fix_button 포함 패딩-->
+            <!-- <div class="title">세모주치의 관리</div> -->
+
+            <!-- 2021-03-23 구조 변경 -->
+            <div class="wrap phy">
+                <div class="phy_section phy_section_1">
+                    <b class="phy_sec_1_title">세모가게 절세컨설팅은<br>
+                        왜 좋은가 ?</b>
+                    <div class="ico_cen phy_sec1_img_1" ></div>
+                    <div class="phy_graph_list">
+                        <span>
+                            <i class="blue"></i>
+                            <p>나의 세금문제 해결</p>
+                        </span>
+                        <span>
+                            <i class="red"></i>
+                            <p>적극적 피드백 및 도움</p>
+                        </span>
+                        <span>
+                            <i class="black"></i>
+                            <p>기타</p>
+                        </span>
+                    </div>
+                </div>
+                <div class="phy_section phy_section_2" data-trigger>
+                    <div class="phy_sec2_cont">
+                        <div class="ico_cen phy_sec_2_title"></div>
+                        <div class="phy_point"></div>
+                        <em>
+                            <b>
+                                Point 1
+                            </b>
+                        </em>
+                        <span>
+                            <b>절세효과</b>&nbsp;
+                            <b>극대화</b>
+                        </span>
+                        <p>엄선된 절차를 통해 선정된<br>
+                            최고의 세무전문가</p>
+                    </div>
+                </div>
+                <div class="phy_section phy_section_3" data-trigger>
+                    <div class="phy_sec3_cont">
+                        <div class="ico_cen phy_sec_3_title"></div>
+                        <em>
+                            <b>
+                                Point 2
+                            </b>
+                        </em>
+                        <span>
+                            <b>고객입장에서 문제해결</b>
+                        </span>
+                    </div>
+                </div>
+                <div class="phy_section phy_section_4" data-trigger>
+                    <div class="phy_sec4_cont">
+                        <div class="ico_cen phy_sec_4_title"></div>
+                        <div class="phy_point"></div>
+                        <em>
+                            <b>
+                                Point 3
+                            </b>
+                        </em>
+
+                    </div>
+                    <div class="phy_sec4_cont_bottom">
+                        <i class="ico_cen"></i>
+                        <b>세무안심케어서비스</b>
+                        <p>사장님 장부비서가 함께합니다.</p>
+                        <span>“매월 정기세미나 및 토론을 통해 <br> 고객에게
+                            <b>최고의 서비스를 제공</b>합니다"
+                        </span>
+                        <div class="ico_cen phy_sec4_img_4"></div>
+                        <div class="phy_sec4_now">
+                            <b>
+                                현재
+                                <div>
+                                    <em><b>3</b></em>
+                                    <em><b>3</b></em>
+                                    <em><b>6</b></em>
+                                </div>
+                                명의 사장님이
+                            </b>
+                            <span>절세 컨설팅을 통해 절세를 하고 있습니다.</span>
+                        </div>
+                        <div class="phy_sec4_join">
+                            <i class="ico_cen"></i>
+                            <p>기존 세무사를 초대하고 싶어요</p>
+                        </div>
+                        <div class="phy_sec4_button">
+                            <b>세모주치의 요청하기</b>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 안내 -->
+        </div>
+    </div>
+</body>
+
+</html>

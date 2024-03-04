@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css_v2/semo_style.css">
+    <!-- <link rel="stylesheet" href="../../css_v2/ione_style.css"> -->
+  <script src="../../js_v2/jquery-3.5.1.min.js"></script>
+    <title>C901_손익상세진단</title>
+</head>
+
+<body>
+    <div class="top_close_btn">
+        <i class="ico_cont"></i>
+    </div>
+    <div class="report_wrap">
+    <div class="out_bg"></div>
+       <div class="detail_diag">
+          <div class="main"  style="display: NONE;">
+            <div class="top">
+                <div class="info">
+                    <div class="txt"><span>이로움 슈퍼<br>상세진단</span></div>
+                    <div class="img">    
+                    </div>
+                </div>
+                <div class="date">
+                    <span>2021.07.01 ~ 07.30</span>
+                    <div class="btn">
+                        <i class="ico_cont"></i>
+                    </div>
+                </div>  
+            </div>
+            <div class="content_wrap" >
+                <div class="diag_item">
+                    <div class="tit">
+                        <span>7월 손익은</span>&nbsp;<b>늘었어요</b>
+                    </div>
+                    <div class="item">
+                        <div class="img weather">
+                            <!-- 늘었을때 sun 줄었을때 cloud -->
+                            <i class="ico_cont sun"></i>
+                        </div>
+                        <div class="cost">
+                            <span><b>3,450,000</b>원</span>
+                        </div>
+                        <div class="text_01">
+                            <span>
+                                지난 달 대비 + 180,650원 늘었어요
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="diag_item">
+                    <div class="tit">
+                        <span>나의 이익률은</span>&nbsp;<b>얼마일까?</b>
+                    </div>
+                    <div class="item">
+                        <div class="img ">
+                            
+                            <i class="ico_cont calc"></i>
+                        </div>
+                        <div class="cost">
+                            <span><b>98%</b></span>
+                        </div>
+                        <div class="text_01">
+                            <span>
+                                전국에서 11% 해당해요
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="diag_item">
+                    <div class="tit">
+                        <span>현재 손익은</span>&nbsp;<b>점검이 필요해요</b>
+                    </div>
+                    <div class="item">
+                        <div class="img">
+                               <!-- 점검 red 보통 yellow 안전 green -->
+                            <i class="ico_cont drug red"></i>
+                        </div>
+                        <div class="cost">
+                            <p>점검</p>
+                        </div>
+                    <div class="text_02">
+                        <p>사장님의 손익 3,450,000원은</p>
+                        <p>6월 매출 6,900,000원 대비</p>
+                        <span>50%를 차지해요</span>
+                    </div>
+                    <div class="text_02">
+                        <p>전국 평균 대비 하위 30%로 </p>
+                        <span>점검이 필요해요</span>
+                    </div>
+                    <div class="text_02">
+                        <p>손익 달성 목표 10,000,000원까지 </p>
+                        <span>6,500,000원 남았어요</span>
+                    </div>
+                    </div>
+                    <div class="link">
+                        <span>손익 목표 수정하기</span>
+                        <div class="link_i">
+                            <i class="ico_cont"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="diag_item">
+                    <div class="tit">
+                        <span>전국 평균 손익은</span>&nbsp;<b>늘었어요</b>
+                    </div>
+                    <!-- 수집중일경우 item 에 class collect 추가 -->
+                    <div class="item collect">
+                        <div class="col_wrap">
+                            <div class="txt">
+                                <p>수집 중...</p>
+                                <span>내일부터 보여요</span>
+                            </div>
+                        </div>
+                        <div class="img">
+                            <i class="ico_cont store"></i>
+                        </div>
+                        <div class="cost">
+                            <span><b>3,450,000</b>원</span>
+                        </div>
+                        <div class="text_01">
+                            <span>
+                                지난 달 대비 + 300,000원 늘었어요
+                            </span>
+                        </div> 
+                    </div>
+                    <div class="link">
+                        <span>업종 수정하기</span>
+                        <div class="link_i">
+                            <i class="ico_cont"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="btn">
+                    <span>손익 더 자세히 보기</span>
+                    <div class="link_i">
+                        <i class="ico_cont"></i>
+                    </div>
+                   
+                </div>
+            </div>
+          </div> 
+          <!-- 샘플화면 -->
+          <div class="sample">
+            <div class="top">
+                <div class="info">
+                    <div class="txt"><span>이로움 슈퍼<br>상세진단</span></div>
+                    <div class="img">    
+                    </div>
+                </div>
+                <div class="date">
+                    <span>2021.07.01 ~ 07.30</span>
+                    <div class="btn">
+                        <i class="ico_cont"></i>
+                    </div>
+                </div>  
+            </div>
+            <div class="content_wrap">
+                <div class="diag_item">
+                    <div class="tit">
+                        <span>7월 손익은</span>&nbsp;<b>늘었어요</b>
+                    </div>
+                    <div class="item">
+                        <div class="img weather">
+                             <!-- 늘었을 경우 sun 줄었을 경우 cloud -->
+                            <i class="ico_cont cloud"></i>
+                        </div>
+                        <div class="cost">
+                            <span><b>3,***,160</b>원</span>
+                        </div>
+                        <div class="text_01">
+                            <span>
+                                지난 달 대비 + 180,650원 늘었어요
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="diag_item">
+                    <div class="tit">
+                        <span>나의 이익률은</span>&nbsp;<b>얼마일까?</b>
+                    </div>
+                    <div class="item">
+                        <div class="img ">                           
+                            <i class="ico_cont calc_b"></i>
+                        </div>
+                        <div class="cost">
+                            <span><b>?%</b></span>
+                        </div>
+                        <div class="text_01">
+                            <span>
+                                전국에서 ?% 해당해요
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="diag_item">
+                    <div class="tit">
+                        <span>현재 손익은</span>&nbsp;<b>안전할까?</b>
+                    </div>
+                    <div class="item">
+                        <div class="img">
+                            <i class="ico_cont drug black"></i>
+                        </div>
+                        <div class="cost">
+                            <p>??</p>
+                        </div>
+                    <div class="text_02">
+                        <p>사장님의 손익 3,***,000원은</p>
+                        <p>6월 손익 6,***,000원 대비 </p>
+                        <p>??%를 차지해요 </p>
+                    </div>
+                    <div class="text_02">
+                        <p>전국 평균 대비 하위 ??%로 </p>
+                        <p>보여요</p>
+                    </div>
+                    <div class="text_03">
+                        <span>
+                            지금보다 더 큰 손익을 원한다면?
+                        </span>
+                    </div>
+                    </div>
+                </div>
+                <div class="diag_item">
+                    <div class="tit">
+                        <span>전국 평균 손익은</span>&nbsp;
+                        <b>늘었어요</b>
+                    </div>
+                    <!-- 수집중일경우 item 에 class collect 추가 -->
+                    <div class="item">
+                        <div class="col_wrap">
+                            <div class="txt">
+                                <p>수집 중...</p>
+                                <span>내일부터 보여요</span>
+                            </div>
+                        </div>
+                        <div class="img">
+                            <i class="ico_cont store"></i>
+                        </div>
+                        <div class="cost">
+                            <span><b>2,***,000</b>원</span>
+                        </div>
+                        <div class="text_01">
+                            <span>
+                                지난 달 대비 + 300,000원 늘었어요
+                            </span>
+                        </div> 
+                    </div>
+                    <div class="link">
+                        <span>업종 수정하기</span>
+                        <div class="link_i">
+                            <i class="ico_cont"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="btn">
+                    <span>손익 더 자세히 보기</span>
+                    <div class="link_i">
+                        <i class="ico_cont"></i>
+                    </div>
+                </div>
+            </div>
+          </div> 
+       </div>
+    </div>
+    <div class="top_btn_wrap" id="btn">
+        <div class="top_btn">
+            <div>
+                <i class="ico_cont"></i>
+            </div>  
+            <div>
+                <a href="#">TOP</a>
+            </div>  
+        </div>
+    </div>
+</body>
+<script>
+     $(function(){
+        // 스크롤시 tab menu box-shadow생기게 , top 버튼생성
+        $(window).scroll(function(){
+            if($(window).scrollTop() > 30) {
+            $('.title, .top_btn_wrap, .top_close_btn').addClass('active')
+            }
+            else {
+            $('.title, .top_btn_wrap, .top_close_btn').removeClass('active')
+            }   
+        })
+        // TOP 버튼 스크롤
+        $('.top_btn').bind('click', function() {
+        $('html, body').animate({scrollTop: '0'},400);
+        });
+      })
+</script>
+
+</html>

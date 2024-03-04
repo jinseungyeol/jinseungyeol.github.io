@@ -1,0 +1,14 @@
+<svg id="ico_small_bank23_에이치에스비씨" xmlns="http://www.w3.org/2000/svg" width="36" height="36">
+    <defs>
+        <style>
+            .cls-2{fill:#fff}
+        </style>
+    </defs>
+    <circle id="타원_89" data-name="타원 89" cx="18" cy="18" r="18" style="fill:#d6201c"/>
+    <g id="그룹_522" data-name="그룹 522" transform="translate(2.129 10.064)">
+        <path id="패스_1507" data-name="패스 1507" class="cls-2" d="m1346.916 2290.732 7.808 7.807v-15.615l-7.808 7.808" transform="translate(-1346.916 -2282.925)"/>
+        <path id="패스_1508" data-name="패스 1508" class="cls-2" d="M1361.778 2305.589h15.614l-7.808-7.808-7.806 7.808" transform="translate(-1353.968 -2289.974)"/>
+        <path id="패스_1509" data-name="패스 1509" class="cls-2" d="m1369.584 2290.732 7.808-7.808h-15.614l7.806 7.808" transform="translate(-1353.968 -2282.925)"/>
+        <path id="패스_1510" data-name="패스 1510" class="cls-2" d="M1391.49 2282.925v15.615l7.809-7.807-7.809-7.808" transform="translate(-1368.067 -2282.925)"/>
+    </g>
+</svg>

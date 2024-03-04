@@ -1,0 +1,17 @@
+.dtu{
+animation: dtu 0.8s linear both;
+}
+@keyframes dtu{
+0%{opacity: 0;
+transform: translateY(30vw);
+}
+100%{
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+@keyframes repo{
+0%{rotate: 30deg;}
+100%{rotate:180deg}
+}

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<title>세모리포트</title>
+<link rel="stylesheet" href="../css/reset_taxp.css">
+<link rel="stylesheet" href="../css/app_header.css"><!-- [D] 세무대리인용 header -->
+<link rel="stylesheet" href="../css/content_taxp.css"><!-- [D] 세무대리인용 -->
+
+<!-- custom scrollbar plugin css -->
+<link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+  <script src="../js/lib/jquery/jquery-1.12.4.min.js"></script>
+<script src="../js/lib/jquery/jquery-ui-1.10.4.min.js"></script>
+<!-- custom scrollbar plugin -->
+<script src="../js/design/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../js/design/jquery.placeholder.min.js"></script>
+<script src="../js/lib/plugin/smart.popup.js"></script>
+<script src="../js/comm/common.js"></script>
+
+
+</head>
+<body class="lnb_bg lnb_bg"><!-- [D] 메뉴영역(접기 : class="fold", 펼치기 : class="lnb_bg") -->
+	<!-- 특별한 혜택 팝업 -->
+	<div class="overlay" style="display: none;">
+		<div class="pop_wrap round_16">
+			<div class="pop_inner">
+				<div class="info_type01">
+					<div class="top">
+						<div class="left">
+							<img src="../img/txof/bg/info_top_text.png" alt="세모사 모바일 리포트">
+						</div>
+						<div class="right">
+							<button type="button">
+								<img src="../img/txof/ico/close_b_16p.svg" alt="">
+							</button>	
+						</div>
+                        </div>
+                        <div class="cover_wrap">
+                        <div class="cover">
+                            <div class="left">
+                                <p>지금 가입한 세무사무소에게 드리는</p>
+                                <img src="../img/txof/bg/info_cover_01.png" alt="">
+                            </div>
+                            <div class="right">
+                                <img src="../img/txof/bg/info_cover_02.png" alt="">
+                            </div>
+                            
+                        </div>
+                        <div class="desc">
+                            <p class="main_txt">가입거래처 중 <strong>3개 평생 무료</strong></p>
+                            <span class="sub_txt">* 월 이용료 정산 시 자동차감됩니다</span>
+                        </div>
+                        </div>
+                        <div class="bottom">
+                        <div class="left">
+                            <input type="checkbox" name="" id="">
+                            <label for="">세모리포트팀에 사용법에 대한 교육을 신청합니다</label>
+                        
+                        </div>
+                        <div class="right">
+                            <button type="button">
+                                확인
+                            </button>
+                        </div>
+                    </div>
+				</div>
+				 
+			</div>
+		</div>
+	</div>
+    <div class="pop_wrap round_16" style="display: none;">
+        <div class="pop_inner">
+            <div class="info_type02">
+                <div class="top">
+                    <div class="left">
+                        <div class="semo_round_logo">
+                            <img src="../img/txof/ico/semoR_cycle.svg" alt="세모리포트">
+                        </div>
+                    </div>
+                    <div class="right">
+                        <button type="button">
+                            <img src="../img/txof/ico/close_b_16p.svg" alt="">
+                        </button>	
+                    </div>
+                    </div>
+                <div class="desc_wrap">
+                    <ul>
+                        <li class="list01">
+                            <span>
+                                선택한 <strong>234개 거래처</strong>를 대상으로<br>
+                                세모리포트 서비스 사용을 시작합니다.
+                            </span>
+                        </li>
+                        <li class="list02">
+                            <div class="point">
+                                <img src="../img/txof/ico/check_b_16p.svg" alt="">
+                                <span>오늘부터 리포트 발송 가능</span>
+                            </div>
+                            <div class="point">
+                                <img src="../img/txof/ico/check_b_16p.svg" alt="">
+                                <span>지금 등록하면 거래처 3개 평생무료</span>
+                            </div>
+                        </li>
+                        <li class="list03">
+                            <div class="tit">
+                                Q. 거래처에게 어떤 서비스를 제공할 수 있나요?
+                            </div>
+                            <div class="info_box">
+                                <p>- 거래처의 홈택스 정보를 토대로 리포트를 발송할 수 있어요</p>
+                                <p>- 세금 신고에 대한 PDF문서와 납부서를 발송할 수 있어요 </p>
+                                <p>- 우리 세무사무소의 카카오채널과 연동하여 사용할 수 있어요</p>
+                            </div>
+                            
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="bottom">
+                    <div class="info_text">
+                        <p>* 서비스 이용료는 매월 초 위멤버스클럽에 등록한 계좌에서 자동이체됩니다.</p>
+                    </div>
+                    <div class="pop_db_btn">
+                        <button type="button">
+                            다음에 하기
+                        </button>
+                        <button type="button" class="active">
+                            시작하기
+                        </button>
+                    </div>    
+                </div>
+            </div>
+                
+        </div>
+    </div>
+    <!-- 서비스 안내장 발송 팝업 2023-0921 -->
+    <div class="pop_wrap round_16" style="display: block;">
+        <div class="pop_inner">
+            <div class="info_type02">
+                <div class="main_tit">
+                    <div class="left">
+                        <div class="semo_round_logo">
+                            <img src="../img/txof/ico/semoR_cycle.svg" alt="세모리포트">
+                        </div>
+                    </div>
+                    <div class="right">
+                        <p>234개 거래처에게</p>
+                        <h1>서비스 안내장을 보낼까요?</h1>
+                    </div>
+                    
+                </div>       
+                    <div class="msg_wrap">
+                    <div class="checked_wrap">
+                        <div class="checkedBox active">
+                            <input type="radio" id="joy02"></input>
+                            <label class="desc" for="joy02">
+                                <p>문자 메시지로 보낼게요</p>
+                                <span>무료, 1688-3491 세모리포트 대표번호로 발송</span>
+                            </label>
+                       
+                        </div>
+                        <div class="checkedBox">
+                            <input type="radio" id="joy01" class="toggle"></input>
+                            <label class="desc" for="joy01">
+                                <p>카카오톡으로 보낼게요</p>
+                                <span>biz 포인트에서 건당 50P차감, 세무사무소 채널로 발송</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="msg_preview">
+                        <!-- 문자 메시지 type1 -->
+                            <div class="previewBox" style="display: none;">
+                                <div class="tit">
+                                    <h1>안내메시지 미리보기</h1>
+                                </div>
+                                <div class="info_text">
+                                    스타세모회계에서 제공하는<br>
+                                    모바일 세무서비스를 안내해 드립니다.<br>
+                                    아래의 고객번호로 앱을 설치하면<br>
+                                    매월 리포트를 받아볼 수 있어요.
+                                </div>
+                                <div class="link_text">
+                                    <p>▶ 앱 설치하기</p>
+                                    <a href="">https://www.semoreport.com/거래처별설치링크</a><br>
+                                    사장님 전용 고객번호 : 3295
+                                </div>
+                                <div class="link_text">
+                                    <p>▷ 앱 사용 도움말</p>
+                                    <a href="">https://semo-report.gitbook.io/moguide/</a><br>
+                                </div>
+                            </div>
+                            <!-- 문자메시지 type2 -->
+                            <div class="previewBox" style="display: block;">
+                                <div class="tit">
+                                    <h1>안내메시지 미리보기</h1>
+                                </div>
+                                <div class="entry_wrap">
+                                    <textarea></textarea>
+                                </div>
+                                <div class="link_text">
+                                    <p>▶ 앱 설치하기</p>
+                                    <a href="">https://www.semoreport.com/거래처별설치링크</a><br>
+                                    사장님 전용 고객번호 : 3295
+                                </div>
+                                <div class="link_text">
+                                    <p>▷ 앱 사용 도움말</p>
+                                    <a href="">https://semo-report.gitbook.io/moguide/</a><br>
+                                </div>
+                            </div>
+                            <!-- 카카오 -->
+                            <div class="previewBox" style="display: none;">
+                                <div class="tit">
+                                    <h1>안내메시지 미리보기</h1>
+                                </div>
+                                <div class="info_text">
+                                    #{호윤식당앤딜리버리} 사장님,
+                                    #{로움 세무회계서울영등포 당산점}의<br>
+                                    서비스에 가입해주셔서 감사합니다.<br>
+                                </div>
+                                <div class="info_text">
+                                    ◼ 사업장명 : #{호윤식당앤딜리버리}<br>
+                                    ◼ 나의 고객번호 : #{3295}
+                                </div>
+                                <div class="info_text">
+                                    아래 버튼을 눌러 자세히 확인해보세요!
+                                </div>
+
+                            </div>
+
+                    </div>
+                    </div>
+                <div class="bottom">
+                    <div class="info_text">
+                        * 앱 설치안내 메세지는 추후 언제든 발송이 가능합니다.
+                    </div>
+                    <div class="pop_db_btn">
+                        <button type="button">
+                            다음에 하기
+                        </button>
+                        <button type="button" class="active">
+                            시작하기
+                        </button>
+                    </div>    
+                </div>
+            </div>
+                
+        </div>
+    </div>
+    <div class="pop_wrap bd_round" style="width: 480px; display: none;" >
+        <div class="pop_header">
+            <h1>샘플보고서 발송</h1>
+            <a href="#" onclick="cf_close_smartPop();" class="btn_popclose"><img src="../img/txof/btn/btn_popClose_white.gif" alt="팝업닫기"></a>
+          </div>
+          <div class="pop_container">
+            <section class="sample_send">
+                <article class="main_tit">
+                    <h1>샘플보고서 발송하기</h1>
+                    <p>발송할 보고서를 선택하고 보고서를 체험해 보세요.</p>
+                </article>
+                <article class="checked_wrap">
+                    <ul>
+                        <li>
+                            <label for="che1">
+                                <p class="hash">Sample</p>
+                                <span class="rprt_name">사업분석 보고서</span>
+                            </label>
+                            <input id="che1" type="checkbox">
+                        </li>
+                        <li>
+                            <label for="che2">
+                                <p class="hash">Sample</p>
+                                <span class="rprt_name">매출 보고서</span>
+                            </label>
+                            <input id="che2" type="checkbox">
+                        </li>
+                        <li>
+                            <label for="che3">
+                                <p class="hash">Sample</p>
+                                <span class="rprt_name">매입 보고서</span>
+                            </label>
+                            <input id="che3" type="checkbox">
+                        </li>
+                        <li>
+                            <label for="che4">
+                                <p class="hash">Sample</p>
+                                <span class="rprt_name">인건비 보고서</span>
+                            </label>
+                            <input id="che4" type="checkbox">
+                        </li>
+                        <li>
+                            <label for="che5">
+                                <p class="hash">Sample</p>
+                                <span class="rprt_name">예상 부가세 보고서</span>
+                            </label>
+                            <input id="che5" type="checkbox">
+                        </li>
+                        <li>
+                            <label for="che6">
+                                <p class="hash">Sample</p>
+                                <span class="rprt_name">부가세 신고분석 보고서</span>
+                            </label>
+                            <input id="che6" type="checkbox">
+                        </li>
+                    </ul>
+                </article>
+                <article class="input_wrap">
+                    <h2>연락처를 입력해주세요.</h2>
+                    <input type="text" placeholder="010-1234-5678">
+                    <p>샘플 보고서는 카카오 알림톡으로 전송됩니다.</p>
+                </article>
+                <article class="button_wrap">
+                    <!-- 활성화 class active -->
+                    <button type="button" class="active">발송하기</button>
+                </article>
+            </section>
+          </div>
+    </div>
+
+</body>
+</html>
+

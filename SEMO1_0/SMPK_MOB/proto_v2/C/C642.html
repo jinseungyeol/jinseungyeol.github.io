@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css_v2/semo_style.css">
+    <!-- <link rel="stylesheet" href="../../css_v2/kt_style.css"> -->
+    <link rel="import" href="../C/C602.html">
+  <script src="/js_v2/jquery-3.5.1.min.js"></script>
+    <title>C642</title>
+
+    <script>
+        $(document).ready(function () {
+            $(".section_nation").click(function () {
+                $("#slide_popup").fadeIn(500);
+                $("#slide_popup > .popup.bottom").css("bottom", "0");
+
+            });
+            // 팝업 배경터치하면 사라짐
+            $(document).click(function (e) {
+                if ($(".popup_bg").is(e.target)) {
+                    $(".popup_bg").fadeOut(200);
+                    $(".popup.bottom").show().animate({
+                        bottom: "-100%"
+                    }, 200);
+                }
+            });
+            $(".section_content").click(function () {
+                $(this).addClass("active");
+                $(this).siblings().removeClass("active");
+            });
+
+            // if($(".section_content input").attr("readyonly",true)){
+            //     $(this).find("label").css("bottom","70%");
+            // }
+
+        });
+
+
+
+    </script>
+</head>
+
+<body>
+    <div class="title">
+        <div class="title_left">
+            <i class="ico_cen left_arrow"></i>
+        </div>
+        <span class="title_text">기본정보 입력하기</span>
+    </div>
+    <div class="basic_wrapper b_gray">
+        <div class="padding_wrapper25 set_pdb36">
+            <div class="section_input_wrap set_mgt18">
+                <div class="section_input_title">
+                    <i class="ico_cen section_num1 complete"></i>
+                    <p>직원정보 입력</p>
+                </div>
+                <div class="section_content_wrap" style="display: none;">
+                    <div class="section_content ">
+                        <input type="text" id="text1" required="required">
+                        <label for="text1" class="dot">이름</label>
+                        <div class="section_nation">
+                            <input type="text" required="required" placeholder="내국인" readonly>
+
+                            <i class="ico_cen down"></i>
+                        </div>
+                    </div>
+                    <div class="section_content">
+                        <input type="number" class="active" id="text2" required="required">
+                        <label for="text2" class="dot">휴대폰 번호</label>
+                    </div>
+                    <div class="section_content readonly">
+                        <input type="text" id="text3" required="required" readonly="readonly">
+                        <label for="text3">입사일자</label>
+                    </div>
+                    <!-- 주민번호 입력 영역 -->
+                    <div class="section_content input_id ">
+                        <label class="section_input_id_wrap " for="text4">
+                            <div class="section_input_id">
+                                <input type="text" maxlength="6" id="text4" required="required">
+                                <span>-</span>
+                                <input type="text" maxlength="1" id="text4" required="required">
+                                <div class="id_back_number">
+                                    <p>●</p>
+                                    <p>●</p>
+                                    <p>●</p>
+                                    <p>●</p>
+                                    <p>●</p>
+                                    <p>●</p>
+                                </div>
+                                <label for="text4">주민등록번호</label>
+                            </div>
+                        </label>
+                    </div>
+
+                    <!-- 급여계좌 선택 영역 -->
+                    <div class="section_content input_account ">
+                        <label class="section_input_account_wrap" for="text6">
+                            <div class="section_input_account">
+                                <div class="section_select_bank">
+                                    <i class="ico_cen ico_lb001 set_mgr6"></i>
+                                    <input type="text" id="text6" class="section_bank_title" placeholder="은행선택"
+                                        required="required" readonly>
+                                    <i class="ico_cen down"></i>
+                                    <input type="text" id="text5" required="required" placeholder="계좌번호 입력">
+                                    <label for="text5">급여계좌</label>
+                                </div>
+                                <div class="section_search_wrap">
+                                    <div class="section_search_btn">
+                                        <p>예금주 조회</p>
+                                    </div>
+                                    <span class="section_account_user">
+                                        김세모
+                                    </span>
+                                    <div class="section_account_error">
+                                        <i class="ico_cen error_red"></i>
+                                        <p>예금주 오류</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="next_button active" style="display: none;">
+                <p>다음</p>
+            </div>
+            <div class="section_input_wrap set_mgt18">
+                <div class="section_input_title">
+                    <i class="ico_cen complete"></i>
+                    <p>계약형태 입력</p>
+                </div>
+                <!-- 정규직 리스트 -->
+                <div class="section_content_wrap" style="display: none;">
+                    <div class="section_content">
+                        <input type="text" id="text7" required="required" value="정규직">
+                        <label for="text7" class="dot">계약형태를 선택해 주세요.</label>
+                        <i class="ico_cen down"></i>
+                    </div>
+                    <div class="section_content">
+                        <input type="text" id="text8" required="required">
+                        <label for="text8">월급여액</label>
+                    </div>
+                    <div class="section_content">
+                        <input type="text" id="text9" required="required">
+                        <label for="text9">식대</label>
+                        <i class="ico_cen down"></i>
+                    </div>
+                    <div class="section_content">
+                        <input type="text" id="text10" required="required">
+                        <label for="text10">차량유지비</label>
+                        <i class="ico_cen down"></i>
+                    </div>
+                    <div class="section_content">
+                        <input type="text" id="text11" required="required">
+                        <label for="text11">부양가족수</label>
+                    </div>
+                    <div class="section_content">
+                        <input type="text" id="text12" required="required">
+                        <label for="text12">근로조건메모</label>
+                    </div>
+                </div>
+
+                <!-- 계약직 리스트 -->
+                <div class="section_content_wrap" style="margin-top: 20px; display: none;" >
+                    <div class="section_content">
+                        <input type="text" id="text13" required="required" value="계약직">
+                        <label for="text13" class="dot">계약형태를 선택해 주세요.</label>
+                        <i class="ico_cen down"></i>
+                    </div>
+                    <div class="section_content">
+                        <input type="text" id="text14" required="required">
+                        <label for="text14">월급여액</label>
+                    </div>
+                    <div class="section_content">
+                        <input type="text" id="text15" required="required">
+                        <label for="text15">계약만료일자</label>
+                    </div>
+
+                    <div class="section_content">
+                        <input type="text" id="text16" required="required">
+                        <label for="text16">식대</label>
+                    </div>
+                    <div class="section_content">
+                        <input type="text" id="text17" required="required">
+                        <label for="text17">차량유지비</label>
+                    </div>
+                    <div class="section_content">
+                        <input type="text" id="text18" required="required">
+                        <label for="text18">부양가족수</label>
+                    </div>
+                    <div class="section_content">
+                        <input type="text" id="text19" required="required">
+                        <label for="text19">근로조건 메모</label>
+                    </div>
+                </div>
+                <!-- 일용직/ 아르바이트 -->
+                <div class="section_content_wrap" style="margin-top: 20px; display: none;" >
+                    <div class="section_content">
+                        <input type="text" id="text20" required="required" value="일용직/아르바이트">
+                        <label for="text20" class="dot">계약형태를 선택해 주세요.</label>
+                        <i class="ico_cen down"></i>
+                    </div>
+                    <div class="section_content ">
+                        <input type="text" id="text21" required="required">
+                        <label for="text21" class="dot">이름</label>
+                        <div class="section_nation">
+                            <input type="text" required="required" placeholder="시급" readonly>
+
+                            <i class="ico_cen down"></i>
+                        </div>
+                    </div>
+                    <div class="section_content">
+                        <input type="text" id="text22" required="required">
+                        <label for="text22">근로조건메모</label>
+                    </div>
+                </div>
+
+                <!-- 사업소득 -->
+                <div class="section_content_wrap" style="margin-top: 20px; display: none;" >
+                    <div class="section_content">
+                        <input type="text" id="text23" required="required" value="사업소득">
+                        <label for="text23" class="dot">계약형태를 선택해 주세요.</label>
+                        <i class="ico_cen down"></i>
+                    </div>
+                    <div class="section_content">
+                        <input type="text" id="text24" required="required">
+                        <label for="text24">임금</label>
+                    </div>
+                    <div class="section_content">
+                        <input type="text" id="text24" required="required">
+                        <label for="text24">소득유형</label>
+                        <i class="ico_cen down"></i>
+                    </div>
+                    <div class="section_content">
+                        <input type="text" id="text25" required="required">
+                        <label for="text25">근로조건메모</label>
+                    </div>
+                </div>
+                <!-- 기타소득 -->
+                <div class="section_content_wrap" style="margin-top: 20px; display: none;" >
+                    <div class="section_content">
+                        <input type="text" id="text23" required="required" value="기타소득">
+                        <label for="text23" class="dot">계약형태를 선택해 주세요.</label>
+                        <i class="ico_cen down"></i>
+                    </div>
+                    <div class="section_content">
+                        <input type="text" id="text24" required="required">
+                        <label for="text24">임금</label>
+                    </div>
+                    <div class="section_content">
+                        <input type="text" id="text24" required="required">
+                        <label for="text24">소득유형</label>
+                        <i class="ico_cen down"></i>
+                    </div>
+                    <div class="section_content">
+                        <input type="text" id="text25" required="required">
+                        <label for="text25">근로조건메모</label>
+                    </div>
+                </div>
+            </div>
+            <div class="next_button active" style="display:none;">
+                <span class="calc_link">임금계산기</span>
+                <p>다음</p>
+            </div>
+            <div class="section_input_wrap set_mgt18">
+                <div class="section_input_title">
+                    <i class="ico_cen section_num3 complete"></i>
+                    <p>입사서류 입력</p>
+                </div>
+            </div>
+            <div class="section_input_wrap set_mgt18">
+                <div class="section_input_title">
+                    <i class="ico_cen section_num4 on"></i>
+                    <p>기타정보 입력</p>
+                </div>
+                <div class="section_content_wrap" style="margin-top: 20px; " >
+                    <div class="section_content">
+                        <input type="text" id="text20" required="required" value="">
+                        <label for="text20">이메일주소</label>
+                    </div>
+                    <!-- 주소입력 포커스싱 addClass active 입력완료후 addClass entry -->
+                    <div class="section_content address entry">
+                        <div class="address_list" id="text5">
+                            <span>07228</span>
+                            <p>서울 영등포구 영신로 220 (KnK디지털타워)</p>
+                        </div>
+                        <label for="text5">주소</label>
+                        <i class="ico_cen down"></i>
+                    </div>
+                    <div class="section_content">
+                        <input type="text" id="text22" required="required">
+                        <label for="text22">상세주소</label>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="section_button">
+                <i class="ico_cen semo_char1"></i>
+                <span>직원에게 서류 요청하기</span>
+                <i class="ico_cen right_bold"></i>
+            </div> -->
+        </div>
+        <div class="btm_button bottom_fix">
+            <span>저장하기</span>
+        </div>
+    </div>
+
+</body>
+
+</html>

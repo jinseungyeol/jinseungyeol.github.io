@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html id="moMain" lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content='세모리포트' property='og:title' />
+    <meta content='https://www.semoreport.com' property='og:url'/>
+    <meta content="../img/semoR_thumb.png" property='og:image'/>
+    <meta content="사장님이 선정한 1등 보고서" property="og:description"/>
+    <link rel="icon" href="../img/favicon_semoR.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/odometer-theme-default.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/semo.css">
+  <script src="../js/jquery-3.5.1.min.js"></script>
+    <script src="../js/odometer.js"></script>
+    <script src="../js/semo.api.js"></script>
+    <title>세모리포트</title>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TJW4JW5');</script>
+    <!-- End Google Tag Manager -->
+    <script>
+        var scrollodometer;
+        var TOT_TXOF_CNT;
+        var R_BZAQ_CNT;
+
+        $(function() {
+            scrollodometer = $(".secCount").offset().top - 400;
+            fn_taxCnt();
+        })
+    
+        // 금액 한글 변환 함수
+        function numberToKorean(number) {
+            var intNumber = +number;
+            var inputNumber = intNumber < 0 ? false : intNumber;
+            var unitWords = ['', '만', '억', '조', '경'];
+            var splitUnit = 10000;
+            var splitCount = unitWords.length;
+            var resultArray = [];
+            var resultString = '';
+    
+            for (var i = 0; i < splitCount; i++) {
+                var unitResult = (inputNumber % Math.pow(splitUnit, i + 1)) / Math.pow(splitUnit, i);
+                unitResult = Math.floor(unitResult);
+                if (unitResult > 0) {
+                    resultArray[i] = unitResult;
+                }
+            }
+            for (var i = 0; i < resultArray.length; i++) {
+                if (!resultArray[i]) continue;
+                resultString = String(resultArray[i]) + unitWords[i] + resultString;
+            }
+            return resultString;
+        }   // End numberToKorean
+    
+        //우수 세무사 , 리포트 고객수 조회
+        function fn_taxCnt(){
+            var param = {};
+            // 공통부
+            param.TRAN_NO    = "SMR_SEMO_RPRT_STTS_R01"; // ESMR_SEMO_RPRT_STTS_R01 [세모리포트 가입현황] Ajax 호출
+            // 개별부 REQ_DATA
+            param.REQ_DATA              = {};
+            semorprtApi.rprtcallAjax(param, function(data){   
+                if (data.RSLT_CD == '0000') {
+                    R_BZAQ_CNT     = data.RESP_DATA.R_BZAQ_CNT;        // 수입처 가입수
+
+                    $(window).on('scroll', function () {
+                        if (scrollodometer < $(window).scrollTop()) {
+                            $('.odometer2').html(numberToKorean(R_BZAQ_CNT));       // 수입처 가입수
+                        }
+                    });
+                }
+            });
+        }   // End fn_taxCnt
+    </script>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TJW4JW5" height="0" width="0" style="display:none;visibility:hidden">
+        </iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <!-- wrapper -->
+    <div class="wrapper">
+        <!-- header -->
+        <header class="header">
+            <div class="inner">
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="https://m.semoreport.com/">세모리포트</a>
+                        </li>
+                        <li class="active">
+                            <a href="news.html">뉴스레터</a>
+                        </li>
+                    </ul>
+                </nav>
+                <a href="http://pf.kakao.com/_Mjtbxj/friend" class="moveKakao" target="_blank">
+                    <img src="../img/ico_kakao.png" alt="세모리포트 뉴스레터 카카오톡">
+                </a>
+            </div>
+        </header>
+        <!-- //header -->
+        <!-- container -->
+        <div class="container" id="news">
+            <div>
+                <!-- secNewsVisual -->
+                <section class="secNewsVisual">
+                    <div class="inner">
+                        <div class="areaTxt">
+                            <h1 class="defTit">
+                                <span>바쁜 사장님을 위한</span>
+                                <span>CEO Newsletter</span>
+                            </h1>
+                            <p class="defTxt">노무, 세무, 경영 지식을 알려드립니다</p>
+                        </div>
+                    </div>
+                </section>
+                <!-- //secNewsVisual -->
+                <!-- secNewsInfo -->
+                <section class="secNewsInfo">
+                    <div class="inner">
+                        <div class="areaContent">
+                            <h1 class="defTit">
+                                <p>매주 사업에 꼭 필요한 세무,</p>
+                                <p>경영 정보가 찾아갑니다.</p>
+                            </h1>
+                            <div class="txtWrap">
+                                <p class="defTxt">구독 방법은 카카오채널에 들어오시면</p>
+                                <p class="defTxt">매주 유용한 정보를 공유 드립니다.</p>
+                            </div>
+                            <div class="txtWrap">
+                                <p class="defTxt">2만명의 사장님이 선택한</p>
+                                <p class="defTxt">세모리포트 뉴스레터로</p>
+                                <p class="defTxt">사장님 만을 위한 정보 비서와</p>
+                                <p class="defTxt">함께 하세요</p>
+                            </div>
+                            <a href="http://pf.kakao.com/_Mjtbxj/friend" class="btnMove" target="_blank">뉴스레터 카카오채널 입장하기</a>
+                        </div>
+                    </div>
+                </section>
+                <!-- //secNewsInfo -->
+            </div>
+        </div>
+        <!-- //container -->
+    </div>
+    <!-- //wrapper -->
+</body>
+
+</html>

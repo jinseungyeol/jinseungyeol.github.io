@@ -1,0 +1,2 @@
+/* ver 1.0.0 (2023-06-14) */
+eval(function(p,a,c,k,e,r){e=function(c){return c.toString(a)};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('6 7(2){8 0=2.9("-").a("");3(!b(0)){1 4}5 3(0.c!==d){1 4}5{1 e}}',15,15,'chkBusiNum|return|busiNum|if|false|else|function|rvfn_validation_busiNum|var|split|join|Boolean|length|10|true'.split('|'),0,{}))

@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css_v2/semo_style.css">
+    <!-- <link rel="stylesheet" href="../../css_v2/ione_style.css"> -->
+  <script src="../../js_v2/jquery-3.5.1.min.js"></script>
+    <title>인증서 하이패스</title>
+</head>
+<body>
+    <div class="basic_wrapper">
+        <div class="highpass_wrap">
+            <section class="highpass_main">
+                <!-- 0803 .highpass_header 삭제 -->
+                <article class="cce010-top">
+                    <header class="cce010-header">
+                        <div class="btn-area">
+                            <button class="headset" type="button">
+                                <i class=ico_cont></i>
+                            </button>
+                            <button type="button">
+                                <i class="ico_cont"></i>
+                            </button>
+                        </div>
+                    </header>
+                    <div class="cce010-title">
+                        <h1>
+                            아래 결과에서<br>
+                            선택을 완료해주세요!
+                        </h1>
+                    </div>
+                </article>
+
+                <div class="assert_list_wrap" >
+                        <!-- 홈택스 -->
+                        <article class="assert_list">
+                            <div class="assert_tit">
+                                <div class="tit_left">
+                                    <p>홈택스</p>
+                                </div>
+                                <div class="tit_right">
+                                    <div class="number">
+                                        <p>0개</p>
+                                    </div>
+                                    <div class="arr_btn">
+                                        <i class="ico_cont down"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="assert_content">
+                                <!-- 이미 등록된 상태 -->
+                                <div class="assert_choice_wrap">
+                                    <div class="assert_choice_complete" style="display: none;">
+                                         <div class="name">
+                                             <p>coocon</p>
+                                         </div>
+                                         <div class="state">
+                                             <p>이미등록</p>
+                                         </div>
+                                    </div>
+                                </div>
+
+                                <!-- 홈택스 자동연결 신청 -->
+                                <div class="assert_choice_wrap" >
+                                    <div class="assert_choice_tooltip">
+                                        <!-- 연결된상태시 info_blue 안됬을시 Q. 인증서 하이패스가 무엇인가요?info_gray -->
+                                        <i class="ico_cont info_blue"></i>
+                                        <p>해당 인증서로 홈택스 활동이력이 조회되지 않아요</p>
+                                    </div>
+                                    <!-- 토글버튼 두개 레이아웃 -->
+                                    <div class="assert_choice double">
+                                        <div class="assert_choice_content">
+                                            <div class="term">
+                                                <!-- 체크박스 선택시 글씨 굵기 변경 -->
+                                                <p class="active">홈택스 자동연결 신청</p>
+                                            </div>
+                                            <div class="toggle">     
+                                                <input type="checkbox" class="round">
+                                            </div>
+                                        </div>
+                                        <div class="assert_choice_content">
+                                            <div class="term">
+                                                <p>나중에 알아서 연결</p>
+                                            </div>
+                                            <div class="toggle">
+                                                <input type="checkbox" class="round">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 홈택스 가입 확인 / 자동수집 및 분석 동의 -->
+                                <div class="assert_choice_wrap" style="display: none;">
+                                    <div class="assert_choice_tooltip">
+                                        <i class="ico_cont info_gray"></i>
+                                        <p>해당 인증서로 홈택스 활동이력이 조회되지 않아요</p>
+                                    </div>
+                                    <!-- 토글버튼 한개 레이아웃 -->
+                                    <div class="assert_choice single">
+                                        <div class="assert_choice_content">
+                                            <div class="term">
+                                                <!-- 체크박스 선택시 글씨 굵기 변경 한개 일 때는 default 가 굵음-->
+                                                <p class="active">
+                                                    매출 · 매입 · 인건비 · 부가세 등 <br>
+                                                    자동수집 및 분석에 동의해요
+                                                </p>
+                                            </div>
+                                            <div class="toggle">     
+                                                <input type="checkbox" class="round">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                       </article>
+
+                       <!-- 계좌 -->
+                        <article class="assert_list account is-unconnect">
+                            <div class="assert_tit">
+                                <div class="tit_left">
+                                    <p>계좌</p>
+                                </div>
+                                <div class="tit_right">
+                                    <div class="number">
+                                        <p>5개</p>
+                                    </div>
+                                    <div class="arr_btn">
+                                        <i class="ico_cont up"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 연결안됬을시 노출텍스트 -->
+                            <div class="assert_choice_tooltip info">
+                                <i class="ico_cont info_gray"></i>
+                                <p>해당 인증서와 연결된 은행이 없어요</p>
+                            </div>
+                            <div class="assert_content bank">
+                                <ul class="item_wrap">
+                                    <li class="item_box">
+                                        <div class="item_tit">
+                                            <div class="logo">
+                                                <i class="ico_cont bank bk_003"></i>
+                                            </div>
+                                            <div class="name">
+                                                <p>IBK 기업은행</p>
+                                            </div>
+                                        </div>
+                                        <ul class="item">
+                                            <li class="item_list">
+                                                <div class="info">
+                                                    <p class="number">
+                                                        1223-141412-425255
+                                                    </p>
+                                                    <p class="txt elipsis">
+                                                        기업소상공인파트너힘이 되는
+                                                    </p>
+                                                </div>
+                                                <div class="assert_state">
+                                                    <div class="register">
+                                                        <p class="success">이미 등록</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="item_list">
+                                                <div class="info">
+                                                    <p class="number">
+                                                        1223-141412-425255
+                                                    </p>
+                                                    <p class="txt elipsis">
+                                                        기업소상공인파트너힘이 되는 세모
+                                                    </p>
+                                                </div>
+                                                <div class="assert_state">
+                                                    <div class="check">
+                                                        <input type="checkbox" class="blue">
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="item_list">
+                                                <div class="info">
+                                                    <p class="number">
+                                                        1223-141412-425255
+                                                    </p>
+                                                    <p class="txt elipsis">
+                                                        기업소상공인파트너힘이 되는 세모
+                                                    </p>
+                                                </div>
+                                                <div class="assert_state">
+                                                    <!-- 등록전 체크박스 -->
+                                                    <div class="check">
+                                                        <input type="checkbox" class="blue">
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <ul class="item_wrap">
+                                    <li class="item_box">
+                                        <div class="item_tit">
+                                            <div class="logo">
+                                                <i class="ico_cont bank bk_011"></i>
+                                            </div>
+                                            <div class="name">
+                                                <p>NH농협</p>
+                                            </div>
+                                        </div>
+                                        <ul class="item">
+                                            <li class="item_list">
+                                                <div class="info">
+                                                    <p class="number">
+                                                        1223-141412-425255
+                                                    </p>
+                                                    <p class="txt elipsis">
+                                                        기업소상공인파트너힘이 되는
+                                                    </p>
+                                                </div>
+                                                <div class="assert_state">
+                                                    <!-- 이미등록된상태 -->
+                                                    <div class="register">
+                                                        <p class="success">이미 등록</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <ul class="item_wrap">
+                                    <li class="item_box">
+                                        <div class="item_tit">
+                                            <div class="logo">
+                                                <i class="ico_cont bank bk_089"></i>
+                                            </div>
+                                            <div class="name">
+                                                <p>케이뱅크</p>
+                                            </div>
+                                        </div>
+                                        <ul class="item">
+                                            <li class="item_list">
+                                                <div class="info">
+                                                    <p class="number">
+                                                        1223-141412-425255
+                                                    </p>
+                                                    <p class="txt elipsis">
+                                                        기업소상공인파트너힘이 되는
+                                                    </p>
+                                                </div>
+                                                <div class="assert_state">
+                                                    <div class="register">
+                                                        <p class="fail">수집오류</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                       </article>
+
+                       <!-- 개인카드 -->
+                       <!-- 연결안됬을시 is-unconnect -->
+                        <article class="assert_list account is-unconnect">
+                            <div class="assert_tit">
+                                <div class="tit_left">
+                                    <p>개인카드</p>
+                                </div>
+                                <div class="tit_right">
+                                    <div class="number">
+                                        <p>3개</p>
+                                    </div>
+                                    <div class="arr_btn">
+                                        <i class="ico_cont up"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="assert_choice_tooltip info">
+                                <i class="ico_cont info_gray"></i>
+                                <p>해당 인증서와 연결된 카드사가 없어요</p>
+                            </div>
+                            <div class="assert_content bank">
+                                <ul class="item_wrap">
+                                    <li class="item_box">
+                                        <div class="item_tit">
+                                            <div class="logo">
+                                                <i class="ico_cont bank bk_361"></i>
+                                            </div>
+                                            <div class="name">
+                                                <p>BC 카드</p>
+                                            </div>
+                                        </div>
+                                        <ul class="item">   
+                                            <li class="item_list">
+                                                <div class="info">
+                                                    <p class="number">
+                                                        1223-141412-425255
+                                                    </p>
+                                                    <p class="txt elipsis">
+                                                        기업소상공인파트너힘이 되는 세모
+                                                    </p>
+                                                </div>
+                                                <div class="assert_state">
+                                                    <div class="check">
+                                                        <input type="checkbox" class="blue">
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <ul class="item_wrap">
+                                    <li class="item_box">
+                                        <div class="item_tit">
+                                            <div class="logo">
+                                                <i class="ico_cont bank bk_011"></i>
+                                            </div>
+                                            <div class="name">
+                                                <p>NH 농협</p>
+                                            </div>
+                                        </div>
+                                        <ul class="item">   
+                                            <li class="item_list">
+                                                <div class="info">
+                                                    <p class="number">
+                                                        1223-141412-425255
+                                                    </p>
+                                                    <p class="txt elipsis">
+                                                        기업소상공인파트너힘이 되는 세모
+                                                    </p>
+                                                </div>
+                                                <div class="assert_state">
+                                                    <div class="check">
+                                                        <input type="checkbox" class="blue">
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <ul class="item_wrap">
+                                    <li class="item_box">
+                                        <div class="item_tit">
+                                            <div class="logo">
+                                                <i class="ico_cont bank bk_088"></i>
+                                            </div>
+                                            <div class="name">
+                                                <p>신한카드</p>
+                                            </div>
+                                        </div>
+                                        <ul class="item">   
+                                            <li class="item_list">
+                                                <div class="info">
+                                                    <p class="number">
+                                                        1223-141412-425255
+                                                    </p>
+                                                    <p class="txt elipsis">
+                                                        기업소상공인파트너힘이 되는 세모
+                                                    </p>
+                                                </div>
+                                                <div class="assert_state">
+                                                    <div class="check">
+                                                        <input type="checkbox" class="blue">
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+
+                          
+                            </div>
+                       </article>
+
+                       <!-- 건강보험 -->
+                       <!-- 연결안됬을시 is-unconnect -->
+                       <article class="assert_list">
+                        <div class="assert_tit">
+                            <div class="tit_left">
+                                <p>건강보험</p>
+                            </div>
+                            <div class="tit_right">
+                                <div class="number">
+                                    <p>1개</p>
+                                </div>
+                                <div class="arr_btn">
+                                    <i class="ico_cont down"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="assert_content" style="display: none;">
+                            <div class="assert_choice_wrap">
+                                <div class="assert_choice_tooltip">
+                                    <i class="ico_cont info_gray"></i>
+                                    <p>병의원 및 약국 사업자인 경우<br>국민건강보험공단에 인증서 연결이 필요해요</p>
+                                </div>
+                                <div class="assert_choice double">
+                                    <div class="assert_choice_content">
+                                        <div class="term">
+                                            <!-- 체크박스 선택시 글씨 굵기 변경 -->
+                                            <p class="active">매출 자동 수집신청</p>
+                                        </div>
+                                        <div class="toggle">     
+                                            <input type="checkbox" class="round">
+                                        </div>
+                                    </div>
+                                    <div class="assert_choice_content">
+                                        <div class="term">
+                                            <p>수집 필요없음</p>
+                                        </div>
+                                        <div class="toggle">
+                                            <input type="checkbox" class="round">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="assert_choice_wrap">
+                            <div class="assert_choice_complete" >
+                                    <div class="name">
+                                        <p>coocon</p>
+                                    </div>
+                                    <div class="state">
+                                        <p>이미등록</p>
+                                    </div>
+                            </div>
+                        </div>
+                   </article>
+                </div>
+
+                <footer class="highpass_footer">
+                    <div class="report_foot">
+                        <div class="rf_tit">
+                            <i class="ico_cont"></i>
+                            <span>인증서 하이패스 안내</span>
+                        </div>
+                        <div class="rf_list_wrap">
+                            <div class="rf_list">
+                                <div class="rf_list_tit">
+                                    <span>Q. 인증서 하이패스가 무엇인가요?</span>
+                                    <div>
+                                        <i class="ico_cont up"></i>
+                                    </div>
+                                </div>
+                                <div class="rf_list_item">
+                                    <div class="rl_item">
+                                        <p>-</p>
+                                        <span>
+                                            인증서와 연결된 계좌 · 카드 · 홈택스와 같이 각 기관에<br> 
+                                            흩어져 있는 나의 자산을 한 번의 클릭으로 수집할 수 있는<br> 
+                                            편리한 기능이에요.자동수집을 원하는 자산을 선택하고<br> 
+                                            매일 아침 맞춤 보고서를 받아보세요.
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="rf_list">
+                                <div class="rf_list_tit">
+                                    <span>Q. 조회되지 않는 항목이 있어요</span>
+                                    <div>
+                                        <i class="ico_cont"></i>
+                                    </div>
+                                </div>
+                                <div class="rf_list_item">
+                                    <div class="rl_item">
+                                        <p>-</p>
+                                        <span>먼저 해당 인증서가 연결하려는 기관에 등록되어야 해요. 
+                                            예를 들어 계좌를 조회하려면 해당 은행 홈페이지에 
+                                            회원가입 후 인증서 등록이 선행되어야 해요. 
+                                    </div>
+                                    <div class="rl_item">
+                                        <p>-</p>
+                                        <span> 
+                                            또한 개인명의와 사업장명의 인증서를 모두 사용하는 경우 
+   인증서 별로 연결된 자산이 다르므로 따로따로 연결이<br> 
+   필요해요. 
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="rf_list">
+                                <div class="rf_list_tit">
+                                    <span>Q. 대구은행 또는 SC제일은행 계좌가 안보여요</span>
+                                    <div>
+                                        <i class="ico_cont"></i>
+                                    </div>
+                                </div>
+                                <div class="rf_list_item">
+                                    <div class="rl_item">
+                                        <p>-</p>
+                                        <span>해당은행은 설정 > 수집/연결관리 > 계좌관리 에서 개별로 
+                                            연결이 가능해요. 인증서 하이패스에서도 이용할 수 있도록 
+                                            빠르게 개선할게요. </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="rf_list">
+                                <div class="rf_list_tit">
+                                    <span>Q. 개인카드란 무엇인가요?</span>
+                                    <div>
+                                        <i class="ico_cont"></i>
+                                    </div>
+                                </div>
+                                <div class="rf_list_item">
+                                    <div class="rl_item">
+                                        <p>-</p>
+                                        <span>개인명의로 발급받아 사용하고 있는 카드에요. 
+                                            혹시 조회되지 않는 카드가 있다면 카드사 홈페이지에 
+                                            회원가입 후 인증서를 등록해 주세요 </span>
+                                    </div>
+                                    <div class="rl_item">
+                                        <p>-</p>
+                                        <span>사업장 명의 카드는 추후 설정 > 카드지출관리(사업장명의) 
+                                            메뉴에서 따로 등록할 수 있어요.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                    </div>
+                </footer>
+                 <!-- 0816 버튼 변경 -->
+                <!-- button 에 addClass active-->
+                <div class="bot_fix_pd20 none_bg">
+                    <button class="type_B active_blue" type="button">
+                        <span>선택한 8개 수집하기</span>
+                    </button>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+</html>

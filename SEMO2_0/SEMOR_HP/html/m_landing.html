@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../img/favicon_semoR.png">
+    <link rel="stylesheet" href="../css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../css/m_semoR_landing.css">
+    <title>세모Report 소개</title>
+</head>
+<body>
+    <!-- popup -->
+    <div id="pop01">
+        <div class="popWrap centerLayer">
+            <div class="dim" onclick="popClose(this); return false;"></div>
+            <div class="popInner">
+                <div class="popCont">
+                    <img src="../img/bg_voucher_230602.png" alt="팝업이미지">
+                    <a href="https://bit.ly/3OHEuQH" class="moveVoucher" target="_blank">
+                        <img src="../img/btn_voucher_230602.png" alt="신청하기버튼">
+                    </a>
+                </div>
+                <div class="popBtnWrap">
+                    <button typeu="button" id="cookiePop" onclick="popClose(this); setCookie(); return false;">하루보지않기</button>
+                    <button typeu="button" onclick="popClose(this); return false;">닫기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //popup -->
+
+    <div class="wrapper">
+        <header class="header">
+            <div class="inner clear">
+                <div class="areaLogo">
+                    <h1>
+                        <a href="land_inrt_001A.html"><img src="../img/logo_semoR.png" alt="로고"></a>
+                    </h1>
+                </div>
+            </div>
+        </header>
+        <div class="landingCont">
+            <!-- secVisual -->
+            <section class="secVisual">
+                <img src="../img/m_visual01.png">
+            </section>
+            <!-- //secVisual -->
+
+            <!-- secIntroTxt -->
+            <section class="secIntroTxt">
+                <div class="inner">
+                    <div class="column">
+                        <img src="../img/m_visualTxt01.png">
+                    </div>
+                    <div class="column">
+                        <img src="../img/m_visualTxt07.png">
+                    </div>
+                    <div class="column">
+                        <img src="../img/m_visualTxt02.png">
+                    </div>
+                    <div class="column">
+                        <img src="../img/m_visualTxt03.png">
+                    </div>
+                    <div class="column">
+                        <img src="../img/m_visualTxt04.png">
+                    </div>
+                    <div class="column">
+                        <img src="../img/m_visualTxt05.png">
+                    </div>
+                    <div class="column">
+                        <img src="../img/m_visualTxt06.png">
+                    </div>
+                </div>
+            </section>
+            <!-- //secIntroTxt -->
+
+            <!-- secIntro -->
+            <section class="secIntro">
+                <div class="inner">
+                    <h1 class="defTit">
+                        세무사무소를 위한<br>
+                        차별화된 <span class="pointColor02">프리미엄 세무서비스 !</span>
+                    </h1>
+                    <div class="service pc">
+                        <div class="areaTit">
+                            <strong>세무사무소</strong>
+                            <span>PC 웹서비스</span>
+                        </div>
+                        <div class="areaMockup">
+                            <img src="../img/m_mockup01.png" alt="">
+                        </div>
+                        <div class="areaTxt">
+                            <ul>
+                                <li>
+                                    · 매월 간편 급여자료 요청
+                                </li>
+                                <li>
+                                    · 수임처 증빙 자동 수집
+                                </li>
+                                <li>
+                                    · 수임처 손익계산 보고서
+                                </li>
+                                <li>
+                                    · 부가세 예상액 보고서
+                                </li>
+                                <li>
+                                    · 수임처 세금 납부서 조회 및 알림
+                                </li>
+                                <li>
+                                    · 민원증명서류 발급 자동화
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="service mobile">
+                        <div class="areaTit">
+                            <strong>수임처 사장님</strong>
+                            <span>모바일서비스</span>
+                        </div>
+                        <div class="areaMockup">
+                            <img src="../img/m_mockup02.png" alt="">
+                        </div>
+                        <div class="areaTxt">
+                            <ul>
+                                <li>
+                                    · 프리미엄 경영 리포트 10여종
+                                </li>
+                                <li>
+                                    · 간편송금 (급여,거래처,직원,세금납부)
+                                </li>
+                                <li>
+                                    · 쉽고 빠른 채팅 : 전용 채팅, 이력관리
+                                </li>
+                                <li>
+                                    · 실시간 민원 증빙 신청 및 발급
+                                </li>
+                                <li>
+                                    · 간편 급여신고 및 급여명세서 발송
+                                </li>
+                                <li>
+                                    · 사장님 계기판 경영 가능 (사업현황, 손익보고서 등)
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- //secIntro -->
+
+            <!-- secSlide -->
+            <section class="secSlide">
+                <div class="inner">
+                    <div class="item01">
+                        <h1 class="defTit">
+                            거래처가 감동하는<br>
+                            프리미엄 서비스 제공
+                        </h1>
+                        <div class="landingTxtWrap">
+                            <div class="areaLandingTxt active">
+                                <span>10여종의 프리미엄 리포트, 예상 세금 알림,</span>
+                            </div>
+                            <div class="areaLandingTxt">
+                                <span>간편송금 (급여, 거래처, 직원, 세금납부 등),</span>
+                            </div>
+                            <div class="areaLandingTxt">
+                                <span>간편 급여신고 및 급여명세서 발송,</span>
+                            </div>
+                            <div class="areaLandingTxt">
+                                <span>민원서류 즉시 발급</span>
+                            </div>
+                            <div class="areaLandingTxt">
+                                <span>1:1 전용 채팅상담, 영수증 간편 전송</span>
+                            </div>
+                        </div>
+                        <div class="areaSwipe">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="../img/m_mockup02.png" alt="">
+                                    <p class="pointColor02">10여종의 프리미엄 리포트</p>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="../img/m_secSlide02.png" alt="">
+                                    <p class="pointColor02">간편송금 (급여, 거래처, 직원, 세금납부 등)</p>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="../img/m_secSlide03.png" alt="">
+                                    <p class="pointColor02">급여명세서 발송</p>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="../img/m_secSlide04.png">
+                                    <p class="pointColor02">민원서류 즉시 발급</p>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="../img/m_secSlide05.png">
+                                    <p class="pointColor02">1:1 전용 채팅상담</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="areaSwiperBtn">
+                            <div class="areaAutoBtn">
+                                <button class="btn-swiper-auto play">
+                                    <img src="../img/btn_play.png">
+                                </button>
+                                <button class="btn-swiper-auto stop active">
+                                    <img src="../img/btn_stop.png">
+                                </button>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                    <div class="item02">
+                        <h1 class="defTit">
+                            직원들의 업무를<br>
+                            쉽고 빠르게
+                        </h1>
+                        <div class="landingTxtWrap">
+                            <div class="areaLandingTxt active">
+                                <span>매월 간편 급여자료 관리,</span>
+                            </div>
+                            <div class="areaLandingTxt active">
+                                <span>수임처 증빙 자동 수집,</span>
+                            </div>
+                            <div class="areaLandingTxt">
+                                <span>수임처 손익계산 보고서, 부가세 예상액 보고서,</span>
+                            </div>
+                            <div class="areaLandingTxt">
+                                <span>수임처 세금 납부서 조회 및 알림,<br> 민원증명서류 발급 자동화,</span>
+                            </div>
+                            <div class="areaLandingTxt">
+                                <span>고객 채팅 소통, 업무 히스토리 관리, 웹 기반 서비스</span>
+                            </div>
+                        </div>
+                        <div class="areaSwipe">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="../img/m_secSlide06.png" alt="">
+                                    <p class="pointColor02">매월 간편 급여자료 관리</p>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="../img/m_secSlide07.png" alt="">
+                                    <p class="pointColor02">수임처 증빙 자동 수집</p>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="../img/m_secSlide08.png" alt="">
+                                    <p class="pointColor02">수임처 손익계산ㆍ부가세 예상액 보고서</p>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="../img/m_secSlide09.png">
+                                    <p class="pointColor02">수임처 세금 납부서 조회 및 알림</p>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="../img/m_secSlide10.png">
+                                    <p class="pointColor02">고객 채팅 소통, 업무 히스토리 관리</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="areaSwiperBtn">
+                            <div class="areaAutoBtn">
+                                <button class="btn-swiper-auto play">
+                                    <img src="../img/btn_play.png">
+                                </button>
+                                <button class="btn-swiper-auto stop active">
+                                    <img src="../img/btn_stop.png">
+                                </button>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- //secSlide -->
+
+            <!-- secReview -->
+            <section class="secReview">
+                <div class="inner">
+                    <h1 class="defTit">
+                        고객이 말하는
+                        <p class="pointColor02">
+                            <img class="quoteBefore" src="../img/ico_quoteBefore.png">
+                            세모리포트
+                            <img class="quoteAfter" src="../img/ico_quoteAfter.png">
+                        </p>
+                    </h1>
+                    <div class="reviewListWrap">
+                        <ul>
+                            <li>
+                                <img src="../img/m_client01.png" alt="">
+                                <h1 class="defTit">수임처 사장님</h1>
+                                <div class="areaTxt">
+                                    <p>
+                                        1. 계기판 경영 (손익, 세무 등)
+                                    </p>
+                                    <p>
+                                        2. 프리미엄 세무 서비스
+                                    </p>
+                                    <p>
+                                        3. 쉽고 빠른 소통, 알림
+                                    </p>
+                                    <p>
+                                        4. 쉬운 송금 : 급여, 세금 등
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="../img/m_client02.png" alt="">
+                                <h1 class="defTit">세무사무소 직원</h1>
+                                <div class="areaTxt">
+                                    <p>
+                                        1. 신고 자료 수취 자동화
+                                    </p>
+                                    <p>
+                                        2. 급여관리 업무 개선
+                                    </p>
+                                    <p>
+                                        3. 단순 반복작업 Zero
+                                    </p>
+                                    <p>
+                                        4. 고객 만족도 증가
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="../img/m_client03.png" alt="">
+                                <h1 class="defTit">세무사님</h1>
+                                <div class="areaTxt">
+                                    <p>
+                                        1. 세무사무소 전용 앱
+                                    </p>
+                                    <p>
+                                        2. 신규거래처 소개 증가
+                                    </p>
+                                    <p>
+                                        3. 기장 수수료 UP 가능
+                                    </p>
+                                    <p>
+                                        4. 고객 이탈 방지
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <!-- //secReview -->
+
+            <!-- secPrice -->
+            <section class="secPrice">
+                <div class="inner">
+                    <h1 class="defTit">
+                        <hr class="line">
+                        세모Report 이용 가격
+                    </h1>
+                    <div class="tblPriceWrap">
+                        <p class="captionTxt">부가세 별도</p>
+                        <table class="tblPrice">
+                            <thead>
+                                <tr>
+                                    <th>구분</th>
+                                    <th>도입비</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="focus">공통</td>
+                                    <td>300,000원</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <span class="fTxt">* 최초 가입시 1회 납부 / 23년 6월 가입까지 면제</span>
+                    </div>
+                    <div class="tblPriceWrap">
+                        <p class="captionTxt">부가세 별도</p>
+                        <table class="tblPrice">
+                            <thead>
+                                <tr>
+                                    <th rowspan="2">구분</th>
+                                    <th colspan="2">
+                                        <span class="focus">월 이용 요금 <span class="ifTxt">(고객당)</span></span>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        위멤버스<br>
+                                        일반
+                                    </th>
+                                    <th class="pointColor08">
+                                        위멤버스<br>
+                                        프리미엄
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="focus">개인사업자</td>
+                                    <td>5,000원</td>
+                                    <td class="pointColor07 focus">3,000원</td>
+                                </tr>
+                                <tr>
+                                    <td class="focus">법인사업자</td>
+                                    <td>10,000원</td>
+                                    <td class="pointColor07 focus">5,000원</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+            <!-- //secPrice -->
+
+            <div class="footerWrap">
+                <div class="inner">
+                    <div class="areaTerms">
+                        <div class="footerBox">
+                            <a href="javascript:;" class="term01">이용약관</a>
+                            <a href="javascript:;" class="term02">개인정보처리방침</a>
+                        </div>
+                    </div>
+                    <div class="footerInfo">
+                        <div class="areaLogo">
+                            <img class="logo" src="../img/logo_semoR.png">
+                        </div>
+                        <div class="txtArea">
+                            <div class="footerBox">
+                                <span>로움아이티(주)</span>
+                                <span>팩스 : 070-7950-5114</span>
+                                <span>주소 : 서울시 영등포구 영신로 220 KnK디지털타워 11층 1112호</span>
+                                <span>대표 : 박승현</span>
+                            </div>
+                            <div class="footerBox">
+                                <span>사업자등록번호 : 847-87-00259</span>
+                                <span>통신판매업종신고증 : 2019-서울영등포-1992호</span>
+                            </div>
+                            <div class="footerBox">
+                                <span class="copyright">© Roumit. All rights reserved.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="areaFloatBtn">
+                <a href="https://qe398.channel.io/support-bots/52789" target="_blank" class="btnConsult">
+                    <img src="../img/ico_consult.png" alt="">
+                    <p>
+                        무료상담<br>
+                        신청
+                    </p>
+                </a>
+                <a href="javascript:;" class="btnTop">
+                    <img src="../img/btn_floatTop.png">
+                </a>
+            </div>
+        </div>
+    </div>
+
+  <script src="../js/jquery-3.5.1.min.js"></script>
+    <script src="../js/swiper-bundle.min.js"></script>
+    <script src="../js/semoR_ui.js"></script>
+    <script>
+        $(function() {
+            // 날짜 비교, 쿠키 확인후 팝업띄우기
+            setTimeout(function () {
+                if (!isDeadline(20230530, 20230815) && !getCookie()) {
+                    popCenter("#pop01"); //팝업 호출 함수
+                } else {
+                    popClose("#pop01");
+                }
+            }, 100);
+
+            var secSlide01 = new Swiper(".secSlide .item01 .areaSwipe", {
+                slidesPerView: 1,
+                spaceBetween: 20,
+                autoplay: {
+                    disableOnInteraction: false
+                },
+                pagination: {
+                    el: ".secSlide .item01 .swiper-pagination",
+                    clickable: true
+                },
+                on: {
+                    activeIndexChange: function () {
+                        $(".secSlide .item01 .areaLandingTxt").eq(secSlide01.realIndex).addClass("active").siblings().removeClass("active");
+                    }
+                }
+            });
+
+            var secSlide02 = new Swiper(".secSlide .item02 .areaSwipe", {
+                slidesPerView: 1,
+                spaceBetween: 20,
+                autoplay: {
+                    disableOnInteraction: false
+                },
+                pagination: {
+                    el: ".secSlide .item02 .swiper-pagination",
+                    clickable: true
+                },
+                on: {
+                    activeIndexChange: function () {
+                        $(".secSlide .item02 .areaLandingTxt").eq(secSlide02.realIndex).addClass("active").siblings().removeClass("active");
+                    }
+                }
+            });
+
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 30) {
+                    $("body").addClass("active");
+                } else {
+                    $("body").removeClass("active");
+                }
+            })
+
+            $(".btnTop").on("click", function () {
+                $(window).scrollTop(0);
+            })
+
+            $(".secSlide .item01 .btn-swiper-auto.stop").click(function () {
+                secSlide01.autoplay.stop();
+                $(this).removeClass("active").siblings().addClass("active");
+            })
+            $(".secSlide .item01 .btn-swiper-auto.play").click(function () {
+                secSlide01.autoplay.start();
+                $(this).removeClass("active").siblings().addClass("active");
+            })
+
+            $(".secSlide .item02 .btn-swiper-auto.stop").click(function () {
+                secSlide02.autoplay.stop();
+                $(this).removeClass("active").siblings().addClass("active");
+            })
+            $(".secSlide .item02 .btn-swiper-auto.play").click(function () {
+                secSlide02.autoplay.start();
+                $(this).removeClass("active").siblings().addClass("active");
+            })
+
+            $(".term01").on('click', function () {
+                window.open("https://reportmgmt.appplay.co.kr/pdf/term_001.pdf", "_blank");
+            })
+            $(".term02").on('click', function () {
+                window.open("https://reportmgmt.appplay.co.kr/pdf/term_002.pdf", "_blank");
+            })
+        })
+    </script>
+</body>
+</html>

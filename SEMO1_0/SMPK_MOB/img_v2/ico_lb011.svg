@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="prefix__ico_small_bank11_부산_경남은행" width="40" height="40" data-name="ico_small_bank11_부산,경남은행" viewBox="0 0 40 40">
+    <defs>
+        <style>
+            .prefix__cls-2{fill:#fff}
+        </style>
+    </defs>
+    <circle id="prefix__타원_72" cx="20" cy="20" r="20" fill="#e43c00" data-name="타원 72"/>
+    <g id="prefix__그룹_477" data-name="그룹 477" transform="translate(-92 -815)">
+        <g id="prefix__그룹_476" data-name="그룹 476" transform="translate(-331.756 -1549.72)">
+            <path id="prefix__패스_946" d="M566.652 2390.456v-9.647h-1.99v9.66h1.99z" class="prefix__cls-2" data-name="패스 946" transform="translate(-115.201 -.477)"/>
+            <path id="prefix__패스_947" d="M435.85 2385.306a2.191 2.191 0 0 0 1.4-2.17c0-2.962-3.426-2.89-3.426-2.89h-4.883a.132.132 0 0 0-.145.115v9.886a.132.132 0 0 0 .145.116h4.883c.68 0 3.57-.131 3.57-2.949a2.219 2.219 0 0 0-1.544-2.108zm-5.129-3.253h3.105s1.489-.014 1.489 1.2c0 1.113-1.489 1.113-1.489 1.113h-3.105zm3.105 6.461h-3.105v-2.255h3.105s1.633-.086 1.633 1.113c.001.969-.996 1.142-1.632 1.142z" class="prefix__cls-2" data-name="패스 947"/>
+            <path id="prefix__패스_948" d="M493.339 2405.633v-7.29h1.99v7.29z" class="prefix__cls-2" data-name="패스 948" transform="translate(-54.725 -15.344)"/>
+            <path id="prefix__패스_949" d="M543.746 2390.456v-9.647h1.99v9.66h-1.99z" class="prefix__cls-2" data-name="패스 949" transform="translate(-97.466 -.477)"/>
+            <g id="prefix__그룹_474" data-name="그룹 474" transform="translate(438.614 2380.332)">
+                <path id="prefix__패스_950" d="M498.467 2389.195l-2.388-5.84a1.1 1.1 0 0 0-.958-.557h-1.782v-1.988h1.782a2.852 2.852 0 0 1 2.686 1.559l2.388 5.841a.919.919 0 0 0 .958.556h1.842v1.989h-1.842a2.945 2.945 0 0 1-2.686-1.56z" class="prefix__cls-2" data-name="패스 950" transform="translate(-493.339 -2380.809)"/>
+            </g>
+            <g id="prefix__그룹_475" data-name="그룹 475" transform="translate(449.461 2380.332)">
+                <path id="prefix__패스_951" d="M569.19 2389.195l2.388-5.84a1.1 1.1 0 0 1 .958-.557h1.492v-1.988h-1.492a2.851 2.851 0 0 0-2.686 1.559l-2.388 5.841a.921.921 0 0 1-.958.556h-1.842v1.989h1.838a2.948 2.948 0 0 0 2.69-1.56z" class="prefix__cls-2" data-name="패스 951" transform="translate(-564.662 -2380.809)"/>
+            </g>
+            <path id="prefix__패스_952" d="M603.31 2414.885l-.845 2.066 1.929 2.708h2.616z" class="prefix__cls-2" data-name="패스 952" transform="translate(-147.255 -29.371)"/>
+        </g>
+    </g>
+</svg>

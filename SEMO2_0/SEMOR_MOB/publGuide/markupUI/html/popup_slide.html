@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>팝업가이드</title>
+    <link rel="stylesheet" href="../../common/css/guide.css">
+</head>
+<body>
+    <!-- wrapper -->
+    <div class="wrapper">
+        <div class="guideCont">
+            <!-- header -->
+            <div class="header">
+                <h1 class="mainTit">슬라이드팝업(slidePop)</h1>
+            </div>
+            <!-- //header -->
+            
+            <!-- content -->
+            <div class="content">
+
+                <div class="titArea">
+                    <h2 class="defTit">1. 기준</h2>
+                </div>
+                <table class="tblReference">
+                    <colgroup>
+                        <col style="width: 300px">
+                        <col style="width: 400px">
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <th>마크업기준</th>
+                        <th>마크업구조 및 cssClass명</th>
+                        <th>JS</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>하단 슬라이드팝업</td>
+                            <td>div class="popWrap slidePop"</td>
+                            <td>slidePop()</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="defTxt">1) 예시</p>
+<xmp>
+    <script>
+        popCenter( $('#obj') );
+    </script>                        
+
+    <!-- .popWrap 을 한번 감싼 부모요소 div의 id를 파라미터 값으로 넘김 -->
+    <div id="obj">
+        <div class="popWrap slidePop">
+            
+            contents 영역
+        
+        </div>
+    </div>
+</xmp>
+
+                <div class="titArea">
+                    <h2 class="defTit">2. 템플릿(Template)/목업(Mockup)/예시(Sample)</h2>
+                    <p>1) 선택형</p>
+                </div>
+                <div class="guideIframeWrap">
+                    <span class="tooltip">기본</span><iframe src="popup_slideMockup01.html" frameborder="0" width="360px" height="640px"></iframe>
+                    <span class="tooltip">우측 화살표</span><iframe src="popup_slideMockup02.html" frameborder="0" width="360px" height="640px"></iframe>
+                    <span class="tooltip">우측 화살표 및 텍스트</span><iframe src="popup_slideMockup03.html" frameborder="0" width="360px" height="640px"></iframe>
+                    <span class="tooltip">제목 우측상단 버튼</span><iframe src="popup_slideMockup17.html" frameborder="0" width="360px" height="640px"></iframe>
+                </div>
+                <div class="guideIframeWrap">
+                    <span class="tooltip">탭메뉴</span><iframe src="popup_slideMockup06.html" frameborder="0" width="360px" height="640px"></iframe>
+                    <span class="tooltip">약관</span><iframe src="popup_slideMockup04.html" frameborder="0" width="360px"
+                    height="640px"></iframe>
+                    <span class="tooltip">카드사</span><iframe src="popup_slideMockup14.html" frameborder="0" width="360px"
+                    height="640px"></iframe>
+                    <span class="tooltip">다중체크박스</span><iframe src="popup_slideMockup16.html" frameborder="0" width="360px"
+                    height="640px"></iframe>
+                </div>
+                <div class="guideIframeWrap">
+                    <span class="tooltip">다중체크박스02</span><iframe src="popup_slideMockup10.html" frameborder="0" width="360px" height="640px"></iframe>
+                    <span class="tooltip">라디오</span><iframe src="popup_slideMockup08.html" frameborder="0" width="360px"
+                    height="640px"></iframe>
+                    <span class="tooltip">라디오02</span><iframe src="popup_slideMockup09.html" frameborder="0" width="360px"
+                    height="640px"></iframe>
+                    <span class="tooltip">매입용도</span><iframe src="popup_slideMockup11.html" frameborder="0" width="360px" height="640px"></iframe>
+                </div>
+                <div class="guideIframeWrap">
+                    <span class="tooltip">입금용도</span><iframe src="popup_slideMockup12.html" frameborder="0" width="360px"
+                        height="640px"></iframe>
+                    <span class="tooltip">출금용도</span><iframe src="popup_slideMockup13.html" frameborder="0" width="360px"
+                    height="640px"></iframe>
+                </div>
+
+                <div class="titArea">
+                    <p class="defTit">2) 컨펌형</p>
+                </div>
+                <div class="guideIframeWrap">
+                    <span class="tooltip">Data List</span><iframe src="popup_slideMockup05.html" frameborder="0" width="360px"
+                    height="640px"></iframe>
+                    <span class="tooltip">QNA</span><iframe src="popup_slideMockup07.html" frameborder="0" width="360px" height="640px"></iframe>
+                    <span class="tooltip">Dot List</span><iframe src="popup_slideMockup15.html" frameborder="0" width="360px"
+                    height="640px"></iframe>
+                    <span class="tooltip">툴팁 (주휴수당)</span><iframe src="popup_slideMockup18.html" frameborder="0" width="360px"
+                    height="640px"></iframe>
+                </div>
+                <div class="guideIframeWrap">
+                    <span class="tooltip">툴팁 (상시근로자)</span><iframe src="popup_slideMockup21.html" frameborder="0" width="360px" height="640px"></iframe>
+                </div>
+
+                <div class="titArea">
+                    <p class="defTit">3) 입력형</p>
+                </div>
+                <div class="guideIframeWrap">
+                    <span class="tooltip">근무조건 설정</span><iframe src="popup_slideMockup19.html" frameborder="0" width="360px"
+                    height="640px"></iframe>
+                    <span class="tooltip">급여수정</span><iframe src="popup_slideMockup20.html" frameborder="0" width="360px"
+                    height="640px"></iframe>
+                </div>
+            </div>
+            <!-- //content -->
+        </div>
+    </div>
+    <!-- //wrapper -->
+
+</body>
+
+</html>

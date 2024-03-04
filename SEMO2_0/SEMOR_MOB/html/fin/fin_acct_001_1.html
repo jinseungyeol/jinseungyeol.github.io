@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>fin_acct_001_1 / popup_slideMockup17</title>
+    <link rel="stylesheet" href="../../css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../../css/mobiscroll.jquery.min.css">
+    <link rel="stylesheet" href="../../css/semoR_base.css">
+    <link rel="stylesheet" href="../../css/semoR_common.css">
+    <link rel="stylesheet" href="../../css/semoR_style.css">
+    <link rel="stylesheet" href="../../css/semoR_rept.css">
+  <script src="../../js/jquery-3.5.1.min.js"></script>
+    <script src="../../js/jquery-ui.min.js"></script>
+    <script src="../../js/swiper-bundle.min.js"></script>
+    <script src="../../js/mobiscroll.jquery.min.js"></script>
+    <script src="../../js/semoR_ui.js"></script>
+</head>
+
+<script>
+    $(document).ready(function () {
+        slidePop(this);
+    });
+</script>
+
+<body>
+
+    <div class="popWrap slidePop">
+        <div class="dim" onclick="popdimClose(this);return false;">클릭시 팝업 닫힘</div>
+        <div class="popInner">
+            <div class="popTit">
+                <a href="javascript:;" class="btnPopClose" onclick="popClose(this);return false;" title="팝업닫기" role="button"></a>
+                <div class="titArea mgt15">
+                    <h1>송금 선택하기</h1>
+                    <div class="rCont">
+                        <button class="btnRemitHistory">송금내역</button>
+                    </div>
+                </div>
+            </div>
+            <div class="popCont">
+                <ul class="selectList">
+                    <li>
+                        <a href="javascript:;" class="menu">
+                            <strong class="tit">일반 송금</strong>
+                            <div class="rCont">
+                                <span class="defTxt02">은행과 계좌를 직접 입력</span>
+                                <img src="../../img/ico_ts_right_gray.png" alt="오른쪽화살표" class="tsRight">
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="menu">
+                            <strong class="tit">급여 송금</strong>
+                            <div class="rCont">
+                                <span class="defTxt02">직원 급여를 바로 보내기</span>
+                                <img src="../../img/ico_ts_right_gray.png" alt="오른쪽화살표" class="tsRight">
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="menu">
+                            <strong class="tit">세금 납부</strong>
+                            <div class="rCont">
+                                <span class="defTxt02">부가세 등 세금 납부하기</span>
+                                <img src="../../img/ico_ts_right_gray.png" alt="오른쪽화살표" class="tsRight">
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

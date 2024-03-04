@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<title>세모리포트</title>
+<link rel="stylesheet" href="../css/reset_taxp.css">
+<link rel="stylesheet" href="../css/app_header.css"><!-- [D] 세무대리인용 header -->
+<link rel="stylesheet" href="../css/content_taxp.css"><!-- [D] 세무대리인용 -->
+
+<!-- custom scrollbar plugin css -->
+<link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+  <script src="../js/lib/jquery/jquery-1.12.4.min.js"></script>
+<script src="../js/lib/jquery/jquery-ui-1.10.4.min.js"></script>
+<!-- custom scrollbar plugin -->
+<script src="../js/design/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../js/design/jquery.placeholder.min.js"></script>
+<script src="../js/lib/plugin/smart.popup.js"></script>
+<script src="../js/comm/common.js"></script>
+<script>
+$(function(){
+  // Invoke the plugin
+  $('input, textarea').placeholder({customClass:'my-placeholder'});
+  
+  
+  
+  // 보기설정 보기
+    $('#btn_showhide').on("click", function(event){
+    	if($(this).hasClass("down")){
+    		$("#tbl_area").show();
+    		$(this).removeClass("down");
+    	}else{
+    		$("#tbl_area").hide();
+    		$(this).addClass("down");
+    	}
+    });
+    
+});
+</script>
+
+</head>
+
+
+<body style="width:375px;"><!-- 팝업 사이즈 600*497 -->
+
+<div class="pop_wrap" style="width:375px;">
+
+  <!-- 팝업 헤더 -->
+  <div class="pop_header">
+    <h1>2022년 9월 청구내역조회</h1>
+    <a href="#" onClick="close_smartPop();" class="btn_popclose"><img src="../img/txof/btn/btn_popclose_white.gif" alt="팝업닫기"></a>
+  </div>
+  <!-- //팝업 헤더 -->
+
+  <!-- 팝업 컨텐츠 -->
+  <div class="pop_container">
+  	
+  	
+  	 	<div class="info_txt mgb20" style="width:92%;background-color:#f3f4f6;margin:0 auto;text-align:left;padding:8px 15px;">
+		<strong class="fs18">09월 납부할 금액</strong>
+		</div>
+
+    <div class="title_wrap">
+      <div class="left">
+        <h2 class="">납부금액</h2>
+      </div>
+      <div class="right">
+      	<h1><span  class="txt_b">1,980,000</span> <span class="fs14">원</span></h1>
+      </div>
+    </div>
+
+    <div class="data_list_v mCustomScrollbar" style="height: 153px;"><!-- 2019-10-22 mCustomScrollbar 클래스 추가 -->
+      <div class="cust_wrap cboth" style="height:150px;">
+        <div class="cust_dv_bx" style="width: 95%;display:;margin-top:0;">
+          <div class="tb_cust_dv cboth">
+            <table>
+              <colgroup>
+              <col width="150px">
+              <col>
+              </colgroup>
+              <tr>
+                <th scope="row"><div>청구수임처</div></th>
+                <td class="right">
+                  <div class="ipt_none">가나상사 외 599건</div>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row"><div>세모R 이용수수료</div></th>
+                <td class="right">
+                  <div class="ipt_none">1,800,000 원</div>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row"><div>부가서비스</div></th>
+                <td class="right">
+                  <div class="ipt_none">0 원</div>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row"><div>부가세</div></th>
+                <td class="right">
+                  <div class="ipt_none">180,000 원</div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        </div>
+    </div>
+
+
+	<div  style="border-bottom: 1px solid #ddd;"></div>
+	
+	<div class="ftcl_gray mgt10 mgb10">&nbsp;* 인출예정일인 10일 미출금될 경우 2차(17일), 3차(24일)에 자동이체 납부할 수 있습니다.</div>
+		
+
+	<div  style="border-bottom: 1px solid #ddd;"></div>
+
+
+  	 	<div class="info_txt mgt20" style="width:92%;background-color:#f3f4f6;margin:0 auto;text-align:left;padding:8px 15px;">
+  	 		<div class="left">
+	        <strong class="fs18">청구 수임처</strong>
+	      </div>
+	      <div class="right">
+	      		<span class="fs14 mgr10"><b>가나상사 외 599건</b></span></h1>
+	      </div>
+		
+		</div>
+
+    <!-- 하단버튼 -->
+    <div class="tac">
+      <a href="#none" class="btn_style1_b"><span>확인</span></a>
+      <a href="#none"  onClick="close_smartPop();" class="btn_style1"><span>닫기</span></a>
+    </div>
+    <!-- //하단버튼 -->
+
+
+  </div>
+  <!-- //팝업 컨텐츠 -->
+</div>
+
+</body>
+</html>

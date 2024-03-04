@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../../css/semo_cont.css">
+  <link rel="stylesheet" href="../../css/semo_cont_ibk.css"> 
+  <title>SEMO</title>
+</head>
+<body>
+  <div class="new_content">
+    <div class="cont_bg cont_pd"> <!-- 클래스 cont_pd_hd fix_button 포함 패딩--> 
+
+      <!-- 상단 타이틀 -->
+      <div class="title">계좌 정보</div>
+      <!-- //상단 타이틀 -->  
+       
+      <div class="wrap setting">
+        <div class="card_info set_mgb26">
+          <p>
+            <span class="ci_tit">은행</span>
+            <span class="ci_info"><i class="ci_b_logo logo_bank ico_lb003"></i>IBK기업은행</span>
+          </p>
+          <p>
+            <span class="ci_tit">증빙제목</span>
+            <span class="ci_info">늘푸른하늘통장</span>
+          </p>          
+          <p>
+            <span class="ci_tit">계좌번호</span>
+            <span class="ci_info">123456-5678-1111</span>
+          </p>          
+          <p>
+            <span class="ci_tit">계좌구분</span>
+            <span class="ci_check mg_set">
+              <input type="radio" id="card_classify1" class="card_classify" name="card_classify" value="기업" checked>
+              <label for="card_classify1">사업</label>
+            
+              <input type="radio" id="card_classify2" class="card_classify" name="card_classify" value="개인">
+              <label for="card_classify2">개인</label>
+            </span>
+          </p>
+          <!-- 2020-07-27 추가 -->
+          <div class="pop_wrap on"> <!--팝업 활성 클래스 on-->
+            <span class="ci_tit">세무사공유 <a class="btn_info"><i class="ico_cen"></i><em class="new_blind">? 버튼</em></a></span>
+            <span class="ci_check mg_set">
+              <input type="radio" id="card_share1" class="card_classify" name="card_share" value="기업" checked>
+              <label for="card_share1">공유</label>
+            
+              <input type="radio" id="card_share2" class="card_classify" name="card_share" value="개인">
+              <label for="card_share2">공유안함</label>
+            </span>
+            <div class="popup_bg posi_free"></div>
+            <div class="info_popup">
+              <a class="btn_close"><i class="ico_cen"></i><em class="new_blind">닫기</em></a>
+              <div class="ip_info_list">
+                <span class="ip_tit">계좌 등록방법</span>
+                <ul>
+                  <li>- 계좌별로 세무사에게 공유 여부를 설정할 수 있습니다.</li>
+                  <li>- 공유를 설정한 계좌는 계좌증빙에서 따로 관리 할 수 있습니다.</li>
+                  <li>- 업데이트 내역이 있을 때 자동으로 수임세무사 에게 공유되어 절세가 편리해집니다.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- 2020-07-27 추가 -->
+        </div>
+
+        <!-- 2020-07-27 삭제 -->
+        <!-- <p class="noti_star wd_set color_b">
+          <i class="character"></i>
+          <span>사업용으로 등록된 계좌만 증빙자료에서 조회되고 세무사에게 전송되어 기장됩니다.</span>
+        </p> -->
+        <!-- 2020-07-27 삭제 -->
+        <div class="card_certi">
+          <div class="title_sub blod">공인(공동)인증서</div>    <!-- 2020-07-27 class bold 추가 -->
+          <!-- 인증서 -->
+          <div class="cbi_box none"> <!-- 2020-07-27 class none 추가 -->
+            <div class="certi_info_box">
+              <i class="ico_certi_m"></i>
+              <div class="certi_info">
+                <p>
+                  <span class="certi_cmp_name">웹케시글로벌(webcashglobal)112233445566778899112233</span>
+                </p>
+                <p>  
+                  <span class="certi_class">기업</span><i>,</i>
+                  <span class="certi_use">용도제한용</span><i>/</i>
+                  <span class="certi_issue">금융결제원</span>
+                </p>
+                <p>
+                  <span class="certi_end">만료일</span>
+                  <span><em class="certi_end_data">2020.10.31</em><i class="certi_end_txt">(만료)</i></span>
+                </p>
+                <a class="btn_change_certi"><i></i><em class="new_blind">인증서 변경</em></a>
+              </div>
+            </div>
+          </div>
+          <!-- //인증서 -->
+
+          <!-- 2020-07-27 추가 -->
+          <p class="noti_comm set_mgt22">
+            <i class="ico_cen"></i>
+            <span>인증서가 만료된 경우 인증서를 교체해야 합니다.</span>
+          </p>
+          <!-- 2020-07-27 추가 -->
+
+        </div>
+      </div> 
+    </div>
+    
+    <!-- 하단 fix 버튼 -->
+    <div class="btm_fix on">
+      <span>삭제</span>
+      <span class="bgc_green">확인</span>
+    </div>
+    <!-- 하단 fix 버튼 -->
+  </div>
+</body>
+</html>

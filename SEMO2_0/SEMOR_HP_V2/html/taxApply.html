@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content='세모리포트' property='og:title' />
+    <meta content='https://www.semoreport.com' property='og:url' />
+    <meta content="../img/semoR_thumb.png" property='og:image' />
+    <meta content="사장님이 선정한 1등 보고서" property="og:description" />
+    <title>나의 세무사에게 ‘세모리포트’ 요청하기</title>
+    <link rel="icon" href="../img/favicon_semoR.png">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/semo.css">
+  <script src="../js/jquery-3.5.1.min.js"></script>
+    <script src="../js/semo.api.js"></script>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-TJW4JW5');</script>
+        <!-- End Google Tag Manager -->
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TJW4JW5" height="0" width="0" style="display:none;visibility:hidden">
+        </iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <div class="loadingWrap">
+        <div class="dim"></div>
+        <div class="loadingInner">
+            <img src="../img/ico_loading_semor.gif" alt="로딩이미지">
+        </div>
+    </div>
+
+    <div class="wrapper">
+        <div class="applyWrap">
+            <div class="formWrap">
+                <div class="inner">
+                    <div class="areaFormTit" style="display: block;">
+                        <strong>
+                            <span>나의 세무사에게</span>
+                            <span>‘세모리포트’ 요청하기</span>
+                        </strong>
+                        <div class="desc_wrap">
+                            <div class="descTxt">
+                                <p>
+                                    <span>나의 세무사에게 프리미엄 보고서 ‘세모리포트’를 요청해보세요.</span>
+                                </p>
+                            </div>
+                            <div class="descTxt">
+                                <p>
+                                    <span>사장님께서 세모리포트를 제공받으실 수 있도록</span>
+                                    <span>담당 세무사님께 안내 자료를 발송해 드립니다.</span>
+                                </p>
+                            </div>
+                            <div class="descTxt">
+                                <p>
+                                    <span>담당 세무사님이 세모리포트를 도입하시면</span>
+                                    <span>매월 프리미엄 보고서가 발송되며, 앱을 통해 간편송금, 급여관리 등</span>
+                                    <span>편리한 서비스를 이용하실 수 있습니다.</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="inputForm">
+                        <form id="applyForm" novalidate="novalidate">
+                            <div class="info">
+                                <div class="areaFormTit" style="display: block;">
+                                    <strong>사장님 정보</strong>
+                                </div>
+                                <!-- 입력 및 선택폼 -->
+                                <div class="inputWrap">
+                                    <div class="areaTit">
+                                        <label class="formTit">사업자번호</label>
+                                    </div>
+                                    <div class="inputBox">
+                                        <input type="tel" name="BIZ_NO" placeholder="000-00-00000" maxlength="12" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
+                                    </div>
+                                </div>
+                                <div class="inputWrap">
+                                    <div class="areaTit">
+                                        <label class="formTit">사업장명</label>
+                                    </div>
+                                    <div class="inputBox">
+                                        <input type="text" name="BSNN_NM" placeholder="세모베이커리 청담점" maxlength="100" oninput="fn_chkChar(this)">
+                                    </div>
+                                </div>
+                                <div class="inputWrap">
+                                    <div class="areaTit">
+                                        <label class="formTit">휴대폰번호</label>
+                                    </div>
+                                    <div class="inputBox">
+                                        <input type="tel" name="APPL_CNTC" placeholder="010-0000-0000" maxlength="13" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="info mgb25">
+                                <div class="areaFormTit" style="display: block;">
+                                    <strong>나의 세무사 정보</strong>
+                                </div>
+                                <div class="inputWrap">
+                                    <div class="areaTit">
+                                        <label class="formTit">세무사무소명</label>
+                                    </div>
+                                    <div class="inputBox">
+                                        <input type="text" name="USE_INTT_NM" placeholder="세무사무소명" maxlength="100" oninput="fn_chkChar(this)">
+                                    </div>
+                                </div>
+                                <div class="inputWrap">
+                                    <div class="areaTit">
+                                        <label class="formTit">휴대폰번호</label>
+                                    </div>
+                                    <div class="inputBox">
+                                        <input type="tel" name="CLPH_NO" placeholder="010-0000-0000" maxlength="13" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- //입력 및 선택폼 -->
+                            <div class="agreeWrap">
+                                <div class="provide">
+                                    <input type="checkbox" id="terms" data-agree="N">
+                                    <label for="terms">개인정보처리방침에 동의합니다</label>
+                                </div>
+                                <div class="areaSubmit">
+                                    <button type="submit" class="btnSubmit">신청하기</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            var urlParams = new URLSearchParams(window.location.search);
+            var urlBizNum = urlParams.get('BIZ_NO');
+            if (urlBizNum) {
+                var param = {
+                    TRAN_NO: 'SMR_SEMO_RPRT_RQST_R01',
+                    REQ_DATA: {
+                        BIZ_NO : urlBizNum
+                    }
+                }
+
+                semorprtApi.rprtcallAjax(param, function (data) {
+                    console.log(data.RESP_DATA)
+                    var bizNum = data.RESP_DATA.BIZ_NO
+                    var bizName = data.RESP_DATA.BSNN_NM
+                    var CLPHNum = data.RESP_DATA.CLPH_NO
+                    var bizNumHypen = bizNum.replace(/[^0-9]/g, '').replace(/^(\d{0,3})(\d{0,2})(\d{0,5})$/g, '$1-$2-$3').replace(/-{1,2}$/g, '');
+                    var CLPHNumHypen = CLPHNum.replace(/[^0-9]/g, '').replace(/^(\d{0,3})(\d{0,4})(\d{0,4})$/g, "$1-$2-$3").replace(/(\-{1,2})$/g, "");
+                    
+                    if(data.RSLT_CD == '0000') {
+                        console.log(data.RESP_DATA)
+                        $('input[name="BIZ_NO"]').val(bizNumHypen)
+                        $('input[name="BSNN_NM"]').val(bizName)
+                        $('input[name="APPL_CNTC"]').val(CLPHNumHypen)
+                    } else {
+                        alert(data.RSLT_MSG)
+                    }
+                })
+            }
+            
+            $("#applyForm").on("submit", function(e) {
+                e.preventDefault();
+                
+                if(getCookie() == 'true') {
+                    alert("1분후에 다시 시도해주세요.");
+                    return;
+                }
+
+                var busiNumVal = $("input[name='BIZ_NO']").val().split("-").join(""); //사업자번호
+                var phoneNumVal = $("input[name='APPL_CNTC']").val().split("-").join(""); //연락처
+                var taxPhoneNumVal = $("input[name='CLPH_NO']").val().split("-").join(""); //세무사 연락처
+
+                // 휴대폰번호 정규식
+                var phoneRule = /^(01[016789]{1})[0-9]{3,4}[0-9]{4}$/;
+
+                e.preventDefault();
+
+                // 유효성검사
+                if (busiNumVal == "" || busiNumVal.length !== 10) {
+                    alert("사업자번호를 입력해 주세요!");
+                    $("input[name='BIZ_NO']").focus();
+                    return;
+                } else if (!fn_busiValidBizNum($("input[name='BIZ_NO']").val())) {
+                    alert("맞지 않는 사업자번호 형식입니다. 다시 입력해 주세요.");
+                    $("input[name='BIZ_NO']").focus();
+                    return;
+                } else if ($("input[name='BSNN_NM']").val() == "") {
+                    alert("상호명을 입력해 주세요!");
+                    $("input[name='BSNN_NM']").focus();
+                    return;
+                } else if (phoneNumVal == "" || phoneNumVal.length !== 11) {
+                    alert("연락처를 입력해 주세요!");
+                    $("input[name='APPL_CNTC']").focus();
+                    return;
+                } else if (!phoneRule.test(phoneNumVal)) {
+                    alert("맞지 않는 연락처 형식입니다. 다시 입력해 주세요.");
+                    $("input[name='APPL_CNTC']").focus();
+                    return;
+                } else if ($("input[name='USE_INTT_NM']").val() == "") {
+                    alert("세무사무소명을 입력해 주세요!");
+                    $("input[name='USE_INTT_NM']").focus();
+                    return;
+                } else if ($("input[name='CLPH_NO']").val() == "") {
+                    alert("세무사무소 연락처를 입력해 주세요!");
+                    $("input[name='CLPH_NO']").focus();
+                    return;
+                } else if (!phoneRule.test(taxPhoneNumVal)) {
+                    alert("맞지 않는 연락처 형식입니다. 다시 입력해 주세요.");
+                    $("input[name='CLPH_NO']").focus();
+                    return;
+                } else if ($("#terms").prop("checked") !== true) {
+                    alert("개인정보처리방침에 동의해 주세요.");
+                    return;
+                }
+
+                $(".btnSubmit").attr('disabled', true);
+
+                // 파라미터 호출 
+                var routeCode = urlParams.get('PATH_CD');
+
+                var param = {
+                    TRAN_NO: "SMR_SEMO_RPRT_RQST_C01",
+                    REQ_DATA: {
+                        PATH_CD: routeCode,
+                        BIZ_NO: busiNumVal,
+                        BSNN_NM: $.trim($("input[name='BSNN_NM']").val()),
+                        APPL_CNTC: phoneNumVal,
+                        USE_INTT_NM : $.trim($("input[name='USE_INTT_NM']").val()),
+                        CLPH_NO : taxPhoneNumVal,
+                        PRVC_PLCY_YN: $("#terms").attr("data-agree"),
+                    }
+                }
+                
+                semorprtApi.rprtcallAjax(param, function (data) {
+                    console.log(param);
+                    if (data.RSLT_CD == '0000') {
+                        alert('정상 처리되었습니다.');
+                        setCookie();
+                        window.close();
+                    } else {
+                        alert(data.RSLT_MSG);
+                    }
+                });
+            })
+
+            // 실시간 유효성 검사 함수
+            function fn_validation() {
+                var busiNumVal = $("input[name='BIZ_NO']").val().split("-").join("");
+                var phoneNumVal = $("input[name='APPL_CNTC']").val().split("-").join("");
+                var taxPhoneNumVal = $("input[name='CLPH_NO']").val().split("-").join("");
+
+                $(".btnSubmit").removeClass("active");
+
+                if (busiNumVal == "" || busiNumVal.length !== 10) {
+                    return;
+                } else if ($("input[name='BSNN_NM']").val() == "") {
+                    return;
+                } else if (phoneNumVal == "" || phoneNumVal.length !== 11) {
+                    return;
+                } else if ($("input[name='USE_INTT_NM']").val() == "") {
+                    return;
+                } else if (taxPhoneNumVal == "" || taxPhoneNumVal.length !== 11) {
+                    return;
+                } else if ($("#terms").prop("checked") !== true) {
+                    return;
+                } else {
+                    $(".btnSubmit").addClass("active");
+                }
+            }
+
+            $("input[name='BIZ_NO'], input[name='BSNN_NM'], input[name='APPL_CNTC'], input[name='USE_INTT_NM'], input[name='CLPH_NO']").on("keyup keypress", function () {
+            fn_validation();
+            });
+
+            // 사업자번호
+            $("input[name='BIZ_NO']").on("input", function () {
+                var autoHypen = $(this).val().replace(/[^0-9]/g, '').replace(/^(\d{0,3})(\d{0,2})(\d{0,5})$/g, '$1-$2-$3').replace(/-{1,2}$/g, ''); //하이픈 자동생성
+
+                $(this).val(autoHypen);
+            });
+
+            // 연락처
+            $("input[name='APPL_CNTC'], input[name='CLPH_NO']").on("input", function () {
+                var autoHypen = $(this).val().replace(/[^0-9]/g, '').replace(/^(\d{0,3})(\d{0,4})(\d{0,4})$/g, "$1-$2-$3").replace(/(\-{1,2})$/g, ""); //하이픈 자동생성
+
+                $(this).val(autoHypen);
+            });
+
+            // 개인정보처리방침
+            $("#terms").on("click", function () {
+                fn_validation();
+    
+                if ($(this).prop("checked") == true) {
+                    $(this).attr("data-agree", "Y");
+                } else {
+                    $(this).attr("data-agree", "N");
+                }
+            });
+        })
+        
+
+        // 사업자 등록번호 체크
+        function fn_busiValidBizNum(number) {
+            var host = window.location.host;
+            var subdomain = host.split('.')[0];
+            if (subdomain !== 'publ') {
+                var numberMap = number.replace(/-/gi, '').split('').map(function (d){
+                    return parseInt(d, 10);
+                });
+                
+                if (numberMap.length == 10) {
+                    // 000-00-00000일시 false 반환
+                    if (numberMap.every(d => d === numberMap[0])) {
+                        return false;
+                    }
+                    
+                    var keyArr = [1, 3, 7, 1, 3, 7, 1, 3, 5];
+                    var chk = 0;
+                    
+                    keyArr.forEach(function(d, i){
+                        chk += d * numberMap[i];
+                    });
+                    
+                    chk += parseInt((keyArr[8] * numberMap[8])/ 10, 10);
+                    return Math.floor(numberMap[9]) === ( (10 - (chk % 10) ) % 10);
+                }
+                
+                return false;
+            }
+
+            return true;
+        }
+
+        // 반각문자 제한 함수
+        fn_chkChar = function (obj) {
+            var RegExp = /['"$%&]/gi;	//정규식 구문
+
+            if (RegExp.test(obj.value)) {
+                // 특수문자 모두 제거
+                obj.value = obj.value.replace(RegExp, '');
+            }
+        }
+
+        //셋팅한 쿠키 확인
+        getCookie = function() {
+            return !document.cookie ? "" : document.cookie
+            .split(';')
+            .find(row => row.trim().startsWith('overlapping'))
+            ?.split('=')[1];
+        } 
+
+        //쿠키 셋팅
+        setCookie = function () {
+            let date = new Date();
+            date.setTime(date.getTime() + (1*60*1000)); //1분단위만료
+            const expires = "expires=" + date.toUTCString();
+            document.cookie = "overlapping=true; " + expires + "; path=/";
+        }
+    </script>
+    
+</body>
+</html>

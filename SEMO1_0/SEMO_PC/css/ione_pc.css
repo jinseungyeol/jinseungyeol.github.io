@@ -1,0 +1,44 @@
+@charset "utf-8";
+/* ione_pc.css Ver 2 */
+
+@font-face {
+  font-family: "IBK Dream";
+  font-style: lighter;
+  font-weight: 350;
+  src: url("../font/IBKiDreamL.woff") format("woff");
+}
+
+@font-face {
+  font-family: "IBK Dream";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../font/IBKiDreamM.woff") format("woff");
+}
+
+@font-face {
+  font-family: "IBK Dream";
+  font-style: bold;
+  font-weight: 700;
+  src: url("../font/IBKiDreamB.woff") format("woff");
+}
+
+html, body ,input {font-family: 'IBK Dream' !important;}
+
+/* Common css */
+.c_sig {color: #0090db !important;}
+
+/* 버튼 제휴사별 컬러 */
+.button_sig {background-color: #0090db !important; border: 2px solid #084a80 !important;}
+
+.container .btn_wrap .guide .inner span b::before {background-color: #0090db; opacity: 0.3; height: 9px; bottom: -1px;}
+
+.container .btn_wrap .guide .inner span {font-size: 16px;}
+  .container .btn_wrap .guide {margin-left: 45px;}
+
+@media (max-width: 1679px) {
+  .container .btn_wrap .guide .inner span {font-size: 16px;}
+  .container .btn_wrap .guide {margin-left: 45px;}  /* 수정해야됨 */
+}
+
+/* i-one 인증서 선택화면에서 인증서암호 투명으로 나와서 수정 */
+#password {font-family: "NotosansKR" !important;}

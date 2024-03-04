@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="prefix__ico_small_bank3_NH농협은행" width="40" height="40" viewBox="0 0 40 40">
+    <defs>
+        <style>
+            .prefix__cls-2{fill:#ffa600}
+        </style>
+    </defs>
+    <circle id="prefix__타원_71" cx="20" cy="20" r="20" fill="#00a84d" data-name="타원 71"/>
+    <g id="prefix__그룹_459" data-name="그룹 459" transform="translate(-643.362 -1243.095)">
+        <path id="prefix__패스_849" d="M669.031 1250.094l-5.256 2.64-5.252-2.64 5.252 9.99z" class="prefix__cls-2" data-name="패스 849" transform="translate(-.628)"/>
+        <path id="prefix__패스_850" d="M670.238 1257.907l-.08-.069 3.751-1.575v-5.27l-6.515 2.776-3.608 6.836a5.476 5.476 0 1 1-1.283 0c-.079-.153-3.605-6.836-3.605-6.836l-6.5-2.776v5.27l3.743 1.575-.079.069a10.785 10.785 0 1 0 14.18 0z" class="prefix__cls-2" data-name="패스 850" transform="translate(0 -.091)"/>
+    </g>
+</svg>

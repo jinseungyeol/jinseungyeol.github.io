@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html id="bridge" lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content='프리미엄 세무서비스' property='og:title' />
+    <meta content='https://www.semoreport.com/bridge/html/woori_mkt.html?PATH_CD=WOORI' property='og:url'/>
+    <meta content="../img/woori/thum_woori.png" property='og:image' />
+    <meta content="매월 '세모리포트'로 세금, 경영 관리가 쉬워집니다." property="og:description" />
+    <link rel="icon" href="../img/favicon_semoR.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../css/swiper.min.css">
+    <link rel="stylesheet" href="../../css/aos.css">
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../css/semoR_bridge.css">
+    <link rel="stylesheet" href="../css/woori_style.css">
+  <script src="../../js/jquery-3.5.1.min.js"></script>
+    <script src="../../js/swiper-bundle.min.js"></script>
+    <script src="../../js/odometer.js"></script>
+    <script src="../../js/aos.js"></script>
+    <script src="../../js/semo.api.js"></script>
+    <script defer src="../js/woori_mkt.js"></script>
+    <script src="https://publ.roumit.com/js/include.js"></script>
+    <title>세모리포트</title>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TJW4JW5');</script>
+    <!-- End Google Tag Manager -->
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '298128446248477');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=298128446248477&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TJW4JW5" height="0" width="0" style="display:none;visibility:hidden">
+        </iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <!-- wrapper -->
+    <div class="wrapper">
+        <div class="wooriMkt">
+            <!-- btnfitApply -->
+            <div class="btnfitApply">
+                <div class="content">
+                    <div class="deadline">
+                        <span>오늘 남은 시간</span>
+                        <em id="countdown"></em>
+                    </div>
+                    <button type="button" class="btnApply">
+                        무료혜택 신청하기
+                        <div class="arrow">
+                            <img src="../img/ico_arrow_right_white.png" alt="화살표">
+                            <img src="../img/ico_arrow_right_white.png" alt="화살표">
+                            <img src="../img/ico_arrow_right_white.png" alt="화살표">
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <!-- btnfitApply -->
+            <!-- container -->
+            <div class="container">
+                <section class="visual">
+                    <div class="inner">
+                        <div class="areaTit">
+                            <img data-aos="fade-up" data-aos-once="true" src="../img/woori/logo.svg" alt="우리은행 x 세모리포트">
+                            <h1 data-aos="fade-up" data-aos-once="true" data-aos-delay="500" class="defTit">
+                                <p class="pointcolor">사장님이 <strong>WON</strong>하는</p>
+                                <p>프리미엄 <strong>세무서비스</strong></p>
+                            </h1>
+                            <p data-aos="fade-up" data-aos-once="true" data-aos-delay="800" class="support">우리 <strong>WON</strong> 기업에서 지원합니다.</p>
+                        </div>
+                        <div class="areaImg">
+                            <div class="main">
+                                <img src="../img/woori/visual.png" alt="비주얼">
+                                <div class="serviceTxt">
+                                    <p>
+                                        <em>사업현황</em>
+                                        <span class="line"></span>
+                                    </p>
+                                    <p>
+                                        <em>손익</em>
+                                        <span class="line"></span>
+                                    </p>
+                                    <p>
+                                        <em>세금</em>
+                                        <span class="line"></span>
+                                    </p>
+                                    <p>
+                                        <em>인건비</em>
+                                        <span class="line"></span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-aos="fade-up" data-aos-once="true" class="subTxt">
+                            <p>세금 미리 알기 <strong class="pointcolor">WON</strong>하는 사장님</p>
+                            <p>매월 <strong class="pointcolor">세모리포트</strong>를 받아보세요!</p>
+                        </div>
+                    </div>
+                </section>
+                <!-- //visual -->
+                <!-- why -->
+                <section class="why">
+                    <div class="inner">
+                        <h1 data-aos="fade-up" data-aos-once="true" class="defTit">
+                            <p class="pointcolor">세무는</p>
+                            <p>왜 어려울까요?</p>
+                        </h1>
+                        <div data-aos="fade-up" data-aos-once="true" data-aos-delay="500" class="answer">
+                            <img src="../img/woori/ico_speaker.png" alt="확성기">
+                            <strong>많은 사장님들은 이렇게 대답하십니다.</strong>
+                        </div>
+                        <div class="review">
+                            <div data-aos="fade-up" data-aos-once="true">
+                                <img src="../img/woori/txt_why.png" alt="리뷰1">
+                            </div>
+                            <div data-aos="fade-up" data-aos-once="true">
+                                <img src="../img/woori/txt_why02.png" alt="리뷰2">
+                            </div>
+                            <div data-aos="fade-up" data-aos-once="true">
+                                <img src="../img/woori/txt_why03.png" alt="리뷰3">
+                            </div>
+                            <div data-aos="fade-up" data-aos-once="true">
+                                <img src="../img/woori/txt_why04.png" alt="리뷰4">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- //why -->
+                <!-- wantService -->
+                <section class="wantService">
+                    <div class="inner">
+                        <h1 data-aos="fade-up" data-aos-once="true" class="defTit">
+                            <p>사장님이 WON하는</p>
+                            <p><span class="pointcolor">세무서비스는</span>?</p>
+                        </h1>
+                        <div data-aos="fade-up" data-aos-once="true" data-aos-delay="500" class="msgBox">
+                            <p>사장님은 사업에만 전념할 수 있도록!</p>
+                            <p>물음표가 느낌표로 바뀔 수 있도록!</p>
+                        </div>
+                        <div class="rprtMockup">
+                            <img data-aos="fade-up" data-aos-once="true" src="../img/woori/mockup_report.png" alt="" class="mockup01">
+                            <img data-aos="fade-up" data-aos-once="true" src="../img/woori/mockup_report02.png" alt="" class="mockup02">
+                            <img data-aos="fade-up" data-aos-once="true" src="../img/woori/mockup_report03.png" alt="" class="mockup03">
+                        </div>
+                    </div>
+                </section>
+                <!-- //wantService -->
+                <!-- wooriDfrnce -->
+                <section class="wooriDfrnce">
+                    <div class="inner">
+                        <h1 data-aos="fade-up" data-aos-once="true" class="defTit">
+                            <p>세모리포트는</p>
+                            <p><span class="pointcolor">무엇이 다를까요?</span></p>
+                        </h1>
+                        <div class="differBox">
+                            <ul class="dotList">
+                                <li data-aos="fade-up" data-aos-once="true" data-aos-delay="100">
+                                    <p><strong class="pointcolor">부가세 예상금액</strong> 미리미리 알림</p>
+                                </li>
+                                <li data-aos="fade-up" data-aos-once="true" data-aos-delay="300">
+                                    <p>경영하느라 신경쓰기 어려운</p>
+                                    <p><strong class="pointcolor">손익, 세금, 인건비</strong> 데이터도 한눈에</p>
+                                </li>
+                                <li data-aos="fade-up" data-aos-once="true" data-aos-delay="600">
+                                    <p>세금이 왜 이렇게 나왔는지</p>
+                                    <p><strong class="pointcolor">산출내역 및 절세 솔루션</strong>도 제공</p>
+                                </li>
+                                <li data-aos="fade-up" data-aos-once="true" data-aos-delay="900">
+                                    <p>더 쉽고 빠른 경영을 위한</p>
+                                    <p><strong class="pointcolor">간편송금, 영수증관리, 민원서류</strong> 발급</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="satisService">
+                            <div data-aos="fade-up" data-aos-once="true" class="areaTit">
+                                <img src="../img/woori/ico_like.png" alt="좋아요">
+                                <strong>
+                                    <p>실제 1만명의 사장님이</p>
+                                    <p>만족하는 검증된 서비스입니다.</p>
+                                </strong>
+                            </div>
+                            <div class="satisGraph">
+                                <div class="txt">
+                                    <img data-aos="fade-up" data-aos-once="true" src="../img/woori/txt_satisfaction02.svg" alt="90% 만족">
+                                    <img src="../img/woori/ico_heart.png" alt="하트" class="heart">
+                                </div>
+                                <div class="graph">
+                                    <div class="item">
+                                        <div class="areaBar">
+                                            <div class="bar"></div>
+                                        </div>
+                                        <p>나홀로 신고</p>
+                                    </div>
+                                    <div class="item">
+                                        <div class="areaBar">
+                                            <div class="bar"></div>
+                                        </div>
+                                        <p>일반세무사</p>
+                                    </div>
+                                    <div class="item semoreport">
+                                        <div class="areaBar">
+                                            <div class="bar"></div>
+                                        </div>
+                                        <p>세모리포트</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- //wooriDfrnce -->
+                <!-- wooriBnfit -->
+                <div class="wooriBnfit">
+                    <div class="inner">
+                        <h1 data-aos="fade-up" data-aos-once="true" class="defTit">
+                            <p>지금 신청하면,</p>
+                            <p class="pointcolor">드리는 <strong>혜택</strong></p>
+                        </h1>
+                        <div class="ticket">
+                            <div data-aos="fade-up" data-aos-once="true" class="use">
+                                <div class="bg"></div>
+                                <p class="separate">ㆍ 기장료는 별도입니다.</p>
+                            </div>
+                            <div data-aos="fade-up" data-aos-once="true" class="benefitBox">
+                                <div class="badge">별도혜택</div>
+                                <div class="free">
+                                    <span>세모장부 1년무료</span>
+                                    <em>( ‘WOORI001’ 입력 시 )</em>
+                                </div>
+                                <a href="javascript:;" class="btnDown">플레이 스토어 또는 앱스토어에서 ‘세모장부' 검색 후 앱을 다운로드 받으세요</a>
+                            </div>
+                        </div>
+                        <div class="areaBtn">
+                        </div>
+                    </div>
+                </div>
+                <!-- //wooriBnfit -->
+                <!-- apply -->
+                <section class="apply">
+                    <div class="inner">
+                        <div class="description">
+                            <h1 data-aos="fade-up" data-aos-once="true">
+                                <p>프리미엄 세무서비스</p>
+                                <p>
+                                    <span class="pointcolor">'세모리포트' 1년 무료 혜택</span><span>을 신청하세요.</span> 
+                                </p>
+                            </h1>
+                            <form id="applyForm" novalidate data-aos="fade-up" data-aos-once="true">
+                                <div class="inputWrap">
+                                    <div class="col">
+                                        <div class="inputBox">
+                                            <p class="formTit">사업자번호</p>
+                                            <div class="field num">
+                                                <input type="tel" autocomplete="off" name="BIZ_NO" placeholder="000" maxlength="3">
+                                                <span class="divide">-</span>
+                                                <input type="tel" autocomplete="off" name="BIZ_NO" placeholder="00" maxlength="2" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
+                                                <span class="divide">-</span>
+                                                <input type="tel" autocomplete="off" name="BIZ_NO" placeholder="00000" maxlength="5" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
+                                            </div>
+                                        </div>
+                                        <div class="inputBox">
+                                            <p class="formTit">대표자명</p>
+                                            <div class="field">
+                                                <input type="text" name="RPPR_NM" oninput="fn_chkChar(this)" placeholder="홍길동" maxlength="100">
+                                            </div>
+                                        </div>
+                                        <div class="inputBox">
+                                            <p class="formTit">지역</p>
+                                            <div class="field">
+                                                <input type="text" name="APPL_LC" oninput="fn_chkChar(this)" placeholder="서울특별시 청담동" maxlength="100">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="inputBox">
+                                            <p class="formTit">상호명</p>
+                                            <div class="field">
+                                                <input type="text" oninput="fn_chkChar(this)" name="BSNN_NM" placeholder="세모베이커리 청담점" maxlength="100">
+                                            </div>
+                                        </div>
+                                        <div class="inputBox">
+                                            <p class="formTit">연락처</p>
+                                            <div class="field num">
+                                                <input type="tel" autocomplete="off" name="APPL_CNTC" placeholder="010" maxlength="3" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
+                                                <span class="divide">-</span>
+                                                <input type="tel" autocomplete="off" name="APPL_CNTC" placeholder="0000" maxlength="4" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
+                                                <span class="divide">-</span>
+                                                <input type="tel" autocomplete="off" name="APPL_CNTC" placeholder="0000" maxlength="4" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
+                                            </div>
+                                        </div>
+                                        <div class="inputBox">
+                                            <p class="formTit">업태 및 업종</p>
+                                            <div class="field">
+                                                <input type="text" name="BSST_TPBS" oninput="fn_chkChar(this)" placeholder="요식업(한식)" maxlength="100">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="useService">
+                                    <p class="formTit">
+                                        <span>현재 세무 기장서비스를</span> <span>이용하고 계신가요?</span>
+                                    </p>
+                                    <div class="selectBox" onclick="fn_areaOutClick(this)">
+                                        <a href="javascript:;">
+                                            <span>선택하기</span>
+                                            <img src="../img/ico_down03.png" alt="항목열기">
+                                        </a>
+                                        <ul class="selectList">
+                                            <li>
+                                                <a href="javascript:;" data-use_service="Y">예</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;" data-use_service="N">아니오</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="interest">
+                                    <p class="formTit">주요 관심사</p>
+                                    <div class="checkWrap">
+                                        <ul class="checkList">
+                                            <li data-interest="1">
+                                                <label>
+                                                    <input type="checkbox">
+                                                    <span>사업분석</span>
+                                                </label>
+                                            </li>
+                                            <li data-interest="2">
+                                                <label>
+                                                    <input type="checkbox">
+                                                    <span>절세컨설팅</span>
+                                                </label>
+                                            </li>
+                                            <li data-interest="4">
+                                                <label>
+                                                    <input type="checkbox">
+                                                    <span>상권분석</span>
+                                                </label>
+                                            </li>
+                                            <li data-interest="8">
+                                                <label>
+                                                    <input type="checkbox">
+                                                    <span>정부지원금</span>
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="privacy">
+                                    <div class="areaCheck">
+                                        <label>
+                                            <input type="checkbox" data-agree="N" id="terms">
+                                            <span>개인정보처리방침 동의</span>
+                                        </label>
+                                        <a href="javascript:;" id="openPdf">[보기]</a>
+                                    </div>
+                                    <div class="infoBox">
+                                        <ul class="dotList">
+                                            <li>
+                                                <p>세무 기장료는 별도로 발생할 수 있습니다.</p>
+                                            </li>
+                                            <li>
+                                                <p>신청 접수 시, 담당 세무사 배정 후</p>
+                                                <p>순차적으로 연락 드립니다.</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <button type="submit" class="btnSubmit">신청하기</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+                <!-- //apply -->
+            </div>
+            <!-- //container -->
+        </div>
+    </div>
+    <!-- //wapper -->
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../css/semo_cont.css">
+    <link rel="stylesheet" href="../../css/semo_cont_nh.css">
+
+    <title>SEMO</title>
+    <style>
+        .wrap.send .send_alret {
+            position: unset;
+            transform: unset;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="new_content">
+        <div class="cont_bg">
+            <!-- 상단 타이틀 -->
+            <div class="title">간편송금</div>
+            <!-- //상단 타이틀 -->
+            <div class="wrap send">
+                <div class="wrap_container">
+                    <div class="send_write_wrap">
+                        <div class="send_result">
+                            <div class="send_result_num">
+                                <em>5,000,000</em>
+                                원
+                            </div>
+                            <span>
+                                <p>송금수수료</p>
+                                :
+                                <em class="free">무료5회</em>
+                                <!-- 
+                free 무료 활성화 클래스
+                pay 유료 활성화 클래스
+               -->
+                            </span>
+                        </div>
+
+                        <div class="send_info">
+                            <div class="send_mark">
+                                <div class="send_mark_l">
+                                    <i class="ico_cen"></i>
+                                    <p>받는 분 표시</p>
+                                </div>
+                                <div class="send_mark_r">
+                                    <input value="로움아이티(주)">
+                                    <i class="ico_cen"></i>
+                                </div>
+                            </div>
+                            <div class="send_my_account">
+                                <div class="send_my_account_l">
+                                    <i class="ico_cen"></i>
+                                    <p>내 통장 표시</p>
+                                </div>
+                                <div class="send_my_account_r">
+                                    <input value="최다예">
+                                    <i class="ico_cen"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="send_alret">
+                            <span>
+                                <i class="ico_cen ico_lb003"></i>
+                                <!-- 
+                            .ico_lb003 -> ibk기업 / .ico_lb004 -> 국민 / .ico_lb020 -> 우리 / .ico_lb088 -> 신한 / 
+                            .ico_lb081 -> 하나 / .ico_lb011 -> 농협 / .ico_lb023 -> sc / .ico_lb027 -> 씨티 / 
+                            .ico_lb002 -> 산업 / .ico_lb071 -> 우체국 / .ico_lb032 -> 부산 / .ico_lb045 -> 새마을 / 
+                            .ico_lb034 -> 광주 / .ico_lb007 -> 수협 / .ico_lb031 -> 대구 / .ico_lb039 -> 경남 / 
+                            .ico_lb035 -> 제주 / .ico_lb037 -> 전북 / .ico_lb089 -> k / .ico_lb048 -> 신협 
+                     -->
+                                <p>IBK기업</p>
+                                <p>47900932341222</p>
+                                에게
+                            </span>
+                            <p>송금하시겠어요?</p>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- 동일 거래내역 알림 팝업 -->
+                <div class="popup_bg alert" style="display: none;">
+                    <div class="popup_content">
+                        <div class="popup_title set_mgb18">
+                            <span>
+                                <b style="text-align: center;">금일 동일한 거래내역이 있습니다.</b>
+                            </span>
+                        </div>
+                        <div class="popup_text">
+                            <div class="send_alret">
+                                <span>
+                                    <i class="ico_cen ico_lb003"></i>
+                                    <!-- 
+                            .ico_lb003 -> ibk기업 / .ico_lb004 -> 국민 / .ico_lb020 -> 우리 / .ico_lb088 -> 신한 / 
+                            .ico_lb081 -> 하나 / .ico_lb011 -> 농협 / .ico_lb023 -> sc / .ico_lb027 -> 씨티 / 
+                            .ico_lb002 -> 산업 / .ico_lb071 -> 우체국 / .ico_lb032 -> 부산 / .ico_lb045 -> 새마을 / 
+                            .ico_lb034 -> 광주 / .ico_lb007 -> 수협 / .ico_lb031 -> 대구 / .ico_lb039 -> 경남 / 
+                            .ico_lb035 -> 제주 / .ico_lb037 -> 전북 / .ico_lb089 -> k / .ico_lb048 -> 신협 
+                     -->
+                                    <p>IBK기업</p>
+                                    <p>47900932341222</p>
+                                </span>
+                                <b class="set_mgb16">2,500,000</b>
+                            </div>
+
+                            <span>
+                                <p style="text-align: center; font-weight: normal;">
+                                    송금을 진행하시겠어요?
+                                </p>
+                            </span>
+                        </div>
+                        <div class="btm_button">
+                            <span class="bgc_gray">취소</span>
+                            <span class="bgc_green">확인</span>
+                            <!--클래스 bgc_green 배경색-->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 송금취소 알림 팝업 -->
+                <div class="popup_bg alert" style="display: none;">
+                    <div class="popup_content">
+                        <div class="popup_title set_mgb18">
+                            <span>
+                                <b style="text-align: center;">송금을 취소하시겠어요?</b>
+                            </span>
+                        </div>
+                        <div class="popup_text">
+                            <div class="send_alret">
+                                <span>
+                                    <i class="ico_cen ico_lb003"></i>
+                                    <!-- 
+                                    .ico_lb003 -> ibk기업 / .ico_lb004 -> 국민 / .ico_lb020 -> 우리 / .ico_lb088 -> 신한 / 
+                                    .ico_lb081 -> 하나 / .ico_lb011 -> 농협 / .ico_lb023 -> sc / .ico_lb027 -> 씨티 / 
+                                    .ico_lb002 -> 산업 / .ico_lb071 -> 우체국 / .ico_lb032 -> 부산 / .ico_lb045 -> 새마을 / 
+                                    .ico_lb034 -> 광주 / .ico_lb007 -> 수협 / .ico_lb031 -> 대구 / .ico_lb039 -> 경남 / 
+                                    .ico_lb035 -> 제주 / .ico_lb037 -> 전북 / .ico_lb089 -> k / .ico_lb048 -> 신협 
+                             -->
+                                    <p>IBK기업</p>
+                                    <p>47900932341222</p>
+                                </span>
+                                <b class="set_mgb16">2,500,000</b>
+                            </div>
+
+
+                        </div>
+                        <div class="btm_button">
+                            <span class="bgc_gray">취소</span>
+                            <span class="bgc_green">확인</span>
+                            <!--클래스 bgc_green 배경색-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="btm_button">
+                <span class="bgc_gray" onClick="location.href='../NB/NB500.html'" style="cursor: pointer;">처음으로</span>
+                <span class="bgc_green" onClick="location.href='../NB/NB517.html'" style="cursor: pointer;">송금하기</span>
+                <!--클래스 bgc_green 배경색-->
+            </div>
+            <!-- 인증서 정보없음 팝업 -->
+            <div class="popup_bg alert" style="display: none;">
+                <div class="popup_content">
+                    <div class="popup_title">
+                        <span>
+                            <b style="text-align: center;">인증서 정보가 없습니다. <br>
+                                [80004111]</b>
+                        </span>
+                    </div>
+                    <div class="popup_text">
+                        <span>
+                            <p style="text-align: center;">
+                                송금불가 <br>
+                                인증서를 교체해 주세요!
+                            </p>
+                        </span>
+                    </div>
+                    <div class="btm_button">
+                        <span class="bgc_green">확인</span>
+                        <!--클래스 bgc_green 배경색-->
+                    </div>
+                </div>
+            </div>
+
+            <!-- 비밀번호 입력실패 팝업 -->
+            <div class="popup_bg alert" style="display: none;">
+                <div class="popup_content">
+                    <div class="popup_title">
+                        <span>
+                            <b style="text-align: center;">비밀번호가 맞지 않습니다. <br>
+                                ( <b class="c_ff684a">1회</b> / 5회 실패 )</b>
+                        </span>
+                    </div>
+                    <div class="popup_text">
+                        <span>
+                            <p style="text-align: center;">
+                                로그인 비밀번호와 동일한 숫자 6자리를 입력해 주세요.
+                            </p>
+                        </span>
+                    </div>
+                    <div class="btm_button">
+                        <span class="bgc_green">확인</span>
+                        <!--클래스 bgc_green 배경색-->
+                    </div>
+                </div>
+            </div>
+
+            <!-- 비밀번호 재설정 팝업 -->
+            <div class="popup_bg alert" style="display: none;">
+                <div class="popup_content">
+                    <div class="popup_title">
+                        <span>
+                            <b style="text-align: center;">비밀번호 재설정으로 이동합니다.
+                        </span>
+                    </div>
+                    <div class="popup_text">
+                        <span>
+                            <p style="text-align: center; font-weight: normal;">
+                                비밀번호 연속 5회 오류로
+                                송금이 불가합니다.
+                            </p>
+                        </span>
+                    </div>
+                    <div class="btm_button">
+                        <span class="bgc_green">확인</span>
+                        <!--클래스 bgc_green 배경색-->
+                    </div>
+                </div>
+            </div>
+            <!-- 예금주 조회실패 팝업 -->
+            <div class="popup_bg alert" style="display: none;">
+                <div class="popup_content">
+                    <div class="popup_title">
+                        <span>
+                            <b style="text-align: center;">예금주 조회가 실패하였습니다.
+                        </span>
+                    </div>
+                    <div class="popup_text">
+                        <span>
+                            <p style="text-align: center; font-weight: normal;">
+                                기업은행에 조회 중 오류가 발생하였습니다.
+                                [8001FF32]
+                            </p>
+                        </span>
+                    </div>
+                    <div class="btm_button">
+                        <span class="bgc_green">확인</span>
+                        <!--클래스 bgc_green 배경색-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<title>배너팝업</title>
+<link rel="stylesheet" href="../css/reset_taxp.css">
+<link rel="stylesheet" href="../css/app_header.css">
+<link rel="stylesheet" href="../css/content_taxp.css">
+<link rel="stylesheet" href="../css/w2ui-2.0.css">
+<link rel="stylesheet" href="../css/grid.css">
+<!-- custom scrollbar plugin css -->
+<link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+  <script src="../js/lib/jquery/jquery-1.12.4.min.js"></script>
+<script src="../js/lib/plugin/w2ui.js"></script>
+<script src="../js/lib/jquery/jquery-ui-1.10.4.min.js"></script>
+<!-- custom scrollbar plugin -->
+<script src="../js/design/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../js/design/jquery.placeholder.min.js"></script>
+<script src="../js/lib/plugin/smart.popup.js"></script>
+<script src="../js/comm/common.js"></script>
+<script>
+
+</script>
+</head>
+  
+<body>
+	
+	<!-- 미리보기, 수정팝업 둘다 띄울때 showPop 클래스, 
+		미리보기 팝업만 띄울때 closePop 클래스 -->
+		<div class="overlay" style="display: ;">
+            <div class="pop_wrap" style="width: 800px; height: 600px;" >
+                <div class="pop_inner">
+                    <div class="prom_wrap">
+                        <div class="prom_title">
+                            <h1>순서변경</h1>
+                        </div>
+                        <div class="prom_tab">
+                            <ul>
+                                <li>PC</li>
+                                <li  class="active">APP</li>
+                            </ul>
+                        </div>
+                        <div class="prom_cont">
+                            <div class="side-bar">
+                                <ul>
+                                    <li class="active">홈</li>
+                                    <li>메인메뉴</li>
+                                </ul>
+                            </div>
+                            <div class="grid_wrap">
+                                <div id="grid_01"  style="width: 620px; height: 400px;"></div>
+                            </div>
+                        </div>
+                        <div class="pop_db_btn">
+                            <button type="button">취소</button>
+                            <button type="button" class="active">저장</button>
+                            
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+	<script>
+
+
+
+// GRID 1
+let grid_01 = new w2grid({
+		name: 'grid_01',
+		box: '#grid_01',
+		show: {
+            footer: true,
+            lineNumbers: true, 
+		},
+        reorderRows: true,
+		columns: [
+			{  field: 'fname', text: '노출', size: '150px'}, // frozen: true 필드 고정
+			{ field: 'lname', text: '제목', size: '250px', style: 'text-align: center' },
+			{ field: 'th_03', text: '진행 기간',  style: 'text-align: center' }
+
+		],
+		records: [
+			{ "recid": 1, "fname": "1", "lname": "[설문] 세무사 피드백 공기청정기", "th_03": "22.06.10 08:46:00", "th_04": "신고개인"
+				, w2ui: { class:{ fname:"hover_s", lname:"hover_s", th_05:"state_b hover_s", th_06:"state_b hover_s",  th_07:"state_b hover_s", th_08:"state_b hover_s"}} },
+			{ "recid": 2, "fname": "나라백반", "lname": "123-45-67890", "th_03": "일반", "th_04": "기장법인"
+				, w2ui: { class:{ fname:"hover_s", lname:"hover_s", th_05:"state_r", th_06:"disabled", th_07:"disabled", th_08:"disabeld" }} },
+		]
+	})
+
+	</script>
+
+
+</body>
+</html>

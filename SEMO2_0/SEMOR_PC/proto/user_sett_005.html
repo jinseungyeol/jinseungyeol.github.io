@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<title>세모리포트</title>
+<link rel="stylesheet" href="../css/reset_taxp.css">
+<link rel="stylesheet" href="../css/app_header.css"><!-- [D] 세무대리인용 header -->
+<link rel="stylesheet" href="../css/content_taxp.css"><!-- [D] 세무대리인용 -->
+
+<!-- custom scrollbar plugin css -->
+<link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+  <script src="../js/lib/jquery/jquery-1.12.4.min.js"></script>
+<script src="../js/lib/jquery/jquery-ui-1.10.4.min.js"></script>
+<!-- custom scrollbar plugin -->
+<script src="../js/design/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../js/design/jquery.placeholder.min.js"></script>
+<script src="../js/lib/plugin/smart.popup.js"></script>
+<script src="../js/comm/common.js"></script>
+<script>
+$(function(){
+  // Invoke the plugin
+  $('input, textarea').placeholder({customClass:'my-placeholder'});
+  
+  
+  
+  // 보기설정 보기
+    $('#btn_showhide').on("click", function(event){
+    	if($(this).hasClass("down")){
+    		$("#tbl_area").show();
+    		$(this).removeClass("down");
+    	}else{
+    		$("#tbl_area").hide();
+    		$(this).addClass("down");
+    	}
+    });
+    
+});
+</script>
+
+</head>
+
+
+<body style="width:480px;"><!-- 팝업 사이즈480 x 350 -->
+
+<div class="pop_wrap" style="width:480px;">
+
+  <!-- 팝업 헤더 -->
+  <div class="pop_header">
+    <h1>세무사무소 설정용도</h1>
+    <a href="#" onClick="close_smartPop();" class="btn_popclose"><img src="../img/txof/btn/btn_popclose_white.gif" alt="팝업닫기"></a>
+  </div>
+  <!-- //팝업 헤더 -->
+
+	  <!-- 팝업 컨텐츠 -->
+	  <div class="pop_container">
+	
+	    <div class="title_wrap">
+	      <div class="left">
+	        <h2 class="no_bg">세무사무소에서 직접 용도를 설정합니다.</h2>
+	      </div>
+	      <div class="right">
+	      </div>
+	    </div>
+		
+      <div class="tb_cust_dv cboth">
+        <table>
+          <colgroup>
+				<col style="width:100px;">
+          	<col style="width:*;">
+          </colgroup>
+          <tr>
+            <th scope="row"><div>용도명</div></th>
+            <td>
+              <div class="ipt_none"><input type="text" name="" id="" value="" style="width:90%"/></div>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row"><div>내용</div></th>
+            <td>
+              <div class="ipt_none"><input type="text" name="" id="" value="" style="width:90%"/></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      
+      <div style="border:1px solid #dcdcdc;border-top:none;padding:0px 20px 0px 20px;margin:10px 0 10px 0;"></div>
+		
+		
+      <div class="tb_cust_dv cboth">
+        <table>
+          <colgroup>
+				<col style="width:100px;">
+          	<col style="width:*;">
+          </colgroup>
+          <tr>
+            <th scope="row"><div>손익구분</div></th>
+            <td>
+              <div class="ipt_none">매출</div>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row"><div>세부구분</div></th>
+            <td>
+              <div class="ipt_none">기타</div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      
+      
+      <div style="border:1px solid #dcdcdc;border-top:none;padding:0px 20px 0px 20px;margin:10px 0 10px 0;"></div>
+		
+		
+	    <!-- 하단버튼 -->
+	    <div class="tac mgt20">
+	      <a href="#none"  onClick="close_smartPop();" class="btn_style1"><span>취소</span></a>
+	      <a href="#none" class="btn_style1_b"><span>저장</span></a>
+	    </div>
+	    <!-- //하단버튼 -->
+	
+	
+	  <!-- //팝업 컨텐츠 -->
+  </div>
+</div>
+
+</body>
+</html>

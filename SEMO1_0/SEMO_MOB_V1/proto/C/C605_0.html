@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../css/semo_cont.css">
+    <!-- <link rel="stylesheet" href="../../css/semo_cont_ibk.css"> -->
+    <!-- <link rel="stylesheet" href="../../css/test.css"> -->
+    <!-- <link rel="stylesheet" href="../../css/semo_cont_nh.css"> -->
+  <script src="../../js/jquery-3.5.1.min.js"></script>
+    <script src="../../js/design.js"></script>
+    <title>SEMO</title>
+</head>
+
+<body>
+    <div class="new_content">
+        <div class="cont_bg">
+            <!-- 상단 타이틀 -->
+            <!-- <div class="title">직원관리</div> -->
+            <!-- //상단 타이틀 -->
+
+            <div class="wrap staff">
+                     
+                <div class="popup_toast_bg">
+                    <div class="popup_toast set_pd_aus">
+                        <div class="popup_toast_head">
+                            <div class="popup_toast_tit">
+                                <span>
+                                    계약형태를 선택해 주세요.
+                                </span>
+                                <i class="ico_cen"></i>
+                            </div>
+                        </div>
+                        <div class="bank_account_list">
+                            <ul>
+                                <li class="popup_toast_detail">
+                                    <p>정규직 </p>
+                                    <em >(계약기간이 없는 근로자)</em>
+                                </li>
+                                <li class="popup_toast_detail">
+                                    <p>계약직</p>
+                                    <em >(계약기간이 정해진 근로자)</em>
+                                </li>
+                                <li class="popup_toast_detail">
+                                    <p>일용직/아르바이트 </p>
+                                    <em>(시간제, 단기 채용)</em>
+                                </li>
+                                <li class="popup_toast_detail">
+                                    <p>기타소득  </p>
+                                    <em>(강사, 전문직 등)</em>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="staff_wrapper">
+                    <div class="staff_basic_info">
+                        <div class="staff_basic_alret">
+                            <p>급여정보를 입력해 주세요</p>
+                        </div>
+                        <div class="staff_contract">
+                            <div class="staff_contract_top">
+                                <p>계약형태</p>
+                                <i class="ico_cen"></i>
+                            </div>
+                            <div class="staff_info_date">
+                                <select required>
+                                    <option value="" disabled selected hidden>계약형태를 선택해 주세요.</option>
+
+                                </select>
+                                <i class="ico_cen"></i>
+                            </div>
+                        </div>
+                        <div class="staff_info_cell">
+                            <p>일급</p>
+                            <div class="staff_info_em_pay">
+                                <div class="staff_info_time_pay">
+                                    <select name="" id="">
+                                        <option value="">시급</option>
+                                        <option value=""></option>
+                                    </select>
+                                    <i class="ico_cen"></i>
+                                </div>
+                                <input type="text" value="8,500">
+                            </div>
+                        </div>
+
+                        <div class="staff_contract">
+                            <div class="staff_contract_top">
+                                <p>월 급여액</p>
+                            </div>
+                            <div class="staff_info_date won">
+                                <input type="number">
+                            </div>
+                            <div class="staff_em_info_text">
+                                <i class="ico_cen"></i>
+                                <p>식대와 차량유지비 및 4대보험을 포함한 세전 금액 입니다.</p>
+                            </div>
+                        </div>
+                        <div class="staff_contract">
+                            <div class="staff_contract_top">
+                                <p>계약만료일자</p>
+                            </div>
+                            <div class="staff_info_date">
+                                <select required>
+                                    <option value="" disabled selected hidden>만료일자를 선택해 주세요</option>
+
+                                </select>
+                                <i class="ico_cen"></i>
+                            </div>
+                        </div>
+                        <div class="staff_contract">
+                            <div class="staff_contract_top">
+                                <p>소득유형</p>
+                            </div>
+                            <div class="staff_info_date">
+                                <select required>
+                                    <option value="" disabled selected hidden>소득유형을 선택해 주세요.</option>
+
+                                </select>
+                                <i class="ico_cen"></i>
+                            </div>
+                        </div>
+
+                        <div class="staff_basic_onoff">
+                            <span class="staff_em_onoff">
+                                <p>식대</p>
+                                <div class="staff_on_off">
+                                    <div class="slideOne">
+                                        <input type="checkbox" id="slideOne_1" name="check" />
+                                        <label for="slideOne_1"></label>
+                                        <span>포함</span>
+                                        <div class="slideOneBg"></div>
+                                    </div>
+                                </div>
+                            </span>
+                            <div class="staff_em_info_text">
+                                <i class="ico_cen"></i>
+                                <p>월 10만원까지 비과세 적용 가능</p>
+                            </div>
+                        </div>
+
+                        <div class="staff_basic_onoff">
+                            <span class="staff_em_onoff">
+                                <p>차량유지비</p>
+                                <div class="staff_on_off">
+                                    <div class="slideOne">
+                                        <input type="checkbox" id="slideOne_2" name="check" />
+                                        <label for="slideOne_2"></label>
+                                        <span>포함</span>
+                                        <div class="slideOneBg"></div>
+                                    </div>
+                                </div>
+                            </span>
+                            <div class="staff_em_info_text" style="align-items: flex-start;">
+                                <i class="ico_cen"></i>
+                                <p>직원의 소유차량을 업무에 이용하는 경우 <br>
+                                    월 20만원까지 비과세 적용 가능</p>
+                            </div>
+                        </div>
+                        <!-- 2021-06-29 수정됨 -->
+                        <div class="staff_contract">
+                            <div class="staff_contract_top">
+                                <p>부양가족수</p>
+                            </div>
+                            <div class="staff_info_date people">
+                                <input type="number" required="">
+                                <p>명</p>
+                            </div>
+                         
+                        </div>
+                        <!-- 2021-06-29 수정됨 -->
+                        <div class="salary_write_req">
+                            <span>
+                                <p>근로조건 메모</p>
+                            </span>
+                            <textarea placeholder="직원의 근로시간 및 담당업무를 입력해 주세요."></textarea>
+                        </div>
+
+                        <div class="staff_basic_calc_link">
+                            <span>임금계산기 바로가기</span>
+                            <p>추정 금액으로 실제와 다를 수 있습니다.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="btm_button">
+                    <span class="bgc_green">저장하기</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>

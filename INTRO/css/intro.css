@@ -1,0 +1,192 @@
+@charset "utf-8";
+/* reset */
+@font-face { font-family: 'Pretendard'; font-weight: normal; src: url(../font/Pretendard-Medium.woff2) format('woff2'); } 
+@font-face { font-family: 'Pretendard'; font-weight: 600; src: url(../font/Pretendard-SemiBold.woff2) format('woff2'); } 
+@font-face { font-family: 'Pretendard'; font-weight: bold; src: url(../font/Pretendard-Bold.woff2) format('woff2'); } 
+
+::selection {background: #535B64; color: #fff}
+html { position:relative; height:100%; } 
+/* html::-webkit-scrollbar {width: 15px;}
+html::-webkit-scrollbar-track {background: #eeeeee}
+html::-webkit-scrollbar-thumb {background:  #535B64; border-radius: 10px;} */
+html,body { font-family:'Pretendard'; color:#111; font-weight:normal; -webkit-text-size-adjust:none; -moz-text-size-adjust:none; -ms-text-size-adjust:none; -webkit-tap-highlight-color:transparent; line-height: 1.5 } 
+html,body,div,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,address,cite,code,del,dfn,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,input,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video { margin:0; padding:0; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; -webkit-tap-highlight-color:transparent; -webkit-text-size-adjust:none; -webkit-touch-callout:none; -webkit-font-smoothing:antialiased; -webkit-user-select: auto; font-size: 15px } 
+body,button,h1,h2,h3,h4,h5,input,select,table,textarea { font-family:'Pretendard'; margin:0; padding:0 } 
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,legend,select,input,textarea,p,blockquote,th,td,menu,button,a,span,strong,label,header,footer,section,article,aside,nav,hgroup,details,figure,figcaption { word-break:break-word; box-sizing:border-box; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; -ms-box-sizing:border-box } /* 여백을 포함한 사이즈 설정*/ 
+h1,h2,h3,h4,h5,h6,input,select,textarea,button,option { color:inherit; font-family:'Pretendard'; font-size:100%; font-weight:normal } 
+h1,h2,h3,h4,h5,h6,strong,b,th { font-weight:bold } 
+em,var,address,i { font-style:normal } 
+ul,ol,li { list-style:none } 
+legend,fieldset,button,img { border:0 } 
+img,video { max-width:100%; vertical-align:top } 
+input,select,textarea,button,label,strong,a,time { vertical-align:inherit } 
+input,select,textarea,button,option { font-family:inherit; font-weight:inherit } 
+input,select,textarea { appearance:none; -webkit-appearance:none; border-radius: 0 } 
+input:focus, textarea:focus { outline-style: none; box-shadow: none; border: 0px } 
+textarea { resize:none; border: none } 
+button,select,option { color:inherit; text-transform:none } 
+table { table-layout:fixed; width:100%; border-collapse:collapse; border-spacing:0 } 
+button { background:none; cursor:pointer; white-space: nowrap; overflow:visible; outline: none } 
+a { color:inherit; font-size: inherit; text-decoration:none } 
+
+.pointColor02 {color: #12997a}
+
+/* iframe */
+.headerFrame {width: 100%; height: 70px}
+.snbFrame {position: relative; z-index: 1; width: 280px; height: calc(100vh - 70px); margin-top: -6px; box-shadow: 3px 0px 5px -2px rgba(0,0,0,0.1)}
+.contentFrame {position: absolute; top: 70px; left: 280px; width: calc(100% - 280px); height: calc(100vh - 70px)}
+
+/* includeHeader */
+.includeHeader {background: #535B64}
+.includeHeader .inner {display: flex; justify-content: space-between; align-items: center; height: 70px; padding: 0 20px}
+.includeHeader .inner nav ul {display: flex; align-items: center}
+.includeHeader .inner nav ul li {padding: 0 30px}
+.includeHeader .inner nav ul li a {position: relative; display: block; height: 70px; line-height: 70px; font-size: 20px; color: #fff}
+
+/* includeHeader - active */
+.includeHeader .inner nav ul li.active {background: #fff}
+.includeHeader .inner nav ul li.active a {color: #111}
+.includeHeader .inner nav ul li.active a::before {content: ''; position: absolute; top: 20px; right: -10px; width: 6px; height: 6px; background: #FF5353; border-radius: 50%}
+
+/* snb */
+.pageListWrap {padding: 0 20px}
+.pageListWrap .tit {display: block; padding: 36px 0 20px; font-size: 24px; font-weight: 600; border-bottom: 2px solid #111}
+.pageListWrap .pageList > li .accorMenu {position: relative; display: block; height: 60px; line-height: 60px; font-size: 18px; color: #666}
+.pageListWrap .pageList > li .accorMenu .plus {position: absolute; right: 0; top: 50%; transform: translateY(-50%); width: 15px; height: 15px}
+.pageListWrap .pageList > li .accorMenu .plus em {position: absolute; left: 0; right: 0; top: 50%; transform: translateY(-50%); height: 2px; background: #666; border-radius: 5px; transition: 0.35s}
+.pageListWrap .pageList > li .accorMenu .plus em:last-child {transform: translateY(-50%) rotate(90deg)}
+.pageListWrap .pageList > li .menu {position: relative; display: block; height: 60px; line-height: 60px; font-size: 16px; color: #666}
+.pageListWrap .pageList > li .menu::after {content: ''; opacity: 0; position: absolute; top: 50%; transform: translateY(-50%); right: 15px; width: 9px; aspect-ratio: 8/13; background: url(../img/ico_ts_right.png) no-repeat center / contain; transition: .2s}
+.pageListWrap .pageList > li .menu:hover::after {opacity: 1; right: 0} 
+.pageListWrap .pageList > li .menu {color: #111}
+.pageListWrap .pageList > li .subMenu {display: none; position: relative; padding-left: 10px}
+.pageListWrap .pageList > li .subMenu li.active a span {position: relative}
+.pageListWrap .pageList > li .subMenu li.active a span::before {content: ''; position: absolute; top: 0px; right: -10px; width: 6px; height: 6px; background: #FF5353;border-radius: 50%} 
+.pageListWrap .pageList > li.roumit .subMenu {display: block; padding-left: 0}
+
+/* snb : active */
+.pageListWrap .pageList > li.active .accorMenu .plus em:first-child {opacity: 0; visibility: hidden}
+.pageListWrap .pageList > li.active .accorMenu .plus em:last-child {transform: translateY(-50%) rotate(0)}
+
+/* title */
+.mainTit {font-size: 40px; margin-bottom: 20px}
+.subTit {margin: 60px 0 10px; font-size: 20px}
+
+/* tblReference */
+.tblReference {margin-bottom: 20px}
+.tblReference tr.update {background: #baf9e1;}
+.tblReference tr:hover {background: #17bf981c; transition: .35s;}
+.tblReference th {padding: 10px; background-color: #788496; border: 1px solid #d1d1d1; color: #fff; font-size: 16px; text-align: left; word-break: keep-all;}
+.tblReference td {padding: 10px; border: 1px solid #ccc; font-size: 16px; word-break: keep-all;}
+
+.tabMenuList {display: flex; gap: 4px;}
+.tabMenuList li {position:relative; width: auto; margin-top: 5px; border: 1px solid #ddd; border-bottom: none; border-radius: 3px 3px 0 0}
+.tabMenuList li a.btnTab {display: block; padding: 8px 12px; color: #666; font-size: 15px;}
+
+/* active */
+.tabMenuList li.active {background: #111}
+.tabMenuList li.active a.btnTab {color: #fff}
+
+/* introCont */
+.introCont {padding: 15px 30px 25px;} 
+.introCont .infoNotice {margin-bottom: 20px;}
+.introCont nav {position: sticky; top: -1px; margin: 0 -30px; padding-left: 30px; padding-top: 20px; border-bottom: 1px solid #ddd; background: #fff;}
+.introCont .verTit {position: relative; display: block; margin: 100px 0 30px; padding-left: 22px; font-size: 28px; font-weight: 600} 
+.introCont .verTit::before {content: ''; position: absolute; top: 0; left: 0; width: 10px; height: 100%; background: #17bf98}
+.introCont .infoNotice .infoTit {margin: 20px 0 6px; font-size: 18px; font-weight: bold;}
+.introCont .infoNotice .infoTit .ps {font-size: 14px; font-weight: 500; color: #8a8a8b;}
+.introCont .infoTxtWrap p {margin-bottom: 5px; font-size: 15px}
+.introCont .moveLink {display: inline-block; margin-bottom: 2px; color: #12997a; text-decoration: underline;}
+
+/* introItemWrap */
+/* .introItemWrap .itemList {display: grid; grid-template-columns: repeat(auto-fit, 300px); grid-gap: 20px}
+.introItemWrap .itemList li > div {display: block; border-radius: 24px; background-color: #fff; color: #3e3e3e; box-shadow: 0 0 10px 1px rgb(0,0,0,0.1); transition: 0.35s; overflow: hidden} 
+.introItemWrap .itemList li > div .content {min-height: 450px; padding: 28px 24px 0 24px}
+.introItemWrap .itemList li > div .logo { display: flex; align-items: center; justify-content: center; width: 55px; height: 55px; margin-bottom: 20px; border-radius: 5px }
+.introItemWrap .itemList li > div .areaTit h2 {font-size: 20px} 
+.introItemWrap .itemList li > div .areaTit .date { color: #949eb2; font-size: 16px } 
+.introItemWrap .itemList li > div .areaTxt { margin-top: 24px } 
+.introItemWrap .itemList li > div .areaTxt strong { color: #4e5664; font-size: 18px } 
+.introItemWrap .itemList li > div .areaTxt p { margin-top: 12px; font-size: 18px; color: #5e656e } 
+.introItemWrap .itemList li.roumit > div .logo {background: #535B64} 
+.introItemWrap .itemList li.roumit > div .logo img { width: 42px } 
+.introItemWrap .itemList li > div .areaMove {display: flex; align-items: center; margin-top: 20px; border-top: 1px solid #f1f1f1;}
+.introItemWrap .itemList li > div .areaMove a {flex: 1; display: flex; align-items: center; justify-content: center; height: 70px; line-height: 70px; font-size: 18px; font-weight: 600; transition: .15s}
+.introItemWrap .itemList li > div .areaMove a span {margin-left: 14px; transition: .15s}
+.introItemWrap .itemList li > div .areaMove a img {opacity: 0; visibility: hidden; width: 8px; margin-left: 6px; transform: translateX(-15px); transition: .15s}
+.introItemWrap .itemList li > div .areaMove a + a {border-left: 1px solid #f1f1f1}
+.introItemWrap .itemList li > div .areaMove a:hover {background: #535B64; color: #fff}
+.introItemWrap .itemList li > div .areaMove a:hover span {margin-left: 0}
+.introItemWrap .itemList li > div .areaMove a:hover img {opacity: 1; visibility: visible; transform: translateX(0)} */
+
+.workIntro {padding-top: 50px;}
+.workIntro .infoWrap {display: flex; align-items: center; max-width: 1200px; margin: 0 auto; gap: 90px}
+.workIntro .infoWrap .logo {width: 250px; height: 250px; border-radius: 42px; border: 1px solid #d1d1d1}
+.workIntro .infoWrap .roumit.logo {background: #535B64; padding: 0 30px}
+.workIntro .infoWrap .skills .mainTit {margin-bottom: 40px}
+.workIntro .infoWrap .skills strong {display: block; margin: 0 0 15px; font-size: 20px; color: rgba(165, 165, 165); font-weight: 600}
+.workIntro .infoWrap .skills p {font-size: 18px; word-break: keep-all; line-height: 1.5}
+.workIntro .infoWrap .skills p + p {margin-top: 20px}
+
+.preview {margin: 90px 0 25px}
+.preview .main {border-radius: 20px; border: 1px solid #f1f1f1; overflow: hidden}
+.preview .main img {display: block; margin: 0 auto}
+.preview .infoTxt {margin-top: 20px; font-size: 18px}
+.preview .detail {display: flex; gap: 50px; margin-top: 50px}
+.preview .detail > div.left {flex-basis: 40%}
+.preview .detail > div.right {flex-basis: 60%}
+.preview .detail > div .areaImg {position: relative; height: 30vw; border: 1px solid #f1f1f1; border-radius: 20px; overflow: hidden}
+.preview .detail > div .areaImg img {position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover}
+.preview .detail > div p {margin-top: 20px; font-size: 18px}
+
+/* 로딩화면 */
+.overlay {height: 100vh; background-color: rgba(0, 0, 0, 0.5); display: flex; justify-content: center; align-items: center; position: fixed; top: 0; left: 0; right: 0; bottom: 0;}
+.overlay img {width: 40px; position: relative; right: 50px; opacity: 0}
+
+/* 반응형 미리보기 */
+.wrapper .devicesWrap {display: flex; height: inherit; margin: 0 auto;}
+.wrapper .devicesWrap button {width: 60px; height: inherit; background: no-repeat center / 35px; transition: .35s;}
+.wrapper .devicesWrap button.desktop {background-image: url(../img/device_desktop.png);}
+.wrapper .devicesWrap button.tablet {background-image: url(../img/device_tablet.png);}
+.wrapper .devicesWrap button.mobile {background-image: url(../img/device_cell_phone.png); background-size: 25px;}
+.wrapper .devicesWrap button.all {background-image: url(../img/device_all.png); background-size: 50px;}
+.wrapper .devicesWrap button.desktop:hover {background-image: url(../img/device_desktop_active.png);}
+.wrapper .devicesWrap button.tablet:hover {background-image: url(../img/device_tablet_active.png);}
+.wrapper .devicesWrap button.mobile:hover {background-image: url(../img/device_cell_phone_active.png);}
+.wrapper .devicesWrap button.all:hover {background-image: url(../img/device_all_active.png);}
+.wrapper .previewWrap {display: flex; justify-content: center; align-items: center; min-height: calc(100vh - 70px); overflow: hidden;}
+.wrapper .previewInner {flex: 1; display: flex; align-items: center; justify-content: center; gap: 30px;}
+.wrapper .previewInner .previewPannel {display: none;}
+.wrapper .previewInner .previewPannel > div {height: inherit;}
+.wrapper .previewInner .previewPannel > div .rangeWrap {display: flex; justify-content: center; align-items: center; gap: 15px; margin-top: 20px;}
+.wrapper .previewInner .previewPannel > div .rangeWrap input[type='range'] {height: 15px; background: #f1f1f1; border-radius: 10px; cursor: pointer; border: 1px solid #c9c9c9;}
+.wrapper .previewInner .previewPannel > div .rangeWrap input[type='range']::-webkit-slider-thumb {width: 20px; height: 20px; border-radius: 50%; -webkit-appearance: none; cursor: pointer; background: #12997a;}
+.wrapper .previewInner .previewPannel > div .rangeWrap #currentWidth {font-size: 20px;}
+.wrapper .previewInner .previewPannel.desktop {width: 100%;}
+.wrapper .previewInner .previewPannel iframe {width: 100%; height: 50.0391vh; display: block; margin: 0 auto;}
+.wrapper .previewInner .previewPannel.desktop iframe {height: calc(100vh - 70px);}
+.wrapper .previewInner .previewPannel.tablet iframe {width: 785px; max-height: 800px;}
+.wrapper .previewInner .previewPannel.mobile iframe {width: 377px; max-height: 640px;}
+.wrapper .previewInner .previewPannel:not(.desktop) iframe {box-shadow: 0 0 5px 5px rgba(0,0,0,0.15); border-radius: 20px;}
+
+/* 반응형 미리보기 : ACTIVE */
+.wrapper .devicesWrap button.active {background-color: #fff;}
+.wrapper .devicesWrap button.desktop.active {background-image: url(../img/device_desktop_active.png);}
+.wrapper .devicesWrap button.tablet.active {background-image: url(../img/device_tablet_active.png);}
+.wrapper .devicesWrap button.mobile.active {background-image: url(../img/device_cell_phone_active.png);}
+.wrapper .devicesWrap button.all.active {background-image: url(../img/device_all_active.png);}
+.wrapper .previewInner .previewPannel.active {display: block;}
+
+.moveGuideWrap {padding: 10px; background: #f6f6f6; border: 1px solid #efefef; border-radius: 10px}
+.moveGuideWrap .col {flex: 1 0 auto;}
+.moveGuideWrap .col .cont {display: flex; align-items: center; height: 40px;}
+.moveGuideWrap strong {display: block; padding-bottom: 10px}
+
+/* 미리보기 */
+#preview {background:#fff;position:fixed;top:70px; left:20px;border:3px #333 solid;overflow:hidden;z-index:1000;box-shadow:5px 5px 15px rgba(0,0,0,.4);width: 60vw; min-width:1530px; height:calc(100vh - 250px);border-radius:1rem; transform-origin: left center;}
+#preview iframe {width: 100%; height: 100%}
+
+/* 검색 */
+#searchInput {height: 40px; padding: 0 20px; border-radius: 27px; border: none; background: #fff; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);}
+#searchInput:focus {border: 1px solid #c8c8c8; padding: 0 19px;}
+#noResultsMsg {padding: 150px 0 200px ; text-align: center; font-size: 18px; font-weight: 600;}

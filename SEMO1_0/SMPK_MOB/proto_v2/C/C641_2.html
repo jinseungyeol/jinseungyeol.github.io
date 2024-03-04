@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css_v2/semo_style.css">
+    <link rel="stylesheet" href="../../css_v2/ione_style.css">
+    <link rel="import" href="../C/C602.html">
+  <script src="/js_v2/jquery-3.5.1.min.js"></script>
+    <title>Document</title>
+
+    <script>
+        $(document).ready(function () {
+            $(".section_nation").click(function () {
+                $("#slide_popup").fadeIn(500);
+                $("#slide_popup > .popup.bottom").css("bottom", "0");
+
+            });
+            // 팝업 배경터치하면 사라짐
+            $(document).click(function (e) {
+                if ($(".popup_bg").is(e.target)) {
+                    $(".popup_bg").fadeOut(200);
+                    $(".popup.bottom").show().animate({
+                        bottom: "-100%"
+                    }, 200);
+                }
+            });
+            $(".section_content").click(function () {
+                $(this).addClass("active");
+                $(this).siblings().removeClass("active");
+            });
+
+            // if($(".section_content input").attr("readyonly",true)){
+            //     $(this).find("label").css("bottom","70%");
+            // }
+
+        });
+    </script>
+</head>
+
+<body>
+    <div class="title">
+        <div class="title_left">
+            <i class="ico_cen left_arrow"></i>
+        </div>
+        <span class="title_text">기본정보 입력하기</span>
+    </div>
+    <div class="basic_wrapper b_gray">
+        <div class="padding_wrapper25 set_pdb36 mb_btm_button">
+            <div class="section_input_wrap set_mgt18">
+                <div class="section_input_title">
+                    <i class="ico_cen section_num1 complete"></i>
+                    <p>직원정보 입력</p>
+                </div>
+            </div>
+            <div class="section_input_wrap set_mgt18">
+                <div class="section_input_title">
+                    <i class="ico_cen complete"></i>
+                    <p>계약형태 입력</p>
+                </div>
+            </div>
+            <div class="section_input_wrap set_mgt18">
+                <div class="section_input_title">
+                    <i class="ico_cen section_num3 "></i>
+                    <p>입사서류 입력</p>
+                </div>
+            </div>
+            <div class="section_button self">
+                <span>직접 등록하기</span>
+                <i class="ico_cen right_bold"></i>
+            </div>
+            <div class="section_button set_mgt13 set_mgb25">
+                <i class="ico_cen semo_char1"></i>
+                <span>직원에게 서류 요청하기</span>
+                <i class="ico_cen right_bold"></i>
+            </div>
+            <div class="section_invite_img_wrap set_pdt20 dash">
+                <div class="section_plcture_invite">
+                    <p>사진 가져오기</p>
+                    <i class="ico_cen plus_l_gray"></i>
+                    <i class="ico_cen del"></i>
+                </div>
+                <div class="section_plcture_invite ">
+                    <!-- <p>사진 가져오기</p>
+                    <i class="ico_cen plus_l_gray"></i> -->
+                    <span class="section_picture_title">주민등록본</span>
+                    <img src="../../img_v2/regi_copy.png" alt="">
+                    <i class="ico_cen del"></i>
+                </div>
+            </div>
+            <div class="section_input_wrap set_mgt18">
+                <div class="section_input_title">
+                    <i class="ico_cen section_num4 on"></i>
+                    <p>기타서류 입력</p>
+                </div>
+            </div>
+        </div>
+        <div class="btm_button bottom_fix">
+            <span>저장하기</span>
+        </div>
+    </div>
+
+</body>
+
+</html>

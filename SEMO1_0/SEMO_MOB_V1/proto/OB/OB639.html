@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../../css/semo_cont.css" />
+  <link rel="stylesheet" href="../../css/semo_cont_ibk.css" />
+  <title>SEMO</title>
+  <script src="../../js/jquery-3.5.1.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $("#term_service").click(function(){
+        $(".hide_thing").toggle();
+        $(this).parents().toggleClass("border-bottom");
+      });
+    });
+  </script>
+</head>
+<style>
+  .title_sub{position: relative;}
+  .title_sub input{position: absolute; right: 10px; top: 0;}
+  .title_sub.border-bottom{border-bottom: 1px solid #c8c8c8; padding-bottom: 10px;}
+</style>
+<body>
+  <div class="new_content">
+
+    <div class="cont_bg cont_pd">
+      <!-- 클래스 cont_pd fix_button 포함 패딩-->
+
+      <!-- 상단 타이틀 -->
+      <div class="title">기간연장신청</div>
+      <!-- //상단 타이틀 -->
+
+      <div class="wrap account">
+        <div class="progress_state_box">
+          <span class="suc"></span>
+          <!--신청 진행 완료 활성 클래스 suc-->
+          <span class="suc"></span>
+          <!--신청 진행 완료 활성 클래스 suc-->
+          <span class="on"></span>
+          <!--신청 진행 활성 클래스 on-->
+          <span></span>
+        </div>
+        <div>
+          <div class="result_box set_mg20 hide">
+            <!-- hide 클래스로 제어 -->
+            <!-- 2021-01-18 result_box set_mg20 클래스 추가 -->
+            <div class="result_wrap success">
+              <!--성공 활성 클래스 seccess-->
+              <i class="ico_rw success"><em class="new_blind">성공아이콘</em></i>
+              <!--success-->
+              <span class="success"><strong>보증료 납부 고객으로 확인되었습니다.</strong>
+              </span>
+            </div>
+          </div>
+          <div class="loan_cont_box">
+            <!-- hide 클래스로 제어 -->
+            <div class="title_sub">보증료 납부</div>
+            <div class="loan_noti_box">
+              <div>
+                ① 신용보증 약정서 제3조(보증료등 납부) 등에 <em class="c_ff3d23">의거하여</em> 보증료를 일시에 납부해야 합니다.
+              </div>
+            </div>
+            <div class="loan_check_box under set_mgb10">
+              <div class="lcb_list">
+                <p>
+                  <span class="div_tit"><b>보증승인 금액</b></span>
+                  <span class="div_txt"><b>30,000,000 </b>원</span>
+                </p>
+                <p>
+                  <span class="div_tit"><b>보증료</b></span>
+                  <span class="div_txt"><b>300,000 </b>원 </span>
+                </p>
+              </div>
+            </div>
+            <div class="title_sub nes">보증료 출금계좌번호</div>
+            <div class="acc_con">
+              <div class="sub_bank">
+                <div>
+                  <i class="ico_cen ico_lb003"></i>
+                  <p>IBK기업 <em>47900932341222</em></p>
+                </div>
+                <div class="ico_cen sub_chevy"></div><!-- up클래스로 화살표 제어 -->
+              </div>
+              <span class="able_money less">출금가능액 : <em>568,150</em> 원</span>
+              <!-- 잔액이 부족합니다. less 클래스 추가 -->
+            </div>
+          </div>
+          <div class="title_sub sel ">
+            
+            <span>대출 이자 통지 서비스</span>
+
+            <div class="terms_box">
+            <input type="checkbox" id="term_service" class="check_terms "checked>
+          </div>
+          </div>
+
+          <div class="loan_noti_box set_mgb10 hide_thing">
+            <p>
+              ① 본 서비스는 대출금의 이자납입일 및 납부하실 금액을 문자메시지로 통지하여 드리는 서비스입니다.
+            </p>
+            <br>
+            <p>
+              ② 본 서비스를 원하지 않으시거나, 대출계좌에 동일한 휴대폰번호로 이미 가입하신 경우 위 선택버튼을 해제해주시기 바랍니다.
+            </p>
+          </div>
+          <div class="terms_box open border hide_thing">
+            <!--활성 클래스 on 전체 약관 표시 AND 활성 클래스 open 약관열기 -->
+            <!-- 전체 동의 -->
+            <ul>
+              <li class="terms_li">
+                <div>
+                  <input type="checkbox" class="check_terms">
+                  <!--클릭하면 checked true-->
+                  <span>유의사항</span>
+                </div>
+                <div>
+                  <!--클릭하면 checked true-->
+                  <span>내용보기</span>
+                  <div class="ico_cen trems_ico"></div>
+                </div>
+              </li>
+            </ul>
+            <!-- //전체 동의 -->
+
+            <!-- 약관 -->
+            <ul>
+              <li class="terms_li">
+                <div>
+                  <span>통지시기</span>
+                </div>
+                <div>
+                
+                  <input type="checkbox" class="check_terms" checked>
+                  <!--클릭하면 checked true-->
+                  <span>당일</span>
+                </div>
+              </li>
+              <li class="terms_li">
+                <div>
+                  <span>통지유형</span>
+                </div>
+                <div>
+                  <!--클릭하면 checked true-->
+                  <input type="checkbox" class="check_terms" checked>
+                  <!--클릭하면 checked true-->
+                  <span>원(리)금+대출잔액
+                  </span>
+                  <input type="checkbox" class="check_terms">
+                  <!--클릭하면 checked true-->
+                  <span>원(리)금
+                  </span>
+                </div>
+              </li>
+              <li class="terms_li">
+                <div>
+                  <span>이자납일 당일 부족금액 통지
+                  </span>
+                </div>
+                <div>
+                  <!--클릭하면 checked true-->
+                  <input type="checkbox" class="check_terms" checked>
+                  <!--클릭하면 checked true-->
+                  <span>신청</span>
+                  <input type="checkbox" class="check_terms">
+                  <!--클릭하면 checked true-->
+                  <span>미신청</span>
+                </div>
+              </li>
+            </ul>
+            <!-- //약관 -->
+            <div class="join_box hide_thing" style="margin-top: 15px;">
+              <div class="title_sub">통지 서비스 휴대폰번호 인증</div>
+  
+              <div class="join_block type2">
+                <!-- 휴대폰 번호 -->
+                <input type="text" name="mobile" class="join_input type4" placeholder="휴대폰번호입력" value="010-1234-5678">
+                <!-- //휴대폰 번호 -->
+              </div>
+  
+             
+              <div style="height: 10px;"></div>
+            </div>
+
+          </div>
+      
+
+        </div>
+        <div class="loan_check_box">
+        <div class="lcb_list">
+          <span class="lcb_tit">약정서 및 기본약관
+          </span>
+          <P>약정서 및 은행여신거래 기본약관을 제공하오니 참고하시기 바랍니다.
+          </P>
+          <p>
+            <span class="div_sen">
+              은행여신거래 기본약관
+            </span>
+            <input type="checkbox" class="check_terms">
+          </p>
+          <p>
+            <span class="div_sen">
+              거래조건변경추가약정시_기간연장
+            </span>
+            <input type="checkbox" class="check_terms">
+          </p>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <!-- 계좌선택 시 팝업  -->
+    <div class="popup_toast_bg hide">
+      <!-- hide클래스로 제어 -->
+      <div class="popup_toast set_pd_aus">
+        <div class="popup_toast_head">
+          <div class="popup_toast_tit">계좌 선택</div>
+        </div>
+        <div class="bank_account_list set_maxh150">
+          <ul>
+            <li>
+              <i class="logo_bank ico_lb003"></i>
+              <p>
+                <span>IBK기업은행 (두드림 성공통장)</span>
+                <span>47900932341222</span>
+              </p>
+            </li>
+            <li>
+              <i class="logo_bank ico_lb003"></i>
+              <p>
+                <span>IBK기업은행 (두드림 성공통장)</span>
+                <span>47900932341222</span>
+              </p>
+            </li>
+            <li>
+              <!-- 2020-11-11 ico_bankpaper 클래스 추가 -->
+              <!-- 2020-11-12 내용추가-->
+              <i class="logo_bank ico_bankpaper"></i>
+              <p>
+                <span>전체 증빙계좌</span>
+                <span>전체 증빙계좌를 조회합니다</span>
+              </p>
+              <!--// 2020-11-12 내용추가-->
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- 계좌선택 시 팝업 끝  -->
+    <!-- 보증료 출금 실패 시 팝업 -->
+    <div class="popup_bg hide">
+      <!-- hide클래스 가리기 -->
+      <div class="popup pt_top2">
+        <!-- 2020-12-04 pt_top2클래스 추가 -->
+        <div class="popup_txt">
+          <span class="popup_tit"></span>
+          <span class="popup_sub pt_pd3">
+            보증료 출금 처리에 실패했습니다. <br> 출금계좌 잔액 확인 후 다시 <br> 거래해주시기 바랍니다.
+          </span>
+        </div>
+        <div class="popup_btn">
+          <span class="bgc_green">확인</span>
+          <!--클래스 bgc_green 배경색-->
+        </div>
+      </div>
+    </div>
+    <!-- 보증료 출금 실패 시 팝업 끝-->
+    <!-- 이자통지서비스 중복가입일 경우 팝업 -->
+    <div class="popup_bg hide">
+      <!-- hide클래스 가리기 -->
+      <div class="popup pt_top2">
+        <!-- 2020-12-04 pt_top2클래스 추가 -->
+        <div class="popup_txt">
+          <span class="popup_tit"></span>
+          <span class="popup_sub pt_pd3">
+            이미 가입된 휴대폰번호로 <br> 미선택 처리 후 진행됩니다.
+          </span>
+        </div>
+        <div class="popup_btn">
+          <span class="bgc_green">확인</span>
+          <!--클래스 bgc_green 배경색-->
+        </div>
+      </div>
+    </div>
+    <!-- 이자통지서비스 중복가입일 경우 팝업 끝-->
+    <!-- 취소버튼 눌렀을 시 팝업 -->
+    <div class="popup_bg hide">
+      <!-- hide클래스 가리기 -->
+      <div class="popup pt_top2">
+        <!-- 2020-12-04 pt_top2클래스 추가 -->
+        <div class="popup_txt">
+          <span class="popup_tit"></span>
+          <span class="popup_sub pt_pd3">
+            거래를 취소하고 메뉴 첫 페이지로 <br> 이동합니다. 계속하시겠습니까?
+          </span>
+        </div>
+        <div class="popup_btn">
+          <span class="">취소</span>
+          <span class="bgc_green">확인</span>
+          <!--클래스 bgc_green 배경색-->
+        </div>
+      </div>
+    </div>
+    <!-- 취소버튼 눌렀을 시 팝업 끝-->
+    <!-- 최종수입적용약정이율 표시 팝업 -->
+    <div class="popup_bg hide">
+      <!-- hide클래스 가리기 -->
+      <div class="popup pt_top2">
+        <!-- 2020-12-04 pt_top2클래스 추가 -->
+        <div class="popup_txt">
+          <span class="popup_tit"></span>
+          <span class="popup_sub pt_pd3">
+            적용 예상 대출금리는 1.5% 입니다
+          </span>
+        </div>
+        <div class="popup_btn">
+          <span class="">취소</span>
+          <span class="bgc_green">확인</span>
+          <!--클래스 bgc_green 배경색-->
+        </div>
+      </div>
+    </div>
+    <!-- 최종수입적용약정이율 표시 팝업 끝 -->
+
+    <!-- 토스트 팝업 내용 -->
+    <div class="toast hide">
+      <span>모든 항목에 체크해주세요.</span>
+    </div>
+    <!-- 토스트 팝업 -->
+
+    <!-- 하단 fix 버튼 -->
+    <div class="btm_fix on">
+      <span onClick="javascript:history.back(-1);">취소</span>
+      <a href="../OB/OB609_1.html" class="bgc_green">다음</a>
+      <!--클래스 bgc_green 배경색-->
+    </div>
+    <!-- 하단 fix 버튼 -->
+  </div>
+</body>
+
+</html>

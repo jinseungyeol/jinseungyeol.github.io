@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../../css/semo_cont.css">
+
+  <title>SEMO</title>
+</head>
+
+<body>
+  <div class="new_content">
+    <div class="cont_bg">
+      <!-- 상단 타이틀 -->
+      <!-- <div class="title">제로페이 매출증빙</div> -->
+      <!-- //상단 타이틀 -->
+      <div class="wrap document zero_pay_main">
+        <!-- 검색 팝업 영역 -->
+        <div class="condition_search_detail_box" style="display: none;">
+          <div class="condition_search_detail">
+            <div class="csd_input_box">
+              <input type="text" placeholder="내용 입력 (최대 15자)">
+              <button class="csd_input_btn">조회</button>
+            </div>
+            <div class="csd_calendar_box set_mgt10">
+              <p>2021-06-09</p>
+              <span>-</span>
+              <p>2021-07-09</p>
+            </div>
+            <div class="csd_select_date_box set_mgt10">
+              <input type="radio" id="date_week" class="search_date" name="search_date" value="당월">
+              <label for="date_week">당월</label>
+              <input type="radio" id="date_month" class="search_date" name="search_date" value="1개월" checked>
+              <label for="date_month">1개월</label>
+              <input type="radio" id="date_qmonth" class="search_date" name="search_date" value="3개월">
+              <label for="date_qmonth">3개월</label>
+              <input type="radio" id="date_hyear" class="search_date" name="search_date" value="6개월">
+              <label for="date_hyear">6개월</label>
+            </div>
+          </div>
+        </div>
+        <!-- 검색 팝업 영역 -->
+
+        <div>
+          <div class="condition_head_wrap">
+            <div class="zeropay_wrap">
+              <div class="secound_tab_box set_mgb6">
+                <span class="on2">결제내역</span>
+                <span>정산</span>
+                <!--활성 클래스 on2-->
+              </div>
+            </div>
+            <div class="condition_date_wrap">
+              <!--날짜설정 박스 보이기 활성클래스 on-->
+              <div class="condition_date_border">
+                <div class="condition_date_box">
+                  <span>오늘</span>
+                  <span class="on">어제</span>
+                  <!--활성클래스 on-->
+                  <span>이번달</span>
+                  <span>지난달</span>
+                  <span>검색</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pay_detail_list_wrap set_mgt15 set_pdb15 hide">
+            <div class="pay_detail_list_cell pay_detail_list_cell1">
+              <div class="pay_detail_list_con pay_detail_list_con_text pay_after pay_detail_list_con_text2">
+                <div class="pay_detail_list_con_left">
+                  <div class="pay_detail_list_con_left_text contents_align justify_unset">
+                    <div class="pay_detail_list_con_left_img pdll_img7"></div>
+                    <p>매출 <b>9999</b>건</p>
+                  </div>
+                </div>
+              </div>
+              <div class="pay_cell2 set_mgt8">
+                <p>￦<b>0</b></p>
+                <div class="ico_cen pay_cell2_img"></div>
+              </div>
+              <div class="pay_detail_remark set_mgt7">
+                <div class="pay_detail_list_con_left_img pdll_img5"></div>
+                <span>제로페이 결제 관리 기준</span>
+              </div>
+            </div>
+            <div class="pay_detail_list_cell pay_detail_list_cell3">
+              <div class="pay_detail_account1 set_mgb13">
+                <div class="ico_cen pay_detail_list_cell3_img"></div>
+                <span class="set_font13">제로페이</span>
+              </div>
+            </div>
+          </div>
+          <div class="pay_detail_list_wrap set_mgt15 set_pdb15">
+            <div class="zero_pay_date">
+              <span>
+                <em>21.03.20(토)</em>
+                ~
+                <em>21.06.19(금)</em>
+              </span>
+              <p>총 <em>0</em>건의 검색결과</p>
+              <b>합계 <b>￦0</b></b>
+            </div>
+
+          </div>
+
+          <!-- 제로페이 연결된 계정 정보가 없을때-->
+          <div class="pay_zero_con ">
+            <div class="pay_zero_detail">
+              <span class="down">가맹점 정보보기</span>
+              <!-- 
+                down 클래스 아래
+                up 클래스 위
+               -->
+            </div>
+            <div class="pay_zero_no_data">
+              <i class="ico_cen data"></i>
+              <span>연결된 계정 정보가 없습니다. <br>
+                제로페이 가맹점 페이지에 가입된
+                <p class="c_0095ff set_text_underline">ID/PW를 등록해 주세요.</p>
+              </span>
+            </div>
+            <span class="pay_zero_info">
+              <p>- 최초 연결 시, 최근 3개월의 데이터를 불러오며,
+                전일 내역이 익일 아침 자동으로 업데이트 됩니다.</p>
+            </span>
+          </div>
+          <!--// 제로페이 연결된 계정 정보가 없을때 //-->
+
+
+          <!-- 제로페이 익일 자동업데이트-->
+          <div class="pay_zero_con hide">
+            <div class="pay_zero_detail">
+              <span class="down">가맹점 정보보기</span>
+              <!-- 
+                down 클래스 아래
+                up 클래스 위
+               -->
+            </div>
+            <div class="pay_zero_no_data">
+              <i class="ico_cen update"></i>
+              <span>
+                익일 자동업데이트 됩니다. <br>
+                자세한 내역은 <p class="c_0095ff set_text_underline">제로페이</p>에서 확인해 주세요.
+              </span>
+            </div>
+            <span class="pay_zero_info">
+              <i class="ico_cen"></i>
+              <p>최초 연결 시, 최근 3개월의 데이터를 불러오며,
+                전일 내역이 익일 아침 자동으로 업데이트 됩니다.</p>
+            </span>
+          </div>
+          <!--// 제로페이 익일 자동업데이트 //-->
+
+          <!-- 제로페이 3개월 거래 없음-->
+          <div class="pay_zero_con hide">
+            <div class="pay_zero_detail">
+              <span class="down">가맹점 정보보기</span>
+              <!-- 
+                          down 클래스 아래
+                          up 클래스 위
+                         -->
+            </div>
+            <div class="pay_zero_no_data">
+              <i class="ico_cen data"></i>
+              <span>
+                최근 3개월내 거래가 없습니다. <br>
+                자세한 내역은 <p class="c_0095ff set_text_underline">제로페이</p>에서 확인해 주세요.
+              </span>
+            </div>
+            <span class="pay_zero_info">
+              <i class="ico_cen"></i>
+              <p>최초 연결 시, 최근 3개월의 데이터를 불러오며,
+                전일 내역이 익일 아침 자동으로 업데이트 됩니다.</p>
+            </span>
+          </div>
+          <!--// 제로페이 3개월 거래 없음 //-->
+
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

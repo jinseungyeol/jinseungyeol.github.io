@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../../css/semo_cont.css">
+  <title>SEMO</title>
+</head>
+<body>
+  <div class="new_content">
+    <div class="cont_bg cont_pd"> <!-- 클래스 cont_pd_hd fix_button 포함 패딩--> 
+
+      <!-- 상단 타이틀 -->
+      <div class="title">카드 정보</div>
+      <!-- //상단 타이틀 -->  
+       
+      <div class="wrap setting">
+        <div class="card_info">
+          <p>
+            <span class="ci_tit">카드사(회원사)</span>
+            <span class="ci_info">BC(IBK기업)</span>
+          </p>
+          <p>
+            <span class="ci_tit">상품명</span>
+            <span class="ci_info">쇼핑엔조이</span>
+          </p>          
+          <p>
+            <span class="ci_tit">카드번호</span>
+            <span class="ci_info">123456-5678-1111</span>
+          </p>          
+          <p>
+            <span class="ci_tit">카드 구분</span>
+            <span class="ci_check">
+              <input type="radio" id="card_classify1" class="card_classify" name="card_classify" value="기업" checked>
+              <label for="card_classify1">기업</label>
+            
+              <input type="radio" id="card_classify2" class="card_classify" name="card_classify" value="개인">
+              <label for="card_classify2">개인</label>
+            </span>
+          </p>
+          <p>
+            <span class="ci_tit">기타</span>
+            <span class="ci_info error">등록된 정보가 존재하지 않습니다. [WSND00008]</span>
+          </p> 
+        </div>
+          
+        <!-- 인증서 비밀번호 -->
+        <div class="certi_pwd_wrap"> 
+          <p class="noti_star wd_set color_b mgb_set">
+            <i class="character"></i>
+            <span>사업용으로 등록된 계좌만 증빙자료에서
+              조회되고 세무사에게 전송되어 기장됩니다.</span>
+          </p>
+
+          <div class="title_sub">아이디/비밀번호</div>
+
+          <div class="certi_pwd">
+            <span class="manage_number">SEMO</span>
+            <em>/</em> 
+            <span class="pwd_dot_box">
+              <em class="dot"></em>
+              <em class="dot"></em>
+              <em class="dot"></em>
+              <em class="dot"></em>
+              <em class="dot"></em>
+              <em class="dot"></em>
+              <em class="dot"></em>
+            </span>
+            <a class="btn_change_pwd"><i class="btn_cpwd"></i><em class="new_blind">비밀번호 변경</em></a>
+          </div>
+
+          <p class="noti_star wd_set color_b">
+            <i class="character"></i>
+            <span>비밀번호가 변경된 경우 변경할 수 있습니다.</span>
+          </p> 
+        </div>
+        <!-- //인증서 비밀번호 -->
+      </div> 
+    </div>
+    
+    <!-- 하단 fix 버튼 -->
+    <div class="btm_fix on">
+      <span>삭제</span>
+      <span class="bgc_green">확인</span>
+    </div>
+    <!-- 하단 fix 버튼 -->
+  </div>
+</body>
+</html>

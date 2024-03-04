@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>tax_slry_003_1 / tax_slry_007_1</title>
+    <link rel="stylesheet" href="../../css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../../css/mobiscroll.jquery.min.css">
+    <link rel="stylesheet" href="../../css/semoR_base.css">
+    <link rel="stylesheet" href="../../css/semoR_common.css">
+    <link rel="stylesheet" href="../../css/semoR_style.css">
+    <link rel="stylesheet" href="../../css/semoR_rept.css">
+  <script src="../../js/jquery-3.5.1.min.js"></script>
+    <script src="../../js/jquery-ui.min.js"></script>
+    <script src="../../js/swiper-bundle.min.js"></script>
+    <script src="../../js/mobiscroll.jquery.min.js"></script>
+    <script src="../../js/semoR_ui.js"></script>
+</head>
+
+<script>
+    $(document).ready(function () {
+        slidePop(this);
+    });
+</script>
+
+<body>
+    <!-- wrapper -->
+    <div class="wrapper">
+        <!-- header -->
+        <div class="header">
+            <h1 class="subTit">슬라이드팝업(slidePop)</h1>
+            <ul class="topMenu">
+                <li class="left">
+                    <a class="btnBack" href="javascript:;" role="button"><span class="blind">뒤로가기</span></a>
+                </li>
+            </ul>
+        </div>
+        <!-- //header -->
+    </div>
+    <!-- //wrapper -->
+
+    <div class="popWrap slidePop">
+        <div class="dim" onclick="popdimClose(this);return false;">클릭시 팝업 닫힘</div>
+        <div class="popInner">
+            <div class="popTit">
+                <a href="javascript:;" class="btnPopClose" onclick="popClose(this);return false;" title="팝업닫기" role="button"></a>
+                <h1>직원추가</h1>
+            </div>
+            <div class="popCont">
+                <ul class="listWrap">
+                    <li>
+                        <label for="list01">
+                            <div class="infoArea busi middle">
+                                <div class="ico work">
+                                    <i title="근로"></i>
+                                </div>
+                                <div class="cont">
+                                    <div class="info">
+                                        <p class="name">김세모</p>
+                                    </div>
+                                </div>
+                                <div class="rCont">
+                                    <input type="checkbox" id="list01">
+                                </div>
+                            </div>
+                        </label>
+                    </li>
+                    <li>
+                        <label for="list02">
+                            <div class="infoArea busi middle">
+                                <div class="ico fran">
+                                    <i title="사업"></i>
+                                </div>
+                                <div class="cont">
+                                    <div class="info">
+                                        <p class="name">김세모</p>
+                                    </div>
+                                </div>
+                                <div class="rCont">
+                                    <input type="checkbox" id="list02">
+                                </div>
+                            </div>
+                        </label>
+                    </li>
+                    <li>
+                        <label for="list03">
+                            <div class="infoArea busi middle">
+                                <div class="ico work">
+                                    <i title="근로"></i>
+                                </div>
+                                <div class="cont">
+                                    <div class="info">
+                                        <p class="name">김세모</p>
+                                    </div>
+                                </div>
+                                <div class="rCont">
+                                    <input type="checkbox" id="list03">
+                                </div>
+                            </div>
+                        </label>
+                    </li>
+                </ul>
+                <div class="areaCenterBtn">
+                    <button type="button" class="btnPlus">
+                        <span>신규 직원 등록</span>
+                    </button>
+                </div>
+            </div>
+            <div class="popBtnWrap">
+                <button type="button" class="btnPointBg pointBgColor">추가하기</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

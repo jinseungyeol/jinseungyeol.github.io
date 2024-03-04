@@ -1,0 +1,1513 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML 마크업 페이지</title>
+  <link rel="stylesheet" href="worklist/css/worklist.css">
+  <script src="worklist/js/jquery-3.5.1.min.js"></script>
+</head>
+
+<body>
+  <!-- wrapper -->
+  <div class="wrapper">
+    <h1>HTML 마크업 페이지 <span>(세모리포트 PC)</span></h1>
+    <ul class="listDot">
+      <li>
+        1Depth_2Depth_일련번호 3자리 + A~Z
+      </li>
+      <li>
+        분기되는 화면은 알파벳으로 채번, 새로운 화면은 숫자로 채번(EX. 000A - 000B, 001A - 002A)
+      </li>
+      <li>
+        팝업은 언더바 + 숫자로 표현(EX. 000A_1)
+      </li>
+      <li>
+        기획 세모리포트_화면번호 체계 참고 <a href="https://docs.google.com/spreadsheets/d/1xIbNTUpV_iGtLHM5CuHFOMq2rvWaz9o2Ei18DBxWASQ/edit#gid=1613306907" target="_blank" class="moveLink">링크이동</a>
+      </li>
+    </ul>
+    <div class="moveGuideWrap">
+        <div class="col">
+            <strong>Filter.</strong>
+            <div class="cont">
+                <input id="searchInput" type="text" placeholder="검색어를 입력해 주세요.">
+            </div>
+        </div>
+    </div>
+    <!-- container -->
+    <div class="container">
+      <!-- header -->
+      <div class="header swiper-container">
+        <ul class="tabMenuList type03 swiper-wrapper">
+
+          <!-- 활성화시 active -->
+          <li class="all active swiper-slide">
+            <a href="javascript:;" class="btnTab" role="button">전체</a>
+          </li>
+          <li class="swiper-slide">
+            <a href="javascript:;" class="btnTab" role="button">처음사용자(start)</a>
+          </li>
+          <li class="swiper-slide">
+            <a href="javascript:;" class="btnTab" role="button">고객관리(user)</a>
+          </li>
+          <li class="swiper-slide">
+            <a href="javascript:;" class="btnTab" role="button">리포트관리(mrprt)</a>
+          </li>
+          <li class="swiper-slide">
+            <a href="javascript:;" class="btnTab" role="button">환경설정(mgnt)</a>
+          </li>
+          <li class="swiper-slide">
+            <a href="javascript:;" class="btnTab" role="button">실시간 정보수집센터(infoc)</a>
+          </li>
+          <li class="swiper-slide">
+            <a href="javascript:;" class="btnTab" role="button">알림(notic)</a>
+          </li>
+          <li class="swiper-slide">
+            <a href="javascript:;" class="btnTab" role="button">미납(stop)</a>
+          </li>
+          <li class="swiper-slide">
+            <a href="javascript:;" class="btnTab" role="button">admn</a>
+          </li>
+        </ul>
+      </div>
+      <!-- //header -->
+
+      <!-- content -->
+      <div class="content">
+        <p id="noResultsMsg" style="display: none;">검색 결과가 없습니다.</p>
+        <div class="tabContentWrap">
+          <h2>처음사용자(start)</h2>
+          <table>
+            <colgroup>
+              <col class="depth2" style="width: 15%">
+              <col class="depth3" style="width: 15%">
+              <col class="depth4" style="width: 15%">
+              <col class="depth5" style="width: 15%">
+              <col class="pId" style="width: 15%">
+              <col class="remark">
+            </colgroup>
+            <thead>
+              <tr>
+                <th class="depth2">2Depth</th>
+                <th class="depth3">3Depth</th>
+                <th class="depth4">4Depth</th>
+                <th class="depth5">5Depth</th>
+                <th class="pId">화면ID</th>
+                <th class="remark">비고</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="">
+                <td class="depth2">처음사용자 인트로</td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/start_inrt_001.html" target="_blank">start_inrt_001.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2">Step1. 서비스시작</td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/start_inrt_002.html" target="_blank">start_inrt_002.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2">Step2. 홈택스 연결</td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/start_inrt_003.html" target="_blank">start_inrt_003.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2">Step3. 거래처 연동</td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/start_inrt_004.html" target="_blank">start_inrt_004.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2">Step4. 리포트 발송</td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/start_inrt_005.html" target="_blank">start_inrt_005.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2">Step4. 리포트 발송</td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/start_inrt_005A.html" target="_blank">start_inrt_005A.html</a></td>
+                <td class="remark"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tabContentWrap">
+          <h2>고객관리(user)</h2>
+          <table>
+            <colgroup>
+              <col class="depth2" style="width: 15%">
+              <col class="depth3" style="width: 15%">
+              <col class="depth4" style="width: 15%">
+              <col class="depth5" style="width: 15%">
+              <col class="pId" style="width: 15%">
+              <col class="remark">
+            </colgroup>
+            <thead>
+              <tr>
+                <th class="depth2">2Depth</th>
+                <th class="depth3">3Depth</th>
+                <th class="depth4">4Depth</th>
+                <th class="depth5">5Depth</th>
+                <th class="pId">화면ID</th>
+                <th class="remark">비고</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="">
+                <td class="depth2">서비스 이용신청(join)</td>
+                <td class="depth3">수임처 세모R 신규가입</td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/user_join_001.html" target="_blank">user_join_001.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3">서비스 이용약관</td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/user_join_002.html" target="_blank">user_join_002.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2">가입정보조회목록(info)</td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/user_info_001.html" target="_blank">user_info_001.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/user_info_001_1.html" target="_blank">user_info_001_1.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/user_info_001_2.html" target="_blank">user_info_001_2.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/user_info_001_3.html" target="_blank">user_info_001_3.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/user_info_001_pop.html" target="_blank">user_info_001_pop.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/user_info_002_가입.html" target="_blank">user_info_002_가입.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/user_info_002_4.html" target="_blank">user_info_002_4.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/user_info_002_4_1.html" target="_blank">user_info_002_4_1.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/user_info_002_6.html" target="_blank">user_info_002_6.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/user_info_002_6_1.html" target="_blank">user_info_002_6_1.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/user_info_003.html" target="_blank">user_info_003.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/user_info_003_1.html" target="_blank">user_info_003_1.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/user_info_004_안내장발송.html" target="_blank">user_info_004_안내장발송.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/user_info_004_1.html" target="_blank">user_info_004_1.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/user_info_004_2.html" target="_blank">user_info_004_2.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/user_info_005.html" target="_blank">user_info_005.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/user_info_006.html" target="_blank">user_info_006.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2">거래증빙(evdc)</td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/user_evdc_003.html" target="_blank">user_evdc_003.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/user_evdc_004.html" target="_blank">user_evdc_004.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/user_evdc_004_1.html" target="_blank">user_evdc_004_1.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/user_evdc_004_1_pop.html" target="_blank">user_evdc_004_1_pop.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/user_evdc_004_2.html" target="_blank">user_evdc_004_2.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/user_evdc_005.html" target="_blank">user_evdc_005.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/user_evdc_006.html" target="_blank">user_evdc_006.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/user_evdc_007.html" target="_blank">user_evdc_007.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/user_evdc_008.html" target="_blank">user_evdc_008.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/user_evdc_009.html" target="_blank">user_evdc_009.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2">용도설정(sett)</td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/user_sett_001.html" target="_blank">user_sett_001.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/user_sett_002.html" target="_blank">user_sett_002.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/user_sett_003.html" target="_blank">user_sett_003.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/user_sett_005.html" target="_blank">user_sett_005.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2">직원급여정보(empl)</td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/user_empl_001.html" target="_blank">user_empl_001.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/user_empl_002.html" target="_blank">user_empl_002.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/user_empl_003.html" target="_blank">user_empl_003.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2">활동이력(histy)</td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/user_hist_001.html" target="_blank">user_hist_001.html</a></td>
+                <td class="remark"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tabContentWrap">
+          <h2>리포트관리(mrprt)</h2>
+          <table>
+            <colgroup>
+              <col class="depth2" style="width: 15%">
+              <col class="depth3" style="width: 15%">
+              <col class="depth4" style="width: 15%">
+              <col class="depth5" style="width: 15%">
+              <col class="pId" style="width: 15%">
+              <col class="remark">
+            </colgroup>
+            <thead>
+              <tr>
+                <th class="depth2">2Depth</th>
+                <th class="depth3">3Depth</th>
+                <th class="depth4">4Depth</th>
+                <th class="depth5">5Depth</th>
+                <th class="pId">화면ID</th>
+                <th class="remark">비고</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="update">
+                <td class="depth2">리포트 현황(rept)</td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mrprt_rept_001.html" target="_blank">mrprt_rept_001.html</a></td>
+                <td class="remark">[내부] 작업시 데이터 변경 유의용도 아이콘 제작</td>
+              </tr>
+              <tr class="update">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mrprt_rept_001_1.html" target="_blank">mrprt_rept_001_1.html</a></td>
+                <td class="remark">[SC200] 보고서 그룹 거래처 추가 기능 개선</td>
+              </tr>
+              <tr class="update">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mrprt_rept_001_2.html" target="_blank">mrprt_rept_001_2.html</a></td>
+                <td class="remark">[SD014] 인건비보고서 세무사랑 자동연동</td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mrprt_rept_001_설정.html" target="_blank">mrprt_rept_001_설정.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mrprt_rept_002.html" target="_blank">mrprt_rept_002.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="update">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mrprt_rept_002_1.html" target="_blank">mrprt_rept_002_1.html</a></td>
+                <td class="remark">[SC200] 보고서 그룹 거래처 추가 기능 개선</td>
+              </tr>
+              <tr class="update">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mrprt_rept_100_1.html" target="_blank">mrprt_rept_100_1.html</a></td>
+                <td class="remark">[SD019] 보고서 미리보기 개선</td>
+              </tr>
+              <tr class="update">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mrprt_rept_100_1A.html" target="_blank">mrprt_rept_100_1A.html</a></td>
+                <td class="remark">[SD019] 보고서 미리보기 개선</td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mrprt_rept_100_3.html" target="_blank">mrprt_rept_100_3.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mrprt_rept_100_4.html" target="_blank">mrprt_rept_100_4.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mrprt_rept_100_5.html" target="_blank">mrprt_rept_100_5.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mrprt_rept_100_6.html" target="_blank">mrprt_rept_100_6.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mrprt_rept_100_7.html" target="_blank">mrprt_rept_100_7.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mrprt_rept_100_8.html" target="_blank">mrprt_rept_100_8.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mrprt_rept_101.html" target="_blank">mrprt_rept_101.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mrprt_rept_101_1.html" target="_blank">mrprt_rept_101_1.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mrprt_rept_101_1_수정팝업1.html" target="_blank">mrprt_rept_101_1_수정팝업1.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mrprt_rept_101_3.html" target="_blank">mrprt_rept_101_3.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mrprt_rept_101_4.html" target="_blank">mrprt_rept_101_4.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mrprt_rept_102.html" target="_blank">mrprt_rept_102.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mrprt_rept_103.html" target="_blank">mrprt_rept_103.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mrprt_rept_104.html" target="_blank">mrprt_rept_104.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mrprt_rept_201.html" target="_blank">mrprt_rept_201.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mrprt_rept_202.html" target="_blank">mrprt_rept_202.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mrprt_rept_203.html" target="_blank">mrprt_rept_203.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mrprt_rept_204.html" target="_blank">mrprt_rept_204.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mrprt_rept_213.html" target="_blank">mrprt_rept_213.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mrprt_rept_301.html" target="_blank">mrprt_rept_213.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mrprt_rept_301_1.html" target="_blank">mrprt_rept_301_1.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mrprt_rept_302.html" target="_blank">mrprt_rept_302.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mrprt_rept_303.html" target="_blank">mrprt_rept_303.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mrprt_rept_304.html" target="_blank">mrprt_rept_304.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mrprt_rept_401.html" target="_blank">mrprt_rept_401.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mrprt_rept_401_1.html" target="_blank">mrprt_rept_401_1.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mrprt_rept_402.html" target="_blank">mrprt_rept_402.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mrprt_rept_403.html" target="_blank">mrprt_rept_403.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mrprt_rept_501.html" target="_blank">mrprt_rept_501.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mrprt_rept_502.html" target="_blank">mrprt_rept_502.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mrprt_rept_503.html" target="_blank">mrprt_rept_503.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2">보고서 발송(send)</td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mrprt_send_001.html" target="_blank">mrprt_send_001.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="update">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mrprt_send_001F.html" target="_blank">mrprt_send_001F.html</a></td>
+                <td class="remark">[SD022] 보고서 발송현황 차트 기능 동일화</td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mrprt_send_001G.html" target="_blank">mrprt_send_001G.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mrprt_send_002.html" target="_blank">mrprt_send_002.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mrprt_send_101.html" target="_blank">mrprt_send_101.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2">보고서 이력(hist)</td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mrprt_hist_001.html" target="_blank">mrprt_hist_001.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mrprt_hist_003.html" target="_blank">mrprt_hist_003.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2">anal</td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mrprt_anal_001.html" target="_blank">mrprt_anal_001.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mrprt_anal_001A.html" target="_blank">mrprt_anal_001A.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mrprt_anal_002.html" target="_blank">mrprt_anal_002.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mrprt_anal_002A.html" target="_blank">mrprt_anal_002A.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mrprt_anal_002B.html" target="_blank">mrprt_anal_002B.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mrprt_anal_002C.html" target="_blank">mrprt_anal_002C.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mrprt_anal_007.html" target="_blank">mrprt_anal_007.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mrprt_anal_100.html" target="_blank">mrprt_anal_100.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="update">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mrprt_anal_200.html" target="_blank">mrprt_anal_200.html</a></td>
+                <td class="remark">[SC170] 고객분석 3차_고객별 상세 분석</td>
+              </tr>
+              <tr class="update">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mrprt_anal_200A.html" target="_blank">mrprt_anal_200A.html</a></td>
+                <td class="remark">[SC170] 고객분석 3차_고객별 상세 분석</td>
+              </tr>
+              <tr class="update">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mrprt_anal_200B.html" target="_blank">mrprt_anal_200B.html</a></td>
+                <td class="remark">[SC170] 고객분석 3차_고객별 상세 분석</td>
+              </tr>
+              <tr class="update">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mrprt_anal_200C.html" target="_blank">mrprt_anal_200C.html</a></td>
+                <td class="remark">[SC170] 고객분석 3차_고객별 상세 분석</td>
+              </tr>
+              <tr class="update">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mrprt_anal_200D.html" target="_blank">mrprt_anal_200D.html</a></td>
+                <td class="remark">[SC170] 고객분석 3차_고객별 상세 분석</td>
+              </tr>
+              <tr class="update">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mrprt_anal_200E.html" target="_blank">mrprt_anal_200E.html</a></td>
+                <td class="remark">[SC170] 고객분석 3차_고객별 상세 분석</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tabContentWrap">
+          <h2>환경설정(mgnt)</h2>
+          <table>
+            <colgroup>
+              <col class="depth2" style="width: 15%">
+              <col class="depth3" style="width: 15%">
+              <col class="depth4" style="width: 15%">
+              <col class="depth5" style="width: 15%">
+              <col class="pId" style="width: 15%">
+              <col class="remark">
+            </colgroup>
+            <thead>
+              <tr>
+                <th class="depth2">2Depth</th>
+                <th class="depth3">3Depth</th>
+                <th class="depth4">4Depth</th>
+                <th class="depth5">5Depth</th>
+                <th class="pId">화면ID</th>
+                <th class="remark">비고</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="">
+                <td class="depth2">세무지식(mcafe)</td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mgnt_cafe_001.html" target="_blank">mgnt_cafe_001.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mgnt_cafe_002.html" target="_blank">mgnt_cafe_002.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mgnt_cafe_003.html" target="_blank">mgnt_cafe_003.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2">웰컴팝업 관리(wpop)</td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mgnt_wpop_001.html" target="_blank">mgnt_wpop_001.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mgnt_wpop_002.html" target="_blank">mgnt_wpop_002.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2">리포트 설정(rept)</td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mgnt_rept_001.html" target="_blank">mgnt_rept_001.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2">세무사무소 설정(taxof)</td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mgnt_taxof_001.html" target="_blank">mgnt_taxof_001.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2">사용자필드 설정(ufld)</td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mgnt_ufld_001.html" target="_blank">mgnt_ufld_001.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/mgnt_ufld_002.html" target="_blank">mgnt_ufld_002.html</a></td>
+                <td class="remark"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tabContentWrap">
+          <h2>실시간 정보수집센터(infoc)</h2>
+          <table>
+            <colgroup>
+              <col class="depth2" style="width: 15%">
+              <col class="depth3" style="width: 15%">
+              <col class="depth4" style="width: 15%">
+              <col class="depth5" style="width: 15%">
+              <col class="pId" style="width: 15%">
+              <col class="remark">
+            </colgroup>
+            <thead>
+              <tr>
+                <th class="depth2">2Depth</th>
+                <th class="depth3">3Depth</th>
+                <th class="depth4">4Depth</th>
+                <th class="depth5">5Depth</th>
+                <th class="pId">화면ID</th>
+                <th class="remark">비고</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="">
+                <td class="depth2">실시간정보수집현황(rinfo)</td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/infoc_rinfo_001.html" target="_blank">infoc_rinfo_001.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/infoc_rinfo_002.html" target="_blank">infoc_rinfo_002.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/infoc_rinfo_003.html" target="_blank">infoc_rinfo_003.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/infoc_rinfo_004.html" target="_blank">infoc_rinfo_004.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/infoc_rinfo_005.html" target="_blank">infoc_rinfo_005.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/infoc_rinfo_005_1.html" target="_blank">infoc_rinfo_005_1.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/infoc_rinfo_006.html" target="_blank">infoc_rinfo_006.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/infoc_rinfo_007.html" target="_blank">infoc_rinfo_007.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/infoc_rinfo_007_1.html" target="_blank">infoc_rinfo_007_1.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/infoc_rinfo_009.html" target="_blank">infoc_rinfo_009.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/infoc_rinfo_010.html" target="_blank">infoc_rinfo_010.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/infoc_rinfo_011.html" target="_blank">infoc_rinfo_011.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/infoc_rinfo_012.html" target="_blank">infoc_rinfo_012.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/infoc_rinfo_013.html" target="_blank">infoc_rinfo_013.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2">환경설정(rcert)</td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/infoc_rcert_001.html" target="_blank">infoc_rcert_001.html</a></td>
+                <td class="remark"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tabContentWrap">
+          <h2>알림(notic)</h2>
+          <table>
+            <colgroup>
+              <col class="depth2" style="width: 15%">
+              <col class="depth3" style="width: 15%">
+              <col class="depth4" style="width: 15%">
+              <col class="depth5" style="width: 15%">
+              <col class="pId" style="width: 15%">
+              <col class="remark">
+            </colgroup>
+            <thead>
+              <tr>
+                <th class="depth2">2Depth</th>
+                <th class="depth3">3Depth</th>
+                <th class="depth4">4Depth</th>
+                <th class="depth5">5Depth</th>
+                <th class="pId">화면ID</th>
+                <th class="remark">비고</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="">
+                <td class="depth2">알림 목록조회(list)</td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/notic_list_001.html" target="_blank">notic_list_001.html</a></td>
+                <td class="remark"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tabContentWrap">
+          <h2>미납(stop)</h2>
+          <table>
+            <colgroup>
+              <col class="depth2" style="width: 15%">
+              <col class="depth3" style="width: 15%">
+              <col class="depth4" style="width: 15%">
+              <col class="depth5" style="width: 15%">
+              <col class="pId" style="width: 15%">
+              <col class="remark">
+            </colgroup>
+            <thead>
+              <tr>
+                <th class="depth2">2Depth</th>
+                <th class="depth3">3Depth</th>
+                <th class="depth4">4Depth</th>
+                <th class="depth5">5Depth</th>
+                <th class="pId">화면ID</th>
+                <th class="remark">비고</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="">
+                <td class="depth2">ovdu</td>
+                <td class="depth3">미납시 정지 화면</td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/stop_ovdu_001.html" target="_blank">stop_ovdu_001.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3">시스템 점검중 화면</td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/stop_ovdu_002.html" target="_blank">stop_ovdu_002.html</a></td>
+                <td class="remark"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="tabContentWrap">
+          <h2>admn</h2>
+          <table>
+            <colgroup>
+              <col class="depth2" style="width: 15%">
+              <col class="depth3" style="width: 15%">
+              <col class="depth4" style="width: 15%">
+              <col class="depth5" style="width: 15%">
+              <col class="pId" style="width: 15%">
+              <col class="remark">
+            </colgroup>
+            <thead>
+              <tr>
+                <th class="depth2">2Depth</th>
+                <th class="depth3">3Depth</th>
+                <th class="depth4">4Depth</th>
+                <th class="depth5">5Depth</th>
+                <th class="pId">화면ID</th>
+                <th class="remark">비고</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="">
+                <td class="depth2">noti</td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/admn_noti_001.html" target="_blank">admn_noti_001.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/admn_noti_002.html" target="_blank">admn_noti_002.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/admn_noti_p02.html" target="_blank">admn_noti_p02.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2">prom</td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/admn_prom_001.html" target="_blank">admn_prom_001.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/admn_prom_001_1.html" target="_blank">admn_prom_001_1.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2"></td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/admn_prom_002.html" target="_blank">admn_prom_002.html</a></td>
+                <td class="remark"></td>
+              </tr>
+              <tr class="">
+                <td class="depth2">txac</td>
+                <td class="depth3"></td>
+                <td class="depth4"></td>
+                <td class="depth5"></td>
+                <td class="pId"><a href="proto/admn_txac_001.html" target="_blank">admn_txac_001.html</a></td>
+                <td class="remark"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!-- //content -->
+
+      <!-- 하단 플로팅버튼 -->
+      <div class="areaFloatingBtn btnTop">
+        <a href="javascript:;" role="button">
+          <img src="worklist/img/ico_ts_up.png" width="9px">
+          <p>TOP</p>
+        </a>
+      </div>
+      <!-- //하단 플로팅버튼 -->
+    </div>
+    <!-- //container -->
+  </div>
+  <!-- //wrapper -->
+
+  <script>
+    $(function () {
+      $(".tabContentWrap").attr('data-choice', 'Y');
+
+      // 탭메뉴 active
+      $(".tabMenuList li").click(function () {
+        $(this).addClass("active").siblings().removeClass("active");
+        handleTabClick($(this).index());
+      });
+
+      // 탭메뉴 쇼/하이드
+      // $(".tabMenuList li").each(function (index) {
+      //   $(".tabMenuList li").eq(index).click(function () {
+      //     $(".tabContentWrap").eq(index - 1).show().siblings().hide();
+
+      //     if (index == 0) {
+      //       $(".tabContentWrap").show();
+      //     }
+      //   });
+      // });
+
+      // 탑버튼 쇼/하이드
+      $(window).scroll(function () {
+        if ($(this).scrollTop() > 30) {
+          $("body").addClass("active");
+        } else {
+          $("body").removeClass("active");
+        }
+      });
+
+      // 탑버튼
+      $('.areaFloatingBtn.btnTop a').on('click', function () {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+
+      $(".pId a").hover(
+          function() {
+              var url = $(this).attr("href");
+              $("body").append('<div id="preview"><iframe src="' + url + '" frameBorder="0"></iframe></div>');
+          },
+          function() {
+              $("#preview").remove();
+          }
+      );
+
+      $("#searchInput").on("input", handleSearchResults);
+
+      // 초기에 한 번 호출하고, 화면 크기가 변경될 때마다 다시 호출
+      updateScale();
+      $(window).hover(updateScale);
+    })
+
+    // 화면 크기에 따라 scale 값을 계산하고 설정
+    function updateScale() {
+      var screenWidth = $(window).width();
+      var screenHeight = $(window).height();
+
+      // 여기에서 원하는 화면 비율에 따라 scale 값을 계산합니다.
+      var scale = Math.min(screenWidth / 1920) /1.3;
+      console.log(scale)
+      if (scale > 1) {
+        scale = 1;
+      }
+      $('#preview').css('transform', 'scale(' + scale + ')');
+    }
+
+    function handleTabClick(index) {
+      $(".tabContentWrap").eq(index-1).show().siblings(".tabContentWrap").hide();
+      $(".tabContentWrap").eq(index-1).attr('data-choice', 'Y').siblings(".tabContentWrap").attr('data-choice', 'N');
+
+      if (index === 0) {
+          $(".tabContentWrap").attr('data-choice', 'Y');
+          $(".tabContentWrap").show();
+      }
+
+      handleSearchResults();
+    }
+
+    function handleSearchResults() {
+      var searchValue = $("#searchInput").val().toLowerCase();
+      var tables = $(".tabContentWrap[data-choice=Y]");
+      var noResultsMessage = $("#noResultsMsg");
+
+      // 모든 테이블 숨김
+      tables.hide();
+      // 검색 결과 메시지 숨김
+      noResultsMessage.hide();
+
+      // 각 테이블에 대해 검색 결과 확인
+      tables.each(function() {
+        var table = $(this);
+        var tableRows = table.find("tbody tr");
+
+        // 각 행을 반복하여 검색어와 일치하는 행을 보여주거나 숨깁니다.
+        var anyRowsVisible = false;
+        tableRows.each(function () {
+          var rowText = $(this).text().toLowerCase();
+          if (rowText.includes(searchValue)) {
+            $(this).show();
+            anyRowsVisible = true;
+          } else {
+            $(this).hide();
+          }
+        });
+
+        // 검색 결과가 있는 경우 해당 테이블을 표시
+        if (anyRowsVisible) {
+          table.show();
+        }
+      });
+
+      // 검색 결과가 없으면 메시지를 표시
+      if (!tables.is(":visible")) {
+        noResultsMessage.show();
+      }
+    }
+  </script>
+</body>
+
+</html>

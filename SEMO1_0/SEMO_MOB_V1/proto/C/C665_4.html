@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../css/semo_cont.css">
+    <title>SEMO</title>
+</head>
+
+<body>
+    <div class="new_content">
+        <div class="cont_bg gray">
+            <!-- 상단 타이틀 -->
+            <!-- <div class="title">급여작성</div> -->
+            <!-- //상단 타이틀 -->
+            <div class="popup_bg alert"style="display:none;" >
+                <div class="popup_content" style="width: 80%; padding-top: 26px;">
+                    <div class="popup_title">
+                        <span style="flex-direction: unset; align-items: center; ">
+                            <b>
+                                지급항목 추가
+                            </b>
+                        </span>
+                        <em class="popup_subtitle">
+                            급여대장에 등록된 지급항목을 <br>
+                            아래 항목에서 선택해주세요.
+                        </em>
+                    </div>
+                    <div class="popup_list payment">
+                        <div class="popup_list_wrap">
+                            <span>
+                                <div>
+                                    <input type="checkbox" name="em" id="list_1">
+                                    <label for="list_1">월급여</label>
+
+                                </div>
+                            </span>
+                            <span>
+                                <div>
+                                    <input type="checkbox" name="em" id="list_2">
+                                    <label for="list_2">성과급</label>
+                                </div>
+                            </span>
+                            <span>
+                                <div>
+                                    <input type="checkbox" name="em" id="list_3">
+                                    <label for="list_3">식대</label>
+
+                                </div>
+                            </span>
+                            <span>
+                                <div>
+                                    <input type="checkbox" name="em" id="list_4">
+                                    <label for="list_4">차량유지비</label>
+                                    <i class="ico_cen"></i>
+                                </div>
+                            </span>
+                            <span>
+                                <div>
+                                    <input type="input" name="em" id="list_5" placeholder="직접입력">
+                                    <i class="ico_cen"></i>
+                                </div>
+                            </span>
+                            <span>
+                                <div>
+                                    <input type="checkbox" name="em" id="list_5">
+                                    <label for="list_5">육아수당
+                                        <i class="ico_cen del"></i>
+                                    </label>
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="btm_button">
+                        <span>닫기</span>
+                        <span class="bgc_green">확인</span>
+                        <!--클래스 bgc_green 배경색-->
+                    </div>
+                </div>
+            </div>
+            <div class="popup_bg alert" style="display: none;" >
+                <div class="popup_content" style="width: 80%; padding-top: 26px;">
+                    <div class="popup_title">
+                        <span style="flex-direction: unset; align-items: center; ">
+                            <b>
+                                공제항목 추가
+                            </b>
+                        </span>
+                        <em class="popup_subtitle">
+                            급여대장에 등록된 공제항목을 <br>
+                            아래 항목에서 선택해주세요.
+                        </em>
+                    </div>
+                    <div class="popup_list deduction">
+                        <div class="popup_list_wrap">
+                            <span>
+                                <div>
+                                    <input type="checkbox" name="em" id="list_1">
+                                    <label for="list_1">장기요양보험</label>
+
+                                </div>
+                            </span>
+                            <span>
+                                <div>
+                                    <input type="checkbox" name="em" id="list_2">
+                                    <label for="list_2">소득세</label>
+                                </div>
+                            </span>
+                            <span>
+                                <div>
+                                    <input type="checkbox" name="em" id="list_3">
+                                    <label for="list_3">지방소득세</label>
+
+                                </div>
+                            </span>
+                            <span>
+                                <div>
+                                    <input type="checkbox" name="em" id="list_4">
+                                    <label for="list_4">국민연금정산</label>
+                                    <i class="ico_cen"></i>
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="btm_button">
+                        <span>닫기</span>
+                        <span class="bgc_green">확인</span>
+                        <!--클래스 bgc_green 배경색-->
+                    </div>
+                </div>
+            </div>
+            <!-- C665 - 4.html -->
+            <div class="wrap salary">
+                <div class="salary_wrapper self">
+                    <div class="salary_write_em">
+                        <div class="salray_write_con">
+                            <div class="salary_write_em_name">
+                                <b>김세모</b>
+                            </div>
+                            <div class="salary_pay_total">
+                                <b>합계</b>
+                                <b>148,500원</b>
+                            </div>
+                            <div class="salary_pay_object">
+                                <span>
+                                    <p>지급항목</p>
+                                    <b>+ 지급항목 추가</b>
+                                </span>
+                                <div class="salary_pay_cell">
+                                    <span>
+                                        <p>월급여</p>
+                                        <div>
+                                            <div class="salary_input_wrap">
+                                                <input type="text">
+                                                <p>원</p>
+                                            </div>
+                                            <i class="ico_cen"></i>
+                                        </div>
+                                    </span>
+                                    <span>
+                                        <p>성과급</p>
+                                        <div>
+                                            <div class="salary_input_wrap">
+                                                <input type="text">
+                                                <p>원</p>
+                                            </div>
+                                            <i class="ico_cen"></i>
+                                        </div>
+                                    </span>
+                                    <span>
+                                        <p>식대</p>
+                                        <div>
+                                            <div class="salary_input_wrap">
+                                                <input type="text">
+                                                <p>원</p>
+                                            </div>
+                                            <i class="ico_cen"></i>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="salary_pay_object">
+                                <span>
+                                    <p>공제항목</p>
+                                    <b>+ 공제항목 추가</b>
+                                </span>
+                                <div class="salary_pay_cell">
+                                    <span>
+                                        <p>국민연금</p>
+                                        <div>
+                                            <div class="salary_input_wrap">
+                                                <input type="text">
+                                                <p>원</p>
+                                            </div>
+                                            <i class="ico_cen"></i>
+                                        </div>
+                                    </span>
+                                    <span>
+                                        <p>건강보험</p>
+                                        <div>
+                                            <div class="salary_input_wrap">
+                                                <input type="text">
+                                                <p>원</p>
+                                            </div>
+                                            <i class="ico_cen"></i>
+                                        </div>
+                                    </span>
+                                    <span>
+                                        <p>고용보험</p>
+                                        <div>
+                                            <div class="salary_input_wrap">
+                                                <input type="text">
+                                                <p>원</p>
+                                            </div>
+                                            <i class="ico_cen"></i>
+                                        </div>
+                                    </span>
+                                    <span>
+                                        <p>장기요양보험료</p>
+                                        <div>
+                                            <div class="salary_input_wrap">
+                                                <input type="text">
+                                                <p>원</p>
+                                            </div>
+                                            <i class="ico_cen"></i>
+                                        </div>
+                                    </span>
+                                    <span>
+                                        <p>소득세</p>
+                                        <div>
+                                            <div class="salary_input_wrap">
+                                                <input type="text">
+                                                <p>원</p>
+                                            </div>
+                                            <i class="ico_cen"></i>
+                                        </div>
+                                    </span>
+                                    <span>
+                                        <p>지방소득세</p>
+                                        <div>
+                                            <div class="salary_input_wrap">
+                                                <input type="text">
+                                                <p>원</p>
+                                            </div>
+                                            <i class="ico_cen"></i>
+                                        </div>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="btm_button">
+                    <span class="bgc_green">저장하기</span>
+                </div>
+            </div>
+            <!-- C665 - 6.html -->
+            <div class="wrap salary">
+                <div class="salary_wrapper self">
+                    <div class="salary_write_em">
+                        <div class="salray_write_con">
+                            <div class="salary_write_em_name">
+                                <b>김세모</b>
+                            </div>
+                            <div class="salary_pay_total">
+                                <b>합계</b>
+                                <b>148,500원</b>
+                            </div>
+                            <div class="salary_pay_object">
+                                <span>
+                                    <p>지급항목</p>
+                                    <b>+ 지급항목 추가</b>
+                                </span>
+                                <div class="salary_pay_cell">
+                                    <span>
+                                        <p>월급여</p>
+                                        <div>
+                                            <div class="salary_input_wrap">
+                                                <input type="text">
+                                                <p>원</p>
+                                            </div>
+                                            <i class="ico_cen"></i>
+                                        </div>
+                                    </span>
+                                    <span>
+                                        <p>성과급</p>
+                                        <div>
+                                            <div class="salary_input_wrap">
+                                                <input type="text">
+                                                <p>원</p>
+                                            </div>
+                                            <i class="ico_cen"></i>
+                                        </div>
+                                    </span>
+                                    <span>
+                                        <p>식대</p>
+                                        <div>
+                                            <div class="salary_input_wrap">
+                                                <input type="text">
+                                                <p>원</p>
+                                            </div>
+                                            <i class="ico_cen"></i>
+                                        </div>
+                                    </span>
+                                    <span>
+                                        <p>차량유지비</p>
+                                        <div>
+                                            <div class="salary_input_wrap">
+                                                <input type="text">
+                                                <p>원</p>
+                                            </div>
+                                            <i class="ico_cen"></i>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="salary_pay_object">
+                                <span>
+                                    <p>공제항목</p>
+                                    <b>+ 공제항목 추가</b>
+                                </span>
+                                <div class="salary_pay_cell">
+                                    <span>
+                                        <p>국민연금</p>
+                                        <div>
+                                            <div class="salary_input_wrap">
+                                                <input type="text">
+                                                <p>원</p>
+                                            </div>
+                                            <i class="ico_cen"></i>
+                                        </div>
+                                    </span>
+                                    <span>
+                                        <p>건강보험</p>
+                                        <div>
+                                            <div class="salary_input_wrap">
+                                                <input type="text">
+                                                <p>원</p>
+                                            </div>
+                                            <i class="ico_cen"></i>
+                                        </div>
+                                    </span>
+                                    <span>
+                                        <p>고용보험</p>
+                                        <div>
+                                            <div class="salary_input_wrap">
+                                                <input type="text">
+                                                <p>원</p>
+                                            </div>
+                                            <i class="ico_cen"></i>
+                                        </div>
+                                    </span>
+                                    <span>
+                                        <p>장기요양보험료</p>
+                                        <div>
+                                            <div class="salary_input_wrap">
+                                                <input type="text">
+                                                <p>원</p>
+                                            </div>
+                                            <i class="ico_cen"></i>
+                                        </div>
+                                    </span>
+                                    <span>
+                                        <p>소득세</p>
+                                        <div>
+                                            <div class="salary_input_wrap">
+                                                <input type="text">
+                                                <p>원</p>
+                                            </div>
+                                            <i class="ico_cen"></i>
+                                        </div>
+                                    </span>
+                                    <span>
+                                        <p>지방소득세</p>
+                                        <div>
+                                            <div class="salary_input_wrap">
+                                                <input type="text">
+                                                <p>원</p>
+                                            </div>
+                                            <i class="ico_cen"></i>
+                                        </div>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="btm_button">
+                    <span class="bgc_green">저장하기</span>
+                </div>
+            </div>
+            <!-- C665 - 7.html -->
+            <div class="wrap salary">
+                <div class="salary_wrapper self">
+                    <div class="salary_write_em">
+                        <div class="salray_write_con">
+                            <div class="salary_write_em_name">
+                                <b>김세모</b>
+                            </div>
+                            <div class="salary_pay_total">
+                                <b>합계</b>
+                                <b>148,500원</b>
+                            </div>
+                            <div class="salary_pay_object">
+                                <span>
+                                    <p>지급항목</p>
+                                    <b>+ 지급항목 추가</b>
+                                </span>
+                                <div class="salary_pay_cell">
+                                    <span>
+                                        <p>월급여</p>
+                                        <div>
+                                            <div class="salary_input_wrap">
+                                                <input type="text">
+                                                <p>원</p>
+                                            </div>
+                                            <i class="ico_cen"></i>
+                                        </div>
+                                    </span>
+                                    <span>
+                                        <p>성과급</p>
+                                        <div>
+                                            <div class="salary_input_wrap">
+                                                <input type="text">
+                                                <p>원</p>
+                                            </div>
+                                            <i class="ico_cen"></i>
+                                        </div>
+                                    </span>
+                                    <span>
+                                        <p>식대</p>
+                                        <div>
+                                            <div class="salary_input_wrap">
+                                                <input type="text">
+                                                <p>원</p>
+                                            </div>
+                                            <i class="ico_cen"></i>
+                                        </div>
+                                    </span>
+                                    <span>
+                                        <p>차량유지비</p>
+                                        <div>
+                                            <div class="salary_input_wrap">
+                                                <input type="text">
+                                                <p>원</p>
+                                            </div>
+                                            <i class="ico_cen"></i>
+                                        </div>
+                                    </span>
+                                    <span>
+                                        <p>차량유지비</p>
+                                        <div>
+                                            <div class="salary_input_wrap">
+                                                <input type="text">
+                                                <p>원</p>
+                                            </div>
+                                            <i class="ico_cen"></i>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="salary_pay_object">
+                                <span>
+                                    <p>공제항목</p>
+                                    <b>+ 공제항목 추가</b>
+                                </span>
+                                <div class="salary_pay_cell">
+                                    <span>
+                                        <p>국민연금</p>
+                                        <div>
+                                            <div class="salary_input_wrap">
+                                                <input type="text">
+                                                <p>원</p>
+                                            </div>
+                                            <i class="ico_cen"></i>
+                                        </div>
+                                    </span>
+                                    <span>
+                                        <p>건강보험</p>
+                                        <div>
+                                            <div class="salary_input_wrap">
+                                                <input type="text">
+                                                <p>원</p>
+                                            </div>
+                                            <i class="ico_cen"></i>
+                                        </div>
+                                    </span>
+                                    <span>
+                                        <p>고용보험</p>
+                                        <div>
+                                            <div class="salary_input_wrap">
+                                                <input type="text">
+                                                <p>원</p>
+                                            </div>
+                                            <i class="ico_cen"></i>
+                                        </div>
+                                    </span>
+                                    <span>
+                                        <p>장기요양보험료</p>
+                                        <div>
+                                            <div class="salary_input_wrap">
+                                                <input type="text">
+                                                <p>원</p>
+                                            </div>
+                                            <i class="ico_cen"></i>
+                                        </div>
+                                    </span>
+                                    <span>
+                                        <p>소득세</p>
+                                        <div>
+                                            <div class="salary_input_wrap">
+                                                <input type="text">
+                                                <p>원</p>
+                                            </div>
+                                            <i class="ico_cen"></i>
+                                        </div>
+                                    </span>
+                                    <span>
+                                        <p>지방소득세</p>
+                                        <div>
+                                            <div class="salary_input_wrap">
+                                                <input type="text">
+                                                <p>원</p>
+                                            </div>
+                                            <i class="ico_cen"></i>
+                                        </div>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+         
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>

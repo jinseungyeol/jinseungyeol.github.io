@@ -1,0 +1,431 @@
+=========html=========
+MG146.html
+
+
+
+=========css=========
+css 폴더
+수정 되었습니다.
+덮어쓰기 해주세요. 
+
+=========img=========
+img 폴더
+수정 되었습니다.
+덮어쓰기 해주세요. 
+
+
+
+
+SEMO_000 세모장부
+SEMO_003 i-ONE소상공인
+SEMO_011 NH소상공인파트너
+SEMO_601 사장님 장부비서(가칭)
+
+PROD_CD
+
+===========2021-09-24===========
+1. 메인 알릶팝업 컬러 재수정 및 세모 제외 css 전달
+
+
+레파지토리 생성
+생성생성
+
+===========2021-09-29===========
+1. 설정 탭 알림설정 추가
+
+2. 간편송금 세모주치의 계정 이용 ㄴㄴ 화면 추가
+
+===========2021-09-30===========
+
+1. 다중사업장 홍보 팝업
+
+2. B250_pop.html  사업장 재인증 팝업 여백 조정
+2. B250_1_pop.html 팝업 추가
+
+
+===========2021-10-01===========
+1. A211.html 화면 수정
+2. KB000.html 메인 다중사업장 팝업 제작 
+
+
+===========2021-10-05===========
+1. 다중사업장 css 분기처리
+B250_pop
+B257_4_2
+OC000.html 아이원 말풍선 아이콘 넣기
+
+
+2. 나의 고객관리 수정
+- 꺾쇠 > display :none !important;
+즐겨찾기 0건일때???
+
+
+===========2021-10-06===========
+
+1. css적용, img2건 수정
+
+
+사업장 등록화면 round_top클래스 넣어주시오
+
+팝업 버튼 수정하기
+
+사업장 재인증 비활성화 없애기
+
+사업장알림 팝업 링크 연결 x
+
+===========2021-10-12===========
+
+자영업자 체인지업 페이지 번호
+
+○ 대출 - 상품선택 화면
+OC0000_4.html 체인지업, 진행아이콘 필요
+
+○ 상품선택 화면 - 자영업자 체인지업
+
+OC006.html 진행 아이콘
+
+○ 자영업자 체인지업 - 신청하기
+
+OB610.html (체크리스트)
+OB610_1.html (정보입력)
+OB610_2.html (최종확인)
+------------------------
+OB611_4.html (오류화면)
+OB610_1_2.html (신청완료)
+
+
+○ 자영업자 체인지업 - 진행현황
+OC006_1.html
+
+
+○ 자영업자 체인지업 - 심사결과 확인
+
+OB611.html (심사결과 확인)
+OB611_1.html (정보동의)
+OB611_2.html (정보확인)
+------------------------
+OB611_3.html (약정 완료)
+OB611_4.html (오류 화면)
+
+
+
+신청하기 – 진행현황 보기
+
+OC006_1.html
+
+자영업자 체인지업 신청 완료
+OB610_1_2.html
+
+신청하기 – 진행현황 보기
+OB611_3.html - 약정완료 화면
+OB611_4.html - 오류
+
+
+
+서비스결제관리--------------------------
+
+G219_1.html
+A501_1_pop
+A500.html
+A501.html
+
+
+
+========================10.25==============================
+
+다중사업장 전환하기 팝업 컬러 분기처리 (완료)
+
+
+
+===============2021-10-28==================
+
+자영업자 체인지업
+
+OC000_4.html
+OB610_1_1.html 
+OB610_1.html >> ing
+OB610_1_1.html - 2. 정보입력
+OB610_3.html - 체인지업 신청완료
+OB611_4.html - 오류 >> ing
+
+OC006_6.html 자영업자 체인지업 신청이 불가합니다.
+OB611.html 1. 심사결과 확인
+OB611_1.html 2. 정보동의
+OB611_2.html 3. 정보확인
+
+
+
+
+
+
+
+
+
+OC000_4.html
+OC0006.html
+OB610.html
+OB610_1.html
+OB610_1_1.html
+OB610_2.html
+OB610_3.html
+OB610_4.html
+
+
+OC006_1.html
+OC006_2.html
+OC006_3.html
+OC006_4.html
+OC006_5.html
+
+
+OC006_6.html
+OB611.html
+OB611_1.html
+OB611_1_1.html
+OB611_1_2.html
+
+OB611_2.html
+OB611_3.html
+OB611_4.html
+
+
+
+
+===============2021-11-02==================
+
+설문조사 배너
+
+0C000.html - IBK 배너 수정 (ibk css 수정)
+F000_new.html - KT 배너 수정 (kt css 수정)
+              - SEMO/NH 배너 수정 (semo,nh css 수정)
+
+
+
+===============2021-11-04==================
+
+C511_1_pop.html - 토스트 팝업 html, css 수정
+
+
+
+===============2021-11-05==================
+
+
+OB610_1.html 정보입력 체크박스
+OB610_1_1.html 정보입력 체크박스 
+
+
+OB610.html 체크리스트에 "총대출금액" 부분만 줄바꿈 생김 
+           - .nowrap 이라는 클래스 만들어 white-sapce: nowrap; 을 줌 
+
+
+input label 짝 관련은 C786.html 참고           
+
+
+
+===============2021-11-08==================
+
+C500.html - 계좌증빙
+
+
+
+
+===============2021-11-09==================
+
+OB610.html - 자영업자 체인지업 체크리스트
+C710.html - 매출증빙
+
+.pay_normal - display: flex; justify-content: flex-start;
+
+
+===============2021-11-10==================
+
+OB610_2.html -  최종확인 테이블 수정
+OB610_1_1.html -  정보입력 수정
+
+
+===============2021-11-11==================
+
+
+v2 - C642.html input:valid 참고
+v2 - C922.html 팝업 참고
+
+
+프리미엄 글자 
+그 밑에 작은 글씨들 1px up
+회색박스 패딩 좌우 17px  - A500.html 수정
+
+C642.html
+
+
+===============2021-11-12==================
+
+
+oc006_1.html - 진행현황
+ob611_3.html - 약정완료
+
+===============2021-11-15==================
+
+
+f000_new.html - 더보기 배너 원복
+
+KA112_3_pop.html - 팝업 레이아웃 참고
+
+
+
+
+===============2021-11-17==================
+
+
+OG280.html 관련
+.section_content.input_account.active .section_select_bank > label::after {display: none;} 추가
+.section_content input[id=text5]:valid + label.essential::after{content: none;} 추가
+
+
+ob610_2.html
+
+F191-1.html --- tft 홈택스 팝업 
+
+/* .payment_choose{display: flex; gap: 12px; margin-top: 42px;}
+.payment_choose_cell{display: flex; flex-direction: column; flex: 1.8; justify-content: center; align-items: center; padding: 22px 0; background-color: #ffffff; border-radius: 15px; box-shadow: 0 3px 15px 0 rgba(0, 0, 0, 0.16); position: relative;}
+.payment_choose_cell > p{font-weight: 700; color: #000000; font-size: 20px; padding-bottom: 15px;}
+.payment_choose_cell > p:nth-child(2){padding-top: 15px; padding-bottom: 0;}
+.payment_choose_cell > p:nth-child(2)::before{content: ""; height: 1px; width: 70%; background-color: #7b7b7b; position: absolute; left: 50%; transform: translateX(-50%); top: 60px;}
+.payment_choose_cell > span{font-size: 12px; margin-top: 26px; color: #272727; font-weight: 500;}
+.payment_choose_cell.pay {padding-bottom: 0; background-color: transparent; box-shadow: none;}
+.payment_choose_cell.pay p {width: 100%; height: 8px;}
+.payment_choose_cell.pay span:nth-child(2) {margin-bottom: 5px;}
+.payment_choose_cell.pay span:nth-child(7) {margin-top: 23px;}
+.payment_choose_cell.preminum{background-color: #00b25e;}
+.payment_choose_cell.preminum p:nth-child(2)::before{content: ""; background-color: #ffffff;}
+.payment_choose_cell.preminum > p{color: #ffffff;}
+.payment_choose_cell.preminum > span{color: #ffffff;} */   - g219_1.html 원래 css
+
+<!-- <div class="payment_choose">
+                            <div class="payment_choose_cell pay">
+                                <p></p>
+                                <span>월요금</span>
+                                <span>보고서</span>
+                                <span>간편송금</span>
+                                <span>직원 · 급여</span>
+                                <span>근로계약서</span>
+                                <span>세무사와 <br>
+                                    정보연결</span>
+                            </div>
+                            <div class="payment_choose_cell free">
+                                <p>무료</p>
+                                <p>0원</p>
+                                <span>아침보고서</span>
+                                <span>5회 무료</span>
+                                <span>1인</span>
+                                <span>최초 1회 무료</span>
+                                <span>-</span>
+                            </div>
+                            <div class="payment_choose_cell preminum">
+                                <p>프리미엄</p>
+                                <p>4,950원</p>
+                                <span>프리미엄보고서</span>
+                                <span>10회 무료</span>
+                                <span>무제한</span>
+                                <span>최초 10회 무료</span>
+                                <span>무제한</span>
+                            </div>
+                        </div> -->                                - g219_1.html 원래 html
+
+
+
+
+
+------------ 11월 19일 ---------------
+
+OC006_pop.html - 신청내역 팝업
+
+
+
+------------ 11월 22일 ---------------
+
+- 세모장부 
+
+< A >
+A120 팝업 
+A121 비밀번호 재설정
+A122 팝업 (A120 과 동일한 레이아웃)
+A125 ~ A128 지문설정
+A129 지문설정 팝업 (A120 과 버튼만 다른 레이아웃)
+A135, A136 사업자번호 팝업 (A120 과 동일한 레이아웃)
+A137, A138 회원가입 휴대폰번호입력 
+A143 절세준비완료 
+A161 통신사 이용약관
+A162 ~ A164 본인확인 서비스 동의 (A161 과 레이아웃 비슷)
+A201, A202 회원가입 약관동의
+A203 ~ A205 회원가입 사업자번호 및 팝업 (A120 과 동일한 레이아웃)
+A207, A208 회원가입 휴대폰번호 ( A203 과 동일한 레이아웃)
+A211 인증서로 한번에 연결
+A216 인증서 등록완료
+A226, A227 계정 조회결과
+A228 아이디 비번 추가입력
+A231 계정조회 실패
+A251, A252, A258 ~ A260, A262,A263 체험기간 종료
+A255, A256 IBK 은행선택 토스트팝업
+A268 출금계좌등록완료
+A269 출금계좌등록실패
+A281 ~ A292 수수료 출금계좌 관리 ( A251 부분과 동일)
+A286 모든은행선택 토스트팝업
+A293 ~ A305 체험기간 종료 ( A251 파트와 거의 동일)
+
+< B >
+B213 세모장부 메인페이지
+
+
+
+------------ 11월 25일 ---------------
+
+
+my_stat_wrapper show   - display: none;
+my_num_wrap - display: none;
+
+
+
+------------ 12월 3일 ---------------
+
+A500.html 무료 프리미엄 카드
+A501_1_pop.html 무료 프리미엄 카드 슬라이드
+G219_1.html 무료회원 사장님이 누리면 좋은
+
+
+------------ 12월 7일 ---------------
+
+C6004.html 
+NM000.html - NH 전용몰 ( 별도 관리 )
+NM001.html
+F000_new.html 
+
+PC 인증서 등록 & 인증서 한번에 연결
+PR000.html
+PR001.html
+
+------------ 12월 14일 ---------------
+OC006 - change_table 삭제 후 application_table 클래스로 교체
+      - html 내부 style 먹임
+      - insurance_con_wrap 에 이미지 교체
+      - insurance_change_img_1 에 이미지 교체
+
+OC006_1 - loan_noti_box 클래스 상황별로 적용
+
+OB610 - change_text 클래스 텍스트 교체
+
+OB610_1 - 첫번째 change_text 클래스 텍스트 교체
+
+OB611_1 - change_text 클래스 텍스트 교체
+
+OB611_2 - 여신 거래 특별 약정서 추가
+        - change_text 클래스 텍스트 교체
+        - 신청정보확인 > 심사결과 확인 텍스트 교체
+
+
+------------ 12월 15일 ---------------
+PR001 - 계정연결 완료 (제휴사별 컬러 변경)
+PR000 - 등록안내 (빨간색 보더부분 이미지 교체 예정)
+      - search 클래스 제휴사별로 텍스트 교체
+
+
+      - certificate_ibk_02 이미지 파일 중앙안맞음

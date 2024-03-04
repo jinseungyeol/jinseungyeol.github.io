@@ -1,0 +1,166 @@
+@charset "utf-8"; 
+.yona{
+    display: flex;
+    gap: 30px;
+}
+.yona .bar01_wrap{
+    width: 100px;
+    height: 400px;
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+}
+.yona .bar01{
+    width: 100px;
+    height: 200px;
+    border-radius: 20px 20px 0 0;
+    background-color:#f39c12;
+    animation-name: bar01;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+    display: flex;
+    align-items:flex-start;
+}
+.yona .bar01_wrap .tooltip{
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.yona .bar01_wrap .tooltip p{
+    border-radius: 12px;
+    background-color: #f1c40f;
+    padding: 10px;
+    font-size: 12px;
+    color: #fff;
+
+}
+@keyframes bar01 {
+    0%{}
+    100%{
+        background-color: #c0392b;
+        height: 300px;
+    }
+}
+.bar02_wrap{
+    width: 100px;
+    height: 400px; 
+    display: flex;
+    align-items: flex-end;   
+    position: relative;
+}
+.bar02_bg{
+    display: flex;
+    align-items: flex-end;
+    width: 100px;;
+    height: 200px;
+    border-radius: 20px 20px 0 0;
+    background-color: #eee;
+    animation-name: ani01;
+    animation-delay: 0s;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-direction:normal;
+    animation-fill-mode: forwards;
+
+}
+.bar02{
+    
+    background-color: black;
+    height: 200px;
+    width: 100px;
+    border-radius: 20px 20px 0 0;
+    opacity: 0;
+    animation-name: ani02;
+    animation-delay: 2s;
+    animation-duration: 2s;
+    animation-direction: alternate;
+    animation-fill-mode:forwards;
+}
+
+@keyframes ani01{
+    50%{opacity: 0;}
+    100%{opacity: 1;}
+}
+@keyframes ani02{
+    0%{
+        opacity: 1; 
+        height: 200px;}
+    100%{
+        opacity: 1; 
+        height: 350px;}
+}
+
+.bar03_wrap{
+    width: 100px;
+    height: 400px;
+    position: relative;
+}
+.bar03_01{
+    position: absolute;
+    bottom: 0;
+    width: 100px;
+    height: 200px;
+    border-radius: 20px 20px 0 0;
+    background-color: yellow;
+    animation-name: ani03;
+    animation-delay: 1s;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-fill-mode:forwards;
+}
+.bar03_02{
+    position: absolute;
+    bottom:0;
+    width: 100px;
+    height: 200px;
+    opacity: 0;
+    border-radius: 20px 20px 0 0;
+    background-color: green;
+    animation-name: ani04;
+    animation-delay: 1s;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-fill-mode:forwards;
+
+}
+
+@keyframes ani03{
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes ani04{
+    100%{
+        opacity: 1;
+        height: 300px;
+    }
+}
+
+.bar04_wrap{
+    width: 200px;
+    height: 400px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.bar04{
+    width: 100px;
+    height: 150px;
+    border-radius: 20px 20px 0 0;
+    background-color: #ddd;
+    animation-name: ani05;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-fill-mode:forwards;
+}
+
+@keyframes ani05{
+    100%{
+        height: 250px;
+    }
+}

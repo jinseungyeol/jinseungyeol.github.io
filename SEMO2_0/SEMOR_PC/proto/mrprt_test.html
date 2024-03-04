@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<title>SC134</title>
+<link rel="stylesheet" href="../css/reset_taxp.css">
+<link rel="stylesheet" href="../css/app_header.css"><!-- [D] 세무대리인용 header -->
+<link rel="stylesheet" href="../css/content_taxp.css"><!-- [D] 세무대리인용 -->
+<link rel="stylesheet" href="../css/grid.css"><!-- [D] 세무대리인용 -->
+
+<!-- custom scrollbar plugin css -->
+<link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+  <script src="../js/lib/jquery/jquery-1.12.4.min.js"></script>
+<script src="../js/lib/plugin/chart-3.5.1.min.js"></script>
+<script src="../js/lib/jquery/jquery-ui-1.10.4.min.js"></script>
+<!-- custom scrollbar plugin -->
+<script src="../js/design/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../js/design/jquery.placeholder.min.js"></script>
+<script src="../js/lib/plugin/smart.popup.js"></script>
+<script src="../js/comm/common.js"></script>
+<script>
+$(function(){
+	// Invoke the plugin
+	$('input, textarea').placeholder({customClass:'my-placeholder'});
+});
+
+
+</script>
+
+</head>
+<body class="lnb_bg"><!-- [D] 메뉴영역(접기 : class="fold", 펼치기 : class="lnb_bg") -->
+
+<!-- 수임처 개선 -->
+<!-- header -->
+<div class="app_header rept">
+	<div class="app_header_inner">
+		<div class="ah_l">
+			<h1>세모리포트</h1>
+		</div>
+
+		<div class="ah_r">
+			<ul class="ah_menu mgt10">
+				<li>
+					<!-- 알림 있을때 new 클래스 -->
+					<span class="weTalk newAlarm">
+						<a href="#none" onclick="openChat('CHAT_LIST','')">We Talk
+							<!--span class="talk_conting_num"></span>  -->
+							<span class="talk_conting_num" style="display: none;">N</span>
+						</a>
+					</span>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<!-- //header -->
+<!-- //수임처 개선 -->
+
+<div class="wrap"><!-- [D] 상세검색일 경우(class="mh") -->
+	<!-- Container -->
+	<div class="container">
+		<div class="lnb_box">
+		
+			<!-- (modify)20220804 lnb_boxInn, mCustomScrollbar 추가 / 레이어 위치 이동 -->
+			<!-- lnb_boxInn -->
+			<div class="lnb_boxInn mCustomScrollbar _mCS_1 mCS_no_scrollbar">
+				<div id="mCSB_1" class="mCustomScrollBox mCS-light mCSB_vertical mCSB_inside" style="max-height: none;"
+					tabindex="0">
+					<div id="mCSB_1_container" class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y"
+						style="position:relative; top:0; left:0;" dir="ltr">
+						<!-- lnb top 추가 -->
+						<div class="lnb_top">
+							<!-- user view -->
+							<div class="user_view">
+								<div class="user_r_side">
+									<p class="icon_user"><strong>홍길동</strong> 님</p>
+									<a class="btn_set" title="환경설정"></a><!-- 2019-09-27 -->
+								</div>
+								<div class="select_wrap">
+									<div class="area_select">
+										<span>담당자</span>
+										<a class="entire" href="javascript:;">전체</a>
+		
+										<!-- 활성화 시 on 클래스 추가 -->
+										<ul class="select_box" style="z-index: 302;">
+											<li>
+												<a href="javascript:;">
+													<p>담당자 전체</p>
+													<span class="num">599</span>
+												</a>
+											</li>
+											<!-- 활성화 시 on 클래스 추가 -->
+											<li class="user_list on">
+												<a  href="javascript:;">
+													<p>박담당</p>
+													<span class="num">55</span>
+												</a>
+											</li>
+											<li class="user_list">
+												<a href="javascript:;">
+													<p>이담당</p>
+													<span class="num">55</span>
+												</a>
+											</li>
+											<li class="user_list">
+												<a href="javascript:;">
+													<p>김담당</p>
+													<span class="num">55</span>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="select_wrap">
+									<div class="area_select">
+										<span>사업자</span>
+										<div class="tabType01">
+											<ul class="cboth">
+												<!-- 활성화시 on 클래스 -->
+												<li class="on">
+													<a href="#none">전체</a>
+												</li>
+												<li>
+													<a href="#none">개인</a>
+												</li>
+												<li>
+													<a href="#none">기업</a>
+												</li>
+											</ul>
+											
+										</div>
+		
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- //lnb top 추가 -->
+		
+						<div class="alarm_wrap">
+							<!-- (add)20220804 -->
+							<div class="mygroupLst">
+								<dl id=""><!-- (modify)20220810 스타일 추가 -->
+									<dd class="on">
+										<div class="line first">
+											<a href="#none">
+												<span>
+													<img src="../../html/img/txof/ico/ico_userManage.png">
+													고객관리
+												</span>
+												<span class="badge2"><strong id="GRP">126</strong></span>
+											</a>
+										</div>
+									</dd>
+								</dl>
+								<ul>
+									<!-- 그룹 -->
+									<li class="on"><!-- 활성화클래스 on -->
+										<a href="#none" class="">
+											<img src="../../html/img/txof/ico/ico_reptManage.png">
+											리포트관리
+										</a>
+										<div class="mygroupCont">
+											<!-- 20180906 수정 -->
+											<dl class="mygroup" id="" style="display:;">
+												<!--<dt class="on"><a class="txt">그룹</a></dt>-->
+												<!-- 비활성 -->
+												<dd class="off">
+													<a href="#none">
+														<div class="line">리포트 발송</div>
+													</a>
+												</dd>
+												<dd class="off">
+													<a href="#none">
+														<div class="line">리포트 이력</div>
+													</a>
+												</dd>
+											</dl>
+											<!-- //20180906 수정 -->
+										</div>
+									</li>
+									<!-- //그룹 -->
+		
+								</ul>
+							</div>
+							<div class="mygroupLst">
+								<dl id="">
+									<dt class="menu">
+										<img src="../../html/img/txof/ico/ico_taxCafe.png">
+										세무지식
+									</dt>
+									<dd>
+										<div class="line first">세무지식 관리</div>
+									</dd>
+								</dl>
+							</div>
+							<div class="mygroupLst">
+								<ul>
+									<!-- 그룹 -->
+									<li class="on"><!-- 활성화클래스 on -->
+										<a href="#none" class="">
+											<img src="../../html/img/txof/ico/ico_set.png">
+											환경 설정
+										</a>
+										<div class="mygroupCont">
+											<!-- 20180906 수정 -->
+											<dl class="mygroup" id="" style="display:;">
+												<!--<dt class="on"><a class="txt">그룹</a></dt>-->
+												<!-- 비활성 -->
+												<dd class="off">
+													<a href="#none">
+														<div class="line">웰컴팝업 설정</div>
+													</a>
+												</dd>
+												<dd class="off">
+													<a href="#none">
+														<div class="line">리포트 설정</div>
+													</a>
+												</dd>
+												<dd class="off">
+													<a href="#none">
+														<div class="line">사용자필드 설정</div>
+													</a>
+												</dd>
+											</dl>
+											<!-- //20180906 수정 -->
+										</div>
+									</li>
+									<!-- //그룹 -->
+		
+								</ul>
+							</div>
+		
+						</div>
+					</div>
+					<div id="mCSB_1_scrollbar_vertical"
+						class="mCSB_scrollTools mCSB_1_scrollbar mCS-light mCSB_scrollTools_vertical" style="display: none;">
+						<div class="mCSB_draggerContainer">
+							<div id="mCSB_1_dragger_vertical" class="mCSB_dragger"
+								style="position: absolute; min-height: 30px; height: 0px; top: 0px;"
+								oncontextmenu="return false;">
+								<div class="mCSB_dragger_bar" style="line-height: 30px;"></div>
+							</div>
+							<div class="mCSB_draggerRail"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- //lnb_boxInn -->
+		
+		</div>
+		
+
+
+		<!-- content -->
+		<div class="content">
+
+			
+			<div class="content_wrap">
+				<div class="cust_dv_wrap nobd">
+					<div class="title_wrap h1type">
+						<div class="left">
+							<h1>리포트 발송</h1>
+						</div>
+					</div>
+					<div class="reportSendWrap">
+						<ul class="reportSendList">
+							<!-- 활성화시 active 클래스 -->
+							<li class="active rprt01">
+								<a href="javascript:;" role="button">
+									<strong>전체 보고서</strong>
+								</a>
+							</li>
+							<li class="rprt02">
+								<a href="javascript:;" role="button">
+									<strong>사업분석 보고서</strong>
+								</a>
+							</li>
+							<li class="rprt03">
+								<a href="javascript:;" role="button">
+									<strong>매출 보고서</strong>
+								</a>
+							</li>
+							<li class="rprt04">
+								<a href="javascript:;" role="button">
+									<strong>매입 보고서</strong>
+								</a>
+							</li>
+							<li class="rprt05">
+								<a href="javascript:;" role="button">
+									<strong>인건비 보고서</strong>
+								</a>
+							</li>
+							<li class="rprt06">
+								<a href="javascript:;" role="button">
+									<strong>예상부가세 보고서</strong>
+								</a>
+							</li>
+							<li class="rprt07 active">
+								<a href="javascript:;" role="button">
+									<strong>부가세 신고분석 보고서</strong>
+								</a>
+							</li>
+						</ul>
+						<div class="infoBox">
+							<p>
+								보고서는 매월 18일 자동으로 생성됩니다.<br>
+								원하시는 보고서를 선택해서 생성 및 발송현황을 볼 수 있습니다.
+							</p>
+						</div>
+					</div>
+				</div>
+
+					<div class="title_wrap h1type">
+						<div class="left">
+							<h1>리포트 현황</h1>
+						</div>
+
+						<div class="right">
+							<!-- 검색 -->
+							<div class="cntalign">
+								<div class="input_box">
+									<input type="text" value="" placeholder="검색어를 입력하세요" style="width:180px;"><a href="#none"><img
+											src="../img/txof/btn/btn_topsearch.gif" alt="조회"></a>
+								</div>
+							</div><!-- //검색 -->
+							<div class="cntalign"><a href="#none" class="icon" title="엑셀"><img src="../img/txof/btn/btn_excel.gif" alt="엑셀"></a>
+							</div>
+							<!-- //2022-10-17 위치 변경 및 보기설정 제거 -->
+						
+						</div>
+					</div>
+					<div class="chart_wrap">
+						<canvas id="mixedChart01" width="100px" height=""></canvas>
+					</div>
+				</div>
+				
+
+				
+				
+				
+			</div>
+		   <!-- //content_wrap -->
+			
+		</div>
+		<!-- //content -->
+		
+		
+		
+		
+
+	</div>
+	<!-- //Container -->
+
+
+
+
+	<!-- footer 추가 : 20180828 -->
+	<div class="footer">
+		<!-- Copy right -->
+		<div class="copyright_wrap">
+			<div class="copyright_box">
+				<p>Copyright(c) <strong>Webcash.</strong> All rights reserved.</p>
+			</div>
+			<div class="ft_menu"></div>
+		</div>
+		<!-- //Copy right -->
+	</div>
+	<!-- //footer -->
+</div>
+<!-- //wrap -->
+
+<script>
+	  	 // mix차트
+		   var mix1 = {
+                data: {
+                    datasets: [
+                        {
+                            id: 'rate',
+                            type: 'bar',
+                            data: [100, 0, 40, 50, 0],
+                            backgroundColor: ['#12997a', '#12997a', '#12997a', '#12997a', '#12997a'],
+                            borderRadius: 7,
+                            maxBarThickness: 25,
+                            minBarLength: 10
+                        },
+                        {
+                            id: 'total',
+                            type: 'line',
+                            data: [100, 0, 2100,20,50],
+                            borderRadius: 7,
+                            pointRadius: 0, //  line O 크기
+                            borderColor: 'red',
+                            hoverBackgroundColor: 'transparent'
+                        },
+                        {
+                            id: 'wait',
+                            type: 'line',
+                            data: [100, 2000,20,0, 10],
+                            borderRadius: 7,
+                            pointRadius: 0, //  line O 크기
+                            borderColor: 'transparent',
+                            hoverBackgroundColor: 'transparent'
+                        },
+                        {
+                            id: 'complete',
+                            type: 'line',
+                            data: [0, 100,20,0, 10],
+                            borderRadius: 7,
+                            pointRadius: 0, //  line O 크기
+                            borderColor: 'transparent',
+                            hoverBackgroundColor: 'transparent'
+                        }
+                    ],
+                    labels: [
+                        ['사업분석'],
+                        ['매출'],
+                        ['매입'],
+                        ['인건비'],
+                        ['예상부가세'],
+                    ]
+                },
+                options: {
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                title: function (context) {
+                                    for (let i=0; i < context.length; i++) {
+                                        return context[i].label.split(",")[0];
+                                    }
+                                },
+                                label: function (context) {
+                                    if (context.dataset.id == "rate") {
+                                        return `발송비율 : ${context.formattedValue}%`;
+                                    } else if (context.dataset.id == "total") {
+                                        return `전체 : ${context.formattedValue}건`;
+                                    } else if (context.dataset.id == "wait") {
+                                        return `대기 : ${context.formattedValue}건`;
+                                    } 
+									
+                                    else {
+                                        return `완료 : ${context.formattedValue}건`;
+                                    }
+                                },
+                            }
+                        },
+                        
+                    },
+                    scales: {
+                        x: {
+							display: true,
+                            grid: {
+                                display: true,
+                                drawBorder: true,
+                                beginAtZero: true,
+                            },
+                            ticks: {
+                                color: "#111",
+                                font: {
+                                    size: 13,
+                                    family: "Pretendard",
+                                }
+                            },
+							suggestedMax: 100 
+                        },
+                        y: {
+							display: true,
+                            grid: {
+								display: true,
+                                drawBorder: true
+                            },
+                            ticks: {display: true},
+                            suggestedMax: 100 //y축 최댓값
+                        }
+                    },
+                    interaction: {
+                        mode: 'index' //호버시 믹스차트 데이터 모두 보여줌
+                    },
+                }
+
+            }
+			var mixCtx1 = document.getElementById('mixedChart01').getContext('2d');
+			var mixChart1 = new Chart(mixCtx1, mix1);
+
+
+
+
+
+</script>
+</body>
+</html>
+

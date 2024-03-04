@@ -1,0 +1,37 @@
+@charset "utf-8"; /* CSS Document */
+
+
+/* @webfont */
+@font-face { font-family:'Pretendard'; src: url("/COMMON/font/Pretendard-Light.woff2") format("woff2"); font-weight: 300; } 
+@font-face { font-family:'Pretendard'; src: url("/COMMON/font/Pretendard-Regular.woff2") format("woff2"); font-weight: 400; } 
+@font-face { font-family:'Pretendard'; src: url("/COMMON/font/Pretendard-Medium.woff2") format("woff2"); font-weight: normal; } 
+@font-face { font-family:'Pretendard'; src: url("/COMMON/font/Pretendard-SemiBold.woff2") format("woff2"); font-weight: 600; } 
+@font-face { font-family:'Pretendard'; src: url("/COMMON/font/Pretendard-Bold.woff2"); font-weight: bold; }
+
+
+/* 공통 */
+html {position:relative;height:100%; scroll-behavior: auto}
+html,body {font-family:'Pretendard'; color:#111; font-weight:normal; -webkit-text-size-adjust:none;-moz-text-size-adjust:none; -ms-text-size-adjust:none; -webkit-tap-highlight-color:transparent; line-height: 1.5; font-size: 15px}
+html,body,div,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,address,cite,code,del,dfn,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,input,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video {margin:0; padding:0; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; -webkit-tap-highlight-color:transparent;-webkit-text-size-adjust:none; -webkit-touch-callout:none; -webkit-font-smoothing:antialiased; font-size: 100%; word-break: keep-all}
+body,button,h1,h2,h3,h4,h5,input,select,table,textarea {font-family:'Pretendard'; margin:0; padding:0}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,legend,select,input,textarea,p,blockquote,th,td,menu,button,a,span,strong,label,header,footer,section,article,aside,nav,hgroup,details,figure,figcaption {word-break:break-word; box-sizing:border-box;-moz-box-sizing:border-box; -webkit-box-sizing:border-box; -ms-box-sizing:border-box; word-break: keep-all} /* 여백을 포함한 사이즈 설정*/ 
+h1,h2,h3,h4,h5,h6,input,select,textarea,button,option {color:inherit; font-family:'Pretendard'; font-size:100%; font-weight:normal; word-break: keep-all}
+h1,h2,h3,h4,h5,h6,strong,b,th {font-weight:600}
+em,var,address,i {font-style:normal}
+ul,ol,li {list-style:none}
+legend,fieldset,button,img {border:0}
+img {max-width:100%; vertical-align:top}
+input,select,textarea,button,label,strong,a,time {vertical-align:inherit}
+input,select,textarea,button,option {font-family:inherit; font-weight:inherit}
+input,select,textarea {appearance:none; -webkit-appearance:none; border-radius: 0; border: none}
+input:focus, textarea:focus {outline-style: none; box-shadow: none; border: 0px}
+input[type="checkbox"] {width: 30px; height: 30px; border: 1px solid #ced4da; border-radius: 6px; cursor: pointer;}
+input[type="checkbox"]:checked {border: none; background: url(../img/ico_bg_check_square_on.png) center / contain;}
+textarea {resize:none; border: none}
+button,select,option {color:inherit; text-transform:none} 
+table {table-layout:fixed; width:100%; border-collapse:collapse; border-spacing:0} 
+button {background:none;cursor:pointer;white-space: nowrap;overflow:visible;}
+a {color:inherit; font-size: inherit; text-decoration:none}
+.swiper-button-prev:after, .swiper-rtl .swiper-button-next:after { display: none; } 
+
+.swiper-button-next:after, .swiper-rtl .swiper-button-prev:after { display: none; } 

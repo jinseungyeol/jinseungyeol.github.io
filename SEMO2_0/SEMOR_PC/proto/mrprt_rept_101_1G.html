@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<title>부가세신고 분석 보고서</title>
+<link rel="stylesheet" href="../css/w2ui_2.0.css">
+<link rel="stylesheet" href="../css/swiper-bundle.min.css">
+<link rel="stylesheet" href="../css/reset_taxp.css">
+<link rel="stylesheet" href="../css/app_header.css">
+<link rel="stylesheet" href="../css/content_taxp.css">
+<link rel="stylesheet" href="../css/semo_rept.css">
+<link rel="stylesheet" href="../css/w2ui-2.0.css">
+
+<!-- custom scrollbar plugin css -->
+<link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+  <script src="../js/lib/jquery/jquery-1.12.4.min.js"></script>
+<script src="../js/lib/jquery/jquery-ui-1.10.4.min.js"></script>
+<script src="../js/lib/swiper/swiper-bundle.min.js"></script>
+<!-- custom scrollbar plugin -->
+<script src="../js/lib/plugin/w2ui.js"></script>
+<script src="../js/design/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../js/design/jquery.placeholder.min.js"></script>
+<script src="../js/lib/plugin/smart.popup.js"></script>
+<script src="../js/comm/common.js"></script>
+<script>
+
+	$(function(){
+			// 상단 .user_name 핸들링
+		   $('.container_inner').scroll(function(){
+			   if($('.container_inner').scrollTop() > 30) {
+				   $('.rpt_smry_wrap').addClass('active');
+			   }
+			   else {
+				   $('.rpt_smry_wrap').removeClass('active');
+			   }   
+		   })
+
+		   $('.pop_wrap .info_title .left .title_btn').click(function () {
+                $('.rprt-radio_pop').show();
+            });  
+		   $('.rprt-radio_pop .btn_style1_b').click(function () {
+                $('.rprt-radio_pop ').hide();
+            });  
+
+			$('.rprt_tbl input[type="text"]').click(function () {
+                $(this).parents('tr').addClass("focused");
+            });  
+		 })
+
+
+</script>
+</head>
+  
+<body style="width: 1382px">
+	
+	<!-- 미리보기, 수정팝업 둘다 띄울때 showPop 클래스, 
+		미리보기 팝업만 띄울때 closePop 클래스 -->
+	<div class="pop_wrap confirmRept " >
+
+		<!-- 팝업 헤더 -->
+		<div class="pop_header">
+			<h1 style="position: relative;">23년 10월 매출매입 보고서 수정</h1>
+			<a href="#none" class="btn_popclose"><img src="../img/txof/btn/btn_popClose_white.gif" alt="팝업닫기"></a>
+		</div>
+		<!-- //팝업 헤더 -->
+		
+		<!-- 팝업 컨텐츠 -->
+		<div class="pop_container pd0" style="display: flex; height: 750px;">
+			<div class="leftTab">
+				<div class="input_box">
+					<input type="text" value="" placeholder="검색어를 입력하세요">
+					<a href="#none"><img src="../img/txof/btn/btn_topsearch.gif" alt="조회"></a>
+				</div>
+				<div class="reportListWrap">
+					<div class="areaTit">
+						<p class="count">거래처 35</p>
+						<div class="rCont">
+							<label><input type="checkbox"> 검토완료 제외</label>
+						</div>
+					</div>
+					<ul class="reportList">
+						<!-- 확인완료시 complete 클래스 추가 -->
+						<li class="">
+							<a href="javascript:;">
+								<div class="titArea">
+									<strong class="tit">로움아이티로움아이티</strong>
+									<span class="badge">검토완료</span>
+								</div>
+								<div class="cntArea">
+									<div class="infoStaff">
+										<span>123-45-67890</span>
+										<span>|</span>
+										<span>김세모</span>
+									</div>
+								</div>
+							</a>
+						</li>
+						<!-- 활성화시 active 클래스 추가 -->
+						<li class="active">
+							<a href="javascript:;">
+								<div class="titArea">
+									<strong class="tit">로움아이티</strong>
+									<span class="badge  color02">검토완료</span>
+								</div>
+								<div class="cntArea">
+									<div class="infoStaff">
+										<span>123-45-67890</span>
+										<span>|</span>
+										<span>김세모</span>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<div class="titArea">
+									<strong class="tit">로움아이티</strong>
+									<span class="badge  color02">검토완료</span>
+								</div>
+								<div class="cntArea">
+									<div class="infoStaff">
+										<span>123-45-67890</span>
+										<span>|</span>
+										<span>김세모</span>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<div class="titArea">
+									<strong class="tit">로움아이티</strong>
+									<span class="badge  color02">검토완료</span>
+								</div>
+								<div class="cntArea">
+									<div class="infoStaff">
+										<span>123-45-67890</span>
+										<span>|</span>
+										<span>김세모</span>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<div class="titArea">
+									<strong class="tit">로움아이티</strong>
+									<span class="badge  color02">검토완료</span>
+								</div>
+								<div class="cntArea">
+									<div class="infoStaff">
+										<span>123-45-67890</span>
+										<span>|</span>
+										<span>김세모</span>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<div class="titArea">
+									<strong class="tit">로움아이티</strong>
+									<span class="badge  color02">검토완료</span>
+								</div>
+								<div class="cntArea">
+									<div class="infoStaff">
+										<span>123-45-67890</span>
+										<span>|</span>
+										<span>김세모</span>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<div class="titArea">
+									<strong class="tit">로움아이티</strong>
+									<span class="badge  color02">검토완료</span>
+								</div>
+								<div class="cntArea">
+									<div class="infoStaff">
+										<span>123-45-67890</span>
+										<span>|</span>
+										<span>김세모</span>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<div class="titArea">
+									<strong class="tit">로움아이티</strong>
+									<span class="badge  color02">검토완료</span>
+								</div>
+								<div class="cntArea">
+									<div class="infoStaff">
+										<span>123-45-67890</span>
+										<span>|</span>
+										<span>김세모</span>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<div class="titArea">
+									<strong class="tit">로움아이티</strong>
+									<span class="badge  color02">검토완료</span>
+								</div>
+								<div class="cntArea">
+									<div class="infoStaff">
+										<span>123-45-67890</span>
+										<span>|</span>
+										<span>김세모</span>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<div class="titArea">
+									<strong class="tit">로움아이티</strong>
+									<span class="badge  color02">검토완료</span>
+								</div>
+								<div class="cntArea">
+									<div class="infoStaff">
+										<span>123-45-67890</span>
+										<span>|</span>
+										<span>김세모</span>
+									</div>
+								</div>
+							</a>
+						</li>
+					</ul>
+					<div class="paging">
+						<a href="#none" class="btn_pag_cntr first" style="margin-right: -5px"><span class="blind">first</span></a>
+						<a href="#none" class="btn_pag_cntr prev"><span class="blind">previous</span></a>
+						<span class="pag_num">
+							<a href="#none" class="on">1</a>
+							<a href="#none">2</a>
+							<a href="#none">3</a>
+							<a href="#none">4</a>
+							<a href="#none">5</a>
+						</span>
+						<a href="#none" class="btn_pag_cntr next on"><span class="blind">next</span></a><a href="#none"
+							class="btn_pag_cntr last on"><span class="blind">last</span></a>
+					</div>
+				</div>
+			</div>
+			
+			<div class="container_inner">			
+				<!-- 타이틀 -->
+				<section class="user_info_wrap">
+					<article class="user-info">
+						<div class="user_name">
+							<h1>이로운가게 영등포구청점</h1>
+							<!-- 개인 indiv / 법인 gener -->
+							<span class="badge indiv">개인사업자</span>
+							<span class="badge gener">법인사업자</span>
+						</div>
+						<div class="user-info_table">
+							<table>
+								<colgroup>
+									<col style="width: 80px;">
+									<col style="width: 140px;">
+									<col style="width: 80px;">
+									<col style="width: 100px;">
+									<col style="width: 80px;">
+									<col style="width: 250px;">
+								</colgroup>
+								<thead></thead>
+								<tbody>
+									<tr>
+										<th>사업자번호</th>
+										<td>123-45-67890</td>
+										<th>대표자명</th>
+										<td>홍길동</td>
+										<th>업종코드</th>
+										<td>552101</td>
+									</tr>
+									<tr>
+										<th>사업자유형</th>
+										<td>일반</td>
+										<th>계약상태</th>
+										<td>기장개인</td>
+										<th>업종</th>
+										<td>숙박 및 음식점업숙박 및 음식점업</td>
+									</tr>
+								</tbody>
+							</table> 
+						</div>
+					</article>
+				</section>
+				<!-- 보고서 요약 -->
+				<section class="rpt_smry_wrap">
+					<article class="info_wrap">
+						<div class="info_title">
+							<div class="left">
+								<button type="button" class="title_btn">
+									<h2>2023년 10월 매출매입</h2>
+									<img src="../img/txof/btn/arr_down_16.svg" alt="">
+								</button>
+								<div class="rprt-radio_pop" style="display: ;">
+									<div class="radio_title">
+										<h2>보고서 월 선택</h2>
+									</div>
+									<ul class="list_wrap">
+										<li>
+											<label for="rprtradi_01">
+												<input type="radio" id="rprtradi_01" name="rprtradi">
+												<span>2023년 10월 사업분석 보고서</span>
+											</label>	
+										</li>
+										<li>
+											<label for="rprtradi_02">
+												<input type="radio" id="rprtradi_02" name="rprtradi">
+												<span>2023년 09월 사업분석 보고서</span>
+											</label>	
+										</li>
+										<li>
+											<label for="rprtradi_03">
+												<input type="radio" id="rprtradi_03" name="rprtradi">
+												<span>2023년 08월 사업분석 보고서</span>
+											</label>	
+										</li>
+										<li>
+											<label for="rprtradi_04">
+												<input type="radio" id="rprtradi_04" name="rprtradi">
+												<span>2023년 07월 사업분석 보고서</span>
+											</label>	
+										</li>
+										<li>
+											<label for="rprtradi_05">
+												<input type="radio" id="rprtradi_05" name="rprtradi">
+												<span>2023년 06월 사업분석 보고서</span>
+											</label>	
+										</li>
+										<li>
+											<label for="rprtradi_06">
+												<input type="radio" id="rprtradi_06" name="rprtradi">
+												<span>2023년 05월 사업분석 보고서</span>
+											</label>	
+										</li>
+										<li>
+											<label for="rprtradi_07">
+												<input type="radio" id="rprtradi_07" name="rprtradi">
+												<span>2023년 04월 사업분석 보고서</span>
+											</label>	
+										</li>
+										<li>
+											<label for="rprtradi_08">
+												<input type="radio" id="rprtradi_08" name="rprtradi">
+												<span>2023년 03월 사업분석 보고서</span>
+											</label>	
+										</li>
+										<li>
+											<label for="rprtradi_09">
+												<input type="radio" id="rprtradi_09" name="rprtradi">
+												<span>2023년 02월 사업분석 보고서</span>
+											</label>	
+										</li>
+										<li>
+											<label for="rprtradi_10">
+												<input type="radio" id="rprtradi_10" name="rprtradi">
+												<span>2023년 01월 사업분석 보고서</span>
+											</label>	
+										</li>
+										<li>
+											<label for="rprtradi_11">
+												<input type="radio" id="rprtradi_11" name="rprtradi">
+												<span>2023년 01월 예상부가세 보고서</span>
+											</label>	
+										</li>
+
+									</ul>
+									<div class="bottom_btn">
+										<button type="button" class="btn_style1_b"><span>조회</span></button>
+									</div>
+								</div>
+							</div>
+							<div class="right">
+								<div class="button_wrap">
+									<button type="button" class="btn_style2_g"><span>미리보기</span></button>
+									<button type="button" class="btn_style2_g"><span>변경이력</span></button>
+									<button type="button" class="btn_cancel"><span>취소</span></button>
+									<button type="button" class="btn_style1_b"><span>수정하기</span></button>
+								</div>
+							</div>
+						</div>
+						<div class="info_banner">
+							<p class="desc_01">· 보고서 데이터는 연동된 홈택스 세무대리 기준으로 자동 반영되며, 데이터 수정을 원할 경우 <strong>[수정하기]</strong> 버튼을 클릭하십시오.</p>
+							<p class="desc_01">· 보고서 발송 전, 추가 전달이 필요한 내용이나 코멘트가 있다면 인사말 작성에 입력하시기 바랍니다.</p>
+						</div>
+					</article>
+					<article class="rpt_smry" style="display: ;">
+						<div class="write_wrap">
+							<div class="title">
+								<div class="left">
+									<h2>
+										인사말 작성
+									</h2>
+									<div class="tooltipWrap btc">
+										<span class="qm">
+											<img src="../img/txof/ico/ico_que_green.png" alt="">
+											<div class="tooltip yellow">
+												<p class="tit">원하는 거래처별 인사말 수정은<br><a href="#none">보고서 생성 메뉴</a>에서 가능합니다.
+											</div>
+										</span>
+									</div>
+								</div>
+								<div class="right">
+									<p>72/2000자</p>
+								</div>
+							</div>
+							<textarea id="" style=""></textarea>
+						</div>
+						<div class="smry_wrap">
+							<div class="title">
+								<h2>요약</h2>
+								<p>분석기간 : 2023-10-01 ~ 2023 -10-31</p>
+							</div>
+							<div class="smry_table">
+								<table>
+									<tbody>
+									<tr>
+										<th><div>매출 공급가액(A)</div></th>
+										<td><div name="sale_smrySaleAmt">148,168,182원</div></td>
+									</tr>
+									<tr>
+										<th><div>매출 세액 (B)</div></th>
+										<td><div name="sale_smrySaleVat">14,816,818원</div></td>
+									</tr>		
+									<tr class="sum">
+										<th><div>매출 합계 (A) + (B)</div></th>
+										<td name="sale_smryTotlAmt">162,985,000원</td>
+									</tr>
+									</tbody>
+								</table>
+								<table class="mgt10">
+									<tbody>
+										<tr>
+											<th><div>매입 공급가액(A)</div></th>
+											<td><div name="buy_smrySaleAmt">22,681,123원</div></td>
+										</tr>
+										<tr>
+											<th><div>매입 세액 (B)</div></th>
+											<td><div name="buy_smrySaleVat">1,264,907원</div></td>
+										</tr>		
+										<tr class="sum">
+											<th><div>매입 합계 (A) + (B)</div></th>
+											<td name="buy_smryTotlAmt">23,946,030원</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<div class="areaRudSemor">
+							<!-- 비활성화시 off클래스 추가 -->
+							<a href="#none" class="btn_rud_semor"><span>검토완료</span></a>
+							<span class="mgl4">최종검토 일자 : 2023-01-01 13:15</span>
+						</div>
+					</article>
+					
+				</section>
+				<!-- 테이블 -->
+				<section class="table_box_wrap" id="colt_div"><article class="table_box">
+					<div class="info_title">
+						<div class="left">
+							<h2>매출</h2>
+						</div>
+					</div>
+					<div class="info_banner">
+						<p class="desc_01">· PG 배달 쇼핑 매출은 분기마다 업데이트 되며, 카드/온라인 매출 세액은 아래 계산식으로 반영합니다. </p>
+						<p class="desc_02">(공급가액 : 합계금액 x 100 ÷ 110, 세액 : 합계금액 x 10 ÷ 110)</p>
+						<!-- <p class="desc_03">영세율 수출실적명세서 매출은 홈택스에서 수집한 선적년월 기준으로 조회되며, 원화환산금액을 반영합니다.</p> -->
+					</div>
+					<div class="tblScrollX pd0" style="overflow: hidden; ">
+						<table class="rprt_tbl modify" summary="" id="rprt_sale_tb">
+							<caption></caption>
+							<colgroup>
+								<col style="width: 170px;">
+								<col style="width: 130px;">
+								<col style="width: 130px;">
+								<col style="width: 130px;">
+								<col style="width: 130px;">
+							</colgroup>
+							<thead>
+								<tr class="trd">
+									<th scope="col" class="tit tal"><div>구분 </div></th>
+									<th scope="col" class=""><div>건수</div></th>
+									<th scope="col" class=""><div>공급가액</div></th>
+									<th scope="col" class=""><div>세액</div></th>
+									<th scope="col" class=""><div>합계금액</div></th>
+								</tr>
+							</thead>
+							<tbody style="display: table-tbody;">
+								<tr>
+									<td class="tit"> 
+										<div class="tal">
+											 전자세금계산서
+											 <div class="button_wrap">
+											   <button type="button" name="s_elec_tax_ch_btn" utype="sale" rename="ELEC_TAX" class="refr_btn" style="display:none;">
+											   <img src="../img/txof/btn/ico_refresh.svg" alt=""></button>
+											 </div>
+										</div>
+					
+									</td>
+									<!-- input border 제거 class bdn / 색상변경 class modi -->
+									<td>
+										<div class="tar">
+											<p class="val" name="es_elec_tax_trsc_cnt" style="display:none;"></p>
+											<input type="text" name="s_elec_tax_trsc_cnt" sumkey="s_totl_sale_cnt" rename="ELEC_TAX" class="bdn" readonly="readonly" placeholder="수기입력">											
+										</div>
+									</td>
+									<td>
+										<div class="tar">
+											<p class="val" name="es_elec_tax_sply_amt" style="display:none;"></p>
+											<input type="text" name="s_elec_tax_sply_amt" sumkey="s_totl_sale_sply_amt" rename="ELEC_TAX" class="bdn" readonly="readonly" placeholder="수기입력">			
+										</div>
+									</td>
+									<td class="">
+										<div class="tar">
+											<p class="val" name="es_elec_tax_vat_amt" style="display:none;"></p>
+											<p class="val" name="s_elec_tax_vat_amt" sumkey="s_totl_sale_vat_amt" rename="ELEC_TAX">0</p>
+											<!-- <input type="text" name="s_elec_tax_vat_amt" sumKey="s_totl_sale_vat_amt" class="bdn" readonly="readonly">	 -->
+										</div>
+										
+									</td>
+									<td>
+										<div class="tar">
+											<p class="val" name="es_elec_tax_totl_amt" style="display:none;"></p>
+											<p class="val" name="s_elec_tax_totl_amt" sumkey="s_totl_sale_amt" rename="ELEC_TAX">0</p>
+											<!-- <input type="text" name="s_elec_tax_totl_amt" sumKey="s_totl_sale_amt" class="bdn" readonly="readonly"> -->	
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="tit">
+										<div class="tal">
+											  전자계산서
+											 <div class="button_wrap">
+												 <button type="button" name="s_elec_bill_ch_btn" utype="sale" rename="ELEC_BILL" class="refr_btn" style="display:none;">
+												 <img src="../img/txof/btn/ico_refresh.svg" alt=""></button>
+											</div>
+										</div>
+									</td>
+									<td>
+										<div class="tar"> 
+											<p class="val" name="es_elec_bill_trsc_cnt" style="display:none;"></p>
+											<input type="text" name="s_elec_bill_trsc_cnt" sumkey="s_totl_sale_cnt" rename="ELEC_BILL" class="bdn" readonly="readonly" placeholder="수기입력">	
+										</div>
+									</td>
+									<td>
+										<div class="tar"> 
+											<p class="val" name="es_elec_bill_sply_amt" style="display:none;"></p>
+											<input type="text" name="s_elec_bill_sply_amt" sumkey="s_totl_sale_sply_amt" rename="ELEC_BILL" class="bdn" readonly="readonly" placeholder="수기입력">	
+										</div>
+									</td>
+									<td>
+										<div class="tar"> 
+											<p class="val">-</p>
+											<!-- <input type="text" name="s_elec_bill_vat_amt" sumKey="s_totl_sale_vat_amt" class="bdn" readonly="readonly"> -->	
+										</div>
+									</td>
+									<td>
+										<div class="tar"> 
+											<p class="val" name="es_elec_bill_totl_amt" style="display:none;"></p>
+											<p class="val" name="s_elec_bill_totl_amt" sumkey="s_totl_sale_amt" rename="ELEC_BILL">0</p>
+											<!-- <input type="text" name="s_elec_bill_totl_amt" sumKey="s_totl_sale_amt" class="bdn" readonly="readonly">	 -->
+										</div>
+									</td>				
+								</tr>
+								<!-- 종이세금계산서 -->
+								<tr>
+									<td class="tit">
+										<div class="tit tal">종이세금계산서</div>
+									</td>
+									<td class="">
+										<div class="tar">
+											<input type="text" name="s_per_tax_trsc_cnt" sumkey="s_totl_sale_cnt" rename="PER_TAX" class="bdn modi" readonly="readonly" placeholder="수기입력">
+										</div>
+									</td>
+									<td class="">
+										<div class="tar">
+											<input type="text" name="s_per_tax_sply_amt" sumkey="s_totl_sale_sply_amt" rename="PER_TAX" class="bdn modi" readonly="readonly" placeholder="수기입력">
+										</div>
+									</td>
+									<td>
+										<div class="tar">
+											<p class="val modi" name="s_per_tax_vat_amt" rename="PER_TAX">10,000,000</p>
+										</div>
+									</td>   <!-- gray , 자동계산 -->
+									<td>
+										<div class="tar">
+											<p class="val modi" name="s_per_tax_totl_amt" sumkey="s_totl_sale_amt" rename="PER_TAX">110,000,000</p>
+										</div>
+									</td>
+								</tr>
+								<!-- 종이세금계산서 -->
+								<tr>
+									<td class="tit">
+											<div class="tit tal">종이계산서</div>
+									</td>
+									<td class="">
+											<div class="tar">
+												<input type="text" name="s_per_bill_trsc_cnt" sumkey="s_totl_sale_cnt" rename="PER_BILL" class="bdn" readonly="readonly" placeholder="수기입력">
+											</div>
+									</td>
+									<td class="">
+										<div class="tar">
+											<input type="text" name="s_per_bill_sply_amt" class="bdn" rename="PER_BILL" sumkey="s_totl_sale_sply_amt" readonly="readonly" placeholder="수기입력">
+										</div>
+									</td>
+									<td><div class="tar"><p class="val">-</p></div></td>
+									<td><div class="tar"><p class="val" name="s_per_bill_totl_amt" rename="PER_BILL" sumkey="s_totl_sale_amt">-</p></div></td>
+								</tr>
+								<!-- 현금영수증 -->
+								<tr>
+									<td class="tit">
+										<div class="tit tal">
+											현금영수증
+											<div class="button_wrap">
+											   <button type="button" class="refr_btn" utype="sale" rename="CASH_REPT" name="s_cash_rept_ch_btn" style="display:none;">
+											   <img src="../img/txof/btn/ico_refresh.svg" alt=""></button>
+											</div>
+										</div>
+									</td>
+									<td class="">
+										<div class="tar"> 
+											 <p class="val" name="es_cash_rept_trsc_cnt" style="display:none;"></p>
+											 <input type="text" name="s_cash_rept_trsc_cnt" rename="CASH_REPT" sumkey="s_totl_sale_cnt" class="bdn" readonly="readonly" placeholder="수기입력">	
+										</div>
+									
+									</td>
+									<td class="">
+										<div class="tar">
+											 <p class="val" name="es_cash_rept_sply_amt" style="display:none;"></p>
+											 <input type="text" name="s_cash_rept_sply_amt" rename="CASH_REPT" class="bdn" sumkey="s_totl_sale_sply_amt" readonly="readonly" placeholder="수기입력">	
+										</div>
+									</td>
+									<td>
+										<div class="tar">
+											 <p class="val" name="es_cash_rept_vat_amt" style="display:none;"></p>
+											 <p class="val" name="s_cash_rept_vat_amt" rename="CASH_REPT" sumkey="s_totl_sale_vat_amt">9,091</p>
+											<!--  <input type="text" name="s_cash_rept_vat_amt" class="bdn" sumKey="s_totl_sale_vat_amt"  readonly="readonly"> -->	
+										</div>
+									</td>
+									<td>
+										<div class="tar">
+											 <p class="val" name="es_cash_rept_totl_amt" style="display:none;"></p>
+											 <p class="val" name="s_cash_rept_totl_amt" rename="CASH_REPT" sumkey="s_totl_sale_amt">100,000</p>
+											<!--  <input type="text" name="s_cash_rept_totl_amt" sumKey="s_totl_sale_amt"  class="bdn" readonly="readonly"> -->						 
+										</div>
+									</td>
+								</tr>
+								<!-- 카드 · 제로페이 -->
+								<tr>
+									<td class="tit">
+										<div class="tit tal">
+											카드 · 제로페이
+											<div class="button_wrap">
+												<button type="button" class="refr_btn" utype="sale" rename="CARD_ZERO" name="s_card_zero_ch_btn" style="display:none;">
+												<img src="../img/txof/btn/ico_refresh.svg" alt=""></button>
+											</div>
+										</div>
+									</td>
+									<td class="">
+										<div class="tar">
+											 <p class="val" name="es_card_zero_trsc_cnt" style="display:none;"></p>
+											 <input type="text" name="s_card_zero_trsc_cnt" rename="CARD_ZERO" sumkey="s_totl_sale_cnt" class="bdn" readonly="readonly" placeholder="수기입력">	
+										
+										</div>
+									</td>
+									<td class="">
+										<div class="tar">
+											 <p class="val" name="es_card_zero_sply_amt" style="display:none;"></p>
+											 <input type="text" name="s_card_zero_sply_amt" rename="CARD_ZERO" sumkey="s_totl_sale_sply_amt" class="bdn" readonly="readonly" placeholder="수기입력">	
+										</div>
+									</td>
+									<td>
+										<div class="tar">
+											 <p class="val" name="es_card_zero_vat_amt" style="display:none;"></p>
+											 <p class="val" name="s_card_zero_vat_amt" rename="CARD_ZERO" sumkey="s_totl_sale_vat_amt">4,805,727</p>
+											 <!-- <input type="text" name="s_card_zero_vat_amt" sumKey="s_totl_sale_vat_amt"  class="bdn" readonly="readonly"> -->	
+										</div>
+									</td>
+									<td>
+										<div class="tar">
+											 <p class="val" name="es_card_zero_totl_amt" style="display:none;"></p>
+											 <p class="val" name="s_card_zero_totl_amt" rename="CARD_ZERO" sumkey="s_totl_sale_amt">52,863,000</p>
+											 <!-- <input type="text" name="s_card_zero_totl_amt" sumKey="s_totl_sale_amt" class="bdn" readonly="readonly"> -->	
+										</div>
+									</td>
+								</tr>
+								<!-- PG · 배달 · 쇼핑 -->
+								<tr>
+									<td class="tit">
+										<div class="tit tal">
+											PG · 배달 · 쇼핑
+											<div class="button_wrap">
+												<button type="button" class="refr_btn" utype="sale" rename="ONLINE" name="s_online_ch_btn" style="display:none;">
+												<img src="../img/txof/btn/ico_refresh.svg" alt=""></button>
+											</div>
+										</div>
+									</td>
+									<td class="">
+										<div class="tar">
+											 <p class="val" name="es_online_trsc_cnt" style="display:none;"></p>
+											 <input type="text" name="s_online_trsc_cnt" rename="ONLINE" sumkey="s_totl_sale_cnt" class="bdn" readonly="readonly" placeholder="수기입력">	
+										</div>
+									</td>
+									<td class="">
+										<div class="tar">
+											 <p class="val" name="es_online_sply_amt" style="display:none;"></p>
+											 <input type="text" name="s_online_sply_amt" rename="ONLINE" sumkey="s_totl_sale_sply_amt" class="bdn" readonly="readonly" placeholder="수기입력">	
+										</div>
+									</td>
+									<td>
+										<div class="tar">
+											<p class="val" name="es_online_vat_amt" style="display:none;"></p>
+											<p class="val" name="s_online_vat_amt" rename="ONLINE" sumkey="s_totl_sale_vat_amt">-</p> 
+											 <!-- <input type="text" name="s_online_vat_amt" sumKey="s_totl_sale_vat_amt"  class="bdn" readonly="readonly"> -->	
+										</div>
+									</td>
+									<td>
+										<div class="tar">
+											<p class="val" name="es_online_totl_amt" style="display:none;"></p>
+											<p class="val" name="s_online_totl_amt" rename="ONLINE" sumkey="s_totl_sale_amt">-</p> 
+											<!-- <input type="text" name="s_online_totl_amt" sumKey="s_totl_sale_amt"  class="bdn" readonly="readonly"> -->	
+										</div>
+									</td>
+								</tr>
+								<!-- 기타(정규영수증 외 매출분) -->
+								<tr>
+									<td class="tit">
+										<div class="tit tal">
+											기타(정규영수증 외 매출분)
+										</div>
+									</td>
+									<td class="">
+											 <input type="text" name="s_etc_trsc_cnt" sumkey="s_totl_sale_cnt" rename="S_ETC" class="bdn modi" readonly="readonly" placeholder="수기입력">
+									</td>
+									<td class="">
+										<div class="tar">
+											<input type="text" name="s_etc_sply_amt" sumkey="s_totl_sale_sply_amt" rename="S_ETC" class="bdn modi" readonly="readonly" placeholder="수기입력">
+										</div>
+									</td>
+									<td>
+										<div class="tar">
+											<p class="val modi" name="s_etc_vat_amt" rename="S_ETC" sumkey="s_totl_sale_vat_amt">2,000</p>
+										</div>
+									</td>
+									<td>
+										<div class="tar">
+											<p class="val modi" name="s_etc_totl_amt" rename="S_ETC" sumkey="s_totl_sale_amt">22,000</p>
+										</div>
+									</td>
+								</tr>
+								<!-- 영세율 세금계산서 -->
+								<tr>
+									<td class="tit">
+										<div class="tit tal">영세율 세금계산서</div>
+									</td>
+									<td class="">
+										<div class="tar">
+											<input type="text" class="bdn" name="s_zrate_tax_trsc_cnt" rename="ZRATE_TAX" sumkey="s_totl_sale_cnt" readonly="readonly" placeholder="수기입력">
+										</div>
+									</td>
+									<td class="">
+										<div class="tar">
+											<input type="text" class="bdn" name="s_zrate_tax_sply_amt" rename="ZRATE_TAX" sumkey="s_totl_sale_sply_amt" readonly="readonly" placeholder="수기입력">
+										</div>
+									</td>
+									<td>
+										<div class="tar">
+											<p class="val">-</p>
+										</div>
+									</td>
+									<td>
+										<div class="tar">
+											<p class="val" name="s_zrate_tax_totl_amt" rename="ZRATE_TAX" sumkey="s_totl_totl_amt">-</p> 
+											<!-- <input type="text" class="bdn"name="s_zrate_tax_totl_amt" sumKey="s_totl_totl_amt" readonly="readonly" placeholder="수기입력"> -->
+										</div>
+									</td>
+								</tr>
+								<!-- 영세율 수출실적명세서 -->
+								<tr>
+									<td class="tit">
+										<div class="tit tal">영세율 수출실적명세서</div>
+									</td>
+									<td class="">
+										<div class="tar"><input type="text" class="bdn" sumkey="s_totl_sale_cnt" rename="ZRATE_EXPERF" placeholder="수기입력" name="s_zrate_experf_trsc_cnt" readonly="readonly"></div>
+									</td>
+									<td class="">
+										<div class="tar">
+											<input type="text" class="bdn" placeholder="수기입력" rename="ZRATE_EXPERF" sumkey="s_totl_sale_sply_amt" name="s_zrate_experf_sply_amt" readonly="readonly"> 
+										</div>
+									</td>
+									<td>
+										<div class="tar">
+											<p class="val">-</p>
+										</div>
+									</td>
+									<td>
+										<div class="tar">
+											<p class="val" name="s_zrate_experf_totl_amt" rename="ZRATE_EXPERF" sumkey="s_totl_totl_amt">-</p> 
+											<!-- <input type="text" class="bdn" placeholder="수기입력"  sumKey="s_totl_totl_amt" name="s_zrate_experf_totl_amt" readonly="readonly"> -->
+										</div>
+									</td>
+								</tr>
+								<!-- 영세율 기타 -->
+								<tr>
+									<td class="tit">
+										<div class="tit tal">영세율 기타</div>
+									</td>
+									<td class="">
+										<div class="tar">
+											<input type="text" class="bdn" placeholder="수기입력" sumkey="s_totl_sale_cnt" rename="ZRATE_ETC" name="s_zrate_etc_trsc_cnt" readonly="readonly"></div>
+										</td>
+									<td class="">
+										<div class="tar">
+											<input type="text" class="bdn" placeholder="수기입력" sumkey="s_totl_sply_amt" rename="ZRATE_ETC" name="s_zrate_etc_sply_amt" readonly="readonly">
+										</div>
+									</td>
+									<td>
+										<div class="tar">
+											<p class="val">-</p>
+										</div>
+									</td>
+									<td>
+										<div class="tar">
+											 <p class="val" name="s_zrate_etc_totl_amt" sumkey="s_totl_totl_amt" rename="ZRATE_ETC">-</p> 
+											<!-- <input type="text" class="bdn" placeholder="수기입력" sumKey="s_totl_totl_amt" name="s_zrate_etc_totl_amt" readonly="readonly"> -->
+										</div>
+									</td>
+								</tr>
+								<tr class="sum">
+									<td class="tit">
+										<div class="tal">합계</div>
+									</td>
+									<td name="sumTd">
+										<div class="tar">
+											<p class="val" name="es_totl_sale_cnt" style="">665</p>
+											<p class="val modi" name="s_totl_sale_cnt">665</p>
+										</div>
+									</td>
+									<td name="sumTd">
+										<div class="tar">
+											<p class="val" name="es_totl_sale_sply_amt" style="">148,168,182</p>
+											<p class="val modi" name="s_totl_sale_sply_amt">148,168,182</p>
+										</div>
+									</td>
+									<td name="sumTd">
+										<div class="tar">
+											<p class="val" name="es_totl_sale_vat_amt" style="">14,816,818</p>
+											<p class="val modi" name="s_totl_sale_vat_amt">14,816,818</p>
+										</div>
+									</td>
+									<td name="sumTd">
+										<div class="tar">
+											<p class="val" name="es_totl_sale_amt" style="">162,985,000</p>
+											<p class="val modi" name="s_totl_sale_amt">162,985,000</p>
+										</div>
+									</td>								
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					</article><article class="table_box">
+					<article class="table_box">
+						<div class="info_title">
+							<div class="left">
+								<h2>매입</h2>
+							</div>
+						</div>
+						<div class="info_banner">
+							<p class="desc_01">· 매입 내역에서 제외해야 하는 부분이 있다면 매입차감(고정자산 매입 등) 항목에 입력하시기 바랍니다.</p>
+						</div>
+						<div class="tblScrollX pd0" style="overflow: hidden; ">
+							<table class="rprt_tbl modify" summary="" id="rprt_buy_tb">
+								<caption></caption>
+								<colgroup>
+									<col style="width: 170px;">
+									<col style="width: 130px;">
+									<col style="width: 130px;">
+									<col style="width: 130px;">
+									<col style="width: 130px;">
+								</colgroup>
+								<thead>
+									<tr class="trd">
+										<th scope="col" class="tit tal"><div>구분 </div></th>
+										<th scope="col" class=""><div>건수</div></th>
+										<th scope="col" class=""><div>공급가액</div></th>
+										<th scope="col" class=""><div>세액</div></th>
+										<th scope="col" class=""><div>합계금액</div></th>
+									</tr>
+								</thead>
+								<tbody style="display: table-tbody;">
+									<tr>
+										<td class="tit">
+											<div class="tal">전자세금계산서
+											   <div class="button_wrap">
+												  <button type="button" name="b_elec_tax_ch_btn" utype="buy" rename="ELEC_TAX" class="refr_btn" style="display:none;"><img src="../img/txof/btn/ico_refresh.svg" alt=""></button>
+											   </div>
+											</div>
+										</td>
+										<td>
+											<div class="tar">
+												<p class="val" name="eb_elec_tax_trsc_cnt" style="display:none;">0</p>
+												<input type="text" name="b_elec_tax_trsc_cnt" sumkey="b_totl_buy_cnt" rename="ELEC_TAX" class="bdn" readonly="readonly" placeholder="수기입력">	
+											</div>
+										</td>
+										<td>
+											<div class="tar">
+											<p class="val" name="eb_elec_tax_sply_amt" style="display:none;">0</p>
+											<input type="text" name="b_elec_tax_sply_amt" sumkey="b_totl_buy_sply_amt" rename="ELEC_TAX" class="bdn" readonly="readonly" placeholder="수기입력">
+										</div>
+										</td>
+										<td class="">
+											<div class="tar">
+												<p class="val" name="eb_elec_tax_vat_amt" style="display:none;">0</p>
+												<p class="val" name="b_elec_tax_vat_amt" sumkey="b_totl_buy_vat_amt" rename="ELEC_TAX">1,027,463</p>  
+												<!-- <input type="text" name="b_elec_tax_vat_amt"  sumkey="b_totl_buy_vat_amt"  class="bdn" readonly="readonly"> -->	
+											</div>
+											
+										</td>
+									<td>
+										<div class="tar">
+											<p class="val" name="eb_elec_tax_totl_amt" style="display:none;">0</p>
+											<p class="val" name="b_elec_tax_totl_amt" sumkey="b_totl_buy_amt" rename="ELEC_TAX">11,302,073</p>  
+											<!-- <input type="text" name="b_elec_tax_totl_amt" sumkey="b_totl_buy_amt"  class="bdn" readonly="readonly"> -->	
+										</div>
+									</td>
+									</tr>
+									<tr>
+										<td class="tit">
+											<div class="tal">
+												전자계산서
+												<div class="button_wrap">
+												   <button type="button" name="b_elec_bill_ch_btn" utype="buy" rename="ELEC_BILL" class="refr_btn" style="display:none;"><img src="../img/txof/btn/ico_refresh.svg" alt=""></button>
+												</div>
+											</div>
+										</td>
+										<td>
+											<div class="tar"> 
+												<p class="val" name="eb_elec_bill_trsc_cnt" style="display:none;">0</p>
+												<input type="text" name="b_elec_bill_trsc_cnt" rename="ELEC_BILL" sumkey="b_totl_buy_cnt" class="bdn" readonly="readonly" placeholder="수기입력">	
+											</div>
+										</td>
+										<td>
+											<div class="tar"> 
+												<p class="val" name="eb_elec_bill_sply_amt" style="display:none;">0</p>
+												<input type="text" name="b_elec_bill_sply_amt" rename="ELEC_BILL" sumkey="b_totl_buy_sply_amt" class="bdn" readonly="readonly" placeholder="수기입력">	
+											</div>
+										</td>
+											
+										<td>
+											<div class="tar"> 
+												<p class="val" name="eb_elec_bill_vat_amt" style="display:none;">-</p>
+												<p class="val">-</p>
+												<!-- <input type="text" name="b_elec_bill_vat_amt"  sumkey="b_totl_buy_vat_amt"  class="bdn" value="-" readonly="readonly"> -->	
+											</div>
+										</td>
+										<td>
+											<div class="tar"> 
+												<p class="val" name="eb_elec_bill_totl_amt" style="display:none;">0</p>
+												<p class="val" name="b_elec_bill_totl_amt" rename="ELEC_BILL" sumkey="b_totl_buy_amt">9,792,280</p>
+												<!-- <input type="text" name="b_elec_bill_totl_amt"  sumkey="b_totl_buy_amt"  class="bdn" readonly="readonly"> -->	
+											</div>
+										</td>		
+									</tr>
+									<!-- 종이세금계산서 -->
+									<tr>
+										<td class="tit">
+											<div class="tit tal">
+												 종이세금계산서
+											</div>
+										</td>
+										 <td class="">
+											<div class="tar">
+												<input type="text" name="b_per_tax_trsc_cnt" rename="PER_TAX" sumkey="b_totl_buy_cnt" class="bdn modi" readonly="readonly" placeholder="수기입력">
+											</div>
+										</td>
+										<td class="">
+											<div class="tar">
+												<input type="text" name="b_per_tax_sply_amt" rename="PER_TAX" sumkey="b_totl_buy_sply_amt" class="bdn modi" readonly="readonly" placeholder="수기입력">
+											</div>
+										</td>
+										<td>
+											<div class="tar">
+												<p class="val modi" name="b_per_tax_vat_amt" rename="PER_TAX" sumkey="b_totl_buy_vat_amt">0</p>
+											</div>
+										</td> 
+										<td>
+											<div class="tar">
+												<p class="val modi" name="b_per_tax_totl_amt" rename="PER_TAX" sumkey="b_totl_buy_amt">0</p>
+											</div>
+										</td>
+									</tr>
+									<!-- 종이세금계산서 -->
+									<tr>
+										<td class="tit"><div class="tit tal">종이계산서</div></td>
+									<td class="">
+											<div class="tar">
+												<input type="text" name="b_per_bill_trsc_cnt" rename="PER_BILL" sumkey="b_totl_buy_cnt" class="bdn" readonly="readonly" placeholder="수기입력">
+											</div>
+									</td>
+									<td class="">
+										<div class="tar">
+											<input type="text" name="b_per_bill_sply_amt" rename="PER_BILL" sumkey="b_totl_buy_sply_amt" class="bdn" readonly="readonly" placeholder="수기입력">
+										</div>
+									</td>
+									<td><div class="tar"><p class="val">-</p></div></td>
+									<td><div class="tar"><p class="val" name="b_per_bill_totl_amt" rename="PER_BILL" sumkey="b_totl_buy_amt">-</p></div></td>
+									
+									</tr>
+									<!-- 현금영수증 -->
+									<tr>
+										<td class="tit">
+											<div class="tit tal">
+												현금영수증
+												<div class="button_wrap">
+													<button type="button" class="refr_btn" utype="buy" rename="CASH_REPT" name="b_cash_rept_ch_btn" style="display:none;"><img src="../img/txof/btn/ico_refresh.svg" alt=""></button>							
+												</div>
+											</div>
+										</td>
+										<td class="">
+											<div class="tar"> 
+												 <p class="val" name="eb_cash_rept_trsc_cnt" style="display:none;">0</p>
+												 <input type="text" name="b_cash_rept_trsc_cnt" calckey="b_cash_rept" rename="CASH_REPT" sumkey="b_totl_buy_cnt" class="bdn" readonly="readonly" placeholder="수기입력">	
+											</div>
+										
+										</td>
+										<td class="">
+											<div class="tar">
+												 <p class="val" name="eb_cash_rept_sply_amt" style="display:none;">0</p>
+												 <input type="text" name="b_cash_rept_sply_amt" calckey="b_cash_rept" rename="CASH_REPT" sumkey="b_totl_buy_sply_amt" class="bdn" readonly="readonly" placeholder="수기입력">	
+											</div>
+										</td>
+										<td deuctd="Y">
+											<div class="tar">
+												 <p class="val" name="eb_cash_rept_vat_amt" style="display:none;">0</p>
+												 <p class="val" name="b_cash_rept_vat_amt" rename="CASH_REPT" sumkey="b_totl_buy_vat_amt">40,999</p>
+												 <!-- <input type="text" name="b_cash_rept_vat_amt" sumkey="b_totl_buy_vat_amt" class="bdn" readonly="readonly"> -->
+												 <p class="val" name="b_dcash_rept_vat_amt" rename="DCASH_REPT" style="display:none;">40,763</p>
+												 <p class="val" name="b_ncash_rept_vat_amt" rename="NCASH_REPT" style="display:none;">236</p>	
+											</div>
+										</td>
+										<td>
+											<div class="tar">
+												 <p class="val" name="eb_cash_rept_totl_amt" style="display:none;">0</p>
+												 <p class="val" name="b_cash_rept_totl_amt" rename="CASH_REPT" sumkey="b_totl_buy_amt">665,323</p>
+												 <!-- <input type="text" name="b_cash_rept_totl_amt" sumkey="b_totl_buy_amt" class="bdn" readonly="readonly"> -->						 
+											</div>
+										</td>
+									</tr>
+									<!-- 카드 -->
+									<tr>
+										<td class="tit">
+											<div class="tit tal">
+												카드
+												<div class="button_wrap">
+												   <button type="button" class="refr_btn" utype="buy" name="b_card_ch_btn" rename="CARD" style="display:none;"><img src="../img/txof/btn/ico_refresh.svg" alt=""></button>
+												</div>
+											</div>
+										</td>
+									<td class="">
+										<div class="tar">
+											 <p class="val" name="eb_card_trsc_cnt" style="display:none;">0</p>
+											 <input type="text" name="b_card_trsc_cnt" class="bdn" calckey="b_card" rename="CARD" sumkey="b_totl_buy_cnt" readonly="readonly" placeholder="수기입력">	
+										
+										</div>
+									</td>
+									<td class="">
+										<div class="tar">
+											 <p class="val" name="eb_card_sply_amt" style="display:none;">0</p>
+											 <input type="text" name="b_card_sply_amt" class="bdn" calckey="b_card" rename="CARD" sumkey="b_totl_buy_sply_amt" readonly="readonly" placeholder="수기입력">	
+										</div>
+									</td>
+									<td deuctd="Y">
+										<div class="tar">
+											 <p class="val" name="eb_card_vat_amt" style="display:none;">0</p>
+											 <p class="val" name="b_card_vat_amt" rename="CARD" sumkey="b_totl_buy_vat_amt">196,445</p>
+											 <!-- 공제,불공제 함께 저장해야함 -->
+											 <p class="val" name="b_dcard_vat_amt" rename="DCARD" style="display:none;">104,010</p>
+											 <p class="val" name="b_ncard_vat_amt" rename="NCARD" style="display:none;">92,435</p>
+											 
+											 <!-- <input type="text" name="b_card_vat_amt" class="bdn" sumkey="b_totl_buy_vat_amt"  readonly="readonly"> -->	
+										</div>
+									</td>
+									<td>
+										<div class="tar">
+											 <p class="val" name="eb_card_totl_amt" style="display:none;">0</p>
+											 <p class="val" name="b_card_totl_amt" rename="CARD" sumkey="b_totl_buy_amt">2,186,354</p>
+											 <!-- <input type="text" name="b_card_totl_amt" class="bdn" sumkey="b_totl_buy_amt"  readonly="readonly"> -->	
+										</div>
+									</td>
+									</tr>
+									<!-- 기타(간이영수증) -->
+									<tr>
+										<td class="tit"><div class="tit tal">기타(간이영수증)</div></td>
+										<td class="">
+												 <input type="text" name="b_etc_trsc_cnt" class="bdn" rename="B_ETC" sumkey="b_totl_buy_cnt" readonly="readonly" placeholder="수기입력">
+										</td>
+										<td class="">
+											<div class="tar">
+												<input type="text" name="b_etc_sply_amt" class="bdn" rename="B_ETC" sumkey="b_totl_buy_sply_amt" readonly="readonly" placeholder="수기입력">
+											</div>
+										</td>
+										<td>
+											<div class="tar">
+												<p class="val" name="b_etc_vat_amt" rename="B_ETC" sumkey="b_totl_buy_vat_amt">-</p>
+											</div>
+										</td>
+										<td>
+											<div class="tar">
+												<p class="val" name="b_etc_totl_amt" rename="B_ETC" sumkey="b_totl_buy_amt">-</p>
+											</div>
+										</td>
+									</tr>
+									<!-- 매입차감(고정자산매입 등) -->
+									<tr>
+										<td class="tit"><div class="tit tal">매입차감(고정자산매입 등)</div></td>
+										<td class="">
+												 <input type="text" name="b_buy_subtr_trsc_cnt" rename="BUY_SUBTR" sumkey="b_totl_buy_cnt" class="bdn" readonly="readonly" placeholder="수기입력">
+										</td>
+										<td class="">
+											<div class="tar">
+												<input type="text" name="b_buy_subtr_sply_amt" rename="BUY_SUBTR" sumkey="b_totl_buy_sply_amt" class="bdn" readonly="readonly" placeholder="수기입력">
+											</div>
+										</td>
+										<td>
+											<div class="tar">
+												<p class="val" name="b_buy_subtr_vat_amt" rename="BUY_SUBTR" sumkey="b_totl_buy_vat_amt">-</p>
+											</div>
+										</td>
+										<td>
+											<div class="tar">
+												<p class="val" name="b_buy_subtr_totl_amt" rename="BUY_SUBTR" sumkey="b_totl_buy_amt">-</p>
+											</div>
+										</td>
+									</tr>
+									<tr class="sum">
+										<td class="tit"><div class="tal">합계</div></td>
+										<td name="sumTd">
+											<div class="tar">
+												<p class="val" name="eb_totl_buy_cnt" style="">147</p>
+												<p class="val modi" name="b_totl_buy_cnt">147</p>
+											</div>
+										 </td>
+										<td name="sumTd">
+											<div class="tar">
+												<p class="val" name="eb_totl_buy_sply_amt" style="">22,681,123</p>
+												<p class="val modi" name="b_totl_buy_sply_amt">22,681,123</p>
+											</div>
+										 </td>
+										<td name="sumTd">
+											<div class="tar">
+												<p class="val" name="eb_totl_buy_vat_amt" style="">1,264,907</p>
+												<p class="val modi" name="b_totl_buy_vat_amt">1,264,907</p>
+											</div>
+										 </td>
+										<td name="sumTd">
+											<div class="tar">
+												<p class="val" name="eb_totl_buy_amt" style="">23,946,030</p>
+												<p class="val modi" name="b_totl_buy_amt">23,946,030</p>
+											</div>
+										 </td>				     				     				     
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</article>
+					</article></section>
+
+			</div>	
+		</div>
+		<!-- //팝업 컨텐츠 -->
+
+		<!-- 미리보기 팝업 -->
+		<div class="pop_wrap preview" style="width:416px; display: none;" >
+		
+			<!-- 팝업 헤더 -->
+			<div class="pop_header">
+				<h1>보고서 미리보기</h1>
+				<a href="#" onClick="close_smartPop();" class="btn_popclose"><img src="../img/txof/btn/btn_popclose_white.gif"
+						alt="팝업닫기"></a>
+			</div>
+			<!-- //팝업 헤더 -->
+		
+			<!-- 팝업 컨텐츠 -->
+			<div class="pop_container" style="">
+		
+				<div class="data_list_v">
+					<div class="cust_wrap">
+                        <a href="#none" class="btn_style5" id="btn_cpUrl" style="right:95px !important;"><span>링크복사</span></a>
+						<a href="#none" class="btn_style5"><span>새로고침</span></a>
+						<img class="imgMockup" src="../img/txof/bg/bg_frame_v2.png" alt="" style="width: 374px !important;">
+						<iframe src="https://sitsemor.smjb.co.kr/vwmr_rept_102.act?REQ_DATA=wQNhwfVsEy05276ee34a734d14be45ec9f9aec3ff6cd80498645d307a56d892558a33599ad1dba3734b77f1cf13a60cdf914baea3c1340f154a0c946afa9574e1ede098d39831cf0c8754ca9e831054eff70046003289e5baf1d96cdb857b7521742174141c21cab9187af9a31956df13a104718391ea6a73534484a2cb03b3667434eab84c&PREVIEW_YN=Y&WEB_YN=Y"
+							frameborder="0" style="width: 380px !important;"></iframe>
+					</div>
+				</div>
+				<div class="areaSend_wrap">
+					<div class="gitbook">
+						<a href="https://semo-report.gitbook.io/guide/skill-1/9-1" class="grid_info_link" style="display: ;" target="_blank">
+							<span>연락처 등록 방법이 궁금해요</span>
+							<img src="../img/txof/ico/ico_que_green.png" alt="그리드 도움말">
+						</a>
+					</div>
+					<div class="areaSend">
+						<div class="phoneNumWrap">
+							<input type="number">
+							<span class="divide">-</span>
+							<input type="number">
+							<span class="divide">-</span>
+							<input type="number">
+						</div>
+						<a href="#none" class="btn_style_gray_big bd"><span>나에게 발송</span></a>
+					</div>
+					<div class="areaSend user">
+						<div class="info">
+							<div class="icon">
+								<img src="../img/txof/ico/ico_noti_red.svg" alt="">
+							</div>
+							<div class="desc">
+								<p>
+									수임처 앱 내, 등록된 거래처의 연락처가 없어 보고서를 발송할 수 없어요!
+								</p>
+							</div>
+						</div>
+						<div class="phoneNumWrap" style="display: none;">
+							<input type="number" value="010" readonly="readonly">
+							<span class="divide">-</span>
+							<input type="number" value="2703" readonly="readonly">
+							<span class="divide">-</span>
+							<input type="number" value="9626" readonly="readonly">
+						</div>
+						<a href="#none" class="btn_style_big"><span>고객에게 발송</span></a>
+					</div>
+				</div>
+				
+				
+		
+		
+			</div>
+			<!-- //팝업 컨텐츠 -->
+		</div>
+		<!-- //미리보기 팝업 -->
+	</div>
+
+	<!-- Code injected by live-server -->
+
+
+
+</body>
+</html>

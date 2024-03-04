@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="prefix__ico_small_bank10_우체국은행" width="40" height="40" viewBox="0 0 40 40">
+    <defs>
+        <style>
+            .prefix__cls-2{fill:#fff}
+        </style>
+    </defs>
+    <circle id="prefix__타원_70" cx="20" cy="20" r="20" fill="#de040a" data-name="타원 70"/>
+    <g id="prefix__그룹_473" data-name="그룹 473" transform="translate(-246.921 -2371.469)">
+        <path id="prefix__패스_939" d="M252.484 2401.863a.061.061 0 0 0-.006.115l4.79 3.164 1.372-6.457z" class="prefix__cls-2" data-name="패스 939" transform="translate(0 -10.49)"/>
+        <path id="prefix__패스_940" d="M332.613 2398.682H331.4a.563.563 0 0 0-.216.052l-6.071 3.128a.061.061 0 0 0-.006.115l4.71 3.1a.457.457 0 0 0 .21.063h1.21c.063 0 .071-.028.02-.063l-4.807-3.163 6.174-3.181c.058-.027.052-.051-.011-.051z" class="prefix__cls-2" data-name="패스 940" transform="translate(-51.768 -10.487)"/>
+        <path id="prefix__패스_941" d="M317.954 2398.682h-8.438l-1.371 6.459h8.437c.063 0 .071-.028.019-.063l-4.8-3.163 6.165-3.181c.057-.028.051-.052-.012-.052z" class="prefix__cls-2" data-name="패스 941" transform="translate(-39.704 -10.487)"/>
+        <path id="prefix__패스_942" d="M341.633 2398.682h-1.211a.561.561 0 0 0-.216.052l-6.071 3.128a.061.061 0 0 0-.006.115l4.71 3.1a.454.454 0 0 0 .21.063h1.211c.063 0 .071-.028.019-.063l-4.807-3.163 6.174-3.181c.054-.027.054-.051-.013-.051z" class="prefix__cls-2" data-name="패스 942" transform="translate(-58.197 -10.487)"/>
+        <path id="prefix__패스_943" d="M291.037 2409.917h-.005z" class="prefix__cls-2" data-name="패스 943" transform="translate(-27.506 -18.492)"/>
+        <path id="prefix__패스_944" d="M286.5 2383.969h-19.865a2.023 2.023 0 0 0-2.068 1.56 1.158 1.158 0 0 0 .444 1.183l7.138 4.712h.005l14.358-7.4c.058-.031.052-.055-.012-.055z" class="prefix__cls-2" data-name="패스 944" transform="translate(-8.624)"/>
+        <path id="prefix__패스_945" d="M277.106 2417.316l-11.194-7.393-9.142 4.714a1.9 1.9 0 0 0-.946 1.183c-.185.86.294 1.559 1.4 1.559h19.866c.06 0 .069-.028.016-.063z" class="prefix__cls-2" data-name="패스 945" transform="translate(-2.38 -18.499)"/>
+    </g>
+</svg>

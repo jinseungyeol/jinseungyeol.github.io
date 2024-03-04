@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css_v2/semo_style.css">
+    <!-- <link rel="stylesheet" href="../../css_v2/ione_style.css"> -->
+  <script src="../../js_v2/jquery-3.5.1.min.js"></script>
+    <title>홈택스 관리 - 세무대리인 관리번호</title>
+</head>
+<body>
+    <div class="title b_white">
+        <div class="title_left">
+            <i class="ico_cen left_arrow"></i>
+        </div>
+        <span class="title_text">홈택스 관리</span>
+    </div>
+    <div class="basic_wrapper">      
+        <div class="card_connect_wrap">
+            <!-- 관리번호 입력 / 비밀번호 변경 분기처리 -->
+            <!-- 관리번호 입력 -->
+            <section class="sign id_make" style="display: none;">
+                <header class="main_tit">
+                    <h1 class="txt01">
+                        세무대리인 관리번호<br>
+                        1회 필수입력 
+                    </h1>
+                    <h2 class="txt01">
+                        관리번호 예시 : A12345
+                    </h2>
+                </header>
+                <div class="content">
+                    <article class="cont_wrap set_mgb35">
+                        <div class="cont">
+                            <div class="item">
+                                <div class="select">
+                                    <span>관리번호</span>
+                                </div>
+                                <div class="input_wrap">
+                                    <input type="text" placeholder="영문+숫자 5자리">
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="cont_wrap">
+                        <div class="cont">
+                            <div class="item">
+                                <div class="select">
+                                    <span>비밀번호</span>
+                                </div>
+                                <div class="input_wrap">
+                                    <input type="password" placeholder="비밀번호 입력">
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <!-- add Class active 활성화  -->
+                <div class="bot_fix">
+                    <button type="button" class="type_A active">
+                        <span>저장할게요</span>
+                    </button>
+                </div>    
+            </section>
+
+            <!-- 비밀번호 변경 -->
+            <section class="sign id_make">
+                <header class="main_tit">
+                    <h1 class="txt01">
+                        세무대리인<br>
+                        관리번호/비밀번호
+                    </h1>
+                    <h2 class="txt01 set_mgb15">
+                        홈택스에서 비밀번호를 변경한 경우<br>
+                        앱에서도 변경필요! 
+                    </h2>
+                    <h2 class="txt01">
+                        관리번호<em>A12345</em>
+                    </h2>
+                </header>
+                <div class="content">
+                    <article class="cont_wrap">
+                        <div class="cont">
+                            <div class="item">
+                                <div class="select">
+                                    <span>비밀번호</span>
+                                </div>
+                                <div class="input_wrap">
+                                    <input type="password" placeholder="비밀번호 입력">
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- add Class active 활성화 -->
+                <div class="bot_fix">
+                    <button type="button" class="type_A active">
+                        <span>저장할게요</span>
+                    </button>
+                </div>    
+            </section>
+
+        </div>       
+    </div>
+</body>
+</html>

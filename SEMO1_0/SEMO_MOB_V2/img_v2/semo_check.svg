@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="33.957" viewBox="0 0 50 33.957">
+    <defs>
+        <clipPath id="yapoubvdia">
+            <path data-name="사각형 16979" style="fill:none" d="M0 0h50v33.957H0z"/>
+        </clipPath>
+    </defs>
+    <g data-name="그룹 65461" style="clip-path:url(#yapoubvdia)">
+        <path data-name="패스 48318" d="M18.344 33.957.922 17.218a3 3 0 0 1 4.156-4.327L18.4 25.686 44.949.811a3 3 0 1 1 4.1 4.378z" style="fill:#12997a"/>
+    </g>
+</svg>

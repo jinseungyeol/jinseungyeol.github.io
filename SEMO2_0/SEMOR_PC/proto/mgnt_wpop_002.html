@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<title>세모리포트</title>
+<link rel="stylesheet" href="../css/reset_taxp.css">
+<link rel="stylesheet" href="../css/app_header.css"><!-- [D] 세무대리인용 header -->
+<link rel="stylesheet" href="../css/content_taxp.css"><!-- [D] 세무대리인용 -->
+
+<!-- custom scrollbar plugin css -->
+<link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+  <script src="../js/lib/jquery/jquery-1.12.4.min.js"></script>
+<script src="../js/lib/jquery/jquery-ui-1.10.4.min.js"></script>
+<!-- custom scrollbar plugin -->
+<script src="../js/design/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../js/design/jquery.placeholder.min.js"></script>
+<script src="../js/lib/plugin/smart.popup.js"></script>
+<script src="../js/comm/common.js"></script>
+<script>
+$(function(){
+  // Invoke the plugin
+  $('input, textarea').placeholder({customClass:'my-placeholder'});
+
+  //outs_0009_01.js 참조
+  $("#div_calendar").on("click",function(){
+    var stDt = $("#inp_str_dt").val().replace(/-/g,"");
+    var edDt = $("#inp_end_dt").val().replace(/-/g,"");
+    //기간 설정 팝업 호출
+    callCalendarTxof(stDt, edDt, function(data){
+      $("#inp_str_dt").val(data.STR_DATE);
+      $("#inp_end_dt").val(data.END_DATE);
+    });
+  });
+});
+
+
+
+//직원추가가입 팝업
+function fn_joinPop(){
+  var $form = $("<form method='post'></form>");
+    open_smartPop({href: "./user_info_006.html", width:430, height:547, scrolling:false, target:window, frm:$form});
+}
+
+
+</script>
+
+</head>
+<body class="lnb_bg"><!-- [D] 메뉴영역(접기 : class="fold", 펼치기 : class="lnb_bg") -->
+
+<!-- 수임처 개선 -->
+<!-- header -->
+<div class="app_header">
+  <div class="app_header_inner">
+    <div class="ah_l">
+      <h1>세모리포트</h1>
+    </div>
+
+    <div class="ah_r">
+      <ul class="ah_menu">
+        <!--
+        <li style="position:absolute;top:-16px;left:-47px;"><a href="#none" class="btn_alarm" title="알림"><em class="alarm_num" style="display: none;"></em></a></li>
+        <li><a href="#none"><img src="../img/txof/app_header/ic_top04.png" alt="">SMS</a></li>
+        <li style="position:relative;">
+          <a href="https://academyserp.notion.site/4ee92f23a9184afda550d61faf10a5e3" target="_blink"><img src="../img/txof/app_header/ic_top05.png" alt="">메뉴얼</a>
+        </li>
+        <li><a href="#none"><img src="../img/txof/app_header/ic_top02.png" alt="">로그아웃</a></li>
+        -->
+      </ul>
+    </div>
+  </div>
+</div>
+<!-- //header -->
+<!-- //수임처 개선 -->
+
+<div class="wrap"><!-- [D] 상세검색일 경우(class="mh") -->
+  <!-- Container -->
+  <div class="container">
+
+    <!-- lnb box -->
+    <div class="lnb_box">
+
+      <!-- (modify)20220804 lnb_boxInn, mCustomScrollbar 추가 / 레이어 위치 이동 -->
+      <!-- lnb_boxInn -->
+      <div class="lnb_boxInn mCustomScrollbar">
+        <!-- lnb top 추가 -->
+        <div class="lnb_top">
+          <!-- user view -->
+          <div class="user_view">
+            <div class="user_r_side">
+              <p class="icon_user"><strong>홍길동</strong> 님</p>
+              <a class="btn_set" title="환경설정"></a><!-- 2019-09-27 -->
+            </div>
+          </div>
+          <!-- //user view -->
+        </div>
+        <!-- //lnb top 추가 -->
+
+        <div class="alarm_wrap">
+          <dl id="" style="margin-bottom:0;"><!-- (modify)20220810 스타일 추가 -->
+            <dd class="on">
+              <div class="line first">가입고객 관리</div>
+            </dd>
+          </dl>
+
+          <!-- (add)20220804 -->
+          <div class="mygroupLst">
+            <ul>
+              <!-- 담당자 -->
+              <li class="off"><!-- 활성화클래스 on -->
+                <a href="#none" class="">담당자</a>
+                <div class="mygroupCont">
+                  <!-- 20180906 수정 -->
+                  <dl class="mygroup" id="" style="display:;">
+                    <!--<dt class="on"><a class="txt">그룹</a></dt>-->
+                    <!-- 비활성 -->
+                    <dd class="off"><span class="bg"></span>
+                      <a href="#none"><div class="line"><span class="icon mygroup_icon12_1"></span> 강윤아<span class="badge2"><strong id="">0</strong></span></div></a>
+                    </dd>
+                    <dd class="off"><span class="bg"></span>
+                      <a href="#none"><div class="line"><span class="icon mygroup_icon12_1"></span> 강윤아<span class="badge2"><strong id="">0</strong></span></div></a>
+                    </dd>
+                  </dl>
+                </div>
+              </li>
+              <!-- //담당자 -->
+
+              <!-- 그룹 -->
+              <li class="on"><!-- 활성화클래스 on -->
+                <a href="#none" class="">어드민 관리</a>
+                <div class="mygroupCont">
+                  <!-- 20180906 수정 -->
+                  <dl class="mygroup" id="" style="display:;">
+                    <!--<dt class="on"><a class="txt">그룹</a></dt>-->
+                    <!-- 비활성 -->
+                    <dd class="off"><span class="bg"></span>
+                        <a href="#none"><div class="line"> 리포트 설정</div></a>
+                    </dd>
+                    <dd class="off"><span class="bg"></span>
+                        <a href="#none"><div class="line"> 세무지식 관리</div></a>
+                    </dd>
+                    <dd class="off"><span class="bg"></span>
+                        <a href="#none"><div class="line"> 웰컴팝업 관리</div></a>
+                    </dd>
+                    <dd class="off"><span class="bg"></span>
+                        <a href="#none"><div class="line"> 결제정보 관리</div></a>
+                    </dd>
+                  </dl>
+                  <!-- //20180906 수정 -->
+                </div>
+              </li>
+              <!-- //그룹 -->
+
+            </ul>
+          </div>
+          <!-- //(add)20220804 -->
+        </div>
+      </div>
+      <!-- //lnb_boxInn -->
+
+    </div>
+    <!-- //lnb box -->
+
+
+
+    <!-- content -->
+    <div class="content">
+
+
+      <div class="content_wrap">
+
+        <!-- 상단타이틀 -->
+        <div class="title_wrap h1type" >
+          <div class="left">
+            <h1>웰컴팝업 관리&nbsp;<span>세모Report 모바일 웰컴팝업을 관리합니다.</span></h1>
+          </div>
+
+          <div class="right">
+            <!-- 2022-10-17 위치 변경 및 채팅 아이콘 추가 -->
+            <div class="cntalign"><a href="#none" class="btn_style1" style="margin-left:0;"><span>설치메세지 설정</span></a> <a href="#none"><img src="../img/txof/ico/ico_chat_big.png" alt=""></a></div>
+            <!--// 2022-10-17 위치 변경 및 채팅 아이콘 추가 -->
+          </div>
+        </div>
+        <!-- //상단타이틀 -->
+
+
+        <!-- 거래처조회 > 상세(회사정보) -->
+        <div class="cust_dv_wrap nobd"><!-- [D] 편집기능 눌렀을때 class="edit_on" 추가 -->
+
+
+          <div class="cust_wrap cboth">
+            <div class="cust_dv_bx" style="display:;width: 800px;">
+              <h3 class="tit_bul mgb10"> 기본 웹컴팝업&nbsp;<span class="ftcl_gray fs13">* 웰컴 팝업은 하나만 팝업으로 사용할 수 있습니다.</span></h3>
+
+              <div class="tbl_inqbx_gb">
+                <!-- 리스트 테이블 -->
+                <table class="tbl_result_wl" summary="">
+                  <caption></caption>
+                  <colgroup>
+                    <col style="width: 150px;">
+                    <col style="width: 250px;">
+                    <col style="width: 150px;">
+                    <col style="width: 250px">
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div class="fs14 fwb">템플릿</div>
+                      </td>
+                      <td>
+                        <select style="width: 210px;">
+                          <option>텍스트+이미지</option>
+                          <option>텍스트</option>
+                        </select>
+                      </td>
+                      <td>
+                        <div class="fs14 fwb">팝업옵션</div>
+                      </td>
+                      <td>
+                        <select style="width: 210px;">
+                          <option>하루보지않기</option>
+                          <option>일주일보지않기</option>
+                          <option>다시보지않기</option>
+                        </select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="fs14 fwb">카테고리</div>
+                      </td>
+                      <td>
+                        <select style="width: 210px;">
+                          <option>공지사항</option>
+                          <option>세금신고안내</option>
+                          <option>명절인사</option>
+                          <option>연말연시인사</option>
+                        </select>
+                      </td>
+                      <td>
+                        <div class="fs14 fwb">기간</div>
+                      </td>
+                      <td>
+                        <div id="div_calendar">
+                                            <div class="input_box2"><input type="text" style="width:70px;" value="2017-01-01" id="inp_str_dt" readonly="readonly"> <a href="#none"><img src="../img/txof/ico/ico_calendar.png" alt="달력"></a></div><span class="tx_swungDash">~</span>
+                                            <div class="input_box2"><input type="text" style="width:70px;" value="2017-01-31" id="inp_end_dt" readonly="readonly"> <a href="#none"><img src="../img/txof/ico/ico_calendar.png" alt="달력"></a></div>
+                                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="3">
+                        <textarea style="height:265px;width:755px;">
+안녕하세요.
+스타세무회계 김조겸 입니다.
+내 몸에 꼭 맞는 맞춤세무사를
+내 사업에 꼭 맞는 맞춤세무사를
+찾아야 하는게 아닐까요?
+
+세무 뿐 아니라 노무/재산관리까지
+챙겨주는 맞춤세무사를 만나세요!
+
+세무/노무/재산관리 통합맞춤서비스로
+사장님의 모든 걱정을 해결해드리겠습니다.
+                        </textarea>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="3"><input type="file" style="width:755px;"></td>
+                    </tr>
+                    <tr>
+                      <td colspan="3" class="last"><span class="ftcl_gray fs13">이미지 파일 (PNG, JPG 등) / 사이즈 W(200) x H(60) </span></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <!-- //리스트 테이블 -->
+              </div>
+              
+              <div class="tac"><a href="#none" class="btn_style_gray_big"><span>취소</span></a>&nbsp;&nbsp;&nbsp;<a href="#none" class="btn_style_big"><span>저장</span></a></div>
+              
+              
+            </div>
+            
+            
+            
+            <div class="cust_dv_bx rht" style="width: 337px; vertical-align:middle;float:left;">
+              <div style="background-image:url(../img/txof/bg/bg_eventpop.png);height:600px;width:337px;">
+                <div style="padding:130px 65px 12px 65px; height: 360px;">
+                  <div style="height:60px;"><img src="../img/txof/sample/welcome_semor.png"></div>
+                  <textarea style="height:265px;width:190px;border:0px;background:#fafafa;">
+안녕하세요.
+스타세무회계 김조겸 입니다.
+내 몸에 꼭 맞는 맞춤세무사를
+내 사업에 꼭 맞는 맞춤세무사를
+찾아야 하는게 아닐까요?
+
+세무 뿐 아니라 노무/재산관리까지
+챙겨주는 맞춤세무사를 만나세요!
+
+세무/노무/재산관리 통합맞춤서비스로
+사장님의 모든 걱정을 해결해드리겠습니다.
+                  </textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //거래처조회 > 상세(회사정보) -->
+
+      </div>
+       <!-- //content_wrap -->
+
+    </div>
+    <!-- //content -->
+
+
+
+
+
+  </div>
+  <!-- //Container -->
+
+
+
+
+
+  <!-- footer 추가 : 20180828 -->
+  <div class="footer">
+    <!-- Copy right -->
+    <div class="footer_wrap">
+      <div class="footer_box">
+        <span><a href="#dummy"  style="color:#000 !important;font-weight:bold" class=" fs15">이용약관</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#dummy"  style="font-weight:bold"  class="txt_b fs15">개인정보처리방침</a></span>
+      </div>
+      <div class="footer_box">
+        <span style="color:#000 !important;" class=" fs13">로움아이티(주) | 팩스:070-7950-5114 | 주소:서울시 영등포구 영신로 220 KnK디지털타워 11층 1112호 | 대표:박승현</span>
+      </div>
+      <div class="footer_box">
+        <span style="color:#000 !important;" class=" fs13">사업자등록번호:847-87-00259 | 통신판매업종신고증:2019-서울영등포-1992호</span>
+      </div>
+    </div>
+    <!-- //Copy right -->
+  </div>
+  <!-- //footer -->
+</div>
+<!-- //wrap -->
+
+
+</body>
+</html>
+

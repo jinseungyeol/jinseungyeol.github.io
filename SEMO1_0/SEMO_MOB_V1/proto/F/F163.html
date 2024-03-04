@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../../css/semo_cont.css">
+  <link rel="stylesheet" href="../../css/semo_cont_ibk.css" />
+
+  <title>SEMO</title>
+</head>
+<body>
+  <div class="new_content">
+    <div class="cont_bg cont_pd"> <!-- 클래스 cont_pd_hd fix_button 포함 패딩--> 
+
+      <!-- 상단 타이틀 -->
+      <div class="title">카드결과 조회</div>
+      <!-- //상단 타이틀 -->  
+       
+      <div class="wrap setting">
+
+        <p class="noti_star wd_set color">
+          <i class="character"></i>
+          <span>등록하지 않을 계정은 체크 해제해 주세요.</span>
+        </p>
+
+        <!-- 리스트 -->
+        <div> 
+          <!-- 카드 목록 -->
+          <div class="account_list_wrap">
+            <!-- 카드 목록 총계-->
+            <div class="account_total_box">
+              <p>
+                <i class="ico_account card"></i> <!--card 클래스명 추가-->
+                <span>카드 <em class="account_number">5</em><span>개</span> (<em class="bank_number">4</em>개 카드사)</span> <!--문수수정, ui수정-->
+              </p>
+            </div>
+            <!-- //카드 목록 총계-->
+
+            <!-- 카드-->
+            <div class="account_list_box alb_posi">
+              <ul>
+                <li class="atlb_list3">
+                  <div>
+                    <span class="bk_class_pers">개인</span>
+                  </div>
+                  <div>
+                    <span class="bk_name"><i class="ico_c_fail"></i>IBK 기업은행</span>
+                    <span class="bk_acnt_class">쇼핑엔조이</span>
+                    <span class="bk_acnt">1234-5678-****-5211</span>
+                    <span class="bk_fail">
+                      타기관 인증서 등록이 안되어 있습니다.<br> 
+                      확인 부탁드립니다. [8010E2A1]
+                    </span> 
+                  </div>
+                  <div>
+                    <input type="checkbox" class="check_enroll">  <!--클릭하면 checked true-->
+                    <div class="bk_enroll">등록</div>
+                  </div>
+                </li>
+                <li class="atlb_list3 off"> <!--비활성화 클래스 off-->
+                  <div>
+                    <span class="bk_class_pers">개인</span>
+                  </div>
+                  <div>
+                    <span class="bk_name"><i class="ico_c_fail"></i>KB국민</span>
+                    <span class="bk_acnt_class">일상의기쁨</span>
+                    <span class="bk_acnt">1234-5678-****-5211</span>
+                    <span class="bk_fail">
+                      타기관 인증서 등록이 안되어 있습니다.<br>
+                      확인 부탁드립니다. [8010E2A1]
+                    </span> 
+                  </div>
+                  <div>
+                    <input type="checkbox" class="check_enroll">  <!--클릭하면 checked true-->
+                    <div class="bk_enroll">등록</div>
+                  </div>
+                </li>
+                <li class="atlb_list3 c_none"> <!--등록 안되어 있을때 비활성화 클래스 c_none-->
+                  <div>
+                    <span class="bk_class_busi">기업</span>
+                  </div>
+                  <div>
+                    <span class="bk_name"><i class="ico_c_fail"></i>IBK 기업은행</span>
+                    <span class="bk_fail">
+                      타기관 인증서 등록이 안되어 있습니다.<br>
+                      확인 부탁드립니다. [8010E2A1]
+                    </span> 
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <!-- //카드-->
+          </div>
+          <!-- //카드 목록 -->           
+        </div>
+        <!-- //리스트 -->
+           
+      </div> 
+    </div>
+    <!-- 하단 fix 버튼 -->
+    <div class="btm_fix"> 
+      <span class="bgc_green">등록하기</span>
+    </div>
+    <!-- 하단 fix 버튼 -->
+  </div>
+</body>
+</html>

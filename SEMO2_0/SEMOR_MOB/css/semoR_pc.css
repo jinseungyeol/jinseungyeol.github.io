@@ -1,0 +1,154 @@
+@charset "utf-8";
+
+/* reset */
+@font-face {font-family: 'Pretendard'; font-weight: normal; src: url(../font/Pretendard-Medium.woff2) format('woff2');}
+@font-face {font-family: 'Pretendard'; font-weight: 600; src: url(../font/Pretendard-SemiBold.woff2) format('woff2');}
+@font-face {font-family: 'Pretendard'; font-weight: bold; src: url(../font/Pretendard-Bold.woff2) format('woff2');}
+
+html {position:relative;height:100%}
+html,body {font-family:'Pretendard'; color:#111; font-weight:normal; -webkit-text-size-adjust:none;-moz-text-size-adjust:none; -ms-text-size-adjust:none; -webkit-tap-highlight-color:transparent; -webkit-user-select:none; line-height: 1.5}
+html,body,div,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,address,cite,code,del,dfn,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,input,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video {margin:0; padding:0; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; -webkit-tap-highlight-color:transparent;-webkit-text-size-adjust:none; -webkit-touch-callout:none; -webkit-font-smoothing:antialiased; font-size: 15px}
+body,button,h1,h2,h3,h4,h5,input,select,table,textarea {font-family:'Pretendard'; margin:0; padding:0}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,legend,select,input,textarea,p,blockquote,th,td,menu,button,a,span,strong,label,header,footer,section,article,aside,nav,hgroup,details,figure,figcaption {word-break:break-word; box-sizing:border-box;-moz-box-sizing:border-box; -webkit-box-sizing:border-box; -ms-box-sizing:border-box} /* 여백을 포함한 사이즈 설정*/ 
+h1,h2,h3,h4,h5,h6,input,select,textarea,button,option {color:inherit; font-family:'Pretendard'; font-size:100%; font-weight:normal}
+h1,h2,h3,h4,h5,h6,strong,b,th {font-weight:bold}
+em,var,address,i {font-style:normal}
+ul,ol,li {list-style:none}
+legend,fieldset,button,img {border:0}
+img {max-width:100%; vertical-align:top}
+input,select,textarea,button,label,strong,a,time {vertical-align:inherit}
+input,select,textarea,button,option {font-family:inherit; font-weight:inherit}
+input,select,textarea {appearance:none; -webkit-appearance:none; border-radius: 0}
+input:focus, textarea:focus {outline-style: none; box-shadow: none; border: 0px}
+textarea {resize:none; border: none}
+button,select,option {color:inherit; text-transform:none} 
+table {table-layout:fixed; width:100%; border-collapse:collapse; border-spacing:0} 
+button {background:none; cursor:pointer; white-space: nowrap; overflow:visible}
+a {color:inherit; font-size: inherit; text-decoration:none}
+
+/** important 정의 **/
+.pointColor {color: #17bf98 !important} /* 버튼 ( 혹시 모를 제휴사 분기처리 컬러 )*/
+.pointColor02 {color: #12997a !important} /* 영역강조 ( 혹시 모를 제휴사 분기처리 컬러 ) */
+.pointColor03 {color: #ff5353 !important} /* 출금 및 기한 색상 */
+.pointColor04 {color: #0088ff !important} /* 입금 */
+.pointColor05 {color: #111 !important}
+.pointColor06 {color: #a2a5ac !important}
+.pointBgColor {background: #17bf98 !important} /* 버튼 ( 혹시 모를 제휴사 분기처리 컬러 )*/
+.dB {display :block !important}
+.dIb {display: inline-block !important}
+.dN {display: none !important}
+.posR {position: relative !important}
+.posA {position: absolute !important}
+.mg0 {margin: 0 !important}
+.mgt0 {margin-top: 0 !important}
+.mgb0 {margin-bottom: 0 !important}
+.mgt15 {margin-top: 15px !important}
+.mgb25 {margin-bottom: 25px !important;}
+.pd0 {padding: 0 !important}
+.pdt0 {padding-top: 0 !important}
+.pdb0 {padding-bottom: 0 !important}
+.w35p {width: 35% !important}
+.w50p {width: 50% !important}
+.flex3_5 {flex: 3.5 !important}
+.taLeft {text-align: left !important}
+.taCenter {text-align: center !important}
+.taLeft {text-align: left !important}
+.taRight {text-align: right !important}
+.fontSize19 {font-size: 1.266rem !important}
+.bdNone {border: none !important}
+.fwNormal {font-weight:normal !important}
+.fwBold {font-weight:bold !important}
+
+/* setting */
+.blind {position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); border: 0; white-space: nowrap}
+.elipsis {display:block; overflow:hidden; white-space:nowrap; text-overflow:ellipsis}
+.clear:after {content:''; display:block; clear:both}
+
+/* wrap */
+.wrapper {background: #fff}
+.inner {max-width: 1080px; margin: 0 auto; padding: 0 20px;}
+
+/* title 정의 */
+h1.defTit {font-size: 40px}
+
+/* Text 정의 */
+.defTxt {font-size: 24px; color: #111; word-break: keep-all}
+
+/* button 정의 */
+button.disabled {background: #ebebeb !important; color: #c7c7c7 !important}
+a.disabled {background: #ebebeb !important; color: #c7c7c7 !important}
+.areaBodyBtn {display: flex; margin-bottom: 60px;}
+.areaBodyBtn button {height: 60px; line-height: 60px; padding: 0 30px; text-align: center; font-weight: 600; font-size: 1.266rem; border-radius: 7px; color: #fff; background-color: #17bf98;}
+
+/* input 정의 */
+input[type="text"].inputBox {width: 100%; height: 60px; line-height: 60px; padding: 16px; box-sizing: border-box; border-style: initial; border: initial; border-image: initial; background: initial; font-size: 24px; border: 1px solid #c7c7c7; border-radius: 6px;}
+input[type="text"].inputBox::placeholder {color: #c7c7c7; font-size: 24px; font-style: normal}
+input[type="text"].inputBox:focus {border: 1px solid #12997a}
+
+.semoReptWrap {display: flex; flex-direction: column; justify-content: space-between; height: 100vh;}
+/* .topCnt {display: flex; flex-direction: column; overflow-y: auto;} */
+
+/* roundBox */
+.roundBoxWrap {margin-bottom: 42px}
+.roundBox {padding: 20px 25px; border-radius: 10px; background: #f9f9f9}
+
+/* header */
+.header {height: 80px;}
+.header .areaLogo {display: inline-block;}
+.header .areaLogo h1 {margin-top: 25px;}
+.header .gnb {float: right; line-height: 80px;}
+.header .gnb li {display: inline-block;}
+.header .gnb li a {font-size: 18px;}
+.header .gnb li + li a {margin-left: 60px;}
+.header .gnb li.active a {color: #12997a;}
+
+/* areaNotice */
+.areaNotice {margin: 108px 0 78px;}
+.areaNotice .defTit {margin-bottom: 66px;}
+
+/* moveLink */
+.intro {margin: auto 0 100px;}
+.intro .inner {display: flex; justify-content: flex-end;}
+.intro .inner .introItem {width: 255px; padding-top: 12px; border-top: 1px solid #000;}
+.intro .inner .introItem + .introItem {margin-left: 40px;}
+.intro .inner .introItem .txt {font-size: 17px;}
+.intro .inner .introItem .moveLink {display: block; margin-top: 50px;}
+.intro .inner .introItem .moveLink span {padding-right: 25px; background: url(../img/ico_tsRight.png) no-repeat center right / 24px; font-size: 19px; font-weight: 600;}
+.intro .inner .introItem .moveLink img {margin-top: 15px;}
+
+/* areaInput */
+.areaInput .areaContent {width: 640px;}
+.areaInput .areaContent .areaInput {opacity: 0; visibility: hidden;}
+.areaInput .areaContent .areaInput.active {opacity: 1; visibility: visible;}
+.areaInput .areaContent .inputWrap {width: 50%; float: left; padding: 0 6px;}
+.areaInput .areaContent .inputWrap:first-child {padding-left: 0px;}
+.areaInput .areaContent .inputWrap:nth-child(2) {padding-right: 0px;}
+.areaInput .areaContent .roundBoxWrap {padding-top: 36px;}
+
+/* dotListMsg */
+.dotListMsg > li {position: relative; padding-left: 8px; font-size: 14px; color: #adb0b7}
+.dotListMsg > li::before {content: '·'; position: absolute; top: 0px; left: 0}
+
+/* footer */
+.footerWrap {padding: 15px 0; background:#222; user-select: text;}
+.footerWrap .inner .areaTerms {margin-bottom: 10px;}
+.footerWrap .inner .areaTerms a {color: #fff; font-size: 16px; font-weight: bold;}
+.footerWrap .inner .areaTerms a + a {margin-left: 10px;}
+.footerWrap .inner .areaTerms .term02 {color: #878787;}
+.footerWrap .inner .footerInfo {display: flex;}
+.footerWrap .areaLogo {margin: 13px 20px 0 0;}
+.footerWrap .areaLogo .logo {width: 100px;}
+.footerWrap .footerInfo .footerBox span {color: #fff; font-size: 13px; word-break: keep-all;}
+.footerWrap .footerInfo .footerBox .copyright {color: #999;}
+
+@media screen and (max-width: 767px) {
+    .areaNotice {margin: 40px 0;}
+    .areaNotice .defTit {font-size: 2.267rem}
+    .intro .inner {display: block}
+    .intro .inner .introItem + .introItem {margin-left: 0; margin-top: 80px}
+    .intro .inner .introItem .moveLink {margin-top: 20px}
+    .footerWrap .inner .footerInfo {display: block;}
+    .footerWrap .areaLogo {margin-bottom: 20px;}
+    .footerWrap .footerInfo .footerBox span {display: block; margin-top: 2px;}
+    .footerWrap .footerInfo .footerBox .divide {display: none;}
+}

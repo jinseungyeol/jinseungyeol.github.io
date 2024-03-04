@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44">
+    <defs>
+        <clipPath id="hzmrxyilpa">
+            <path data-name="사각형 24557" style="fill:#3a3a3a" d="M0 0h38.96v37.495H0z"/>
+        </clipPath>
+    </defs>
+    <g data-name="그룹 83423">
+        <g data-name="그룹 83414" style="clip-path:url(#hzmrxyilpa)" transform="translate(3.008 3.617)">
+            <path data-name="패스 60227" d="M32.73 0H6.23A6.248 6.248 0 0 0 0 6.23v25.035a6.249 6.249 0 0 0 6.23 6.23h26.5a6.25 6.25 0 0 0 6.23-6.23V6.23A6.248 6.248 0 0 0 32.73 0m3.5 31.446a3.606 3.606 0 0 1-3.6 3.6H6.326a3.606 3.606 0 0 1-3.6-3.6V13.12a3.606 3.606 0 0 1 3.595-3.6h26.31a3.606 3.606 0 0 1 3.6 3.6z" style="fill:#3a3a3a"/>
+            <path data-name="사각형 24547" transform="translate(14.828 14.455)" style="fill:#3a3a3a" d="M0 0h2.742v2.742H0z"/>
+            <path data-name="사각형 24548" transform="translate(21.374 14.455)" style="fill:#3a3a3a" d="M0 0h2.742v2.742H0z"/>
+            <path data-name="사각형 24549" transform="translate(27.834 14.455)" style="fill:#3a3a3a" d="M0 0h2.742v2.742H0z"/>
+            <path data-name="사각형 24550" transform="translate(14.828 20.913)" style="fill:#3a3a3a" d="M0 0h2.742v2.742H0z"/>
+            <path data-name="사각형 24551" transform="translate(21.374 20.913)" style="fill:#3a3a3a" d="M0 0h2.742v2.742H0z"/>
+            <path data-name="사각형 24552" transform="translate(14.828 27.371)" style="fill:#3a3a3a" d="M0 0h2.742v2.742H0z"/>
+            <path data-name="사각형 24553" transform="translate(8.415 20.913)" style="fill:#3a3a3a" d="M0 0h2.742v2.742H0z"/>
+            <path data-name="사각형 24554" transform="translate(8.415 27.371)" style="fill:#3a3a3a" d="M0 0h2.742v2.742H0z"/>
+            <path data-name="사각형 24555" transform="translate(21.374 27.371)" style="fill:#3a3a3a" d="M0 0h2.742v2.742H0z"/>
+            <path data-name="사각형 24556" transform="translate(27.834 20.913)" style="fill:#3a3a3a" d="M0 0h2.742v2.742H0z"/>
+        </g>
+        <path data-name="사각형 24564" style="fill:none" d="M0 0h44v44H0z"/>
+    </g>
+</svg>

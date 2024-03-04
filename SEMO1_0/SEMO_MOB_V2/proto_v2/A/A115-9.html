@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css_v2/semo_style.css">
+    <link rel="stylesheet" href="../../css_v2/kt_style.css">
+  <script src="../../js_v2/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../../js_v2/wow.min.js"></script>
+    <title>상권분석A115-9</title>
+</head>
+<body>
+    <div class="title">
+        <div class="title_left">
+            <i class="ico_cen left_arrow"></i>
+        </div>
+        <span class="title_text">공유하기</span>
+    </div>
+    <div class="report_wrap">      
+        <div class="analysis_wrap sec04" >
+           <div class="ana_head flex_cs">
+               <span class="date">21년 06월 기준</span>
+               <i class="c_bi ico_cen"></i>
+           </div>
+           <div class="mon_avg">
+                <div class="mon_avg_tit flex_ac">
+                    <i class="ico_cont"></i>
+                    <span>우리동네 월 평균 매출</span>
+                </div>
+                <div class="mon_total">
+                    <em id="number2"></em>만원
+                   
+                </div>
+                <div class="ana_gage">
+                    <div class="ana_gage_count">
+                        <span>780만원</span>
+                        <span>28,605만원</span>
+                    </div>
+                    <div class="ana_gage_bar ">
+                        <div class="ana_bar01"></div>
+                        <div class="ana_bar02">
+                            <span>4,341만원</span>
+                        </div>
+                        <div class="ana_bar03"></div>
+                    </div>
+                </div>
+                <div class="mon_graph">
+                    <canvas id="monChart01"></canvas>
+                </div>
+                <div class="mon_arr_wrap">
+                    <div class="mon_arr_down flex_cs">
+                        <div class="mon_arr_left">
+                            <span>전년대비</span>
+                        </div>
+                        <div class="mon_arr_right flex_cs">
+                            <span>-58.5%</span>
+                            <i class="ico_cont"></i>
+                        </div>
+                    </div>
+                    <div class="mon_arr_up flex_cs">
+                        <div class="mon_arr_left">
+                            <span>전월대비</span>
+                        </div>
+                        <div class="mon_arr_right flex_cs">
+                            <span>+48.3%</span>
+                            <i></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="major_sales_wrap">
+                    <div class="major_sales_tit flex_ac">
+                        <i class="ico_cont"></i>
+                        <span>서울특별시</span>
+                        &nbsp;주요 매출
+                    </div>
+                    <div class="major_sales_list_wrap wow dtu" data-wow-duration="0.5s">
+                        <div class="major_sales_list ">
+                            <div class="msl01 flex_cs">
+                                <span class="msl_txt01">서초구 반포2동</span>
+                                <span class="msl_txt02">7,359만원</span>
+                            </div>
+                            <div class="msl02 flex_cs">
+                                <span class="msl_txt03">업소수</span>
+                                <span class="msl_txt04">12개</span>
+                            </div>
+                            <div class="msl03 flex_cs">
+                                <span class="msl_txt05">유동인구</span>
+                                <span class="msl_txt06">5,514명</span>
+                            </div>
+                        </div>
+                        <div class="major_sales_list ">
+                            <div class="msl01 flex_cs">
+                                <span class="msl_txt01">강남구 도곡1동</span>
+                                <span class="msl_txt02">5,766만원</span>
+                            </div>
+                            <div class="msl02 flex_cs">
+                                <span class="msl_txt03">업소수</span>
+                                <span class="msl_txt04">12개</span>
+                            </div>
+                            <div class="msl03 flex_cs">
+                                <span class="msl_txt05">유동인구</span>
+                                <span class="msl_txt06">5,514명</span>
+                            </div>
+                        </div>
+                        <div class="major_sales_list ">
+                            <div class="msl01 flex_cs">
+                                <span class="msl_txt01">강남구 청담동</span>
+                                <span class="msl_txt02">4,941만원</span>
+                            </div>
+                            <div class="msl02 flex_cs">
+                                <span class="msl_txt03">업소수</span>
+                                <span class="msl_txt04">282개</span>
+                            </div>
+                            <div class="msl03 flex_cs">
+                                <span class="msl_txt05">유동인구</span>
+                                <span class="msl_txt06">9,328명</span>
+                            </div>
+                        </div>
+                        <div class="major_sales_list ">
+                            <div class="msl01 flex_cs">
+                                <span class="msl_txt01">서초구 서초2동</span>
+                                <span class="msl_txt02">4,525만원</span>
+                            </div>
+                            <div class="msl02 flex_cs">
+                                <span class="msl_txt03">업소수</span>
+                                <span class="msl_txt04">140개</span>
+                            </div>
+                            <div class="msl03 flex_cs">
+                                <span class="msl_txt05">유동인구</span>
+                                <span class="msl_txt06">8,369명</span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+        </div>
+        </div>
+        <div class="analysis_wrap sec03" >
+            <div class="mon_info_wrap" >
+                <div class="mon_info_01 wow dtu" data-wow-duration="0.5s">
+                    <div class="mon_info_tit flex_ac">
+                        <i class="ico_cont"></i>
+                        <span>선택업종 업소수</span>
+                    </div>
+                    <div class="mon_info_txt">
+                        <span>8개</span>
+                    </div>
+                </div>
+                <div class="mon_info_02 wow dtu" data-wow-duration="0.5s" data-wow-delay="0.1s">
+                    <div class="mon_info_tit flex_ac">
+                        <i class="ico_cont"></i>
+                        <span>일일평균 유동인구</span>
+                    </div>
+                    <div class="mon_info_txt">
+                        <span>3,330명</span>
+                    </div>
+                </div>
+                <div class="mon_info_03 wow dtu" data-wow-duration="0.5s" data-wow-delay="0.1s">
+                    <div class="mon_info_tit flex_ac">
+                        <i class="ico_cont"></i>
+                        <span>유동인구가 가장 많은 시간대</span>
+                    </div>
+                    <div class="mon_info_txt">
+                        <span>16~19시</span>
+                    </div>
+                    <div class="mon_graph">
+                        <canvas id="monChart02"></canvas>
+                    </div>
+                </div>
+                <div class="mon_info_04 wow dtu" data-wow-duration="0.5s">
+                    <div class="mon_info_tit flex_ac">
+                        <i class="ico_cont"></i>
+                        <span>유동인구가 가장 많은 요일</span>
+                    </div>
+                    <div class="mon_info_txt flex_cs">
+                        <div class="mon_info_week01">
+                            <div class="weekdays">
+                                <span>주중:27.5%</span>
+                            </div>
+                            <div class="weekend">
+                                <span>주말:75.5%</span>
+                            </div>
+                        </div>
+                        <div class="mon_info_week02">
+                            금요일
+                        </div>
+                    </div>
+                    <div class="mon_graph">
+                        <canvas id="monChart03"></canvas>
+                    </div>
+                    <div class="week_list_wrap">
+                        <div class="week_list">
+                            <span>월요일</span>
+                            <span>14.5%</span>
+                        </div>
+                        <div class="week_list">
+                            <span>화요일</span>
+                            <span>24.7%</span>
+                        </div>
+                        <div class="week_list">
+                            <span>수요일</span>
+                            <span>32.1%</span>
+                        </div>
+                        <div class="week_list">
+                            <span>목요일</span>
+                            <span>21.5%</span>
+                        </div>
+                        <div class="week_list today">
+                            <span>금요일</span>
+                            <span>14.5%</span>
+                        </div>
+                        <div class="week_list">
+                            <span>토요일</span>
+                            <span>18.5%</span>
+                        </div>
+                        <div class="week_list">
+                            <span>일요일</span>
+                            <span>22.1%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mon_foot_info">
+                <div class="mf_tit">
+                    <span>안내사항</span>
+                </div>
+                <div class="mf_txt">
+                    <div>
+                        <p>-</p>
+                        <span>
+                            본 자료는 소상공인시장진흥공단과 세모장부에서 제공하는 데이터로 외부에서 제공하는 다른 보고서와 차이가 있습니다.
+                        </span>
+                    </div>
+                    <div>
+                        <p>-</p>
+                        <span>앱 내에서도 조회 가능합니다.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="ana_button">
+                <span>매일 맞춤 보고서 받기</span>
+                <p>내 매출은 어느정도지?</p>
+                <i class="ico_cen right"></i>
+            </div>
+            <div class="ana_share_btn">
+                <span>친구에게 공유하기</span>
+            </div>
+        </div>
+    </div>
+   <script>
+             var memberCountConTxt = 4341;
+        $({ val : 0 }).animate({ val : memberCountConTxt }, {
+        duration:1000, // 속도
+        step: function() {
+            var num = numberWithCommas(Math.floor(this.val));
+            $("#number2").text(num);
+        },
+        complete: function() {
+            var num = numberWithCommas(Math.floor(this.val));
+            $("#number2").text(num);
+        } 
+        });
+
+        function numberWithCommas(x) {
+            return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
+
+
+         var ctx = document.getElementById('monChart01').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['IBK기업', 'NH농협'],
+                datasets: [{
+                    label: '수익',
+                    data: [400000 , 200000 ],
+                    backgroundColor: [
+                        '#249078',
+                        '#10C0E7'
+                        
+                    ],
+                    borderRadius:8
+                },
+                {
+                    label: '손실',
+                    data: [150000, 50000],
+                    backgroundColor: [
+                        '#ff7b36',
+                        '#ff8dc2'
+                    ],
+                    borderRadius:8 /*border radius 설정*/
+                }]
+            },
+            
+            options: {
+                plugins: { //label 삭제 
+                    legend: {
+                    display: false
+                    }
+                        },
+                scales: {
+                    y: {
+                        beginAtZero: true /* 초기 0부터 시작*/
+                    }
+                }
+            }
+        });
+
+        // Bar 차트
+        var ctx = document.getElementById('monChart02').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['IBK기업', 'NH농협'],
+                datasets: [{
+                    label: '수익',
+                    data: [400000 , 200000 ],
+                    backgroundColor: [
+                        '#249078',
+                        '#10C0E7'
+                        
+                    ],
+                    borderRadius:8
+                },
+                {
+                    label: '손실',
+                    data: [150000, 50000],
+                    backgroundColor: [
+                        '#ff7b36',
+                        '#ff8dc2'
+                    ],
+                    borderRadius:8 /*border radius 설정*/
+                }]
+            },
+            
+            options: {
+                plugins: { //label 삭제 
+                    legend: {
+                    display: false
+                    }
+                        },
+                scales: {
+                    y: {
+                        beginAtZero: true /* 초기 0부터 시작*/
+                    }
+                }
+            }
+        });
+
+         // 도넛차트
+        var ctx = document.getElementById('monChart03').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['08.23', '08.24', '08.25', '08.26', '08.27', '08.28', '08.29'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [12, 19, 10, 15],
+                    backgroundColor: [
+                        '#10C0E7',
+                        '#ff7b36',
+                        '#ffd036',
+                        '#ff8dc2',        
+                    ]
+                }]
+            },
+            options: {
+                plugins: {
+                    legend: {
+                    display: false
+                    }
+                        },
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+         // 슬라이더 애니메이션 
+         wow = new WOW({boxClass:     'wow',      // default
+                      animateClass: 'animated', // default
+                      offset:       100,          // default
+                      mobile:       true,       // default
+                      live:         true        // default
+                    }
+                    )
+                    wow.init();
+
+   </script>
+</body>
+
+</html>

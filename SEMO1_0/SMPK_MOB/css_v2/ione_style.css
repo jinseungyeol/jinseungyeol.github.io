@@ -1,0 +1,177 @@
+@charset "utf-8";
+/* smpk ione_style Ver 4 2023-02-20 */
+
+/* 2022-09-05 제휴 패키지 ibk 폰트 적용 해제 - jin */
+/* @font-face { font-family: "IBKfont"; font-weight: 350; src: url("../font_v2/IBKiDreamL.ttf") format("truetype"); } 
+@font-face { font-family: "IBKfont"; font-weight: 400; src: url("../font_v2/IBKiDreamM.ttf") format("truetype"); } 
+@font-face { font-family: "IBKfont"; font-weight: 700; src: url("../font_v2/IBKiDreamB.ttf") format("truetype"); } 
+
+body { font-family: "IBKfont"; font-weight: normal; } 
+.report_wrap { font-family:"IBKfont";} */
+
+/* 아이콘 */
+
+i.c_bi { background-image: url(../img_v2/ione_logo.svg); width: 34.9vw; height: 7.62vw; background-size: contain;} 
+/* number */
+i.num_01 { background-image: url(../img_v2/num01_ione.svg); } 
+i.num_02 { background-image: url(../img_v2/num02_ione.svg); } 
+i.num_03 { background-image: url(../img_v2/num03_ione.svg); } 
+i.num_04 { background-image: url(../img_v2/num04_ione.svg); } 
+
+
+/* 컬러 */
+
+.bgc_sig { background-color: #0090db !important; color: #fff !important; } 
+.c_sig { color: #0090db !important; } 
+
+
+/* 리스트 뷰 , 직원관리 */
+
+.content_info_share > span > i.bi { width: 32.34vw; height: 4.687vw; background-image: url(../img_v2/ione_logo.svg); background-size: contain; } 
+input[type="checkbox"]:checked { background-color: #0090db; } 
+
+/* 분기처리 css */
+.auth_con04 { background-color: #0090db; border: 0.625vw solid #0080db; } 
+.al_pop_ment01.green { color: #0090db; } 
+.f_l_green { color: #0090db; } 
+
+/* 체크박스 */
+
+input[type="checkbox"] { border: 0.3125vw solid #222222; width: 7.5vw; height: 7.5vw; border-radius: 1.25vw; min-width: 7.5vw; } 
+input[type="checkbox"]:checked { background-color: #0090db; border: 0.3125vw solid #0090db; background-image: url(../img_v2/check_w.svg); background-size: 4.687vw; background-repeat: no-repeat; background-position: center; } 
+input[type="radio"] { border: 0.3125vw solid #222222; width: 7.5vw; height: 7.5vw; border-radius: 1.25vw; min-width: 7.5vw } 
+input[type="radio"]:checked { background-color: #0090db; border: 0.3125vw solid #0090db; background-image: url(../img_v2/check_w.svg); background-size: 4.687vw; background-repeat: no-repeat; background-position: center; } 
+input[type="date"]::-webkit-calendar-picker-indicator { background: none; } 
+
+
+.accountant_share input[type="checkbox"]:checked { background-color: #0090db; background-image: url(../img_v2/check_w.svg); border-color: #0090db; } 
+.pa_tog_btn.active input[type="radio"] { background-color: #0090db; background-image: url(../img_v2/check_w.svg); border-color: #0090db; } 
+.popup_document.sec3 input[type="checkbox"]:checked { background-color: #0090db; } 
+.popup_document_send input[type="checkbox"]:checked { background-color: #0090db; background-image: url(../img_v2/check_w.svg); } 
+
+/* 버튼 */
+.btm_button.active > span { background-color: #0090db; } 
+.btm_button span.c_green { background-color: #0090db; } 
+.next_button.active p { background-color: #0090db; border: 0.3125vw solid #084a80; } 
+.popup_bg.agree .btm_button.active span { background-color: #0090db; } 
+.popup_bg.agree .popup_bottom_con > span > input[type="checkbox"]:checked { background-color: #0090db; border: 0.625vw solid #0090db; background-image: url(../img_v2/check_w.svg); } 
+
+.popup_bg.agree .popup_bottom_con > span > input[type="checkbox"]:checked { background-color: #0090db; } 
+.popup_bg.agree .popup_bottom_con > span > input[type="radio"]:checked { background-color: #0090db; border-color: #0090db; background-image: url(../img_v2/check_w.svg); } 
+
+.active_button.active { background-color: #0090db } 
+.active_button.active > span { color: #ffffff; } 
+.active_button.active > i.plus_gray { background-image: url(../img_v2/plus_white.svg); } 
+
+
+.semo_look_banner { width: calc(100vw - 12.5vw); margin-left: -6.25vw; font-size: 1.125rem; padding: 6.562vw 6.25vw; background: #63e2c5 url(../img_v2/semo_look.webp) center right no-repeat; background-size: contain; display: none; } 
+.ione_look_banner { width: calc(100vw - 12.5vw); margin-left: -6.25vw; font-size: 1.125rem; padding: 6.562vw 6.25vw; background: #0095ff url(../img_v2/ione_look.webp) center right no-repeat; background-size: contain; color: #ffffff; display: block; } 
+.nh_look_banner { width: calc(100vw - 12.5vw); margin-left: -6.25vw; font-size: 1.125rem; padding: 6.562vw 6.25vw; background: #00b259 url(../img_v2/nh_look.webp) center right no-repeat; background-size: contain; color: #ffffff; display:none; } 
+.kt_look_banner { width: calc(100vw - 12.5vw); margin-left: -6.25vw; font-size: 1.125rem; padding: 6.562vw 6.25vw; background: #2dbdb6 url(../img_v2/kt_look.webp) center right no-repeat; background-size: contain; color: #ffffff; display:none; } 
+
+.payslip_title .c_bi { width: 34.9vw; } 
+
+.popup_bg.agree .btm_button.double span.c_green { background-color: #0090db; } 
+.popup.alert .btm_button span.bgc_sig { flex: 1.5; color: #ffffff; background-color: #0090db; } 
+
+.trans_complete_pop .trans_com_img { background-color: #0090db; } 
+.trans_complete_pop span { color: #0090db; } 
+@media(min-width:1023px){
+ .basic_web_view .semo_look_banner { display: block; padding: 43px 29px; margin-left: 0; width: calc(100% - 58px); font-size: 37px; margin-top: 53px; cursor: pointer; display: none; } 
+.basic_web_view .ione_look_banner { display: block; padding: 43px 29px; margin-left: 0; width: calc(100% - 58px); font-size: 37px; margin-top: 53px; cursor: pointer; display: block; } 
+.basic_web_view .nh_look_banner { display: block; padding: 43px 29px; margin-left: 0; width: calc(100% - 58px); font-size: 37px; margin-top: 53px; cursor: pointer; display: none; } 
+.basic_web_view .kt_look_banner { display: block; padding: 43px 29px; margin-left: 0; width: calc(100% - 58px); font-size: 37px; margin-top: 53px; cursor: pointer; display: none; } 
+ }
+/* 토글버튼 */
+.onoff_input input[type=checkbox]:checked ~ .onoff_input_bg { background-color: #0090db; } 
+
+/* 아침보고서 */
+.mor_logo i.c_bi { width: 30vw; } 
+.sam_01_01 { background-image: url(../img_v2/sam_01_01_ione.png); } 
+.sam_01_02 { background-image: url(../img_v2/sam_01_02_ione.png); } 
+.sam_01_03 { background-image: url(../img_v2/sam_01_03_ione.png); } 
+
+/* B301 */
+.sam_01 { background-image:url(../img_v2/sam_01_ione.png); } 
+.sam_02 { background-image:url(../img_v2/sam_02_ione.png); } 
+.sam_03 { background-image:url(../img_v2/sam_03_ione.png); } 
+.oth_sales_wrap .popup .info { font-size: 0.687rem; } 
+
+/* C932 */
+.report_radio_wrap.sale { font-size: 1rem; } 
+.report_radio_wrap.sale .report_radio { padding:0 3vw; } 
+.report_radio_wrap.sale .report_radio.active { background-color:#084a80; } 
+.oth_sales_wrap .popup .btm_button.half_btn .half_right { background-color: #0090db;; border: 0.277vw solid #0090db; } 
+.btm_plus { background-color:#0090db; } 
+.oth_sales_wrap .popup .btm_button.double .half_right { background-color: #0090db; border: 0.277vw solid #0090db;; color: #fff; } 
+
+/* C940 */
+@media screen and (min-width:518px){
+ .ssm_card_bg .ssm_logo i.c_bi { width: 125px; } 
+ }
+
+/* ssm_pop02 */
+.long_button.active { background-color: #0090db; } 
+
+/* ssm_pop03 */
+.ssm_pop03 .btm_button > span { background-color: #0090db; } 
+
+/* G302 */
+.noti_push_tit { font-size: 1.375rem; } 
+
+/* G601 */
+.rm_select_info i { width: 3.6vw; height: 3.6vw; margin-right: 1vw; } 
+
+/* C900 */
+/* .jindan_section.connect .info .text .connect_btn, .jindan_section .info .txt01 span { font-family: "IBKfont"; }  */
+.jindan_sam_img { background-image:url(../img_v2/jindan_sample_02.png) } 
+
+/* C602_pop(1) jin - sample page */
+.popup_bg.resist .popup .alret_text span { font-size: 1rem; } 
+
+/* C654 */
+.work_date_time span { font-size: 0.937rem; } 
+.paystub_warn.month_amount span { font-size: 0.687rem; } 
+
+/* CCA040 */
+.banking_choice .banking_wrap .banking_list .banking .bk_name { margin-left: -1px; margin-right: -1px; } 
+
+/* CCA070 */
+.franchise_wrap.link .franchise .store p { font-size: 0.937rem; } 
+
+/* CCA040*/
+.banking_choice .banking_wrap .banking_list .banking .bk_name { margin-left: -1px; margin-right: -1px; } 
+
+/* CCE030 */
+.popup.alert .alret_text span.txt02 { font-size: 1rem; } 
+
+/****************************** [SB140]_IEP010 ******************************/
+.jehyu-promotion .benefit .banner01 { background-image: url(../img_v2/jehyu-promotion_banner_ibk_220905.png); } 
+
+/* 근로계약서 작성하기 팝업 choicebox */
+.popup_bottom_con.choicebox span.is-active { background-color: #e9f8ff; border-color: #084a80; color: #084a80; } 
+.popup_bottom_con.choicebox span.is-active i.choice { background-image: url(../img_v2/check_40-27_ione.svg); } 
+
+/* CSE00C 내정보 */
+.cse00c .list_wrap .list .cnt .text.code span.connect { color: #0090db; } 
+
+/* 제휴 API 프리미엄 서비스 카드 */
+.premium-infinite .premium-introduce_table {height: 125.2778vw;}
+/* .premium-infinite .premium-introduce_table .ico_cont {background-image: url(../img_v2/bg_ibk_premium_benefit_table.png);} */
+.premium-infinite .premium-introduce_table .ico_cont {background-image: url(../img_v2/bg_ibk_premium_benefit_table02.png);}
+
+
+/* 프리미엄 서비스 소개 코치마크 */
+.coach-mark .kht00a .smpk_mark01 .cover i {background-image: url(../img_v2/coachMark_smpk_ibk_01.png);}
+.coach-mark .kht00a .smpk_mark02 .cover i {background-image: url(../img_v2/coachMark_smpk_ibk_02.png);}
+.coach-mark .kht00a .smpk_mark04 .cover i {background-image: url(../img_v2/coachMark_smpk_ibk_04.png);}
+.coach-mark .swiper-pagination-bullet-active {background-color: #0090db;}
+.coach-mark .cycle_close_btn i {background-image: url(../img_v2/rd_close_ibk.png);}
+
+/* 프로모션 출석체크 이벤트 */
+.jehyu-promotion.attendance_check .benefit-content .ico_cont {background-image: url(../img_v2/card_ibk_premiumService_220905.png);}
+.jehyu-promotion.attendance_check .table_premium-service .ico_cont {background-image: url(../img_v2/table_ibk_premiumService_220905.png);}
+
+/* 체크박스 2뎁스 */
+.multi-check_wrap .checkboxAll input[type="checkbox"]:checked { background-image: url(../img_v2/check-bg_42x42_ione.svg); } 
+.checkboxEach .checkbox-item .checkbox input[type="checkbox"]:checked { background-image: url(../img_v2/check_42x42_ione.svg); } 

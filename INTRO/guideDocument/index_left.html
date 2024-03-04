@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/intro.css">
+    <title>퍼블리셔 가이드</title>
+  <script src="../js/jquery-3.5.1.min.js"></script>
+</head>
+
+<body>
+    <div class="pageListWrap">
+        <strong class="tit">PublGuide</strong>
+        <ul class="pageList">
+            <li>
+                <a href="javascript:;" class="accorMenu">
+                    매뉴얼
+                    <span class="plus">
+                        <em></em>
+                        <em></em>
+                    </span>
+                </a>
+                <ul class="subMenu">
+                    <li>
+                        <a href="https://docs.google.com/document/d/17MGPSYhDOs3Z6igYRyTJ0aEovv98PmPS/edit" class="menu" target="guideDocument"><span>형상관리 반영</span></a>
+                    </li>
+                    <li>
+                        <a href="https://docs.google.com/presentation/d/1tINgqqphbTkc0OCsmOqnvR1eK9frzzgf/edit#slide=id.p1" class="menu" target="guideDocument"><span>AWS 정적사이트 구축 매뉴얼</span></a>
+                    </li>
+                    <li>
+                        <a href="https://docs.google.com/presentation/d/1uW7-K-caWEcbsNbNwj3JtDyU1YpJ9yk9/edit#slide=id.p1" class="menu" target="guideDocument"><span>Firebase 구글로그인 연동 매뉴얼</span></a>
+                    </li>
+                    <li>
+                        <a href="https://docs.google.com/presentation/d/1ucEvECBP0eX7cbKyoFiWIEWSAyxCA7AO/edit#slide=id.p1" class="menu" target="guideDocument"><span>PDF 뷰어 매뉴얼</span></a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:;" class="accorMenu">
+                    Plugin
+                    <span class="plus">
+                        <em></em>
+                        <em></em>
+                    </span>
+                </a>
+                <ul class="subMenu">
+                    <li>
+                        <a href="https://docs.google.com/presentation/d/1thDbFI1IZfPhpOA_HyorQvJackMT5WJK/edit#slide=id.p1" class="menu" target="guideDocument"><span>모비스크롤</span></a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        $(".accorMenu").on("click", function() {
+            $(this).parent().toggleClass("active");
+            $(this).parent().siblings().removeClass("active");
+            $(this).siblings().slideToggle();
+            $(this).parent().siblings().find(".accorMenu").siblings().slideUp();
+        });
+        $(".subMenu li").on("click", function() {
+            $(this).addClass("active");
+            $(this).siblings().removeClass("active");
+            $(this).parents(".pageList > li").siblings().find(".subMenu li").removeClass("active");
+        });
+    </script>
+</body>
+
+</html>

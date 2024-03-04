@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>tax_ictx_003</title>
+    <link rel="stylesheet" href="../../css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../../css/mobiscroll.jquery.min.css">
+    <link rel="stylesheet" href="../../css/semoR_base.css">
+    <link rel="stylesheet" href="../../css/semoR_common.css">
+    <link rel="stylesheet" href="../../css/semoR_style.css">
+    <link rel="stylesheet" href="../../css/semoR_rept.css">
+  <script src="../../js/jquery-3.5.1.min.js"></script>
+    <script src="../../js/jquery-ui.min.js"></script>
+    <script src="../../js/swiper-bundle.min.js"></script>
+    <script src="../../js/mobiscroll.jquery.min.js"></script>
+    <script src="../../js/semoR_ui.js"></script>
+</head>
+
+<body>
+    <!-- wrapper -->
+    <div class="wrapper">
+        <!-- header -->
+        <div class="header">
+            <h1 class="mainTit">종합소득세</h1>
+            <ul class="topMenu">
+                <li class="right">
+                    <a href="javascript:;" class="btnCounseler" role="button"></a>
+                </li>
+            </ul>
+        </div>
+        <!-- //header -->
+
+        <!-- container -->
+        <div class="container">
+            <div class="areaSelect">
+                <button class="btnSelect"><span class="num">2021</span>년</button>
+            </div>
+            <div class="ictxTab">
+                <ul class="list">
+                    <li>
+                        <p>기본서류</p>
+                        <div class="num">
+                            <span class="current">0</span>/<span class="total">3</span>
+                        </div>
+                    </li>
+                    <li>
+                        <p>지출경비</p>
+                        <div class="num">
+                            <span class="current">0</span>/<span class="total">8</span>
+                        </div>
+                    </li>
+                    <li>
+                        <p>수기증빙</p>
+                        <div class="num">
+                            <span class="current">0</span>/<span class="total">6</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="ictxList bgGrayCnt">
+                <div class="accordionMenu">
+
+                    <!-- depth01 -->
+                    <ul class="depth01">
+
+                        <!-- 기본서류 -->
+                        <li class="basic">
+                            <!-- slideDown 일때 active 처리  -->
+                            <a href="javascript:;" class="accordionToggle" role="button">
+                                <p class="tit"><span class="order">①</span>기본서류</p>
+                            </a>
+                            <div class="accordionToggleWrap">
+                                <!-- depth02 -->
+                                <ul class="depth02">
+                                    <!-- 수집완료일 때 complete 클래스 -->
+                                    <li class="complete">
+                                        <a href="javascript:;" class="accordionToggle" role="button">
+                                            <p class="tit">종합소득세 안내장</p>
+                                        </a>
+                                        <div class="accordionToggleWrap">
+                                            <ul class="dataList">
+                                                <li>
+                                                    <div class="item">
+                                                        <p class="info">
+                                                            안내장 
+                                                            <span class="date time">21.04.24 15:23</span>
+                                                        </p>
+                                                        <div class="rCont">
+                                                            <button type="button" class="btnView pointColor02">보기</button>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            <div class="areaBodyBtnFull type02">
+                                                <button type="button" class="btnRelookup">재조회</button>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <!-- 수집오류일 때 error 클래스 -->
+                                    <li class="error">
+                                        <a href="javascript:;" class="accordionToggle" role="button">
+                                            <p class="tit">부가가치세 증빙 (<span class="current">1</span>/<span class="total">2</span>)</p>
+                                        </a>
+                                        <div class="accordionToggleWrap">
+                                            <ul class="dataList">
+                                                <li>
+                                                    <div class="item">
+                                                        <p class="info">
+                                                            신고서
+                                                            <span class="date time">21.04.24 15:23</span>
+                                                        </p>
+                                                        <div class="rCont">
+                                                            <button type="button" class="btnView pointColor02">보기</button>
+                                                        </div>
+                                                    </div>
+                                                </li>
+
+                                                <!-- 수집오류 해당항목 error 클래스 -->
+                                                <li class="error">
+                                                    <div class="item">
+                                                        <p class="info">
+                                                            과세표준증명원
+                                                            <span class="date time">21.04.24 15:23</span>
+                                                        </p>
+                                                        <p class="defTxt02">
+                                                            [80001A8E] 타기관 인증서 등록되지 않은 인증서
+                                                            입니다. 인증서를 확인 후 다시 시도해 주세요.
+                                                        </p>
+                                                        <a href="javascript:;" class="btnLink">국세청 홈택스 바로가기</a>
+                                                        <div class="rCont">
+                                                            <img src="../../img/ico_error.png" alt="오류아이콘">
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            <div class="areaBodyBtnFull type02">
+                                                <button type="button" class="btnLookup">다른인증서조회</button>
+                                                <button type="button" class="btnRelookup">재조회</button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="complete">
+                                        <a href="javascript:;" class="accordionToggle" role="button">
+                                            <p class="tit">소득 지급명세서 (<span class="current">5</span>/<span class="total">5</span>)</p>
+                                        </a>
+                                        <div class="accordionToggleWrap">
+                                            <ul class="dataList">
+                                                <li>
+                                                    <div class="item">
+                                                        <p class="info">
+                                                            근로소득
+                                                            <span class="date time">21.04.24 15:23</span>
+                                                        </p>
+                                                        <div class="rCont">
+                                                            <button type="button" class="btnView pointColor02">보기</button>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="item">
+                                                        <p class="info">
+                                                            사업소득
+                                                            <span class="date time">21.04.24 15:23</span>
+                                                        </p>
+                                                        <div class="rCont">
+                                                            <button type="button" class="btnView pointColor02">보기</button>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="item">
+                                                        <p class="info">
+                                                            기타소득
+                                                            <span class="date time">21.04.24 15:23</span>
+                                                        </p>
+                                                        <div class="rCont">
+                                                            <button type="button" class="btnView pointColor02">보기</button>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            <div class="areaBodyBtnFull type02">
+                                                <button type="button" class="btnRelookup">재조회</button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="complete">
+                                        <a href="javascript:;" class="accordionToggle" role="button">
+                                            <p class="tit">연말정산간소화 자료</p>
+                                        </a>
+                                        <div class="accordionToggleWrap">
+                                            <ul class="dataList">
+                                                <li>
+                                                    <div class="item">
+                                                        <p class="info">
+                                                            연말정산자료
+                                                            <span class="date time">21.04.24 15:23</span>
+                                                        </p>
+                                                        <div class="rCont">
+                                                            <button type="button" class="btnView pointColor02">보기</button>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            <div class="areaBodyBtnFull type02">
+                                                <button type="button" class="btnRelookup">재조회</button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <!-- //depth02 -->
+                            </div>
+                        </li>
+                        <!-- //기본서류 -->
+
+                        <!-- 지출경비내역 -->
+                        <li class="history">
+                            <a href="javascript:;" class="accordionToggle" role="button">
+                                <p class="tit"><span class="order">②</span>지출경비내역</p>
+                            </a>
+                            <div class="accordionToggleWrap">
+
+                                <!-- depth02 -->
+                                <ul class="depth02">
+                                    <li class="error">
+                                        <a href="javascript:;" class="accordionToggle" role="button">
+                                            <p class="tit">신용카드 청구내역</p>
+                                        </a>
+                                        <div class="accordionToggleWrap">
+                                            <ul class="dataList">
+                                                <li>
+                                                    <div class="item">
+                                                        <p class="info">
+                                                            카드 <em>2</em>개 (<em class="case">1,510</em>건)
+                                                        </p>
+                                                        <span class="date time">21.04.24 15:23</span>
+                                                        <div class="rCont">
+                                                            <span class="figure">31,800,600원</span>
+                                                        </div>
+                                                    </div>
+                                                    <ul class="roundBoxWrap type02">
+                                                        <li class="roundBox">
+
+                                                            <!-- depth03 -->
+                                                            <ul class="depth03">
+                                                                <li>
+                                                                    <div class="item">
+                                                                        <div class="infoArea card middle">
+                                                                            <div class="ico">
+                                                                                <i class="bk30000001">
+                                                                                    <span class="blind">카드로고</span>
+                                                                                </i>
+                                                                            </div>
+                                                                            <div class="cont">
+                                                                                <div class="info">
+                                                                                    <span class="name">국민카드</span>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="rCont">
+                                                                                <label for="report01" class="switch">
+                                                                                    <span class="switchLabel">세무신고대상</span>
+                                                                                    <input type="checkbox" id="report01" checked>
+                                                                                    <span class="slider"></span>
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <ul class="accTransferList">
+                                                                            <li>
+                                                                                <dl>
+                                                                                    <dt>카드번호</dt>
+                                                                                    <dd>4321-1234-4554-4555</dd>
+                                                                                </dl>
+                                                                            </li>
+                                                                            <li>
+                                                                                <dl>
+                                                                                    <dt>사용건수</dt>
+                                                                                    <dd>324건</dd>
+                                                                                </dl>
+                                                                            </li>
+                                                                            <li>
+                                                                                <dl>
+                                                                                    <dt>사용금액</dt>
+                                                                                    <dd>23,510,000원</dd>
+                                                                                </dl>
+                                                                            </li>
+                                                                            
+                                                                            <li class="mgt0">
+                                                                                <div class="accordionToggleWrap">
+                                                                                    <hr class="grayLine">
+                                                                                    <ul class="accTransferList">
+                                                                                        <li>
+                                                                                            <dl>
+                                                                                                <dt>
+                                                                                                    <span class="date">2020-01</span>
+                                                                                                    <span class="case">23건</span>
+                                                                                                </dt>
+                                                                                                <dd>123,000</dd>
+                                                                                            </dl>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <dl>
+                                                                                                <dt>
+                                                                                                    <span class="date">2020-02</span>
+                                                                                                    <span class="case">32건</span>
+                                                                                                </dt>
+                                                                                                <dd>45,000</dd>
+                                                                                            </dl>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <dl>
+                                                                                                <dt>
+                                                                                                    <span class="date">2020-03</span>
+                                                                                                    <span class="case">22건</span>
+                                                                                                </dt>
+                                                                                                <dd>4,000</dd>
+                                                                                            </dl>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <dl>
+                                                                                                <dt>
+                                                                                                    <span class="date">2020-04</span>
+                                                                                                    <span class="case">19건</span>
+                                                                                                </dt>
+                                                                                                <dd>12,000</dd>
+                                                                                            </dl>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <dl>
+                                                                                                <dt>
+                                                                                                    <span class="date">2020-05</span>
+                                                                                                    <span class="case">48건</span>
+                                                                                                </dt>
+                                                                                                <dd>23,000</dd>
+                                                                                            </dl>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <dl>
+                                                                                                <dt>
+                                                                                                    <span class="date">2020-06</span>
+                                                                                                    <span class="case">35건</span>
+                                                                                                </dt>
+                                                                                                <dd>36,000</dd>
+                                                                                            </dl>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <dl>
+                                                                                                <dt>
+                                                                                                    <span class="date">2020-07</span>
+                                                                                                    <span class="case">78건</span>
+                                                                                                </dt>
+                                                                                                <dd>980,000</dd>
+                                                                                            </dl>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <dl>
+                                                                                                <dt>
+                                                                                                    <span class="date">2020-08</span>
+                                                                                                    <span class="case">89건</span>
+                                                                                                </dt>
+                                                                                                <dd>1,523,400</dd>
+                                                                                            </dl>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <dl>
+                                                                                                <dt>
+                                                                                                    <span class="date">2020-09</span>
+                                                                                                    <span class="case">65건</span>
+                                                                                                </dt>
+                                                                                                <dd>1,456,000</dd>
+                                                                                            </dl>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <dl>
+                                                                                                <dt>
+                                                                                                    <span class="date">2020-10</span>
+                                                                                                    <span class="case">35건</span>
+                                                                                                </dt>
+                                                                                                <dd>685,100</dd>
+                                                                                            </dl>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <dl>
+                                                                                                <dt>
+                                                                                                    <span class="date">2020-11</span>
+                                                                                                    <span class="case">31건</span>
+                                                                                                </dt>
+                                                                                                <dd>351,800</dd>
+                                                                                            </dl>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <dl>
+                                                                                                <dt>
+                                                                                                    <span class="date">2020-12</span>
+                                                                                                    <span class="case">17건</span>
+                                                                                                </dt>
+                                                                                                <dd>651,200</dd>
+                                                                                            </dl>
+                                                                                        </li>
+                                                                                    </ul>
+                                                                                </div>
+                                                                                <a href="javascript:;" class="accordionToggle" role="button">
+                                                                                    <span class="blind">어코디언버튼</span>
+                                                                                </a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                            <!-- //depth03 -->
+                                                        </li>
+
+                                                        <!-- 수집오류 해당항목 error 클래스 -->
+                                                        <li class="roundBox error">
+                                                            <div class="item">
+                                                                <div class="infoArea card middle">
+                                                                    <div class="ico">
+                                                                        <i class="bk30000021">
+                                                                            <span class="blind">카드로고</span>
+                                                                        </i>
+                                                                    </div>
+                                                                    <div class="cont">
+                                                                        <div class="info">
+                                                                            <span class="name">농협카드</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <p class="defTxt02">
+                                                                    [80001A8E] 타기관 인증서 등록되지 않은 인증서
+                                                                    입니다. 인증서를 확인 후 다시 시도해 주세요.
+                                                                </p>
+                                                                <a href="javascript:;" class="btnLink">국세청 홈택스 바로가기</a>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                            <div class="areaBodyBtnFull type02">
+                                                <button type="button" class="btnLookup">다른인증서조회</button>
+                                                <button type="button" class="btnRelookup">재조회</button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="complete">
+                                        <a href="javascript:;" class="accordionToggle" role="button">
+                                            <p class="tit">대출거래내역</p>
+                                        </a>
+                                        <div class="accordionToggleWrap">
+                                            <ul class="dataList">
+                                                <li>
+                                                    <div class="item">
+                                                        <p class="info">
+                                                            은행 <span class="count">2</span>개
+                                                        </p>
+                                                        <span class="date time">21.04.24 15:23</span>
+                                                        <div class="rCont">
+                                                            <span class="figure">1,800,600원</span>
+                                                        </div>
+                                                    </div>
+                                                    <ul class="roundBoxWrap type02">
+                                                        <li class="roundBox">
+
+                                                            <!-- depth03 -->
+                                                            <ul class="depth03">
+                                                                <li>
+                                                                    <div class="item">
+                                                                        <div class="infoArea acc middle">
+                                                                            <div class="ico">
+                                                                                <i class="bk003">
+                                                                                    <span class="blind">은행로고</span>
+                                                                                </i>
+                                                                            </div>
+                                                                            <div class="cont">
+                                                                                <div class="info">
+                                                                                    <span class="name">기업은행</span>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="rCont">
+                                                                                <label for="report02" class="switch">
+                                                                                    <span class="switchLabel">세무신고대상</span>
+                                                                                    <input type="checkbox" id="report02" checked>
+                                                                                    <span class="slider"></span>
+                                                                                </label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <ul class="accTransferList">
+                                                                            <li>
+                                                                                <dl>
+                                                                                    <dt>계좌이름</dt>
+                                                                                    <dd>기업성공두드림담보대출</dd>
+                                                                                </dl>
+                                                                            </li>
+                                                                            <li>
+                                                                                <dl>
+                                                                                    <dt>계좌번호</dt>
+                                                                                    <dd>230-221-947843</dd>
+                                                                                </dl>
+                                                                            </li>
+                                                                            <li>
+                                                                                <dl>
+                                                                                    <dt>약정금액</dt>
+                                                                                    <dd>12,000,000원</dd>
+                                                                                </dl>
+                                                                            </li>
+                                                                            
+                                                                            <li class="mgt0">
+                                                                                <div class="accordionToggleWrap">
+                                                                                    <hr class="grayLine">
+                                                                                    <ul class="accTransferList">
+                                                                                        <li>
+                                                                                            <dl>
+                                                                                                <dt>신규일</dt>
+                                                                                                <dd>2020-01-03</dd>
+                                                                                            </dl>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <dl>
+                                                                                                <dt>만기일</dt>
+                                                                                                <dd>2020-03-27</dd>
+                                                                                            </dl>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <dl>
+                                                                                                <dt>대출이율</dt>
+                                                                                                <dd>1.16%</dd>
+                                                                                            </dl>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <dl>
+                                                                                                <dt>상환금액</dt>
+                                                                                                <dd>1,000,000원</dd>
+                                                                                            </dl>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <dl>
+                                                                                                <dt>납입이자</dt>
+                                                                                                <dd>350,000원</dd>
+                                                                                            </dl>
+                                                                                        </li>
+                                                                                    </ul>
+                                                                                </div>
+                                                                                <a href="javascript:;" class="accordionToggle" role="button">
+                                                                                    <span class="blind">어코디언버튼</span>
+                                                                                </a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                            <!-- //depth03 -->
+                                                        </li>
+                                                        <li class="roundBox">
+                                                            <div class="item">
+                                                                <div class="infoArea acc middle">
+                                                                    <div class="ico">
+                                                                        <i class="bk011">
+                                                                            <span class="blind">은행로고</span>
+                                                                        </i>
+                                                                    </div>
+                                                                    <div class="cont">
+                                                                        <div class="info">
+                                                                            <span class="name">농협은행</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="rCont">
+                                                                        <label for="report03" class="switch">
+                                                                            <span class="switchLabel">세무신고대상</span>
+                                                                            <input type="checkbox" id="report03" checked>
+                                                                            <span class="slider"></span>
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                                <ul class="accTransferList">
+                                                                    <li>
+                                                                        <dl>
+                                                                            <dt>계좌이름</dt>
+                                                                            <dd>새희망홀씨대출</dd>
+                                                                        </dl>
+                                                                    </li>
+                                                                    <li>
+                                                                        <dl>
+                                                                            <dt>계좌번호</dt>
+                                                                            <dd>440-22-5487551</dd>
+                                                                        </dl>
+                                                                    </li>
+                                                                    <li>
+                                                                        <dl>
+                                                                            <dt>약정금액</dt>
+                                                                            <dd>12,000,000원</dd>
+                                                                        </dl>
+                                                                    </li>
+                                                                    
+                                                                    <li class="mgt0">
+                                                                        <div class="accordionToggleWrap">
+                                                                            <hr class="grayLine">
+                                                                            <ul class="accTransferList">
+                                                                                <li>
+                                                                                    <dl>
+                                                                                        <dt>신규일</dt>
+                                                                                        <dd>2020-01-03</dd>
+                                                                                    </dl>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <dl>
+                                                                                        <dt>만기일</dt>
+                                                                                        <dd>2020-03-27</dd>
+                                                                                    </dl>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <dl>
+                                                                                        <dt>대출이율</dt>
+                                                                                        <dd>1.16%</dd>
+                                                                                    </dl>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <dl>
+                                                                                        <dt>상환금액</dt>
+                                                                                        <dd>1,000,000원</dd>
+                                                                                    </dl>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <dl>
+                                                                                        <dt>납입이자</dt>
+                                                                                        <dd>350,000원</dd>
+                                                                                    </dl>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                        <a href="javascript:;" class="accordionToggle" role="button">
+                                                                            <span class="blind">어코디언버튼</span>
+                                                                        </a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                            <div class="areaBodyBtnFull type02">
+                                                <button type="button" class="btnLookup">다른인증서조회</button>
+                                                <button type="button" class="btnRelookup">재조회</button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <!-- //depth02 -->
+                            </div>
+                        </li>
+                        <!-- //지출경비내역 -->
+
+                        <!-- 증명서류 촬영 및 등록 -->
+                        <li class="proof">
+                            <a href="javascript:;" class="accordionToggle" role="button">
+                                <p class="tit"><span class="order">③</span>증명서류 촬영 및 등록</p>
+                            </a>
+                            <div class="accordionToggleWrap">
+
+                                <!-- depth02 -->
+                                <ul class="depth02">
+
+                                    <!-- 사진등록이 필요할때 -->
+                                    <li>
+                                        <a href="javascript:;" class="btnResist" role="button">
+                                            <p class="tit">부양가족 서류</p>
+                                        </a>
+                                    </li>
+
+                                    <!-- 수집완료시 complete 클래스 -->
+                                    <li class="complete">
+                                        <a href="javascript:;" class="accordionToggle" role="button">
+                                            <p class="tit">면세사업자 서류</p>
+                                        </a>
+                                        <div class="accordionToggleWrap">
+                                            <ul class="dataList">
+                                                <li>
+                                                    <div class="item">
+                                                        <p class="info">
+                                                            면세사업자서류_1
+                                                            <span class="date time">21.04.24 15:23</span>
+                                                        </p>
+                                                        <div class="rCont">
+                                                            <button type="button" class="btnView pointColor02">보기</button>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            <div class="areaBodyBtnFull type02">
+                                                <button type="button" class="btnAddPhoto">추가촬영</button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="complete">
+                                        <a href="javascript:;" class="accordionToggle" role="button">
+                                            <p class="tit">장애인 증명서류</p>
+                                        </a>
+                                        <div class="accordionToggleWrap">
+                                            <ul class="dataList">
+                                                <li>
+                                                    <div class="item">
+                                                        <p class="info">
+                                                            장애인 증명서류_1
+                                                            <span class="date time">21.04.24 15:23</span>
+                                                        </p>
+                                                        <div class="rCont">
+                                                            <button type="button" class="btnView pointColor02">보기</button>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="item">
+                                                        <p class="info">
+                                                            장애인 증명서류_2
+                                                            <span class="date time">21.04.24 15:23</span>
+                                                        </p>
+                                                        <div class="rCont">
+                                                            <button type="button" class="btnView pointColor02">보기</button>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            <div class="areaBodyBtnFull type02">
+                                                <button type="button" class="btnAddPhoto">추가촬영</button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="complete">
+                                        <a href="javascript:;" class="accordionToggle" role="button">
+                                            <p class="tit">기부금 영수증</p>
+                                        </a>
+                                        <div class="accordionToggleWrap">
+                                            <ul class="dataList">
+                                                <li>
+                                                    <div class="item">
+                                                        <p class="info">
+                                                            기부금 영수증_1
+                                                            <span class="date time">21.04.24 15:23</span>
+                                                        </p>
+                                                        <div class="rCont">
+                                                            <button type="button" class="btnView pointColor02">보기</button>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            <div class="areaBodyBtnFull type02">
+                                                <button type="button" class="btnAddPhoto">추가촬영</button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="complete">
+                                        <a href="javascript:;" class="accordionToggle" role="button">
+                                            <p class="tit">보험증권 및 납입증명서</p>
+                                        </a>
+                                        <div class="accordionToggleWrap">
+                                            <ul class="dataList">
+                                                <li>
+                                                    <div class="item">
+                                                        <p class="info">
+                                                            보험증권 및 납입증명서_1
+                                                            <span class="date time">21.04.24 15:23</span>
+                                                        </p>
+                                                        <div class="rCont">
+                                                            <button type="button" class="btnView pointColor02">보기</button>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            <div class="areaBodyBtnFull type02">
+                                                <button type="button" class="btnAddPhoto">추가촬영</button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="complete">
+                                        <a href="javascript:;" class="accordionToggle" role="button">
+                                            <p class="tit">기타 증명서류</p>
+                                        </a>
+                                        <div class="accordionToggleWrap">
+                                            <ul class="dataList">
+                                                <li>
+                                                    <div class="item">
+                                                        <p class="info">
+                                                            기타 증명서류_1
+                                                            <span class="date time">21.04.24 15:23</span>
+                                                        </p>
+                                                        <div class="rCont">
+                                                            <button type="button" class="btnView pointColor02">보기</button>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="item">
+                                                        <p class="info">
+                                                            기타 증명서류_2
+                                                            <span class="date time">21.04.24 15:23</span>
+                                                        </p>
+                                                        <div class="rCont">
+                                                            <button type="button" class="btnView pointColor02">보기</button>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            <div class="areaBodyBtnFull type02">
+                                                <button type="button" class="btnAddPhoto">추가촬영</button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <!-- //depth02 -->
+                            </div>
+                        </li>
+                        <!-- //증명서류 촬영 및 등록 -->
+                    </ul>
+                    <!-- //depth01 -->
+                </div>
+            </div>
+        </div>
+        <!-- //container -->
+    </div>
+    <!-- //wrapper -->
+</body>
+</html>

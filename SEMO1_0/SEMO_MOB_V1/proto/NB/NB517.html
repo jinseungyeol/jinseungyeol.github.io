@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../../css/semo_cont.css">
+  <link rel="stylesheet" href="../../css/semo_cont_kt.css">
+  <!-- <link rel="stylesheet" href="../../css/semo_cont_ibk.css"> -->
+  <title>SEMO</title>
+
+</head>
+
+<body>
+  <div class="new_content">
+    <div class="cont_bg">
+      <!-- 상단 타이틀 -->
+      <div class="title">간편송금</div>
+      <!-- //상단 타이틀 -->
+      <div class="wrap send">
+        <!-- 송금실패 화면 -->
+        <div class="wrap_container" style="display: none;">
+          <div class="send_display_wrap">
+            <div class="checkmark-circle fail">
+              <div class="background"></div>
+              <div class="ex_mark "></div>
+              <div class="dot "></div>
+            </div>
+
+            <span>송금실패</span>
+            <p>죄송합니다.
+              일시적인 오류로 송금에 실패했습니다.
+              다시 한 번 시도해 주세요. [오류코드]</p>
+          </div>
+          <div class="send_display_wrap_bt">
+            <span>1:1 문의하기</span>
+            <p>지속적인 오류 발생 시 해당 화면을 캡쳐하여
+              고객센터에 문의해 주세요.</p>
+          </div>
+        </div>
+        <!-- 송금성공 화면 -->
+        <div class="wrap_container" >
+          <div class="send_display_wrap">
+            <div class="checkmark-circle complete">
+              <div class="background"></div>
+              <div class="checkmark draw"></div>
+            </div>
+            <span>
+              <em>5,000,000</em>
+              <p>송금 완료</p>
+            </span>
+          </div>
+          <div class="send_display_wrap_bt">
+            <div class="send_c_wrap">
+              <div class="send_c_auto on">
+                <!-- 활성화 클래스 on -->
+                <b class="ellipsis">요나코퍼레이션 영등포 제1지점...</b>
+                <p>거래처로 자동등록하기</p>
+                <!--
+                  등록완료 시
+                   <p>거래처로 등록완료</p>
+                   -->
+              </div>
+              <div class="send_c_bottom">
+                <div class="send_c_shar">
+                  <i class="ico_cen"></i>
+                  <span>공유하기</span>
+                </div>
+                <div class="send_c_fees">
+                  <i class="ico_cen"></i>
+                  <span>누적 수수료</span>
+                </div>
+                <div class="send_pdf_check" id="check_btn">
+                  <span>송금확인증</span>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="btm_button " onClick="location.href='../B내계좌/B213 copy 2.html'" style="cursor: pointer;">
+        <span class="bgc_green">확인</span>
+        <!--클래스 bgc_green 배경색-->
+      </div>
+      <div class="popup_bg Proof" style="display: none;">
+        <div class="popup_content">
+          <div class="popup_close_btn ico_cen"></div>
+          <div class="popup_title">
+            <span>
+              <b>2021년 02월 누적</b>
+            </span>
+          </div>
+          <div class="popup_text">
+            <span>
+              <p>-</p>
+              <p>
+                누적건수 : 1건</p>
+            </span>
+            <span>
+              <p>-</p>
+              <p>
+                누적 송금 수수료 : 5,000원</p>
+            </span>
+            <span class="c_ff684a">
+              <p>-</p>
+              <p>
+                기본 월 5건 무료, 초과 시 건당 500원</p>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</body>
+
+</html>

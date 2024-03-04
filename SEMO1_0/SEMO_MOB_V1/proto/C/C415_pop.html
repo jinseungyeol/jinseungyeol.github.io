@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../../css/semo_cont.css">
+  <title>SEMO</title>
+</head>
+<body>
+  <div class="new_content">
+
+    <div class="cont_bg"> 
+
+      <!-- 상단 타이틀 -->
+      <div class="title">거래처 조회</div>
+      <!-- //상단 타이틀 -->
+
+      <!-- 설정 -->
+      <div class="transfer_setting on"> <!--활성화 클래스 on -->
+        <!--2020-06-05 set_top 클래스 삭제-->  
+        <a class="btn_ccount_set"><i></i><em class="new_blind">설정</em></a>
+        <!--2020-06-03 <div class="ts_menu"> 삭제-->  
+      </div>
+      <!-- //설정 -->
+
+      <!-- 거래처 -->
+      <div class="wrap document">
+        <div class="document_box">
+          <!--2020-06-03 html 변경-->
+          <div class="branch_name_tit">
+            <input type="checkbox" checked/> <!--2020-06-03 즐겨찾는 거래처면 cheked attribute 추가--> 
+            <span>가나다 거래</span>
+          </div>
+          <!--2020-06-03 html 변경-->
+
+          <!-- 거래처 조회 -->
+          <div class="branch_select_wrap">
+            <div class="branch_select_box al_base bd_btm"> <!--2020-06-03 al_base bd_btm 추가--> 
+              <span class="bsb_tit">계좌 정보</span>
+              <div class="bsb_txt_wrap set_wd">
+                <p>
+                  <!--2020-06-03 <span class="bsb_txt bsb_b_name">가나다 거래</span> 삭제--> 
+                  <span class="bsb_bank"><i class="logo_bank ico_lb003"><em class="new_blind">은행 로고</em></i>IBK기업</span>
+                </p>
+                <p class="bsb_txt">1411101111117(이승준)</p>  <!--2020-06-03 이름 추가--> 
+              </div>
+            </div>
+
+            <div class="branch_select_box">
+              <span class="bsb_tit">회사명</span>
+              <div class="bsb_txt">
+                가나다금속(주)
+              </div>
+            </div>
+ 
+            <div class="branch_select_box">
+              <span class="bsb_tit">사업자 번호</span>
+              <div class="bsb_txt">
+                305-81-98316
+              </div>
+            </div>
+
+            <div class="branch_select_box">
+              <span class="bsb_tit">대표자</span>
+              <div class="bsb_txt ">
+                홍길동
+              </div>
+            </div>
+
+            <div class="branch_select_box">
+              <span class="bsb_tit">연락처</span>
+              <div class="bsb_txt ">
+                02-1234-5678
+              </div> 
+            </div>
+
+            <div class="branch_select_box al_base">
+              <span class="bsb_tit">주소</span>
+              <div class="bsb_txt ">
+                서울특별시 영등포구
+                영신로 220 knk
+                디지털타워 20층
+              </div> 
+            </div>
+          </div>
+          <!-- //거래처 조회 -->
+
+          <!--2020-06-03 전화하기 지도보기 따로 빼기 추가-->
+          <div class="contact_box">
+            <button class="contact">
+              <i class="ico_cen call"></i> 전화하기
+            </button>
+            <button class="contact">
+              <i class="ico_cen map"></i> 지도보기
+            </button>
+          </div>
+          <!--//2020-06-03 전화하기 지도보기 따로 빼기  추가-->
+        </div>
+      </div>
+      <!-- //거래처 -->
+      
+    </div>
+
+    <!-- 팝업 배경-->
+    <div class="popup_toast_bg">
+      <!-- 토스트 팝업 내용 -->
+      <div class="popup_toast">
+        <div class="popup_toast_list_box set_mg_reset">
+          <p class="popup_toast_list on">수정하기</p>
+          <p class="popup_toast_list">삭제하기</p>
+        </div>
+      </div>
+      <!-- 토스트 팝업 내용 -->
+    </div>
+    <!-- //팝업 배경 -->
+  </div>
+</body>
+</html>

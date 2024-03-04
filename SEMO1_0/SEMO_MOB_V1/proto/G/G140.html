@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../../css/semo_cont.css">
+  <title>SEMO</title>
+</head>
+<body>
+  <div class="new_content">
+
+    <div class="cont_bg cont_pd">
+
+      <div class="cancel_box">
+        <div class="cancel_tit">세모장부를<br>정말 <em class="c_orange">해지</em> 하실건가요?</div>
+  
+        <p class="nomal_noti">
+          <i class="character"></i> 
+          <span>서비스를 해지하시기 전에 아래 안내사항을 꼭 확인해 주세요.</span>
+        </p>
+  
+        <div class="noti_box posi_defalt cancel_noti">
+          <p class="nomal_noti">
+            <i class="character"></i> 
+            <span>지금 해지하시면 앞으로 세모장부에서 <em>제공하는 서비스를 이용하실 수 없습니다.</em></span>
+          </p>
+          <div class="cn_info">
+            <span>
+              <em>사업자 번호 : </em><em>123-45-67890</em>
+            </span>
+            <span>
+              <em>아이디 : </em><em>1234567890</em>
+            </span>
+          </div>
+          <button>제공 서비스 확인하기</button>
+        </div>
+  
+        <div class="cancel_reason">
+          <span class="cr_tit">세모를 해지하시는 이유를 선택해 주세요.</span>
+          <ul>
+            <li class="cr_list">
+              <input type="checkbox" class="check_terms" id="cancel_list1"> <!--클릭하면 checked true-->
+              <label for="cancel_list1">서비스 이용이 불편해서</label>
+            </li>
+            <li class="cr_list">
+              <input type="checkbox" class="check_terms" id="cancel_list2"> <!--클릭하면 checked true-->
+              <label for="cancel_list2">계정 등록하는게 불편해서</label>
+            </li>
+            <li class="cr_list">
+              <input type="checkbox" class="check_terms" id="cancel_list3"> <!--클릭하면 checked true-->
+              <label for="cancel_list3">가격이 불만족스러워서</label>
+            </li>
+            <li class="cr_list">
+              <input type="checkbox" class="check_terms" id="cancel_list4"> <!--클릭하면 checked true-->
+              <label for="cancel_list4">로그인 횟수 거의 없음</label>
+            </li>
+            <li class="cr_list">
+              <input type="checkbox" class="check_terms" id="cancel_list5"> <!--클릭하면 checked true-->
+              <label for="cancel_list5">세무대리인 수임 해지</label>
+            </li>
+            <li class="cr_list">
+              <input type="checkbox" class="check_terms cancel_ect" id="cancel_list6"> <!--클릭하면 checked true && 입력창 보임-->
+              <label for="cancel_list6">기타 사유</label>
+              <input class="cancel_input" placeholder="기타 사유를 입력해 주세요.(30자 이내)">
+            </li>
+          </ul>
+        </div>
+  
+        <div class="noti_box posi_defalt cancel_noti2">
+          <div class="crt_tit">
+            <i></i> 잠깐! 꼭 읽어보세요.
+          </div>
+          <p class="nomal_noti">
+            <i class="character"><em class=" noti_dot"></em></i>
+            <span>해지한 계정은 <u class="cp_bold">재가입 및 복구가 불가</u>하오니 신중하게 해지하시기 바랍니다.</span>
+          </p>
+          <p class="nomal_noti">
+            <i class="character"><em class=" noti_dot"></em></i>
+            <span>등록된 <u>금융기관 계정정보는 모두 삭제</u>됩니다.</span>
+          </p>
+          <p class="nomal_noti">
+            <i class="character"><em class=" noti_dot"></em></i>
+            <span>서비스를 해지하시는 경우 세무 신고를 위해 전송된 데이터는 <u>관련 법령에 의해보관</u>됩니다.</span>
+          </p>
+          <p class="nomal_noti">
+            <i class="character"><em class=" noti_dot"></em></i>
+            <span>개인 정보 처리 방침과 관련 법령 등에 따라 <u>개인정보는 일정 기간 동안 보관 후 삭제</u>될 수 있습니다.</span>
+          </p>
+  
+          <div class="cancel_terms_tit">
+            <span>개인 정보 처리 방침 확인하기</span>
+            <a class="btn_terms"><i></i><em class="new_blind">이동</em></a>
+          </div>
+        </div>
+  
+        <div class="cancel_check_all">
+          <input type="checkbox" class="check_terms" id="all_check"> <!--클릭하면 checked true-->
+          <label for="all_check">위 내용을 모두 확인하였으며, 이에 동의합니다. </label>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 토스트 팝업 -->
+    <div class="toast">
+      <span>해지사유를 체크해 주세요.</span>
+    </div>
+    <!-- 토스트 팝업 -->
+
+    <!-- 하단 fix 버튼 -->
+    <div class="btm_fix onl">
+      <span>취소</span>
+      <span class="bgc_gray">해지하기</span>
+    </div>
+    <!-- 하단 fix 버튼 -->
+  </div>
+</body>
+</html>

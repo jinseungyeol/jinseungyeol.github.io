@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>vwmr_rept_104C</title>
+    <link rel="stylesheet" href="../../css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../../css/semoR_base.css">
+    <link rel="stylesheet" href="../../css/semoR_common.css">
+    <link rel="stylesheet" href="../../css/semoR_style.css">
+    <link rel="stylesheet" href="../../css/semoR_rept.css">
+  <script src="../../js/jquery-3.5.1.min.js"></script>
+    <script src="../../js/jquery-ui.min.js"></script>
+    <script src="../../js/swiper-bundle.min.js"></script>
+    <script src="../../js/chart-3.5.1.min.js"></script>
+    <script src="../../js/lottie.js"></script>
+    <script src="../../js/semoR_ui.js"></script>
+</head>
+
+<body>
+    <!-- wrapper -->
+    <div class="wrapper">
+        <!-- header -->
+        <div class="header">
+            <ul class="topMenu">
+                <li class="left">
+                    <a class="btnBack" href="javascript:;" role="button"><span class="blind">뒤로가기</span></a>
+                </li>
+                <li class="right">
+                    <a class="btnChat" href="javascript:;" role="button"><span class="blind">채팅</span></a>
+                    <a class="btnShare" href="javascript:;" role="button"><span class="blind">공유</span></a>
+                </li>
+            </ul>
+        </div>
+        <!-- //header -->
+
+        <!-- container -->
+        <div class="container">
+            <div class="busiReptWrap">
+                <div class="titArea">
+                    <div class="areaReptLogo">
+                        <img src="../../img/ico_smartTax_v2.png" width="170px">
+                    </div>
+                </div>
+                
+                <!-- 보고서 상단 공통 -->
+                <div class="reptMsgWrap">
+                    <h2 class="defTit">23년 03월 사업분석 보고서</h2>
+                    <ul class="reportMsgList">
+                        <li class="pdt0">
+                            <div class="busiInfoWrap">
+                                <ul class="listDot type03 mgb0">
+                                    <li>
+                                        <p class="tit">사업장명</p>
+                                        <div class="areaData">
+                                            <span class="data">이로운 세모가게</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <p class="tit">과세유형</p>
+                                        <div class="areaData">
+                                            <span class="data">일반과세자</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <p class="tit">귀속 기간</p>
+                                        <div class="areaData">
+                                            <span class="data">22.12.01 ~ 22.12.31</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <p class="defTxt">
+                                김세모 사장님, 안녕하세요.<br>
+                                23년 02월 사업분석 보고서를 보내드립니다.<br>
+                                보고서 관련 또는 기타 문의사항이 있을 땐<br>
+                                언제든지 채팅으로 문의해주세요.
+                            </p>
+                        </li>
+                        <li>
+                            <div class="infoArea">
+                                <div class="rCont">
+                                    <a href="javascript:;" class="moveLink chat">
+                                        <span class="pointColor06">채팅 문의하기</span>
+                                        <div class="rCont">
+                                            <img class="tsRight" src="../../img/ico_ts_right_gray.png" alt="오른쪽화살표">
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- //보고서 상단 공통 -->
+    
+                <div class="areaReptTab">
+                    <ul class="tabMenuList type03">
+                    
+                        <!-- 활성화시 active -->
+                        <li>
+                            <a href="javascript:;" class="btnTab" role="button">손익</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" class="btnTab" role="button">세금</a>
+                        </li>
+                        <li class="active">
+                            <a href="javascript:;" class="btnTab" role="button">상권</a>
+                        </li>
+                    </ul>
+                </div>
+    
+                <div class="busiReptCont">
+                    <div class="titArea">
+                        <h1 class="defTit">
+                            우리동네 최신 매출 현황을<br>
+                            알려드릴게요.
+                        </h1>
+                        <h3 class="defTit pointColor06 fwNormal">예상 소요시간 <span class="pointColor02">10초 이내</span></h3>
+                    </div>
+                    <div class="salesLoadingWrap">
+                        <span id="salesLoading"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //container -->
+    </div>
+    <!-- //wrapper -->
+
+    <script>
+        $(function () {
+            // 손익, 세금, 상권탭 클릭시 스크롤 포커스
+            $(".tabMenuList.type03 li .btnTab").on('click', function () {
+                var headerH = $(".header").height();
+                var fixTopH = $(".areaTopFixed").height();
+
+                if (fixTopH == undefined) {
+                    fixTopH = 0;
+                }
+
+                if (document.querySelector(".tabMenuList.type03").classList.contains("fixed") == true) {
+                    window.scrollTo({
+                        top: $(".busiReptCont").offset().top - (headerH + fixTopH + 60),
+                        behavior: 'smooth'
+                    });
+                } else {
+                    window.scrollTo({
+                        top: $(this).offset().top - (headerH + fixTopH + 30),
+                        behavior: 'smooth'
+                    });
+                }
+            })
+
+            //보고서 탭 좌표값
+            var tabPosY = window.pageYOffset + document.querySelector(".tabMenuList.type03").getBoundingClientRect().top;
+
+            // 영역 도달시 탭메뉴 고정
+            window.addEventListener('scroll', function () {
+                var nowScroll = window.pageYOffset; //현재 스크롤 위치
+
+                if (nowScroll >= tabPosY) {
+                    document.querySelector(".tabMenuList.type03").classList.add("fixed");
+                } else if (nowScroll <= tabPosY) {
+                    document.querySelector(".tabMenuList.type03").classList.remove("fixed");
+                }
+            })
+        })
+        // 로띠 이미지
+        var loading = bodymovin.loadAnimation({
+            container: $('#salesLoading')[0], // Required
+            path: '../../img/lottie/recentCurrentSales.json', // URL 직접 입력
+            renderer: 'svg', // Required
+            loop: true, // Optional
+            autoplay: true // Optional
+        });
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="94.3" height="94.343" viewBox="0 0 94.3 94.343">
+    <defs>
+        <linearGradient id="rjxzt0265a" x1=".862" y1=".169" x2="0" y2=".88" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#f6a9c7"/>
+            <stop offset="1" stop-color="#c189f7"/>
+        </linearGradient>
+        <linearGradient id="6bfu2aohdb" x1=".862" y1=".169" x2="0" y2=".88" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#f9aecb"/>
+            <stop offset="1" stop-color="#bc84f2"/>
+        </linearGradient>
+        <clipPath id="8jh9f07ufc">
+            <path data-name="사각형 24970" style="fill:url(#rjxzt0265a)" d="M0 0h14.837v31.367H0z"/>
+        </clipPath>
+        <clipPath id="zngxo5l7xd">
+            <path data-name="사각형 24971" style="fill:url(#rjxzt0265a)" d="M0 0h4.432v3.689H0z"/>
+        </clipPath>
+    </defs>
+    <g data-name="그룹 87020" transform="rotate(-84 47.405 42.69)" style="opacity:.73">
+        <ellipse data-name="타원 2142" cx="42.922" cy="42.899" rx="42.922" ry="42.899" transform="translate(0 .007)" style="fill:url(#6bfu2aohdb)"/>
+        <g data-name="그룹 87018">
+            <g data-name="그룹 87014" transform="rotate(-163 13.699 18.648)" style="clip-path:url(#8jh9f07ufc)">
+                <path data-name="패스 61000" d="M0 28.691A40.427 40.427 0 0 0 12.166 0" transform="translate(1.335 1.338)" style="stroke:#fff;stroke-linecap:round;stroke-miterlimit:10;stroke-width:2px;fill:url(#rjxzt0265a)"/>
+            </g>
+            <g data-name="그룹 87017" transform="rotate(-163 20.625 2.247)" style="clip-path:url(#zngxo5l7xd)">
+                <path data-name="패스 61001" d="M0 1.009Q.889.526 1.749 0" transform="translate(1.341 1.34)" style="stroke:#fff;stroke-linecap:round;stroke-miterlimit:10;stroke-width:2px;fill:url(#rjxzt0265a)"/>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,169 @@
+@charset "utf-8";
+/* semo_pc.css Ver 2 */
+
+/* Font : Notosans */
+@font-face {
+  font-family: "NotosansKR";
+  font-weight: 300;
+  src: url("../font/NotoSansKR-Light-Hestia.ttf") format("truetype");
+}
+@font-face {
+  font-family: "NotosansKR";
+  font-weight: 350;
+  src: url("../font/NotoSansKR-DemiLight.otf") format("truetype");
+}
+@font-face {
+  font-family: "NotosansKR";
+  font-weight: 400;
+  src: url("../font/NotoSansKR-Regular-Hestia.otf") format("truetype");
+}
+@font-face {
+  font-family: "NotosansKR";
+  font-weight: 500;
+  src: url("../font/NotoSansKR-Medium-Hestia.otf") format("truetype");
+}
+@font-face {
+  font-family: "NotosansKR";
+  font-weight: 700;
+  src: url("../font/NotoSansKR-Bold-Hestia.otf") format("truetype");
+}
+
+/* Default CSS */
+* {box-sizing: border-box;}
+html, body ,input{font-family: "NotosansKR" !important;}
+body {margin: 0; padding: 0; font-size: 16px; line-height: 1.6em; font-weight: normal; color: #222;}
+
+/* Reset CSS */
+h1,h2,h3,h4,h5,h6,p,em,input,button {margin: 0; padding: 0; font-weight: normal; border: none; font-style: normal;}
+a {text-decoration: none; color: #222;}
+textarea {resize: none;}
+textarea:focus, input:focus {outline: none;}
+input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {-webkit-appearance: none;margin: 0;}
+
+/* Common css */
+.c_sig {color: #17bf98 !important;}
+
+/* flex */
+.aic {align-items: center;}
+
+/* Cont_bg */
+.cont_bg {display: flex; justify-content: center; height: 100vh; padding-top: 60px;  background-color: #f7f8fc;}
+
+/* Padding set */
+.pdt0 {padding-top: 0 !important;}
+
+/* Margin Set */
+.mgb10 {margin-bottom: 10px !important;}
+.mgt50 {margin-top: 50px !important;}
+
+/* Image */
+.ico_cen {display: inline-block; background: no-repeat center / contain;}
+.ico_cen.check_01 {background-image: url(../img/check_w.png); width: 11px; height: 12px;} /* #fff */
+
+/* 버튼 제휴사별 컬러 */
+.button_sig {background-color: #17bf98 !important; border: 2px solid #57987b !important;}
+
+/* ********************** -- Start Page 2_1 *********************** */
+/* Certificate_Title */
+.container .certificate_title {margin-bottom: 60px;}
+.container .certificate_title h1 {font-size: 52px; margin-bottom: 45px; font-weight: bold; color: #4b4b4b; margin-top: 15px;}
+.container .certificate_title p {padding-left: 12px; color: #909090; position: relative; word-break: keep-all; font-size: 20px; line-height: 1.5em; margin: 0 auto;} 
+.container.resist .certificate_title p::before {content: '-'; position: absolute; left: 0;}
+
+/* Join_Box */
+.container .join_box { margin: 0 auto;}
+.container .join_box b {color: #4b4b4b; font-weight: 500; font-size: 27px;}
+.container .join_info_wrap {margin: 25px 20px 60px;}
+.container .join_info {margin-bottom: 35px;}
+.container .join_info p {color: #4b4b4b81; margin-bottom: 10px; font-size: 22px;}
+.container .join_info p.active {color: #4b4b4b;}
+.container .join_info.business input, .container .join_info.phone input {width: 100%; padding: 30px; border-radius: 12px; font-size: 24px; color: #5b5b5b; border: 2px solid #ededef;}
+.container .join_info.business.error input, .container .join_info.phone.error input {border: 2px solid #d11e1e; transition: 0.35s;}
+.container .join_info input::placeholder {font-size: 24px; font-weight: 500; color: #c1c1c1;}
+.container .join_info input:focus {border: 2px solid #222; transition: 0.35s;}
+.container .join_info .birth_box {border: 2px solid #ededef; display: flex; align-items: center; background-color: #fff; border-radius: 12px; padding: 30px; font-size: 22px;}
+.container .join_info .birth_box p {margin: 0 10px;}
+.container .join_info .birth_box input {border: none; font-size: 24px;}
+.container .join_info .birth_box input:focus {color: #5b5b5b;}
+.container .join_info .birth_box .birth_front {width: 100px;}
+.container .join_info .birth_box .birth_back {width: 30px;}
+.container .join_info .birth_box .circle {color: #5b5b5b; padding-bottom: 2px;}
+.container .join_info .birth_box.active {border: 2px solid #222; transition: 0.35s;}
+.container .join_info .birth_box.error {border: 2px solid #d11e1e; transition: 0.35s;}
+
+/* Btn */
+.container .btn {display: block; margin: auto; padding: 17px 0; width: 240px; border-radius: 12px;  color: #fff; font-size: 21px; font-weight: bold; border: 2px solid #76777a; background-color: #8b8d91; text-align: center; cursor: pointer;}
+
+
+/* ********************** -- Start Page 3 *********************** */
+/* Certificate_Title */
+.container.install .certificate_title {text-align: center;}
+.container.install .certificate_title p {padding-left: 0; margin-left: 0;}
+
+/* Btn_wrap */
+.container .btn_wrap {text-align: center;}
+.container .btn.download {width: 320px; margin-top: 75px; margin-bottom: 40px; font-weight: 500;}
+.container .btn_wrap .guide {display: inline-block; text-align: left; margin-left: 70px;}
+.container .btn_wrap .guide .inner {display: flex; align-items: center; margin-bottom: 13px;}
+.container .btn_wrap .guide .inner .background {background-color: #666; width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 7px;}
+.container .btn_wrap .guide .inner span {color: #4b4b4b; font-weight: normal; font-size: 18px;}
+.container .btn_wrap .guide .inner span b {position: relative; z-index: 0;}
+.container .btn_wrap .guide .inner span b::before {content: ''; position: absolute; width: 100%; height: 8px; bottom: 0; background-color: #6bf7b5; z-index: -1; opacity: 0.6;}
+
+
+/* ********************** -- Start Page 4 *********************** */
+/* Certificate_Title */
+.container.complete .certificate_title h1 {line-height: 1.3em; margin-bottom: 20px;}
+.container.complete .certificate_title span {font-weight: normal;}
+.container.complete .certificate_title em {color: #17bf98; font-weight: 500;}
+.container.complete .certificate_title p {margin-left: 0; font-size: 20px;}
+.container.complete .certificate_title p::before {content: ''; position: absolute; left: 0; top: 50%; transform: translateY(-50%); height: 80%; width: 2px; background-color: #838384;}
+
+/* Caution_Box */
+.container.complete .caution_box {background-color: #f0f0f4; padding: 35px; border-radius: 15px;}
+.container.complete .caution_box p {color: #929292; padding-left: 14px; position: relative; font-size: 20px; line-height: 1.4em;}
+.container.complete .caution_box p::before {content: '·'; position: absolute; left: 0;}
+
+
+/***********************  Media Query ***********************/
+@media (max-width : 1679px) {
+  /* ********************** Page 2_1 *********************** */
+
+  /* Certificate_Title */
+  .container .certificate_title {margin-bottom: 40px;}
+  .container .certificate_title h1 {font-size: 40px; margin-bottom: 25px;}
+  .container .certificate_title p {font-size: 16px; line-height: 1.6em; margin: 0 auto;}
+
+  /* Join_Box */
+  .container .join_info_wrap {margin-top: 20px; margin-bottom: 35px;}
+  .container .join_box b {font-size: 22px;}
+  .container .join_info {margin-bottom: 19px;}
+  .container .join_info p {font-size: 18px; margin-bottom: 6px;}
+  .container .join_info.business input, .container .join_info.phone input {padding: 20px; font-size: 22px;}
+  .container .join_info input::placeholder {font-size: 22px;}
+  .container .join_info .birth_box {padding: 20px;}
+  .container .join_info .birth_box input {font-size: 22px;}
+  .container .join_info .birth_box .birth_front {width: 90px;}
+  .container .join_info .birth_box .birth_back {width: 26px;}
+
+  /* Btn */
+  .container .btn {width: 220px; padding: 16px 0;}
+
+  /* ********************** Page 3 *********************** */
+  .container .btn_wrap .guide {margin-left: 0;}
+  .container .btn_wrap .guide .inner span {font-size: 14px;}  
+
+  /* ********************** Page 4 *********************** */
+
+  /* Certificate_Title */
+  .container.complete .certificate_title h1 {margin-bottom: 15px;}
+  .container.complete .certificate_title p {font-size: 18px;}
+  .container.complete .certificate_title p::before {height: 75%;}
+
+  /* Caution_Box */
+  .container.complete .caution_box {padding: 27px;}
+  .container.complete .caution_box p {font-size: 16px; line-height: 1.6em;}
+  .container.complete .caution_box p.mgb10 {margin-bottom: 20px;} 
+}
+
+

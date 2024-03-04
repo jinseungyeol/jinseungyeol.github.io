@@ -1,0 +1,136 @@
+/* 메인 B213  */
+:root{
+  --app-bg-dark: #01081f;  }
+
+
+
+.account_indi_wrapper .account_box{height: 146px;}
+.account_indi_wrapper{margin-bottom: 62px;}
+.account_indi_wrapper .account_carousel.connecting{position: unset; justify-content: center; }
+.account_carousel.connecting .account_box{display: flex; justify-content: center; flex-direction: column; align-items: center; color: #17bf98; margin-right: 0; background-color: #17bf98; border: 1px solid #12997a;}
+.account_carousel.connecting .account_box> b{color: #ffffff; font-size: 22px; margin-top: 3.5px;}
+.account_carousel.connecting .account_box> p{color: #baf9e1; font-size: 20px;}
+.account_carousel.connecting.on .account_box{border: 1px solid #12997a; display: flex; justify-content: center; flex-direction: column; align-items: center; color: #17bf98; margin-right: 0; background-color: #ffffff;}
+.account_carousel.connecting.on .account_box >b{font-size: 22px; color: #17bf98; margin-top: 16px;}
+.account_carousel.connecting.on .account_box >span{font-size: 14px; margin-top: 5px;}
+  .threedotloader .dot{width: 8px; height: 8px; border-radius: 50%; background-color: #17bf98; transform: scale(0); display: inline-block; animation: dotanim 2s infinite ease-in-out;}
+  .threedotloader .dot:nth-child(1) {animation-delay: 0s;}
+  .threedotloader .dot:nth-child(2) {animation-delay: 0.3s; margin: 0 5px;}
+  .threedotloader .dot:nth-child(3) {animation-delay: 0.6s;}
+  .threedotloader .dot:nth-child(4) {animation-delay: 0.9s;}
+  @keyframes dotanim {0% {transform: scale(0);} 50% {transform: scale(1);} 90% {transform: scale(0);} 100% {transform: scale(0);}}
+.my_num_status{padding-top: 11px;}
+.my_cont_cell.sample {background-color: rgba(210, 210, 210, 0.3); border: 1px solid #efefef;}
+.my_cont_cell {display: flex; flex-direction: column; }
+.my_cont_cell.sample::before{display: none;}
+.my_cont_num{line-height: unset; align-items: center;}
+.my_cont_cell.active{background-color: #1bd9ac; border-radius: 13px 13px 0 0; overflow: hidden;padding-bottom: 0; }
+.my_cont_cell.active .my_cont_top_sec{padding-bottom: 13px;}
+.my_cont_cell.active .my_num_wrap{display: block;}
+.my_cont_cell.active .my_cont_text p{color: #ffffff;}
+.my_cont_cell.active .my_cont_num b{color: #ffffff;}
+.my_cont_cell.active .my_cont_num p{color: #ffffff;}
+.my_cont_cell.active .my_cont_num span{color: #ffffff;}
+.my_num_wrap{width: calc(100% + 25px); margin-left: -5px; background-color: #ffffff; display: none;}
+.my_number{padding: 0 15px; left: 0; width: calc(100% - 56px); background-color: unset;}
+.my_number_cell{width: 100%; margin-bottom: 16px;}
+.my_num_result{width: calc(100% + 26px);}
+.my_num_status{width: 100%; margin-left: 0; margin-bottom: 14px; background-color: unset;}
+.my_cont_top_sec{display: flex; align-items: center; width: 100%; position: relative;}
+
+.btm_button{position: fixed; padding: 10px 20px 20px; width: calc(100% - 40px);box-shadow: 0 -10px 20px 10px #ffffff;}
+.btm_button > span{border-radius: 10px; box-shadow: 0px 8px 8px 0px rgb(0 0 0 / 10%);}
+
+
+
+/* 체크박스 */
+.checkmark-circle { width: 60px; height: 60px; position: relative; display: inline-block; vertical-align: top; margin-bottom: 18px; }
+.checkmark-circle .background { width: 60px; height: 60px; border-radius: 50%; background: #1bd9ac; position: absolute; animation-name: circle-bg; transition: 0.3s; -webkit-animation-duration: 0.7s; left: 50%; top: 50%; transform: translate(-50%, -50%);}
+.checkmark-circle.fail .background {background-color: #ff684a;}
+.checkmark-circle .checkmark {border-radius: 5px;}
+.checkmark-circle .ex_mark { width: 7.5px; height: 0; background-color: #ffffff; position: absolute; left: 50%; top: 40%; transform: translate(-50%, -50%); border-radius: 2.5px; animation-name: ex_mark; -webkit-animation-duration: 1s; -webkit-animation-delay: 100ms; -webkit-animation-fill-mode: forwards;}
+.checkmark-circle .dot { width: 7.5px; height: 0; background-color: #ffffff; position: absolute; left: 50%; bottom: 20%; animation-name: dot; transform: translateX(-50%); -webkit-animation-duration: 0.5s; -webkit-animation-delay: 100ms; -webkit-animation-fill-mode: forwards;}
+@-webkit-keyframes ex_mark {0% {height: 0;}100% {height: 25px;}}
+@-webkit-keyframes dot {0% {height: 0;} 100% {height: 7.5px;}}
+.checkmark-circle .checkmark.draw:after { -webkit-animation-delay: 100ms; -moz-animation-delay: 100ms; animation-delay: 0.5s; -webkit-animation-duration: 2s; -moz-animation-duration: 2s; animation-duration: 2s; -webkit-animation-timing-function: ease-in-out; -moz-animation-timing-function: ease-in-out; animation-timing-function: ease-in-out; -webkit-animation-name: checkmark; -moz-animation-name: checkmark; animation-name: checkmark; -webkit-transform: scaleX(-1) rotate(135deg); -moz-transform: scaleX(-1) rotate(135deg); -ms-transform: scaleX(-1) rotate(135deg); -o-transform: scaleX(-1) rotate(135deg); transform: scaleX(-1) rotate(135deg); -webkit-animation-fill-mode: forwards; -moz-animation-fill-mode: forwards; animation-fill-mode: forwards; transition: 0.2s ease-in-out;
+}
+.checkmark-circle .checkmark:after { opacity: 1; height: 0; width: 0; -webkit-transform-origin: left top; -moz-transform-origin: left top; -ms-transform-origin: left top; -o-transform-origin: left top; -webkit-animation-name: mark; -moz-animation-name: mark; animation-name: mark; transform-origin: left top; border-right: 0  solid white; border-top: 0 solid white; border-radius: 2.5px !important; content: ""; left: 10px; top: 50%; position: absolute; transition: 0.2s ease-in-out;}
+.send_reg_complete{background-image: url(../img/reg_complete.png); width: 250px; height: 275px; background-size: contain;}
+@-webkit-keyframes mark {
+  0% { border-right: 7.5px solid white; border-top: 7.5px solid white; height: 0; width: 0; opacity: 1;}
+  20% { border-right: 7.5px solid white; border-top: 7.5px solid white; height: 0; width: 18.75px; opacity: 1;}
+  40% { border-right: 7.5px solid white; border-top: 7.5px solid white; height: 37.5px; width: 18.75px; opacity: 1;}
+  100% { height: 37.5px; width: 18.75px; opacity: 1;}}
+@-webkit-keyframes checkmark {
+    0% { height: 0; width: 0; opacity: 1;}
+  20% { border-right: 7.5px solid white; border-top: 7.5px solid white; height: 0; width: 18.75px; opacity: 1;}
+  40% { height: 37.5px; width: 18.75px; opacity: 1;}
+  100% { height: 37.5px; width: 18.75px; opacity: 1;}}
+@-moz-keyframes checkmark {
+  0% { height: 0; width: 0; opacity: 1;}
+  20% { height: 0; width: 18.75px; opacity: 1;}
+  40% { height: 37.5px; width: 18.75px; opacity: 1;}
+  100% { height: 37.5px; width: 18.75px; opacity: 1;}
+}
+@keyframes checkmark {
+  0% { height: 0; width: 0; opacity: 1;}
+  1% { border-right: 7.5px solid white; border-top: 7.5px solid white; height: 0; width: 0; opacity: 1;}
+  20% { border-right: 7.5px solid white; border-top: 7.5px solid white; height: 0; width: 14.75px; opacity: 1;}
+  40% { border-right: 7.5px solid white; border-top: 7.5px solid white; height: 26.5px; width: 14.75px; opacity: 1;}
+  100% { border-right: 7.5px solid white; border-top: 7.5px solid white; height: 26.5px; width: 14.75px; opacity: 1;}
+}
+@-webkit-keyframes circle-bg{
+  0%{width: 0; height: 0;}
+  100%{width: 60px; height: 60px;}
+}
+@-moz-keyframes circle-bg{
+  0%{width: 0; height: 0;}
+  100%{width: 60px; height: 60px;}
+}
+@keyframes circle-bg{
+  0%{width: 0; height: 0;}
+  100%{width: 60px; height: 60px;}
+}
+
+
+div.onoffBox {display: flex; align-items: center; justify-content: flex-end;} 
+div.onoffBox > div {margin-top: 0; height: 25px; display: flex; align-items: center;} 
+div.onoffBox > div input {display: none;} 
+div.onoffBox > div label.onoffCheck {display:inline-block; position: relative; width:60px; height:28px; border-radius:28px; background-color:#c9d4d8; cursor:pointer; -webkit-transition: backgroundColor .25s ease-in-out; -moz-transition: backgroundColor .25s ease-in-out; -o-transition: backgroundColor .25s ease-in-out; transition: backgroundColor .25s ease-in-out;border: 1px solid #c9d4d8;} 
+div.onoffBox > div label.onoffCheck .slider {z-index: 1;display:inline-block; position:absolute; top: 50%; right:34.5px; transform: translateY(-50%); width:22px; height:22px; border-radius:24px; background-color:#fff; -webkit-transition: right .25s ease-in-out; -moz-transition: right .25s ease-in-out; -o-transition: .25s ease-in-out; transition: right .25s ease-in-out;} 
+div.onoffBox > div label.onoffCheck .onoff {display:inline-block; position:absolute; top: 2px; left: 28px;} 
+div.onoffBox > div label.onoffCheck .onoff::before {content: 'off'; font-size: 13px; line-height: 1.31; letter-spacing: -0.26px; text-align: left; color: #ffffff;text-transform: uppercase;}
+div.onoffBox.on > div::before {color:#08c7a0;} 
+div.onoffBox.on > div label.onoffCheck {background-color:#71fbc8; border: solid 1px #08c7a0;} 
+
+div.onoffBox.on > div label.onoffCheck .slider {right:2px;} 
+div.onoffBox.on > div label.onoffCheck .onoff {left:6.5px; top: 49%;} 
+div.onoffBox.on > div label.onoffCheck .onoff::before {content: 'on'; color:#08c7a0;}
+
+
+
+
+.month_select_con{display: flex;padding: 6px; border: 1px solid #636363; border-radius: 30px; margin-top: 16px;}
+.month_select_con > div{flex: 1; position: relative; }
+.month_select_con > div input{width: 100%; background-image: unset; border-radius: 20px;}
+.month_select_con > div input[type="radio"]:checked{background-color: #1bd9ac; padding: 18px 0; transition: 0.2s;}
+.month_select_con > div input[type="radio"]:checked + label{color: #ffffff;}
+.month_select_con > div label{ position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #222222;}
+
+
+.bot_fix {position: fixed; bottom: 0; width: 100%;}
+button {font-family: inherit;
+    padding: 0;
+    border: 0;
+    color: inherit;
+    background-color: inherit;
+    appearance: none;
+    font-size: inherit;
+    background-image: inherit;
+  border: none;}
+
+button.tybe_A {    width: 100%;
+  height: 18.055vw;
+  background-color: #ebebeb;
+  color: #c7c7c7;
+  font-size: 1.187rem;}

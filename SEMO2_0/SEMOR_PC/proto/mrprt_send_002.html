@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<title>mrprt_send_002</title>
+<link rel="stylesheet" href="../css/reset_taxp.css">
+<link rel="stylesheet" href="../css/app_header.css"><!-- [D] 세무대리인용 header -->
+<link rel="stylesheet" href="../css/content_taxp.css"><!-- [D] 세무대리인용 -->
+
+<!-- custom scrollbar plugin css -->
+<link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+  <script src="../js/lib/jquery/jquery-1.12.4.min.js"></script>
+<script src="../js/lib/jquery/jquery-ui-1.10.4.min.js"></script>
+<!-- custom scrollbar plugin -->
+<script src="../js/design/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../js/design/jquery.placeholder.min.js"></script>
+<script src="../js/lib/plugin/smart.popup.js"></script>
+<script src="../js/comm/common.js"></script>
+<script>
+
+
+</script>
+
+</head>
+<body class="lnb_bg lnb_bg"> <!-- [D] 메뉴영역(접기 : class="fold", 펼치기 : class="lnb_bg") -->
+ 
+<!-- 수임처 개선 -->
+<!-- header -->
+<div class="app_header">
+	<div class="app_header_inner">
+		<div class="ah_l">
+			<h1>user_info 현행화 화면</h1>
+		</div>
+
+		<div class="ah_r">
+			<ul class="ah_menu mgt10">
+				<li>
+					<!-- 알림 있을때 new 클래스 -->
+					<span class="weTalk newAlarm">
+						<a href="#none">We Talk
+							<span class="talk_conting_num" style="display: none;">N</span>
+						</a>
+					</span>
+				</li>
+				<li>
+					<span class="updateInfo">
+						<a href="#none">업데이트 안내
+							<span class="talk_conting_num" style="display: none;">N</span>
+						</a>
+					</span>
+				</li>
+                <li>
+                    <a class="hd_alarm" href="#none">
+						<img src="../img/txof/ico/bell_icon_18x18.png" alt="">
+						<span>알림</span>
+					
+					
+					
+						<div class="count">999+</div>
+					</a>
+                </li>
+				<li class="txtMenu">
+					<a href="https://qe398.channel.io/support-bots/50502" target="_blink">채팅상담</a>
+					<a href="https://semojangbu.notion.site/semojangbu/1fb5342cd4324ec99d471048fb437e92" target="_blink">도움말</a>
+					<a href="http://report.semojangbu.com" target="_blink">공지사항</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<!-- //header -->
+
+<div class="wrap">
+	<!-- Container -->
+	<div class="container">
+		<!-- lnb box -->
+		<div class="lnb_box">	
+			<!-- lnb_boxInn -->
+			<div class="lnb_boxInn">
+				<!-- lnb top 추가 -->
+				<div class="lnb_top">
+					<!-- user view -->
+					<div class="user_view">
+						<div class="user_r_side">
+							<p class="icon_user"><strong>홍길동</strong> 님</p>
+							<a class="btn_set" title="환경설정"></a><!-- 2019-09-27 -->
+						</div>
+						<div class="select_wrap">
+							<div class="area_select">
+								<span>담당자</span>
+								<a class="entire" href="javascript:;">전체</a>
+
+								<!-- 활성화 시 on 클래스 추가 -->
+								<ul class="select_box" style="z-index: 302;">
+									<li>
+										<a href="javascript:;">
+											<p>담당자 전체</p>
+											<span class="num">599</span>
+										</a>
+									</li>
+									<!-- 활성화 시 on 클래스 추가 -->
+									<li class="user_list on">
+										<a href="javascript:;">
+											<p>박담당</p>
+											<span class="num">55</span>
+										</a>
+									</li>
+									<li class="user_list">
+										<a href="javascript:;">
+											<p>이담당</p>
+											<span class="num">55</span>
+										</a>
+									</li>
+									<li class="user_list">
+										<a href="javascript:;">
+											<p>김담당</p>
+											<span class="num">55</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="select_wrap">
+							<div class="area_select">
+								<span>사업자</span>
+								<div class="tabType01">
+									<ul class="cboth">
+										<!-- 활성화시 on 클래스 -->
+										<li class="on">
+											<a href="#none">전체</a>
+										</li>
+										<li>
+											<a href="#none">개인</a>
+										</li>
+										<li>
+											<a href="#none">기업</a>
+										</li>
+									</ul>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- //lnb top 추가 -->
+				<div class="alarm_wrap">
+					<div class="mygroupLst">
+						<ul>
+							<!-- 그룹 -->
+							<!-- 2323-03-24 btn 이벤트 및 툴팁 이벤트 수정 newgroup 레이아웃 수정  -->
+							<li class="on"><!-- 활성화클래스 on -->
+								<div class="mygroupLst_tit">
+									<a href="#none" class="">
+										<img src="../../html/img/txof/ico/ico_reptGroupManage.png" class="mCS_img_loaded">
+										그룹관리
+									</a>
+									<div class="mygroup_btn">
+										<i class="btn"></i>
+									</div>
+								</div>									
+								<div class="mygroupCont">
+									<!-- 20180906 수정 -->
+									<dl class="mygroup" id="" style="display:;">
+										<!--<dt class="on"><a class="txt">그룹</a></dt>-->
+										<!-- 비활성 -->
+										<dd class="off">
+											<a href="#none">
+												<div class="line tooltipWrap rt">
+													<div class="left">
+														<span class="txt">
+															세모세모세모세모세모세모모세모세모세모t세모
+														</span>
+														<div class="tooltip">
+															<p class="tit">세모R<p>
+														</div>
+														<button type="button" class="btnEdit">
+														</button>
+													</div>
+													<div class="right">
+														<span class="groupCount">5</span>
+														<button type="button" class="btnEdit">
+														</button>
+													</div>
+												</div>
+											</a>
+										</dd>
+										<dd class="off">
+											<a href="#none" style="display: none;">
+												<div class="line tooltipWrap rt">
+													<div class="left grp_left_div">
+														<span class="txt" name="GRP_NM">ㄴㅇㄴㅁㅇㄴㅇ</span>
+														<div class="tooltip"><p class="tit" name="GRP_FULL_NM">ㄴㅇㄴㅁㅇㄴㅇ</p><p></p></div>
+														<button type="button" class="btnEdit"><img src="/img/txof/btn/btn_edit_w3.png" width="14px"></button>
+													</div>
+													<div class="right">
+														<span class="groupCount" name="GRP_CNT">0</span>
+														<button type="button" class="btnEdit grp_edit_btn">
+															<img src="/img/txof/btn/btn_edit_w3.png" width="14px">
+														</button>
+														<div class="tooltip grp_tooltip"><!-- acitve시 활성화 -->
+															<ul class="hoverList">
+																<li>
+																	<button type="button" class="grp_nm_mod">그룹명 변경</button>
+																</li>
+																<li>
+																	<button type="button" class="grp_clear">그룹 비우기</button>
+																</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+												</a>
+											<div class="new_group" style="">
+												<input type="text" id=""><a href="#none" id="save_group"><img src="../img/txof/btn/btn_new_group_ok.gif" alt="확인" id="" class="mCS_img_loaded"></a>
+												<a href="#none" id="canc_group"><img src="../img/txof/btn/btn_new_group_cnl.gif" alt="취소" id="" class="mCS_img_loaded"></a>
+											</div>
+										</dd>
+
+										<dd class="off">
+											<a href="#none">
+												<div class="line">
+													경리나라
+													<div class="right">
+														<p class="groupCount">5</p>
+													</div>
+												</div>
+											</a>
+										</dd>
+										<dd class="on">
+											<a href="#none">
+												<div class="line tooltipWrap rt">
+													<div class="left">
+														<span class="txt">
+															추가그룹명
+														</span>
+														<div class="tooltip">
+															<p class="tit">추가 그룹명<p>
+														</div>
+														<button type="button" class="btnEdit">
+														</button>
+													</div>
+													<div class="right">
+														<span class="groupCount">5</span>
+														<button type="button" class="btnEdit">
+														</button>
+														<div class="tooltip">
+															<ul class="hoverList">
+																<li>
+																	<button type="button">그룹명 변경</button>
+																</li>
+																<li>
+																	<button type="button">그룹 비우기</button>
+																</li>
+															</ul>
+														</div>
+														<div class="tooltip">
+															<ul class="hoverList">
+																<li>
+																	<button type="button">그룹명 변경</button>
+																</li>
+																<li>
+																	<button type="button">그룹 비우기</button>
+																</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+												<div class="new_group" style="">
+													<input type="text" id=""><a href="#none" id="save_group"><img src="../img/txof/btn/btn_new_group_ok.gif" alt="확인" id="" class="mCS_img_loaded"></a>
+													<a href="#none" id="canc_group"><img src="../img/txof/btn/btn_new_group_cnl.gif" alt="취소" id="" class="mCS_img_loaded"></a>
+												</div>
+											</a>
+										</dd>
+									</dl>
+									<!-- //20180906 수정 -->
+								</div>
+							</li>
+							<!-- //그룹 -->
+					
+						</ul>
+					</div>
+				</div>
+				<div class="alarm_wrap">	
+					<!-- (add)20220804 -->
+					<div class="mygroupLst">
+						<dl id=""><!-- (modify)20220810 스타일 추가 -->
+							<dd class="on">
+								<div class="line first">
+									<a href="#none">
+										<span>
+											<img src="../../html/img/txof/ico/ico_userManage.png"
+												class="mCS_img_loaded">
+											고객관리
+										</span>
+										<span class="badge2"><strong id="GRP">126</strong></span>
+									</a>
+								</div>
+							</dd>
+						</dl>
+						<ul>
+							<!-- 그룹 -->
+							<li class=""><!-- 활성화클래스 on -->
+								<div class="mygroupLst_tit">
+									<a href="#none">
+										<img src="../../html/img/txof/ico/ico_reptManage.png"
+											class="mCS_img_loaded">
+										리포트관리
+									</a>
+									<div class="mygroup_btn">
+										<i class="btn"></i>
+									</div>
+								</div>
+								<div class="mygroupCont">
+									<!-- 20180906 수정 -->
+									<dl class="mygroup">
+										<!-- 비활성 -->
+										<dd class="off">
+											<a href="#none">
+												<div class="line">리포트 발송</div>
+											</a>
+										</dd>
+										<dd class="off">
+											<a href="#none">
+												<div class="line">리포트 이력</div>
+											</a>
+										</dd>
+									</dl>
+									<!-- //20180906 수정 -->
+								</div>
+							</li>
+							<!-- //그룹 -->
+
+						</ul>
+					</div>
+					<div class="mygroupLst">
+						<dl id="">
+							<dt class="menu">
+								<img src="../../html/img/txof/ico/ico_taxCafe.png" class="mCS_img_loaded">
+								세무지식
+							</dt>
+							<dd>
+								<div class="line first">세무지식 관리</div>
+							</dd>
+						</dl>
+					</div>
+					<div class="mygroupLst">
+						<ul>
+							<!-- 그룹 -->
+							<li class="on"><!-- 활성화클래스 on -->
+								<a href="#none">
+									<img src="../../html/img/txof/ico/ico_set.png" class="mCS_img_loaded">
+									환경 설정
+								</a>
+								<div class="mygroupCont">
+									<!-- 20180906 수정 -->
+									<dl class="mygroup">
+										<!-- 비활성 -->
+										<dd class="off">
+											<a href="#none">
+												<div class="line">웰컴팝업 설정</div>
+											</a>
+										</dd>
+										<dd class="off">
+											<a href="#none">
+											</a>
+												<div class="tooltipWrap">
+													<p class="txt line" name="MENU_NM" style="color: rgb(196, 196, 196);">리포트 설정</p>
+													<div class="tooltip">
+														<p class="tit" name="TOOLTIP_TEXT">해당 메뉴는 관리자만 이용 가능합니다.</p><p>
+													</p></div>
+												</div>
+										</dd>
+										<dd class="off">
+											<a href="#none">
+												<div class="line">사용자필드 설정</div>
+											</a>
+												<div class="tooltipWrap">
+													<p class="txt line" name="MENU_NM" style="color: rgb(196, 196, 196);">수집정보설정</p>
+													<div class="tooltip">
+														<p class="tit" name="TOOLTIP_TEXT">해당 메뉴는 관리자만 이용 가능합니다.</p><p>
+													</p></div>
+												</div>
+										</dd>
+									</dl>
+									<!-- //20180906 수정 -->
+								</div>
+							</li>
+							<!-- //그룹 -->
+
+						</ul>
+					</div>
+					<div class="mygroupLst">
+						<ul>
+							<!-- 그룹 -->
+							<li class="on"><!-- 활성화클래스 on -->
+								<a href="#none">
+									<img src="../../html/img/txof/ico/ico_set.png" class="mCS_img_loaded">
+									환경 설정
+								</a>
+								<div class="mygroupCont">
+									<!-- 20180906 수정 -->
+									<dl class="mygroup">
+										<!-- 비활성 -->
+										<dd class="off">
+											<a href="#none">
+												<div class="line">웰컴팝업 설정</div>
+											</a>
+										</dd>
+										<dd class="off">
+											<a href="#none">
+											</a>
+												<div class="tooltipWrap">
+													<p class="txt line" name="MENU_NM" style="color: rgb(196, 196, 196);">리포트 설정</p>
+													<div class="tooltip">
+														<p class="tit" name="TOOLTIP_TEXT">해당 메뉴는 관리자만 이용 가능합니다.</p><p>
+													</p></div>
+												</div>
+										</dd>
+										<dd class="off">
+											<a href="#none">
+												<div class="line">사용자필드 설정</div>
+											</a>
+												<div class="tooltipWrap">
+													<p class="txt line" name="MENU_NM" style="color: rgb(196, 196, 196);">수집정보설정</p>
+													<div class="tooltip">
+														<p class="tit" name="TOOLTIP_TEXT">해당 메뉴는 관리자만 이용 가능합니다.</p><p>
+													</p></div>
+												</div>
+										</dd>
+									</dl>
+									<!-- //20180906 수정 -->
+								</div>
+							</li>
+							<!-- //그룹 -->
+
+						</ul>
+					</div>
+					<div class="mygroupLst">
+						<ul>
+							<!-- 그룹 -->
+							<li class="on"><!-- 활성화클래스 on -->
+								<a href="#none">
+									<img src="../../html/img/txof/ico/ico_set.png" class="mCS_img_loaded">
+									환경 설정
+								</a>
+								<div class="mygroupCont">
+									<!-- 20180906 수정 -->
+									<dl class="mygroup">
+										<!-- 비활성 -->
+										<dd class="off">
+											<a href="#none">
+												<div class="line">웰컴팝업 설정</div>
+											</a>
+										</dd>
+										<dd class="off">
+											<a href="#none">
+											</a>
+												<div class="tooltipWrap">
+													<p class="txt line" name="MENU_NM" style="color: rgb(196, 196, 196);">리포트 설정</p>
+													<div class="tooltip">
+														<p class="tit" name="TOOLTIP_TEXT">해당 메뉴는 관리자만 이용 가능합니다.</p><p>
+													</p></div>
+												</div>
+										</dd>
+										<dd class="off">
+											<a href="#none">
+												<div class="line">사용자필드 설정</div>
+											</a>
+												<div class="tooltipWrap">
+													<p class="txt line" name="MENU_NM" style="color: rgb(196, 196, 196);">수집정보설정</p>
+													<div class="tooltip">
+														<p class="tit" name="TOOLTIP_TEXT">해당 메뉴는 관리자만 이용 가능합니다.</p><p>
+													</p></div>
+												</div>
+										</dd>
+									</dl>
+									<!-- //20180906 수정 -->
+								</div>
+							</li>
+							<!-- //그룹 -->
+
+						</ul>
+					</div>
+					<div class="mygroupLst">
+						<ul>
+							<!-- 그룹 -->
+							<li class="on"><!-- 활성화클래스 on -->
+								<a href="#none">
+									<img src="../../html/img/txof/ico/ico_set.png" class="mCS_img_loaded">
+									환경 설정
+								</a>
+								<div class="mygroupCont">
+									<!-- 20180906 수정 -->
+									<dl class="mygroup">
+										<!-- 비활성 -->
+										<dd class="off">
+											<a href="#none">
+												<div class="line">웰컴팝업 설정</div>
+											</a>
+										</dd>
+										<dd class="off">
+											<a href="#none">
+											</a>
+												<div class="tooltipWrap">
+													<p class="txt line" name="MENU_NM" style="color: rgb(196, 196, 196);">리포트 설정</p>
+													<div class="tooltip">
+														<p class="tit" name="TOOLTIP_TEXT">해당 메뉴는 관리자만 이용 가능합니다.</p><p>
+													</p></div>
+												</div>
+										</dd>
+										<dd class="off">
+											<a href="#none">
+												<div class="line">사용자필드 설정</div>
+											</a>
+												<div class="tooltipWrap">
+													<p class="txt line" name="MENU_NM" style="color: rgb(196, 196, 196);">수집정보설정</p>
+													<div class="tooltip">
+														<p class="tit" name="TOOLTIP_TEXT">해당 메뉴는 관리자만 이용 가능합니다.</p><p>
+													</p></div>
+												</div>
+										</dd>
+									</dl>
+									<!-- //20180906 수정 -->
+								</div>
+							</li>
+							<!-- //그룹 -->
+
+						</ul>
+					</div>
+
+				</div>					
+			</div>
+			<!-- //lnb_boxInn -->
+		</div>
+
+		<!-- //lnb box -->
+
+		<!-- content -->
+		<div class="content">
+			<div class="content_wrap">
+				<!-- 상단타이틀 -->
+				<div class="title_wrap h1type">
+					<div class="left">
+						<h1>보고서 발송</h1>
+					</div>
+					<div class="right">
+						<div class="cntalign">
+							<div class="input_box">
+								<input type="text" value="" placeholder="검색어를 입력하세요" style="width:180px;">
+								<a href="#none"><img src="../img/txof/btn/btn_topsearch.gif" alt="조회"></a>
+							</div>
+						</div>
+						<div class="cntalign">
+							<a href="#none" class="btn_style1 down" style="margin-left:0;" id="a_dtl"><span>상세</span></a>
+						</div>
+					</div>
+				</div>
+				<!-- //상단타이틀 -->
+
+				<!-- 버튼영역 -->
+                <div class="title_wrap">
+                    <div class="left">
+                        <div class="cntalign">
+                            <div class="title">
+                                <h2 class="tx_title">보고서 현황</h2>
+                            </div>
+                        </div>
+
+                        <div class="cntalign">
+                            <!-- 구분선택 -->
+                            <div class="ly_filter type4">
+                                <a href="#none" class="" id="sel_user_gb">전체</a>
+                                <ul class="ly_filter_inner" id="user_gb_ul" style="min-width:100px !important;width:100px !important; display:none;">
+                                    <li class="user_gb_list"><a href="#none" data-user_gb="">전체</a></li>
+                                    <li class="user_gb_list"><a href="#none" data-user_gb="01">대기</a></li>
+                                    <li class="user_gb_list"><a href="#none" data-user_gb="02">보류</a></li>
+                                 
+                                </ul> 
+                                
+                            </div>
+                            <!-- //구분선택 -->
+                        </div>
+                        <div class="cntalign" style="margin-left:30px;">
+                            <div class="title">
+                                <h2 class="tx_title">자동발송</h2> 
+                            </div>
+                        </div>
+                        <div class="cntalign">
+                            <!-- 기간 선택 -->
+                            <div class="ly_filter type4">
+                                <a href="#none" class="" id="sel_tax_gb">전체</a>
+                                <ul class="ly_filter_inner" id="sel_tax_ul" style="min-width: 100px !important; width: 100px !important; display: none;">
+                                    <li class="sele_tax"><a href="#none" data-bzaq_taxt_typ_info="">전체</a></li>
+                                    <li class="sele_tax"><a href="#none" data-bzaq_taxt_typ_info="01">ON</a></li>
+                                    <li class="sele_tax"><a href="#none" data-bzaq_taxt_typ_info="02">OFF</a></li>
+                                </ul>
+                            </div>
+                            <!-- //기간 선택 -->
+                        </div>
+                    </div>
+					<div class="right">
+						<div class="cntalign"><a href="#none" class="btn_style1"><span>최초정보 일괄 수집</span></a></div>
+						<div class="cntalign"><a href="#none" class="btn_style1_b"><span>즉시 발송</span></a></div>
+					</div>
+                </div>
+                
+                <!-- 상세보기 -->
+                <div class="table_wrap management" style="display:flex;">
+					<div class="tbl_srch">
+						<table class="" style="display:;">
+							<caption></caption>
+                            <colgroup>
+                                <col style="width: 80px;">
+                            </colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">
+										<div>계약상태</div>
+									</th>
+									<td colspan="6">
+										<div class="checklist"><!-- 2020-07-17 -->
+											<label style="height:24px;"><input type="checkbox"> 신고개인</label>
+											<label style="height:24px;"><input type="checkbox"> 기장법인</label>
+											<label style="height:24px;"><input type="checkbox"> 신고법인</label>
+											<label style="height:24px;"><input type="checkbox"> 아웃소싱</label>
+											<label style="height:24px;"><input type="checkbox"> 자문계약</label>
+											<label style="height:24px;"><input type="checkbox"> 조세불복</label>
+
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">
+										<div>과세유형</div>
+									</th>
+									<td colspan="5">
+										<div class="checklist"><!-- 2020-07-17 -->
+											<label style="height:24px;"><input type="checkbox"> 일반</label>
+											<label style="height:24px;"><input type="checkbox"> 간이</label>
+											<label style="height:24px;"><input type="checkbox"> 면세</label>
+											<label style="height:24px;"><input type="checkbox"> 비영리</label>
+											<label style="height:24px;"><input type="checkbox"> 휴업</label>
+											<label style="height:24px;"><input type="checkbox"> 폐업</label>
+											<label style="height:24px;"><input type="checkbox"> 미등록</label>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">
+										<div>보류내용</div>
+									</th>
+									<td colspan="5">
+										<div class="checklist"><!-- 2020-07-17 -->
+											<label style="height:24px;"><input type="checkbox"> 최초정보수집</label>
+											<label style="height:24px;"><input type="checkbox"> 수임미동의</label>
+											<label style="height:24px;"><input type="checkbox"> 온라인매출</label>
+											<label style="height:24px;"><input type="checkbox"> 급여대장</label>
+											<label style="height:24px;"><input type="checkbox"> 실시간정보수집</label>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">
+										<div>검색어</div>
+									</th>
+									<td colspan="6">
+										<input type="text" value="" placeholder="거래처, 사업자번호" style="width: 250px;">
+										<div class="rCont">
+											<a href="#none" class="btn_search_tb tal"><span>조회</span></a>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+                <!-- 상세보기 끝 -->
+
+				<div class="tblScrollX">
+					<!-- 리스트 테이블 -->
+					<!-- 리스트 테이블 상단 -->
+					<div class="list_scroll_top"><!-- [D] 하단테이블 세로스크롤 발생시 pdr 클래스 추가 -->
+						<table class="tbl_result" summary="">
+							<caption></caption>
+							<colgroup>
+								<col style="width: 25px"> <!-- 체크박스 -->
+                                <col style="width:200px;"> <!-- 거래처명 -->
+                                <col style="width:120px;"> <!-- 사업자번호 -->
+                                <col style="width:60px;"> <!-- 유형--> 
+                                <col style="width:80px;"> <!-- 계약상태 --> 
+                                <col style="width:160px;"> <!-- 보고서 현황 -->
+                                <col style="width:200px;"> <!-- 해결하기 -->
+                                <col style="width:80px;"> <!-- 자동발송 -->
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col" class="tal"><div><input type="checkbox" name="chk_all" style="margin-bottom: 1px"></div></th>
+									<th scope="col"><div class="t_left">거래처명</div></th>
+									<th scope="col"><div>사업자번호</div></th>
+									<th scope="col"><div>유형</div></th>
+									<th scope="col"><div>계약상태</div></th>
+									<th scope="col"><div>보고서 현황</div></th>
+									<th scope="col"><div></div></th>
+
+                                    <th scope="col">
+										<div class="tooltipWrap btr">
+											<span>자동발송</span>
+											<span class="qm">
+												<img src="../img/txof/ico/ico_que_w.png" class="imgQmWhite">
+												<div class="tooltip">
+													<p class="tit">
+														<strong>매월 19일 생성된 보고서를 20일에 자동 발송됩니다.</strong>
+													</p>
+													<p class="tit">
+														• 예상 부가세 보고서<br>
+														&nbsp;&nbsp;- 과세유형 간이에서 일반 변경 시 자동발송으로<br>
+														&nbsp;&nbsp;&nbsp;&nbsp;전환됩니다.<br>
+														&nbsp;&nbsp;- 간이, 면세 사업자는 기본 OFF 됩니다.<br>
+													</p>
+													<p class="tit">
+														• 인건비 보고서<br>
+														&nbsp;&nbsp;- 원천세 신고 유형에 따라 자동발송 ON 됩니다.
+													</p>
+												</div>
+											</span>
+										</div>
+									</th>									
+                                    
+								</tr>
+							</thead>
+						</table>
+					</div>
+					<!-- //리스트 테이블 상단 -->
+						<table class="tbl_result" summary="">
+                            <caption></caption>
+                            <colgroup>
+								<col style="width: 25px"> <!-- 체크박스 -->
+                                <col style="width:200px;"> <!-- 거래처명 -->
+                                <col style="width:120px;"> <!-- 사업자번호 -->
+                                <col style="width:60px;"> <!-- 유형--> 
+                                <col style="width:80px;"> <!-- 계약상태 --> 
+                                <col style="width:160px;"> <!-- 보고서 현황 -->
+								<col style="width:200px;"> <!-- 해결하기 -->
+                                <col style="width:80px;"> <!-- 자동발송 -->
+                               
+                            </colgroup>
+                            <tfoot style="display:none;">
+                                <tr class="no_hover">
+                                    <td colspan="16" class="no_info"><div>등록된 거래처가 없습니다.<br>'가입' 또는 수임처에서 거래처를 '등록'해주세요.</div></td>
+                                </tr>
+                            </tfoot>
+                            <tbody style="display: table-tbody;">
+                                <tr>
+									<td><div><input type="checkbox" name="terms" style="margin-bottom: 1px"></div></td>
+                                    <td class="t_left t_hover bzaq_nm_new">
+                                        <div style="position:relative;" class="t_left t_hover bzaq_nm_new">박가나상사</div>
+									
+                                    </td>
+                                    <td class="hoverDec">
+                                        <div class="t_center t_hover">847-87-00259</div>
+                                    </td>
+                                    <td class="hoverDec">
+                                        <div class="t_center">일반</div>
+                                    </td>
+                                    <td class="hoverDec">
+                                        <div class="t_center">신고개인</div>
+                                    </td>
+                                    <td class="td_rp-state">
+                                        <div class="t_left btnActv">
+                                             <!-- 파란색 txt_b / 빨간 txt_r / 회색 / txt_g -->
+                                            <span class="txt_b t_hover">대기 3건</span> 
+                                            <span class="txt_r t_hover">보류 1건</span>
+                                        </div>
+                                    </td>
+									<td class="td_solution">
+										<div class="tal">
+											<a href="" class="t_hover">
+												최초정보수집 필요
+											</a>
+											<a href="#none" class="btn_rud_semor">
+												<span>해결하기</span>
+											</a>
+										</div>
+									</td>
+                                    <td class="t_center">
+                                        <div style="position: relative;">
+                                            <!-- 토글 비활성화시 class dis 활성화시class  on -->
+                                            <a href="#none" class="t_hover_blue">3종</a>
+											<div class="toolDev right" style="top: 30px; left: -150px; display: none;">
+												<div class="toggle_box">
+													<div class="top">
+														<h1>자동발송을 원하시는<br>보고서를 선택해주세요</h1>
+														<div class="toggle">
+															<span>전체</span>
+															<a href="#none" class="btn_onoff on"><span class="blind">ON</span></a>
+
+														</div>
+													</div>
+													<div class="toggle_list">
+														<ul>
+															<li>
+																<span>사업분석 보고서</span>
+																<a href="#none" class="btn_onoff on"><span class="blind">ON</span></a>
+															</li>
+															<li>
+																<span>매출 보고서</span>
+																<a href="#none" class="btn_onoff on"><span class="blind">ON</span></a>
+															</li>
+															<li>
+																<span>매입 보고서</span>
+																<a href="#none" class="btn_onoff on"><span class="blind">ON</span></a>
+															</li>
+															<li>
+																<span>인건비 보고서</span>
+																<a href="#none" class="btn_onoff on"><span class="blind">ON</span></a>
+															</li>
+															<li>
+																<span>예상 부가세 보고서</span>
+																<a href="#none" class="btn_onoff off"><span class="blind">ON</span></a>
+															</li>
+															<li>
+																<p class="foot_info">
+																	* 간이/면세 사업자 기본 OFF
+																</p>
+															</li>
+														</ul>
+													</div>
+												
+												</div>
+												
+											</div>
+                                        </div>
+                                    </td>				
+                                </tr>
+                                <tr>
+									<td><div><input type="checkbox" name="terms" style="margin-bottom: 1px"></div></td>
+                                    <td class="t_left t_hover bzaq_nm_new">
+                                        <div style="position:relative;" class="t_left t_hover bzaq_nm_new">나라백반</div>
+                                    </td>
+                                    <td class="hoverDec">
+                                        <div class="t_center t_hover">847-87-00259</div>
+                                    </td>
+                                    <td class="hoverDec">
+                                        <div class="t_center">일반</div>
+                                    </td>
+                                    <td class="hoverDec">
+                                        <div class="t_center">기장법인</div>
+                                    </td>
+                                    <td class="td_rp-state">
+                                        <div class="t_left btnActv" name="STR_CNT">
+                                            <span class="txt_b t_hover" name="SUCC_CNT">대기 3건</span> 
+                                            <span class="txt_r t_hover" name="FAIL_CNT">보류 1건</span>
+                                        </div>
+                                    </td>
+									<td class="td_solution">
+										<div class="tal">
+											<a href="" class="t_hover">
+												홈택스 수임동의 필요
+											</a>
+											<a href="#none" class="btn_rud_semor">
+												<span>해결하기</span>
+											</a>
+										</div>
+									</td>
+                                    <td class="t_center">
+                                        <div>
+                                            <a href="#none" class="t_hover_blue">21종</a>
+                                        </div>
+                                    </td>				
+                                </tr>
+                                <tr>
+									<td><div><input type="checkbox" name="terms" style="margin-bottom: 1px"></div></td>
+                                    <td class="t_left t_hover bzaq_nm_new">
+                                        <div style="position:relative;" class="t_left t_hover bzaq_nm_new">다나와PC</div>
+                                    </td>
+                                    <td class="hoverDec">
+                                        <div class="t_center t_hover">847-87-00259</div>
+                                    </td>
+                                    <td class="hoverDec">
+                                        <div class="t_center">간이</div>
+                                    </td>
+                                    <td class="hoverDec">
+                                        <div class="t_center">신고법인</div>
+                                    </td>
+                                    <td class="td_rp-state">
+                                        <div class="t_left btnActv">
+                                            <!-- 파란색 txt_b / 빨간 txt_r / 회색 txt_g /txt_g일시 hover X-->
+                                            <span class="txt_b t_hover">대기 3건</span> 
+                                            <span class="txt_g">보류 1건</span>
+                                        </div>
+                                    </td>
+									<td class="td_solution">
+										<div class="tal">
+											
+										</div>
+									</td>
+                                    <td class="t_center">
+                                        <div>
+											<a href="#none" class="t_hover_blue">21종</a>
+                                        </div>
+                                    </td>				
+                                </tr>
+                                <tr>
+									<td><div><input type="checkbox" name="terms" style="margin-bottom: 1px"></div></td>
+                                    <td class="t_left t_hover bzaq_nm_new">
+                                        <div style="position:relative;" class="t_left t_hover bzaq_nm_new">안나와PC</div>
+                                    </td>
+                                    <td class="hoverDec">
+                                        <div class="t_center t_hover">847-87-00259</div>
+                                    </td>
+                                    <td class="hoverDec">
+                                        <div class="t_center">간이</div>
+                                    </td>
+                                    <td class="hoverDec">
+                                        <div class="t_center">신고법인</div>
+                                    </td>
+                                    <td class="td_rp-state">
+                                        <div class="t_left btnActv">
+                                            <!-- 파란색 txt_b / 빨간 txt_r / 회색 / txt_g -->
+                                            <span class="txt_b t_hover">대기 3건</span> 
+                                            <span class="txt_g">보류 1건</span>
+                                        </div>
+                                    </td>
+									<td class="td_solution">
+										<div class="tal">
+											
+										</div>
+									</td>
+                                    <td class="t_center">
+                                        <div>
+											<a href="#none" class="t_hover_blue">21종</a>
+                                        </div>
+                                    </td>				
+                                </tr>
+                                <tr>
+									<td><div><input type="checkbox" name="terms" style="margin-bottom: 1px"></div></td>
+                                    <td class="t_left t_hover bzaq_nm_new">
+                                        <div style="position:relative;" class="t_left t_hover bzaq_nm_new">다나와PC</div>
+                                    </td>
+                                    <td class="hoverDec">
+                                        <div class="t_center t_hover">847-87-00259</div>
+                                    </td>
+                                    <td class="hoverDec">
+                                        <div class="t_center">간이</div>
+                                    </td>
+                                    <td class="hoverDec">
+                                        <div class="t_center">신고법인</div>
+                                    </td>
+                                    <td class="td_rp-state">
+                                        <div class="t_left btnActv">
+                                            <!-- 파란색 txt_b / 빨간 txt_r / 회색 / txt_g -->
+                                            <span class="txt_b t_hover">대기 3건</span> 
+                                            <span class="txt_g">보류 1건</span>
+                                        </div>
+                                    </td>
+									<td class="td_solution">
+										<div class="tal">
+											<a href="" class="t_hover">
+												자동수집 인증서 등록 필요
+											</a>
+											<a href="#none" class="btn_rud_semor">
+												<span>해결하기</span>
+											</a>
+											
+										</div>
+									</td>
+                                    <td class="t_center">
+                                        <div>
+											<a href="#none" class="t_hover_blue">21종</a>	
+                                        </div>
+                                    </td>			
+                                </tr>
+                                <tr>
+									<td><div><input type="checkbox" name="terms" style="margin-bottom: 1px"></div></td>
+                                    <td class="t_left t_hover bzaq_nm_new">
+                                        <div style="position:relative;" class="t_left t_hover bzaq_nm_new">가나와PC</div>
+                                    </td>
+                                    <td class="hoverDec">
+                                        <div class="t_center t_hover">847-87-00259</div>
+                                    </td>
+                                    <td class="hoverDec">
+                                        <div class="t_center">간이</div>
+                                    </td>
+                                    <td class="hoverDec">
+                                        <div class="t_center">신고법인</div>
+                                    </td>
+                                    <td class="td_rp-state">
+                                        <div class="t_left btnActv">
+                                            <!-- 파란색 txt_b / 빨간 txt_r / 회색  txt_g /txt_g일시 hover X-->
+                                            <span class="txt_b t_hover">대기 3건</span> 
+                                            <span class="txt_g">보류 1건</span>
+                                        </div>
+                                    </td>
+									<td class="td_solution">
+										<div class="tal">
+											
+										</div>
+									</td>
+                                    <td class="t_center">
+                                        <div>
+											<a href="#none" class="t_hover_blue">8종</a>
+                                        </div>
+                                    </td>				
+                                </tr>
+                                <tr>
+									<td><div><input type="checkbox" name="terms" style="margin-bottom: 1px"></div></td>
+                                    <td class="t_left t_hover bzaq_nm_new">
+                                        <div style="position:relative;" class="t_left t_hover bzaq_nm_new">나오지마PC</div>
+                                    </td>
+                                    <td class="hoverDec">
+                                        <div class="t_center t_hover">847-87-00259</div>
+                                    </td>
+                                    <td class="hoverDec">
+                                        <div class="t_center">간이</div>
+                                    </td>
+                                    <td class="hoverDec">
+                                        <div class="t_center">신고법인</div>
+                                    </td>
+                                    <td class="td_rp-state">
+                                        <div class="t_left btnActv">
+                                            <!-- 파란색 txt_b / 빨간 txt_r / 회색 / txt_g -->
+                                            <span class="txt_b t_hover">대기 3건</span> 
+                                            <span class="txt_g">보류 1건</span>
+                                        </div>
+                                    </td>
+									<td class="td_solution">
+										<div class="tal">
+											<a href="" class="t_hover">
+												부서사용자계정 등록 필요
+											</a>
+											<a href="#none" class="btn_rud_semor">
+												<span>해결하기</span>
+											</a>
+										</div>
+									</td>
+                                    <td class="t_center">
+                                        <div>
+											<a href="#none" class="t_hover_blue">9종</a>
+                                        </div>
+                                    </td>				
+                                </tr>
+                                <tr>
+									<td><div><input type="checkbox" name="terms" style="margin-bottom: 1px"></div></td>
+                                    <td class="t_left t_hover bzaq_nm_new">
+                                        <div style="position:relative;" class="t_left t_hover bzaq_nm_new">들어가PC</div>
+                                    </td>
+                                    <td class="hoverDec">
+                                        <div class="t_center t_hover">847-87-00259</div>
+                                    </td>
+                                    <td class="hoverDec">
+                                        <div class="t_center">간이</div>
+                                    </td>
+                                    <td class="hoverDec">
+                                        <div class="t_center">신고법인</div>
+                                    </td>
+                                    <td class="td_rp-state">
+                                        <div class="t_left btnActv">
+                                            <!-- 파란색 txt_b / 빨간 txt_r / 회색 / txt_g -->
+                                            <span class="txt_b t_hover">대기 3건</span> 
+                                            <span class="txt_g">보류 1건</span>
+                                        </div>
+                                    </td>
+									<td class="td_solution">
+										<div class="tal">
+											<a href="" class="t_hover">
+												온라인매출 입력 필요
+											</a>
+											<a href="#none" class="btn_rud_semor">
+												<span>해결하기</span>
+											</a>
+										</div>
+									</td>
+                                    <td class="t_center">
+                                        <div>
+											<a href="#none" class="t_hover_blue">9종</a>
+                                        </div>
+                                    </td>				
+                                </tr>
+                                <tr>
+									<td><div><input type="checkbox" name="terms" style="margin-bottom: 1px"></div></td>
+                                    <td class="t_left t_hover bzaq_nm_new">
+                                        <div style="position:relative;" class="t_left t_hover bzaq_nm_new">집에가PC</div>
+                                    </td>
+                                    <td class="hoverDec">
+                                        <div class="t_center t_hover">847-87-00259</div>
+                                    </td>
+                                    <td class="hoverDec">
+                                        <div class="t_center">간이</div>
+                                    </td>
+                                    <td class="hoverDec">
+                                        <div class="t_center">신고법인</div>
+                                    </td>
+                                    <td class="td_rp-state">
+                                        <div class="t_left btnActv">
+                                            <!-- 파란색 txt_b / 빨간 txt_r / 회색 / txt_g -->
+                                            <span class="txt_b t_hover">대기 3건</span> 
+                                            <span class="txt_g">보류 1건</span>
+                                        </div>
+                                    </td>
+									<td class="td_solution">
+										<div class="tal">
+											<a href="" class="t_hover">
+												급여대장 등록 필요
+											</a>
+											<a href="#none" class="btn_rud_semor">
+												<span>해결하기</span>
+											</a>
+										</div>
+									</td>
+                                    <td class="t_center">
+                                        <div>
+                                            <!-- 토글 비활성화시 class dis 활성화시class  on -->
+                                            <a href="#none" class="btn_onoff on">
+                                                <span class="blind">ON</span>
+                                            </a>
+                                        </div>
+                                    </td>				
+                                </tr>
+                            </tbody>
+						</table>
+								
+					<!-- //리스트 테이블 -->
+				</div>	        
+				<!-- Paging wrap -->
+					<div class="paging_wrap">
+						<!-- combo -->
+						<div class="combo_wrap">
+							<div class="combo_style">
+								<a href="#none" class="btn_style btn_combo_down"><span>12</span></a>
+								<ul class="up" style="display: none;">
+									<li><a href="#none">20</a></li>
+									<li><a href="#none">40</a></li>
+									<li><a href="#none">100</a></li>
+								</ul>
+							</div>
+						</div>
+						<!-- //combo -->
+						<!-- pagination -->
+						<div class="paging"><!-- [D] 비활성상태는 on class 제거 -->
+							<a href="#none" class="btn_pag_cntr first"><span class="blind">first</span></a><a href="#none" class="btn_pag_cntr prev"><span class="blind">previous</span></a>
+							<span class="pag_num">
+								<a href="#none" class="on">1</a><a href="#none">2</a><a href="#none">3</a><a href="#none">4</a><a href="#none">5</a><a href="#none">6</a><a href="#none">7</a><a href="#none">8</a><a href="#none">9</a><a href="#none">10</a>
+							</span>
+							<a href="#none" class="btn_pag_cntr next on"><span class="blind">next</span></a><a href="#none" class="btn_pag_cntr last on"><span class="blind">last</span></a>
+						</div>
+						<!-- //pagination -->
+					</div>
+					<!-- //Paging wrap -->
+				
+				
+			</div>
+		   <!-- //content_wrap -->
+			
+		</div>
+		<!-- //content -->
+		
+	</div>
+	<!-- //Container -->
+
+	<!-- footer-->
+	<div class="footer">
+		<div class="copyright_wrap">
+			<div class="copyright_box">
+				<p>Copyright(c) <strong>Webcash.</strong> All rights reserved.</p>
+			</div>
+			<div class="ft_menu"></div>
+		</div>
+	</div>
+	<!-- //footer -->
+</div>
+<!-- //wrap -->
+
+
+
+
+</body>
+</html>
+

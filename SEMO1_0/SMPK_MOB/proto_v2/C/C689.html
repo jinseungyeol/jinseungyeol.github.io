@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css_v2/semo_style.css">
+    <link rel="stylesheet" href="../../css_v2/kt_style.css">
+    <!-- <link rel="stylesheet" href="../../css_v2/kt_style.css"> -->
+  <script src="../../js_v2/jquery-3.5.1.min.js"></script>
+    <script src="../../js_v2/mobiscroll.jquery.min.js"></script>
+    <script>
+         $(document).ready(function () {
+            function resizeInput() {
+                $(this).attr('size', $(this).val().length);
+            }
+            $('#pay_month')
+                .change(resizeInput)
+                .each(resizeInput);
+
+                // 달력이 떠서 확인버튼 누를 때 resizeInput 함수 재실행
+
+            // $("#pay_month").on("propertychange change keyup paste input" ,function(){
+            //     var currentVal = $(this).val();
+            //     if(currentVal == oldVal){
+            //         return;
+            //     }
+
+            //     oldVal = currentVal;
+            //     resizeInput();
+
+
+            //     });
+            // mobiscroll.setOptions({
+            //     theme: 'ios',
+            //     themeVariant: 'light'
+
+            // });
+
+            // $(function () {
+
+            //     $('#demo-mobile-picker-input').mobiscroll().datepicker({
+            //         locale: mobiscroll.localeKo,
+            //         controls: ['date'],
+            //         touchUi: true,
+            //         buttons: [{
+            //             text: '확인',
+            //             handler: 'cancel'
+            //         }],
+
+            //     });
+
+            // });
+        });
+    </script>
+    <title>C689</title>
+</head>
+<body>
+    <div class="title b_white">
+        <div class="title_left">
+            <i class="ico_cen left_arrow"></i>
+        </div>
+        <span class="title_text">급여이체 결과조회</span>
+        <div class="title_right">
+            <i class="ico_cen info"></i>
+        </div>
+    </div>
+    <div class="basic_wrapper" > 
+        <div class="padding_wrapper20">
+            <div class="pay_admin">
+                <div class="pay_date set_mgb0">
+                    <div class="pay_month">
+                          <span>2021년 5월</span>
+                    </div>
+                </div>
+            </div>
+        </div> 
+        <div class="withdraw_info" style="display:none;">
+        
+            <div class="withdraw_item search">
+                <div class="wi_item_tit">
+                    <div class="wi_name">
+                        <label for="">김세모</label>
+                    </div>
+                    <div class="wi_warn">
+                        <span>이체 실패: 21.05.15 14:36</span>  
+                    </div>
+                </div>
+                <div class="wi_account">
+                    <span>KB국민 7571234567412</span>
+                </div>
+                <div class="wi_add">
+                    <div class="add_wrt">
+                        <span>이체상세</span>
+                    </div>
+                    <div class="wi_amount">
+                        <span>1,644,515원</span>
+                    </div>
+                </div>
+                <div class="send_pay_list_wrap set_mgt25">
+                    <span>
+                        <p>1회분 성공</p>                                          
+                        <p>2,000,000원</p>
+                    </span>
+                    <span>
+                        <p>2회분 성공</p>                                          
+                        <p>2,000,000원</p>
+                    </span>
+                    <span class="f_red">
+                        <p>3회분 실패</p>                                          
+                        <p>1,000,000원</p>
+                    </span>
+                </div>
+            </div>
+            <div class="withdraw_item search">
+                <div class="wi_item_tit">
+                    <div class="wi_name">
+                        <label for="">김세모</label>
+                    </div>
+                    <div class="wi_warn">
+                        <span class="f_d_gray">이체 성공 : 21.05.15 14:36</span>  
+                    </div>
+                </div>
+                <div class="wi_account">
+                    <span>KB국민 7571234567412</span>
+                </div>
+                <div class="wi_add">
+                    <div class="add_wrt">
+                        <span></span>
+                    </div>
+                    <div class="wi_amount">
+                        <span>1,644,515원</span>
+                    </div>
+                </div>
+            </div>
+            <div class="withdraw_item search">
+                <div class="wi_item_tit">
+                    <div class="wi_name">
+                        <label for="">김세모</label>
+                    </div>
+                    <div class="wi_warn">
+                        <span class="f_d_gray">이체 성공 : 21.05.15 14:36</span>  
+                    </div>
+                </div>
+                <div class="wi_account">
+                    <span>KB국민 7571234567412</span>
+                </div>
+                <div class="wi_add">
+                    <div class="add_wrt">
+                        <span></span>
+                    </div>
+                    <div class="wi_amount">
+                        <span>1,644,515원</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="withdraw_empty" >
+            <p>조회 내역이 없습니다.</p> 
+        </div>
+        <div class="bottom_info_fix">
+            <span>급여이체 바로가기</span>
+            <i class="ico_cen right_white"></i>
+        </div>
+        <div class="btm_button bottom_fix active">
+            <span>확인</span>
+        </div>
+    </div>
+
+</body>
+
+</html>

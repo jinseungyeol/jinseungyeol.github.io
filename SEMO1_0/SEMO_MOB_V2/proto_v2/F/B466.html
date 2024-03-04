@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css_v2/common.css">
+    <link rel="stylesheet" href="../../css_v2/semo_style.css">
+    <!-- <link rel="stylesheet" href="../../css_v2/ione_style.css"> -->
+  <script src="../../js_v2/jquery-3.5.1.min.js"></script>
+    <title>카드관리B666</title>
+</head>
+<body>
+
+
+<!-- //상단 타이틀  v2 main tag wrap-->  
+<main class="b466">
+ <!-- 송금계좌 등록 -->
+ <div class="wrap account">
+    <div class="account_box">
+      <!-- 송금계좌 목록 -->
+      <div class="info_detail_list_wrap">
+          <!-- 이체계좌 목록 총계-->
+        <div class="info_detail_total_list"> 
+          <p class="set_cen_cen">
+            <i class="ico_cen info_mark bankbook"></i>
+            <span class="account_info set_cent_le">송금계좌 <em class="account_number">1</em>개</span>
+          </p> 
+        </div>
+        <!--v2 noti_comm 제외 set_cen_cen set_mgt15 set_mgb20 클래스제거 -->
+        <p class="noti_comm">
+            <!-- v2 i tag class 변경 -->
+          <i class="ico_cont"></i>
+          <span>송금계좌는 IBK기업은행 계좌만 가능합니다.</span>
+        </p>
+        <!-- 2020-08-10 추가 -->
+        <!-- 계좌-->
+        <div class="info_detail_list_box">  
+          <ul>
+            <li class="info_detail_list type2">
+              <div>
+                <span class="bank_mark">
+                    <!-- v2 i tag class 변경 은행코드 변경 해야됨 -->
+                  <i class="ico_cont bank bk_003"></i> 
+                 
+                </span> 
+                <p class="set_fl_col">
+                 <span class="info_bank_name">IBK기업은행</span>
+                 <span class="info_acnt_name">보통예금통장</span>
+                 <span class="info_acnt">1234-5678-12345-52</span>
+                </p> 
+              </div>
+              <p class="set_fl_col si"> 
+                <span class="user_mark bussi">기업</span> <!--기업 활성화 클래스 bussi-->
+                <span class="info_ref">대표</span>
+              </p>
+            </li>
+            <li class="info_detail_list type2">
+              <div>
+                <span class="bank_mark">
+                  <i class="ico_cont bank bk_003"></i> 
+                </span> 
+                <p class="set_fl_col">
+                    <span class="info_bank_name">IBK기업은행</span>
+                    <span class="info_acnt_name">보통예금통장</span>
+                    <span class="info_acnt">1234-5678-12345-52</span>
+                </p> 
+              </div>
+              <p class="set_fl_col si"> 
+                <span class="user_mark indi">개인</span> <!--개인 활성화 클래스 indi-->
+                <span class="info_ref">대표</span>
+              </p>
+            </li>
+          </ul>
+           <!-- v2 버튼 tag 변경 -->
+          <button class="active_button ">
+            <i class="ico_cen plus_gray"></i>
+            <span>송금계좌 등록</span>
+         </button>
+        </div>
+        <!-- //계좌-->
+
+      </div>
+      <!-- //송금계좌 목록 -->
+    </div>
+  </div>
+  <!-- //송금계좌 등록 -->
+
+    
+</main>
+
+      
+  
+
+</body>
+</html>

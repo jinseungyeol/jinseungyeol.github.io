@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../../css/semo_cont.css">
+  <link rel="stylesheet" href="../../css/semo_cont_ibk.css">
+  <title>SEMO</title>
+</head>
+<body>
+  <div class="new_content">
+    <div class="cont_bg cont_pd"> <!-- 클래스 cont_pd fix_button 포함 패딩-->
+
+      <!-- 상단 타이틀 -->
+      <div class="title">계좌 연동 관리</div>
+      <!-- //상단 타이틀 -->
+
+      <div class="wrap join">
+
+        <div class="certi_box">
+          <!-- 계정등록 완료 -->
+          <div class="cbi_result_box type2">
+            <i class="ico_cbir fail"></i>
+            <p class="cbir_tit">
+              i-ONE 소상공인을<br>
+              정말 해지 하시겠어요?
+            </p>
+            <p class="normal_sentence c_gray set_mgt12">
+              지금 해지하시면 앞으로 i-ONE 소상공인에서<br>
+              제공하는 서비스를 이용하실 수 없습니다.
+            </p>
+          </div>
+          <!-- //계정등록 완료 -->    
+
+          <div class="termination_wrap">
+            <div class="termination_info set_cen_cen">   
+              <span class="ti_tit">사업자 번호</span>
+              <span class="ti_txt">222-11-33333</span> 
+            </div>  
+            <div class="termination_box">
+              <p class="termination_tit set_cen_cen">해지하시는 이유를 선택해 주세요.</p>
+              <ul class="termination_list">
+                <li>
+                  <input type="checkbox" id="reason" class="check_terms">
+                  <label for="reason">서비스 이용이 불편해서</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="reason" class="check_terms">
+                  <label for="reason">계정 등록하는게 불편해서</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="reason" class="check_terms">
+                  <label for="reason">로그인 횟수 거의 없음</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="reason" class="check_terms">
+                  <label for="reason">기타 사유</label>
+                </li>
+              </ul>
+            </div>
+            <input type="text" class="termination_etc" placeholder="기타 사유를 입력해 주세요.(30자 이내)">
+          </div>
+        </div>
+        <!-- 안내 -->
+        <div class="noti_box type2 set_mgt26">
+          <p class="noti_comm set_top_le red">
+            <i class="ico_cen"></i>
+            <span>잠깐! 꼭 읽어보세요.</span>
+          </p>
+          <div class="noti_box_list type2">
+            <ul>
+              <li>- 해지한 계정은 <u>재가입 및 복구가 불가</u>하오니 신중하게 해지하시기 바랍니다.</li>
+              <li>- 등록된 <u>금융기관 계정 정보는 모두 삭제</u>됩니다.</li>
+              <li>- 서비스를 해지하시는 경우 세무 신고를 위해 전송된 <u>데이터는 관련 법령에 의해 보관</u>됩니다.</li>
+              <li>- 개인 정보 처리 방침과 관련 법령 등에 따라 <u>개인정보는 일정 기간 동안 보관 후 삭제</u>될 수 있습니다.</li>
+            </ul>
+          </div>
+          <button class="btn_detail set_mgt18">개인 정보 처리 방침 확인하기</button>
+        </div>
+        <!-- 안내 -->
+
+        <div class="agree_box set_cent_le">
+          <input type="checkbox" id="ab_check" class="check_terms">
+          <label for="ab_check">위 내용을 모두 확인하였으며, 이에 동의합니다.</label>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 하단 fix 버튼 -->
+    <div class="btm_fix on">
+      <span class="">취소</span>
+      <span class="bgc_gray">해지하기</span> <!--활성 클래스 bgc_gray-->
+    </div>
+    <!-- 하단 fix 버튼 -->
+
+  </div>
+</body>
+</html>

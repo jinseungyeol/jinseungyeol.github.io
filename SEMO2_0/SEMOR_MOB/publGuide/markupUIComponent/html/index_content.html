@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>팝업가이드</title>
+    <link rel="stylesheet" href="../../common/css/guide.css">
+</head>
+<body>
+    <!-- wrapper -->
+    <div class="wrapper">
+        <div class="guideCont">
+            <!-- header -->
+            <div class="header">
+                <h1 class="mainTit">HTML 마크업 기본 환경</h1>
+            </div>
+            <!-- //header -->
+            
+            <!-- content -->
+            <div class="content">
+
+                <div class="titArea">
+                    <h2 class="defTit">1. 디바이스 및 ID 작업 기준</h2>
+                </div>
+                <div class="guideIframeWrap">
+                    <table class="tblReference">
+                        <colgroup>
+                            <col style="width: 300px">
+                            <col style="width: 600px">
+                            <col>
+                        </colgroup>
+                            
+                        <tbody>
+                            <tr>
+                                <th>구분</th>
+                                <th>기준</th>
+                                <th>비고</th>
+                            </tr>
+                            <tr>
+                                <th>OS</th>
+                                <td>Android/iOS</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>작업기준 너비</th>
+                                <td>360px</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>반응형 중단점(Break Point)</th>
+                                <td>
+                                    Device Wide Wdith 768<br>
+                                    Device Small Width 320
+                                </td>
+                                <td>레이아웃 및 폰트 최적화시 기준</td>
+                            </tr>
+                            <tr>
+                                <th>HTML 파일명</th>
+                                <td>
+                                    1Depth_2Depth_일련번호 3자리+A~Z<br>
+                                    팝업은 언더바 +숫자로 표현 (EX. 000A_1)
+                                </td>
+                                <td>
+                                    기획 화면번호 체계 기준 
+                                    <a href="https://docs.google.com/spreadsheets/d/1xIbNTUpV_iGtLHM5CuHFOMq2rvWaz9o2Ei18DBxWASQ/edit#gid=1613306907" target="_blank">링크이동</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="titArea">
+                    <h2 class="defTit">2. 폴더 및 파일 기준 - 세모리포트 <span class="pointColor02">모바일</span></h2>
+                </div>
+                <div class="guideIframeWrap">
+                    <table class="tblReference">
+                        <colgroup>
+                            <col style="width: 300px">
+                            <col style="width: 300px">
+                            <col style="width: 400px">
+                            <col>
+                        </colgroup>
+                            
+                        <tbody>
+                            <tr>
+                                <th>구분</th>
+                                <th>폴더</th>
+                                <th>하위폴더 및 파일</th>
+                                <th>비고</th>
+                            </tr>
+                            <tr>
+                                <th>HTML 마크업 페이지</th>
+                                <td>html/</td>
+                                <td>
+                                    fin/ 금융탭<br>
+                                    noti/ 알림<br>
+                                    rprt/ 리포트탭<br>
+                                    sett/ 설정<br>
+                                    tax/ 세무탭<br>
+                                    trns/ 일반송금<br>
+                                    user/ 사용자<br>
+                                    vwmr/ 더보기탭<br>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>HTML 마크업 템플릿</th>
+                                <td>
+                                    <!-- publGuide.html<br> -->
+                                    publGuide/
+                                </td>
+                                <td>markupUIkit/index.html</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>HTML Index</th>
+                                <td>index.html</td>
+                                <td></td>
+                                <td>업무별 HTML 페이지 화면 목록</td>
+                            </tr>
+                            <tr>
+                                <th>공통 CSS 01.(세모리포트 모바일)</th>
+                                <td>css/</td>
+                                <td>
+                                    semoR_base.css<br>
+                                    semoR_common.css
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>공통 CSS 02.(라이브러리)</th>
+                                <td>css/</td>
+                                <td>
+                                    mobiscroll.jquery.min.css<br>
+                                    swiper-bundle.min.css
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>업무 CSS</th>
+                                <td>css/</td>
+                                <td>
+                                    semoR_style.css<br>
+                                    semoR_rept.css
+                                </td>
+                                <td>semoR_rept.css 보고서 4종(사업분석, 매출매입, 인건비, 예상 부가세)</td>
+                            </tr>
+                            <tr>
+                                <th>공통 Font 01.</th>
+                                <td>font/</td>
+                                <td>
+                                    Pretendard-Medium.woff2<br>
+                                    Pretendard-SemiBold.woff2<br>
+                                    Pretendard-Bold.woff2
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>이미지 리소스 01.</th>
+                                <td>img/</td>
+                                <td>
+                                    ico_파일이름.xxx<br>
+                                    img_파일이름.xxx<br>
+                                    banner_파일이름.xxx<br>
+                                    logo_파일이름.xxx<br>
+                                    bk_파일이름.xxx<br>
+                                    card_파일이름.xxx
+                                </td>
+                                <td>bk(계좌), card(카드)</td>
+                            </tr>
+                            <tr>
+                                <th>UX용 JS 01.(세모리포트 모바일)</th>
+                                <td>js/</td>
+                                <td>semoR_ui.js</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>UX용 JS 02.(라이브러리)</th>
+                                <td>js/</td>
+                                <td>
+                                    jquery-3.5.1.min.js<br>
+                                    jquery-ui.min.js<br>
+                                </td>
+                                <td>
+                                    · 개발에서 배포되는 버전과 동일한 파일<br>
+                                    · jquery-ui v1.13.2
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>UX용 JS 03.(라이브러리)</th>
+                                <td>js/</td>
+                                <td>
+                                    mobiscroll.jquery.min.js<br>
+                                    chart-3.5.1.min.js<br>
+                                    swiper-bundle.min.js<br>
+                                    lottie.js
+                                </td>
+                                <td>
+                                    · 개발에서 배포되는 버전과 동일한 파일<br>
+                                    · mobiscroll v5.16.0<br>
+                                    · swiper v7.2.0<br>
+                                    · lottie(json 형식의 경량화된 이미지 라이브러리)
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- //content -->
+        </div>
+    </div>
+    <!-- //wrapper -->
+
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        
+
+        input[type=checkbox] {border-radius: 0;-webkit-border-radius: 0;-moz-border-radius: 0;border: 0;height: 24px;width: 24px;vertical-align: middle;cursor: pointer;background: url(../img/check_round.png) no-repeat 0 0;-moz-background-size: 100%;-ms-background-size: 100%;-o-background-size: 100%;-webkit-background-size: 100%;-webkit-appearance: none;outline-style: none;}
+.kt_event_bg{width: calc(100vw - 44px); height: 100vh; background-color: rgba(0, 0, 0, 0.7); position: fixed; top: 0; left: 0; padding: 0 22px; display: flex; flex-direction: column; justify-content: center; z-index: 100;}
+.kt_event_top{display: flex; justify-content: space-between; align-items: center;}
+.kt_event_top_l{display: flex; align-items: center; color:#ffffff;}
+.kt_event_top_l > label{font-size: 12px; margin-left: 5px;-webkit-tap-highlight-color: transparent;}
+.kt_event_top_l > input{background-image: unset; border: 1px solid #ffffff; border-radius: 50%; transition: 0.2s;}
+.kt_event_top_l > input:checked{background-color: #2dbdb6; background-image: url(../img/check_w.svg); background-size: 15px; background-position: center; border: 1px solid #2cbbb6;-webkit-tap-highlight-color: transparent;}
+.kt_event_top_r{display: flex; justify-content: flex-end; color:#ffffff;}
+.kt_event_top_r i.del{background-image: url(../img/del.svg); width: 15px; height: 15px; background-size: 15px; padding: 8px;-webkit-tap-highlight-color: transparent; background-repeat: no-repeat; background-position: center;}
+.kt_event_con{background-color: #ffffff; border-radius: 14.5px; display: flex; flex-direction: column; align-items: center; margin-top: 3px; padding: 16px 0 0; overflow:hidden; margin-bottom: 31px;}
+.kt_event_text p{font-size: 8px; color: #161616; margin-top: 13px; word-break: keep-all; width: 70%;}
+.kt_event_text p:last-child{margin-top: 3px;}
+.kt_event_checkbox{display: flex; padding: 0 17px; margin-top: 16px; align-items: center;}
+.kt_event_checkbox input{min-width: 24px; background-image: unset; height: 24px; border: 1px solid #222222; border-radius: 4px;-webkit-tap-highlight-color: transparent;}
+.kt_event_checkbox input:checked{background-color: #2dbdb6; background-image: url(../img/check_w.png); background-size: 15px; background-position: center; border: 1px solid #2cbbb6;}
+.kt_event_checkbox label{font-size: 9px; color: #161616; margin-left: 6.5px; -webkit-tap-highlight-color: transparent;}
+.kt_event_con > .btm_button{width: 100%; height: 15.62vw; position: unset; margin-top: 9px; background-color: #ffc100; background-image: url(../img/kt_popup_btn.svg); background-size: 87px; background-position: center; background-repeat: no-repeat; -webkit-tap-highlight-color: transparent;}
+.kt_event_con.send{padding-top: 0;}
+.kt_event_con > .btm_button.send{background-image: url(../img/detail_text.svg); background-size: 50.87vw; margin-top: 0;}
+i.pay_stub{background-image: url(../img/pop_pay_stub.png); width: 100%; height: 78.52vh; background-size: cover; height: 114vw; background-position: top; background-repeat: no-repeat; position: relative;}
+.pay_stub >span{position: absolute; display: flex; font-style: normal; color: #ffffff; font-size: 12px; right: 50%; transform: translateX(50%); width: calc(100% - 34px); bottom: 8px; word-break: keep-all;}
+.pay_stub >span > p{font-style: oblique;}
+    </style>
+</head>
+<body>
+    <div class="kt_event_bg">
+        <div class="kt_event_top">
+            <div class="kt_event_top_l">
+                <input type="checkbox" id="kt_event_top_input">
+                <label for="kt_event_top_input">오늘 하루 보지 않기</label>
+            </div>
+            <div class="kt_event_top_r">
+                <i class="ico_cen del"></i>
+            </div>
+        </div>
+        <div class="kt_event_con send">
+            <i class="pay_stub">
+                <span>※ 2021년 11월 19일부터 5인 이하 사업장도 급여명세서 발급 의무화 시행
+                </span>
+            </i>
+       
+        </div>
+    </div>
+</body>
+</html>

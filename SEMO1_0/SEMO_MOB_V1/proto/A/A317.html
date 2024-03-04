@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../../css/semo_cont.css">
+  <title>SEMO</title>
+</head>
+<body>
+  <div class="new_content">
+
+
+    <div class="cont_bg cont_pd"> <!-- 클래스 cont_pd fix_button header 포함 패딩-->
+      
+      <!-- 상단 타이틀 -->
+      <div class="title">회원가입</div>
+      <!-- //상단 타이틀 -->
+
+      <!-- 회원가입 -->
+      <div class="wrap join">
+
+        <div class="join_box">
+          <div class="title_sub">휴대폰 인증해 주세요.</div>
+          <div class="join_block type2">
+            <!-- 휴대폰 번호 -->
+            <input type="number" name="mobile" class="join_input type4" placeholder="휴대폰번호입력">
+            <button class="btn_auth">인증번호 요청</button>
+              <!-- //휴대폰 번호 -->
+          </div>
+  
+          <div class="join_block">
+            <!-- 인증번호 입력 -->
+            <input type="number" name="auth" class="join_input type5" placeholder="인증번호 입력(숫자6자리)" maxlength="6">
+            <!-- //인증번호 입력 -->
+
+            <!-- 타이머 -->
+            <p class="auth_timer">
+              <i class="ico_timer"></i>
+              <span><em class="min">03</em> : <em class="sec">00</em></span>
+            </p>
+              <!-- //타이머 -->
+          </div>
+        </div>
+
+      </div>
+      <!-- //회원가입 -->
+      
+    </div>
+
+    <!-- 하단 fix 버튼 -->
+    <div class="btm_fix">
+      <span>다음</span>
+    </div>
+    <!-- 하단 fix 버튼 -->
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<title>세무대리인 for 경리나라</title>
+<link rel="stylesheet" href="../css/reset_taxp.css">
+<link rel="stylesheet" href="../css/content_taxp.css"><!-- [D] 세무대리인용 -->
+
+<!-- custom scrollbar plugin css -->
+<link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+<!-- custom scrollbar plugin -->
+<script src="../js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../js/jquery.placeholder.min.js"></script>
+<script>
+$(function(){
+	// Invoke the plugin
+	$('input, textarea').placeholder({customClass:'my-placeholder'});
+});
+</script>
+
+</head>
+
+<body>
+
+	<div class="overlay">
+		<div class="pop_wrap" style="width:360px;">
+	
+			<!-- 팝업 헤더 -->
+			<div class="pop_header">
+				<h1>보고서 발송을 예약합니다.</h1>
+				<a href="#none" onClick="self.close()" class="btn_popclose"><img src="../img/txof/btn/btn_popclose2.gif" alt="팝업닫기"></a>
+			</div>
+			<!-- //팝업 헤더 -->
+	
+			<!-- 팝업 컨텐츠 -->
+			<div class="pop_container">
+	
+				<table class="tbl_input8 mgt0" summary="">
+					<caption></caption>
+					<colgroup>
+						<col style="width: 80px">
+						<col>
+					</colgroup>
+					<tbody>
+						<tr>
+							<th class="vat"><div class="bul">일자</div></th>
+							<td class="vat">
+								<div class="input_box2"><input type="text" style="width:70px;" value="2017-01-01"> 
+									<a href="#none"><img src="../img/txof/ico/ico_calendar.png" alt="달력"></a>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<table class="tbl_input8 mgt20" summary="">
+					<caption></caption>
+					<colgroup>
+						<col style="width: 80px">
+						<col>
+					</colgroup>
+					<tbody>
+						<tr>
+							<th class="vat"><div class="bul">일자</div></th>
+							<td class="vat">
+								<select>
+									<option>시간</option>
+								</select>
+								<span class="mgl4 mgr4">:</span>
+								<select>
+									<option>분</option>
+								</select>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+	
+				<!-- 하단버튼 -->
+				<div class="tac mgt20">
+					<a href="#none" class="btn_style1_b"><span>확인</span></a>
+					<a href="#none" class="btn_style1_g"><span>취소</span></a>
+				</div>
+				<!-- //하단버튼 -->
+	
+			</div>
+			<!-- //팝업 컨텐츠 -->
+		</div>
+	</div>
+
+</body>
+</html>

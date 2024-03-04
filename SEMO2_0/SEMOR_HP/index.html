@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content='세모리포트' property='og:title' />
+    <meta property="og:type" content="website">
+    <meta content='https://publ.smjb.co.kr' property='og:url' /> <!--운영일시 https://tax.semoreport.com 으로 변경-->
+    <meta content="img/thum_semoR_v2.png" property='og:image' />
+    <meta content="사장님이 선정한 1등 보고서" property="og:description" />
+    <meta name="naver-site-verification" content="5dd58dd4f24ef479eb745b0f8e1ea72d64e3f555" /><!-- 검색엔진 -->
+    <link rel="icon" href="img/favicon_semoR.png">
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/odometer-theme-default.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/semoR_pc.css?20230921">
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/semo.api.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/odometer.js"></script>
+    <script src="js/semoR_ui.js"></script>
+    <!-- include js -->
+    <script src="https://publ.roumit.com/js/include.js"></script>
+    <script src="https://publ.roumit.com/js/notice_popup.js"></script>
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-5T5R4M4T');
+    </script>
+    <!-- End Google Tag Manager -->
+    <title>세모리포트</title>
+</head>
+<body>
+    <!-- wrapper -->
+    <div class="wrapper">
+        <!-- header -->
+        <header class="header">
+            <div class="inner clear">
+                <div class="areaLogo">
+                    <h1>
+                        <a href="index.html"><img src="img/logo_semoR.png" alt="로고"></a>
+                    </h1>
+                </div>
+                <ul class="gnb">
+                    <li class="intro active">
+                        <a href="index.html">세모리포트 소개</a>
+                    </li>
+                    <li class="doctor">
+                        <a href="html/HP000.html">세모주치의</a>
+                    </li>
+                    <li class="consult">
+                        <a href="https://qe398.channel.io/support-bots/52789" target="_blank">고객센터</a> <!--운영링크임-->
+                    </li>
+                    <li>
+                        <a href="https://edu.semoreport.com/" target="_blank">강의실</a>
+                    </li>
+                    <li>
+                        <a href="https://www.semoreport.com/" target="_blank">사장님 홈페이지</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="trigger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </header>
+        <!-- //header -->
+        <!-- container -->
+        <div class="container">
+            <!-- #intro -->
+            <div id="intro">
+                <!-- secVisual -->
+                <section class="secVisual">
+                    <div class="thumbnail">
+                        <video src="img/video_introVisualPC.mp4" class="pcThum" autoplay muted loop playsinline></video>
+                        <video src="img/video_introVisualMO.mp4" class="moThum" autoplay muted loop playsinline></video>
+                    </div>
+                    <div class="inner">
+                        <div class="txtBox">
+                            <h1 class="mainTit">
+                                세무사무소 업무는 편해지고<br>
+                                고객 만족도는 올라가고 !
+                            </h1>
+                            <p class="subTit">
+                                <em>우리 세무사무소만의</em> <span class="pointColor">차별화 무기</span>를 찾았다!
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                <!-- //secVisual -->
+                <!-- secIntro -->
+                <section class="secIntro">
+                    <div class="inner">
+                        <h1 class="mainTit" data-aos="fade-up">
+                            세무사무소의 <span class="fwBold">업무 절감</span>과<br>
+                            <span class="fwBold">효과적인 마케팅</span>을 위한<br>
+                            최고의 파트너가 되겠습니다.
+                        </h1>
+                        <ul class="checkList" data-aos="fade-up">
+                            <li>
+                                <p>10여종 세무/경영 <span class="pointColor05">보고서 생성 및 발송</span></p>
+                                <p><span class="pointColor02">(세무사 카카오채널로 발송)</span></p>
+                            </li>
+                            <li>
+                                <p>한눈에 보이는 실시간 <span class="pointColor05">고객데이터 제공</span></p>
+                            </li>
+                            <li>
+                                <p><span class="pointColor05">신규고객 확대</span>를 위한 <span class="pointColor05">차별화</span> 도구 제공</p>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <!-- //secIntro -->
+                <!-- secAbout -->
+                <section class="secAbout">
+                    <div class="inner">
+                        <img src="img/ico_semoR_big.png" class="logo" alt="세모리포트 로고" data-aos="fade-right">
+                        <div class="aboutCnt">
+                            <div class="left">
+                                <h2 class="defTit" data-aos="fade-right">
+                                    세모리포트는<br>
+                                    이렇게 사용해요
+                                </h2>
+                                <p class="subTxt" data-aos="fade-right">
+                                    세모리포트는 우리 세무사무소의 전용 앱으로,<br>
+                                    거래처에게 저가의 기장 서비스와 차별화되는<br>
+                                    프리미엄 세무서비스를 제공할 수 있도록 도와드립니다.
+                                </p>
+                                <a href="https://semojangbu.notion.site/5aabca3675e94376b52b491d54e07b5f" class="moveGuide" target="_blank" data-aos="fade-right">🎬 동영상 가이드북</a>
+                            </div>
+                            <div class="areaMockup">
+                                <div class="item pc" data-aos="fade-up" data-aos-delay="950">
+                                    <div class="areaImg">
+                                        <img src="img/mockup_about.png" alt="피씨목업">
+                                    </div>
+                                    <p class="infoTxt">
+                                        <strong>세무사무소는 <span class="fwBold">PC에서</span></strong>
+                                        세무사무소 담당자용 PC앱
+                                    </p>
+                                </div>
+                                <div class="item mo" data-aos="fade-up" data-aos-delay="1000">
+                                    <div class="areaImg">
+                                        <img src="img/mockup_about02_230712.png" alt="모바일목업">
+                                    </div>
+                                    <p class="infoTxt">
+                                        <strong>거래처 사장님은 <span class="fwBold">APP에서</span></strong>
+                                        세무사무소 이름으로 제공되는 MO앱
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- //secAbout -->
+                <!-- secProduct -->
+                <section class="secProduct">
+                    <div class="inner">
+                        <div class="areaTabMenu" data-aos="fade-up">
+                            <ul class="tabList">
+                                <li class="active">
+                                    <button class="tabMenu">고객 관리</button>
+                                </li>
+                                <li>
+                                    <button class="tabMenu">보고서</button>
+                                </li>
+                                <li>
+                                    <button class="tabMenu">고객 분석</button>
+                                </li>
+                                <li>
+                                    <button class="tabMenu">세무지식</button>
+                                </li>
+                                <li>
+                                    <button class="tabMenu">세무사무소 전용앱</button>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tabPannelWrap">
+                            <div class="tabPannel active">
+                                <div class="areaTxt">
+                                    <h2 class="defTit" data-aos="fade-right">
+                                        <span class="pointColor02">신규 고객 마케팅</span>을 위한<br>
+                                        잠재 고객 정보 관리
+                                    </h2>
+                                    <p class="infoTxt" data-aos="fade-right">
+                                        <span class="fwBold">고객 관리 | 세모.CRM</span>
+                                        이탈 · 휴폐업 고객,<br/>
+                                        신규 잠재고객 관리 서비스
+                                    </p>
+                                </div>
+                                <div class="areaMockup" data-aos="fade-up" data-aos-delay="1000">
+                                    <img src="img/mockup_preview.png" alt="보고서 미리보기">
+                                </div>
+                            </div>
+                            <div class="tabPannel">
+                                <div class="areaTxt">
+                                    <h2 class="defTit">
+                                        <span class="pointColor02">세무, 경영 보고서</span>를<br>
+                                        매월 자동으로 발송 !
+                                    </h2>
+                                    <p class="infoTxt">
+                                        <span class="fwBold">보고서  10여종</span>
+                                        사업분석 · 매출 · 매입 · 인건비<br>
+                                        예상부가세 · 부가세 신고분석
+                                    </p>
+                                </div>
+                                <div class="areaMockup">
+                                    <img src="img/mockup_preview02.png" alt="급여업무 미리보기">
+                                </div>
+                            </div>
+                            <div class="tabPannel">
+                                <div class="areaTxt">
+                                    <h2 class="defTit">
+                                        <span class="pointColor02">실시간 고객 데이터</span>를<br>
+                                        한눈에 보고, 업무 효율 UP
+                                    </h2>
+                                    <p class="infoTxt">
+                                        <span class="fwBold">고객 요약 분석 | 고객 매출매입장</span>
+                                        핵심 고객관리 및 절세 컨설팅,<br>
+                                        고객 상담 용이, 우수고객 차별화 서비스
+                                    </p>
+                                </div>
+                                <div class="areaMockup">
+                                    <img src="img/mockup_preview03.png" alt="민원증명 미리보기">
+                                </div>
+                            </div>
+                            <div class="tabPannel">
+                                <div class="areaTxt">
+                                    <h2 class="defTit">
+                                        고객에게 제공하고 싶은<br>
+                                        <span class="pointColor02">세무 정보 / 컨텐츠</span>
+                                    </h2>
+                                    <p class="infoTxt">
+                                        <span class="fwBold">세무지식 | 정부지원금</span>
+                                        직접 글 쓰고, 고객(APP) 제공
+                                    </p>
+                                </div>
+                                <div class="areaMockup">
+                                    <img src="img/mockup_preview04.png" alt="간이영수증 미리보기">
+                                </div>
+                            </div>
+                            <div class="tabPannel">
+                                <div class="areaTxt">
+                                    <h2 class="defTit">
+                                        <span class="pointColor02">세무사무소 전용 앱</span>으로<br>
+                                        차별화 서비스 제공
+                                    </h2>
+                                    <p class="infoTxt">
+                                        <span class="fwBold">직원/급여 | 민원증명 | 간이영수증 | 간편송금</span>
+                                        채팅 연결 등 세무사무소 전용<br>
+                                        간편 서비스 제공
+                                    </p>
+                                </div>
+                                <div class="areaMockup">
+                                    <img src="img/mockup_preview05.png" alt="간편송금 미리보기">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- //secProduct -->
+                <!-- secReview -->
+                <section class="secReview">
+                    <div class="inner">
+                        <div class="left">
+                            <ul class="rwTxtList">
+                                <li class="active">
+                                    <h2 class="defTit" data-aos="fade-right">
+                                        세무사가 말하는<br>
+                                        세모리포트
+                                    </h2>
+                                    <p class="subTxt" data-aos="fade-right">
+                                        “고객에게 어떤 이미지로 기억되고 싶으신가요 ?<br>
+                                        세모리포트 도입으로 고객만족도 평점이 늘었어요.”
+                                    </p>
+                                </li>
+                                <li class="">
+                                    <h2 class="defTit" data-aos="fade-right">
+                                        세무사가 말하는<br>
+                                        세모리포트
+                                    </h2>
+                                    <p class="subTxt" data-aos="fade-right">
+                                        " 세모리포트로 직원들 업무가 줄었어요<br>
+                                        경험해보면 달라요."
+                                    </p>
+                                </li>
+                                <li class="">
+                                    <h2 class="defTit" data-aos="fade-right">
+                                        세무사가 말하는<br>
+                                        세모리포트
+                                    </h2>
+                                    <p class="subTxt" data-aos="fade-right">
+                                        “세무사무소에 차별화된 무기가<br>
+                                        될 것이라고 생각합니다.”
+                                    </p>
+                                </li>
+                                <li>
+                                    <h2 class="defTit" data-aos="fade-right">
+                                        세무사가 말하는<br>
+                                        세모리포트
+                                    </h2>
+                                    <p class="subTxt" data-aos="fade-right">
+                                        “동탄세무회계의 기장료를 증가시킬 수<br>
+                                        있었던 비결은 세모리포트에요.”
+                                    </p>
+                                </li>
+                            </ul>
+                            <div class="swiper-navigation" data-aos="fade-right">
+                                <div class="swiper-button-prev"></div>
+                                <div class="taxAccWrap">
+                                    <span class="name active">
+                                        마일리택스<br>
+                                        강효정 세무사님
+                                    </span>
+                                    <span class="name">
+                                        태림세무회계<br>
+                                        정윤기 세무사님
+                                    </span>
+                                    <span class="name">
+                                        스타세무회계<br>
+                                        김조겸 세무사님
+                                    </span>
+                                    <span class="name">
+                                        동탄세무회계<br>
+                                        박상현 세무사님
+                                    </span>
+                                </div>
+                                <div class="swiper-button-next"></div>
+                            </div>
+                        </div>
+                        <div class="right swiper-container" data-aos="fade-up" data-aos-delay="800">
+                            <ul class="videoList swiper-wrapper">
+                                <li class="swiper-slide">
+                                    <iframe src="https://www.youtube.com/embed/-kV3MTOGe6c?si=KZFXhvKJ0x4GT8YE" title="YouTube video player" frameborder="0"></iframe>
+                                </li>
+                                <li class="swiper-slide">
+                                    <iframe src="https://www.youtube.com/embed/da_q_CQYDro?si=7QnQFXN5JBbj3JlK" title="YouTube video player" frameborder="0"></iframe>
+                                </li>
+                                <li class="swiper-slide">
+                                    <iframe src="https://www.youtube.com/embed/uOdNcEJRfg4" title="YouTube video player" frameborder="0"></iframe>
+                                </li>
+                                <li class="swiper-slide">
+                                    <iframe src="https://www.youtube.com/embed/P_4D8z2kGmY" title="YouTube video player" frameborder="0"></iframe>
+                                </li>
+                            </ul>
+                            <p class="infoTxt">재생버튼을 클릭해 보세요.</p>
+                        </div>
+                    </div>
+                </section>
+                <!-- //secReview -->
+                <!-- secCount -->
+                <section class="secCount">
+                    <div class="inner">
+                        <div class="countList">
+                            <ul>
+                                <li>
+                                    <span class="odometer1 odometer ft_play">0</span>
+                                    <p>세모리포트 우수 세무사</p>
+                                </li>
+                                <li>
+                                    <span class="odometer2 odometer ft_play">0</span>
+                                    <p>세모리포트 고객수</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <!-- //secCount -->
+                <!-- secPartner -->
+                <section class="secPartner">
+                    <div class="inner">
+                        <h2 class="defTit" data-aos="fade-up">
+                            <p class="fwBold">벌써 많은 세무사무소들이</p>
+                            <p class="fwBold">세모리포트와 함께하고있습니다!</p>
+                        </h2>
+                        <div class="txtArea" data-aos="fade-up">
+                            <p class="pointColor02 fwBold">이제 세무사님의 차례입니다.</p>
+                            <p>
+                                <span>세모리포트로 우리사무소만의</span>
+                                <span>차별화 무기를 만들어보세요!</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="taxPartnerWrap" data-aos="fade-up">
+                        <div class="allTaxPartner">
+                            <div class="inner"><img src="./img/logo_taxPartner_all.png" alt="모든 제휴 세무사무소"></div>
+                        </div>
+                        <ul>
+                            <li>
+                                <img src="img/logo_taxPartner.png" alt="가현세무법인">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner02.png" alt="NICE세무법인">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner03.png" alt="대현세무법인">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner04.png" alt="덕우세무회계">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner05.png" alt="박성언세무회계사무소">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner06.png" alt="반세무회계사무소">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner07.png" alt="세무법인다승">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner08.png" alt="세무법인 비에이치엘">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner09.png" alt="세무법인 모두">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner10.png" alt="세무법인 위드">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner11.png" alt="세무법인청년들">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner12.png" alt="세무회계 도유">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner13.png" alt="스타세무회계">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner14.png" alt="스타트택스">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner15.png" alt="열린세무회계사무소">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner16.png" alt="제니스세무회계">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner17.png" alt="창조세무회계">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner18.png" alt="세무회계 보우">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner19.png" alt="한세무회계">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner20.png" alt="서연세무회계사무소">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner21.png" alt="세무법인 비전택스">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner22.png" alt="세무법인 청년들 부산점">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner23.png" alt="진평세무회계">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner24.png" alt="권관중세무회계사무소">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner25.png" alt="동탄세무회계 세무사박상현">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner26.png" alt="세무회계택스에이드">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner27.png" alt="태림세무회계">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner28.png" alt="로앤택스파트너스">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner29.png" alt="세무법인 예인 더케이">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner30.png" alt="세무법인MG">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner31.png" alt="세무사박종인사무소">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner32.png" alt="세무회계컨설팅 공감">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner33.png" alt="에스택스컨설팅">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner34.png" alt="장민기 세무사무소">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner35.png" alt="이성환 세무회계 사무소">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner36.png" alt="해인세무법인">
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="taxPartnerWrap" data-aos="fade-up">
+                        <ul>
+                            <li>
+                                <img src="img/logo_taxPartner.png" alt="가현세무법인">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner02.png" alt="NICE세무법인">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner03.png" alt="대현세무법인">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner04.png" alt="덕우세무회계">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner05.png" alt="박성언세무회계사무소">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner06.png" alt="반세무회계사무소">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner07.png" alt="세무법인다승">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner08.png" alt="세무법인 비에이치엘">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner09.png" alt="세무법인 모두">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner10.png" alt="세무법인 위드">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner11.png" alt="세무법인청년들">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner12.png" alt="세무회계 도유">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner13.png" alt="스타세무회계">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner14.png" alt="스타트택스">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner15.png" alt="열린세무회계사무소">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner16.png" alt="제니스세무회계">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner17.png" alt="창조세무회계">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner18.png" alt="세무회계 보우">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner19.png" alt="한세무회계">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner20.png" alt="서연세무회계사무소">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner21.png" alt="세무법인 비전택스">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner22.png" alt="세무법인 청년들 부산점">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner23.png" alt="진평세무회계">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner24.png" alt="권관중세무회계사무소">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner25.png" alt="동탄세무회계 세무사박상현">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner26.png" alt="세무회계택스에이드">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner27.png" alt="태림세무회계">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner28.png" alt="로앤택스파트너스">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner29.png" alt="세무법인 예인 더케이">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner30.png" alt="세무법인MG">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner31.png" alt="세무사박종인사무소">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner32.png" alt="세무회계컨설팅 공감">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner33.png" alt="에스택스컨설팅">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner34.png" alt="장민기 세무사무소">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner35.png" alt="이성환 세무회계 사무소">
+                            </li>
+                            <li>
+                                <img src="img/logo_taxPartner36.png" alt="해인세무법인">
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <!-- //secPartner -->
+            </div>
+            <!-- //#intro -->
+            <!-- footer -->
+            <footer class="footer">
+                <div class="inner">
+                    <div class="footerTop">
+                        <img src="img/logo_roumit.svg" class="logo" alt="로움아이티">
+                        <ul class="snsList">
+                            <li>
+                                <a href="https://blog.naver.com/semoreport" target="_blank">
+                                    <img src="img/ico_naver_blog.svg" alt="세모리포트 네이버블로그">
+                                </a>
+                            </li>
+                            <!-- <li>
+                                <a href="https://www.facebook.com/semojangbu/" target="_blank">
+                                    <img src="img/ico_facebook.svg" alt="페이스북">
+                                </a>
+                            </li> -->
+                            <li>
+                                <a href="https://www.youtube.com/channel/UCiwljN47deLcr25KHBDYEEQ" target="_blank">
+                                    <img src="img/ico_youtube.svg" alt="유튜브">
+                                </a>
+                            </li>
+                            <!-- <li>
+                                <a href="https://www.instagram.com/semo_jangbu/" target="_blank">
+                                    <img src="img/ico_instagram.svg" alt="인스타그램">
+                                </a>
+                            </li> -->
+                            <li>
+                                <a href="http://pf.kakao.com/_Mjtbxj/friend" target="_blank">
+                                    <img src="img/ico_kakao_chanel.svg" alt="카카오채널">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="areaInfo">
+                        <div class="infoWrap">
+                            <span class="info">로움아이티(주) 대표이사 : 박승현</span>
+                            <span class="divide">|</span>
+                            <span class="info">서울특별시 영등포구 영신로 220, KnK디지털타워 1112호</span>
+                            <span class="divide">|</span>
+                            <span class="info">사업자 등록번호 : 847-87-00259</span>
+                        </div>
+                        <div class="copyright">Copyright ⓒ Roumit. All rights reserved.</div>
+                    </div>
+                    <div class="areaTerms">
+                        <button type="button" class="terms01">이용약관</button>
+                        <span class="divide">|</span>
+                        <button type="button" class="terms02">개인정보처리방침</button>
+                    </div>
+                </div>
+            </footer>
+            <!-- /footer -->
+            <div class="areaFloatBtn">
+                <a href="html/taxAccountant.html" class="btnConsult" id="moveConsult" target="_blank">소개자료 신청하기</a>
+            </div>
+        </div>
+        <!-- //container -->
+    </div>
+    <!-- //wrapper -->
+
+    <!-- popup -->
+    <div id="pop01">
+        <div class="popWrap centerLayer">
+            <div class="dim" onclick="popClose(this)"></div>
+            <div class="popInner">
+                <div class="popCont">
+                    <a href="https://url.smjb.co.kr/qNdmGB.url" target="_blank" class="moveLink"><img src="img/pop_3up.png" alt="팝업이미지"></a>
+                </div>
+                <div class="popBtnWrap">
+                    <button type="button" id="cookiePop"
+                        onclick="popClose(this); setCookie(); return false;">하루보지않기</button>
+                    <button type="button" onclick="popClose(this); return false;">닫기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //popup -->
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5T5R4M4T" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <script>
+        // AOS JS
+        AOS.init({
+            duration: 1000,
+            delay: 300,
+            disable: function () {
+                var maxWidth = 800;
+                return window.innerWidth < maxWidth;
+            }
+        });
+
+        // 세무사 리뷰 스와이퍼
+        var reviewSwiper = new Swiper(".secReview .right", {
+            effect: 'fade',
+            slidesPerView: 'auto',
+            navigation: {
+                nextEl: '.secReview .swiper-button-next',
+                prevEl: '.secReview .swiper-button-prev',
+            },
+            on: {
+                activeIndexChange: function () {
+                    $(".secReview .name").eq(this.realIndex).addClass("active").siblings().removeClass("active");
+                    $(".rwTxtList li").eq(this.realIndex).fadeIn().siblings().hide();
+                }
+            },
+        });
+
+        $('.secProduct .tabList li').on('click', function() {
+            var index = $(this).index();
+
+            $(this).addClass('active').siblings().removeClass('active');
+            $('.secProduct .tabPannel').eq(index).addClass('active').siblings().removeClass('active');
+        })
+
+        $(".terms01").on('click', function () {
+            window.open("https://reportmgmt.appplay.co.kr/pdf/term_001.pdf", "_blank", "width=640, height=800");
+        });
+        $(".terms02").on('click', function () {
+            window.open("https://reportmgmt.appplay.co.kr/pdf/term_002.pdf", "_blank", "width=640, height=800");
+        });
+
+        $(".highpass a").on("click", function(e) {
+            e.preventDefault();
+
+            if (location.hostname == 'publ.smjb.co.kr') {
+                $(location).attr("href", "html/land_inrt_001C.html"); //퍼블
+            } else if (location.hostname == 'www.semoreport.com') {
+                $(location).attr("href", "https://report.appplay.co.kr/hipass.act"); //운영
+            }
+        })
+
+        $('.header .trigger').on('click', function() {
+            $(this).parents('.header').toggleClass('open');
+        })
+    </script>
+</body>
+</html>

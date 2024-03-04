@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css_v2/semo_style.css">
+  <script src="../../js_v2/jquery-3.5.1.min.js"></script>
+    <title>내 계좌 관리</title>
+</head>
+<body>
+
+  <!-- 헤더 타이틀 -->
+  <header class="title">
+    <div class="title_left">
+      <i class="ico_cen left_arrow"></i>
+    </div>
+    <span class="title_text">내 계좌 관리</span>
+    <div class="title_share">
+      <button class="share_btn">
+        <span>편집하기</span>
+      </button>
+    </div>
+  </header>
+
+  <div class="basic_wrapper">
+    <div class="my_account_manage">
+
+      <!-- *** 1. 가맹점 정보 *** -->
+      <section class="franchise_wrap">
+  
+        <div class="franchise_wrap_inner">
+          <!-- 가맹점 로고 -->
+          <article class="franchise">
+            <div class="logo">
+              <i class="bank bk_004"></i>
+            </div>
+            <div class="store">
+              <h1>3333-07-1272628</h1>
+              <p class="elipsis">국민은행 628</p>
+            </div>
+          </article>
+      
+          <!-- 최근 수집 일시 박스 -->
+          <article class="recent_box_wrap">
+            <div class="recent_box">
+              <div class="date">
+                <p>최근 수집 일시</p>
+                <div class="flex_ac">
+                  <em>2022-01-17 오후 17:28</em>
+                  <span class="ico_cen refresh_02"></span>
+                </div>
+              </div>
+      
+              <div class="state">
+              <!-- error 클래스 추가시 '연결오류' 활성화 -->
+                <p>정상</p>
+                <span>연결오류</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+  
+      <!-- *** 2. 연결된 공동인증서 *** -->
+      <section class="franchise_wrap link">
+  
+        <div class="franchise_wrap_inner">
+          <!-- 타이틀 -->
+          <div class="sub_tit">
+            <h1>연결된 공동인증서</h1>
+          </div>
+    
+          <!-- 1. 개인용 공동인증서 // 개인용, 기업용 둘 중 하나만 보여집니다. -->
+          <article class="franchise">
+          <!-- error01 , error01 클래스로 분기처리 -->
+            <div class="logo">
+              <span class="ico_cen"></span>
+            </div>
+            <div class="store">
+              <p class="elipsis end">정선영()0020048201807132061015111</p>
+              <p>개인/금융결제원</p>
+              <p class="set_mgb0">만료일 | 2022.11.27</p>
+            </div>
+          </article>
+    
+          <!-- 2. 기업용 공동인증서 -->
+          <article class="franchise enter" style="display: none;">
+            <!-- error01 , error01 클래스로 분기처리 -->
+              <div class="logo">
+                <span class="ico_cen"></span>
+              </div>
+              <div class="store">
+                <p class="elipsis end">정선영()0020048201807132061015111</p>
+                <p>기업/금융결제원</p>
+                <p class="set_mgb0">만료일 | 2022.11.27</p>
+              </div>
+            </article>
+    
+          <!-- 인증서 교체버튼 -->
+          <article class="btn_r_gray_wrap">
+            <button class="btn_r_gray">
+              <em>인증서 교체하기</em>
+              <span class="ico_cen right_01"></span>
+            </button>
+          </article>
+        </div>
+      </section>
+  
+        <section class="assert_list account">
+          <div class="assert_content bank">
+            <ul class="item_wrap">
+              <li class="item_box">
+                <div class="item_tit">
+                  <div class="name">
+                    <p>계좌 목록</p>
+                  </div>
+                </div>
+                <ul class="item">
+                  <li class="item_list">
+                    <div class="info">
+                      <div class="number_wrap">
+                        <p class="number">
+                          1223-141412-425255
+                        </p>
+                        <span class="ico_cen right_02"></span>
+                      </div>
+                      <p class="txt elipsis">
+                        비상금 통장
+                      </p>
+                    </div>
+                    <div class="assert_state">
+                      <div class="register">
+                        <p class="success">정상</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="item_list">
+                    <div class="info">
+                      <div class="number_wrap">
+                        <p class="number">
+                          1223-141412-425255
+                        </p>
+                        <span class="ico_cen right_02"></span>
+                      </div>
+                      <p class="txt elipsis">
+                        부가세 10% 통장
+                      </p>
+                    </div>
+                    <div class="assert_state">
+                      <div class="register">
+                        <p class="success">정상</p>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+
+          <article class="btn_r_gray_wrap">
+            <button class="btn_r_gray">
+              <em>계좌 추가하기</em>
+              <span class="ico_cen right_01"></span>
+            </button>
+          </article>
+        </section>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,204 @@
+@charset "utf-8";
+
+/* reset */
+@font-face {font-family: 'Pretendard'; font-weight: normal; src: url(../font/Pretendard-Medium.woff2) format('woff2');}
+@font-face {font-family: 'Pretendard'; font-weight: 600; src: url(../font/Pretendard-SemiBold.woff2) format('woff2');}
+@font-face {font-family: 'Pretendard'; font-weight: bold; src: url(../font/Pretendard-Bold.woff2) format('woff2');}
+
+html {position:relative;height:100%; scroll-behavior: smooth}
+html,body {font-family:'Pretendard'; color:#111; font-weight:normal; -webkit-text-size-adjust:none;-moz-text-size-adjust:none; -ms-text-size-adjust:none; -webkit-tap-highlight-color:transparent; line-height: 1.5}
+html,body,div,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,address,cite,code,del,dfn,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,input,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video {margin:0; padding:0; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; -webkit-tap-highlight-color:transparent;-webkit-text-size-adjust:none; -webkit-touch-callout:none; -webkit-font-smoothing:antialiased; font-size: 15px}
+body,button,h1,h2,h3,h4,h5,input,select,table,textarea {font-family:'Pretendard'; margin:0; padding:0}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,legend,select,input,textarea,p,blockquote,th,td,menu,button,a,span,strong,label,header,footer,section,article,aside,nav,hgroup,details,figure,figcaption {word-break:break-word; box-sizing:border-box;-moz-box-sizing:border-box; -webkit-box-sizing:border-box; -ms-box-sizing:border-box} /* 여백을 포함한 사이즈 설정*/ 
+h1,h2,h3,h4,h5,h6,input,select,textarea,button,option {color:inherit; font-family:'Pretendard'; font-size:100%; font-weight:normal}
+h1,h2,h3,h4,h5,h6,strong,b,th {font-weight:bold}
+em,var,address,i {font-style:normal}
+ul,ol,li {list-style:none}
+legend,fieldset,button,img {border:0}
+img {max-width:100%; vertical-align:top}
+input,select,textarea,button,label,strong,a,time {vertical-align:inherit}
+input,select,textarea,button,option {font-family:inherit; font-weight:inherit}
+input,select,textarea {appearance:none; -webkit-appearance:none; border-radius: 0}
+input:focus, textarea:focus {outline-style: none; box-shadow: none; border: 0px}
+textarea {resize:none; border: none}
+button,select,option {color:inherit; text-transform:none} 
+table {table-layout:fixed; width:100%; border-collapse:collapse; border-spacing:0} 
+button {background:none; cursor:pointer; white-space: nowrap; overflow:visible}
+a {color:inherit; font-size: inherit; text-decoration:none}
+
+/** important 정의 **/
+.pointColor {color: #17bf98 !important} /* 버튼 ( 혹시 모를 제휴사 분기처리 컬러 )*/
+.pointColor02 {color: #12997a !important} /* 영역강조 ( 혹시 모를 제휴사 분기처리 컬러 ) */
+.pointColor03 {color: #ff5353 !important} /* 출금 및 기한 색상 */
+.pointColor04 {color: #0088ff !important} /* 입금 */
+.pointColor05 {color: #111 !important}
+.pointColor06 {color: #a2a5ac !important}
+.pointColor07 {color: #017FA4 !important}
+.pointColor08 {color: #54D8FF !important}
+.pointBgColor {background: #17bf98 !important} /* 버튼 ( 혹시 모를 제휴사 분기처리 컬러 )*/
+.dB {display :block !important}
+.dIb {display: inline-block !important}
+.dN {display: none !important}
+.posR {position: relative !important}
+.posA {position: absolute !important}
+.mg0 {margin: 0 !important}
+.mgt0 {margin-top: 0 !important}
+.mgb0 {margin-bottom: 0 !important}
+.mgt15 {margin-top: 15px !important}
+.mgb25 {margin-bottom: 25px !important;}
+.pd0 {padding: 0 !important}
+.pdt0 {padding-top: 0 !important}
+.pdb0 {padding-bottom: 0 !important}
+.w35p {width: 35% !important}
+.w50p {width: 50% !important}
+.flex3_5 {flex: 3.5 !important}
+.taLeft {text-align: left !important}
+.taCenter {text-align: center !important}
+.taLeft {text-align: left !important}
+.taRight {text-align: right !important}
+.fontSize19 {font-size: 1.266rem !important}
+.bdNone {border: none !important}
+.fwNormal {font-weight:normal !important}
+.fwBold {font-weight:bold !important}
+
+/* setting */
+.blind {position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); border: 0; white-space: nowrap}
+.elipsis {display:block; overflow:hidden; white-space:nowrap; text-overflow:ellipsis}
+.clear:after {content:''; display:block; clear:both}
+
+/* wrap */
+section {position: relative}
+.wrapper {background: #fff}
+.landingCont {padding: 70px 0 0; overflow: hidden}
+.inner {position: relative; padding: 0 20px}
+
+/* title 정의 */
+h1.defTit {font-size: 26px; font-weight: bold; text-align: center}
+h2.defTit {font-size: 44px; font-weight: bold}
+
+/* Text 정의 */
+.defTxt {font-size: 24px; color: #111; word-break: keep-all}
+.landingTxtWrap {margin-top: 27px; text-align: center;}
+.areaLandingTxt {display: inline-block;}
+.areaLandingTxt span {font-size: 15px; color: #adadad; transition: 0.3s; word-break: keep-all;}
+.areaLandingTxt.active span {color: #000; text-decoration: underline}
+
+/* table 정의 */
+.tblPriceWrap {margin-bottom: 40px;}
+.tblPriceWrap .captionTxt {margin-bottom: 4px; text-align: right; font-size: 13px}
+.tblPriceWrap .ifTxt {font-weight: normal; font-size: 15px;}
+.tblPriceWrap .fTxt {display: inline-block; margin-top: 4px; font-size: 13px;}
+.tblPrice th {padding: 15px 0; background: #023056; color: #fff; border: 1px solid #fff; font-size: 17px;}
+.tblPrice td {border: 1px solid #D9D9D9; padding: 16px; font-size: 15px; text-align: center; word-break: keep-all;}
+.tblPrice .focus {font-weight: bold}
+
+/* swiper 버튼 */
+.areaAutoBtn {position: relative; width: 15px; height: 18px; margin: 0 6px}
+.areaAutoBtn button {position: absolute; top: 2px; left: 0;}
+.areaSwiperBtn {margin-top: 30px; display: flex; justify-content: center; align-items: center}
+.swiper-pagination {position: static; width: fit-content !important}
+.swiper-pagination-bullet {width: 16px; height: 16px; margin: 0 6px -5px 6px !important; border: 1px solid #adadad; opacity: 1; background-color: #fff}
+.swiper-pagination-bullet-active {background-color: #17bf98; border: none}
+.btn-swiper-auto {opacity: 0; visibility: hidden} 
+.btn-swiper-auto.active {opacity: 1; visibility: visible} 
+
+/* header */
+.header {position: fixed; width: 100%; top: 0; left: 0; height: 70px; background: #fff; z-index: 1000}
+.header .inner {padding-top: 25px}
+.header .areaLogo {float: left}
+.header .areaLogo img {width: 110px}
+.header .gnb {float: right}
+.header .gnb li {display: inline-block}
+.header .gnb li a {display: block; height: 30px; line-height: 30px; font-size: 18px;}
+
+/* secIntroTxt */
+.secIntroTxt {padding: 62px 0; background-color: #fcfcfc;}
+.secIntroTxt .column:nth-child(even) {text-align: right;}
+.secIntroTxt .column:nth-child(1) {margin-bottom: 28px;}
+.secIntroTxt .column:nth-child(2) {margin-bottom: 20px;}
+.secIntroTxt .column:nth-child(3) {margin-bottom: 13px;}
+.secIntroTxt .column:nth-child(4) {margin-bottom: 30px;}
+.secIntroTxt .column:nth-child(5) {margin-bottom: 14px;}
+.secIntroTxt .column:nth-child(6) {margin-bottom: 10px;}
+.secIntroTxt .column img {height: 70px;}
+
+/* secIntro */
+.secIntro {margin-bottom: 150px;}
+.secIntro .defTit {margin-top: 90px;}
+.secIntro .service {text-align: center; margin-top: 92px;}
+.secIntro .service .areaTit {display: inline-flex; margin-bottom: 17px; padding: 8px 15px; align-items: center; justify-content: center; border: 2px solid #000; border-radius: 50px;}
+.secIntro .service .areaTit strong {padding-right: 20px; font-size: 23px; font-weight: bold;}
+.secIntro .service .areaTxt ul li {font-size: 18px; word-break: keep-all;}
+.secIntro .service .areaTxt ul li + li {margin-top: 10px;}
+.secIntro .service.pc .areaTit {border-color: #17bf98;}
+.secIntro .service.pc .areaTit strong {color: #17bf98;}
+.secIntro .service.pc .areaTit span {color: #17bf98;}
+.secIntro .service.mobile .areaTit {border-color: #3E9FD7;}
+.secIntro .service.mobile .areaTit strong {color: #3E9FD7;}
+.secIntro .service.mobile .areaTit span {color: #3E9FD7;}
+.secIntro .service.mobile .areaMockup {margin-bottom: 34px;}
+
+/* secSlide */
+.secSlide .areaSwipe {position: relative; margin-top: 13px;}
+.secSlide .swiper-slide {text-align: center;}
+.secSlide .swiper-slide p {margin-top: 6px; font-size: 14px;}
+.secSlide .areaSwiperBtn {margin-bottom: 67px;}
+.secSlide .item02 .defTit {padding-top: 65px;}
+
+/* secReview */
+.secReview {padding: 64px 0; background-color: #fcfcfc;}
+.secReview .defTit .pointColor02 {font-size: 26px;}
+.secReview .defTit .pointColor02 img {width: 15px;}
+.secReview .reviewListWrap li {text-align: center;}
+.secReview .reviewListWrap li:first-child {margin-top: 68px;}
+.secReview .reviewListWrap li + li {margin-top: 110px;}
+.secReview .reviewListWrap li .defTit {margin: 30px 0 20px;}
+.secReview .reviewListWrap li:first-child .defTit {color: #1fa8c7;}
+.secReview .reviewListWrap li:nth-child(2) .defTit {color: #1F80C7;}
+.secReview .reviewListWrap li:nth-child(3) .defTit {color: #003399;}
+.secReview .reviewListWrap li .areaTxt p {font-size: 18px;}
+
+/* secPrice */
+.secPrice {padding: 40px 0;}
+.secPrice .line {width: 80px; height: 2px; margin: 0 auto 86px; border: none; background-color: #084A80;}
+.secPrice .defTit {margin-bottom: 56px;}
+
+/* areaFloatBtn */
+.areaFloatBtn {position: fixed; bottom: 20px; right: 20px; z-index: 999;}
+.areaFloatBtn a {display: block; text-align: center}
+.areaFloatBtn .btnConsult {position: fixed; right: 20px; top: 50%; transform: translateY(-50%); display: inline-block; width: 70px; height: 70px; background-color: #25594D; border-radius: 50%; box-shadow: 4px 4px 6px rgba(0,0,0,0.25)}
+.areaFloatBtn .btnConsult img {margin-top: 7px; width: 25px;}
+.areaFloatBtn .btnConsult p {margin-top: 2px; color: #fff; font-size: 12px; line-height: 1.2}
+.areaFloatBtn .btnTop {opacity: 0; visibility: hidden; transition: 0.3s}
+body.active .areaFloatBtn .btnTop {opacity: 1; visibility: visible}
+
+/* confirmMsg */
+.confirmMsg {position: relative; padding: 60px 0 35px; text-align: center}
+.noticeBox {padding: 25px 22px; margin: 0 20px; margin-bottom: 20px; background: #f9f9f9; border-radius: 19px}
+.noticeBox .txtArea {margin-top: 8px}
+.noticeBox .txtArea .subTxt {color: #85888d; font-size: 1rem}
+
+/* footer */
+.footerWrap {padding: 15px 0; background:#222; user-select: text;}
+.footerWrap .inner .areaTerms {margin-bottom: 10px;}
+.footerWrap .inner .areaTerms a {color: #fff; font-size: 13px; font-weight: bold;}
+.footerWrap .inner .areaTerms a + a {margin-left: 10px;}
+.footerWrap .inner .areaTerms .term02 {color: #878787;}
+.footerWrap .areaLogo {margin: 20px 0}
+.footerWrap .areaLogo .logo {width: 100px;}
+.footerWrap .footerInfo .footerBox span {display: block; margin-top: 2px; color: #fff; font-size: 13px; word-break: keep-all;}
+.footerWrap .footerInfo .footerBox .copyright {display: inline-block; margin-top: 8px; color: #999;}
+
+/* popWrap */
+.popWrap {position: fixed; display: none; top: 0; left: 0; right: 0; bottom: 0; z-index: 1101}
+.popWrap .dim {background: rgba(0,0,0,0.5); height: 100%}
+.popWrap .popInner {max-width: 300px; width: calc(100% - 90px); position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%)}
+.popWrap .popInner .popCont {position: relative}
+.popWrap .popInner .popCont .moveVoucher {position: absolute; right: 30px; left: 30px; bottom: 5px}
+.popWrap .popInner .popBtnWrap {display: flex; position: relative; background: #fff}
+.popWrap .popInner .popBtnWrap::before {content: ''; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 1px; height: 26px; background: #939393}
+.popWrap .popInner .popBtnWrap button {flex: 1 1 100%; height: 40px; font-size: 16px; color: #5b5b5b}
+
+@media (min-width: 768px) and (max-width: 1280) {
+    
+}

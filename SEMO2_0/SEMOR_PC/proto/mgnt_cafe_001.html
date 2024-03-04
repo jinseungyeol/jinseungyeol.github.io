@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<title>세모리포트</title>
+<link rel="stylesheet" href="../css/reset_taxp.css">
+<link rel="stylesheet" href="../css/app_header.css"><!-- [D] 세무대리인용 header -->
+<link rel="stylesheet" href="../css/content_taxp.css"><!-- [D] 세무대리인용 -->
+
+<!-- custom scrollbar plugin css -->
+<link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+  <script src="../js/lib/jquery/jquery-1.12.4.min.js"></script>
+<script src="../js/lib/jquery/jquery-ui-1.10.4.min.js"></script>
+<!-- custom scrollbar plugin -->
+<script src="../js/design/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../js/design/jquery.placeholder.min.js"></script>
+<script src="../js/lib/plugin/smart.popup.js"></script>
+<script src="../js/comm/common.js"></script>
+<script>
+$(function(){
+	// Invoke the plugin
+	$('input, textarea').placeholder({customClass:'my-placeholder'});
+	    
+
+});
+
+
+//카테고리관리 팝업
+function fn_openpop(){
+	var $form = $("<form method='post'></form>");
+    open_smartPop({href: "./mgnt_cafe_002.html", width:480, height:500, scrolling:false, target:window, frm:$form});
+}
+
+
+//글쓰기
+function fn_openpop2(){
+	var $form = $("<form method='post'></form>");
+    open_smartPop({href: "./mgnt_cafe_003.html", width:800, height:650, scrolling:false, target:window, frm:$form});
+}
+
+
+
+</script>
+
+</head>
+<body class="lnb_bg lnb_bg"><!-- [D] 메뉴영역(접기 : class="fold", 펼치기 : class="lnb_bg") -->
+
+<!-- 수임처 개선 -->
+<!-- header -->
+<div class="app_header">
+	<div class="app_header_inner">
+		<div class="ah_l">
+			<h1>세모리포트</h1>
+		</div>
+
+		<div class="ah_r">
+			<ul class="ah_menu">
+				<!-- 
+				<li style="position:absolute;top:-16px;left:-47px;"><a href="#none" class="btn_alarm" title="알림"><em class="alarm_num" style="display: none;"></em></a></li>
+				<li><a href="#none"><img src="../img/txof/app_header/ic_top04.png" alt="">SMS</a></li>
+				<li style="position:relative;">
+					<a href="https://academyserp.notion.site/4ee92f23a9184afda550d61faf10a5e3" target="_blink"><img src="../img/txof/app_header/ic_top05.png" alt="">메뉴얼</a>
+				</li>
+				<li><a href="#none"><img src="../img/txof/app_header/ic_top02.png" alt="">로그아웃</a></li>
+				-->
+			</ul>
+		</div>
+	</div>
+</div>
+<!-- //header -->
+<!-- //수임처 개선 -->
+
+<div class="wrap"><!-- [D] 상세검색일 경우(class="mh") -->
+	<!-- Container -->
+	<div class="container">
+		
+		
+		
+		
+		
+		
+		
+		<!-- lnb box -->
+		<div class="lnb_box">
+
+			<!-- (modify)20220804 lnb_boxInn, mCustomScrollbar 추가 / 레이어 위치 이동 -->
+			<!-- lnb_boxInn -->
+			<div class="lnb_boxInn mCustomScrollbar">
+				<!-- lnb top 추가 -->
+				<div class="lnb_top">
+					<!-- user view -->
+					<div class="user_view">
+						<div class="user_r_side">
+							<p class="icon_user"><strong>홍길동</strong> 님</p>
+							<a class="btn_set" title="환경설정"></a><!-- 2019-09-27 -->
+						</div>
+					</div>
+					<!-- //user view -->
+				</div>
+				<!-- //lnb top 추가 -->
+
+				<div class="alarm_wrap">
+					<dl id="" style="margin-bottom:0;"><!-- (modify)20220810 스타일 추가 -->
+						<dd class="on">
+							<div class="line first">가입고객 관리</div>
+						</dd>
+					</dl>
+
+					<!-- (add)20220804 -->
+					<div class="mygroupLst">
+						<ul>
+							<!-- 담당자 -->
+							<li class="off"><!-- 활성화클래스 on -->
+								<a href="#none" class="">담당자</a>
+								<div class="mygroupCont">
+									<!-- 20180906 수정 -->
+									<dl class="mygroup" id="" style="display:;">
+										<!--<dt class="on"><a class="txt">그룹</a></dt>-->
+										<!-- 비활성 -->
+										<dd class="off"><span class="bg"></span>
+											<a href="#none"><div class="line"><span class="icon mygroup_icon12_1"></span> 강윤아<span class="badge2"><strong id="">0</strong></span></div></a>
+										</dd>
+										<dd class="off"><span class="bg"></span>
+											<a href="#none"><div class="line"><span class="icon mygroup_icon12_1"></span> 강윤아<span class="badge2"><strong id="">0</strong></span></div></a>
+										</dd>
+									</dl>
+								</div>
+							</li>
+							<!-- //담당자 -->
+
+							<!-- 그룹 -->
+							<li class="on"><!-- 활성화클래스 on -->
+								<a href="#none" class="">어드민 관리</a>
+								<div class="mygroupCont">
+									<!-- 20180906 수정 -->
+									<dl class="mygroup" id="" style="display:;">
+										<!--<dt class="on"><a class="txt">그룹</a></dt>-->
+										<!-- 비활성 -->
+										<dd class="off"><span class="bg"></span>
+												<a href="#none"><div class="line"> 리포트 설정</div></a>
+										</dd>
+										<dd class="off"><span class="bg"></span>
+												<a href="#none"><div class="line"> 세무지식 관리</div></a>
+										</dd>
+										<dd class="off"><span class="bg"></span>
+												<a href="#none"><div class="line"> 웰컴팝업 관리</div></a>
+										</dd>
+										<dd class="off"><span class="bg"></span>
+												<a href="#none"><div class="line"> 결제정보 관리</div></a>
+										</dd>
+									</dl>
+									<!-- //20180906 수정 -->
+								</div>
+							</li>
+							<!-- //그룹 -->
+
+						</ul>
+					</div>
+					<!-- //(add)20220804 -->
+				</div>
+			</div>
+			<!-- //lnb_boxInn -->
+
+		</div>
+		<!-- //lnb box -->
+
+
+
+
+
+		<!-- content -->
+		<div class="content">
+
+			<div class="content_wrap">
+
+
+
+
+
+				<!-- 상단타이틀 -->
+				<div class="title_wrap h1type" style="margin-bottom:0;">
+					<div class="left">
+						<h1>세무지식 관리&nbsp;<span>세무정보 카페 게시글을 관리합니다.</span></h1>
+					</div>
+
+					<div class="right">
+						<!-- 2022-10-17 위치 변경 및 채팅 아이콘 추가 -->
+						<div class="cntalign"><a href="#none" class="btn_style1 set" style="margin-left:0;"  onclick="fn_openpop();"><span class="">카테고리관리</span></a></div>
+						<!--// 2022-10-17 위치 변경 및 채팅 아이콘 추가 -->
+					</div>
+				</div>
+				<!-- //상단타이틀 -->
+
+
+
+				<!-- 버튼영역 -->
+				<div class="title_wrap mgt10">
+					<!-- left -->
+					<div class="left">
+						<a href="#none" class="btn_style1_b" onclick="fn_openpop2();"><span>글쓰기</span></a>
+					</div><!-- //left -->
+
+					<!-- right -->
+					<div class="right">
+						
+						<!-- 검색 -->
+						<div class="cntalign">
+							<div class="input_box">
+								<input type="text" value="" placeholder="검색어를 입력하세요" style="width:180px;"><a href="#none"><img src="../img/txof/btn/btn_topsearch.gif" alt="조회"></a>
+							</div>
+						</div><!-- //검색 -->
+						
+					</div><!-- //right -->
+				</div>
+				<!-- //버튼영역 -->
+				
+				<!-- 리스트 테이블 -->
+				<!-- 리스트 테이블 상단 -->
+				<div class="list_scroll_top" style="overflow:hidden;"><!-- [D] 하단테이블 세로스크롤 발생시 pdr 클래스 추가 -->
+					<table class="tbl_result" summary="">
+						<caption></caption>
+						<colgroup>
+						<col style="width:12%;">
+						<col style="width:*;">
+						<col style="width:12%;">
+						<col style="width:12%;">
+						<col style="width:10%;">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col"><div>카테고리</div></th>
+								<th scope="col"><div>제목</div></th>
+								<th scope="col"><div>작성일자</div></th>
+								<th scope="col"><div>작성자</div></th>
+								<th scope="col"><div>파일첨부</div></th>
+							</tr>
+						</thead>
+					</table>
+				</div>
+				<!-- //리스트 테이블 상단 -->
+				
+				
+				
+				<div class="list_scroll" style="">
+					<table class="tbl_result" summary="">
+						<caption></caption>
+						<colgroup>
+						<col style="width:12%;">
+						<col style="width:*;">
+						<col style="width:12%;">
+						<col style="width:12%;">
+						<col style="width:10%;">
+						</colgroup>
+						<tfoot style="display:none;">
+							<tr class="no_hover">
+								<td colspan="5" class="no_info"><div>등록된 글이 없습니다.</div></td>
+							</tr>
+						</tfoot>
+						<tbody style="display: table-tbody;"><!-- [D] style="display: none / table-tbody;" -->
+							<tr><!-- [D] new 일때 class="bg_on" -->
+								<td><div style="position:relative;" class="t_center "><!-- [D] 말줄임 처리 class= tx_ellipsis_max3 -->
+									세금지식
+								</div></td>
+								<td><div class="t_left tx_ellipsis_max3">부가가치세 간이과세? 일반과세? 차이점은?</div></td>
+								<td><div class="t_center">2022-09-22</div></td>
+								<td><div class="t_center">김담당</div></td>
+								<td><div class="t_center"><a href="#none" class=""><img src="../img/txof/ico/icon_file.png" alt=""></a></div></td>	<!--  class="t_hover_b" 추가하면 파란색 처리 됨-->
+							</tr>
+							<tr><!-- [D] new 일때 class="bg_on" -->
+								<td><div style="position:relative;" class="t_center "><!-- [D] 말줄임 처리 class= tx_ellipsis_max3 -->
+									세금지식
+								</div></td>
+								<td><div class="t_left tx_ellipsis_max3">부가가치세 간이과세? 일반과세? 차이점은?ㅁㄴㅇㄻㄴㅇㄻㄴㅇㄻㄴㅇㄻㄴㅇㄻㄴㅇㄹㄴㅁㅇㄹㄴㅁㄹㄴㅁㅇㄹㄴㅁㅇㄹ</div></td>
+								<td><div class="t_center">2022-09-22</div></td>
+								<td><div class="t_center">김담당</div></td>
+								<td><div class="t_center"><a href="#none" class=""><img src="../img/txof/ico/icon_file.png" alt=""></a></div></td>	<!--  class="t_hover_b" 추가하면 파란색 처리 됨-->
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- //리스트 테이블 -->
+				
+				<!-- Paging wrap -->
+					<div class="paging_wrap">
+						<!-- combo -->
+						<div class="combo_wrap">
+							<div class="combo_style">
+								<a href="#none" class="btn_style btn_combo_down"><span>12</span></a>
+								<ul class="up" style="display: none;">
+									<li><a href="#none">200</a></li>
+									<li><a href="#none">150</a></li>
+									<li><a href="#none">100</a></li>
+									<li><a href="#none">50</a></li>
+									<li><a href="#none">12</a></li>
+								</ul>
+							</div>
+						</div>
+						<!-- //combo -->
+						<!-- pagination -->
+						<div class="paging"><!-- [D] 비활성상태는 on class 제거 -->
+							<a href="#none" class="btn_pag_cntr first"><span class="blind">first</span></a><a href="#none" class="btn_pag_cntr prev"><span class="blind">previous</span></a>
+							<span class="pag_num">
+								<a href="#none" class="on">1</a><a href="#none">2</a><a href="#none">3</a><a href="#none">4</a><a href="#none">5</a><a href="#none">6</a><a href="#none">7</a><a href="#none">8</a><a href="#none">9</a><a href="#none">10</a>
+							</span>
+							<a href="#none" class="btn_pag_cntr next on"><span class="blind">next</span></a><a href="#none" class="btn_pag_cntr last on"><span class="blind">last</span></a>
+						</div>
+						<!-- //pagination -->
+					</div>
+					<!-- //Paging wrap -->
+				
+				
+			</div>
+		   <!-- //content_wrap -->
+			
+		</div>
+		<!-- //content -->
+		
+		
+		
+		
+
+	</div>
+	<!-- //Container -->
+
+	<!-- footer 추가 : 20180828 -->
+	<div class="footer">
+		<!-- Copy right -->
+		<div class="footer_wrap">
+			<div class="footer_box">
+				<span><a href="#dummy"  style="color:#000 !important;font-weight:bold" class=" fs15">이용약관</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#dummy"  style="font-weight:bold"  class="txt_b fs15">개인정보처리방침</a></span>
+			</div>
+			<div class="footer_box">
+				<span style="color:#000 !important;" class=" fs13">로움아이티(주) | 팩스:070-7950-5114 | 주소:서울시 영등포구 영신로 220 KnK디지털타워 11층 1112호 | 대표:박승현</span>
+			</div>
+			<div class="footer_box">
+				<span style="color:#000 !important;" class=" fs13">사업자등록번호:847-87-00259 | 통신판매업종신고증:2019-서울영등포-1992호</span>
+			</div>
+		</div>
+		<!-- //Copy right -->
+	</div>
+	<!-- //footer -->
+</div>
+<!-- //wrap -->
+
+
+</body>
+</html>
+

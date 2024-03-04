@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<title>세모리포트</title>
+<link rel="stylesheet" href="../css/reset_taxp.css">
+<link rel="stylesheet" href="../css/app_header.css"><!-- [D] 세무대리인용 header -->
+<link rel="stylesheet" href="../css/content_taxp.css"><!-- [D] 세무대리인용 -->
+
+<!-- custom scrollbar plugin css -->
+<link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+  <script src="../js/lib/jquery/jquery-1.12.4.min.js"></script>
+<script src="../js/lib/jquery/jquery-ui-1.10.4.min.js"></script>
+<!-- custom scrollbar plugin -->
+<script src="../js/design/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../js/design/jquery.placeholder.min.js"></script>
+<script src="../js/lib/plugin/smart.popup.js"></script>
+<script src="../js/comm/common.js"></script>
+<script>
+$(function(){
+  // Invoke the plugin
+  $('input, textarea').placeholder({customClass:'my-placeholder'});
+});
+</script>
+
+</head>
+
+
+<body style="width:480px;"><!-- 팝업 사이즈 600*497 -->
+
+<div class="pop_wrap" style="width:700px;">
+
+  <!-- 팝업 헤더 -->
+  <div class="pop_header">
+    <h1>보고서 작성하기</h1>
+    <a href="#" onClick="close_smartPop();" class="btn_popclose"><img src="../img/txof/btn/btn_popclose_white.gif" alt="팝업닫기"></a>
+  </div>
+  <!-- //팝업 헤더 -->
+
+  <!-- 팝업 컨텐츠 -->
+  <div class="pop_container">
+
+    <div class="title_wrap">
+      <div class="left">
+        <h2 class="no_bg">세모Report에 발송할 보고서를 직접 작성합니다.</h2>
+      </div>
+      <div class="right">
+      </div>
+    </div>
+
+    <div class="data_list_v mCustomScrollbar" style="height: 403px;"><!-- 2019-10-22 mCustomScrollbar 클래스 추가 -->
+      <div class="cust_wrap cboth" style="height:400px;">
+      	
+        <div class="cust_dv_bx" style="width: 92%;display:;">
+          <div class="tb_cust_dv cboth">
+            <table>
+              <colgroup>
+              <col width="50px">
+              <col>
+              </colgroup>
+              <tr>
+                <th scope="row"><div>분류</div></th>
+                <td>
+                  <div class="ipt_none">보고서</div>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row"><div>제목</div></th>
+                <td>
+                  <div class="ipt_none"><input type="text" value="" placeholder="제목을 입력하세요" style="width:530px;"></div>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" colspan="2">
+                <textarea style="height:185px;width:580px;" placeholder="(최대100자)&#10;2021년 결산 재무제표 자료 전달&#10;- 손익계산서&#10;- 재무상태표&#10;- 계정별 원장"></textarea><!-- textarea는 <br> 또는 \r\n으로 줄바꿈 안됨. &#10;로 가능 -->
+                </th>
+              </tr>
+              <tr>
+                <th scope="row" colspan="2">
+                	<input type="file" style="width:524px;height: 22px;">
+                	<a href="#none"><img src="../img/txof/btn/btn_minus.gif" alt="삭제"></a>
+						<a href="#none"><img src="../img/txof/btn/btn_plus.gif" alt="추가"></a>
+                </th>
+              </tr>
+              <tr>
+                <th scope="row" colspan="2">
+                	<input type="file" style="width:524px;height: 22px;">
+                	<a href="#none"><img src="../img/txof/btn/btn_minus.gif" alt="삭제"></a>
+						<a href="#none"><img src="../img/txof/btn/btn_plus.gif" alt="추가"></a>
+                </th>
+              </tr>
+              <tr>
+                <th scope="row" colspan="2">
+                	<div class="ftcl_gray">파일 크기 제한 : 3MB</div>
+                </th>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+    <!-- 하단버튼 -->
+    <div class="tac">
+      <a href="#none"  onClick="close_smartPop();" class="btn_style1"><span>취소</span></a>
+      <a href="#none" class="btn_style1_b"><span>저장</span></a>
+      	<a href="#none" class="btn_style1_b" style="position: absolute; right: 60px;"><span>세모리포트 발송</span></a>
+    </div>
+    <!-- //하단버튼 -->
+
+
+  </div>
+  <!-- //팝업 컨텐츠 -->
+</div>
+
+</body>
+</html>

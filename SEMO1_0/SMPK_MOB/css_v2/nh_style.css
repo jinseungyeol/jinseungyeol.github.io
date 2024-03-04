@@ -1,0 +1,178 @@
+@charset "utf-8";
+/* smpk nh_style.css Ver 3  2023-02-20 */
+
+/* 아이콘 */
+i.c_bi { background-image: url(../img_v2/nh_logo.svg); width: 24.68vw; height: 7.62vw; background-size: contain; } 
+/* number */
+i.num_01 { background-image: url(../img_v2/num01_nh.svg); } 
+i.num_02 { background-image: url(../img_v2/num02_nh.svg); } 
+i.num_03 { background-image: url(../img_v2/num03_nh.svg); } 
+i.num_04 { background-image: url(../img_v2/num04_nh.svg); } 
+
+/* 컬러 */
+.bgc_sig { background-color: #00b259 !important; color: #fff !important; } 
+.c_sig { color: #00b259 !important; } 
+
+/* 리스트 뷰 , 직원관리 */
+
+.content_info_share > span > i.bi { width: 32.34vw; height: 4.687vw; background-image: url(../img_v2/ione_logo.svg); background-size: contain; } 
+input[type="checkbox"]:checked { background-color: #00b259; } 
+
+/* 분기처리 css */
+.auth_con04 { background-color: #00b259; border: 0.625vw solid #04944c; } 
+.al_pop_ment01.green { color: #00b259; } 
+.f_l_green { color: #00b259; } 
+
+/* 리스트 뷰 , 직원관리 */
+.content_info_share > span > i.bi { width: 46.87vw; height: 4.062vw; background-image: url(../img_v2/nh_logo.svg); background-size: contain; } 
+input[type="checkbox"]:checked { background-color: #00b259; } 
+.btm_button.active > span { background-color: #00b259; } 
+
+
+/* 체크박스 */
+input[type="checkbox"] {border: 0.3125vw solid #222222; width: 7.5vw; height: 7.5vw; border-radius: 1.25vw; min-width: 7.5vw; } 
+input[type="checkbox"]:checked {background-color: #00b259; border: 0.3125vw solid #00b259; background-image: url(../img_v2/check_w.svg); background-size: 4.687vw; background-repeat: no-repeat; background-position: center; } 
+input[type="radio"] {border: 0.3125vw solid #222222; width: 7.5vw; height: 7.5vw; border-radius: 1.25vw; min-width: 7.5vw } 
+input[type="radio"]:checked {background-color: #00b259; border: 0.3125vw solid #00b259; background-image: url(../img_v2/check_w.svg); background-size: 4.687vw; background-repeat: no-repeat; background-position: center;} 
+input[type="date"]::-webkit-calendar-picker-indicator {background: none;} 
+
+.accountant_share input[type="checkbox"]:checked { background-color: #00b259; background-image: url(../img_v2/check_w.svg); border-color: #00b259; } 
+.pa_tog_btn.active input[type="radio"] { background-color: #00b259; background-image: url(../img_v2/check_w.svg); border-color: #00b259; } 
+.popup_document.sec3 input[type="checkbox"]:checked { background-color: #00b259; } 
+.popup_document_send input[type="checkbox"]:checked { background-color: #00b259; background-image: url(../img_v2/check_w.svg); } 
+
+/* 버튼 */
+.btm_button.active > span { background-color: #00b259; } 
+.btm_button span.c_green { background-color: #00b259; } 
+.next_button.active p { background-color: #00b259; border: 0.3125vw solid #04944c; } 
+.popup_bg.agree .btm_button.active span { background-color: #00b259; } 
+.popup_bg.agree .popup_bottom_con > span > input[type="checkbox"]:checked { background-color: #00b259; border: 0.625vw solid #00b259; background-image: url(../img_v2/check_w.svg); } 
+
+.popup_bg.agree .popup_bottom_con > span > input[type="checkbox"]:checked { background-color: #00b259; } 
+.popup_bg.agree .popup_bottom_con > span > input[type="radio"]:checked { background-color: #00b259; border-color: #00b259; background-image: url(../img_v2/check_w.svg); } 
+
+.active_button.active { background-color: #00b259 } 
+.active_button.active > span { color: #ffffff; } 
+.active_button.active > i.plus_gray { background-image: url(../img_v2/plus_white.svg); } 
+
+
+.semo_look_banner { width: calc(100vw - 12.5vw); margin-left: -6.25vw; font-size: 1.125rem; padding: 6.562vw 6.25vw; background: #63e2c5 url(../img_v2/semo_look.webp) center right no-repeat; background-size: contain; display: none; } 
+.ione_look_banner { width: calc(100vw - 12.5vw); margin-left: -6.25vw; font-size: 1.125rem; padding: 6.562vw 6.25vw; background: #0095ff url(../img_v2/ione_look.webp) center right no-repeat; background-size: contain; color: #ffffff; display: none; } 
+.nh_look_banner { width: calc(100vw - 12.5vw); margin-left: -6.25vw; font-size: 1.125rem; padding: 6.562vw 6.25vw; background: #00b259 url(../img_v2/nh_look.webp) center right no-repeat; background-size: contain; color: #ffffff; display:block; } 
+.kt_look_banner { width: calc(100vw - 12.5vw); margin-left: -6.25vw; font-size: 1.125rem; padding: 6.562vw 6.25vw; background: #2dbdb6 url(../img_v2/kt_look.webp) center right no-repeat; background-size: contain; color: #ffffff; display:none; } 
+.payslip_title .c_bi { width: 39.9vw; } 
+.popup.alert .btm_button span.bgc_sig { flex: 1.5; color: #ffffff; background-color: #00b259; } 
+
+.trans_complete_pop .trans_com_img { background-color: #00b259; } 
+.trans_complete_pop span { color: #00b259; } 
+
+/* 다음버튼 */
+.next_button.active p { background-color: #00b259; border: 0.3125vw solid #04944c; color: #ffffff; } 
+
+.popup_bg.agree .btm_button.double span.c_green { background-color: #00b259; } 
+
+@media(min-width:1023px){
+ .basic_web_view .semo_look_banner { display: block; padding: 43px 29px; margin-left: 0; width: calc(100% - 58px); font-size: 37px; margin-top: 53px; cursor: pointer; display: none; } 
+.basic_web_view .ione_look_banner { display: block; padding: 43px 29px; margin-left: 0; width: calc(100% - 58px); font-size: 37px; margin-top: 53px; cursor: pointer; display: none; } 
+.basic_web_view .nh_look_banner { display: block; padding: 43px 29px; margin-left: 0; width: calc(100% - 58px); font-size: 37px; margin-top: 53px; cursor: pointer; display: block; } 
+.basic_web_view .kt_look_banner { display: block; padding: 43px 29px; margin-left: 0; width: calc(100% - 58px); font-size: 37px; margin-top: 53px; cursor: pointer; display: none; } 
+ }
+/* 토글버튼 */
+.onoff_input input[type=checkbox]:checked ~ .onoff_input_bg { background-color: #00b259; } 
+
+
+/* #### 아침보고서 #### */
+/* A115-9 logo */
+.ana_head .c_bi { width: 38.055vw; } 
+/* morning logo */
+.mor_logo i.c_bi { width: 38.055vw; } 
+
+/* C932 */
+.report_radio_wrap.sale .report_radio.active { background-color:#0f576d; } 
+.oth_sales_wrap .popup .btm_button.half_btn .half_right { background-color: #00b259;; border: 0.277vw solid #04944c; } 
+.btm_plus { background-color:#00b259; } 
+.oth_sales_wrap .popup .btm_button.double .half_right { background-color: #00b259; border: 0.277vw solid #04944c; color: #fff; } 
+
+/* C940 */
+.ssm_card_bg .ssm_logo i.c_bi { width: 38.055vw; } 
+@media screen and (min-width:518px){
+ .ssm_card_bg .ssm_logo i.c_bi { width: 120px; } 
+ }
+/* ssm_pop02 */
+.long_button.active { background-color: #00b259; } 
+
+/* ssm_pop03 */
+.ssm_pop03 .btm_button > span { background-color: #00b259; } 
+
+/* btn_wrap - fix (jin) */
+.btn_bottom_fix .btm_button.half_btn.nh_show { display: flex; padding: 2vw 0 6.944vw; } 
+.btn_bottom_fix .btm_button.half_btn.nh_show .left { border-radius: 2.187vw; margin: 0 2.031vw 0 6.25vw; } 
+.btn_bottom_fix .btm_button.half_btn.nh_show .half_right { display: flex; } 
+
+/* C679 jin */
+.nh_pdb175 { padding-bottom: 48.611vw !important; } 
+
+/* 근로계약서 작성하기 팝업 choicebox */
+.popup_bottom_con.choicebox span.is-active { background-color: #f3fff4; border-color: #429404; color: #429404; } 
+.popup_bottom_con.choicebox span.is-active i.choice { background-image: url(../img_v2/check_40-27_nh.svg); } 
+
+
+/****************************** [SB140]_IEP010 ******************************/
+.jehyu-promotion .benefit .banner01 { background-image: url(../img_v2/jehyu-promotion_banner_nh.png); } 
+
+
+
+/* KSU500 */
+.service_card.active { background-image: linear-gradient(114deg, #00b2b2 -9%, #00b282 48%, #00b259 103%); } 
+.service_card.active .service_card_header .ico_cont { background-color: #028b83; } 
+
+/* 메인화면 */
+.semo_logo i.ico_cont { background-image: url(../img_v2/nh_newlogo_color.png); width: 45.833vw; height: 4.166vw; background-size: contain; } 
+
+.cr_toplist .foot_logo i { background-image: url(../img_v2/nh_newlogo_color.png); width: 45.833vw; height: 4.166vw; background-size: contain; } 
+
+/* SSU000 */
+.agree_wrap .all_wrap .all_checkbox input[id=all_check]:checked ~ label[for=all_check] { background-color: #00b259; } 
+.agree_wrap .each_wrap .each .left .inner input:checked ~ label { background-image: url(../img_v2/check_40-27_nh.svg); } 
+
+/* CAM000 */
+.semo-whole_focus-banner .swiper-pagination .swiper-pagination-bullet-active { background-color: #00b259; } 
+
+/* CLS020 */
+.password-confirm .bio-certi .password-input .btn_password-input { color: #00b259; } 
+
+/* CSE00C 내정보 */
+.cse00c .list_wrap .list .cnt .text.code span.connect { color: #00b259; } 
+
+
+/* ########### 메인화면 스와이퍼 ########### */
+section.section_account .content-cover i {background-image: url(../img_v2/nh_mainon1.svg);}
+section .is-off .content-cover i {background-image: url(../img_v2/nh_mainoff1.svg);}
+
+/* ### 코치마크 ### */
+/* ### NHT00A main ### */
+.coach-mark .kht00a .mark01 .cover i { background-image: url(../img_v2/nht00a_1.png); } 
+.coach-mark .kht00a .mark02 .cover i { background-image: url(../img_v2/nht00a_2.png); } 
+.coach-mark .kht00a .mark03 .cover i { background-image: url(../img_v2/nht00a_3.png); } 
+/* ### NHT00B 달력 ### */
+.coach-mark .kht00b .mark01 .cover i { background-image: url(../img_v2/nht00b_1.png); } 
+.coach-mark .kht00b .mark02 .cover i { background-image: url(../img_v2/nht00b_2.png); } 
+/* ### NHT00B 진단 ### */
+.coach-mark .kht00c .mark01 .cover i { background-image: url(../img_v2/nht00c_1.png); } 
+.coach-mark .kht00c .mark02 .cover i { background-image: url(../img_v2/nht00c_2.png); }
+.coach-mark .swiper-pagination-bullet-active {background-color: #00b259;} 
+.coach-mark .cycle_close_btn i {background-image: url(../img_v2/rd_close_nh.svg);}
+
+/* 제휴 API 프리미엄 서비스 카드 */
+.premium-infinite .premium-introduce_table {height: 125.2778vw;}
+/* .premium-infinite .premium-introduce_table .ico_cont {background-image: url(../img_v2/bg_nh_premium_benefit_table.png);} */
+.premium-infinite .premium-introduce_table .ico_cont {background-image: url(../img_v2/bg_nh_premium_benefit_table02.png);}
+
+
+/* 프로모션 출석체크 이벤트 */
+.jehyu-promotion.attendance_check .benefit-content .ico_cont {background-image: url(../img_v2/card_nh_premiumService.png);}
+.jehyu-promotion.attendance_check .table_premium-service .ico_cont {background-image: url(../img_v2/table_nh_premiumService.png);}
+
+/* 체크박스 2뎁스 */
+.multi-check_wrap .checkboxAll input[type="checkbox"]:checked { background-image: url(../img_v2/check-bg_42x42_nh.svg); } 
+.checkboxEach .checkbox-item .checkbox input[type="checkbox"]:checked { background-image: url(../img_v2/check_42x42_nh.svg); } 

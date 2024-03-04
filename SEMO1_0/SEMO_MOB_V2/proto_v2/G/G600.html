@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css_v2/semo_style.css">
+    <!-- <link rel="stylesheet" href="../../css_v2/ione_style.css"> -->
+  <script src="../../js_v2/jquery-3.5.1.min.js"></script>
+    <title>G600</title>
+</head>
+<script>
+     $(document).ready(function () {
+            $(".cycle").click(function () {
+                $("#slide_popup").fadeIn(500);
+                $("#slide_popup > .popup.bottom").css("bottom", "0"); 
+                
+        });
+        // 팝업 배경터치하면 사라짐
+        $(document).click(function (e) {
+            if ($(".popup_bg, .del").is(e.target)) {
+                $(".popup_bg").fadeOut(200); 
+                $(".popup.bottom").show().animate({bottom: "-100%"}, 200);
+               }
+          });
+        });
+
+</script>
+<body>
+    <div class="title">
+        <div class="title_left">    
+            <i class="ico_cen left_arrow"></i>
+        </div>
+        <span class="title_text">보고서관리</span>
+    </div>
+    <div class="report_wrap">
+        <div class="report_manage">
+            <div class="tit">
+                <span>사장님에 대해 알면 알수록</span><br>
+                <b><em>맞춤 보고서</em>를 만들 수 있어요!</b>
+                <p>수정한 정보는 다음 달 보고서부터 적용!</p>
+            </div>
+            <div class="manage_category">
+                <div class="top">
+                    <div class="cycle">
+                        <div class="img on">
+                        </div>        
+                    </div>
+                    <div class="txt">
+                        <span>상권과 업종</span>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <div class="manage_rd_03">
+                        <div class="cycle">
+                            <div class="img off">
+                            </div>
+                        </div>
+                        <div class="txt">
+                            <span>매출</span>
+                        </div>
+                    </div>
+                    <div class="manage_rd_01">
+                        <div class="cycle">
+                            <div class="img on">
+                            </div>
+                        </div>
+                        <div class="txt">
+                            <span>지출</span>
+                        </div>
+                    </div>
+                    <div class="manage_rd_02">
+                        <div class="cycle">
+                            <div class="img on">
+                            </div>
+                        </div>
+                        <div class="txt">
+                            <span>손익 </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="link">
+                    <span> 
+                        보고서 알림 설정 바로가기
+                    </span>
+                </div>
+            </div>
+            <div class="long_button">
+                <span>씀씀보고서 시작 !</span>
+            </div>
+        </div>
+        <div class="popup_bg ssm_pop"style="">
+            <div class="popup alert round ssm_pop01" style="bottom:0;">
+                <div class="alret_text">
+                    <p>앗!</p>
+                    <em>지금 나가시면<br>입력한 정보가 사라져요</em>
+                </div>
+                <div class="btm_button">
+                    <span class="c_gray">나갈게요</span>
+                    <span class="bgc_sig">계속 입력할게요</span>
+                </div>
+            </div>
+        </div>
+        <div class="popup_bg" id="slide_popup" style="display: block;">
+            <div class="popup bottom ssm_pop02">
+                <div class="popup_title hung">
+                    <i class="ico_cen del"></i>
+                </div>
+                <div class="tit">
+                    <span>순이익이 늘어야 진짜!</span>
+                </div>
+                <div class="subtit">
+                    <span>월&nbsp;<em>손익</em>&nbsp;목표는 얼마 일까요?</span>
+                </div>
+                <div class="target">
+                    <div class="cost">
+                        <div class="number">
+                            <input type="TEXT" placeholder="금액 입력" value="9,999,999,999">
+                        </div>
+                        <p>원</p>
+                    </div>
+                    <div class="text">
+                        <span>9,999,999,999원</span>
+                    </div>
+                </div>
+                <div class="tip">
+                    <em>Tip.</em>
+                    <span>부가세를 제외한 금액을 목표로 잡는 것이<br>더 정확해요</span>
+                </div>
+                <div class="long_button">
+                    <span>저장하고 닫기</span>
+                </div>
+            </div>
+        </div>
+    </div>
+   <script>
+
+   </script>
+</body>
+
+</html>

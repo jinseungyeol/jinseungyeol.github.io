@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css_v2/semo_style.css">
+    <!-- <link rel="stylesheet" href="../../css_v2/ione_style.css"> -->
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="title">
+        <div class="title_left">
+            <i class="ico_cen left_arrow"></i>
+        </div>
+        <span class="title_text">급여작성</span>
+        <div class="title_right">
+            <i class="ico_cen info"></i>
+        </div>
+    </div>
+    <div class="popup_bg" style="">
+        <div class="popup bottom" style="bottom:0;">
+            <div class="popup_title">
+                <b>비과세 수당 추가</b>
+                <i class="ico_cen del"></i>
+            </div>
+            <div class="popup_title_sub set_mgt8">
+                비과세 수당에는 어떤 항목들이 있나요?
+            </div>
+            <div class="popup_bottom_con set_mgt17">
+                <span>
+                    <b>육아수당</b>
+                    <p class="popup_sub_text">월 10만원까지 비과세 가능</p>
+                </span>
+                <span>
+                    <b>연구수당</b>
+                    <p class="popup_sub_text">월 20만원까지 비과세 가능</p>
+                </span>
+                <span>
+                    <b>학자금수당</b>
+                    <p class="delete">삭제</p>
+                </span>
+                <span>
+                    <b>직접입력</b>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="basic_wrapper b_gray">
+     
+        <div class="padding_wrapper20 pb_btm_button set_mgt10">
+            <div class="pay_write_staff_title">
+                <b>김세모</b>
+            </div>
+            <div class="pay_write_staff_wage">
+                <span>
+                    합계 &nbsp;
+                    <b> 0원</b>
+                </span>
+            </div>
+
+            <div class="section_content_wrap set_mgt14">
+                <div class="section_content">
+                    <input type="text" id="text1" required="required">
+                    <label for="text1">기본급</label>
+                </div>
+                <div class="section_content">
+                    <input type="number" id="text2" required="required">
+                    <label for="text2">성과급</label>
+                </div>
+                <div class="section_content">
+                    <input type="number" id="text3" required="required" value="123123123">
+                    <label for="text3">야근 / 초과</label>
+                </div>
+                <div class="section_content readonly disabled ">
+                    <input type="number" id="text3" required="required" readonly value="333333" >
+                    <label for="text3">근무일자</label>
+                </div>
+                <div class="section_content readonly disabled">
+                    <input type="number" id="text5" required="required" readonly value="3일">
+                    <label for="text5">근무일자</label>
+                </div>
+                <div class="section_content">
+                    <input type="number" id="text4" required="required">
+                    <label for="text4">업무경비</label>
+                </div>
+            </div>
+            <div class="section_content_wrap set_mgt14">
+                <div class="section_content readonly">
+                    <input type="text" id="text17" required="required" readonly>
+                    <i class="ico_cen down"></i>
+                    <label for="text17">식대
+                        <label class="section_content_levy" for="text17">월 10만원 비과세 가능
+                    </label>
+                </div>
+                <div class="section_content">
+                    <input type="text" id="text17" required="required" readonly>
+                    <i class="ico_cen down"></i>
+                    <label for="text17">차량유지비</label>
+                </div>
+            </div>
+            <div class="active_button set_mgt14 b_d_gray">
+                <i class="ico_cen plus_gray"></i>
+                <span>비과세 수당 추가</span>
+            </div>
+            <div class="pay_write_req_con set_mgt31">
+                <span class="pay_write_req_title">직원 개인 급여 메모</span>
+                <textarea placeholder="근무시간, 휴가 내용을 메모해 주세요."></textarea>
+            </div>
+        </div>
+        <div class="btm_button double ">
+            <span>삭제</span>
+            <span class="c_green">저장하기</span>
+        </div>
+    </div>
+</body>
+
+</html>

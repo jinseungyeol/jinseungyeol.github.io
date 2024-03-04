@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css_v2/semo_style.css">
+    <link rel="stylesheet" href="../../css_v2/main.css">
+    <link rel="stylesheet" href="../../css_v2/partner-product.css">
+    <!-- <link rel="stylesheet" href="../../css_v2/ione_style.css"> -->
+    <link rel="stylesheet" href="../../css_v2/swiper-bundle.min.css">
+  <script src="../../js_v2/lottie.js"></script>
+    <title>[SB198]_IEP050</title>
+</head>
+<body>
+
+    <div class="jehyu-promotion attendance_check">
+        <!-- 헤더 START -->
+        <header class="fix-top-nav bgc_sig">
+            <div class="fix-top-nav_cnt">
+                <h1 class="fix-top-nav_main-tit">
+                    <button class="check-area" type="button">
+                        <i class="ico_cont left-arrow"></i>
+                    </button>
+                    <p class="main-tit_txt">EVENT</p>
+                </h1>
+                <p class="fix-top-nav_right-txt">08.22 ~ 09.23</p>
+            </div>
+        </header>
+        <!--// 헤더 END -->
+        
+        <!-- 출석체크 진행률 START -->
+        <section class="section_progress">
+            <div class="header-tit">
+                <h2 class="main-txt">
+                    <i class="ico_cont"></i>
+                </h2>
+            </div>
+            <div class="box_progress">
+                <div class="box_progress_inner">
+                    <div class="tit_state">
+                        <span>세모장부랑</span>
+                        <strong class="day_current"><em id="countAttendanceDay"></em>일</strong>
+                    </div>
+                    <div class="img_state">
+                        <span id="lottieFire"></span>
+                        <i class="ico_cont ic_location_pink"></i>
+                    </div>
+                    <div class="bar_state_wrap">
+                        <div class="bar_state">
+                            <div class="current bgc_sig" id="currentPercentBar"></div>
+                        </div>
+                        <p class="per" id="currentPercentNum"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--// 출석체크 진행률 END -->
+
+        <!-- 출석현황 START -->
+        <section class="link-status">
+            <h2 class="main-txt">
+                <i class="ico_cont"></i>
+            </h2>
+            <div class="connect-wrap">
+                <div class="connect-items">
+                    <div class="connect-item">
+                        <div class="connect-item_logo">DAY1</div>
+                        <div class="checkmark-circle">
+                            <div class="background"></div>
+                            <div class="checkmark draw"></div>
+                        </div>
+                    </div>
+                    <div class="connect-item">
+                        <div class="connect-item_logo">DAY2</div>
+                        <div class="checkmark-circle">
+                            <div class="background"></div>
+                            <div class="checkmark draw"></div>
+                        </div>
+                    </div>
+                    <div class="connect-item">
+                        <div class="connect-item_logo">DAY3</div>
+                        <div class="checkmark-circle">
+                            <div class="background"></div>
+                            <div class="checkmark draw"></div>
+                        </div>
+                    </div>
+                    <div class="connect-item">
+                        <div class="connect-item_logo">DAY4</div>
+                        <div class="checkmark-circle">
+                            <div class="background"></div>
+                            <div class="checkmark draw"></div>
+                        </div>
+                    </div>
+                    <div class="connect-item">
+                        <div class="connect-item_logo">DAY5</div>
+                        <div class="checkmark-circle">
+                            <div class="background"></div>
+                            <div class="checkmark draw"></div>
+                        </div>
+                    </div>
+                    <div class="connect-item">
+                        <div class="connect-item_logo">DAY6</div>
+                        <div class="checkmark-circle">
+                            <div class="background"></div>
+                            <div class="checkmark draw"></div>
+                        </div>
+                    </div>
+                    <div class="connect-item">
+                        <div class="connect-item_logo">DAY7</div>
+                        <div class="checkmark-circle">
+                            <div class="background"></div>
+                            <div class="checkmark draw"></div>
+                        </div>
+                    </div>
+                    <div class="connect-item">
+                        <div class="connect-item_logo">DAY8</div>
+                        <div class="checkmark-circle">
+                            <div class="background"></div>
+                            <div class="checkmark draw"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 출석도장 개수 -->
+            <div class="current-count">
+                <span class="current-count_txt">내가모은 출석도장 :</span>
+                <span class="current-count_num"><em id="stampNum"></em> 개</span>
+            </div>
+        </section>
+        <!--// 출석현황 END -->
+
+        <!-- 혜택내용 START -->
+        <section class="benefit-content">
+            <i class="ico_cont"></i>
+        </section>
+        <!--// 혜택내용 END -->
+
+        <!-- 프리미엄 서비스란? START -->
+        <section class="table_premium-service">
+            <i class="ico_cont"></i>
+        </section>
+        <!--// 프리미엄 서비스란? END -->
+
+        <!-- 푸터 START -->
+        <footer class="footer-info">
+            <h2 class="main-txt">이벤트 유의사항</h2>
+            <div class="footer-info_term">
+                <p class="info-tit">기간</p>
+                <p class="info-val">2022. 08 .22 ~ 2022. 09. 23</p>
+            </div>
+            <div class="footer-info_term">
+                <p class="info-tit">유의사항</p>
+                <ul class="info-val">
+                    <li>본 이벤트 기간 및 내용은 사전 공지 후 변경될 수 있습니다.</li>
+                    <li>본 이벤트는 당사 사정에 따라 예고없이 변경 또는 중단될 수 있습니다.</li>
+                    <li>이벤트 참여 시 개인정보 제공에 동의한 것으로 간주합니다.</li>
+                    <li>보상은 사정에 따라 사전 고지없이 동등한 가치의 다른 상품으로 대체 될 수 있습니다.</li>
+                    <li>보상은 타인에게 양도가 불가하며, 현금 또는 다른 제품으로 교환이 불가합니다.</li>
+                </ul>
+            </div>
+        </footer>
+        <!--// 푸터 END #### -->
+
+    </div>
+
+    <script src="../../js_v2/jquery-3.5.1.min.js"></script>
+    <script src="../../js_v2/swiper-bundle.min.js"></script>
+
+    <script>
+    
+    $(function () {
+
+        // 로띠 이미지 ( 제휴사별로 이미지 파일경로만 바꿔주세요 )
+        var lottieAnimation = bodymovin.loadAnimation({
+            container: $('#lottieFire')[0], // Required
+            path: '../../img_v2/lottie_semo_streak_fire.json', // URL 직접 입력
+            renderer: 'svg', // Required
+            loop: true, // Optional
+            autoplay: true // Optional
+        });
+
+        // 진행현황 게이지바 ( countNum만 수정하면 도장까지 찍힘 )
+        var totalNum = 8;
+        var countNum = 8;
+        var calcNum = countNum / totalNum * 100;
+
+        $("#countAttendanceDay").text(countNum);
+        $("#currentPercentNum").text(calcNum + "%");
+
+        if(countNum == 0) {
+            $("#currentPercentBar").animate(
+                {"width" : 7 + "%"}
+            ,1000);
+            $("#currentPercentNum").text(0 + "%");
+            $("#lottieFire").animate(
+                {"left" : 0}
+            ,1000);
+        } else {
+            $("#currentPercentBar").animate(
+                {"width" : calcNum + "%"},
+                {
+                    duration: 1000,
+                    step: function( calcNum ) {
+                        var startNum = Math.floor( calcNum );
+                        $("#currentPercentNum").text(startNum + "%");
+                    },
+                    complete: function() {
+                        $("#currentPercentNum").text(calcNum + "%");
+                    }
+                }
+            );
+            $("#lottieFire").animate(
+                {"left" : calcNum - 12.5 + "%"}
+            ,1000);
+        }
+
+        // 출석현황
+        var bgcSigColor = $(".bgc_sig").css("background-color");
+        var completeEle = $(`.jehyu-promotion.attendance_check .connect-items .connect-item:nth-child(-n+${countNum})`);
+
+        $("#stampNum").text(countNum);
+        completeEle.addClass("is_complete").find(".connect-item_logo").css({
+            "color": `${bgcSigColor}`, 
+            "border-color": `${bgcSigColor}`
+        });
+        completeEle.find(".background").addClass("bgc_sig");
+
+    })
+    </script>
+
+</body>
+
+</html>

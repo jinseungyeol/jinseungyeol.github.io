@@ -1,0 +1,10 @@
+@charset "utf-8";
+/* nh_pc.css Ver 2 */
+
+/* Common css */
+.c_sig {color: #00b259 !important;}
+
+/* 버튼 제휴사별 컬러 */
+.button_sig {background-color: #00b259 !important; border: 2px solid #04944c !important;}
+
+.container .btn_wrap .guide .inner span b::before {background-color: #00b259; opacity: 0.3;}

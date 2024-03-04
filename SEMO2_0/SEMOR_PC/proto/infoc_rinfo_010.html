@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<title>세모리포트</title>
+<link rel="stylesheet" href="../css/reset_taxp.css">
+<link rel="stylesheet" href="../css/app_header.css"><!-- [D] 세무대리인용 header -->
+<link rel="stylesheet" href="../css/content_taxp.css"><!-- [D] 세무대리인용 -->
+
+<!-- custom scrollbar plugin css -->
+<link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+  <script src="../js/lib/jquery/jquery-1.12.4.min.js"></script>
+<script src="../js/lib/jquery/jquery-ui-1.10.4.min.js"></script>
+<!-- custom scrollbar plugin -->
+<script src="../js/design/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../js/design/jquery.placeholder.min.js"></script>
+<script src="../js/lib/plugin/smart.popup.js"></script>
+<script src="../js/comm/common.js"></script>
+<script>
+$(function(){
+  // Invoke the plugin
+  $('input, textarea').placeholder({customClass:'my-placeholder'});
+  
+  
+  
+  // 보기설정 보기
+    $('#btn_showhide').on("click", function(event){
+    	if($(this).hasClass("down")){
+    		$("#tbl_area").show();
+    		$(this).removeClass("down");
+    	}else{
+    		$("#tbl_area").hide();
+    		$(this).addClass("down");
+    	}
+    });
+    
+});
+</script>
+
+</head>
+
+
+<body style="width:480px;"><!-- 팝업 사이즈 600*497 -->
+
+<div class="pop_wrap" style="width:480px;">
+
+  <!-- 팝업 헤더 -->
+  <div class="pop_header">
+    <h1>인증서 간편 제출 안내</h1>
+    <a href="#" onClick="close_smartPop();" class="btn_popclose"><img src="../img/txof/btn/btn_popClose_white.gif"
+        alt="팝업닫기"></a>
+  </div>
+  <!-- //팝업 헤더 -->
+
+  <!-- 팝업 컨텐츠 -->
+  <div class="pop_container">
+
+    <div class="title_wrap">
+      <div class="left">
+        <h1 class="no_bg tac">실시간정보수집 인증서가 등록되었습니다.</h1>
+      </div>
+    </div>
+    
+    <div class="txtArea tac mgt20">
+      <p class="txt">
+        ※ 인증서파일은 저장하지 않습니다.<br>
+        경로와 비밀번호를 암호화하여 저장합니다.<br>
+        실시간정보수집 인증서가 등록되었습니다.
+      </p>
+    </div>
+
+    <div class="grayBox">
+      <div class="inner">
+        <div class="title_wrap">
+          <div class="left">
+            <h1 class="no_bg tac">부서사용자계정을 추가로 등록합니다.</h1>
+          </div>
+        </div>
+      <div class="txtArea">
+        <p class="txt">
+          부서사용자계정을 등록할 경우 타 사용자와<br>
+          중복로그인으로 인한 이중로그인을 방지할 수 있습니다.
+        </p>
+      </div>
+        <!-- 하단버튼 -->
+        <div class="tac">
+          <a href="#none" onClick="close_smartPop();" class="btn_style_gray_big"><span>나중에</span></a>
+          <a href="#none" class="btn_style_big"><span>등록하기</span></a>
+        </div>
+        <!-- //하단버튼 -->
+      </div>
+    </div>
+
+  </div>
+  <!-- //팝업 컨텐츠 -->
+</div>
+
+</body>
+</html>

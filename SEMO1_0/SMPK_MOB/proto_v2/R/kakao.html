@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css_v2/semo_style.css">
+    <link rel="stylesheet" href="../../css_v2/ione_style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../../js_v2/design.js"></script>
+    <title>카카오웹</title>
+</head>
+<body>
+    <div class="report_wrap ">
+        <div class="morning_title ">
+            <div class="mor_tit_txt">
+                <span>1일 1습관<em>,</em><b> 아침보고서</b></span>
+                <p>기준일: 21.06.02(목)</p>
+            </div>
+            <div class="mor_tit_img">
+                <i class=""></i>
+            </div>
+        </div>
+        <div class="morning_tab report_pd20">
+            <div class="mot on">현금흐름</div>
+            <div class="mot">매출</div>
+            <div class="mot">매입</div>
+        </div>
+
+        <!-- 현금흐름 -->
+        <div class="morning_content report_pd20" style="display: none;">
+            <section class="pf_chart">
+                <div class="pfs01_title">
+                    전일대비 현금 손익은?
+                </div>
+                <div class="pfs01_rate">
+                    <div class="pfs_rate_left">
+                        <div class="pfs_rate_total">
+                            <span class="pfs_rate_num">
+                                64,341원
+                            </span>
+                            <span class="pfs_rate_per">72%</span>
+                        </div>
+                      
+                    </div>
+                    <div class="pfs_rate_right">
+                        <p>입금 65,342원</p>
+                        <p>출금 1,000원</p>
+                    </div>
+                </div>
+            </section>
+            <section class="mor_graph">
+                <div >
+                    <canvas id="myChart01"></canvas>
+                </div>
+            </section>
+            <section class="morning_rank">
+                <div class="mo_rank_tit">
+                    <span>입금랭킹 TOP3는?</span>
+                </div>
+                <div class="mo_rank_list">
+                    <div >
+                        <div class="rank_left">
+                            <i class="rank01"></i>
+                            <span>입금(이로움)</span>
+                        </div>
+                        <div class="rank_right">
+                            <span>130,000,000원</span>
+                        </div>
+                    </div>
+                    <div >
+                        <div class="rank_left">
+                            <i class="rank02"></i>
+                            <span>입금(동산캐스팅)</span>
+                        </div>
+                        <div class="rank_right">
+                            <span>550,000원</span>
+                        </div>
+                    </div>
+                    <div >
+                        <div class="rank_left">
+                            <i class="rank03"></i>
+                            <span>입금(큐앤큐)</span>
+                        </div>
+                        <div class="rank_right">
+                            <span>185,000원</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mo_msg">
+                    <div class="mo_msg_txt">
+                        <span>
+                            어제 내역 중<b> 미분류</b>로 남아있는 매입은 <b>4건</b>입니다. 가장 많이 사용한 용도는 <em class="mo_blue">배달매출 2건</em> 입니다.
+                        </span>
+                    </div>
+                    <div class="mo_msg_arr">
+                         <i></i>
+                    </div>
+                </div>
+            </section>
+            <section class="morning_rank">
+                <div class="mo_rank_tit">
+                    <span>출금랭킹 TOP3는?</span>
+                </div>
+                <div class="mo_rank_list">
+                    <div >
+                        <div class="rank_left">
+                            <i class="rank01"></i>
+                            <span>출금(한미종합건재)</span>
+                        </div>
+                        <div class="rank_right">
+                            <span>3,245,000원</span>
+                        </div>
+                    </div>
+                    <div >
+                        <div class="rank_left">
+                            <i class="rank02"></i>
+                            <span>출금(로움상사)</span>
+                        </div>
+                        <div class="rank_right">
+                            <span>458,200원</span>
+                        </div>
+                    </div>
+                    <div >
+                        <div class="rank_left">
+                            <i class="rank03"></i>
+                            <span>출금(신일아이티)</span>
+                        </div>
+                        <div class="rank_right">
+                            <span>88,000원</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mo_msg">
+                    <div class="mo_msg_txt">
+                        <span>
+                            어제 내역 중<b> 미분류</b>로 남아있는 출금은 <b>1건</b>입니다. 가장 많이 사용한 용도는 <em class="mo_orange">구입 3건</em> 입니다.
+                        </span>
+                    </div>
+                    <div class="mo_msg_arr">
+                         <i></i>
+                    </div>
+                </div>
+            </section>
+             <section class="mor_info">
+                <div class="mor_info_tit">
+                    안내사항
+                </div>
+                <div class="mor_info_txt">
+                    <div>
+                        <span>
+                            - 본 보고서는 세모장부에서 제공하는 데이터로 외부에서 제공하는 다른보고서와 차이가 있습니다.
+                        </span>
+                    </div>
+                    <div>
+                        <span>
+                            - 개인 정보가 포함된 내용으로 타인에게 노출을 주의하시고 이에 따른
+                            책임은 사업자에게 있음을 알려드립니다. 
+                        </span>
+                    </div>
+                    <div class="mor_info_btn">
+                        <span>
+                            - 보고서에 관한 어려움 또는 개선의견이 있으세요? 
+                        </span>
+                        <span class="mor_btn">
+                            접수하기
+                        </span>
+                    </div>
+                   
+                </div>
+             </section>
+             <div class="mor_logo">
+                 <i></i>
+             </div>
+        </div>
+
+        <!-- 매출 -->
+        <div class="morning_content report_pd20">
+            <section class="pf_chart">
+                <div class="pfs01_title">
+                    전일대비 어제매출은?
+                </div>
+                <div class="pfs01_rate">
+                    <div class="pfs_rate_left">
+                        <div class="pfs_rate_total">
+                            <span class="pfs_rate_num">
+                                273,200원
+                            </span>
+                            <span class="pfs_rate_per">40%</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="mor_graph">
+                <div >
+                    <canvas id="myChart02"></canvas>
+                </div>
+            </section>
+            <section class="morning_rank">
+                <div class="mo_rank_tit">
+                    <span>입금랭킹 TOP3는?</span>
+                </div>
+                <div class="mo_rank_list">
+                    <div >
+                        <div class="rank_left">
+                            <i class="rank01"></i>
+                            <span>BC카드(1483*******)</span>
+                        </div>
+                        <div class="rank_right">
+                            <span>카드 273,000원</span>
+                        </div>
+                    </div>
+                    <div >
+                        <div class="rank_left">
+                            <i class="rank02"></i>
+                            <span>큐앤큐인터내셔널...</span>
+                        </div>
+                        <div class="rank_right">
+                            <span>세.계 13,000,000원</span>
+                        </div>
+                    </div>
+                    <div >
+                        <div class="rank_left">
+                            <i class="rank03"></i>
+                            <span>동산캐스팅철강</span>
+                        </div>
+                        <div class="rank_right">
+                            <span>현금 130,000원</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mo_msg">
+                    <div class="mo_msg_txt">
+                        <span>
+                            어제 내역 중 <b>카드매출이 16건</b>으로 가장 많이 발생 했습니다.
+                        </span>
+                    </div>
+                    <div class="mo_msg_arr">
+                         <i></i>
+                    </div>
+                   
+                </div>
+            </section>
+            <section>
+                <div class="mo_rank_tit sb">
+                    <span>우리 지역 매출 추이는?</span>
+                </div>
+            </section>
+             <section class="mor_info">
+                <div class="mor_info_tit">
+                    안내사항
+                </div>
+                <div class="mor_info_txt">
+                    <div>
+                        <span>
+                            - 본 보고서는 세모장부에서 제공하는 데이터로 외부에서 제공하는 다른 보고서와 차이가 있습니다.
+                        </span>
+                    </div>
+                    <div>
+                        <span>
+                            - 개인 정보가 포함된 내용으로 타인에게 노출을 주의하시고 이에 따른 책임은 사업자에게 있음을 알려드립니다. 
+                        </span>
+                    </div>
+                    <div class="mor_info_btn">
+                        <span>
+                            - 보고서에 관한 어려움 또는 개선의견이 있으세요? 
+                        </span>
+                        <span class="mor_btn">
+                            접수하기
+                        </span>
+                    </div>
+                   
+                </div>
+             </section>
+             <div class="mor_logo">
+                 <i></i>
+             </div>
+        </div>
+    </div>
+    <script>
+        var ctx = document.getElementById('myChart01').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Green', 'Orange', 'Yellow', 'pink', 'blue'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [12, 19, 10, 15, 5],
+                    backgroundColor: [
+                        '#249078',
+                        '#ff7b36',
+                        '#ffd036',
+                        '#ff8dc2',
+                        '#10c0e7'
+                    ]
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+        var ctx = document.getElementById('myChart02').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Green', 'Orange', 'Yellow', 'pink', 'blue'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [12, 19, 10, 15, 5],
+                    backgroundColor: [
+                        '#249078',
+                        '#ff7b36',
+                        '#ffd036',
+                        '#ff8dc2',
+                        '#10c0e7'
+                    ]
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+      
+
+    </script>
+</body>
+
+</html>

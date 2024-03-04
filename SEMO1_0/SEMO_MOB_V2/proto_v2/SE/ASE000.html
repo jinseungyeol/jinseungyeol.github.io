@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css_v2/semo_style.css">
+    <link rel="stylesheet" href="../../css_v2/partner-common.css">
+  <script src="../../js_v2/jquery-3.5.1.min.js"></script>
+    <title>설정 ASE000</title>
+</head>
+<body>
+
+    <!-- 헤더 타이틀 -->
+    <div class="title">
+      <div class="title_left">
+        <i class="ico_cen left_arrow"></i>
+      </div>
+      <span class="title_text">설정</span>
+      <div class="emo_team">
+        <span span class="ico_cen headset_01"></span>
+      </div>
+    </div>
+
+    <div class="basic_wrapper cse000">
+
+      <!------------- 사업장 정보 ----------------------------------->
+      <section class="store_info_wrap">
+        <div class="store_info">
+
+          <!-- 가게 이름 -->
+          <article class="store_name">
+            <h1 class="elipsis">차차차네 엄마손기사식당입니다</h1>
+            <span class="ico_cen right_02"></span>
+          </article>
+          <!-- 사업자번호 -->
+          <article class="store_num">
+            <p>103-99-01053</p>
+          </article>
+          <!-- 성함 -->
+          <article class="name">
+            <em>정차차</em>
+            <span>일반과세자</span>
+          </article>
+
+        </div>
+      </section>
+
+      <!-------------사업장 관리 및 설정 ----------------------------------->
+      <section class="store_manage_wrap">
+        <div class="store_manage">
+          <!-- 맨 위 박스 2개 -->
+          <article class="item_box">
+            <div class="item_wrap row">
+              <div class="item">
+                <i class="ico_cont ic_setting"></i>
+                <p>용도 설정</p>
+              </div>
+              <div class="item">
+                <!-- pay 클래스 제거시 무료 -->
+                <div class="service-state ticket">
+                  <i class="ico_cont"></i>
+                </div>
+                <p>프리미엄 서비스란?</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- 로그인/송금 설정 부분 -->
+          <article class="item_box">
+            <div class="item_wrap col">
+              <div class="item col_4">
+                <!-- 0817 탭추가시 item_list 추가 하면됩니다 -->
+                <div class="item_list">
+                  <div class="left">
+                    <p>용도 설정</p>
+                  </div>
+                  <div class="right">
+                    <em class="state use"></em>
+                    <span class="ico_cen right_01"></span>
+                  </div>
+                </div>
+                <div class="item_list">
+                  <div class="left">
+                    <p>서비스 이용약관</p>
+                  </div>
+                  <div class="right">
+                    <span class="ico_cen right_01"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </section>
+    </div>
+
+    
+    <!------------ 팝업배경 ------------>
+    <div class="overlay" style="display: none;">
+      <!-- 옐로우 툴팁 -->
+      <div class="noti_yellow">
+        <span class="ico_cen info_02"></span>
+        <p>현재 접속하신 사업장입니다.</p>
+      </div>
+
+      <!-- 다중사업장팝업 -->
+      <div class="popup_clash">
+        <!-- 닫기버튼 -->
+        <section class="btn_close">
+          <div class="check_area">
+            <span class="ico_cen close_01"></span>
+          </div>
+        </section>
+
+        <!-- 다중사업장 전환하기 -->
+        <section class="transform_header">
+          <h1>다중사업장 전환하기</h1>
+          <div class="my_work">
+            <p>나의사업장</p>
+            <span>관리</span>
+          </div>
+        </section>
+
+        <!-- 컨텐트 박스 -->
+        <section class="transform_cnt_wrap">
+          <div class="transform_cnt check">
+            <div class="check_area">
+              <span class="ico_cen check_04"></span>
+            </div>
+            <div class="store_name">
+              <p>가나치킨 광화문점</p>
+              <span>김길동 123-45-67890</span>
+            </div>
+            <div class="state">
+              <p>마스터</p>
+            </div>
+          </div>
+          <div class="transform_cnt check">
+            <div class="check_area">
+              <span class="ico_cen check_04"></span>
+            </div>
+            <div class="store_name">
+              <p>가나치킨 광화문점</p>
+              <span>김길동 123-45-67890</span>
+            </div>
+            <div class="state fail">
+              <p>인증실패</p>
+            </div>
+          </div>
+          <div class="transform_cnt disable">
+            <div class="check_area">
+            </div>
+            <div class="store_name">
+              <p>하나코퍼레이션</p>
+              <span>김길동 123-45-67890</span>
+            </div>
+            <div class="state no_certi">
+              <p>미인증</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 버튼 -->
+        <div class="bot_fix pos_static">
+          <button type="button" class="type_A bgc_sig">
+            <span>사업장 전환하기</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!------------ 팝업배경 END ------------>
+    
+    <script>
+      $(".transform_cnt.check").click(function(){
+        $(this).addClass("active");
+        $(this).siblings(".transform_cnt.check").removeClass("active");
+      })
+    </script>
+
+</body>
+</html>

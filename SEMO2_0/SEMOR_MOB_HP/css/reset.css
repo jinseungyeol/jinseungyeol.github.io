@@ -1,0 +1,38 @@
+@charset "utf-8"; /* CSS Document */
+
+@font-face { font-family:'Pretendard'; src: url("../font/Pretendard-Thin.woff2") format("woff2"); font-weight: 100; } 
+@font-face { font-family:'Pretendard'; src: url("../font/Pretendard-ExtraLight.woff2") format("woff2"); font-weight: 200; } 
+@font-face { font-family:'Pretendard'; src: url("../font/Pretendard-Light.woff2") format("woff2"); font-weight: 300; } 
+@font-face { font-family:'Pretendard'; src: url("../font/Pretendard-Regular.woff2") format("woff2"); font-weight: 400; } 
+@font-face { font-family:'Pretendard'; src: url("../font/Pretendard-Medium.woff2") format("woff2"); font-weight: normal; } 
+@font-face { font-family:'Pretendard'; src: url("../font/Pretendard-SemiBold.woff2") format("woff2"); font-weight: 600; } 
+@font-face { font-family:'Pretendard Variable'; src: url("../font/Pretendard-Bold.woff2"); font-weight: bold; } 
+@font-face { font-family:'Pretendard Variable'; src: url("../font/Pretendard-ExtraBold.woff2"); font-weight: 800; } 
+@font-face { font-family:'Pretendard'; src: url("../font/Pretendard-Black.woff2"); font-weight: 900; } 
+
+
+/* 공통 */
+* { margin:0; padding:0; } 
+*, :after, :before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; } 
+header,nav,section,article,aside,footer,hgroup,menu,canvas,figcaption,figure { display:block; } 
+html,body,table,th,td,div,p,ol,ul,li,img,a,h1,h2,h3,h4,h5,h6,form,fieldset,label,input,textarea,select,span,iframe,dl,dt,dd,pre,blockquote,time,hr, img { margin:0; padding:0; } 
+/* basic */
+body { font-family: 'Pretendard'; font-size:15px; color:#111; } 
+div,p,ol,ul,li,img,a,h1,h2,h3,form,span,iframe,dl,dt,dd { }
+em {font-style: normal} 
+dl,ul,ol, li { list-style:none; } 
+fieldset { border:none; } 
+legend,caption,hr { display:none; } 
+img {max-width: 100%; vertical-align: top; border:none} 
+img,label { vertical-align:middle; } 
+table {width: 100%; border-collapse: collapse}
+label { vertical-align:middle; height:13px; } 
+input { vertical-align:middle; } 
+input,select,textarea { vertical-align:middle; font-family:Dotum,'돋움',Gulim,'굴림',Arial,sans-serif; font-size:12px; border:1px solid #cbcbcb; } 
+input[type=button] { cursor: pointer; } 
+textarea { padding:6px 0 6px 4px; color:#555; *padding-left:1px; resize:vertical; } 
+select { display:inline-block; color:#555; height:23px; padding:2px 2px 2px 3px !important; } 
+a { text-decoration: none; font-family: 'Pretendard'; } 
+button {all: unset; font-family: 'Pretendard'; cursor: pointer; } 
+html, h1, h2, h3, h4, h5, h6, form, fieldset, img { border: 0; } 
+label, input, button, select, img { vertical-align: middle; font-size: 1em; } 

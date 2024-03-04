@@ -1,0 +1,1795 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../css/semo_cont.css">
+    <!-- <link rel="stylesheet" href="../../css/semo_cont_ibk.css"> -->
+    <!-- <link rel="stylesheet" href="../../css/semo_cont_kt.css"> -->
+    <!-- <link rel="stylesheet" href="../../css/test.css"> -->
+
+    <title>SEMO</title>
+    <style>
+        .my_area_link {
+            display: flex;
+        }
+
+        .my_area_link>span {
+            font-size: 13px !important;
+            text-decoration: underline;
+            display: flex;
+            justify-content: left;
+            color: #0095ff !important;
+            font-weight: normal !important;
+        }
+
+        .my_area_link>span:first-child {
+            text-decoration: unset;
+        }
+
+        .my_area_cell+span {
+            display: flex;
+            align-items: center;
+        }
+
+        .my_area_cell+span.high::before {
+            content: "";
+            width: 30px;
+            height: 30px;
+            background-image: url(../img/my_chart_icon_r.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            display: block;
+            margin-right: 5px;
+        }
+
+        .my_area_cell+span.mid::before {
+            content: "";
+            width: 30px;
+            height: 30px;
+            background-image: url(../img/my_chart_icon_y.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            display: block;
+            margin-right: 5px;
+
+        }
+
+        .my_area_cell+span.low::before {
+            content: "";
+            width: 30px;
+            height: 30px;
+            background-image: url(../img/my_chart_icon_g.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            display: block;
+            margin-right: 5px;
+
+        }
+
+        .my_stat_all_con {
+            height: 100%;
+        }
+
+        .my_stat_all_con.hide {
+            display: none;
+        }
+
+
+        .my_stat.ready {
+            height: 100%;
+        }
+
+        .my_stat_box {
+            width: 100%;
+            height: calc(100% - 39px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+
+
+        .my_stat_all_con .my_stat_box .my_stat_ready+span {
+            font-size: 15px;
+            color: #a9adb5;
+            margin-bottom: 14px;
+        }
+
+        .my_stat_all_con .my_stat_box span+p {
+            font-size: 12px;
+            color: #cfcfcf;
+            word-break: keep-all;
+            padding: 0 66px;
+            margin-bottom: 24px;
+        }
+
+        .my_submit .my_name {
+            padding: 4px 6px;
+        }
+
+        .my_stat {
+            height: 100%;
+        }
+
+        .my_stat_con.ready {
+            height: 275px !important;
+        }
+
+        .my_stat_wrapper .my_stat_display.ready {
+            height: 346px !important;
+        }
+
+        .my_stat_report.ready {
+            height: 346px !important;
+        }
+
+        .account_indi_wrapper .account_detail i {
+            margin-bottom: 44px;
+        }
+
+        /* 2021-02-25 css 수정 */
+    </style>
+</head>
+
+<body>
+    <div class="new_content">
+        <div class="cont_bg ssm">
+            <!--
+        2021-03-12
+        my_top 클래스 및 내용 삭제
+       -->
+            <div class="my_submit" style="margin-top: 20px;">
+                <div>
+                    <p>가게 경영을 손 안에 👏</p>
+                    <b>상호명을 입력해 주세요
+                        <div class="val_balloon" style="display: none;">
+                            <p>
+                                <i class="semo_char"></i>
+                                사장님의 다른 사업장으로 전환 할 수 있어요
+                            </p>
+                            <i class="ico_cen del"></i>
+
+                        </div>
+                    </b>
+                </div>
+                <span class="my_name">
+                    <div class="ico_cen my_person on"></div><!-- 활성화 클래스 on -->
+                    세무법인 한결세무..
+                </span>
+            </div>
+
+            <div class="my_result">
+                <div class="my_c1">
+                    <p class="my_c1_1">
+                        전체계좌&nbsp;
+                        <b>
+                            <em>6</em>
+                        </b>개</p>
+                    <!-- my_c1_2 클래스 삭제-->
+                    <!-- my_c1_3 클래스 삭제-->
+                    <span>20.12.30 13:55:46</span>
+                    <i></i>
+                </div>
+                <div class="my_c2">
+                    <b class="my_c2_1">12,350,153</b>
+                </div>
+            </div>
+            <!--  -->
+            <div class="my_tool">
+                <div class="m_t_send" style="cursor: pointer;">
+                    <i class="ico_cen"></i>
+                    <p>간편송금</p>
+                </div>
+                <div class="m_t_list" style="cursor: pointer;">
+                    <i class="ico_cen"></i>
+                    <p>송금내역</p>
+                </div>
+            </div>
+            <div class="account_indi_wrapper set_mgt22 set_mgb42">
+                <div class="account_display">
+                    <div class="account_carousel" style="width: calc(400% + 20px); left:0;">
+                        <!--카드 개수만큼 width값 변경 width: calc((카드개수*100)% + ((카드개수*10)px)-->
+                        <!--카드 이동시 left: calc(-((해당하는 카드의 순서-1)*100)% + ((해당하는 카드의 순서-1)*10)px))
+            ex) 
+            1. left: 0; 제일 첫번째 카드
+            2. left: calc(-100% - 5px); 두번째 카드
+            3. left: calc(-200% - 10px); 세번째 카드 등등...
+            -->
+                        <div class="account_box">
+                            <div class="account_total">
+                                <div>
+                                    <div class="account_day">
+                                        <!-- 2021-03-26 account_day 클래스 추가 -->
+                                        <span class="on">어제</span><!-- 활성화 클래스 on -->
+                                        <span>오늘</span>
+                                    </div>
+                                    <p>
+                                        <span class="at_tit"><b>2</b>건 입금</span>
+                                        <span class="at_tit"><b>2</b>건 출금</span>
+                                    </p>
+                                    <p>
+                                        <span class="at_num c_0095ff"><em
+                                                class="set_font18 c_0095ff">￦<b>130,000</b></em></span>
+                                        <span class="at_num c_ff684a"><em
+                                                class="set_font18 c_ff684a">￦<b>130,000</b></em></span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="account_bar">
+                                <div class="account_bar_blue"></div>
+                                <div class="account_bar_red"></div>
+                            </div>
+                        </div>
+                        <div class="account_box">
+                            <div class="account_detail lb003">
+                                <!--***은행 활성 클래스 참고-->
+                                <!-- 
+                  ***은행 활성 클래스
+                  lb003 -> ibk기업 / lb004 -> 국민 / lb020 -> 우리 / lb088 -> 신한 / 
+                  lb081 -> 하나 / lb011 -> 농협 / lb023 -> sc / lb027 -> 씨티 / 
+                  lb002 -> 산업 / lb071 -> 우체국 / lb032 -> 부산 / lb045 -> 새마을 / 
+                  lb034 -> 광주 / lb007 -> 수협 / lb031 -> 대구 / lb039 -> 경남 / 
+                  lb035 -> 제주 / lb037 -> 전북 / lb089 -> k / lb048 -> 신협 
+                -->
+                                <i class="ico_cen"></i>
+                                <p>
+                                    <span class="ad_mark">기업</span>
+                                    <strong class="ad_account">07802141234564</strong>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="account_box">
+                            <div class="account_detail lb004">
+                                <!--***은행 활성 클래스 참고-->
+                                <!-- 
+                  ***은행 활성 클래스
+                  lb003 -> ibk기업 / lb004 -> 국민 / lb020 -> 우리 / lb088 -> 신한 / 
+                  lb081 -> 하나 / lb011 -> 농협 / lb023 -> sc / lb027 -> 씨티 / 
+                  lb002 -> 산업 / lb071 -> 우체국 / lb032 -> 부산 / lb045 -> 새마을 / 
+                  lb034 -> 광주 / lb007 -> 수협 / lb031 -> 대구 / lb039 -> 경남 / 
+                  lb035 -> 제주 / lb037 -> 전북 / lb089 -> k / lb048 -> 신협 
+                -->
+                                <i class="ico_cen"></i>
+                                <p>
+                                    <span class="ad_mark">기업</span>
+                                    <strong class="ad_account">07802141234564</strong>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="account_box">
+                            <div class="account_add">
+                                <span>
+                                    인증서로 한번에 개인/사업용<br>
+                                    계좌를 등록하세요.
+                                </span>
+                                <i></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="my_report kt_analysis ssm">
+                <!-- 
+              mr_i_1 서류
+              mr_i_2 근태관리
+              mr_i_3 카드매출
+              mr_i_4 건강보험매출
+              mr_i_5 배달앱매출
+                -->
+                <div class="ico_cen kt_secound_logo"></div>
+                <b>지난 달 손익은?</b>&nbsp;
+                <p></p>
+                <span>NEW</span>
+                <i></i><!-- 위 화살표 up클래스 -->
+            </div>
+            <div class="my_report ssm">
+                <div class="ico_cen my_report_img ssm_i_1"></div>
+                <!-- 
+              mr_i_1 서류
+              mr_i_2 근태관리
+              mr_i_3 카드매출
+              mr_i_4 건강보험매출
+              mr_i_5 배달앱매출
+        -->
+                <p>
+                </p>
+                <p><b>04월 23일 (화) 매출은?</b></p>&nbsp;
+                <p></p>
+                <span>NEW</span>
+
+                <!-- 2021-02-19 my_report_img mr_i_1 클래스 삭제  -->
+                <!-- 
+          mr_i_1 서류
+          mr_i_2 근태관리
+          mr_i_3 카드매출
+          mr_i_4 건강보험매출
+          mr_i_5 배달앱매출
+        -->
+
+                <i class="ico_cen"></i><!-- 위 화살표 up클래스 -->
+            </div>
+            <div class="my_report ssm">
+                <div class="ico_cen my_report_img ssm_i_2"></div>
+                <!-- 
+              mr_i_1 서류
+              mr_i_2 근태관리
+              mr_i_3 카드매출
+              mr_i_4 건강보험매출
+              mr_i_5 배달앱매출
+        -->
+                <p>
+                </p>
+                <p><b>지난 달 손익은?</b></p>&nbsp;
+                <p></p>
+                <span>NEW</span>
+
+                <!-- 2021-02-19 my_report_img mr_i_1 클래스 삭제  -->
+                <!-- 
+          mr_i_1 서류
+          mr_i_2 근태관리
+          mr_i_3 카드매출
+          mr_i_4 건강보험매출
+          mr_i_5 배달앱매출
+        -->
+
+                <i class="ico_cen"></i><!-- 위 화살표 up클래스 -->
+            </div>
+            <div class="my_all_list">
+                <!--========================보고서 영역 시작=========================-->
+                <div class="my_stat_wrapper show" style="display:none;">
+                    <!-- my_stat_wrapper show 클래스로 화면을 띄움 -->
+                    <div class="my_stat_display sample_img">
+                        <div class="my_stat" style="width: calc(300% + 15px); left:0">
+                            <!-- 
+                2020-12-22 
+                my_stat_report sample = 샘플영역(기본값 가려져있음)
+               -->
+                            <div class="my_stat_report sample_img1">
+                                <!-- hide클래스로 제어 -->
+                                <span class="my_title sales">
+                                    <!-- 
+                  sales : 매출 보고서
+                  purchase : 매입 보고서
+                  flow : 현금흐름 보고서
+                 -->
+                                    <div class="my_title_l">
+                                        <p>매출보고서</p>
+                                        <i class="ico_cen"></i>
+                                    </div>
+                                    <div class="my_title_R">
+                                        <p class="my_c1_3">20.12.30 13:55:46</p>
+                                        <i></i>
+                                    </div>
+                                </span>
+                                <div class="my_stat_con sample_img1">
+                                    <div class="sample_img1"></div>
+                                    <!-- ready 클래스로 높이 제어 -->
+                                    <div class="my_yesterday">
+                                        <div class="my_yes_title_l">
+                                            <span class="my_yes_pur">전일대비 어제매출은?</span>
+                                            <div class="my_yes_num">
+                                                <span>
+                                                    <b class="c_0095ff">▲ 10%</b>
+                                                    <b>￦16,630,000</b>
+                                                </span>
+                                                <b>
+                                                </b>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="my_chart1">
+                                    </div>
+                                    <div class="my_rank">
+                                        <p>매출랭킹 TOP3는?</p>
+                                        <div class="my_rank_cell">
+                                            <div class="my_rank_con">
+                                                <div>
+                                                    <i class="ico_cen rank1"></i>
+                                                    <p class="elipsis">웹케시</p>
+                                                </div>
+                                                <span>
+                                                    <p>카드</p>
+                                                    <b>￦130,000,000</b>
+                                                </span>
+                                            </div>
+                                            <div class="my_rank_con">
+                                                <div>
+                                                    <i class="ico_cen rank2"></i>
+                                                    <p class="elipsis">큐앤큐인터내셔널브랜드</p>
+                                                </div>
+                                                <span>
+                                                    <p>세금계산서</p>
+                                                    <b>￦13,000,000</b>
+                                                </span>
+                                            </div>
+                                            <div class="my_rank_con">
+                                                <div>
+                                                    <i class="ico_cen rank3"></i>
+                                                    <p class="elipsis">동산캐스팅철강</p>
+                                                </div>
+                                                <span>
+                                                    <p>현금</p>
+                                                    <b>￦130,000</b>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="my_unclass">
+                                        <span>어제 내역 중 <b>카드매출</b>이 <b>10</b>건으로 가장 많이 발생했습니다.</span></div>
+                                    <div class="my_stat_bottom">
+                                        <div class="my_area">
+                                            <div class="my_area_cell">
+                                                <p>우리 지역 매출 추이는?</p>
+                                                <div>
+                                                    <p class="my_area_text">
+                                                        <b>서울</b>지역 <em>999</em>명 기준
+                                                        매출은<br> 전일대비
+                                                        <b class="c_ff684a">50%</b><b class="c_ff684a">감소</b>했습니다.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <span class="c_ff684a">-50%</span>
+                                        </div>
+                                        <div class="my_area">
+                                            <div class="my_area_cell">
+                                                <p>내 고객 평균 객단가는?</p>
+                                                <div>
+                                                    <p class="my_area_text">
+                                                        어제 총 매출 / <b>50건</b>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <span>￦50,000</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ==================현금흐름 준비중 2021-05-06======================= -->
+                            <div class="my_stat_report hide">
+                                <span class="my_title flow">
+                                    <!-- 
+                        sales : 매출 보고서
+                        purchase : 매입 보고서
+                        flow : 현금흐름 보고서
+                       -->
+                                    <div class="my_title_l">
+                                        <p>현금흐름보고서</p>
+                                        <i class="ico_cen"></i>
+                                    </div>
+                                    <div class="my_title_R">
+                                        <p class="my_c1_3"></p>
+                                        <i></i>
+                                    </div>
+                                </span>
+                                <div class="my_stat_all_con">
+                                    <!-- hide로 클래스 제어 -->
+                                    <div class="my_stat_box">
+                                        <div class="ico_cen my_stat_ready"></div>
+                                        <span>현금흐름보고서가 준비중입니다.</span>
+                                        <p>최초 연결일인 경우 또는 전일 매입이
+                                            발생하지 않은 경우는 데이터가
+                                            부족해 보고서가 보이지 않습니다.</p>
+                                        <p class="my_area_link">
+                                            <span>📊</span>&nbsp;
+                                            <span>샘플 보기&gt;</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ==================현금흐름 준비중======================= -->
+
+                            <!-- ==================매입보고서 준비중 2021-05-06======================= -->
+                            <div class="my_stat_report">
+                                <span class="my_title purchase">
+                                    <!-- 
+                        sales : 매출 보고서
+                        purchase : 매입 보고서
+                        flow : 현금흐름 보고서
+                      -->
+                                    <div class="my_title_l">
+                                        <p>매입보고서</p>
+                                        <i class="ico_cen"></i>
+                                    </div>
+                                    <div class="my_title_R">
+                                        <p class="my_c1_3"></p>
+                                        <i></i>
+                                    </div>
+                                </span>
+                                <div class="my_stat_all_con">
+                                    <!-- hide로 클래스 제어 -->
+                                    <div class="my_stat_box">
+                                        <div class="ico_cen my_stat_ready"></div>
+                                        <span>매입 보고서가 준비중입니다.</span>
+                                        <p>최초 연결일인 경우 또는 전일 매입이
+                                            발생하지 않은 경우는 데이터가
+                                            부족해 보고서가 보이지 않습니다.</p>
+                                        <p class="my_area_link">
+                                            <span>📊</span>&nbsp;
+                                            <span>샘플 보기&gt;</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ==================매입보고서 준비중 2021-05-06======================= -->
+                            <!-- ==================매입보고서 준비중======================= -->
+                            <div class="my_stat_report ">
+                                <span class="my_title sales">
+                                    <!-- 
+                        sales : 매출 보고서
+                        purchase : 매입 보고서
+                        flow : 현금흐름 보고서
+                       -->
+                                    <div class="my_title_l">
+                                        <p>매출보고서</p>
+                                        <i class="ico_cen"></i>
+                                    </div>
+                                    <div class="my_title_R">
+                                        <p class="my_c1_3"></p>
+                                        <i></i>
+                                    </div>
+                                </span>
+                                <div class="my_stat_all_con">
+                                    <!-- hide로 클래스 제어 -->
+                                    <div class="my_stat_box">
+                                        <div class="ico_cen my_stat_ready"></div>
+                                        <span>매출 보고서가 준비중입니다.</span>
+                                        <p>최초 연결일인 경우 또는 전일 매입이
+                                            발생하지 않은 경우는 데이터가
+                                            부족해 보고서가 보이지 않습니다.</p>
+                                        <p class="my_area_link">
+                                            <span>📊</span>&nbsp;
+                                            <span>샘플 보기&gt;</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ==================매입보고서 준비중======================= -->
+                            <div class="my_stat_report sample">
+                                <!-- show클래스로 제어 -->
+                                <span class="my_title purchase">
+                                    <!-- 
+                  sales : 매출 보고서
+                  purchase : 매입 보고서
+                  flow : 현금흐름 보고서
+                 -->
+                                    <div class="my_title_l">
+                                        <p>매입보고서</p>
+                                        <i class="ico_cen"></i>
+                                    </div>
+                                    <div class="my_title_R">
+                                        <p class="my_c1_3"></p>
+                                        <i class="ico_cen"></i>
+                                    </div>
+                                </span>
+                                <div class="my_stat_all_con hide">
+                                    <div class="my_stat_con">
+                                        <div class="my_yesterday">
+                                            <div class="my_yes_title_l">
+                                                <span>
+                                                    <p class="my_yes_pur">
+                                                        전일대비 어제매입은?
+                                                    </p>
+                                                    <p>
+                                                        총 매입
+                                                    </p>
+                                                </span>
+                                                <div class="my_yes_num">
+                                                    <span>
+                                                        <b class="c_ff684a">▼ 10%</b>
+                                                        <b>￦16,630,000</b>
+                                                    </span>
+                                                    <b>
+                                                        999건
+                                                    </b>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="my_total">
+                                            <div class="my_chart2"></div>
+                                            <div class="my_total_list">
+                                                <div class="my_total_cell">
+                                                    <span>
+                                                        <span>
+                                                            <div class="c_card"></div>
+                                                            <p>카드 <b>99</b>건</p>
+                                                        </span>
+                                                        <b>￦130,000,000</b>
+                                                    </span>
+                                                    <span>
+                                                        <span>
+                                                            <div class="c_tax"></div>
+                                                            <p>세금계산서 <b>99</b>건</p>
+                                                        </span>
+                                                        <b>￦300,000</b>
+                                                    </span>
+                                                    <span>
+                                                        <span>
+                                                            <div class="c_bill"></div>
+                                                            <p>현금영수증 <b>99</b>건</p>
+                                                        </span>
+                                                        <b>￦1,000,000</b>
+                                                    </span>
+                                                    <span>
+                                                        <span>
+                                                            <div class="c_account"></div>
+                                                            <p>계산서 <b>99</b>건</p>
+                                                        </span>
+                                                        <b>￦130,000,000</b>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="my_rank">
+                                            <p>매입랭킹 TOP3는?</p>
+                                            <div class="my_rank_cell">
+                                                <div class="my_rank_con">
+                                                    <div>
+                                                        <i class="ico_cen rank1"></i>
+                                                        <p class="elipsis">웹케시</p>
+                                                    </div>
+                                                    <span>
+                                                        <p>현금</p>
+                                                        <b>￦130,000,000</b>
+                                                    </span>
+                                                </div>
+                                                <div class="my_rank_con">
+                                                    <div>
+                                                        <i class="ico_cen rank2"></i>
+                                                        <p class="elipsis">큐앤큐인터내셔널브랜드</p>
+                                                    </div>
+                                                    <span>
+                                                        <p>세금계산서</p>
+                                                        <b>￦13,000,000</b>
+                                                    </span>
+                                                </div>
+                                                <div class="my_rank_con">
+                                                    <div>
+                                                        <i class="ico_cen rank3"></i>
+                                                        <p class="elipsis">동산캐스팅철강</p>
+                                                    </div>
+                                                    <span>
+                                                        <p>카드</p>
+                                                        <b>￦130,000</b>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="my_stat_bottom">
+                                            <div class="my_area">
+                                                <div class="my_area_cell">
+                                                    <p>나의 매출대비 매입비율은?</p>
+                                                    <div>
+                                                        <p class="my_area_text">
+                                                            가입자 평균 매입비율<em>(100%)</em> <br>
+                                                            대비<b class="c_ff684a">초과</b> 했습니다.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <span class="percent_r c_ff684a high">120</span>
+                                                <!-- 
+                        초과 high
+                        중간 mid
+                        감소 low 
+                       -->
+                                                <!-- 
+                      2021-01-07
+                      won 검정색 ￦
+                      percent 검정색 %
+                     -->
+                                            </div>
+                                            <div class="my_area">
+                                                <p class="my_area_link">
+                                                    <span>📊</span>&nbsp;
+                                                    <span>최근 매입 내역 보러가기</span>
+                                                </p>
+                                                <!-- 
+                      2021-01-07
+                      won 검정색 ￦
+                      percent 검정색 %
+                     -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 2021-01-21 보고서 준비 내용 -->
+                                <div class="my_stat_all_con">
+                                    <div class="my_stat_box">
+                                        <div class="ico_cen my_stat_ready"></div>
+                                        <span>매입 보고서가 준비중입니다.</span>
+                                        <p>최초 연결일인 경우 또는 전일 매입이
+                                            발생하지 않은 경우는 데이터가
+                                            부족해 보고서가 보이지 않습니다.</p>
+                                        <p class="my_area_link">
+                                            <span>📊</span>&nbsp;
+                                            <span>샘플 보기&gt;</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <!--/ 2021-01-21 보고서 준비 내용 -->
+
+                            </div>
+
+                            <div class="my_stat_report sample ">
+                                <!-- show클래스로 제어 -->
+                                <span class="my_title flow">
+                                    <!-- 
+                  sales : 매출 보고서
+                  purchase : 매입 보고서
+                  flow : 현금흐름 보고서
+                 -->
+                                    <div class="my_title_l">
+                                        <p>현금흐름보고서</p>
+                                        <i class="ico_cen"></i>
+                                    </div>
+                                    <div class="my_title_R">
+                                        <p class="my_c1_3"></p>
+                                        <i></i>
+                                    </div>
+                                </span>
+                                <!-- 2021-01-21 보고서 준비 내용 -->
+                                <div class="my_stat_all_con hide">
+                                    <div class="my_stat_con ">
+                                        <div class="my_yesterday">
+                                            <div class="my_yes_title_l">
+                                                <span>
+                                                    <p class="my_yes_pur">
+                                                        전일대비 현금손익은?
+                                                    </p>
+                                                    <p class="c_0095ff set_font13">
+                                                        입금 ￦1,041,000
+                                                    </p>
+                                                </span>
+                                                <div class="my_yes_num">
+                                                    <span>
+                                                        <b class="c_ff684a">▼ 10%</b>
+                                                        <b>￦16,630,000</b>
+                                                    </span>
+                                                    <span class="c_ff684a set_font13">
+                                                        출금 ￦1,041,000
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="my_total">
+                                            <div class="my_chart3"></div>
+                                        </div>
+                                        <div class="my_rank set_mgt11">
+                                            <p>입금랭킹 TOP3는?</p>
+                                            <div class="my_rank_cell">
+                                                <div class="my_rank_con">
+                                                    <div>
+                                                        <i class="ico_cen rank1"></i>
+                                                        <p class="elipsis">웹케시</p>
+                                                    </div>
+                                                    <span>
+                                                        <p>현금</p>
+                                                        <b>￦130,000,000</b>
+                                                    </span>
+                                                </div>
+                                                <div class="my_rank_con">
+                                                    <div>
+                                                        <i class="ico_cen rank2"></i>
+                                                        <p class="elipsis">큐앤큐인터내셔널브랜드</p>
+                                                    </div>
+                                                    <span>
+                                                        <p>세금계산서</p>
+                                                        <b>￦13,000,000</b>
+                                                    </span>
+                                                </div>
+                                                <div class="my_rank_con">
+                                                    <div>
+                                                        <i class="ico_cen rank3"></i>
+                                                        <p class="elipsis">동산캐스팅철강</p>
+                                                    </div>
+                                                    <span>
+                                                        <p>카드</p>
+                                                        <b>￦130,000</b>
+                                                    </span>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="my_rank" style="border-top: 1px solid #c8c8c8;">
+                                            <p>출금랭킹 TOP3는?</p>
+                                            <div class="my_rank_cell">
+                                                <div class="my_rank_con">
+                                                    <div>
+                                                        <i class="ico_cen rank1"></i>
+                                                        <p class="elipsis">웹케시</p>
+                                                    </div>
+                                                    <span>
+                                                        <p>현금</p>
+                                                        <b>￦130,000,000</b>
+                                                    </span>
+                                                </div>
+                                                <div class="my_rank_con">
+                                                    <div>
+                                                        <i class="ico_cen rank2"></i>
+                                                        <p class="elipsis">큐앤큐인터내셔널브랜드</p>
+                                                    </div>
+                                                    <span>
+                                                        <p>세금계산서</p>
+                                                        <b>￦13,000,000</b>
+                                                    </span>
+                                                </div>
+                                                <div class="my_rank_con">
+                                                    <div>
+                                                        <i class="ico_cen rank3"></i>
+                                                        <p class="elipsis">동산캐스팅철강</p>
+                                                    </div>
+                                                    <span>
+                                                        <p>카드</p>
+                                                        <b>￦130,000</b>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- 2021-01-20 내용 수정 -->
+                                        <div class="my_rank"
+                                            style="border-top: 1px solid #c8c8c8; border-bottom: 1px solid #c8c8c8;">
+                                            <p>최근 입출금 내역은?</p>
+                                            <div class="my_rank_cell">
+                                                <div class="my_rank_con">
+                                                    <div>
+                                                        <p class="elipsis"><em>20.01.07</em><em>(목)</em> <em>이마트</em>
+                                                        </p>
+                                                    </div>
+                                                    <span>
+                                                        <p></p>
+                                                        <b class="c_0095ff">￦+130,000</b>
+                                                    </span>
+                                                </div>
+                                                <div class="my_rank_con">
+                                                    <div>
+                                                        <p class="elipsis"><em>20.01.07</em><em>(목)</em> <em>이마트</em>
+                                                        </p>
+                                                    </div>
+                                                    <span>
+                                                        <p></p>
+                                                        <b class="c_ff684a">￦-130,000</b>
+                                                    </span>
+                                                </div>
+                                                <div class="my_rank_con">
+                                                    <div>
+                                                        <p class="elipsis"><em>20.01.07</em><em>(목)</em> <em>이마트</em>
+                                                        </p>
+                                                    </div>
+                                                    <span>
+                                                        <p></p>
+                                                        <b class="c_ff684a">￦-130,000</b>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- 2021-01-20 내용 수정 -->
+                                        <div class="my_stat_bottom">
+                                            <div class="my_area">
+                                                <p class="my_area_link">
+                                                    <span>📊</span>&nbsp;
+                                                    <span>최근 입출금 내역 보러가기</span>
+                                                </p>
+                                                <!-- 
+                    2021-01-07
+                    won 검정색 ￦
+                    percent 검정색 %
+                   -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="my_stat_report hide">
+                                <!-- hide클래스로 제어 -->
+                                <span class="my_title flow">
+                                    <!-- 
+                  sales : 매출 보고서
+                  purchase : 매입 보고서
+                  flow : 현금흐름 보고서
+                 -->
+                                    <div class="my_title_l">
+                                        <p>현금흐름보고서</p>
+                                        <i class="ico_cen"></i>
+                                    </div>
+                                    <div class="my_title_R">
+                                        <p class="my_c1_3">20.12.30 13:55:46</p>
+                                        <i></i>
+                                    </div>
+                                </span>
+                                <div class="my_stat_con ">
+                                    <div class="my_yesterday">
+                                        <div class="my_yes_title_l">
+                                            <span>
+                                                <p class="my_yes_pur">
+                                                    전일대비 현금손익은?
+                                                </p>
+                                                <p class="c_0095ff set_font13">
+                                                    입금 ￦1,041,000
+                                                </p>
+                                            </span>
+                                            <div class="my_yes_num">
+                                                <span>
+                                                    <b class="c_ff684a">▼ 10%</b>
+                                                    <b>￦16,630,000</b>
+                                                </span>
+                                                <span class="c_ff684a set_font13">
+                                                    출금 ￦1,041,000
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="my_total">
+                                        <div class="my_chart3"></div>
+                                    </div>
+                                    <div class="my_rank set_mgt11">
+                                        <p>입금랭킹 TOP3는?</p>
+                                        <div class="my_rank_cell">
+                                            <div class="my_rank_con">
+                                                <div>
+                                                    <i class="ico_cen rank1"></i>
+                                                    <p class="elipsis">웹케시</p>
+                                                </div>
+                                                <span>
+                                                    <p>현금</p>
+                                                    <b>￦130,000,000</b>
+                                                </span>
+                                            </div>
+                                            <div class="my_rank_con">
+                                                <div>
+                                                    <i class="ico_cen rank2"></i>
+                                                    <p class="elipsis">큐앤큐인터내셔널브랜드</p>
+                                                </div>
+                                                <span>
+                                                    <p>세금계산서</p>
+                                                    <b>￦13,000,000</b>
+                                                </span>
+                                            </div>
+                                            <div class="my_rank_con">
+                                                <div>
+                                                    <i class="ico_cen rank3"></i>
+                                                    <p class="elipsis">동산캐스팅철강</p>
+                                                </div>
+                                                <span>
+                                                    <p>카드</p>
+                                                    <b>￦130,000</b>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="my_unclass">
+                                            <span>어제 내역 중 <b>미분류</b>로 남아있는 매입은 <b>10건</b> 입니다. <br>
+                                                가장 많이 사용한 용도는 <b class="c_0095ff">매입세금 5건</b> 입니다.</span>
+                                        </div>
+                                    </div>
+                                    <div class="my_rank">
+                                        <p>출금랭킹 TOP3는?</p>
+                                        <div class="my_rank_cell">
+                                            <div class="my_rank_con">
+                                                <div>
+                                                    <i class="ico_cen rank1"></i>
+                                                    <p class="elipsis">웹케시</p>
+                                                </div>
+                                                <span>
+                                                    <p>현금</p>
+                                                    <b>￦130,000,000</b>
+                                                </span>
+                                            </div>
+                                            <div class="my_rank_con">
+                                                <div>
+                                                    <i class="ico_cen rank2"></i>
+                                                    <p class="elipsis">큐앤큐인터내셔널브랜드</p>
+                                                </div>
+                                                <span>
+                                                    <p>세금계산서</p>
+                                                    <b>￦13,000,000</b>
+                                                </span>
+                                            </div>
+                                            <div class="my_rank_con">
+                                                <div>
+                                                    <i class="ico_cen rank3"></i>
+                                                    <p class="elipsis">동산캐스팅철강</p>
+                                                </div>
+                                                <span>
+                                                    <p>카드</p>
+                                                    <b>￦130,000</b>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="my_unclass">
+                                            <span>어제 내역 중 <b>미분류</b>로 남아있는 매입은 <b>10</b><b>건</b> 입니다.
+                                                가장 많이 사용한 용도는 <b class="c_ff684a">매입세금</b> <b class="c_ff684a">5</b><b
+                                                    class="c_ff684a">건</b>
+                                                입니다.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="my_stat_report sample ">
+                                <!-- show클래스로 제어 -->
+                                <span class="my_title sales">
+                                    <!-- 
+                  sales : 매출 보고서
+                  purchase : 매입 보고서
+                  flow : 현금흐름 보고서
+                 -->
+                                    <div class="my_title_l">
+                                        <p>매출보고서</p>
+                                        <i class="ico_cen"></i>
+                                    </div>
+                                    <div class="my_title_R">
+                                        <p class="my_c1_3"></p>
+                                        <i></i>
+                                    </div>
+                                </span>
+                                <div class="my_stat_all_con">
+                                    <!-- hide 클래스로 제어 -->
+                                    <!-- 2021-01-18 클래스 추가 -->
+                                    <div class="my_stat_con">
+                                        <div class="my_yesterday">
+                                            <div class="my_yes_title_l">
+                                                <span class="my_yes_pur">전일대비 어제매출은?</span>
+                                                <div class="my_yes_num">
+                                                    <span>
+                                                        <b class="c_0095ff">▲ 10%</b>
+                                                        <b>￦16,630,000</b>
+                                                    </span>
+                                                    <b>
+                                                    </b>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="my_chart1">
+                                        </div>
+                                        <div class="my_rank">
+                                            <p>매출랭킹 TOP3는?</p>
+                                            <div class="my_rank_cell">
+                                                <div class="my_rank_con">
+                                                    <div>
+                                                        <i class="ico_cen rank1"></i>
+                                                        <p class="elipsis">웹케시</p>
+                                                    </div>
+                                                    <span>
+                                                        <p>카드</p>
+                                                        <b>￦130,000,000</b>
+                                                    </span>
+                                                </div>
+                                                <div class="my_rank_con">
+                                                    <div>
+                                                        <i class="ico_cen rank2"></i>
+                                                        <p class="elipsis">큐앤큐인터내셔널브랜드</p>
+                                                    </div>
+                                                    <span>
+                                                        <p>세금계산서</p>
+                                                        <b>￦13,000,000</b>
+                                                    </span>
+                                                </div>
+                                                <div class="my_rank_con">
+                                                    <div>
+                                                        <i class="ico_cen rank3"></i>
+                                                        <p class="elipsis">동산캐스팅철강</p>
+                                                    </div>
+                                                    <span>
+                                                        <p>현금</p>
+                                                        <b>￦130,000</b>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- 2021-01-20 my_unclass 클래스, 내용 삭제 -->
+
+                                        <div class="my_stat_bottom">
+                                            <div class="my_area">
+                                                <div class="my_area_cell">
+                                                    <p>우리 지역 매출 추이는?</p>
+                                                    <div>
+                                                        <p class="my_area_text">
+                                                            <b>서울</b>지역 <em>999</em>명 기준
+                                                            매출은<br> 전일대비
+                                                            <b class="c_ff684a">50%</b><b class="c_ff684a">감소</b>했습니다.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <span class="c_ff684a won_r">-50</span>
+                                                <!--
+                        2021-01-07 
+                        won_r, percent_r 빨간색 ￦, 퍼센트 %
+                        won_b, percent_b 파란색 ￦, 퍼센트 %
+                      -->
+                                            </div>
+                                            <div class="my_area">
+                                                <div class="my_area_cell">
+                                                    <p>내 고객 평균 객단가는?</p>
+                                                    <div>
+                                                        <p class="my_area_text">
+                                                            어제 총 매출 / <b>50건</b>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <span class="won">50,000</span>
+                                                <!-- 
+                        2021-01-07
+                        won 검정색 ￦
+                        percent 검정색 %
+                       -->
+                                            </div>
+                                            <div class="my_area">
+                                                <p class="my_area_link">
+                                                    <span>📊</span>&nbsp;
+                                                    <span>최근 매출 내역 보러가기</span>
+                                                </p>
+                                                <!-- 
+                        2021-01-07
+                        won 검정색 ￦
+                        percent 검정색 %
+                       -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 2021-01-21 보고서 준비 내용 -->
+                                <div class="my_stat_all_con hide">
+                                    <div class="my_stat_box">
+                                        <div class="ico_cen my_stat_ready"></div>
+                                        <span>매출 보고서가 준비중입니다.</span>
+                                        <p>최초 연결일인 경우 또는 전일 매출이
+                                            발생하지 않은 경우는 데이터가
+                                            부족해 보고서가 보이지 않습니다.</p>
+                                        <p class="my_area_link">
+                                            <span>📊</span>&nbsp;
+                                            <span>샘플 보기&gt;</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <!--// 2021-01-21 보고서 준비 내용 -->
+                            </div>
+                            <div class="my_stat_report hide">
+                                <!-- hide클래스로 제어 -->
+                                <span class="my_title purchase">
+                                    <!-- 
+                  sales : 매출 보고서
+                  purchase : 매입 보고서
+                  flow : 현금흐름 보고서
+                 -->
+                                    <div class="my_title_l">
+                                        <p>매입보고서</p>
+                                        <i class="ico_cen"></i>
+                                    </div>
+                                    <div class="my_title_R">
+                                        <p class="my_c1_3">20.12.30 13:55:46</p>
+                                        <i class="ico_cen"></i>
+                                    </div>
+                                </span>
+                                <div class="my_stat_all_con">
+                                    <div class="my_stat_con ready">
+                                        <div class="my_yesterday">
+                                            <div class="my_yes_title_l">
+                                                <span>
+                                                    <p class="my_yes_pur">
+                                                        전일대비 어제매입은?
+                                                    </p>
+                                                    <p>
+                                                        총 매입
+                                                    </p>
+                                                </span>
+                                                <div class="my_yes_num">
+                                                    <span>
+                                                        <b class="c_ff684a">▼ 10%</b>
+                                                        <b>￦16,630,000</b>
+                                                    </span>
+                                                    <b>
+                                                        999건
+                                                    </b>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="my_total">
+                                            <div class="my_chart2"></div>
+                                            <div class="my_total_list">
+                                                <div class="my_total_cell">
+                                                    <span>
+                                                        <span>
+                                                            <div class="c_card"></div>
+                                                            <p>카드 <b>99</b>건</p>
+                                                        </span>
+                                                        <b>￦130,000,000</b>
+                                                    </span>
+                                                    <span>
+                                                        <span>
+                                                            <div class="c_tax"></div>
+                                                            <p>세금계산서 <b>99</b>건</p>
+                                                        </span>
+                                                        <b>￦300,000</b>
+                                                    </span>
+                                                    <span>
+                                                        <span>
+                                                            <div></div>
+                                                            <p>현금영수증 <b>99</b>건</p>
+                                                        </span>
+                                                        <b>￦1,000,000</b>
+                                                    </span>
+                                                    <span>
+                                                        <span>
+                                                            <div></div>
+                                                            <p>계산서 <b>99</b>건</p>
+                                                        </span>
+                                                        <b>￦130,000,000</b>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="my_rank">
+                                            <p>매입랭킹 TOP3는?</p>
+                                            <div class="my_rank_cell">
+                                                <div class="my_rank_con">
+                                                    <div>
+                                                        <i class="ico_cen rank1"></i>
+                                                        <p class="elipsis">웹케시</p>
+                                                    </div>
+                                                    <span>
+                                                        <p>현금</p>
+                                                        <b>￦130,000,000</b>
+                                                    </span>
+                                                </div>
+                                                <div class="my_rank_con">
+                                                    <div>
+                                                        <i class="ico_cen rank2"></i>
+                                                        <p class="elipsis">큐앤큐인터내셔널브랜드</p>
+                                                    </div>
+                                                    <span>
+                                                        <p>세금계산서</p>
+                                                        <b>￦13,000,000</b>
+                                                    </span>
+                                                </div>
+                                                <div class="my_rank_con">
+                                                    <div>
+                                                        <i class="ico_cen rank3"></i>
+                                                        <p class="elipsis">동산캐스팅철강</p>
+                                                    </div>
+                                                    <span>
+                                                        <p>카드</p>
+                                                        <b>￦130,000</b>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="my_unclass">
+                                            <span>어제 내역 중 <b class="c_ff684a">세금계산서 매입 <b>10</b>건</b>으로 가장 많이
+                                                발생했습니다.</span>
+                                        </div>
+                                        <div class="my_rank">
+                                            <span>
+                                                <p>주요 사용처 TOP5는?</p>
+                                            </span>
+                                            <div class="my_rank_cell">
+                                                <div class="my_rank_con">
+                                                    <div>
+                                                        <i class="ico_cen rank1"></i>
+                                                        <p class="elipsis">구입 <b>55</b>건</p>
+                                                    </div>
+                                                    <span>
+                                                        <p></p>
+                                                        <b></b>
+                                                    </span>
+                                                </div>
+                                                <div class="my_rank_con">
+                                                    <div>
+                                                        <i class="ico_cen rank2"></i>
+                                                        <p class="elipsis">차랑유지 <b>12</b>건</p>
+                                                    </div>
+                                                    <span>
+                                                        <p></p>
+                                                        <b></b>
+                                                    </span>
+                                                </div>
+                                                <div class="my_rank_con">
+                                                    <div>
+                                                        <i class="ico_cen rank3"></i>
+                                                        <p class="elipsis">매입세금계산서발행 <b>5</b>건</p>
+                                                    </div>
+                                                    <span>
+                                                        <p></p>
+                                                        <b></b>
+                                                    </span>
+                                                </div>
+                                                <div class="my_rank_con">
+                                                    <div>
+                                                        <i class="ico_cen rank4"></i>
+                                                        <p class="elipsis">개인용도 <b>3</b>건</p>
+                                                    </div>
+                                                    <span>
+                                                        <p></p>
+                                                        <b></b>
+                                                    </span>
+                                                </div>
+                                                <div class="my_rank_con">
+                                                    <div>
+                                                        <i class="ico_cen rank5"></i>
+                                                        <p class="elipsis">현금영수증 <b>1</b>건</p>
+                                                    </div>
+                                                    <span>
+                                                        <p></p>
+                                                        <b></b>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="my_unclass">
+                                            <span>어제 내역 중 용도를 설정한 총 <b><b>157</b>건</b> 중 미분류로 남아있는
+                                                매입은 <b><b>10</b>건</b> 입니다. <br>
+                                                가장 많이 사용한 용도는 <b class="c_ff684a">구입 <b>55</b>건</b> 입니다.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- ========================보고서 영역 끝========================= -->
+
+                <div class="my_meun">
+                    <div class="my_cont_list">
+                        <div class="my_cont_cell ssm">
+                            <div class="my_cont_text">
+                                <span>
+                                    <p>
+                                        근태관리
+                                        <!-- my_info_ico 클래스 추가 → 물음표 아이콘 -->
+                                    </p>
+                                </span>
+                            </div>
+                            <span class="my_cont_num">
+                                <span class="show">요청 <b>5건</b></span><!-- show클래스로 제어 -->
+                                <p>근무중</p>
+                                <b><b>3</b>명</b>
+                            </span>
+                            <div class="ico_cen my_chevy"></div>
+                            <!-- 
+                my_chevy 기본값 아래 화살표
+                my_chevy up 위 화살표
+             -->
+                        </div>
+                        <!-- 
+             2021-02-19
+             my_alarm 클래스 삭제 
+          -->
+                    </div>
+                </div>
+                <div class="my_num_wrap" style="display: none;">
+                    <!-- my_num_wrap 클래스 추가 -->
+                    <div class="my_num_wrap_bg">
+                        <!--  my_num_wrap_bg 클래스 추가 show 클래스로 제어
+          -->
+                        <span>직원 등록하기</span>
+                        <i class="ico_cen"></i>
+                    </div>
+                    <div class="my_num_status on">
+                        <!-- hide 클래스로 제어 -->
+                        <i class="ico_cen"></i>
+                        <p class="on">최신</p><!-- on, off 클래스로 제어 -->
+                        <span>20.12.30 13:55:46</span>
+                        <div class="ico_cen"></div>
+                    </div>
+                    <div class="my_num_result">
+                        <div class="my_number">
+                            <!-- 
+            .my_number on클래스로 .my_alarm 여백 제어 
+          -->
+                            <div class="my_number_cell">
+                                <div class="my_number_cell_title">
+                                    <!--
+                2021-03-12
+                 my_number_cell_title 클래스 추가
+                 -->
+                                    <p>근무중</p>
+                                    <b>8/10명</b>
+                                </div>
+                                <div class="my_number_cell_title">
+
+
+                                    <!--
+                2021-03-12
+                 my_number_cell_title 클래스 추가
+                 -->
+                                    <p>퇴근</p>
+                                    <b>0명</b>
+                                </div>
+                                <div class="my_number_cell_title">
+                                    <!--
+                2021-03-12
+                 my_number_cell_title 클래스 추가
+                 -->
+                                    <p>근무중</p>
+                                    <b>1명</b>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="my_meun">
+                    <div class="my_cont_list">
+                        <div class="my_cont_cell ssm">
+                            <div class="my_cont_text">
+                                <span>
+                                    <p>
+                                        제로페이매출
+                                        <!-- my_info_ico 클래스 추가 → 물음표 아이콘 -->
+                                    </p>
+                                </span>
+                            </div>
+                            <span class="my_cont_num">
+                                <p></p>
+                                <b><b>1,500,000원</b></b>
+                            </span>
+                            <!-- 2020-12-02 my_i_re 클래스 추가,  hide클래스로 제어 -->
+                            <div class="ico_cen my_chevy"></div>
+                            <!-- 
+              my_chevy 기본값 아래 화살표
+              my_chevy up 위 화살표
+             -->
+                        </div>
+
+                        <div class="my_alarm hide">
+                            <!--
+              hide 클래스로 삭제 
+            -->
+                            <div class="ico_cen my_alarm_img mai_2"></div>
+                            <p>카드 정보 등록하기</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="my_num_wrap" style="display: none;">
+                    <div class="my_num_wrap_bg">
+                        <!-- 
+            my_num_wrap_bg 클래스 추가 
+            show 클래스로 제어
+          -->
+                        <span>카드매출 등록하기</span>
+                        <i class="ico_cen"></i>
+                    </div>
+                    <div class="my_num_status">
+                        <!-- hide 클래스로 제어 -->
+                        <i class="ico_cen"></i>
+
+                        <p class="off">최신</p><!-- on, off 클래스로 제어 -->
+                        <span>20.12.30 13:55:46</span>
+                        <div class="ico_cen"></div>
+                    </div>
+                    <div class="my_num_result">
+                        <!-- 2021-03-12 내용수정 -->
+                        <div class="my_number">
+                            <!-- width310클래스 삭제 -->
+                            <!-- 
+          .my_number on클래스로 .my_alarm 여백 제어 
+        -->
+                            <!-- 
+          .my_number on클래스로 .my_alarm 여백 제어 
+        -->
+                            <div class="my_number_cell">
+                                <div class="my_number_cell_title">
+                                    <!--
+          2021-03-12
+           my_number_cell_title 클래스 추가
+           -->
+                                    <p>어제 승인내역 <em>91</em>건</p>
+                                    <b>￦ 2,300,000</b>
+                                </div>
+                                <div class="my_number_cell_title">
+                                    <!--
+          2021-03-12
+           my_number_cell_title 클래스 추가
+           -->
+                                    <p>오늘 입금예정 <em>84</em>건</p>
+                                    <b>￦ 2,230,000</b>
+                                </div>
+                                <div class="my_number_cell_title">
+                                    <!--
+          2021-03-12
+           my_number_cell_title 클래스 추가
+           -->
+                                    <p>오늘 입금확인 <em>59</em>건</p>
+                                    <b>￦ 1,500,000</b>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="my_meun">
+                    <div class="my_cont_list">
+                        <div class="my_cont_cell ssm">
+                            <div class="my_cont_text">
+                                <span>
+                                    <p>
+                                        건강보험매출
+                                        <!-- my_info_ico 클래스 추가 → 물음표 아이콘 -->
+                                    </p>
+                                </span>
+                            </div>
+                            <span class="my_cont_num">
+                                <p></p>
+                                <b><b>1,500,000원</b></b>
+                            </span>
+                            <div class="ico_cen my_chevy"></div>
+                            <!-- 
+              my_chevy 기본값 아래 화살표
+              my_chevy up 위 화살표
+             -->
+                        </div>
+                        <div class="my_alarm hide">
+                            <!-- 
+              my_number, my_alarm hide클래스로 제어 
+            -->
+                            <div class="ico_cen my_alarm_img mai_3"></div>
+                            <p>건강보험 정보 등록하기</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="my_meun">
+                    <div class="my_cont_list">
+                        <div class="my_cont_cell ssm">
+                            <div class="my_cont_text">
+                                <span>
+                                    <p>
+                                        배달앱매출
+                                        <!-- my_info_ico 클래스 추가 → 물음표 아이콘 -->
+                                    </p>
+                                </span>
+                            </div>
+                            <span class="my_cont_num">
+                                <p></p>
+                                <b><b>1,500,000원</b></b>
+                            </span>
+                            <div class="ico_cen my_chevy"></div>
+                            <!-- 
+              my_chevy 기본값 아래 화살표
+              my_chevy up 위 화살표
+             -->
+                        </div>
+                        <div class="my_alarm hide">
+                            <!-- 
+              my_number, my_alarm hide클래스로 제어 
+            -->
+                            <div class="ico_cen my_alarm_img mai_3"></div>
+                            <p>건강보험 정보 등록하기</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="my_num_wrap" style="display: none;">
+                    <!-- my_num_wrap 클래스 추가 -->
+                    <div class="my_num_wrap_bg">
+                        <!-- 
+            my_num_wrap_bg 클래스 추가 
+            show 클래스로 제어
+          -->
+                        <span>건강보험정보 등록하기</span>
+                        <i class="ico_cen"></i>
+                    </div>
+                    <div class="my_num_status">
+                        <!-- hide 클래스로 제어 -->
+                        <i class="ico_cen"></i>
+
+                        <p class="on">최신</p><!-- on, off 클래스로 제어 -->
+                        <span>20.12.30 13:55:46</span>
+                        <div class="ico_cen"></div>
+                    </div>
+                    <div class="my_num_result">
+
+                        <div class="my_number">
+                            <!-- 
+           .my_number on클래스로 .my_alarm 여백 제어 
+         -->
+                            <!-- 
+            2020-12-02 width160 클래스 추가
+            2021-03-12 width160 클래스 삭제
+              
+          -->
+                            <div class="my_number_cell">
+                                <div class="my_number_cell_title">
+                                    <!--
+                    2021-03-12
+                     my_number_cell_title 클래스 추가
+                     -->
+                                    <b>이번 달 <b> 75</b>건</b>
+                                    <b>￦ 5,870,000</b>
+                                </div>
+                                <div class="my_detail_cell">
+                                    <!--
+                    2021-03-12
+                     my_detail_cell 클래스 추가
+                     -->
+                                    <span>- 요양 <em> 50</em>건</span>
+                                    <em>￦3,200,000</em>
+                                </div>
+                                <div class="my_detail_cell">
+                                    <!--
+                    2021-03-12
+                     my_detail_cell 클래스 추가
+                     -->
+                                    <span>- 의료 <em>25</em>건</span>
+                                    <em>￦2,670,000</em>
+                                </div>
+                            </div>
+                            <div class="my_number_cell">
+                                <div class="my_number_cell_title">
+                                    <!--
+                    2021-03-12
+                     my_number_cell_title 클래스 추가
+                     -->
+                                    <b>지난 달 <b> 75</b>건</b>
+                                    <b>￦3,200,950</b>
+                                </div>
+                                <div class="my_detail_cell">
+                                    <!--
+                    2021-03-12
+                     my_detail_cell 클래스 추가
+                     -->
+                                    <span>- 요양 <em>50</em>건</span>
+                                    <em>￦1,500,900</em>
+                                </div>
+                                <div class="my_detail_cell">
+                                    <!--
+                    2021-03-12
+                     my_detail_cell 클래스 추가
+                     -->
+                                    <span>- 의료 <em>25</em>건</span>
+                                    <em>￦1,700,050</em>
+                                </div>
+                            </div>
+                            <div class="my_number_cell">
+                                <div class="my_number_cell_title">
+                                    <!--
+                    2021-03-12
+                     my_number_cell_title 클래스 추가
+                     -->
+                                    <b>올해 누적<b> 1240</b>건</b>
+                                    <b>￦53,200,950</b>
+                                </div>
+                                <div class="my_detail_cell">
+                                    <!--
+                    2021-03-12
+                     my_detail_cell 클래스 추가
+                     -->
+                                    <span>- 요양 <em>540</em>건</span>
+                                    <em>￦11,500,900</em>
+                                </div>
+                                <div class="my_detail_cell">
+                                    <!--
+                    2021-03-12
+                     my_detail_cell 클래스 추가
+                     -->
+                                    <span>- 의료 <em>25</em>건</span>
+                                    <em>￦41,000,050</em>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="my_num_wrap" style="display: none;">
+                    <!-- my_num_wrap 클래스 추가 -->
+                    <div class="my_num_wrap_bg">
+                        <!-- 
+           my_num_wrap_bg 클래스 추가 
+           show 클래스로 제어
+            -->
+                        <span>배달앱매출 등록하기</span>
+                        <i class="ico_cen"></i>
+                    </div>
+                    <div class="my_num_status">
+                        <!-- hide 클래스로 제어 -->
+                        <i class="ico_cen"></i>
+
+                        <p class="on">최신</p><!-- on, off 클래스로 제어 -->
+                        <span>20.12.30 13:55:46</span>
+                        <div class="ico_cen"></div>
+                    </div>
+                    <div class="my_num_result">
+                        <div class="my_number">
+                            <!-- 
+           .my_number on클래스로 .my_alarm 여백 제어 
+         -->
+                            <!-- 
+            2020-12-02 width160 클래스 추가
+            2021-03-12 width160 클래스 삭제
+              
+          -->
+                            <div class="my_number_cell">
+                                <div class="my_number_cell_title">
+                                    <!--
+                    2021-03-12
+                     my_number_cell_title 클래스 추가
+                     -->
+                                    <b>이번 달 <b> 210</b>건</b>
+                                    <b>￦7,800,970</b>
+                                </div>
+                                <div class="my_detail_cell">
+                                    <!--
+                    2021-03-12
+                     my_detail_cell 클래스 추가
+                     -->
+                                    <span>- 배민 <em> 180</em>건</span>
+                                    <em>￦7,000,070</em>
+                                </div>
+                                <div class="my_detail_cell">
+                                    <!--
+                    2021-03-12
+                     my_detail_cell 클래스 추가
+                     -->
+                                    <span>- 요기요 <em>13</em>건</span>
+                                    <em>￦400,000</em>
+                                </div>
+                                <div class="my_detail_cell">
+                                    <!--
+                    2021-03-12
+                     my_detail_cell 클래스 추가
+                     -->
+                                    <span>- 배달통 <em>17</em>건</span>
+                                    <em>￦400,900</em>
+                                </div>
+                            </div>
+                            <div class="my_number_cell">
+                                <div class="my_number_cell_title">
+                                    <!--
+                    2021-03-12
+                     my_number_cell_title 클래스 추가
+                     -->
+                                    <b>지난 달 <b> 188</b>건</b>
+                                    <b>￦3,200,950</b>
+                                </div>
+                                <div class="my_detail_cell">
+                                    <!--
+                    2021-03-12
+                     my_detail_cell 클래스 추가
+                     -->
+                                    <span>- 배민 <em>115</em>건</span>
+                                    <em>￦7,000,070</em>
+                                </div>
+                                <div class="my_detail_cell">
+                                    <!--
+                    2021-03-12
+                     my_detail_cell 클래스 추가
+                     -->
+                                    <span>- 요기요 <em>63</em>건</span>
+                                    <em>￦450,000</em>
+                                </div>
+                                <div class="my_detail_cell">
+                                    <!--
+                    2021-03-12
+                     my_detail_cell 클래스 추가
+                     -->
+                                    <span>- 배달통 <em>63</em>건</span>
+                                    <em>￦554,000</em>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="ml_plus">
+                <i class="plus"></i> 즐겨찾는 메뉴 편집
+                <!--
+          2021-03-12 
+          문구수정
+        -->
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>

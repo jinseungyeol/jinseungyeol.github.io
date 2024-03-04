@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<title>세모리포트</title>
+<link rel="stylesheet" href="../css/reset_taxp.css">
+<link rel="stylesheet" href="../css/app_header.css"><!-- [D] 세무대리인용 header -->
+<link rel="stylesheet" href="../css/content_taxp.css"><!-- [D] 세무대리인용 -->
+
+<!-- custom scrollbar plugin css -->
+<link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+  <script src="../js/lib/jquery/jquery-1.12.4.min.js"></script>
+<script src="../js/lib/jquery/jquery-ui-1.10.4.min.js"></script>
+<!-- custom scrollbar plugin -->
+<script src="../js/design/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../js/design/jquery.placeholder.min.js"></script>
+<script src="../js/lib/plugin/smart.popup.js"></script>
+<script src="../js/comm/common.js"></script>
+<script>
+$(function(){
+	// Invoke the plugin
+	$('input, textarea').placeholder({customClass:'my-placeholder'});
+});
+
+
+
+//직원추가가입 팝업
+function fn_joinPop(){
+	var $form = $("<form method='post'></form>");
+    open_smartPop({href: "./user_info_006.html", width:430, height:547, scrolling:false, target:window, frm:$form});
+}
+
+
+</script>
+
+</head>
+<body class=""><!-- [D] 메뉴영역(접기 : class="fold", 펼치기 : class="lnb_bg") -->
+
+<!-- 수임처 개선 -->
+<!-- header -->
+<div class="app_header">
+	<div class="app_header_inner">
+		<div class="ah_l">
+			<h1>세모리포트</h1>
+		</div>
+
+		<div class="ah_r">
+			<ul class="ah_menu mgt10">
+				<!-- 
+				<li style="position:absolute;top:-16px;left:-47px;"><a href="#none" class="btn_alarm" title="알림"><em class="alarm_num" style="display: none;"></em></a></li>
+				<li><a href="#none"><img src="../img/txof/app_header/ic_top04.png" alt="">SMS</a></li>
+				<li style="position:relative;">
+					<a href="https://academyserp.notion.site/4ee92f23a9184afda550d61faf10a5e3" target="_blink"><img src="../img/txof/app_header/ic_top05.png" alt="">메뉴얼</a>
+				</li>
+				<li><a href="#none"><img src="../img/txof/app_header/ic_top02.png" alt="">로그아웃</a></li>
+				-->
+				<li>
+					<span class="updateInfo">
+						<a href="#none">업데이트 안내
+							<span class="talk_conting_num" style="display: none;">N</span>
+						</a>
+					</span>
+				</li>
+				<li>
+					<!-- 알림 있을때 new 클래스 -->
+					<span class="weTalk newAlarm">
+						<a href="#none">We Talk
+							<span class="talk_conting_num" style="display: none;">N</span>
+						</a>
+					</span>
+				</li>
+				<li class="txtMenu">
+					<a href="https://qe398.channel.io/support-bots/50502" target="_blink">채팅상담</a>
+					<a href="https://semojangbu.notion.site/semojangbu/1fb5342cd4324ec99d471048fb437e92"
+						target="_blink">도움말</a>
+					<a href="http://report.semojangbu.com" target="_blink">공지사항</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<!-- //header -->
+<!-- //수임처 개선 -->
+
+<div class="wrap"><!-- [D] 상세검색일 경우(class="mh") -->
+	<!-- Container -->
+	<div class="container">
+		
+		
+
+
+		<!-- content -->
+		<div class="content">
+
+			
+			<div class="content_wrap">
+
+				<!-- 거래처조회 > 상세(회사정보) -->
+				<div class="cust_dv_wrap nobd"><!-- [D] 편집기능 눌렀을때 class="edit_on" 추가 -->
+
+					<div class="top_cust_tit">
+						<div class="left">
+							<div class="cntalign"><h1 class="ipt_none">미소야</h1></div>
+							<div class="cntalign">
+								<!-- 사업자번호/대표자/전화번호/팩스번호 -->
+								<ul class="top_list">
+									<li class="col1"><span class="ipt_none">311-88-00892</span>&nbsp;</li>
+									<li class="col2"><strong><span class="ipt_none">홍길동</span>&nbsp;대표</strong></li>
+								</ul>
+								<!-- //사업자번호/대표자/전화번호/팩스번호 -->
+							</div>
+						</div>
+						<div class="right">
+							<div class="cntalign">
+								<a class="btn_ico_back" href="#none"><span class="blind">뒤로가기</span></a>
+							</div>
+						</div>
+					</div>
+
+					<!-- 탭영역/버튼 -->
+					<div class="tabType02">
+						<!-- (modify)20220718 순서 변경 -->
+						<ul>
+							<li class="on"><a href="#none">가입정보조회</a></li>
+							<li><a href="#none">거래증빙</a></li>
+							<li><a href="#none">직원급여정보 <span class="flag_new">N</span></a></li>
+							<li><a href="#none">용도설정</a></li>
+						</ul>
+						<!-- //(modify)20220718 순서 변경 -->
+						<div class="right">
+							<a class="btn_style1_b " href="#none"><span>수정</span></a>
+						</div>
+					</div>
+					<!-- //탭영역/버튼 -->
+
+					<div class="cust_wrap cboth">
+						<div class="cust_dv_bx middle" style="display:;">
+							<h3 class="tit_bul mgb10"> 가입정보 (홍길동)</h3>
+
+							<!-- 주소/업태종목/메모/계좌정보 -->
+							<div class="tb_cust_dv cboth">
+								<table>
+									<colgroup>
+									<col width="160px">
+									<col>
+									</colgroup>
+									<tr>
+										<th scope="row"><div>대표자</div></th>
+										<td>
+											<div class="ipt_none">홍길동</div>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row"><div>사업자구분</div></th>
+										<td>
+											<div class="ipt_none">
+												<span>개인사업자</span> / <span>법인사업자</span> / <span>미분류</span>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row"><div>계약상태</div></th>
+										<td>
+											<div class="ipt_none">
+												<span>기장법인</span> / <span>신고법인</span> / <span>기장개인</span> / <span>신고개인</span> / <span>아웃소싱</span> / <span>자문계약</span> / <span>조세불복</span>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row"><div>과세유형</div></th>
+										<td>
+											<div class="ipt_none">
+												<span>일반</span> / <span>간이</span> / <span>면세</span> / <span>비영리</span> / <span>휴업</span> / <span>폐업</span> / <span>미분류</span>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row"><div>설치여부</div></th>
+										<td>
+											<div class="ipt_none">
+												<span>설치</span> / <span class="pdr20">미설치</span>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row"><div>가입일자</div></th>
+										<td>
+											<div class="ipt_none">2022-09-20 11:15</div>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row"><div>설치일자</div></th>
+										<td>
+											<div class="ipt_none">2022-09-20 11:20</div>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row"><div>휴대폰번호</div></th>
+										<td>
+											<div class="ipt_none">010-1234-1234</div>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row"><div>인증번호</div></th>
+										<td>
+											<div class="ipt_none">5675</div>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row"><div>비밀번호</div></th>
+										<td>
+											<div class="ipt_none"><a href="#none" class="t_hover_b">비밀번호 초기화</a></div>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row"><div>담당자 정보</div></th>
+										<td>
+											<div class="ipt_none">
+												<div class="ly_filter type10">
+													<!-- 셀렉트 버튼생성시 noSelect 클래스 제거 -->
+													<a href="#none" class="noSelect">김담당</a>
+													<ul class="ly_filter_inner" style="display:none; min-width:100px !important;width:100px !important;">
+														<li><a href="#none">김담당</a></li>
+														<li><a href="#none">로움세무회계</a></li>
+														<li><a href="#none">박담당</a></li>
+													</ul>
+												</div>
+												<span class="mgl25">010-1234-5678</span>
+												<span class="mgl25">* 세모리포트 앱에 표시됩니다.</span>
+											</div>
+											<div class="mgt10">
+												<span class="t_hover_blue">23.01.25 변경</span>
+												<span class="mgl10 t_hover_blue">김담당 (abcde)</span>
+											</div>
+										</td>
+									</tr>
+
+									
+
+									<tr>
+										<th scope="row"><div>사용자필드1</div></th>
+										<td>
+											<div class="ipt_none">
+												<!-- 수정시 readonly 삭제 -->
+												<input class="txt_g" type="text" value="미입력" readonly="readonly">
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row"><div>서비스 해지</div></th>
+										<td>
+											<div class="ipt_none">
+												서비스를 해지하시겠습니까? 
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row"></th>
+										<td>
+											<div class="ipt_none">
+												<div><a href="#none" class="btn_style_gray"><span>서비스 해지</span></a></div>
+											</div>
+										</td>
+									</tr>
+									<!-- 2023-03-29 새로운 테이블 생성  시작-->
+									<tr>
+										<th scope="row" style="vertical-align: top;">
+											<div>서비스 가입이력</div>
+										</th>
+										
+										<td>
+											<div class="shot_table" style="width: 300px;">
+												<table class="tbl_result">
+													<colgroup>
+														<col style="width: 150px;">
+														<col style="width: 120px;">
+														<col style="width: 120px;">
+														<col style="width: 120px;">
+													</colgroup>
+													<tbody>
+														<tr>
+															<th><div>처리일시</div></th>
+															<th><div>처리구분</div></th>
+															<th><div>이용상태</div></th>
+															<th><div>처리자</div></th>
+														</tr>
+														<tr>
+															<td>2023-02-16 15:25:54</td>
+															<td>완료</td>
+															<td>이용중</td>
+															<td>김말크</td>
+														</tr>
+														<tr>
+															<td>2023-02-16 15:25:54</td>
+															<td>완료</td>
+															<td>이용중</td>
+															<td>김말크</td>
+														</tr>
+														<tr>
+															<td>2023-02-16 15:25:54</td>
+															<td>완료</td>
+															<td>이용중</td>
+															<td>김말크</td>
+														</tr>
+													
+													</tbody>
+												</table>
+											</div>	
+										</td>
+									</tr>
+									<!-- 2023-03-29 새로운 테이블 생성 끝 -->
+
+									<!-- 사중 사용자가 있는 경우에만  2022-10-10 추가
+									<tr>
+										<th scope="row"><div>직원 추가가입</div></th>
+										<td>
+											<div class="ipt_none"><span>김길동</span> | <span>부장</span> | <span>010-1234-5678</span> | <span>roumit@roumit.com</span> | <img src="../img/txof/ico/ico_semoR_on.png" alt="">&nbsp;<a href="#none" class="t_hover_b">세모Report 해지</a></div>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row"><div></div></th>
+										<td>
+											<div class="ipt_none"><span>김길동</span> | <span>부장</span> | <span>010-1234-5678</span> | <span>roumit@roumit.com</span> | <img src="../img/txof/ico/ico_semoR_on.png" alt="">&nbsp;<a href="#none" class="t_hover_b">세모Report 해지</a></div>
+										</td>
+									</tr>
+									-->
+								</table>
+							</div><!-- //주소/업태종목/메모/계좌정보 -->
+						</div>
+					</div>
+				</div>
+				<!-- //거래처조회 > 상세(회사정보) -->
+
+			</div>
+		   <!-- //content_wrap -->
+		   <!-- 2023-03-29 수정 tac style 추가 시작-->
+			<div class="tac" style="padding-bottom: 50px;">
+				<a href="#none" class="btn_style_gray_big"><span>취소</span></a>&nbsp;&nbsp
+				<a href="#none" class="btn_style_big"><span>저장</span></a>
+			</div>
+			 <!-- 2023-03-29 수정 tac style 추가 끝 -->
+		</div>
+		<!-- //content -->
+		
+		
+		
+		
+
+	</div>
+	<!-- //Container -->
+
+
+
+
+	<!-- footer 추가 : 20180828 -->
+	<div class="footer">
+		<!-- Copy right -->
+		<div class="copyright_wrap">
+			<div class="copyright_box">
+				<p>Copyright(c) <strong>Webcash.</strong> All rights reserved.</p>
+			</div>
+			<div class="ft_menu"></div>
+		</div>
+		<!-- //Copy right -->
+	</div>
+	<!-- //footer -->
+</div>
+<!-- //wrap -->
+
+
+</body>
+</html>
+

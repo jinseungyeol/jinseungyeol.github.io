@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="user-scalable=yes, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+	<link rel="stylesheet" href="../../css/semo_cont.css">
+</head>
+<body>
+
+	<!-- content -->
+	<div class="content">
+      <!-- 2020-06-24 상단 타이틀 -->
+      <div class="title">직원관리</div>
+      <!-- //2020-06-24 상단 타이틀 -->
+		<div class="m_cont"><!-- 하단 버튼 있는경우 m_cont_pd 추가 -->
+
+			<div class="m_info_wrap m_cont_pd">
+				<div class="set_eylbx">
+          <table>
+            <colgroup><col style="width:72px;"><col></colgroup>
+            <tbody>
+              <tr>
+                <th class="vtc_al"><i class="c_red">*</i> 퇴사사유</th>
+                <td>
+                  <div class="rdbx type3">
+                    <label>
+                      <input type="radio" name="leave"> <!--수정시 선택된 사항 checked 속성 추가 or 클릭하면 활성화 -->
+                      <span>본인자진퇴사</span>
+                    </label>
+                    <label>
+                      <input type="radio" name="leave">
+                      <span>회사권고퇴사</span>
+                    </label>
+                    <label>
+                      <input type="radio" name="leave">
+                      <span>징계해고</span>
+                    </label>
+                    <label>
+                      <input type="radio" name="leave"> 
+                      <span>근무기간만료</span>
+                    </label>
+                    <label>
+                      <input type="radio" name="leave">
+                      <span>기타</span>
+                    </label>
+                    <label>
+                    </label>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th><i class="c_red">*</i> 퇴사일자</th>
+                <td>2019.05.31</td>
+              </tr>
+              <tr>
+                <th class="vtc_al"><i class="c_tran">*</i> 비고</th>
+                <td>
+                  <textarea placeholder="직원관련 메모를 작성하실 수 있습니다.">이사로 퇴사</textarea>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="set_attpht">
+            <table>
+              <tbody>
+                <tr>
+                  <th><i class="c_red">*</i> 첨부서류</th>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="pht_bx on"> <!-- 사진 첨부시 활성화 클래스 on-->
+                      <div class="pht_con"></div>
+                      <img class="att_pht" src="../img/fake_img3.png"/>
+                    </div>
+                    <div class="pht_bx">
+                      <div class="pht_con"></div>
+                      <img class="att_pht" src=""/>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+			</div>
+    </div>
+    
+		<!-- 하단 fix버튼 -->
+		<div class="btn_fix_botm">
+			<div class="inner">
+				<a>저장하기</a>
+			</div>
+		</div>
+		<!-- //하단 fix버튼 -->
+	</div>
+	<!-- //content -->
+
+</body>
+</html>

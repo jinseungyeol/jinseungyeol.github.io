@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60">
+    <defs>
+        <style>
+            .cls-2,.cls-3{fill:none}.cls-2{stroke:#222;stroke-linecap:round;stroke-linejoin:round;stroke-width:2px}.cls-3{stroke:#000}
+        </style>
+    </defs>
+    <g id="그룹_62647" data-name="그룹 62647" transform="translate(-330 -305)">
+        <path id="사각형_3399" data-name="사각형 3399" transform="translate(330 305)" style="fill:none" d="M0 0h60v60H0z"/>
+        <g id="그룹_20915" data-name="그룹 20915" transform="translate(-3.311 -1.072)">
+            <rect id="사각형_7664" data-name="사각형 7664" class="cls-2" width="56.745" height="39.806" rx="4.517" transform="translate(334.875 316.072)"/>
+            <path id="사각형_7665" data-name="사각형 7665" class="cls-2" transform="translate(334.875 323.639)" d="M0 0h56.745v8.079H0z"/>
+            <g id="그룹_62608" data-name="그룹 62608" transform="translate(342.116 340.176)">
+                <path id="사각형_16249" data-name="사각형 16249" class="cls-3" transform="translate(.508 3.773)" d="M0 0h15.4v.718H0z"/>
+                <path id="패스_47829" data-name="패스 47829" class="cls-3" d="M4.131 0 0 4.131l4.131 4.131.508-.507-3.624-3.624L4.639.508z"/>
+            </g>
+        </g>
+    </g>
+</svg>

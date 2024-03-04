@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30">
+    <defs>
+        <style>
+            .cls-1{fill:#222}
+        </style>
+    </defs>
+    <g id="그룹_56931" data-name="그룹 56931" transform="translate(-39.999 -284)">
+        <g id="ico_small_time_날짜_시계아이콘" data-name="ico_small_time_날짜 시계아이콘" transform="translate(40 284)">
+            <path id="패스_7286" data-name="패스 7286" class="cls-1" d="M1191.761 1084.08a15 15 0 1 1 15-15 15.017 15.017 0 0 1-15 15zm0-27.692a12.692 12.692 0 1 0 12.692 12.692 12.707 12.707 0 0 0-12.692-12.692z" transform="translate(-1176.762 -1054.08)"/>
+            <path id="패스_7287" data-name="패스 7287" class="cls-1" d="M1194.924 1068.476h-9.163v-9.4h2.411v6.985h6.752z" transform="translate(-1172.173 -1051.536)"/>
+        </g>
+    </g>
+</svg>

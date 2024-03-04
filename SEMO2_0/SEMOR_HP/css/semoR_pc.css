@@ -1,0 +1,733 @@
+@charset "utf-8";
+
+/* reset */
+@font-face {font-family: 'Pretendard'; font-weight: 400; src: url(../font/Pretendard-Regular.woff2) format('woff2');}
+@font-face {font-family: 'Pretendard'; font-weight: normal; src: url(../font/Pretendard-Medium.woff2) format('woff2');}
+@font-face {font-family: 'Pretendard'; font-weight: 600; src: url(../font/Pretendard-SemiBold.woff2) format('woff2');}
+@font-face {font-family: 'Pretendard'; font-weight: bold; src: url(../font/Pretendard-Bold.woff2) format('woff2');}
+
+html {position:relative;height:100%; scroll-behavior: auto}
+html,body {font-family:'Pretendard'; color:#111; font-weight:normal; -webkit-text-size-adjust:none;-moz-text-size-adjust:none; -ms-text-size-adjust:none; -webkit-tap-highlight-color:transparent; line-height: 1.5}
+html,body,div,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,address,cite,code,del,dfn,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,input,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video {margin:0; padding:0; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; -webkit-tap-highlight-color:transparent;-webkit-text-size-adjust:none; -webkit-touch-callout:none; -webkit-font-smoothing:antialiased; font-size: 15px; word-break: keep-all}
+body,button,h1,h2,h3,h4,h5,input,select,table,textarea {font-family:'Pretendard'; margin:0; padding:0}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,legend,select,input,textarea,p,blockquote,th,td,menu,button,a,span,strong,label,header,footer,section,article,aside,nav,hgroup,details,figure,figcaption {word-break:break-word; box-sizing:border-box;-moz-box-sizing:border-box; -webkit-box-sizing:border-box; -ms-box-sizing:border-box; word-break: keep-all} /* 여백을 포함한 사이즈 설정*/ 
+h1,h2,h3,h4,h5,h6,input,select,textarea,button,option {color:inherit; font-family:'Pretendard'; font-size:100%; font-weight:normal; word-break: keep-all}
+h1,h2,h3,h4,h5,h6,strong,b,th {font-weight:bold}
+em,var,address,i {font-style:normal}
+ul,ol,li {list-style:none}
+legend,fieldset,button,img {border:0}
+img {max-width:100%; vertical-align:top}
+input,select,textarea,button,label,strong,a,time {vertical-align:inherit}
+input,select,textarea,button,option {font-family:inherit; font-weight:inherit}
+input,select,textarea {appearance:none; -webkit-appearance:none; border-radius: 0; border: none}
+input:focus, textarea:focus {outline-style: none; box-shadow: none; border: 0px}
+textarea {resize:none; border: none}
+button,select,option {color:inherit; text-transform:none} 
+table {table-layout:fixed; width:100%; border-collapse:collapse; border-spacing:0} 
+button {background:none; cursor:pointer; white-space: nowrap; overflow:visible}
+a {color:inherit; font-size: inherit; text-decoration:none}
+
+/** important 정의 **/
+.pointColor {color: #17bf98 !important} /* 버튼 ( 혹시 모를 제휴사 분기처리 컬러 )*/
+.pointColor02 {color: #12997a !important} /* 영역강조 ( 혹시 모를 제휴사 분기처리 컬러 ) */
+.pointColor03 {color: #ff5353 !important} /* 출금 및 기한 색상 */
+.pointColor04 {color: #0088ff !important} /* 입금 */
+.pointColor05 {color: #111 !important}
+.pointColor06 {color: #a2a5ac !important}
+.pointColor07 {color: #017FA4 !important}
+.pointColor08 {color: #18ECA4 !important} /* 영역강조 ( 혹시 모를 제휴사 분기처리 컬러 ) */
+.pointBgColor {background: #17bf98 !important} /* 버튼 ( 혹시 모를 제휴사 분기처리 컬러 )*/
+.dB {display :block !important}
+.dIb {display: inline-block !important}
+.dN {display: none !important}
+.posR {position: relative !important}
+.posA {position: absolute !important}
+.mg0 {margin: 0 !important}
+.mgt0 {margin-top: 0 !important}
+.mgb0 {margin-bottom: 0 !important}
+.mgt15 {margin-top: 15px !important}
+.mgb25 {margin-bottom: 25px !important;}
+.pd0 {padding: 0 !important}
+.pdt0 {padding-top: 0 !important}
+.pdb0 {padding-bottom: 0 !important}
+.w35p {width: 35% !important}
+.w50p {width: 50% !important}
+.flex3_5 {flex: 3.5 !important}
+.taLeft {text-align: left !important}
+.taCenter {text-align: center !important}
+.taLeft {text-align: left !important}
+.taRight {text-align: right !important}
+.fontSize19 {font-size: 1.266rem !important}
+.bdNone {border: none !important}
+.fwNormal {font-weight:normal !important}
+.fwBold {font-weight:bold !important}
+
+/**************************************************
+
+	z-index 정리
+
+	header : 1100
+	popWrap : 1101
+
+**************************************************/
+
+/* setting */
+.blind {position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); border: 0; white-space: nowrap}
+.elipsis {display:block; overflow:hidden; white-space:nowrap; text-overflow:ellipsis}
+.clear:after {content:''; display:block; clear:both}
+
+/* wrap */
+section {position: relative}
+.wrapper {background: #fff}
+.inner {position: relative; max-width: 1440px; margin: 0 auto; padding: 0 20px}
+
+/* Loading */
+.loadingWrap {display: none; position: fixed; left: 0; right: 0; bottom: 0; top: 0; z-index: 1101;}
+.loadingWrap .dim {position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.5);}
+.loadingWrap .loadingInner {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);} 
+
+body.loading {overflow: hidden;}
+body.loading .loadingWrap {display: block;}
+
+/* title 정의 */
+h1.mainTit {font-size: 4.133rem; font-weight: bold} /* 리뉴얼 하면서 추가됨 */
+h1.defTit {font-size: 3.333rem; font-weight: bold}
+h2.defTit {font-size: 2.933rem; font-weight: bold}
+.subTit {font-size: 2.133rem; word-break: keep-all}
+
+/* Text 정의 */
+.defTxt {font-size: 1.6rem; color: #111; word-break: keep-all}
+.landingTxtWrap {margin-top: 27px}
+.areaLandingTxt span {font-size: 1.067rem; color: #adadad; transition: 0.3s}
+.areaLandingTxt + .areaLandingTxt {margin-top: 8px}
+.areaLandingTxt.active span {color: #000; text-decoration: underline}
+
+/* list 정의 */
+.dotList li {position: relative; padding-left: 14px; color: #8e8e8e; font-size: 1.333rem}
+.dotList li + li {margin-top: 20px}
+.dotList li::before {content: '·'; position: absolute; top: 0; left: 0; color: #8e8e8e}
+
+/* table 정의 */
+.tblPriceWrap .captionTxt {margin-bottom: 4px; text-align: right; font-size: 1.2rem}
+.tblPrice th {padding: 18px 0; background: #023056; color: #fff; border: 1px solid #fff; font-size: 1.333rem}
+.tblPrice td {border: 1px solid #D9D9D9; padding: 26px; font-size: 1.2rem; word-break: keep-all;}
+.tblPrice .focus {font-weight: bold}
+.tblPrice .infoTxt {display: block; color: #666; font-size: 1.133rem; padding: 0; background-image: none; /* app_header와 겹쳐서 별도 처리 */}
+
+/* button 정의 */
+button.disabled {background: #ebebeb !important; color: #c7c7c7 !important}
+a.disabled {background: #ebebeb !important; color: #c7c7c7 !important}
+.areaBodyBtn {display: flex; margin-bottom: 60px;}
+.areaBodyBtn button {height: 60px; line-height: 60px; padding: 0 30px; text-align: center; font-weight: 600; font-size: 1.266rem; border-radius: 7px; color: #fff; background-color: #17bf98}
+
+/* swiper 버튼 */
+.areaAutoBtn {position: relative; width: 15px; height: 18px; margin: 0 6px}
+.areaAutoBtn button {position: absolute; top: 2px; left: 0;}
+.areaSwiperBtn {margin-top: 30px; display: flex; justify-content: center; align-items: center}
+.swiper-pagination {position: static; width: fit-content !important}
+.swiper-pagination-bullet {width: 16px; height: 16px; margin: 0 6px -5px 6px !important; border: 1px solid #adadad; opacity: 1; background-color: #fff}
+.swiper-pagination-bullet-active {background-color: #17bf98; border: none}
+.btn-swiper-auto {opacity: 0; visibility: hidden} 
+.btn-swiper-auto.active {opacity: 1; visibility: visible} 
+
+/* input 정의 */
+input[type="text"].inputBox {width: 100%; height: 60px; line-height: 60px; padding: 16px; box-sizing: border-box; border-style: initial; border: initial; border-image: initial; background: initial; font-size: 1.6rem; border: 1px solid #c7c7c7; border-radius: 6px;}
+input[type="text"].inputBox::placeholder {color: #c7c7c7; font-size: 1.6rem; font-style: normal}
+input[type="text"].inputBox:focus {border: 1px solid #12997a}
+input[type="checkbox"] {width: 30px; height: 30px; border:1px solid #ced4da; border-radius: 6px; cursor: pointer}
+input[type="checkbox"]:checked {border: none; background: url(../img/ico_bg_check_square_on.png) center / contain}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {-webkit-text-fill-color: #000; -webkit-box-shadow: 0 0 0px 1000px #fff inset; box-shadow: 0 0 0px 1000px #fff inset}
+
+/* checkList */
+.checkList {width: fit-content; margin: 0 auto; text-align: left;}
+.checkList > li {padding-left: 52px; background: url(../img/ico_check_green.svg) no-repeat top 9px left / 32px;} 
+.checkList > li + li {margin-top: 14px;}
+.checkList > li p {font-size: 32px; color: #767676;} 
+.checkList > li p :is(.pointColor05, .pointColor02) {font-weight: 600;}
+
+/* header */
+.header {position: fixed; width: 100%; top: 0; left: 0; height: 80px; background: rgba(0,0,0,0.5); z-index: 1100; transition: .35s}
+.header .inner {padding-top: 25px}
+.header .areaLogo {float: left; display: flex;}
+.header.active .areaLogo .moveBzaq {color: #111}
+.header .gnb {float: right; transition: .35s;}
+.header .gnb li {display: inline-block}
+.header .gnb li.active a {color: #17BF98; font-weight: bold}
+.header .gnb li a {display: block; height: 30px; line-height: 30px; font-size: 1.333rem; color: #fff; transition: .35s}
+.header .gnb li + li a {margin-left: 60px}
+
+/* header Trigger */
+.header .trigger {display: none; position: absolute; top: 28px; right: 20px; width: 30px; height: 24px; transition: .35s; cursor: pointer;}
+.header .trigger span {position: absolute; left: 0; width: 100%; height: 4px; background: #fff; border-radius: 8px; transition: .35s;}
+.header .trigger span:nth-child(1) {top: 0;}
+.header .trigger span:nth-child(2) {top: 50%; transform: translateY(-50%);}
+.header .trigger span:nth-child(3) {bottom: 0;}
+
+/* header Active */
+.header.active {background: #fff; border-bottom: 1px solid #f5f5f5}
+.header.active .gnb li a {color: #111}
+.header.active .gnb li.active a {color: #12997a}
+.header.active .trigger span {background: #111;}
+
+/* header open */
+.header.open .trigger span:nth-child(1) {top: 50%; transform: rotate(45deg);}
+.header.open .trigger span:nth-child(2) {opacity: 0; visibility: hidden;}
+.header.open .trigger span:nth-child(3) {top: 50%; transform: rotate(-45deg);}
+
+/* footer */
+.footer {background: #343f55}
+.footer .inner {padding: 42px 20px}
+.footer .footerTop {display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px}
+.footer .footerTop .logo {width: 120px}
+.footer .footerTop .snsList li {display: inline-block}
+.footer .footerTop .snsList li + li {margin-left: 8px}
+.footer .footerTop .snsList li a {display: block; opacity: .6; transition: .35s}
+.footer .footerTop .snsList li:hover a {opacity: 1} 
+.footer .infoWrap .info {font-size: 1.2rem}
+.footer .infoWrap .divide {margin: 0 5px}
+.footer .areaInfo :is(.info, .divide, .copyright) {color: #949eb2}
+.footer .areaInfo .copyright {font-size: 1.2rem}
+.footer .areaTerms {margin-top: 40px; color: #949eb2; font-size: 1.2rem}
+.footer .areaTerms button {transition: .35s}
+.footer .areaTerms button:hover {opacity: .5}
+.footer .areaTerms .divide {margin: 0 6px}
+.footer .areaTerms .terms02 {color: #fff; font-weight: 600}
+
+/* areaFloatBtn */
+.areaFloatBtn {position: fixed; bottom: 5.208vw; right: 7.813vw; z-index: 999}
+.areaFloatBtn .btnConsult {padding: 20px 44px; color: #fff; background: #12997a; border-radius: 60px; font-size: 1.867rem; box-shadow: 0 8px 20px rgba(0,0,0,0.2)}
+
+/* land_inrt_001C 인증서 하이패스 */
+.semoReptWrap {display: flex; flex-direction: column; justify-content: space-between; height: 100vh}
+
+/* roundBox */
+.roundBoxWrap {margin-bottom: 42px}
+.roundBox {padding: 20px 25px; border-radius: 10px; background: #f9f9f9}
+
+/* areaNotice */
+.areaNotice {margin: 108px 0 78px}
+.areaNotice .defTit {margin-bottom: 66px}
+
+/* areaInput */
+.areaInput .areaContent {width: 640px}
+.areaInput .areaContent .areaInput {opacity: 0; visibility: hidden}
+.areaInput .areaContent .areaInput.active {opacity: 1; visibility: visible}
+.areaInput .areaContent .inputWrap {width: 50%; float: left; padding: 0 6px}
+.areaInput .areaContent .inputWrap:first-child {padding-left: 0px}
+.areaInput .areaContent .inputWrap:nth-child(2) {padding-right: 0px}
+.areaInput .areaContent .roundBoxWrap {padding-top: 36px}
+
+/* dotListMsg */
+.dotListMsg > li {position: relative; padding-left: 8px; font-size: 0.933rem; color: #adb0b7}
+.dotListMsg > li::before {content: '·'; position: absolute; top: 0px; left: 0}
+
+/************************************************ error.html ************************************************/
+.errCont {padding: 80px 0; overflow: hidden}
+
+/************************************************ index.html ************************************************/
+#intro h2.defTit {margin-bottom: 40px}
+#intro section:not(.secVisual) {padding: 250px 0}
+
+/* #intro : secVisual */
+#intro .secVisual {height: 100vh; overflow: hidden}
+#intro .secVisual .thumbnail {position: absolute; top: 0; left: 0; right: 0; bottom: 0}
+#intro .secVisual .thumbnail video {width: 100vw; height: 100%; object-fit: cover; pointer-events: none}
+#intro .secVisual .thumbnail video.moThum {display: none; pointer-events: none}
+#intro .secVisual .thumbnail::before {content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.4);}
+#intro .secVisual .inner {height: inherit}
+#intro .secVisual .txtBox {position: absolute; top: 30%; padding-left: 60px}
+#intro .secVisual .txtBox h1.mainTit {animation: slideRTL 0.5s linear both; margin-bottom: 40px; color: #fff}
+#intro .secVisual .txtBox .subTit {animation: slideRTL 0.5s 0.15s linear both; color: #fff}
+
+/* #intro : secIntro */
+#intro section.secIntro {padding: 500px 0}
+#intro .secIntro {text-align: center}
+#intro .secIntro h1.mainTit {font-weight: 400; margin-bottom: 70px}
+
+/* #intro : secAbout */
+#intro .secAbout {background: #fafafa}
+#intro .secAbout .aboutCnt {display: flex; align-items: center; justify-content: space-between}
+#intro .secAbout .aboutCnt .left .subTxt {color: #575757; font-size: 1.333rem; word-break: keep-all}
+#intro .secAbout .aboutCnt .left .moveGuide {display: inline-block; margin-top: 53px; padding: 20px 40px; font-size: 1.133rem; font-weight: 600; background: #fff; border-radius: 10px; border: 1px solid #e6e6e6}
+#intro .secAbout .aboutCnt .areaMockup {display: flex; align-items: center; gap: 70px}
+#intro .secAbout .aboutCnt .areaMockup .item {text-align: center}
+#intro .secAbout .aboutCnt .areaMockup .item .areaImg {display: flex; align-items: center; height: 495px}
+#intro .secAbout .aboutCnt .areaMockup .item .infoTxt {font-size: 1.333rem; color: #818181}
+#intro .secAbout .aboutCnt .areaMockup .item .infoTxt strong {display: block; color: #111; font-weight: 500; font-size: 1.866rem}
+
+/* #intro : secProduct */
+#intro .secProduct .areaTabMenu {margin: 0 auto; border-top: 1px solid #d1d1d1; border-bottom: 1px solid #d1d1d1}
+#intro .secProduct .areaTabMenu .tabList {display: flex; justify-content: center; align-items: center; gap: 6.295vw}
+#intro .secProduct .areaTabMenu .tabList .tabMenu {padding: 20px 0; font-size: 1.6rem; color: #c5c5c5}
+#intro .secProduct .tabPannelWrap {padding: 60px 0 130px}
+#intro .secProduct .tabPannelWrap .tabPannel {display: none; position: relative; align-items: center; justify-content: center; gap: 6.25vw}
+#intro .secProduct .tabPannelWrap .tabPannel .areaTxt .infoTxt {font-size: 1.467rem; word-break: keep-all; color: #767676;}
+#intro .secProduct .tabPannelWrap .tabPannel .areaTxt .infoTxt .fwBold {display: block; color: #111;}
+#intro .secProduct .tabPannelWrap .tabPannel .areaMockup img {max-width: 500px}
+
+/* #intro : secProduct Active */
+#intro .secProduct .areaTabMenu .tabList li.active .tabMenu {color: #111; font-weight: bold}
+#intro .secProduct .tabPannelWrap .tabPannel.active {display: flex; animation: slideRTL .35s linear both}
+
+/* #intro : secReview */
+#intro .secReview {background: #fafafa}
+#intro .secReview .inner {display: flex; justify-content: space-between; align-items: center; padding-bottom: 40px}
+#intro .secReview .left .rwTxtList > li {display: none;}
+#intro .secReview .left .rwTxtList > li.active {display: block;}
+#intro .secReview .left .subTxt {font-size: 1.3rem; color: #575757}
+#intro .secReview .left .swiper-navigation {display: flex; align-items: center; margin-top: 85px}#intro .secReview .left .swiper-navigation .taxAccWrap {margin: 0 60px; text-align: center}
+#intro .secReview .left .swiper-navigation .taxAccWrap .name {display: none; font-size: 1.867rem}
+#intro .secReview .left .swiper-button-next, #intro .secReview .left .swiper-button-prev {position: static; width: 43px; height: 50px; margin: unset; color: #fff; background: #17bf98; border-radius: 4px}
+#intro .secReview .left .swiper-button-next:after, #intro .secReview .left .swiper-button-prev:after {font-size: 30px}
+#intro .secReview .left .swiper-button-next.swiper-button-disabled, #intro .secReview .left .swiper-button-prev.swiper-button-disabled {opacity: 1; background: #e3e3e3}
+#intro .secReview .right {position: relative; max-width: 720px; text-align: center; border-radius: 20px; overflow: hidden;}
+#intro .secReview .right iframe {display: block; width: 100%; height: 390px}
+#intro .secReview .right .infoTxt {position: absolute; width: 100%; left: 50%; bottom: -40px; transform: translateX(-50%); color: #adb0b7; font-size: 1.333rem}
+
+/* #intro : secReview Active */
+#intro .secReview .left .swiper-navigation .taxAccWrap .name.active {display: block}
+
+#intro section.secCount {padding: 80px 0; background-color: #26427C;}
+#intro .secCount .countList ul { display: flex; justify-content:space-around; align-items: center; } 
+#intro .secCount .countList ul li { width: 33.33%; text-align: center; transition: all 0.5s ease-in-out; } 
+#intro .secCount .countList ul li span { font-size: 80px; font-weight: 600; color: #FFE34F; } 
+#intro .secCount .countList ul li span * {font-size: 80px;}
+#intro .secCount .countList ul li p { margin-top: 15px; font-size: 24px; font-weight: 400; color: #fff; letter-spacing: -2px; opacity: 0.8; } 
+#intro .secCount .countList ul li strong { font-size: 80px; font-weight: 600; color: #fff; vertical-align: -26px; } 
+
+/* #intro : secPartner */
+#intro section.secPartner {padding-bottom: 120px; overflow: hidden}
+#intro .secPartner h2.defTit {text-align: center; margin-bottom: 70px; font-weight: 500}
+#intro .secPartner h2.defTit p {font-size: 2.933rem; word-break: keep-all}
+#intro .secPartner .txtArea {margin-bottom: 200px; text-align: center;}
+#intro .secPartner .txtArea p {font-size: 32px;}
+#intro .secPartner .taxPartnerWrap .allTaxPartner {display: block; padding: 0 20px; text-align: center;}
+#intro .secPartner .taxPartnerWrap ul {display: none; animation: infiniteSlideLeft 100s linear infinite;}
+#intro .secPartner .taxPartnerWrap ul li {flex-shrink: 0; flex-basis: auto; margin-left: 40px;}
+#intro .secPartner .taxPartnerWrap + .taxPartnerWrap ul {margin-top: 40px; animation: infiniteSlideRight 100s linear infinite;}
+
+/************************************************ HP000.html ************************************************/
+#doctor section:not(.secVisual) {padding: 250px 0}
+
+/* #doctor : secVisual */
+#doctor .secVisual {height: 100vh; overflow: hidden}
+#doctor .secVisual .thumbnail {position: absolute; top: 0; left: 0; right: 0; bottom: 0}
+#doctor .secVisual .thumbnail video {width: 100vw; height: 100%; object-fit: cover; pointer-events: none}
+#doctor .secVisual .thumbnail video.moThum {display: none; pointer-events: none}
+#doctor .secVisual .thumbnail::before {content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.3)}
+#doctor .secVisual .inner {height: inherit}
+#doctor .secVisual .txtBox {position: absolute; top: 30%; padding-left: 60px}
+#doctor .secVisual .txtBox h1.mainTit {animation: slideRTL 0.35s 0.15s linear both; color: #fff}
+#doctor .secVisual .txtBox .subTit {margin-bottom: 40px; animation: slideRTL 0.35s linear both; color: #fff}
+
+/* #doctor : secIntro */
+#doctor section.secIntro {padding: 500px 0}
+#doctor .secIntro {text-align: center}
+#doctor .secIntro h1.mainTit {margin-bottom: 70px}
+
+/* #doctor : secNew */
+#doctor section.secNew {padding: 200px 0; height: 100vh; overflow: hidden}
+#doctor .secNew .thumbnail {position: absolute; top: 0; left: 0; right: 0; bottom: 0}
+#doctor .secNew .thumbnail video {width: 100vw; height: 100%; object-fit: cover; pointer-events: none}
+#doctor .secNew .thumbnail video.moThum {display: none; pointer-events: none}
+#doctor .secNew .thumbnail::before {content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.3)}
+#doctor .secNew .inner {display: flex; flex-direction: column; height: 100%; text-align: center}
+#doctor .secNew .areaTop {color: #fff}
+#doctor .secNew .areaTop .defTit {margin-bottom: 58px}
+#doctor .secNew .areaTop .infoTxt {font-size: 1.6rem}
+#doctor .secNew .provide {margin-top: auto; font-size: 2.133rem; color: #fff; font-weight: bold}
+
+/* #doctor : secUpgrade */
+#doctor section.secUpgrade {padding: 500px 0; background: #fbfbfb}
+#doctor .secUpgrade .defTit {margin-bottom: 100px; font-weight: 500; text-align: center}
+#doctor .secUpgrade .defTit .infoTxt {font-size: inherit}
+#doctor .secUpgrade .defTit .infoTxt > span {display: block} 
+#doctor .secUpgrade picture img {display: block; margin: 0 auto}
+
+/* #doctor : secSyndrome */
+#doctor section.secSyndrome {padding: 0}
+#doctor section.secSyndrome .syndromeCnt {display: flex; justify-content: flex-end; align-items: center}
+#doctor section.secSyndrome .areaLeft {display: flex; justify-content: center; width: 720px}
+#doctor section.secSyndrome .areaLeft p {margin-top: 40px; font-size: 2.533rem}
+#doctor section.secSyndrome .areaRight {width: 50vw; height: 100vh; background: url(../img/bg_secSyndrome.jpg) no-repeat center / cover}
+
+
+/* confirmMsg */
+.confirmMsg {position: relative; padding: 60px 0 35px; text-align: center}
+.noticeBox {padding: 25px 22px; margin: 0 20px; margin-bottom: 20px; background: #f9f9f9; border-radius: 19px}
+.noticeBox .txtArea {margin-top: 8px}
+.noticeBox .txtArea .subTxt {color: #85888d; font-size: 1rem}
+
+.footerWrap {padding: 15px 0; background:#222; user-select: text}
+.footerWrap .inner .areaTerms {margin-bottom: 10px}
+.footerWrap .inner .areaTerms a {color: #fff; font-size: 1.067rem; font-weight: bold}
+.footerWrap .inner .areaTerms a + a {margin-left: 10px}
+.footerWrap .inner .areaTerms .term02 {color: #878787}
+.footerWrap .inner .footerInfo {display: flex}
+.footerWrap .areaLogo {margin: 13px 20px 0 0}
+.footerWrap .areaLogo .logo {width: 100px}
+.footerWrap .footerInfo .footerBox span {color: #fff; font-size: 0.867rem; word-break: keep-all}
+.footerWrap .footerInfo .footerBox .copyright {color: #999}
+
+/* popWrap */
+.popWrap {display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1101}
+.dim {position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.7); font-size: 0}
+.popWrap .popInner {position: absolute; overflow: hidden; z-index: 1201}
+.popWrap .popInner .popTit h1 {font-size: 18px}
+.popWrap .popInner .popCont::-webkit-scrollbar {width: 5px}
+.popWrap .popInner .popCont::-webkit-scrollbar-thumb { background: #aaa; border-radius: 10px}
+.popWrap .popInner .popCont::-webkit-scrollbar-track {background-color: #f1f1f1;}
+.popWrap .popInner .popCont {overflow-y: auto; -webkit-overflow-scrolling: touch}
+
+/* 센터팝업 */
+.popWrap.centerLayer .popInner {max-width: 600px; width: calc(100% - 90px); top: 50%; left: 50%; transform: translate(-50%, -50%); border-radius: 20px}
+.popWrap.centerLayer .popInner .popTit {padding: 30px 20px 30px; text-align: center}
+.popWrap.centerLayer .popInner .popTit .errorCode {font-size: 15px; margin-bottom: 15px; color: #afafaf}
+.popWrap.centerLayer .popInner .popBtnWrap {display: flex; position: relative; background: #fff}
+.popWrap.centerLayer .popInner .popBtnWrap::before {content: ''; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 1px; height: 4.761vh; background: #939393}
+.popWrap.centerLayer .popInner .popBtnWrap button {flex: 1 1 100%; height: 5.5vh; font-size: 1.2rem; color: #5b5b5b}
+
+/* 신청폼 */
+/* 공통 */
+.applyWrap {padding-bottom: 100px}
+.applyWrap .formTit {font-size: 20px}
+
+/* 입력 */
+.applyWrap .formWrap .inner {max-width: 850px}
+.applyWrap .formWrap .areaFormTit {margin-top: 80px; text-align: center}
+.applyWrap .formWrap .areaFormTit strong {display: block; margin-bottom: 20px; font-size: 32px; font-weight: 600}
+.applyWrap .formWrap .areaFormTit p {font-size: 20px}
+.applyWrap .formWrap .areaFormTit p span {display: block}
+.applyWrap .formWrap .inputForm form {margin-top: 60px}
+.applyWrap .formWrap .inputForm .inputWrap {display: flex; align-items: center}
+.applyWrap .formWrap .inputForm .inputWrap .areaTit {flex-basis: 140px}
+.applyWrap .formWrap .inputForm .inputWrap .inputBox {flex: 1 1 0; display: flex; align-items: center}
+.applyWrap .formWrap .inputForm .inputWrap .inputBox input {width: 100%; padding: 18px 28px; border: 1px solid #ced4da; border-radius: 10px; font-size: 20px}
+.applyWrap .formWrap .inputForm .inputWrap .inputBox input::placeholder {color: #d8d8d8}
+.applyWrap .formWrap .inputForm .inputWrap .inputBox input:focus {border: 5px solid #ABDEC6; padding: 14px 24px}
+.applyWrap .formWrap .inputForm .inputWrap .inputBox textarea {width: 100%; padding: 18px 28px; border: 1px solid #ced4da; border-radius: 10px; font-size: 20px}
+.applyWrap .formWrap .inputForm .inputWrap .inputBox textarea::placeholder {color: #d8d8d8}
+.applyWrap .formWrap .inputForm .inputWrap .inputBox textarea:focus {padding: 14px 24px; border: 5px solid #ABDEC6}
+.applyWrap .formWrap .inputForm .inputWrap + .inputWrap {margin-top: 30px}
+.applyWrap .formWrap .inputForm .inputWrap.select {margin-top: 78px; justify-content: space-between}
+.applyWrap .formWrap .inputForm .inputWrap.select .areaTit {flex-basis: auto}
+.applyWrap .formWrap .areaFormTit .desc_wrap {
+    text-align: left;
+}
+.applyWrap .formWrap .areaFormTit .desc_wrap h2{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.applyWrap .formWrap .areaFormTit .desc_wrap .descTxt{
+    margin-bottom: 10px;
+}
+/* 셀렉트박스 */
+.selectBox {position: relative}
+.selectBox .selectItem {position: relative; display: flex; align-items: center; justify-content: space-between; width: 197px; height: 62px; padding: 0 24px; border: 1px solid #ced4da; border-radius: 10px; font-size: 20px; font-weight: 500; color: #d8d8d8; z-index: 2}
+.selectBox .selectItem input {width: 100%; color: #111}
+.selectBox .selectItem input:read-only {cursor: pointer}
+.selectBox .selectItem input:read-only::placeholder {color: #d8d8d8}
+.selectBox .selectItem img {width: 48px; margin-right: -14px}
+.selectBox .selectList {display: none; position: absolute; left: 4px;  right: 4px; top: 57px; border: 1px solid #ced4da; border-radius: 0 0 10px 10px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);  overflow: hidden; z-index: 1}
+.selectBox .selectList li + li {border-top: 1px solid #ced4da}
+.selectBox .selectList li a {display: block; height: 60px; padding-left: 24px; font-size: 20px; line-height: 60px; background: #fff}
+
+/* 셀렉트박스 active */
+.selectBox.active .selectItem {border: 5px solid #ABDEC6; padding: 5px 20px 5px 20px}
+.selectBox.active .selectList {display: block}
+
+/* 관심사 */
+.applyWrap .selectService .inner {max-width: 880px; padding: 0 20px}
+
+.selectService {margin: 80px 0}
+.selectService .formTit {display: block; margin-bottom: 30px}
+.selectService .serviceList li + li {margin-top: 20px}
+.selectService .serviceList li a {display: block; border: 1px solid #ced4da; padding: 20px; border-radius: 40px}
+.selectService .serviceList li a .content {display: flex; align-items: center; margin-left: 100px}
+.selectService .serviceList li a .content .left {height: 36px; margin-right: 10px}
+.selectService .serviceList li a .content .left .icon {display: inline-block; width: 36px; height: inherit}
+.selectService .serviceList li.rept a .content .left .icon {background: url(../img/ico_service01.png) no-repeat center / contain}
+.selectService .serviceList li.consult a .content .left .icon {background: url(../img/ico_service02.png) no-repeat center / contain}
+.selectService .serviceList li.busi a .content .left .icon {background: url(../img/ico_service03.png) no-repeat center / contain}
+.selectService .serviceList li.gvmt a .content .left .icon {background: url(../img/ico_service04.png) no-repeat center / contain}
+.selectService .serviceList li a .content .right {flex: 0 0 auto}
+.selectService .serviceList li a .content .right strong {display: inline-block; width: 200px; font-size: 24px; color: #888}
+.selectService .serviceList li a .content .right span {font-size: 20px; color: #a7a7a7}
+
+/* 관심사 active */
+.selectService .serviceList li.active a {background-color: #17bf98}
+.selectService .serviceList li.active a .content .left .icon {background-image: url(../img/ico_check_white.png) !important}
+.selectService .serviceList li.active a .content .right strong {color: #fff}
+.selectService .serviceList li.active a .content .right span {color: #b4ffdf}
+
+/* 안내사항 및 개인정보처리방침동의 */
+.agreeWrap {margin-bottom: 50px}
+.agreeWrap .infoBox {margin-top: 80px; padding: 30px 35px; background: #fbfbfb; border-radius: 10px}
+.agreeWrap .provide {display: flex; align-items: center; justify-content: center; padding: 50px 0}
+.agreeWrap .provide label {padding-left: 20px; font-size: 20px; cursor: pointer; user-select: none}
+.agreeWrap .areaSubmit {text-align: center}
+.agreeWrap .btnSubmit {width: 415px; height: 80px; line-height: 80px; background: #f9f9f9; border-radius: 100px; color: #d1d1d1; font-size: 28px; cursor: default} 
+.agreeWrap .btnSubmit.active {background: #373737; color: #fff; cursor: pointer}
+
+/* 세무사용 */
+.applyWrap.tax .selectService .serviceList li.rept a .content .left .icon {background: url(../img/ico_service05.png) no-repeat center / contain}
+.applyWrap.tax .selectService .serviceList li.consult a .content .left .icon {background: url(../img/ico_service06.png) no-repeat center / contain}
+.applyWrap.tax .selectService .serviceList li.online a .content .left .icon {background: url(../img/ico_service07.png) no-repeat center / contain}
+.applyWrap.tax .selectService .serviceList li.voucher a .content .left .icon {background: url(../img/ico_service08.png) no-repeat center / contain}
+.applyWrap.tax .selectService .serviceList li.doctor a .content .left .icon {background: url(../img/ico_service09.png) no-repeat center / contain}
+
+/* 세무사용 - 관심사 */
+.applyWrap.tax .selectService .serviceList li a .content {margin-left: 40px}
+
+/* 세무사용 - email */
+.applyWrap.tax .formWrap .inputForm .inputWrap.email .selectBox {margin-left: 12px; z-index: 3}
+.applyWrap.tax .formWrap .inputForm .inputWrap.email .inputBox .selectItem {width: 220px; user-select: none;}
+.applyWrap.tax .formWrap .inputForm .inputWrap.email .inputBox .selectItem input {padding: 0; border: none; border-radius: 0}
+
+/* 세무사용 - 경로 */
+.applyWrap.tax .formWrap .inputForm .inputWrap.select {display: block; margin-bottom: 80px}
+.applyWrap.tax .formWrap .inputForm .inputWrap.select .selectBox .selectItem {width: 100%; margin-top: 30px}
+
+@media screen and (max-width: 767px) {
+    /* common */
+    h1.mainTit {font-size: 30px}
+    h2.defTit {font-size: 28px}
+    .subTit {font-size: 20px}
+
+    .areaFloatBtn {bottom: 40px}
+    .areaFloatBtn .btnConsult {padding: 14px 24px; font-size: 18px}
+
+    /* header */
+    .header .inner {padding-top: 0; height: 100%; line-height: 80px}
+    .header .areaLogo h1 a {display: block; width: 100px}
+    .header .areaLogo h1 a img {vertical-align: middle}
+
+    /* land_inrt_001A 미디어쿼리 */
+    .areaNotice .defTit {font-size: 2.267rem}
+    .footerWrap .footerInfo {display: block;}
+    .footerWrap .areaLogo {margin-bottom: 20px;}
+    .footerWrap .footerInfo .footerBox span {display: block; margin-top: 2px}
+    .footerWrap .footerInfo .footerBox .divide {display: none}
+
+    /************************************************ index.html ************************************************/
+    /* #intro */
+    #intro h2.defTit {margin-bottom: 20px}
+    #intro section:not(.secVisual) {padding: 150px 0}
+
+    /* #intro : secVisual */
+    #intro .secVisual .txtBox {padding-left: 0; top: 50%; transform: translateY(-50%)}
+    #intro .secVisual .txtBox h1.mainTit {margin-bottom: 20px}
+    #intro .secVisual .txtBox .subTit em {display: block}
+
+    /* #intro : secIntro */
+    #intro .secIntro {display: none}
+
+    /* #intro : secAbout */
+    #intro .secAbout {background: #fff }
+    #intro .secAbout .aboutCnt .left .moveGuide {margin-top: 30px; padding: 16px 35px; font-size: 1rem}
+    #intro .secAbout .aboutCnt .areaMockup {display: block; margin-top: 0px}
+    #intro .secAbout .aboutCnt .areaMockup .item {position: relative}
+    #intro .secAbout .aboutCnt .areaMockup .item .infoTxt strong {font-size: 14px}
+    
+    #intro .secAbout .aboutCnt .areaMockup .item.pc {width: 80%}
+    #intro .secAbout .aboutCnt .areaMockup .item.pc .infoTxt {position: absolute; width: 100%; top: 16%; left: 50%; transform: translateX(-50%); font-size: 14px}
+    #intro .secAbout .aboutCnt .areaMockup .item.mo {position: absolute; width: 180px; bottom: -10%; right: 20px}
+    #intro .secAbout .aboutCnt .areaMockup .item.mo .infoTxt {position: absolute; top: unset; bottom: 5%; font-size: 14px}
+    
+    /* #intro : secProduct */
+    #intro .secProduct .areaTabMenu {display: none}
+    #intro .secProduct .tabPannelWrap {padding: 0}
+    #intro .secProduct .tabPannelWrap .tabPannel {display: block !important; padding: 100px 20px; margin: 0 -20px; text-align: center}
+    #intro .secProduct .tabPannelWrap .tabPannel:nth-child(odd) {background: #FAFAFA}
+    #intro .secProduct .tabPannelWrap .tabPannel .areaTxt .infoTxt {font-size: 18px}
+    #intro .secProduct .tabPannelWrap .tabPannel .areaTxt .infoTxt span {display: block}
+    #intro .secProduct .tabPannelWrap .tabPannel .areaMockup {margin-top: 40px}
+    #intro .secProduct .tabPannelWrap .tabPannel:is(:first-child, :nth-child(3)) .areaMockup {border: 1px solid #EFEFF1; border-radius: 20px; background: #fff; overflow: hidden;}
+    #intro .secProduct .tabPannelWrap .tabPannel .areaMockup img {width: 100%}
+    
+    /* #intro : secReview */
+    #intro section.secReview {padding: 0 0 216px; border-bottom: 10px solid #F7F7F7; background: none}
+    #intro .secReview .left .swiper-navigation .taxAccWrap {margin: 0 40px}
+    #intro .secReview .left .swiper-navigation .taxAccWrap .name {font-size: 20px}
+    /* #intro .secReview .left .swiper-button-next, #intro .secReview .left .swiper-button-prev {width: 38px; height: 43px} */
+    #intro .secReview .left .swiper-navigation .swiper-button-next:after, #intro .secReview .left .swiper-navigation  .swiper-rtl .swiper-button-prev:after, #intro .secReview .left .swiper-navigation .swiper-button-prev:after, #intro .secReview .left .swiper-navigation .swiper-rtl .swiper-button-next:after {font-size: 24px}
+
+    /* #intro : secCount */
+    #intro section:not(.secVisual) {padding: 80px 0;}
+    #intro .secCount .countList ul {display: block;}
+    #intro .secCount .countList ul li {margin: 0 auto; width: 100%;}
+    #intro .secCount .countList ul li + li {margin-top: 80px;}
+    #intro .secCount .countList ul li span * {font-size: 60px;}
+
+    /* #intro : secPartner */
+    #intro .secPartner h2.defTit {margin-bottom: 50px; padding: 0 20px}
+    #intro .secPartner h2.defTit p {font-size: 22px}
+    #intro .secPartner h2.defTit p span {display: block}
+    #intro .secPartner .txtArea {margin-bottom: 80px;}
+    #intro .secPartner .txtArea p {font-size: 20px;}
+    #intro .secPartner .txtArea p span {display: block;}
+    #intro .secPartner .txtArea .fwBold {margin-bottom: 20px;}
+    #intro .secPartner .taxPartnerWrap ul li img {height: 9vh; max-height: 70px}
+
+    /************************************************ HP000.html ************************************************/
+    #doctor section:not(.secVisual) {padding: 150px 0}
+    /* #doctor : secVisual */
+    #doctor .secVisual .txtBox {padding-left: 0; top: 50%; transform: translateY(-50%)}
+    #doctor .secVisual .txtBox h1.mainTit span {display: block}
+
+    /* #doctor : secIntro */
+    #doctor .secIntro .subTit em {display: block}
+
+    /* #doctor : secNew */
+    #doctor section.secNew {padding: 100px 0}
+    #doctor .secNew .areaTop .defTit {margin-bottom: 34px}
+    #doctor .secNew .areaTop .infoTxt {font-size: 18px; word-break: keep-all}
+    #doctor .secNew .areaTop .infoTxt span {display: block}
+    #doctor .secNew .areaTop .infoTxt .pointColor02 {display: block; color: #63E2C5 !important; word-break: keep-all}
+    #doctor .secNew .provide {font-size: 20px; word-break: keep-all}
+    #doctor .secNew .provide br {display: none}
+    
+    /* #doctor : secUpgrade */
+    #doctor .secUpgrade .defTit {margin-bottom: 80px; font-size: 20px}
+    #doctor .secUpgrade .defTit .infoTxt + .infoTxt {margin-top: 40px}
+    #doctor .secUpgrade .defTit .infoTxt em {display: block}
+
+    /* #doctor : secSyndrome */
+    #doctor section.secSyndrome {padding: 150px 0 0}
+    #doctor section.secSyndrome .syndromeCnt {display: block}
+    #doctor section.secSyndrome .syndromeCnt .defTit {margin-bottom: 50px}
+    #doctor section.secSyndrome .areaLeft {width: 100%; text-align: center; margin-bottom: 60px}
+    #doctor section.secSyndrome .areaLeft p {font-size: 20px}
+    #doctor section.secSyndrome .areaRight {width: initial; height: 462px}
+
+    /* footer */
+    .footer .infoWrap .info {display: block; font-size: 16px}
+    .footer .infoWrap .divide {display: none}
+}
+
+/* landing페이지 미디어쿼리 */
+@media screen and (max-width: 1024px) {
+    .header .gnb {opacity: 0; visibility: hidden; position: absolute; top: 0; right: 0; left: 0; padding-bottom: 30px; transform: translateY(-100%); background: rgba(0,0,0,0.5);}
+    .header .gnb li {display: block; padding-right: 20px; text-align: right;}
+    .header .gnb li + li {margin-top: 30px;}
+    .header .gnb li.active a {color: #fff;}
+    .header .gnb li + li a {margin-left: 20px}
+
+    .header .trigger {display: block;}
+
+    .header.open .gnb {opacity: 1; visibility: visible; transform: translateY(80px);}
+    .header.open.active {background: rgba(0,0,0,0.5); border: none;}
+    .header.open.active .gnb li a {color: #fff;}
+    .header.open.active .trigger span {background: #fff;}
+
+    /* popWrap */
+    .popWrap.centerLayer .popInner {max-width: 400px; width: calc(100% - 40px); border-radius: 20px}
+    .popWrap.centerLayer .popInner .popBtnWrap button {height: 50px}
+
+    /************************************************ index.html ************************************************/
+    /* #intro : secVisual */
+    #intro .secVisual .thumbnail video.pcThum {display: none}
+    #intro .secVisual .thumbnail video.moThum {display: block}
+
+    #intro .secReview .right {width: 100%}
+    
+    #intro .secPartner .taxPartnerWrap .allTaxPartner {display: none;}
+    #intro .secPartner .taxPartnerWrap ul {display: flex; align-items: center}
+    /************************************************ HP000.html ************************************************/
+    /* #doctor : secVisual */
+    #doctor .secVisual .thumbnail video.pcThum {display: none}
+    #doctor .secVisual .thumbnail video.moThum {display: block}
+
+    /* #doctor : secNew */
+    #doctor .secNew .thumbnail video.pcThum {display: none}
+    #doctor .secNew .thumbnail video.moThum {display: block}
+
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+    /* #intro : secProduct */
+    #intro .secProduct .tabPannelWrap .tabPannel .areaMockup img {width: 400px}
+}
+
+@media screen and (max-width: 1200px) {
+    html, body {font-size: 13px}
+
+    /************************************************ index.html ************************************************/
+    /* #intro : secAbout */
+    #intro .secAbout .logo {display: block; margin: 0 auto 20px}
+    #intro .secAbout .aboutCnt {display: block}
+    #intro .secAbout .aboutCnt .left {text-align: center}
+    #intro .secAbout .aboutCnt .areaMockup {justify-content: center}
+
+    /* #intro : secReview */
+    #intro .secReview .inner {display: block; text-align: center}
+    #intro .secReview .left .swiper-navigation {justify-content: center; margin-bottom: 40px}
+    #intro .secReview .right {margin: 0 auto}
+
+    .applyWrap .selectService .inner {width: 100%}
+    .applyWrap.tax .selectService .serviceList li a .content .right strong {width: 100%}
+}
+
+@media screen and (max-width: 737px) {
+    .applyWrap .formWrap .areaFormTit span {display: block}
+    .applyWrap .formWrap .areaFormTit strong {font-size: 26px}
+    .applyWrap .formWrap .areaFormTit strong span {display: block}
+    .applyWrap .formWrap .areaFormTit p {font-size: 16px}
+    .applyWrap .formWrap .areaFormTit p span {display: inline}
+}
+
+@media screen and (max-width: 700px) {
+    .applyWrap .formWrap .inputForm .inputWrap {display: block}
+    .applyWrap .formWrap .inputForm .inputWrap .areaTit {margin-bottom: 18px}
+    .applyWrap .formWrap .inputForm .inputWrap .inputBox {display: block}
+    .applyWrap .formWrap .inputForm .inputWrap .inputBox input {padding-left: 20px}
+    .applyWrap .formWrap .inputForm .inputWrap .inputBox input:focus {padding-left: 16px}
+
+    .applyWrap .formWrap .inputForm .inputWrap.select .selectBox .selectItem {width: 100%}
+
+    .selectService .serviceList li a {border-radius: 10px}
+    .selectService .serviceList li a .content {width: 100%; margin-left: 0}
+    .selectService .serviceList li a .content .right {flex: initial}
+    .selectService .serviceList li a .content .right strong {display: block; width: 100%; margin-bottom: 8px; font-size: 22px}
+    .selectService .serviceList li a .content .right span {font-size: 16px}
+
+    .dotList li {font-size: 14px}
+
+    .agreeWrap .infoBox {padding: 30px 26px}
+
+    .agreeWrap .provide label {font-size: 16px}
+
+    /* 세무사용 */
+    .applyWrap.tax .selectService .serviceList li a .content {margin-left: 0}
+    .applyWrap.tax .selectService .serviceList li a .content .right strong {width: 100%}
+    .applyWrap.tax .formWrap .inputForm .inputWrap.email .selectBox {margin: 0; margin-top: 10px}
+    .applyWrap.tax .formWrap .inputForm .inputWrap.email .selectBox .selectItem {width: 100%}
+}
+
+@media screen and (max-width: 480px) {
+    .agreeWrap .btnSubmit {width: 100%}
+}
+
+@media screen and (max-device-height : 500px) {
+    .popWrap.centerLayer .popInner {max-width: 300px}
+}
+
+/* Animation */
+@keyframes slideRTL {
+    0%{opacity: 0; visibility: hidden; transform: translateX(-50px)}
+    100%{opacity: 1; visibility: visible; transform: translateX(0)}
+}
+
+@keyframes infiniteSlideLeft {
+    0%{transform: translateX(0)}
+    100%{transform: translateX(-10000px)}
+}
+@keyframes infiniteSlideRight {
+    0%{transform: translateX(-8000px)}
+    100%{transform: translateX(0)}
+}
+
+#popIframe {position: fixed; display: none; top: 0; left: 0; width: 100%; height: 100vh; z-index: 9999}

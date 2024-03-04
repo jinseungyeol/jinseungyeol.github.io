@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../../css/semo_cont.css">
+  <title>SEMO</title>
+</head>
+<body>
+  <div class="new_content">
+    <div class="cont_bg cont_pd"> <!-- 클래스 cont_pd fix_button 포함 패딩-->
+
+      <!-- 상단 타이틀 -->
+      <div class="title">계정 조회결과</div>
+      <!-- //상단 타이틀 -->  
+      
+      <!-- 인증서 한 번에 등록하기 -->
+      <div class="wrap join">
+
+        <div class="certi_box">
+          <div class="title_sub">공인(공동)인증서에 연결된 계정입니다.</div>
+
+          <!-- 인증서 -->
+          <div class="cbi_box">
+            <div class="certi_info_box">
+              <i class="ico_certi_m"></i>
+              <div class="certi_info">
+                <p>
+                  <span class="certi_cmp_name">웹케시글로벌(webcashglobal)112233445566778899112233</span>
+                </p>
+                <p>  
+                  <span class="certi_class">기업</span><i>,</i>
+                  <span class="certi_use">용도제한용</span><i>/</i>
+                  <span class="certi_issue">금융결제원</span>
+                </p>
+                <p>
+                  <span class="certi_end">만료일</span>
+                  <span><em class="certi_end_data">2020.10.31</em><i class="certi_end_txt">(만료)</i></span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- //인증서 -->
+          
+          <p class="noti_star color">
+            <i class="character"></i>
+            <span>등록하지 않을 계정은 체크 해제해 주세요.</span>
+          </p>
+
+          <!-- 리스트 -->
+          <div>
+            <!-- 은행 목록 -->
+            <div class="account_list_wrap">
+                <!-- 은행 목록 총계-->
+              <div class="account_total_box">
+                <p>
+                  <i class="ico_account"></i> 
+                  <span>계좌 <em class="account_number">5</em><span>개</span> (<em class="bank_number">4</em>개 은행)</span> <!--문수수정, ui수정-->
+                  <!--문구수정 은행 -> 계좌-->
+                </p>
+              </div>
+              <!-- //은행 목록 총계-->
+
+              <!-- 은행-->
+              <div class="account_list_box alb_posi">
+                <ul>
+                  <li class="atlb_list3">
+                    <div>
+                      <span class="bk_class_busi">사업</span>
+                    </div>
+                    <div>
+                      <span class="bk_name">IBK 기업은행</span>
+                      <span class="bk_acnt_class">사업자전용 계좌</span>
+                      <span class="bk_acnt">1234-5678-12345-52</span>
+                    </div>
+                    <div>
+                      <input type="checkbox" class="check_enroll"  checked="true">  <!--클릭하면 checked true-->
+                    </div>
+                  </li>
+                  <li class="atlb_list3">
+                    <div>
+                      <span class="bk_class_pers">개인</span>
+                    </div>
+                    <div>
+                      <span class="bk_name">KB국민</span>
+                      <span class="bk_acnt_class">개인전용 계좌</span>
+                      <span class="bk_acnt">1234-5678-12345-52</span>
+                    </div>
+                    <div>
+                      <button class="btn_atlb_add">추가 입력</button>
+                    </div>
+                  </li>
+                  <li class="atlb_list3">
+                    <div>
+                      <span class="bk_class_busi">사업</span>
+                    </div>
+                    <div>
+                      <span class="bk_name">IBK 기업은행</span>
+                      <span class="bk_acnt_class">사업자전용 계좌</span>
+                      <span class="bk_acnt">1234-5678-12345-52</span>
+                    </div>
+                    <div>
+                      <input type="checkbox" class="check_enroll" checked="true">  <!--클릭하면 checked true-->
+                    </div>
+                  </li>
+                  <li class="atlb_list3">
+                    <div>
+                      <span class="bk_class_busi">사업</span>
+                    </div>
+                    <div>
+                      <span class="bk_name">IBK 기업은행</span>
+                      <span class="bk_acnt_class">사업자전용 계좌</span>
+                      <span class="bk_acnt">1234-5678-12345-52</span>
+                    </div>
+                    <div>
+                      <button class="btn_atlb_add">재입력</button>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <!-- //은행-->
+            </div>
+            <!-- //은행 목록 -->           
+          </div>
+          <!-- //리스트 -->
+
+          <!-- 안내 -->
+          <div class="noti_box posi_defalt">
+            <div class="nb_tit">기관의 계정정보가 보이지 않으시나요?</div>
+            <p class="nomal_noti nb_mgset">
+              <i class="character">-</i> 
+              <span>등록하시려는 기관에 공인(공동)인증서가 등록되지 않은 경우에 계정등록 실패가 발생합니다.</span>
+            </p>
+            <p class="nomal_noti nb_mgset">
+              <i class="character">-</i>
+              <span>계정정보 등록 중 통신상태가 불안정하거나 이외 다양한 원인으로 장애가 발생하였을 수 있습니다.</span>
+            </p>
+          </div>
+          <!-- 안내 -->
+         
+        </div>
+      </div>
+      <!-- //인증서 한 번에 등록하기 -->
+
+    </div>
+
+    <!-- 하단 fix 버튼 -->
+    <div class="btm_fix">
+      <span class="bgc_green">등록하기</span>
+    </div>
+    <!-- 하단 fix 버튼 -->
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css_v2/swiper-bundle.min.css">
+    
+    <link rel="stylesheet" href="../../css_v2/semo_style.css">
+    <link rel="stylesheet" href="../../css_v2/main.css">
+    <!-- <link rel="stylesheet" href="../../css_v2/kt_style.css"> -->
+  <script src="../../js_v2/jquery-3.5.1.min.js"></script>
+    <script src="../../js_v2/swiper-bundle.min.js"></script>
+    <title>코치마크 메인</title>
+</head>
+<body>
+    <div class="popup_bg">
+        <div class="coach-mark">
+            <div class="coach-mark_inner">
+                <div class="coach-mark_swiper">
+                    <section class="kht00a swiper-wrapper">
+                        <article class="coach-mark_item mark01 swiper-slide">
+                            <div class="cover">
+                                <i class="ico_cont"></i>
+                            </div>
+                            <div class="desc">
+                                <p class="main_desc">
+                                    좌우로 화면을
+                                </p>
+                                <p class="sub_desc">
+                                    편하게 넘길 수 있어요
+                                </p>
+                            </div>
+                        </article>
+                        <article class="coach-mark_item mark02 swiper-slide">
+                            <div class="cover">
+                                <i class="ico_cont"></i>
+                            </div>
+                            <div class="desc">
+                                <p class="main_desc">
+                                    위아래로 계좌를
+                                </p>
+                                <p class="sub_desc">
+                                    움직일 수 있어요
+                                </p>
+                            </div>
+                        </article>
+                        <article class="coach-mark_item mark03 swiper-slide">
+                            <div class="cover">
+                                <i class="ico_cont"></i>
+                            </div>
+                            <div class="desc">
+                                <p class="main_desc">
+                                    아이콘을 클릭하면
+                                </p>
+                                <p class="sub_desc">
+                                    상세내용을 볼 수 있어요
+                                </p>
+                            </div>
+                        </article>
+                    </section>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+         
+            <div class="coach-mark_btn-wrap">
+                <button class="cycle_close_btn">
+                    <i class="ico_cont"></i>
+                </button>
+            </div>
+         
+        </div>
+    </div>
+     <script>
+//  코치마크
+var swiper = new Swiper(".coach-mark_swiper", {
+    effect: "fade",
+        fadeEffect: { crossFade: false },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+                        },
+    loop: true, 
+    autoplay: {
+    delay: 2000,
+    },
+});
+    
+     </script>
+</body>
+</html>

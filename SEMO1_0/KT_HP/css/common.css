@@ -1,0 +1,156 @@
+@charset "utf-8";#header, #wrapper, #footer { min-width: 1440px; } 
+
+/* .main_visual { display: none; } 
+.main01 { display: none; } 
+.main02 { display: none; } 
+.main03 { display: none; } 
+.main04 { display: none; } 
+.main06 { display: none; } 
+.main07 { display: none; } 
+.main08 { display: block; } 
+.main09 { display: block; } */
+.button_sig {
+    background-color: #2dbdb6 !important;
+    border: 2px solid #19958f !important;
+}
+
+
+/* Header 헤더 */
+#header { width: 100%; height: 80px; position: fixed; left: 0; top: 0; background-color: #fff; border-bottom: 1px solid #d1d1d1; box-sizing: border-box; z-index: 990; } 
+#header .header_wrapper { width: 1076px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; } 
+#header .header_wrapper #gnb ul { width: 462px; display: flex; align-items: center; justify-content: space-between; } 
+#header .header_wrapper #gnb ul li a { font-size: 16px; font-weight: 400; color: #222222; line-height: 80px; } 
+#header .header_wrapper #gnb ul li.active a { color: #F61400; } 
+
+
+
+
+
+
+/* 애니메이션 */
+@keyframes moveUp { 
+ from { opacity: 0; transform: translateY(20px); } 
+ to { opacity: 1; transform: translateY(0); } 
+ }
+section .moveEff { opacity: 0; transform: translateY(20px); } 
+
+section .moveEff { animation-name: moveUp; animation-duration: 0.6s; animation-direction: alternate; animation-iteration-count: 1; animation-timing-function: ease-in-out; animation-fill-mode: forwards; } 
+/* 메인 공통 레이아웃 */
+
+.inner { position: relative; width: 1076px; margin: 0 auto; } 
+
+
+
+/*! 하단 레이아웃 !*/
+#footer { width: 100%; background-color: #222222; } 
+#footer .inner { padding: 65px 0; } 
+#footer .inner .ft_top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 45px; } 
+#footer .inner .ft_top ul { display: flex; } 
+#footer .inner .ft_top ul:first-of-type li a { font-size: 16px; font-weight: 400; color: #fff; display: inline-block; margin-right: 20px; } 
+#footer .inner .ft_top ul:first-of-type li:first-child a{
+    font-weight: 300;
+    opacity: 0.8;
+}
+#footer .inner .ft_top .follow li { margin-left: 15px; } 
+
+#footer .inner .ft_info ul { width: 805px; display: flex; flex-wrap: wrap; align-items: center; margin-bottom: 45px; } 
+#footer .inner .ft_info ul li { position: relative; font-size: 13px; font-weight: 400; color: #fff; margin-bottom: 15px; margin-left: 15px; padding-left: 15px; } 
+#footer .inner .ft_info ul li::before { position: absolute; left: 0; top: 1px; content: ''; display: inline-block; width: 1px; height: 13px; background-color: #fff; } 
+#footer .inner .ft_info ul li:first-of-type,
+#footer .inner .ft_info ul li:nth-of-type(5) { margin-left: 0; padding-left: 0; } 
+#footer .inner .ft_info ul li:first-of-type::before,
+#footer .inner .ft_info ul li:nth-of-type(5)::before { display: none; } 
+#footer .inner .ft_info ul li img { margin-right: 15px; vertical-align: -2px; } 
+#footer .inner .ft_info p { font-size: 13px; font-weight: 400; color: #878787; } 
+
+#footer .inner .ft_middle { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; } 
+#footer .inner .ft_middle ul { display: flex; } 
+#footer .inner .ft_middle .follow li { margin-right: 15px; } 
+
+
+.popBG { display: none; width: 100vw; height: 100%; top: 0px; left: 0px; position: fixed; background: rgb(0, 0, 0, 0.3); cursor: pointer; z-index: 888; } 
+.popBox { display: none; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 900; } 
+/* 팝업01 */
+/*.popBox .btn_close01 { position: absolute; right: 25px; top: 10px; border: none; background-color: transparent; } 
+.popBox.pop01 { width: 870px; height:543px; text-align: center; background-color: #fff; } 
+.popBox.pop01 .pop_wrap { width: 870px; height:543px; margin: 0 auto; padding: 0px 0 30px; background: url("/img/pop01.png"); } 
+.popBox.pop01 .pop_wrap h2 { background-color: #F61400; font-size: 22px; font-weight: 400; color: #ffffff; letter-spacing: -1px; padding: 15px 0 15px } */
+
+
+/* 팝업02 설치바로가기 */
+.popBox .btn_close02 { position: absolute; right: 22px; top: 22px; border: none; background-color: transparent; } 
+.popBox.pop02 { width: 400px; text-align: center; background-color: #fff; } 
+.popBox.pop02 .pop_wrap { width: 300px; margin: 0 auto; padding: 30px 0 30px; } 
+.popBox.pop02 .pop_wrap h2 { font-size: 26px; font-weight: 300; color: #222222; letter-spacing: -1px; margin: 12px 0 20px; } 
+.popBox.pop02 .pop_wrap strong { font-weight: 700; } 
+.popBox.pop02 .pop_wrap img:nth-of-type(2) { margin-bottom: 20px; } 
+.popBox.pop02 .pop_wrap .pop_input { font-size: 19px; font-weight: 400; color: #222; height: 50px; width: 100%; border: 1px solid #929292; text-align: center; border-radius: 8px; margin-top: 6px; } 
+.popBox.pop02 .pop_wrap .pop_input::placeholder { font-size: 17px; font-weight: 300; color: #a6a6a6; text-align: center; } 
+.popBox.pop02 .pop_wrap .pop_submit { font-size: 19px; font-weight: 700; color: #fff; line-height: 54px; width: 100%; border-radius: 8px; background-color: #F61400; margin-top: 15px; border: none; cursor: pointer; } 
+/* 팝업03 컨설팅 신청서 */
+.popBox .btn_close03 { position: absolute; right: 25px; top: 25px; border: none; background-color: transparent; } 
+.popBox.pop03 { width: 650px; text-align: center; background-color: #30bcb8; } 
+.popBox.pop03 .pop_wrap { width: 560px; margin: 0 auto; padding: 30px 0; } 
+.popBox.pop03 .pop_wrap > img { position: absolute; left: 20px; top: 20px; } 
+.popBox.pop03 .pop_wrap h2 { font-size: 34px; font-weight: 100; color: #222222; letter-spacing: -1.5px; } 
+.popBox.pop03 .pop_wrap strong { font-weight: 700; } 
+.popBox.pop03 .pop_wrap p { font-size: 18px; font-weight: 300; color: #222222; letter-spacing: -0.5px; margin-bottom: 30px; } 
+.popBox.pop03 .pop_wrap form { background-color: #fff; border-radius: 6px; border: 3px solid #2e2e2e; padding: 20px 40px; box-sizing: border-box; } 
+.popBox.pop03 .pop_wrap form ul li { display: flex; justify-content: flex-start; margin-bottom: 10px; } 
+.popBox.pop03 .pop_wrap form ul li input { font-size: 14px; color: #222; } 
+.popBox.pop03 .pop_wrap form ul li input::placeholder { font-size: 14px; font-weight: 400; } 
+.popBox.pop03 .pop_wrap form ul li label { font-size: 14px; font-weight: 400; color: #222222; line-height: 27px; } 
+.popBox.pop03 .pop_wrap form ul li > label { text-align: left; width: 105px; font-weight: 700; } 
+.popBox.pop03 .pop_wrap form ul li span input { display: inline-block; border: 1px solid #bbbbbb; border-radius: 0; } 
+.popBox.pop03 .pop_wrap form ul li select { display: inline-block; border: 1px solid #bbbbbb; border-radius: 0; width: calc(100% - 105px); padding: 0 10px; font-size: 14px; color: #222; } 
+/* 컨설팅 신청서 1 */
+.popBox.pop03 .pop_wrap form ul li:nth-of-type(1) span { width: calc(100% - 105px); display: flex; justify-content: space-between; } 
+.popBox.pop03 .pop_wrap form ul li:nth-of-type(1) span input { width: 32%; padding: 0 10px; line-height: 27px; } 
+.popBox.pop03 .pop_wrap form ul li:nth-of-type(5) span { width: calc(100% - 105px); display: flex; justify-content: space-between; } 
+.popBox.pop03 .pop_wrap form ul li:nth-of-type(5) span input { width: 32%; padding: 0 10px; line-height: 27px; } 
+
+
+
+/* 컨설팅 신청서 2.3.4 */
+.popBox.pop03 .pop_wrap form ul .type00 span { width: calc(100% - 105px); } 
+.popBox.pop03 .pop_wrap form ul .type00 span input { width: 100%; padding: 0 10px; line-height: 27px; } 
+/* 컨설팅 신청서 6.7.8 */
+.popBox.pop03 .pop_wrap form ul .type01 span { display: inline-block; border: 1px solid #bbbbbb; width: calc(100% - 105px); padding: 0 10px; text-align: left; } 
+.popBox.pop03 .pop_wrap form ul .type01 span label { margin-right: 10px; } 
+/* 컨설팅 신청서 9 */
+.popBox.pop03 .pop_wrap form ul .type02 { display: block; text-align: right; } 
+.popBox.pop03 .pop_wrap form ul .type02 > label { width: 100%; display: inline-block; margin-bottom: 7px; } 
+.popBox.pop03 .pop_wrap form ul .type02 span { display: inline-block; text-align: right; width: calc(100% - 105px); } 
+.popBox.pop03 .pop_wrap form ul .type02 span textarea { display: inline-block; border: 1px solid #bbbbbb; width: 100%; resize: none; padding: 5px 10px; } 
+.popBox.pop03 .pop_wrap form ul .type02 span textarea::placeholder { font-size: 14px; font-weight: 400; } 
+/* 컨설팅 신청서 10 */
+.popBox.pop03 .pop_wrap form ul .type03 { display: block; } 
+.popBox.pop03 .pop_wrap form ul .type03 > label:first-of-type { width: 49%; display: inline-block; margin-bottom: 7px; } 
+.popBox.pop03 .pop_wrap form ul .type03 span { width: 50%; display: inline-block; text-align: left; } 
+.popBox.pop03 .pop_wrap form ul .type03 > div { border: 1px solid #bbbbbb; width: 100%; padding: 5px 0; } 
+.popBox.pop03 .pop_wrap form ul .type03 > div p { font-size: 13px; font-weight: 400; color: #7d7d7d; line-height: 20px; text-align: center; margin: 0; } 
+
+
+
+.popBox.pop03 .pop_wrap .pop_input { font-size: 19px; font-weight: 400; color: #222; line-height: 54px; width: 100%; border: 1px solid #929292; text-align: center; border-radius: 8px; margin-top: 30px; } 
+.popBox.pop03 .pop_wrap .pop_input::placeholder { font-size: 19px; font-weight: 300; color: #a6a6a6; text-align: center; } 
+.popBox.pop03 .pop_wrap .pop_submit { font-size: 19px; font-weight: 700; color: #fff; line-height: 54px; width: 100%; border-radius: 8px; background-color: #F61400; margin-top: 15px; border: none; } 
+
+.legal{ width: 100%; padding: 60px 0; font-family: NanumBarunGothicLight;}
+.legal .inner h2{ font-size: 42px; font-weight: 600; color: #222222; letter-spacing: -2px; margin-bottom: 70px; text-align: center;}
+.legal .inner > p{ margin-bottom: 30px;}
+.legal .inner > div h3{ font-size: 13px; font-weight: 600; color: #000; margin-bottom: 5px;}
+.legal .inner > div p{ font-size: 13px; font-weight: 400; color: #222222; line-height: 22px;}
+.legal .inner table{ width: 100%; border-collapse: collapse; border: 2px solid #656565; margin: 20px 0;}
+.legal .inner table th{ font-size: 13px; font-weight: 600; word-break: break-all; padding: 10px; border: 1px solid #656565; text-align: center; background-color: #f8f8f8;}
+.legal .inner table td{ font-size: 13px; font-weight: 400; word-break: break-all; padding: 10px; border: 1px solid #656565; text-align: center;}
+.legal .inner .stable{ width: 35%;}
+
+.terms .inner > div{ margin-bottom: 25px;}
+.privacy .inner div { margin-bottom: 40px;}
+.privacy .inner div h3{ margin-bottom: 10px;}
+
+
+.sub_board{ padding: 100px 0;}
+.sub_board .inner > h2{ font-size: 42px; font-weight: 600; color: #4a4a4a; letter-spacing: -3px; text-align: center; margin-bottom: 30px; }
+.sub_board .inner > h2 b{ color: #F61400;}

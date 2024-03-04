@@ -1,0 +1,1351 @@
+<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<title>세무대리인 for 경리나라</title>
+<link rel="stylesheet" href="../css/reset_taxp.css">
+<link rel="stylesheet" href="../css/content_taxp.css"><!-- [D] 세무대리인용 -->
+
+<!-- custom scrollbar plugin css -->
+<link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+<!-- custom scrollbar plugin -->
+<script src="../js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../js/jquery.placeholder.min.js"></script>
+<script>
+$(function(){
+	// Invoke the plugin
+	$('input, textarea').placeholder({customClass:'my-placeholder'});
+});
+</script>
+
+</head>
+
+<body style="width:972px;">
+
+	<div class="pop_wrap" style="width:972px;">
+
+		<!-- 팝업 헤더 -->
+		<div class="pop_header">
+			<h1 style="position: relative;">직원정보 상세보기</h1>
+			<a href="#none" onclick="self.close()" class="btn_popclose"><img src="../img/txof/btn/btn_popClose_white.gif" alt="팝업닫기"></a>
+		</div>
+		<!-- //팝업 헤더 -->
+
+		<!-- 팝업 컨텐츠 -->
+		<div class="pop_container pd0" style="display: flex; height: 750px;">
+			<div class="leftTab">
+				<div class="input_box">
+					<input type="text" value="" placeholder="검색어를 입력하세요">
+					<a href="#none"><img src="../img/txof/btn/btn_topsearch.gif" alt="조회"></a>
+				</div>
+				<div class="reportListWrap">
+					<div class="filter">
+						<p class="count">총 15명</p>
+						<div class="ly_filter type12">
+							<a href="#none" class="">근로소득</a>
+							<ul class="ly_filter_inner" style="display: block;">
+								<li><a href="#none">전체</a></li>
+								<li><a href="#none">근로소득</a></li>
+								<li><a href="#none">일용소득</a></li>
+								<li><a href="#none">사업소득</a></li>
+								<li><a href="#none">기타소득</a></li>
+							</ul>
+						
+						</div>
+						<div class="ly_filter type4">
+							<a href="#none" class="">입사요청</a>
+							<ul class="ly_filter_inner" style="display: block;">
+								<li><a href="#none">재직</a></li>
+								<li><a href="#none">퇴사</a></li>
+								<li><a href="#none">입사요청</a></li>
+								<li><a href="#none">퇴사요청</a></li>
+							</ul>
+						</div>
+						
+					</div>
+					<ul class="reportList">
+						<!-- 확인완료시 complete 클래스 추가 -->
+						<li class="active">
+							<a href="javascript:;">
+								<div class="titArea">
+									<div class="infoStaff">
+										<span>신규등록</span>
+									</div>
+								</div>
+								<div class="cntArea">
+									<span>입사 일자 : 2022-12-25</span>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<div class="titArea">
+									<div class="infoStaff">
+										<span>홍길동</span>
+										<span>|</span>
+										<span>홍길동</span>
+										<span>|</span>
+										<span>재직</span>
+									</div>
+								</div>
+								<div class="cntArea">
+									<span>입사 일자 : 2022-12-25</span>
+								</div>
+							</a>
+						</li>
+						<!-- 퇴사시 class : disabled -->
+						<li class="disabled">
+							<a href="javascript:;">
+								<div class="titArea">
+									<div class="infoStaff">
+										<span>홍길동</span>
+										<span>|</span>
+										<span>홍길동</span>
+										<span>|</span>
+										<span>퇴사</span>
+									</div>
+								</div>
+								<div class="cntArea">
+									<span>퇴사 일자 : 2022-12-25</span>
+								</div>
+							</a>
+						</li>
+						<li class="disabled active">
+							<a href="javascript:;">
+								<div class="titArea">
+									<div class="infoStaff">
+										<span>홍길동</span>
+										<span>|</span>
+										<span>홍길동</span>
+										<span>|</span>
+										<span>퇴사</span>
+									</div>
+								</div>
+								<div class="cntArea">
+									<span>입사 일자 : 2022-12-25</span>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<div class="titArea">
+									<div class="infoStaff">
+										<span>홍길동</span>
+										<span>|</span>
+										<span>홍길동</span>
+										<span>|</span>
+										<span>재직</span>
+									</div>
+								</div>
+								<div class="cntArea">
+									<span>입사 일자 : 2022-12-25</span>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;">
+								<div class="titArea">
+									<div class="infoStaff">
+										<span>홍길동</span>
+										<span>|</span>
+										<span>홍길동</span>
+										<span>|</span>
+										<span>재직</span>
+									</div>
+								</div>
+								<div class="cntArea">
+									<span>입사 일자 : 2022-12-25</span>
+								</div>
+							</a>
+						</li>
+					</ul>
+					<div class="paging">
+						<a href="#none" class="btn_pag_cntr first"><span class="blind">first</span></a>
+						<a href="#none" class="btn_pag_cntr prev"><span class="blind">previous</span></a>
+						<span class="pag_num">
+							<a href="#none" class="on">1</a>
+							<a href="#none">2</a>
+							<a href="#none">3</a>
+							<a href="#none">4</a>
+							<a href="#none">5</a>
+						</span>
+						<a href="#none" class="btn_pag_cntr next on"><span class="blind">next</span></a><a href="#none"
+							class="btn_pag_cntr last on"><span class="blind">last</span></a>
+					</div>
+				</div>
+			</div>
+
+			<!-- 직원정보 상세보기 -->
+			<div class="ipt_bx_wrap" style="overflow-y: scroll; padding-bottom: 0; height: 710px; display: none;" >
+				<div class="pop_empl_wrap" style="display: block;">
+					<div class="title_wrap h1type">
+						<div class="left">
+							<div class="list4nd_tab">
+								<ul>
+									<li><a href="#none" class="on" style="cursor: default">홍길동</a></li>
+									<li><span class="pipe">|</span></li>
+									<li><a href="#none" class="on" style="cursor: default">근로소득</a></li>
+									<li><span class="pipe">|</span></li>
+									<li><a href="#none" class="on" style="cursor: default">재직</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="right"></div>
+					</div>
+					
+					<div class="title_wrap">
+						<div class="left">
+							<div class="title">
+								<h2 class="tx_title">기본정보</h2>
+							</div>
+						</div>
+					</div>
+					
+					<div class="tbl_layout tbl_input_set mgb20">
+						<table>
+							<colgroup>
+								<col style="width: 140px;">
+								<col style="width: 160px;">
+								<col style="width: 140px;">
+								<col style="width: 160px;">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">
+										<div class="th_inner">소득구분</div>
+									</th>
+									<td>
+										<div class="td_inner">근로소득</div>
+									</td>
+									<th scope="row">
+										<div class="th_inner">내/외국인</div>
+									</th>
+									<td>
+										<div class="td_inner">내국인</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">
+										<div class="th_inner">성명</div>
+									</th>
+									<td>
+										<div class="td_inner">홍길동</div>
+									</td>
+									<th scope="row">
+										<div class="th_inner">휴대폰번호</div>
+									</th>
+									<td>
+										<div class="td_inner">010-1234-5678</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">
+										<div class="th_inner">생년월일</div>
+									</th>
+									<td>
+										<div class="td_inner">90.12.31</div>
+									</td>
+									<th scope="row">
+										<div class="th_inner">퇴사일자</div>
+									</th>
+									<td>
+										<div class="td_inner">-</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">
+										<div class="th_inner" >입사일자</div>
+									</th>
+									<td colspan="">
+										<div class="td_inner">2023-01-01</div>
+									</td>
+									<th scope="row">
+										<div class="th_inner">
+											퇴사사유
+										</div>
+									</th>
+									<td>
+										<div class="td_inner">
+											<p class="number">①</p>					
+											<span>본인자진퇴사</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">
+										<div class="th_inner">급여계좌</div>
+									</th>
+									<td colspan="2">
+										<div class="td_inner posiw">기업은행 / 101-256669-01-001 (예금주 : 홍길동)
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					
+					<div class="title_wrap">
+						<div class="left">
+							<div class="title">
+								<h2 class="tx_title">급여정보</h2>
+							</div>
+						</div>
+					</div>
+					
+					<div class="tbl_layout tbl_input_set mgb20">
+						<table>
+							<colgroup>
+								<col style="width: 140px;">
+								<col style="width: 160px;">
+								<col style="width: 140px;">
+								<col style="width: 160px;">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">
+										<div class="th_inner">급여지급일</div>
+									</th>
+									<td>
+										<div class="td_inner">25일</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">
+										<div class="th_inner">월급여</div>
+									</th>
+									<td colspan="2">
+										<div class="td_inner">1,000,000 원 (세전) / (세후)</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">
+										<div class="th_inner">식대</div>
+									</th>
+									<td>
+										<div class="td_inner">적용 / 미적용</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">
+										<div class="th_inner">자가운전</div>
+									</th>
+									<td>
+										<div class="td_inner">적용 / 미적용</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">
+										<div class="th_inner">육아수당</div>
+									</th>
+									<td>
+										<div class="td_inner">적용 / 미적용</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">
+										<div class="th_inner">피부양자</div>
+									</th>
+									<td>
+										<div class="td_inner">1명</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">
+										<div class="th_inner">고객메모</div>
+									</th>
+									<td>
+										<div class="td_inner">모바일 메모 입력</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+	
+					<div class="title_wrap">
+						<div class="left">
+							<div class="title">
+								<h2 class="tx_title">증빙서류</h2>
+							</div>
+						</div>
+					</div>
+					
+					<div class="tbl_layout tbl_input_set mgb20">
+						<div class="tbl_file_wrap">
+							<div class="file_list">
+								<img src="../img/txof/ico/ico_file_16x16.svg" alt="">
+								<a href="#none">
+									<span class="file_name ellipsis">주민등록등본.PDF주민등록등본.PDF주민등록등본.PDF주민등록등본.PDF주민등록등본.PDF주민등록등본.PDF주민등록등본.PDF주민등록등본.PDF주민등록등본.PDF</span>
+								</a>
+							</div>
+							<div class="file_list">
+								<img src="../img/txof/ico/ico_file_16x16.svg" alt="">
+								<a href="#none">
+									<span class="file_name ellipsis">통장사본.PNG</span>
+								</a>
+								
+							</div>
+						</div>
+					</div>
+	
+					<div class="tac btn_fix_wrap">
+						<a href="#none"class="btn_style_gray_big"><span>취소</span></a>
+						<a href="#none"class="btn_style_big"><span>저장</span></a>
+					</div>
+				</div>
+			</div>
+			<!-- 직원정보 상세보기 -->
+
+			
+
+			<!-- 직원정보 상세보기  수정-->
+			<!-- 재직자 수정 -->
+			<div class="ipt_bx_wrap" style="overflow-y: scroll; padding-bottom: 0; height: 710px; display: block;">	
+				<div class="pop_empl_wrap" style="display:  block;">
+				
+					<div class="title_wrap h1type">
+						<div class="left">
+							<div class="list4nd_tab">
+								<ul>
+									<li><a href="#none" class="on" style="cursor: default">홍길동</a></li>
+									<li><span class="pipe">|</span></li>
+									<li><a href="#none" class="on" style="cursor: default">근로소득</a></li>
+									<li><span class="pipe">|</span></li>
+									<li><a href="#none" class="on" style="cursor: default">재직</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="right">
+							<p class="mgt10">최종 수정일시: 23.08.01 16:23</p>
+						</div>
+					</div>
+					
+					<div class="title_wrap">
+						<div class="left">
+							<div class="title">
+								<h2 class="tx_title">기본정보</h2>
+							</div>
+						</div>
+					</div>
+					<div class="tbl_layout tbl_input_set mgb20">
+						<table>
+							<colgroup>
+								<col style="width: 140px;">
+								<col style="width: 160px;">
+								<col style="width: 140px;">
+								<col style="width: 160px;">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">
+										<div class="th_inner essen">재직상태</div>
+									</th>
+									<td colspan="2">
+										<div class="checklist td_inner">
+											<!-- radio 비활성화 속성 disabled -->
+											<label><input type="radio" name="JOIN_STTS" value="1" checked="">재직</label>
+											<label><input type="radio" name="JOIN_STTS" value="2">퇴사</label>
+											<label><input type="radio" name="JOIN_STTS" value="3" disabled>입사요청</label>
+											<label><input type="radio" name="JOIN_STTS" value="4" disabled>퇴사요청</label>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">
+										<div class="th_inner essen">소득구분</div>
+									</th>
+									<!-- ㄴㅇ러ㅏㅣㄴㅇ러 --> 
+									<td colspan="">
+										<div class="td_inner">
+											<div class="select_Tab">
+												<a class="sel_title">
+													<span>
+														<span>근로소득</span>
+													</span>
+												</a>
+												<ul>
+													<li>
+														<span>근로소득</span>
+													</li>
+													<li>
+														<span>사업소득</span>
+													</li>
+													<li>
+														<span>일용소득</span>
+													</li>
+													<li>
+														<span>기타소득</span>
+													</li>
+												</ul>
+											</div>
+											
+										</div>
+									</td>
+									<th scope="row">
+										<div class="th_inner">내/외국인</div>
+									</th>
+									<td colspan="">
+										<div class="checklist td_inner">
+											<!-- radio 비활성화 속성 disabled -->
+											<label><input type="radio" name="JOIN_STTS" value="1" checked="">내국인</label>
+											<label><input type="radio" name="JOIN_STTS" value="2">외국인</label>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">
+										<div class="th_inner essen">성명</div>
+									</th>
+									<td colspan="">
+										<div class="td_inner">
+											<div class="input_wrap">
+												<input type="text" value="홍길동">
+											</div>
+										</div>
+									</td>
+									<th scope="row">
+										<div class="th_inner">휴대폰번호</div>
+									</th>
+									<td colspan="">
+										<div class="td_inner">
+											<div class="input_wrap">
+												<input type="tel">
+											</div>
+										</div>	
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">
+										<div class="th_inner essen">생년월일</div>
+									</th>
+									<td colspan="">
+										<div class="td_inner">
+											<div class="input_wrap date">
+												<input type="text" value="2023-06-01" id="inp_end_dt" readonly="" class="hasDatepicker" disabled="">
+												<img class="ui-datepicker-trigger" src="../img/txof/ico/ico_calendar.png" alt="..." title="...">
+											</div>
+										</div>
+									</td>
+									<th scope="row">
+										<div class="th_inner">퇴사일자</div>
+									</th>
+									<td colspan="">
+										<div class="td_inner">
+											<div class="input_wrap date">
+												<input type="text" value="2023-06-01" id="inp_end_dt" readonly="" class="hasDatepicker" disabled="">
+												<img class="ui-datepicker-trigger" src="../img/txof/ico/ico_calendar.png" alt="..." title="...">
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">
+										<div class="th_inner essen">입사일자</div>
+									</th>
+									<td colspan="">
+										<div class="td_inner">
+											<div class="input_wrap date">
+												<input type="text" value="2023-06-01" id="inp_end_dt" readonly="" class="hasDatepicker" disabled="">
+												<img class="ui-datepicker-trigger" src="../img/txof/ico/ico_calendar.png" alt="..." title="...">
+											</div>
+										</div>
+									</td>
+									<th scope="row">
+										<div class="th_inner">퇴사사유</div>
+									</th>
+									<td colspan="">
+										<div class="td_inner">
+											<div class="select_Tab">
+												<a class="sel_title">
+													<span>
+														<p class="number">①</p>					
+														<span>본인자진퇴사</span>
+													</span>
+												</a>
+												<ul>
+													<li>
+														<p class="number">①</p>					
+														<span>본인자진퇴사</span>
+													</li>
+													<li>
+														<p class="number">②</p>
+														<span>회사권고퇴사</span>
+													</li>
+													<li>
+														<p class="number">③</p>
+														<span>징계해고</span>
+													</li>
+													<li>
+														<p class="number">④</p>
+														<span>근무기간만료</span>
+													</li>
+													<li>
+														<p class="number">⑤</p>
+														<span>기타</span>
+													</li>
+													
+												</ul>
+											</div>
+										</div>
+									
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">
+										<div class="th_inner">급여계좌</div>
+									</th>
+									<td colspan="2">
+										<div class="td_inner posiw">
+											기업은행 / 101-256669-01-001 (예금주 : 홍길동)
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					
+					<div class="title_wrap">
+						<div class="left">
+							<div class="title">
+								<h2 class="tx_title">급여정보</h2>
+							</div>
+						</div>
+					</div>
+					
+					<div class="tbl_layout tbl_input_set mgb20">
+						<table>
+							<colgroup>
+								<col style="width: 140px;">
+								<col style="width: 160px;">
+								<col style="width: 140px;">
+								<col style="width: 160px;">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">
+										<div class="th_inner">급여지급일</div>
+									</th>
+									<td>
+										<div class="td_inner">
+											<div class="input_wrap">
+												<input class="tar" type="text" value="23">
+											</div>
+											<span>일</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">
+										<div class="th_inner">월급여</div>
+									</th>
+									<td colspan="1">
+										<div class="td_inner">
+											<div class="input_wrap">
+												<input class="tar" type="text" value="3000000">
+											</div>
+											<span>원</span>
+										</div>
+									</td>
+									<td colspan="">
+										<div class="checklist td_inner">
+											<!-- radio 비활성화 속성 disabled -->
+											<label><input type="radio" name="JOIN_STTS" value="1" checked="">세전</label>
+											<label><input type="radio" name="JOIN_STTS" value="2">세후</label>
+										</div>
+									</td>
+								</tr>
+								
+								<tr>
+									<th scope="row">
+										<div class="th_inner">식대</div>
+									</th>
+									<td colspan="">
+										<div class="checklist td_inner">
+											<!-- radio 비활성화 속성 disabled -->
+											<label><input type="radio" name="JOIN_STTS" value="1" checked="">적용</label>
+											<label><input type="radio" name="JOIN_STTS" value="2">미적용</label>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">
+										<div class="th_inner">자가운전</div>
+									</th>
+									<td colspan="">
+										<div class="checklist td_inner">
+											<!-- radio 비활성화 속성 disabled -->
+											<label><input type="radio" name="JOIN_STTS" value="1" checked="">적용</label>
+											<label><input type="radio" name="JOIN_STTS" value="2">미적용</label>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">
+										<div class="th_inner">육아수당</div>
+									</th>
+									<td colspan="">
+										<div class="checklist td_inner">
+											<!-- radio 비활성화 속성 disabled -->
+											<label><input type="radio" name="JOIN_STTS" value="1" checked="">적용</label>
+											<label><input type="radio" name="JOIN_STTS" value="2">미적용</label>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">
+										<div class="th_inner">피부양자</div>
+									</th>
+									<td colspan="">
+										<div class="checklist td_inner">
+											<label><input type="radio" name="JOIN_STTS" value="1" checked="">적용</label>
+											<label><input type="radio" name="JOIN_STTS" value="2">미적용</label>
+										</div>
+									</td>
+								</tr>
+								<tr style="display: none;">
+									<th scope="row">
+										<div class="th_inner">피부양자</div>
+									</th>
+									<td>
+										<div class="td_inner">
+											<div class="input_wrap">
+												<input class="tar" type="text" value="23">
+											</div>
+											<span>일</span>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+	
+					<div class="title_wrap">
+						<div class="left">
+							<div class="title">
+								<h2 class="tx_title">증빙서류</h2>
+							</div>
+						</div>
+					</div>
+					
+					<div class="tbl_layout tbl_input_set mgb20">
+						<div class="tbl_file_wrap">
+							<div class="file_list">
+								<img src="../img/txof/ico/ico_file_16x16.svg" alt="">
+								<a href="#none">
+									<span class="file_name ellipsis">주민등록등본.PDF주민등록등본.PDF주민등록등본.PDF주민등록등본.PDF주민등록등본.PDF주민등록등본.PDF주민등록등본.PDF주민등록등본.PDF주민등록등본.PDF</span>
+								</a>
+							</div>
+							<div class="file_list">
+								<img src="../img/txof/ico/ico_file_16x16.svg" alt="">
+								<a href="#none">
+									<span class="file_name ellipsis">통장사본.PNG</span>
+								</a>
+								<button><img src="../img/txof/ico/close_g_20x20.png" alt=""></button>
+							</div>
+							<div class="add_file_btn">
+								<button>
+									<img src="../img/txof/ico/ico_file_16x16.svg" alt="">
+									<span>파일첨부하기</span>
+								</button>
+							</div>
+						</div>
+					</div>
+	
+					<div class="tac btn_fix_wrap">
+						<a href="#none"class="btn_style_gray_big"><span>취소</span></a>
+						<a href="#none"class="btn_style_big"><span>저장</span></a>
+					</div>
+				</div> 
+			</div>
+			<!-- 직원정보 상세보기  수정-->
+
+			<!-- ***** 세모R직원등록 ***** -->
+			<!-- 근로 -->
+			<div class="ipt_bx_wrap" style="overflow-y: scroll; padding-bottom: 0; height: 710px; display: none;">
+				<div class="pop_empl_wrap">
+					<div class="title_wrap h1type">
+						<div class="left">
+							<div class="list4nd_tab">
+								<ul>
+									<li><a href="#none" class="on" style="cursor: default">홍길동</a></li>
+									<li><span class="pipe">|</span></li>
+									<li><a href="#none" class="on" style="cursor: default">근로소득</a></li>
+									<li><span class="pipe">|</span></li>
+									<li><a href="#none" class="on" style="cursor: default">재직</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="right"></div>
+					</div>
+					
+					<div class="title_wrap">
+						<div class="left">
+							<div class="title">
+								<h2 class="tx_title">기본정보</h2>
+							</div>
+						</div>
+					</div>
+					<div class="tbl_layout tbl_input_set mgb20">
+						<table>
+							<colgroup>
+								<col style="width: 140px;">
+								<col style="width: 160px;">
+								<col style="width: 140px;">
+								<col style="width: 160px;">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">
+										<div class="th_inner essen">소득구분</div>
+									</th>
+									<!-- ㄴㅇ러ㅏㅣㄴㅇ러 --> 
+									<td colspan="">
+										<div class="td_inner">
+											<div class="select_Tab">
+												<a class="sel_title">
+													<span>
+														<p class="number">①</p>					
+														<span>본인자진퇴사</span>
+													</span>
+												</a>
+												<ul>
+													<li>
+														<p class="number">①</p>					
+														<span>본인자진퇴사</span>
+													</li>
+													<li>
+														<p class="number">②</p>
+														<span>회사권고퇴사</span>
+													</li>
+													<li>
+														<p class="number">③</p>
+														<span>징계해고</span>
+													</li>
+													<li>
+														<p class="number">④</p>
+														<span>근무기간만료</span>
+													</li>
+													<li>
+														<p class="number">⑤</p>
+														<span>기타</span>
+													</li>
+													
+												</ul>
+											</div>
+											
+										</div>
+									</td>
+									<th scope="row">
+										<div class="th_inner">내/외국인</div>
+									</th>
+									<td colspan="">
+										<div class="checklist td_inner">
+											<!-- radio 비활성화 속성 disabled -->
+											<label><input type="radio" name="JOIN_STTS" value="1" checked="">내국인</label>
+											<label><input type="radio" name="JOIN_STTS" value="2">외국인</label>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">
+										<div class="th_inner essen">성명</div>
+									</th>
+									<td colspan="">
+										<div class="td_inner">
+											<div class="input_wrap">
+												<input type="text" value="" placeholder="이름을 입력해주세요">
+											</div>
+										</div>
+									</td>
+									<th scope="row">
+										<div class="th_inner">휴대폰번호</div>
+									</th>
+									<td colspan="">
+										<div class="td_inner">
+											<div class="input_wrap">
+												<input type="tel">
+											</div>
+										</div>	
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">
+										<div class="th_inner essen">생년월일</div>
+									</th>
+									<td colspan="">
+										<div class="td_inner">
+											<div class="input_wrap date">
+												<input type="text" value="2023-06-01" id="inp_end_dt" readonly="" class="hasDatepicker" disabled="">
+												<img class="ui-datepicker-trigger" src="../img/txof/ico/ico_calendar.png" alt="..." title="...">
+											</div>
+										</div>
+						   			</td>
+									<th scope="row">
+										<div class="th_inner">퇴사일자</div>
+									</th>
+									<td colspan="">
+										<div class="td_inner">
+											<div class="input_wrap date">
+												<input type="text" value="2023-06-01" id="inp_end_dt" readonly="" class="hasDatepicker" disabled="">
+												<img class="ui-datepicker-trigger" src="../img/txof/ico/ico_calendar.png" alt="..." title="...">
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">
+										<div class="th_inner essen">입사일자</div>
+									</th>
+									<td colspan="">
+										<div class="td_inner">
+											<div class="input_wrap date">
+												<input type="text" value="2023-06-01" id="inp_end_dt" readonly="" class="hasDatepicker" disabled="">
+												<img class="ui-datepicker-trigger" src="../img/txof/ico/ico_calendar.png" alt="..." title="...">
+											</div>
+										</div>
+									</td>
+									
+								</tr>
+								<tr>
+									<th scope="row">
+										<div class="th_inner">급여계좌</div>
+									</th>
+									<td colspan="2">
+										<div class="td_inner posiw gray">
+											모바일 사장님 등록 항목입니다.
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					
+					<div class="title_wrap">
+						<div class="left">
+							<div class="title">
+								<h2 class="tx_title">급여정보</h2>
+							</div>
+						</div>
+					</div>
+					
+					<div class="tbl_layout tbl_input_set mgb20">
+						<table>
+							<colgroup>
+								<col style="width: 140px;">
+								<col style="width: 160px;">
+								<col style="width: 140px;">
+								<col style="width: 160px;">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">
+										<div class="th_inner">급여지급일</div>
+									</th>
+									<td>
+										<div class="td_inner">
+											<div class="input_wrap">
+												<input class="tar" type="text" value="23">
+											</div>
+											<span>일</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">
+										<div class="th_inner">월급여</div>
+									</th>
+									<td colspan="1">
+										<div class="td_inner">
+											<div class="input_wrap">
+												<input class="tar" type="text" value="3000000">
+											</div>
+											<span>원</span>
+										</div>
+									</td>
+									<td colspan="">
+										<div class="checklist td_inner">
+											<!-- radio 비활성화 속성 disabled -->
+											<label><input type="radio" name="JOIN_STTS" value="1" checked="">세전</label>
+											<label><input type="radio" name="JOIN_STTS" value="2">세후</label>
+										</div>
+									</td>
+								</tr>
+								
+								<tr>
+									<th scope="row">
+										<div class="th_inner">식대</div>
+									</th>
+									<td colspan="">
+										<div class="checklist td_inner">
+											<!-- radio 비활성화 속성 disabled -->
+											<label><input type="radio" name="JOIN_STTS" value="1" checked="">적용</label>
+											<label><input type="radio" name="JOIN_STTS" value="2">미적용</label>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">
+										<div class="th_inner">자가운전</div>
+									</th>
+									<td colspan="">
+										<div class="checklist td_inner">
+											<!-- radio 비활성화 속성 disabled -->
+											<label><input type="radio" name="JOIN_STTS" value="1" checked="">적용</label>
+											<label><input type="radio" name="JOIN_STTS" value="2">미적용</label>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">
+										<div class="th_inner">육아수당</div>
+									</th>
+									<td colspan="">
+										<div class="checklist td_inner">
+											<!-- radio 비활성화 속성 disabled -->
+											<label><input type="radio" name="JOIN_STTS" value="1" checked="">적용</label>
+											<label><input type="radio" name="JOIN_STTS" value="2">미적용</label>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">
+										<div class="th_inner">피부양자</div>
+									</th>
+									<td>
+										<div class="td_inner">
+											<div class="input_wrap">
+												<input class="tar" type="text" value="23">
+											</div>
+											<span>일</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">
+										<div class="th_inner">고객메모</div>
+									</th>
+									<td colspan="2">
+										<div class="td_inner posiw gray">
+											모바일 사장님 메모 입력
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+	
+					<div class="title_wrap">
+						<div class="left">
+							<div class="title">
+								<h2 class="tx_title">증빙서류</h2>
+							</div>
+						</div>
+					</div>
+					
+					<div class="tbl_layout tbl_input_set mgb20">
+						<div class="tbl_file_wrap">
+							<div class="file_list">
+								<img src="../img/txof/ico/ico_file_16x16.svg" alt="">
+								<a href="#none">
+									<span class="file_name ellipsis">주민등록등본.PDF주민등록등본.PDF주민등록등본.PDF주민등록등본.PDF주민등록등본.PDF주민등록등본.PDF주민등록등본.PDF주민등록등본.PDF주민등록등본.PDF</span>
+								</a>
+								<button><img src="../img/txof/ico/close_g_20x20.png" alt=""></button>
+							</div>
+							<div class="file_list">
+								<img src="../img/txof/ico/ico_file_16x16.svg" alt="">
+								<a href="#none">
+									<span class="file_name ellipsis">통장사본.PNG</span>
+								</a>
+								<button><img src="../img/txof/ico/close_g_20x20.png" alt=""></button>
+							</div>
+							<div class="add_file_btn">
+								<button>
+									<img src="../img/txof/ico/ico_file_16x16.svg" alt="">
+									<span>파일첨부하기</span>
+								</button>
+							</div>
+						</div>
+					</div>
+	
+				<div class="tac btn_fix_wrap">
+					<a href="#none"class="btn_style_gray_big"><span>취소</span></a>
+					<a href="#none"class="btn_style_big"><span>저장</span></a>
+				</div>
+				</div> 
+			</div>
+			<!-- 근로 끝 -->
+			<!-- 사업 / 일용 / 기타 -->
+			<div class="ipt_bx_wrap" style="overflow-y: scroll; padding-bottom: 0; height: 710px; display: none;">
+				<div class="pop_empl_wrap" >
+					<div class="title_wrap h1type">
+						<div class="left">
+							<div class="list4nd_tab">
+								<ul>
+									<li><a href="#none" class="on" style="cursor: default">홍길동</a></li>
+									<li><span class="pipe">|</span></li>
+									<li><a href="#none" class="on" style="cursor: default">근로소득</a></li>
+									<li><span class="pipe">|</span></li>
+									<li><a href="#none" class="on" style="cursor: default">재직</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="right"></div>
+					</div>
+					
+					<div class="title_wrap">
+						<div class="left">
+							<div class="title">
+								<h2 class="tx_title">기본정보</h2>
+							</div>
+						</div>
+					</div>
+					<div class="tbl_layout tbl_input_set mgb20">
+						<table>
+							<colgroup>
+								<col style="width: 140px;">
+								<col style="width: 160px;">
+								<col style="width: 140px;">
+								<col style="width: 160px;">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">
+										<div class="th_inner essen">소득구분</div>
+									</th>
+									<!-- ㄴㅇ러ㅏㅣㄴㅇ러 --> 
+									<td colspan="">
+										<div class="td_inner">
+											<div class="select_Tab">
+												<a class="sel_title">
+													<span>
+														<p class="number">①</p>					
+														<span>본인자진퇴사</span>
+													</span>
+												</a>
+												<ul>
+													<li>
+														<p class="number">①</p>					
+														<span>본인자진퇴사</span>
+													</li>
+													<li>
+														<p class="number">②</p>
+														<span>회사권고퇴사</span>
+													</li>
+													<li>
+														<p class="number">③</p>
+														<span>징계해고</span>
+													</li>
+													<li>
+														<p class="number">④</p>
+														<span>근무기간만료</span>
+													</li>
+													<li>
+														<p class="number">⑤</p>
+														<span>기타</span>
+													</li>
+													
+												</ul>
+											</div>
+											
+										</div>
+									</td>
+									<th scope="row">
+										<div class="th_inner">내/외국인</div>
+									</th>
+									<td colspan="">
+										<div class="checklist td_inner">
+											<!-- radio 비활성화 속성 disabled -->
+											<label><input type="radio" name="JOIN_STTS" value="1" checked="">내국인</label>
+											<label><input type="radio" name="JOIN_STTS" value="2">외국인</label>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">
+										<div class="th_inner essen">성명</div>
+									</th>
+									<td colspan="">
+										<div class="td_inner">
+											<div class="input_wrap">
+												<input type="text" value="" placeholder="이름을 입력해주세요">
+											</div>
+										</div>
+									</td>
+									<th scope="row">
+										<div class="th_inner">휴대폰번호</div>
+									</th>
+									<td colspan="">
+										<div class="td_inner">
+											<div class="input_wrap">
+												<input type="tel">
+											</div>
+										</div>	
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">
+										<div class="th_inner essen">생년월일</div>
+									</th>
+									<td colspan="">
+										<div class="td_inner">
+											<div class="input_wrap date">
+												<input type="text" value="2023-06-01" id="inp_end_dt" readonly="" class="hasDatepicker" disabled="">
+												<img class="ui-datepicker-trigger" src="../img/txof/ico/ico_calendar.png" alt="..." title="...">
+											</div>
+										</div>
+						   			</td>
+									<th scope="row">
+										<div class="th_inner">퇴사일자</div>
+									</th>
+									<td colspan="">
+										<div class="td_inner">
+											<div class="input_wrap date">
+												<input type="text" value="2023-06-01" id="inp_end_dt" readonly="" class="hasDatepicker" disabled="">
+												<img class="ui-datepicker-trigger" src="../img/txof/ico/ico_calendar.png" alt="..." title="...">
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">
+										<div class="th_inner essen">입사일자</div>
+									</th>
+									<td colspan="">
+										<div class="td_inner">
+											<div class="input_wrap date">
+												<input type="text" value="2023-06-01" id="inp_end_dt" readonly="" class="hasDatepicker" disabled="">
+												<img class="ui-datepicker-trigger" src="../img/txof/ico/ico_calendar.png" alt="..." title="...">
+											</div>
+										</div>
+									</td>
+									
+								</tr>
+								<tr>
+									<th scope="row">
+										<div class="th_inner">급여계좌</div>
+									</th>
+									<td colspan="2">
+										<div class="td_inner posiw gray">
+											모바일 사장님 등록 항목입니다.
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					
+					<div class="title_wrap">
+						<div class="left">
+							<div class="title">
+								<h2 class="tx_title">급여정보</h2>
+							</div>
+						</div>
+					</div>
+					
+					<div class="tbl_layout tbl_input_set mgb20">
+						<table>
+							<colgroup>
+								<col style="width: 140px;">
+								<col style="width: 160px;">
+								<col style="width: 140px;">
+								<col style="width: 160px;">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">
+										<div class="th_inner">급여지급일</div>
+									</th>
+									<td>
+										<div class="td_inner">
+											<div class="input_wrap">
+												<input class="tar" type="text" value="23">
+											</div>
+											<span>일</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">
+										<div class="th_inner">지급금액</div>
+									</th>
+									<td colspan="1">
+										<div class="td_inner">
+											<div class="input_wrap">
+												<input class="tar" type="text" value="3000000">
+											</div>
+											<span>원</span>
+										</div>
+									</td>
+									<td colspan="">
+										<div class="checklist td_inner">
+											<!-- radio 비활성화 속성 disabled -->
+											<label><input type="radio" name="JOIN_STTS" value="1" checked="">세전</label>
+											<label><input type="radio" name="JOIN_STTS" value="2">세후</label>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">
+										<div class="th_inner">고객메모</div>
+									</th>
+									<td colspan="2">
+										<div class="td_inner posiw">
+											모바일 사장님 메모 입력
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="title_wrap">
+						<div class="left">
+							<div class="title">
+								<h2 class="tx_title">증빙서류</h2>
+							</div>
+						</div>
+					</div>
+					
+					<div class="tbl_layout tbl_input_set mgb20">
+						<div class="tbl_file_wrap">
+							<div class="file_list">
+								<img src="../img/txof/ico/ico_file_16x16.svg" alt="">
+								<a href="#none">
+									<span class="file_name ellipsis">주민등록등본.PDF</span>
+									
+								</a>
+								<button><img src="../img/txof/btn/close_g_20x20.png" alt=""></button>
+							</div>
+							<div class="file_list">
+								<img src="../img/txof/ico/ico_file_16x16.svg" alt="">
+								<a href="#none">
+									<span class="file_name ellipsis">통장사본.PNG</span>	
+								</a>
+								<button><img src="../img/txof/btn/close_g_20x20.png" alt=""></button>
+							</div>
+							<div class="add_file_btn">
+								<button>
+									<img src="../img/txof/ico/ico_file_16x16.svg" alt="">
+									<span>파일첨부하기</span>
+								</button>
+							</div>
+						</div>
+					</div>
+	
+				<div class="tac btn_fix_wrap">
+					<a href="#none"class="btn_style_gray_big"><span>취소</span></a>
+					<a href="#none"class="btn_style_big"><span>저장</span></a>
+				</div>
+				</div> 
+			</div>
+			<!-- 사업 / 일용 / 기타 끝 -->
+		</div>
+		<!-- //팝업 컨텐츠 -->
+	</div> 
+
+
+
+
+</body>
+</html>

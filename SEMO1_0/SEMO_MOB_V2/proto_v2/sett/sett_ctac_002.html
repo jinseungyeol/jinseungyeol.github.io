@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css_v2/semo_style.css">
+    <link rel="stylesheet" href="../../css_v2/swiper-bundle.min.css">
+  <script src="../../js_v2/jquery-3.5.1.min.js"></script>
+    <script src="../../js_v2/swiper-bundle.min.js"></script>
+    <title>sett_ctac_002</title>
+    <style>
+        img {max-width: 100%; vertical-align: top}
+        .applyTit {font-size: 26px; font-weight: 600}
+        .moveReptApply {min-height: 100vh; padding-top: 13.4vw; background-color: #fafafa; box-sizing: border-box}
+        .moveReptApply .title {background-color: #fafafa}
+
+        /* intro */
+        .moveReptApply .intro {padding: 0 20px}
+        .moveReptApply .intro .applyTit {padding: 32px 17px 55px}
+        .moveReptApply .intro .applyTit em {position: relative; display: inline-block; padding-top: 12px;}
+        .moveReptApply .intro .applyTit em::before {content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 6px; height: 6px; background: #ff2929; border-radius: 50%}
+        .moveReptApply .intro .applyTit .point {color: #ff2929}
+        .moveReptApply .intro .serviceBox {margin: 0 10px; position: relative}
+        .moveReptApply .intro .serviceBox img {position: absolute; bottom: calc(100% - 14px); right: 0; width: 115px; z-index: 1;}
+        .moveReptApply .intro .serviceList {position: relative; padding: 18px; margin-bottom: 48px; box-shadow: 0 1px 12px 0 rgba(0, 0, 0, 0.08); border: 1px solid #efeff2; border-radius: 8px; z-index: 2; background: #fff;}
+        .moveReptApply .intro .serviceList li {display: flex; align-items: center}
+        .moveReptApply .intro .serviceList li + li {margin-top: 20px}
+        .moveReptApply .intro .serviceList li .checkbox {width: 16px; height: 16px; margin-right: 12px; border-radius: 4px; border: 1px solid #c7c7c7;}
+        .moveReptApply .intro .serviceList li span {font-size: 14px;}
+        .moveReptApply .intro .serviceBox .infoTxt {font-size: 4.716vw; text-align: center}
+        .moveReptApply .intro .serviceBox .infoTxt em {position: relative; display: inline-block; padding-bottom: 17px;}
+        .moveReptApply .intro .serviceBox .infoTxt em::before {content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 12px; background: url(../../img_v2/bg_underline_red.png) no-repeat center bottom / contain;}
+        .moveReptApply .intro .serviceBox .infoTxt .point {color: #08f;}
+
+        /* review */
+        .moveReptApply .review {padding: 100px 26px; margin-bottom: 95px;}
+        .moveReptApply .review .applyTit {padding: 0 13px; margin-bottom: 28px;}
+        .moveReptApply .review .applyTit .point {background: #fbe64c;}
+
+        /* reptMockup */
+        .moveReptApply .reptMockup {position: relative; padding: 0 30px 32px; overflow: hidden}
+        .moveReptApply .reptMockup .areaTxt {margin-bottom: 25px;}
+        .moveReptApply .reptMockup .areaTxt .applyTit {margin-bottom: 15px; color: #08f}
+        .moveReptApply .reptMockup .areaTxt .infoTxt {color: #81848e; font-size: 14px;}
+        .moveReptApply .reptMockup .areaMockup {padding: 0 25px}
+        .moveReptApply .reptMockup .swiper-button-next, .moveReptApply .reptMockup .swiper-button-prev {top: calc(50% + 10px);}
+        .moveReptApply .reptMockup .swiper-button-prev {left: 30px;}
+        .moveReptApply .reptMockup .swiper-button-next {right: 30px;}
+        .moveReptApply .reptMockup .swiper-button-next:after, .moveReptApply .reptMockup .swiper-button-prev:after {color: #111; font-size: 22px; font-weight: bold;}
+        .moveReptApply .reptMockup .swiper-pagination {position: static; display: flex; align-items: center; justify-content: center; margin-top: 25px; gap: 4px;}
+        .moveReptApply .reptMockup .swiper-pagination .swiper-pagination-bullet {width: 9px; height: 9px; background: #d1d7dd; opacity: 1;}
+        .moveReptApply .reptMockup .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {width: 12px; height: 12px; background: #3c4652}
+
+        /* taxConsult */
+        .moveReptApply .taxConsult {position: relative;}
+        .moveReptApply .taxConsult .applyTit {position: absolute; left: 35px; top: 42px; color: #fff;}
+        .moveReptApply .taxConsult .applyTit span {color: #ffe489;}
+
+        .moveReptApply .bot_fix_pd20 {background-color: transparent; z-index: 10;}
+        .moveReptApply .btn_consult {display: flex; justify-content: center; align-items: center; background: #ffe762; color: #111; font-weight: 600; box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.24); border-radius: 15px;}
+        .moveReptApply .btn_consult .ico_cont {width: 9px; height: 12px; margin-left: 9px; background: url(../../img_v2/right_b_22x14.svg) no-repeat center / contain}
+    </style>
+</head>
+<body>
+    <div class="moveReptApply">
+        <!-- title -->
+        <div class="title">
+            <div class="title_left">
+                <i class="ico_cen left_arrow"></i>
+            </div>
+            <span class="title_text">프리미엄 서비스</span>
+        </div>
+        <!-- //title -->
+        <!-- visual -->
+        <div class="visual">
+            <img src="../../img_v2/bg_visualReptApply.png" alt="비주얼이미지">
+        </div>
+        <!-- //visual -->
+        <!-- intro -->
+        <div class="intro">
+            <h1 class="applyTit">
+                <em>아</em><em>직</em><em>도</em> 뻔하고<br>
+                <span class="point">불편한 세무서비스</span>를<br>
+                받고 계시나요?
+            </h1>
+            <div class="serviceBox">
+                <img src="../../img_v2/ico_speaker.png" alt="확성기">
+                <ul class="serviceList">
+                    <li>
+                        <div class="checkbox"></div>
+                        <span>세무 기장료가 아깝다고 느끼시는 분</span>
+                    </li>
+                    <li>
+                        <div class="checkbox"></div>
+                        <span>납부할 세금을 미리 알고 대비하고 싶은 분</span>
+                    </li>
+                    <li>
+                        <div class="checkbox"></div>
+                        <span>늘어난 매출로 세무 기장이 필요하신 분</span>
+                    </li>
+                    <li>
+                        <div class="checkbox"></div>
+                        <span>내 주변 상권 매출이 궁금하신 분</span>
+                    </li>
+                    <li>
+                        <div class="checkbox"></div>
+                        <span>매번 내는 세금을 줄이고 싶은 분</span>
+                    </li>
+                    <li>
+                        <div class="checkbox"></div>
+                        <span>세금 관련 문의사항이 많은 분</span>
+                    </li>
+                </ul>
+                <p class="infoTxt">
+                    이 중 하나라도 해당되신다면,<br>
+                    지금 <em>바로 <span class="point">차별화된 세무서비스</span>를 신청</em>하세요!
+                </p>
+            </div>
+        </div>
+        <!-- //intro -->
+        <!-- review -->
+        <div class="review">
+            <h1 class="applyTit">
+                서비스를 이용해본<br>
+                고객분들은<br>
+                <span class="point">90%</span>가<br>
+                만족했어요!
+            </h1>
+            <img src="../../img_v2/bg_chart.png" alt="세모주치의 차트">
+        </div>
+        <!-- //review -->
+        <!-- reptMockup -->
+        <div class="reptMockup">
+            <div class="mockupWrap swiper-container">
+                <ul class="mockuplist swiper-wrapper">
+                    <li class="swiper-slide">
+                        <div class="areaTxt">
+                            <h1 class="applyTit">사업분석 보고서</h1>
+                            <p class="infoTxt">
+                                다음 부가세를 미리 예상하고<br>
+                                대비할 수 있는 예상부가세 분석
+                            </p>
+                        </div>
+                        <div class="areaMockup">
+                            <img src="../../img_v2/mockup_rept01.png" alt="사업분석 보고서">
+                        </div>
+                    </li>
+                    <li class="swiper-slide">
+                        <div class="areaTxt">
+                            <h1 class="applyTit">예상 부가세 보고서</h1>
+                            <p class="infoTxt">
+                                다음 부가세를 미리 예상하고<br>
+                                대비할 수 있는 예상부가세 분석
+                            </p>
+                        </div>
+                        <div class="areaMockup">
+                            <img src="../../img_v2/mockup_rept02.png" alt="예상 부가세 보고서">
+                        </div>
+                    </li>
+                    <li class="swiper-slide">
+                        <div class="areaTxt">
+                            <h1 class="applyTit">매출 보고서</h1>
+                            <p class="infoTxt">
+                                사업현황을 점검해 볼 수 있는 월별,<br>
+                                분기별, 반기별 연간 매출 집계 분석
+                            </p>
+                        </div>
+                        <div class="areaMockup">
+                            <img src="../../img_v2/mockup_rept03.png" alt="매출 보고서">
+                        </div>
+                    </li>
+                    <li class="swiper-slide">
+                        <div class="areaTxt">
+                            <h1 class="applyTit">매입 보고서</h1>
+                            <p class="infoTxt">
+                                사업현황을 점검해 볼 수 있는 월별,<br>
+                                분기별, 반기별 연간 매입 집계 분석
+                            </p>
+                        </div>
+                        <div class="areaMockup">
+                            <img src="../../img_v2/mockup_rept04.png" alt="매입 보고서">
+                        </div>
+                    </li>
+                    <li class="swiper-slide">
+                        <div class="areaTxt">
+                            <h1 class="applyTit">인건비 보고서</h1>
+                            <p class="infoTxt">
+                                등록한 급여 대장을 기준으로<br>
+                                급여 합계 및 인건비 추이 확인
+                            </p>
+                        </div>
+                        <div class="areaMockup">
+                            <img src="../../img_v2/mockup_rept05.png" alt="인건비 보고서">
+                        </div>
+                    </li>
+                    <li class="swiper-slide">
+                        <div class="areaTxt">
+                            <h1 class="applyTit">부가세 신고분석 보고서</h1>
+                            <p class="infoTxt">
+                                부가율/매출/매입/의제매입 비율 추이와<br>
+                                매출액 대비 부가세 비율과 준비금액 안내
+                            </p>
+                        </div>
+                        <div class="areaMockup">
+                            <img src="../../img_v2/mockup_rept06.png" alt="부가세 신고분석 보고서">
+                        </div>
+                    </li>
+                </ul>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+        <!-- //reptMockup -->
+        <!-- taxConsult -->
+        <div class="taxConsult">
+            <h1 class="applyTit">
+                지금 신청하면<br>   
+                <span><u>30만원 상당</u>의</span><br>
+                절세컨설팅도 무료!
+            </h1>
+            <img src="../../img_v2/bg_free.png" alt="절세컨설팅 배경">
+        </div>
+        <!-- //taxConsult -->
+        <!-- ## 버튼 ## -->
+        <div class="bot_fix_pd20">
+            <button type="button" class="type_B btn_consult">
+                <span>신청하기</span>
+                <i class="ico_cont"></i>
+            </button>
+        </div>
+    </div>
+    <script>
+        var swiper = new Swiper('.reptMockup .mockupWrap', {
+            slidesPerView: '1',
+            spaceBetween: 30,
+            loop: true,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true
+            }
+        });
+    </script>
+</body>
+
+</html>

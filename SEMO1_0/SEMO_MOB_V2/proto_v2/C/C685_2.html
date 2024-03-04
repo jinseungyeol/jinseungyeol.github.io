@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css_v2/semo_style.css">
+    <!-- <link rel="stylesheet" href="../../css_v2/kt_style.css"> -->
+    <title>C685_2</title>
+</head>
+
+<body>
+    <div class="title b_white">
+        <div class="title_left">
+            <i class="ico_cen left_arrow"></i>
+        </div>
+        <span class="title_text">급여이체</span>
+        <div class="title_right">
+            <i class="ico_cen info"></i>
+        </div>
+    </div>
+    <div class="basic_wrapper">
+        <div class="padding_wrapper20">
+            <div class="withdraw">
+                <div class="withdraw_top">
+                    <div class="withdraw_tit">
+                        <span>출금계좌</span>
+                    </div>
+                    <div class="refresh_btn">
+                        <i class="ico_cen"></i><span>다시조회</span>
+                    </div>
+                </div>
+                <div class="withdraw_account">
+                    <span>IBK기업 345-55122-345678-11</span>
+                    <i class="ico_cen down"></i>
+                </div>
+                <div class="withdraw_amount">
+                    <div class="balance">
+                        <span class="txt">통장잔액</span>
+                        <span class="value">14,800,000원</span>
+                    </div>
+                    <div class="limit">
+                        <span class="txt">이체한도</span>
+                        <span class="value">5,000,000원</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="withdraw_info">
+            <div class="withdraw_item">
+                <div class="wi_item_tit_cell">
+                    <div class="wi_item_tit">
+                        <div class="wi_name">
+                            <input type="checkbox">
+                            <label for="">김세모 (1/2)</label>
+                        </div>
+
+                    </div>
+                    <div class="wi_account">
+                        <span>KB국민 7571234567412</span>
+                    </div>
+                    <div class="wi_account" style="display:none;">
+                        <span>KB국민 7571234567412</span>
+                    </div>
+
+                    <div class="wi_add">
+                        <div class="add_wrt">
+                        </div>
+                        <div class="wi_pay_input">
+                            <input type="text" id="input1" value="1,644,515">
+                            <label>원</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="wi_item_tit_cell">
+                    <div class="wi_item_tit">
+                        <div class="wi_name">
+                            <!-- <input type="checkbox"> -->
+                            <label for="">김세모 (2/2)</label>
+                        </div>
+
+                    </div>
+                    <div class="wi_add">
+                        <div class="add_wrt">
+                            <p class="down">추가입력</p>
+                        </div>
+                        <div class="wi_pay_input">
+                            <input type="text" id="input2" value="1,644,515">
+                            <label>원</label>
+                        </div>
+                        
+                    </div>
+                    <div class="paystub_warn month_amount">
+                        <i class="ico_cen"></i>
+                        <span>
+                            이달 급여액 294,940원
+                        </span>
+    
+                    </div>
+                </div>
+            </div>
+            <div class="withdraw_item">
+                <div class="wi_item_tit">
+                    <div class="wi_name">
+                        <input type="checkbox">
+                        <label for="">김세모</label>
+                    </div>
+                </div>
+                <div class="wi_account">
+                    <span>KB국민 7571234567412</span>
+                    <span class="wi_check">계좌내역 확인</span>
+                </div>
+                <div class="wi_add">
+                    <div class="add_wrt">
+                        <p class="up">추가입력</p>
+                    </div>
+                    <div class="wi_amount">
+                        <span>1,644,515원</span>
+                    </div>
+                </div>
+                <div class="wi_choicebox_wrap">
+                    <div class="wi_choicebox">
+                        <div>
+                            <span>받는 분 표시</span>
+                        </div>
+                        <div class="wi_option">
+                            <input type="text" value="김세모">
+                            <i class="rd_del"></i>
+                        </div>
+                    </div>
+                    <div class="wi_choicebox">
+                        <div>
+                            <span>내 통장 표시</span>
+                        </div>
+                        <div class="wi_option">
+                            <input type="text" value="김세모">
+                            <i class="rd_del"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="withdraw_item_alret set_mgt27">
+                    안내)&nbsp;
+                    <em> 1회 한도 200만원 초과시 나눠서 이체됩니다.</em>
+                </div>
+            </div>
+            <div class="withdraw_item">
+                <div class="wi_item_tit">
+                    <div class="wi_name">
+                        <input type="checkbox">
+                        <label for="">나세모</label>
+                    </div>
+                </div>
+
+                <div class="wi_account">
+                    <span>우리 1212455688743</span>
+                </div>
+                <div class="wi_add">
+                    <div class="add_wrt">
+                        <p class="up">추가입력</p>
+                    </div>
+                    <div class="wi_amount">
+                        <span style="display:none;">294,940</span>
+                        <span class="txt_blue" style="display: none;">294,940원</span>
+                        <span class="txt_red">294,940원</span>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="withdraw_item">
+                <div class="wi_item_tit">
+                    <div class="wi_name">
+                        <input type="checkbox">
+                        <label for="">나세모</label>
+                    </div>
+                </div>
+                <div class="wi_account">
+                    <span>우리 1212455688743</span>
+                </div>
+                <div class="wi_add">
+                    <div class="add_wrt">
+                        <p class="down">추가입력</p>
+                    </div>
+                    <div class="wi_amount">
+                        <span style="display:none;">294,940원</span>
+                        <span class="txt_blue">294,940원</span>
+                        <span class="txt_red" style="display: none;">294,940원</span>
+                    </div>
+
+                </div>
+                <div class="paystub_warn month_amount">
+                    <i class="ico_cen"></i>
+                    <span>
+                        이달 급여액 294,940원
+                    </span>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="withdraw_warn">
+            <span>0건선택</span>
+            <em>/</em>
+            <span>이체합계 : 0원</span>
+        </div>
+        <div class="btm_button bottom_fix">
+
+            <span>급여 이체하기</span>
+        </div>
+    </div>
+
+</body>
+
+</html>

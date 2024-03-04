@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css_v2/semo_style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>B300</title>
+</head>
+<body>
+    <div class="report_wrap ">
+        <div class="out_bg"></div>
+        <div class="morning_title ">
+            <div class="mor_tit_txt">
+                <span>1일 1습관<em>,</em><b> 아침보고서</b></span>
+                <p>기준일: 21.06.02(목)</p>
+            </div>
+            <div class="mor_tit_img">
+                <i></i>
+            </div>
+        </div>
+        <div class="morning_tab report_pd20">
+            <div class="mot on">현금흐름</div>
+            <div class="mot">매출</div>
+            <div class="mot">매입</div>
+        </div>
+
+        <!-- 현금흐름 -->
+        <div class="morning_content report_pd20" >
+            <section class="pf_chart">
+                <div class="pfs01_title">
+                    전일대비 현금 손익은?
+                </div>
+                <div class="pfs01_rate">
+                    <div class="pfs_rate_left">
+                        <div class="pfs_rate_total">
+                            <span class="pfs_rate_num">
+                                400,341원
+                            </span>
+                            <span class="pfs_rate_per down"><i >▲</i><em>72%</em></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="pfs_check">
+                    <p>입금 650,342원</p>
+                    <p>출금 250,000원</p>
+                </div>
+            </section>
+            <section class="mor_graph">
+                <div >
+                    <canvas id="myChart00"></canvas>
+                </div>
+            </section>
+            <section class="morning_rank" >
+                <div class="mo_rank_tit">
+                    <span>입금랭킹 TOP3는?</span>
+                </div>
+                <div class="mo_rank_list">
+                    <div >
+                        <div class="rank_left">
+                            <div><i class="rank01"></i></div>
+                            <div class="elipsis"><span>입금(이로움)</span></div>
+                        </div>
+                        <div class="rank_right">
+                            <span>130,000,000원</span>
+                        </div>
+                    </div>
+                    <div >
+                        <div class="rank_left">
+                            <div><i class="rank02"></i></div>
+                            <div><span>입금(동산캐스팅)</span></div>
+                        </div>
+                        <div class="rank_right">
+                            <span>550,000원</span>
+                        </div>
+                    </div>
+                    <div >
+                        <div class="rank_left">
+                            <div><i class="rank03"></i></div>
+                            <div><span>입금(큐앤큐)</span></div>                      
+                        </div>
+                        <div class="rank_right">
+                            <span>185,000원</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mo_msg">
+                    <div class="mo_msg_txt mo_keep_txt">
+                        <span>
+                            어제 내역 중<b> 미분류</b>로 남아있는 매입은 <b>4건</b>입니다. 가장 많이 사용한 용도는 <em class="mo_blue">배달매출 2건</em> 입니다.
+                        </span>
+                    </div>
+                    <div class="mo_msg_arr">
+                         <i></i>
+                    </div>
+                </div>
+            </section>
+            <section class="morning_rank mb40">
+                <div class="mo_rank_tit">
+                    <span>출금랭킹 TOP3는?</span>
+                </div>
+                <div class="mo_rank_list">
+                    <div >
+                        <div class="rank_left">
+                            <div><i class="rank01"></i></div>
+                            <div class="elipsis"><span>출금(한미종합건재)</span></div>
+                        </div>
+                        <div class="rank_right">
+                            <span>3,245,000원</span>
+                        </div>
+                    </div>
+                    <div >
+                        <div class="rank_left">
+                            <div><i class="rank02"></i></div>
+                            <div class="elipsis"><span>출금(로움상사)</span></div>                        
+                        </div>
+                        <div class="rank_right">
+                            <span>458,200원</span>
+                        </div>
+                    </div>
+                    <div >
+                        <div class="rank_left">
+                            <div><i class="rank03"></i></div>
+                            <div class="elipsis">
+                                <span>출금(신일아이티)</span>
+                            </div>
+                        </div>
+                        <div class="rank_right">
+                            <span>88,000원</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mo_msg">
+                    <div class="mo_msg_txt mo_keep_txt">
+                        <span>
+                            어제 내역 중<b> 미분류</b>로 남아있는 출금은 <b>1건</b>입니다. 가장 많이 사용한 용도는 <em class="mo_orange">구입 3건</em> 입니다.
+                        </span>
+                    </div>
+                    <div class="mo_msg_arr">
+                         <i></i>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- 매출 -->
+        <div class="morning_content report_pd20" >
+            <section class="pf_chart">
+                <div class="pfs03_title">
+                    전일대비 어제매출은?
+                </div>
+                <div class="pfs01_rate">
+                    <div class="pfs_rate_left">
+                        <div class="pfs_rate_total">
+                            <span class="pfs_rate_num">
+                                273,200원
+                            </span>
+                            <span class="pfs_rate_per down"><i >▲</i><em>40%</em></span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="mor_graph">
+                <div >
+                    <canvas id="myChart02"></canvas>
+                </div>
+            </section>
+            <section class="morning_rank">
+                <div class="mo_rank_tit">
+                    <span>매출랭킹 TOP3는?</span>
+                </div>
+                <div class="mo_rank_list">
+                    <div >
+                        <div class="rank_left">
+                            <div><i class="rank01"></i></div>
+                            <div class="elipsis">
+                                <span>BC카드(1483*******)</span>
+                            </div>  
+                        </div>
+                        <div class="rank_right">
+                            <span>카드 273,000원</span>
+                        </div>
+                    </div>
+                    <div >
+                        <div class="rank_left ">
+                            <div><i class="rank02"></i></div>
+                            <div class="elipsis">
+                                <span>큐앤큐인터내셔널지오그래픽</span>
+                            </div>
+                        </div>
+                        <div class="rank_right">
+                            <span>세.계 13,000,000원</span>
+                        </div>
+                    </div>
+                    <div >
+                        <div class="rank_left">
+                            <div><i class="rank03"></i></div>
+                            <div class="elipsis">
+                                <span>동산캐스팅철강</span>
+                            </div>
+                        </div>
+                        <div class="rank_right">
+                            <span>현금 130,000원</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mo_msg">
+                    <div class="mo_msg_txt">
+                        <span>
+                            어제 내역 중 <b>카드매출이 16건</b>으로 가장 많이 발생 했습니다.
+                        </span>
+                    </div>
+                    <div class="mo_msg_arr">
+                         <i></i>
+                    </div>  
+                </div>
+            </section>
+            <section class="sale_trend">
+                <div class="mo_rank_tit">
+                    <span>우리 지역 매출 추이는?</span>
+                </div>
+                <div class="st_box">
+                    <span class="st_txt">
+                        <b>서울특별시 영등포구</b> 지역 기준 매출은 전일대비 <em class="mo_orange">28%증가</em> 했습니다.
+                    </span>
+                    <span class="st_per">
+                        100% 이상
+                    </span>
+                </div>
+            </section>
+            <section class="guest_avg">
+                <div class="mo_rank_tit">
+                    <span>내 고객 평균 객단가는?</span>
+                </div>
+                <div class="ga_box">
+                    <div class="ga_txt">
+                        <p>21.09.20(목) 총 매출</p>
+                        <span>50건</span>
+                    </div>
+                    <div class="ga_cost">
+                        <span>50,000원</span>
+                    </div>
+                </div>
+            </section>            
+        </div>
+        <!-- 매입 -->
+        <div class="morning_content report_pd20">
+            <section class="pf_chart">
+                <div class="pfs02_title flex_cs">
+                    <span>전일대비 어제매입은?</span>
+                    <span class="sub_txt">총매입</span>
+                </div>
+                <div class="pfs01_rate">
+                    <div class="pfs_rate_left">
+                        <div class="pfs_rate_total">
+                            <span class="pfs_rate_num">
+                                3,900,000원
+                            </span>
+                            <span class="pfs_rate_per"><i >▲</i><em>72%</em></span>
+                        </div>
+
+                    </div>
+                    <div class="pfs_rate_right">
+                        <span class="sub_txt">119건</span>
+                    </div>
+                </div>
+            </section>
+            <section class="mor_graph">
+                <div >
+                    <canvas id="myChart03" ></canvas>
+                </div>
+            </section>
+            <section class="perchase_list">
+                <div class="perchase_item">
+                    <span>카드78건</span>
+                    <span>1,300,000원</span>
+                </div>
+                <div class="perchase_item">
+                    <span>세금계산서 22건</span>
+                    <span>330,000원</span>
+                </div>
+                <div class="perchase_item">
+                    <span>현금영수증 11건</span>
+                    <span>1,000,000원</span>
+                </div>
+                <div class="perchase_item">
+                    <span>계산서 8건</span>
+                    <span>1,300,000원</span>
+                </div>
+            </section>
+            <section class="morning_rank">
+                <div class="mo_rank_tit">
+                    <span>매입랭킹 TOP3는?</span>
+                </div>
+                <div class="mo_rank_list">
+                    <div >
+                        <div class="rank_left">
+                            <i class="rank01"></i>
+                            <span class="elipsis">웹케시</span>
+                        </div>
+                        <div class="rank_right">
+                            <span>현금 <em>500,000원</em></span>
+                        </div>
+                    </div>
+                    <div >
+                        <div class="rank_left">
+                            <i class="rank02"></i>
+                            <span class="elipsis">큐앤큐인터내셔널</span>
+                        </div>
+                        <div class="rank_right">
+                            <span>세.계 <em>300,000원</em></span>
+                        </div>
+                    </div>
+                    <div >
+                        <div class="rank_left">
+                            <i class="rank03"></i>
+                            <span class="elipsis">동산캐스팅철강</span>
+                        </div>
+                        <div class="rank_right">
+                            <span>카드 <em>130,000원</em></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mo_msg">
+                    <div class="mo_msg_txt">
+                        <span>
+                            최근 가장 많은 매입은 <b>카드1건</b>입니다.
+                        </span>
+                    </div>
+                    <div class="mo_msg_arr">
+                         <i></i>
+                    </div>
+                </div>
+            </section>
+            <section class="morning_rank mb40">
+                <div class="mo_rank_tit">
+                    <span>주요 사용처 TOP5는?</span>
+                </div>
+                <div class="mo_rank_list">
+                    <div >
+                        <div class="rank_left">
+                            <div><i class="rank01"></i></div>
+                            <div>
+                                <span>구입 <em>10건</em></span>
+                            </div>      
+                        </div>
+                    </div>
+                    <div >
+                        <div class="rank_left">
+                            <i class="rank02"></i>
+                            <span>차량유지 <em>7건</em></span>
+                        </div>
+                    </div>
+                    <div >
+                        <div class="rank_left">
+                            <div><i class="rank03"></i></div>
+                            <div>
+                               <span>매입세금계산서발행 <em>5건</em></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div >
+                        <div class="rank_left">
+                            <div><i class="rank04"></i></div>
+                            <div>
+                                <span>개인용도 <em>3건</em></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div >
+                        <div class="rank_left">
+                            <div><i class="rank05"></i></div>
+                            <div>
+                                <span>현금영수증 <em>3건</em></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mo_msg">
+                    <div class="mo_msg_txt">
+                        <span>
+                            어제 내역 중 용도를 설정한 총 <b>119건</b> 중 미분류로 남아있는 매입은 10건 입니다. 가장 많이 사용한 용도는 <em class="mo_orange">구입10건</em>입니다.
+                        </span>
+                    </div>
+                    <div class="mo_msg_arr">
+                         <i></i>
+                    </div>
+                </div>
+            </section>           
+        </div>
+        <!-- 하단 인포 -->
+        <div class="mor_foot report_pd20">
+            <div class="mor_info">
+                <div class="mor_info_tit">
+                    안내사항
+                </div>
+                <div class="mor_info_txt">
+                    <div>
+                        <span>
+                            -&nbsp;본 보고서는 세모장부에서 제공하는 데이터로 외부에서 제공하는 다른 보고서와 차이가 있습니다.
+                        </span>
+                    </div>
+                    <div>
+                        <span>
+                            -&nbsp;개인 정보가 포함된 내용으로 타인에게 노출을 주의하시고 이에 따른 책임은 사업자에게 있음을 알려드립니다. 
+                        </span>
+                    </div>
+                    <div>
+                        <span>
+                            - 설정 > 알림 설정에서 아침보고서 배송을 on/off 할 수 있습니다. 
+                        </span>
+                    </div>
+                    <div class="mor_info_btn">
+                        <span>- 보고서에 관한 어려움 또는 개선의견이 있으세요?</span>
+                        <span class="mor_btn">접수하기</span>
+                    </div>
+                </div>
+             </div>
+             <div class="mor_logo">
+                 <i class="c_bi ico_cen"></i>
+             </div>
+        </div>
+    </div>
+    <script>
+        // 차트2 라인차트
+        var ctx = document.getElementById('myChart02').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['08.23', '08.24', '08.25', '08.26', '08.27', '08.28', '08.29'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [12, 19, 10, 15, 5, 0, 0],
+                    backgroundColor: ['rgba(243,180,193,0.7)'], // 
+                    fill:true, // 라인채티 영역 칠할지 여부
+                    borderColor:'rgba(237,109,133,0.8)', // 라인색
+                    
+                    borderWidth: 3, //라인 굵기
+                    pointBorderWidth:1, // 차트 o 굵기
+                    pointRadius: 7, //차트 o 크기
+                    pointBackgroundColor: '#ed6d85', //o 안에 색상
+                  
+                }]
+            },
+            options: {
+                plugins: {
+                    legend: {
+                    display: false,
+
+                    }
+                        },
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+        // 차트00 바 차트
+        var ctx = document.getElementById('myChart00').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['IBK기업', 'NH농협'],
+                datasets: [{
+                    label: '수익',
+                    data: [400000 , 200000 ],
+                    backgroundColor: [
+                        '#249078',
+                        '#10C0E7'
+                        
+                    ],
+                    borderRadius:8
+                },
+                {
+                    label: '손실',
+                    data: [150000, 50000],
+                    backgroundColor: [
+                        '#ff7b36',
+                        '#ff8dc2'
+                    ],
+                    borderRadius:8 /*border radius 설정*/
+                }]
+            },
+            
+            options: {
+                plugins: { //label 삭제 
+                    legend: {
+                    display: false
+                    }
+                        },
+                scales: {
+                    y: {
+                        beginAtZero: true /* 초기 0부터 시작*/
+                    }
+                }
+            }
+        });
+
+        // 차트1
+        var ctx = document.getElementById('myChart01').getContext('2d');
+
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Green', 'Orange', 'Yellow', 'pink'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [40000 , 200000 , 50000, 150000],
+                    backgroundColor: [
+                        '#249078',
+                        '#ff7b36',
+                        '#ffd036',
+                        '#ff8dc2'
+                    ],
+                    borderRadius:8
+                }]
+            },
+            options: {
+                plugins: { //label 삭제 
+                    legend: {
+                    display: false
+                    }
+                        },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        stepSize:8,
+                    }
+                }
+            }
+        });
+        
+        // 차트3
+        var ctx = document.getElementById('myChart03').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['08.23', '08.24', '08.25', '08.26', '08.27', '08.28', '08.29'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [12, 19, 10, 15],
+                    backgroundColor: [
+                        '#10C0E7',
+                        '#ff7b36',
+                        '#ffd036',
+                        '#ff8dc2',        
+                    ]
+                }]
+            },
+            options: {
+                plugins: {
+                    legend: {
+                    display: false
+                    }
+                        },
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+    </script>
+</body>
+
+</html>

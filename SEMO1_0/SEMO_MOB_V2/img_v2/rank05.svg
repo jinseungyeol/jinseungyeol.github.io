@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="31" height="40">
+    <g data-name="그룹 56815">
+        <text data-name="5" transform="translate(9 33)" style="fill:#d4b36e;font-size:23px;font-family:SegoeUI,Segoe UI;letter-spacing:-.02em"><tspan x="0" y="0">5</tspan></text>
+        <g data-name="그룹 18193">
+            <g data-name="타원 1014" transform="translate(0 9)" style="stroke:#d4b36e;stroke-width:1.5px;fill:none">
+                <circle cx="15.5" cy="15.5" r="15.5" style="stroke:none"/>
+                <circle cx="15.5" cy="15.5" r="14.75" style="fill:none"/>
+            </g>
+            <path data-name="사각형 8055" transform="translate(7.209 .023)" style="fill:#e2e2e2" d="M0 0h17.295v7.785H0z"/>
+            <path data-name="사각형 8054" transform="translate(13.063)" style="fill:#efefef" d="M0 0h5.618v7.832H0z"/>
+            <path data-name="사각형 8056" transform="translate(7.204 7.968)" style="fill:#e0e0e0" d="M0 0h17.337v.684H0z"/>
+        </g>
+    </g>
+</svg>

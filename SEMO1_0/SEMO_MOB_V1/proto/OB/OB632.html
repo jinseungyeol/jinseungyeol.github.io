@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../../css/semo_cont.css" />
+  <link rel="stylesheet" href="../../css/semo_cont_ibk.css" />
+  <title>SEMO</title>
+</head>
+
+<body>
+  <div class="new_content">
+
+    <div class="cont_bg cont_pd">
+      <!-- 클래스 cont_pd fix_button 포함 패딩-->
+
+      <!-- 상단 타이틀 -->
+      <div class="title">기간연장신청</div>
+      <!-- //상단 타이틀 -->
+
+      <div class="wrap account">
+        <div class="progress_state_box">
+          <span class="on"></span>
+          <!--신청 진행 활성 클래스 on-->
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div>
+          <!-- 2021-01-18 full클래스 추가 -->
+          <div class="title_sub full">대출 기간연장 신청 전 유의사항을 확인하시고, 아래 내용을 충분히 이해하신 후 동의하시기 바랍니다.
+          </div>
+
+          <!-- 약관동의 -->
+          <div class="terms_box open unset">
+            <!--활성 클래스 on 전체 약관 표시 AND 활성 클래스 open 약관열기 -->
+            <!-- 전체 동의 -->
+            <div class="terms_li type2">
+              <input type="checkbox" class="check_terms">
+              <!--클릭하면 checked true-->
+              <span>전체 유의사항 확인 및 정보제공 동의</span>
+            </div>
+            <!-- //전체 동의 -->
+
+            <!-- 약관 -->
+            <ul class="border">
+              <!-- 2021-01-18 border 클래스 추가 -->
+              <div class="terms_con_title">
+                <b>
+                  유의사항 안내
+                </b>
+              </div>
+              <li class="terms_li ">
+                <input type="checkbox" class="check_terms">
+                <!--클릭하면 checked true-->
+                <!-- 2021-01-18 문구수정 -->
+                <span>은행에 본인확인이 가능한 대표자 개인명의의 휴대전화번호가 등록되어 있습니다.
+                </span>
+        
+              </li>
+              <li class="terms_li">
+                <input type="checkbox" class="check_terms">
+                <!--클릭하면 checked true-->
+                <span>기간연장 시 적용되는 대출금리는 신청일 기준 신용등급과 기간연장일 기준 시장금리 등에 따라 변동될 수 있으며, 금리종류는 변경이 불가합니다.
+                </span>
+
+              </li>
+              <li class="terms_li ">
+                <input type="checkbox" class="check_terms">
+                <!--클릭하면 checked true-->
+                <span>대출이자 자동이체일, 상환방식은 최초 대출실행 조건과 동일하게 적용되며 임의로 변경하실 수 없습니다.
+                </span>
+              
+              </li>
+              <li class="terms_li">
+                <input type="checkbox" class="check_terms">
+                <!--클릭하면 checked true-->
+                <span>기간연장 약정 신청 완료 후 대출만기일에 이자수납이 완료되어야 기간연장이 가능합니다.
+                </span>
+               
+              </li>
+              <li class="terms_li">
+                <input type="checkbox" class="check_terms">
+                <!--클릭하면 checked true-->
+                <span>은행에서 정한 신용등급 등 기간연장 제한 사유에 따라 최초 대출금액(기간연장이 있는 경우 최종 기간연장금액)의 20% 이상 상환 후 기간연장이 가능하거나, 기간연장이 거절될 수
+                  도 있습니다.
+                  <!--// 2021-01-18 문구수정 -->
+
+                </span>
+             
+              </li>
+            </ul>
+            <ul>
+              <li class="terms_li">
+                <input type="checkbox" class="check_terms">
+                <!--클릭하면 checked true-->
+                <span>개인(신용)정보 수집·이용 및 제공 관련 고객 권리 안내문
+                  <!--// 2021-01-18 문구수정 --></span>
+                <a class="btn_term_move"><i class="ico_arr"></i><em class="new_blind">약관이동</em></a>
+              </li>
+              <li class="terms_li">
+                <input type="checkbox" class="check_terms">
+                <!--클릭하면 checked true-->
+                <span>개인(신용)정보 조회 동의서</span>
+                <!--// 2021-01-18 문구수정 -->
+                <a class="btn_term_move"><i class="ico_arr"></i><em class="new_blind">약관이동</em></a>
+              </li>
+              <li class="terms_li">
+                <input type="checkbox" class="check_terms">
+                <!--클릭하면 checked true-->
+                <span>개인(신용)정보 수집ㆍ이용ㆍ제공 동의서(여신금융거래)</span>
+                <!--// 2021-01-18 문구수정 -->
+                <a class="btn_term_move"><i class="ico_arr"></i><em class="new_blind">약관이동</em></a>
+              </li>
+              <li class="terms_li">
+                <input type="checkbox" class="check_terms">
+                <!--클릭하면 checked true-->
+                <span>공공기관 전산정보 이용 동의서</span>
+                <!--// 2021-01-18 문구수정 -->
+                <a class="btn_term_move"><i class="ico_arr"></i><em class="new_blind">약관이동</em></a>
+              </li>
+            </ul>
+            <!-- //약관 -->
+          </div>
+          <!-- //약관동의 -->
+        </div>
+      </div>
+    </div>
+    <!-- 기간연장심사 거절 팝업 -->
+    <div class="popup_bg hide">
+      <!-- hide클래스 가리기 -->
+      <div class="popup pt_top2">
+        <!-- 2020-12-04 pt_top2클래스 추가 -->
+        <div class="popup_txt">
+          <span class="popup_tit"></span>
+          <span class="popup_sub pt_pd3">
+            기간연장 신청이 불가합니다. <br> 고객센터(1566-2566) 로 <br> 연락해주시기 바랍니다.
+          </span>
+        </div>
+        <div class="popup_btn">
+          <span class="bgc_green">확인</span>
+          <!--클래스 bgc_green 배경색-->
+        </div>
+      </div>
+    </div>
+        <!--// 기간연장심사 거절 팝업 -->
+
+            <!-- 재심사 거절 팝업 -->
+    <div class="popup_bg hide">
+      <!-- hide클래스 가리기 -->
+      <div class="popup pt_top2">
+        <!-- 2020-12-04 pt_top2클래스 추가 -->
+        <div class="popup_txt">
+          <span class="popup_tit"></span>
+          <span class="popup_sub pt_pd3">
+            기간연장 신청이 불가합니다. <br> 고객센터(1566-2566) 또는 <br> 지역보증재단으로 연락해주시기 <br> 바랍니다.
+
+          </span>
+        </div>
+        <div class="popup_btn">
+          <span class="bgc_green">확인</span>
+          <!--클래스 bgc_green 배경색-->
+        </div>
+      </div>
+    </div>
+        <!--// 재심사 거절 팝업 -->
+    <!-- 토스트 팝업 -->
+    <div class="toast hide">
+      <span>정보제공 동의를 진행해 주세요</span>
+    </div>
+    <!-- 토스트 팝업 -->
+
+    <!-- 하단 fix 버튼 -->
+    <div class="btm_fix on">
+      <span>취소</span>
+      <!-- 2021-01-18 문구수정 -->
+      <span class="bgc_green">다음</span>
+      <!--클래스 bgc_gray 배경색-->
+    </div>
+    <!-- 하단 fix 버튼 -->
+  </div>
+</body>
+
+</html>

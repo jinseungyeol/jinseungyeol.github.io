@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css_v2/semo_style.css">
+    <!-- <link rel="stylesheet" href="../../css_v2/kt_style.css"> -->
+  <script src="../../js_v2/jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+
+            function resizeInput() {
+                $(this).attr('size', $(this).val().length);
+            }
+            $('#pay_month')
+                .change(resizeInput)
+                .each(resizeInput);
+
+            // 달력이 떠서 확인버튼 누를 때 resizeInput 함수 재실행
+
+            // $("#pay_month").on("propertychange change keyup paste input" ,function(){
+            //     var currentVal = $(this).val();
+            //     if(currentVal == oldVal){
+            //         return;
+            //     }
+
+            //     oldVal = currentVal;
+            //     resizeInput();
+
+
+            //     });
+            mobiscroll.setOptions({
+                theme: 'ios',
+                themeVariant: 'light'
+
+            });
+
+            $(function () {
+
+                $('#pay_month').mobiscroll().datepicker({
+                    locale: mobiscroll.localeKo,
+                    controls: ['date'],
+                    dateFormat: 'YYYY년 MM월',
+                    dateWheels: '|YYYY MMMM|',
+                    touchUi: true,
+                    buttons: [{
+                        text: '확인',
+                        handler: 'cancel'
+                    }],
+
+                });
+
+            });
+        });
+    </script>
+    <title>C657</title>
+</head>
+
+<body>
+    <div class="title">
+        <div class="title_left">
+            <i class="ico_cen left_arrow"></i>
+        </div>
+        <span class="title_text">급여관리</span>
+        <div class="title_right">
+            <i class="ico_cen info"></i>
+        </div>
+    </div>
+    <div class="basic_wrapper ">
+        <div class="padding_wrapper20">
+            <div class="pay_category">
+                <div class="pay_month">
+                    <span>2021년 5월</span>
+                </div>
+            </div>
+        </div>
+        <div class="pca_content ">
+            <ul class="pca_con_tit">
+                <li class="name">
+                    <input type="checkbox">
+                    <label for="">이름</label>
+                </li>
+                <li class="date">
+                    입사일자
+                </li>
+                <li class="amount">지급액</li>
+            </ul>
+            <div class="pca_con_list_wrap">
+                <ul class="pca_con_list">
+                    <li class="name">
+                        <input type="checkbox">
+                        <label for="">김마크킴</label>
+                    </li>
+                    <li class="date">
+                        21.01.20
+                    </li>
+                    <li class="amount">3,200,000원</li>
+                </ul>
+                <ul class="pca_con_list">
+                    <li class="name">
+                        <input type="checkbox">
+                        <label for="">김마크</label>
+                    </li>
+                    <li class="date">
+                        21.01.20
+                    </li>
+                    <li class="amount">3,200,000원</li>
+                </ul>
+                <ul class="pca_con_list">
+                    <li class="name">
+                        <input type="checkbox">
+                        <label for="">김세모네모</label>
+                    </li>
+                    <li class="date">
+                        21.01.20
+                    </li>
+                    <li class="amount">3,200,000원</li>
+                </ul>
+            </div>
+            <div class="pca_con_pop" style="display:none">
+                <div class="pca_pop_img"></div>
+                <div class="pca_pop_ment">
+                    급여내역이 없습니다.
+                </div>
+            </div>
+        </div>
+        <div class="btm_button bottom_fix active">
+            <span>가져오기</span>
+        </div>
+    </div>
+
+</body>
+
+</html>

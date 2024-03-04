@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48">
+    <g data-name="그룹 57749">
+        <g data-name="타원 1339" transform="translate(-1019.334 -482.354)">
+            <circle data-name="타원 1734" cx="24" cy="24" r="24" transform="translate(1019.334 482.354)" style="fill:none"/>
+            <circle data-name="타원 1735" cx="23.5" cy="23.5" r="23.5" transform="translate(1019.834 482.854)" style="stroke:#222;fill:none"/>
+        </g>
+        <g data-name="그룹 57723" style="isolation:isolate">
+            <path data-name="패스 45842" d="M1051.944 519.354h-17.206c.036-4.14 2.16-7.271 5.543-9.539 3.276-2.375 7.524-4.356 7.6-8.278.035-1.8-.721-4.464-4.248-4.464-3.239 0-4.211 2.771-4.319 6.3h-4.1c0-5.58 3.06-9.719 8.675-9.719 6.156 0 8.1 4.5 8.1 7.739 0 4-2.736 6.48-5.615 8.495-2.916 2.016-5.975 3.564-6.695 5.8h12.274z" style="fill:#222" transform="translate(-1019.334 -482.354)"/>
+        </g>
+    </g>
+</svg>

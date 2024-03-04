@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://tax.semoreport.com/img/favicon_semoR.png">
+    <link rel="stylesheet" href="https://tax.semoreport.com/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://tax.semoreport.com/css/semoR_pc.css">
+    <title>프리미엄 세무서비스 신청(사장님 전용)</title>
+    <style>
+        @font-face {font-family: 'Pretendard'; font-weight: normal; src: url(../font/Pretendard-Medium.woff2) format('woff2');}
+        @font-face {font-family: 'Pretendard'; font-weight: 600; src: url(../font/Pretendard-SemiBold.woff2) format('woff2');}
+        @font-face {font-family: 'Pretendard'; font-weight: bold; src: url(../font/Pretendard-Bold.woff2) format('woff2');}
+    </style>
+</head>
+
+<body>
+
+    <!-- wrapper -->
+    <div class="wrapper">
+        <div class="applyWrap">
+            <div class="formWrap">
+                <div class="inner">
+                    <div class="areaFormTit">
+                        <strong>프리미엄 세무서비스 <span>신청하기(사장님 전용)</span></strong>
+                        <p>사장님의 사업장에 맞는 무료 절세 컨설팅과 <span>매달 프리미엄 세무서비스를 제공해드립니다.</span></p>
+                    </div>
+                    <div class="inputForm">
+                        <form id="applyForm" novalidate="novalidate">
+                            <input type="hidden" name="PATH_CD" value="HO_RPT">
+                            <!-- 입력 및 선택폼 -->
+                            <div class="inputWrap">
+                                <div class="areaTit">
+                                    <label class="formTit">사업자번호</label>
+                                </div>
+                                <div class="inputBox">
+                                    <input type="tel" name="BIZ_NO" placeholder="000-00-00000" maxlength="12" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
+                                </div>
+                            </div>
+                            <div class="inputWrap">
+                                <div class="areaTit">
+                                    <label class="formTit">상호명</label>
+                                </div>
+                                <div class="inputBox">
+                                    <input type="text" name="BSNN_NM" placeholder="세모베이커리 청담점" maxlength="100" oninput="fn_chkChar(this)">
+                                </div>
+                            </div>
+                            <div class="inputWrap">
+                                <div class="areaTit">
+                                    <label class="formTit">대표자명</label>
+                                </div>
+                                <div class="inputBox">
+                                    <input type="text" name="RPPR_NM" placeholder="홍길동" maxlength="100" oninput="fn_chkChar(this)">
+                                </div>
+                            </div>
+                            <div class="inputWrap">
+                                <div class="areaTit">
+                                    <label class="formTit">연락처</label>
+                                </div>
+                                <div class="inputBox">
+                                    <input type="tel" name="APPL_CNTC" placeholder="010-0000-0000" maxlength="13" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
+                                </div>
+                            </div>
+                            <div class="inputWrap">
+                                <div class="areaTit">
+                                    <label class="formTit">지역</label>
+                                </div>
+                                <div class="inputBox">
+                                    <textarea name="APPL_LC" placeholder="서울특별시 청담동" rows="1" maxlength="100" autocomplete="on" oninput="fn_chkChar(this)"></textarea>
+                                </div>
+                            </div>
+                            <div class="inputWrap">
+                                <div class="areaTit">
+                                    <label class="formTit">업태 및 업종</label>
+                                </div>
+                                <div class="inputBox">
+                                    <input type="text" name="BSST_TPBS" placeholder="요식업(한식)" maxlength="200" oninput="fn_chkChar(this)">
+                                </div>
+                            </div>
+                            <div class="inputWrap select">
+                                <div class="areaTit">
+                                    <label class="formTit">현재 세무 기장서비스를 이용하고 계신가요?</label>
+                                </div>
+                                <div class="selectBox">
+                                    <a href="javascript:;" class="selectItem">
+                                        <input type="text" id="useService" placeholder="선택하기" readonly>
+                                        <img src="https://tax.semoreport.com/img/ico_down.png">
+                                    </a>
+                                    <ul class="selectList">
+                                        <li>
+                                            <a href="javascript:;" data-use_service="Y">예</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;" data-use_service="N">아니오</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- //입력 및 선택폼 -->
+                            <!-- 관심사 -->
+                            <div class="selectService">
+                                <label class="formTit">세모리포트에서 제공하는 서비스 중 관심사를 선택해 주세요.(중복선택 가능)</label>
+                                <div class="inner">
+                                    <ul class="serviceList">
+                                        <li class="rept" data-interest="1">
+                                            <a href="javascript:;">
+                                                <div class="content">
+                                                    <div class="left">
+                                                        <span class="icon"></span>
+                                                    </div>
+                                                    <div class="right">
+                                                        <strong>사업분석 보고서</strong>
+                                                        <span>매출 · 매입 · 손익 분석 맞춤 보고서</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="consult" data-interest="2">
+                                            <a href="javascript:;">
+                                                <div class="content">
+                                                    <div class="left">
+                                                        <span class="icon"></span>
+                                                    </div>
+                                                    <div class="right">
+                                                        <strong>무료 절세컨설팅</strong>
+                                                        <span>부가세 · 종소세 등 절세 1:1 컨설팅</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="busi" data-interest="4">
+                                            <a href="javascript:;">
+                                                <div class="content">
+                                                    <div class="left">
+                                                        <span class="icon"></span>
+                                                    </div>
+                                                    <div class="right">
+                                                        <strong>주변 상권 분석</strong>
+                                                        <span>상권 내 매출 및 유동인구 정보</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li class="gvmt" data-interest="8">
+                                            <a href="javascript:;">
+                                                <div class="content">
+                                                    <div class="left">
+                                                        <span class="icon"></span>
+                                                    </div>
+                                                    <div class="right">
+                                                        <strong>정부지원금 안내</strong>
+                                                        <span>업종별 맞춤 정부지원금 안내</span>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- //관심사 -->
+                            <!-- 안내사항 및 개인정보처리방침동의 -->
+                            <div class="agreeWrap">
+                                <div class="infoBox">
+                                    <ul class="dotList">
+                                        <li>
+                                            신청내용을 작성해 주시면 담당자가 자세히 안내해 드리겠습니다.
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="provide">
+                                    <input type="checkbox" id="terms" data-agree="N">
+                                    <label for="terms">개인정보처리방침에 동의합니다</label>
+                                </div>
+                                <div class="areaSubmit">
+                                    <button type="submit" class="btnSubmit">신청하기</button>
+                                </div>
+                            </div>
+                            <!-- //안내사항 및 개인정보처리방침동의 -->
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //wrapper -->
+
+  <script src="https://tax.semoreport.com/js/jquery-3.5.1.min.js"></script>
+    <script src="https://tax.semoreport.com/js/swiper-bundle.min.js"></script>
+    <script src="https://tax.semoreport.com/js/semo.api.js"></script>
+    <script src="https://tax.semoreport.com/js/semoR_ui.js"></script>
+    <script>
+        $(function() {
+            // 유효성 검사 
+            $("#applyForm").on("submit", function (e) {
+                
+                var busiNumVal = $("input[name='BIZ_NO']").val().split("-").join("");
+                var phoneNumVal = $("input[name='APPL_CNTC']").val().split("-").join("");
+
+                // 휴대폰번호 정규식
+                var phoneRule = /^(01[016789]{1})[0-9]{3,4}[0-9]{4}$/;
+
+                e.preventDefault();
+
+                // 유효성검사
+                if (busiNumVal == "" || busiNumVal.length !== 10) {
+                    alert("사업자번호를 입력해 주세요!");
+                    $("input[name='BIZ_NO']").focus();
+                    return;
+                } else if ($("input[name='BSNN_NM']").val() == "") {
+                    alert("상호명을 입력해 주세요!");
+                    $("input[name='BSNN_NM']").focus();
+                    return;
+                } else if ($("input[name='RPPR_NM']").val() == "") {
+                    alert("대표자명을 입력해 주세요!");
+                    $("input[name='RPPR_NM']").focus();
+                    return;
+                } else if (phoneNumVal == "" || phoneNumVal.length !== 11) {
+                    alert("연락처를 입력해 주세요!");
+                    $("input[name='APPL_CNTC']").focus();
+                    return;
+                } else if (!phoneRule.test(phoneNumVal)) {
+                    alert("맞지 않는 연락처 형식입니다. 다시 입력해 주세요.");
+                    $("input[name='APPL_CNTC']").focus();
+                    return;
+                } else if ($("textarea[name='APPL_LC']").val() == "") {
+                    alert("지역을 입력해 주세요!");
+                    $("textarea[name='APPL_LC']").focus();
+                    return;
+                } else if ($("input[name='BSST_TPBS']").val() == "") {
+                    alert("업태 및 업종을 입력해 주세요!");
+                    $("input[name='BSST_TPBS']").focus();
+                    return;
+                } else if (!$(".selectList li").hasClass("selected")) {
+                    alert("기장서비스 이용 여부를 선택해 주세요.");
+                    $(".selectBox").addClass("active");
+                    return;
+                } else if ($(".serviceList li.active").length == 0) {
+                    alert("세모리포트 제공 서비스 중 관심있는 내용을 선택해 주세요.");
+                    return;
+                } else if ($("#terms").prop("checked") !== true) {
+                    alert("개인정보처리방침에 동의해 주세요.");
+                    return;
+                }
+
+                var param = {
+                    TRAN_NO: "SMR_PRMU_TXSV_APPL_C01",
+                    REQ_DATA: {
+                        BIZ_NO: busiNumVal,
+                        BSNN_NM: $.trim($("input[name='BSNN_NM']").val()),
+                        RPPR_NM: $.trim($("input[name='RPPR_NM']").val()),
+                        APPL_CNTC: phoneNumVal,
+                        APPL_LC: $("textarea[name='APPL_LC']").val(),
+                        BSST_TPBS: $.trim($("input[name='BSST_TPBS']").val()),
+                        TAX_CNST_YN: $(".selectList li.selected a").data("use_service"),
+                        APPL_CATG: funcBitwise(".serviceList li.active", "interest"),
+                        PRVC_PLCY_YN: $("#terms").attr("data-agree"),
+                    }
+                }
+
+                var searchParams = new URLSearchParams(window.location.search);
+
+                fn_urlParams(param.REQ_DATA);
+
+                console.log(param);
+                semoApi.callAjax(param, function (data) {
+                    console.log(param);
+                    if (data.RSLT_CD == '0000') {
+                        console.log("ddd")
+                        alert('정상 처리되었습니다.');
+                    } else {
+                        alert(data.RSLT_MSG);
+                    }
+                });
+            })
+
+            // 유입경로 ajax param에 넣어주기
+            function fn_urlParams(json) {
+                var searchParams = new URLSearchParams(window.location.search);
+
+                for (const urlParam of searchParams) {
+                    json[`${urlParam[0]}`] = urlParam[1];
+                }
+                return json;
+            }
+
+            // 실시간 유효성 검사 함수
+            function fn_validation() {
+                var busiNumVal = $("input[name='BIZ_NO']").val().split("-").join("");
+                var phoneNumVal = $("input[name='APPL_CNTC']").val().split("-").join("");
+
+                $(".btnSubmit").removeClass("active");
+
+                if (busiNumVal == "" || busiNumVal.length !== 10) {
+                    return;
+                } else if ($("input[name='BSNN_NM']").val() == "") {
+                    return;
+                } else if ($("input[name='RPPR_NM']").val() == "") {
+                    return;
+                } else if (phoneNumVal == "" || phoneNumVal.length !== 11) {
+                    return;
+                } else if ($("textarea[name='APPL_LC']").val() == "") {
+                    return;
+                } else if ($("input[name='BSST_TPBS']").val() == "") {
+                    return;
+                } else if (!$(".selectList li").hasClass("selected")) {
+                    return;
+                } else if ($(".serviceList li.active").length == 0) {
+                    return;
+                } else if ($("#terms").prop("checked") !== true) {
+                    return;
+                } else {
+                    $(".btnSubmit").addClass("active");
+                }
+            }
+
+            $("input[name='BIZ_NO'], input[name='BSNN_NM'], input[name='RPPR_NM'], input[name='APPL_CNTC'], textarea[name='APPL_LC'], input[name='BSST_TPBS']").on("keyup keypress", function () {
+                fn_validation();
+            })
+
+            // 사업자번호
+            $("input[name='BIZ_NO']").on("input", function () {
+                var autoHypen = $(this).val().replace(/[^0-9]/g, '').replace(/^(\d{0,3})(\d{0,2})(\d{0,5})$/g, '$1-$2-$3').replace(/-{1,2}$/g, ''); //하이픈 자동생성
+
+                $(this).val(autoHypen);
+            })
+
+            // 연락처
+            $("input[name='APPL_CNTC']").on("input", function () {
+                var autoHypen = $(this).val().replace(/[^0-9]/g, '').replace(/^(\d{0,3})(\d{0,4})(\d{0,4})$/g, "$1-$2-$3").replace(/(\-{1,2})$/g, ""); //하이픈 자동생성
+
+                $(this).val(autoHypen);
+            })
+
+            // 지역 textarea 반응형 처리
+            $(window).on("resize", function () {
+                if ($(window).innerWidth() <= 540) {
+                    $("textarea[name='APPL_LC']").attr("rows", 3);
+                } else {
+                    $("textarea[name='APPL_LC']").attr("rows", 1);
+                }
+            });
+
+            // 세무 기장서비스 이용 선택
+            $(".selectBox .selectItem").click(function () {
+                $(this).parent().toggleClass("active");
+            })
+
+            $(".selectList li").on("click", function () {
+                $(this).addClass("selected").siblings().removeClass("selected");
+                $(this).parents(".selectBox").removeClass("active");
+                $(".selectItem input").val($(this).find("a").text());
+                fn_validation();
+            })
+
+            // 서비스 관심사 선택
+            $(".serviceList li").click(function () {
+                $(this).toggleClass("active");
+                fn_validation();
+            })
+
+            // 개인정보처리방침
+            $("#terms").on("click", function () {
+                fn_validation();
+    
+                if ($(this).prop("checked") == true) {
+                    $(this).attr("data-agree", "Y");
+                } else {
+                    $(this).attr("data-agree", "N");
+                }
+            })
+
+        });
+    </script>
+</body>
+
+</html>

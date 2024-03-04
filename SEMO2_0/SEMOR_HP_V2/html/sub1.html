@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta content='세모리포트' property='og:title' />
+    <meta content='https://www.semoreport.com' property='og:url' />
+    <meta content="../img/semoR_thumb.png" property='og:image' />
+    <meta content="사장님이 선정한 1등 보고서" property="og:description" />
+    <meta name="naver-site-verification" content="cbc6fa6ff016e95223d5c77561188a2424bf9b49" />
+    <link rel="icon" href="../img/favicon_semoR.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/semo.css">
+    <link rel="stylesheet" href="../css/aos.css">
+    <link rel="stylesheet" href="../css/swiper.min.css">
+    <link rel="stylesheet" href="../css/jquery.fullPage.css">
+    <link rel="stylesheet" href="../css/odometer-theme-default.css">
+  <script src="../js/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
+    <script src="../js/jquery.fullPage.js"></script>
+    <script src="../js/wow.min.js"></script>
+    <script src="../js/jquery.fullPage.js"></script>
+    <script src="../js/odometer.js"></script>
+    <script src="../js/aos.js"></script>
+    <script src="../js/semo.js"></script>
+    <script src="../js/semo.api.js"></script>
+    <!-- include js -->
+    <script src="https://publ.roumit.com/js/include.js"></script>
+    <title>세모리포트</title>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-TJW4JW5');</script>
+        <!-- End Google Tag Manager -->
+    <script>
+        var swipe2;
+        var index;
+        var fn_showhide01;
+
+        $(document).ready(function () {
+            isMobile = fn_check_mobile();
+
+            if (location.hostname !== 'publ.smjb.co.kr' && isMobile) {
+                location.href = "https://m.semoreport.com/";
+            }
+
+            AOS.init({
+                disable: function () {
+                    var maxWidth = 800;
+                    return window.innerWidth < maxWidth;
+                }
+            });
+
+            $(".rpt_list").mouseover(function(){
+                $(this).addClass("active");
+            });
+
+                $(".rpt_list").mouseout(function(){
+                    $(this).removeClass("active");
+                });
+
+              // 미리보기 팝업
+            $('.popBG').click(function () {
+                $('.popBG').hide();
+                $('.popBox').hide();
+            });        
+
+            $('.rpt_01').on("click",function(){
+                $('.popBG').show();
+                $('.prePop_01').fadeIn();
+            });
+            $('.rpt_02').on("click",function(){
+                $('.popBG').show();
+                $('.prePop_02').fadeIn();
+            });
+            $('.rpt_03').on("click",function(){
+                $('.popBG').show();
+                $('.prePop_03').fadeIn();
+            });
+            $('.rpt_04').on("click",function(){
+                $('.popBG').show();
+                $('.prePop_04').fadeIn();
+            });
+            $('.rpt_05').on("click",function(){
+                $('.popBG').show();
+                $('.prePop_05').fadeIn();
+            });
+            $('.rpt_06').on("click",function(){
+                $('.popBG').show();
+                $('.prePop_06').fadeIn();
+            });
+        
+            // 설치하기 팝업 닫기 버튼 클릭
+            $('.close_btn').click(function () {
+                $('.popBox').hide();
+                $('.popBG').hide();
+            });
+
+
+            // swiper 핸들링
+            swiper2 = new Swiper('.swiper-container2', {
+                slidesPerView: 3,
+                spaceBetween: 54,
+                centeredSlides: true,
+                loop: true,
+                navigation: {
+                    nextEl: '.swiper-button-next2',
+                    prevEl: '.swiper-button-prev2',
+                },
+                pagination: {
+                    el: '.swiper-pagination2',
+                    clickable: true,
+                },
+            });
+        })
+    </script>
+</head>
+<body>
+      <!-- Google Tag Manager (noscript) -->
+      <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TJW4JW5" height="0" width="0" style="display:none;visibility:hidden">
+        </iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <header id="header">
+        <div class="header_wrapper">
+            <h1 class="hd_logo">
+                <a href="https://www.semoreport.com/"><img src="../img/logo_semoR_W120.png" alt="세모장부"></a>
+            </h1>
+            <nav id="gnb">
+                <ul>
+                    <li class="active">
+                        <a href="sub1.html">프리미엄 보고서</a>
+                    </li>
+                    <li>
+                        <a href="sub2.html">세모주치의</a>
+                    </li>
+                    <li>
+                        <a href="sub3.html">인증서 하이패스</a>
+                    </li>
+                    <li>
+                        <a href="https://qe398.channel.io/support-bots/74565" target="_blank">고객센터</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div id="wrapper">
+        <div id="container_wr">
+            <div id="container">
+                <section class="svisual sv01">
+                    <div class="txt_box">
+                        <img src="../img/img_stxt2.png" alt="소상공인 사람들">
+                    </div>
+                </section>
+                <section class="main03">
+                    <div class="inner">
+                        <img src="../img/ico_trophy.png" class="moveEff wow">
+                        <h2 class="moveEff wow">사장님이 극찬하는 프리미엄 <span>보고서</span> <strong>1위!</strong></h2>
+                        <p class="moveEff wow">보이는 경영을 위해 혁신을 제공합니다</p>
+                        <div class="rptPreview_wrap">
+                            <ul class="rptPreview">
+                                <li class="rpt_list rpt_01">
+                                    <a href="https://reportmgmt.appplay.co.kr/mrprt_send_040.act?TYPE=SAMPLE&RPRT_DIV=RPRT01">
+                                        <span>보고서 1</span>
+                                        <h3><b>사업분석</b> 보고서</h3>
+                                        <ol>
+                                            <li>매월 당월까지의 손익 현황 </li>
+                                            <li>올해의 매출, 손익 예측 제공</li>
+                                            <li>세금 납부 현황 및 상권분석</li>
+                                        </ol>
+                                        <button type="button" class="btn_more">보고서 미리보기 <img src="../img/ico_arrow01.png"></button>
+                                    </a>
+                                </li>
+                                <li class="rpt_list rpt_02">
+                                    <a href="https://reportmgmt.appplay.co.kr/mrprt_send_040.act?TYPE=SAMPLE&RPRT_DIV=RPRT05">
+                                        <span>보고서 2</span>
+                                        <h3><b>매출</b> 보고서</h3>
+                                        <ol>
+                                            <li>월/분기/반기/연간 매출 현황</li>
+                                            <li>전년과 올해 비교, 누적, 추세 제공</li>
+                                            <li>주요 매출 거래처 현황</li>
+                                        </ol>
+                                        <button type="button" class="btn_more">보고서 미리보기 <img src="../img/ico_arrow01.png"></button>
+                                    </a>
+                                </li>
+                                
+                                <li class="rpt_list rpt_03">
+                                    <a href="https://reportmgmt.appplay.co.kr/mrprt_send_040.act?TYPE=SAMPLE&RPRT_DIV=RPRT06">
+                                        <span>보고서 3</span>
+                                        <h3><b>매입</b> 보고서</h3>
+                                        <ol>
+                                            <li>월/분기/반기/연간 매입 현황</li>
+                                            <li>전년과 올해 비교, 누적, 추세 제공</li>
+                                            <li>주요 매입 거래처 현황</li>
+                                        </ol>
+                                        <button type="button"  class="btn_more">보고서 미리보기 <img src="../img/ico_arrow01.png"></button>
+                                    </a>
+                                </li>
+                                <li class="rpt_list rpt_04">
+                                    <a href="https://reportmgmt.appplay.co.kr/mrprt_send_040.act?TYPE=SAMPLE&RPRT_DIV=RPRT04">
+                                        <span>보고서 4</span>
+                                        <h3><b>예상 부가세</b> 보고서</h3>
+                                        <ol>
+                                            <li>부가세 작성 현황과 추세 제공</li>
+                                            <li>예상 부가율을 통한 예측 안내</li>
+                                            <li>세금 납부 예상액 미리 안내</li>
+                                        </ol>
+                                        <button type="button" class="btn_more">보고서 미리보기 <img src="../img/ico_arrow01.png"></button>
+                                    </a>
+                                </li>
+                                <li class="rpt_list rpt_05">
+                                    <a href="https://reportmgmt.appplay.co.kr/mrprt_send_040.act?TYPE=SAMPLE&RPRT_DIV=RPRT03">
+                                        <span>보고서 5</span>
+                                        <h3><b>인건비</b> 보고서</h3>
+                                        <ol>
+                                            <li>직원 및 급여 현황 보고서</li>
+                                            <li>올해 및 전년도 인건비 추세</li>
+                                            <li>인건비 구성비율 : 매출 대비</li>
+                                        </ol>
+                                        <button type="button" class="btn_more">보고서 미리보기 <img src="../img/ico_arrow01.png"></button>
+                                    </a>
+                                </li>
+                                <li class="rpt_list rpt_06">
+                                    <a href="https://reportmgmt.appplay.co.kr/mrprt_send_040.act?TYPE=SAMPLE&RPRT_DIV=RPRT07">
+                                        <span>보고서 6</span>
+                                        <h3><b>부가세 신고분석</b> 보고서</h3>
+                                        <ol>
+                                            <li>부가세 산출 및 절세 내용</li>
+                                            <li>각종 예측 지표 제공 : 부가율 등</li>
+                                            <li>매월 부가세 준비금 사전 안내</li>
+                                        </ol>
+                                        <button type="button" class="btn_more">보고서 미리보기 <img src="../img/ico_arrow01.png"></button>
+                                    </a>
+                                </li>
+                          
+
+                            </ul>
+                        </div>
+                    </div>
+                </section> 
+            </div>
+        </div>
+    </div>
+
+    <footer id="footer">
+        <div class="inner">
+            <div class="ft_top">
+                <ul>
+                    <li><a href="terms1.html">이용약관</a></li>
+                    <li><a href="terms2.html">개인정보처리방침</a></li>
+                </ul>
+                <ul class="follow">
+                    <li><a href="https://blog.naver.com/semoreport" target="_blank"><img src="../img/ico_sns01.png" alt="블로그 아이콘" title=""></a></li>
+                    <li><a href="https://www.facebook.com/semoreport" target="_blank"><img src="../img/ico_sns02.png" alt="페이스북 아이콘" title=""></a></li>
+                    <li><a href="https://www.youtube.com/channel/UCiwljN47deLcr25KHBDYEEQ" target="_blank"><img src="../img/ico_sns03.png" alt="유튜브 아이콘" title=""></a></li>
+                    <li><a href="https://www.instagram.com/semoreport/" target="_blank"><img src="../img/ico_sns04.png" alt="인스타그램 아이콘"></a></li>
+                    <li><a href="http://pf.kakao.com/_Mjtbxj/friend " target="_blank"><img src="../img/ico_sns05.png" alt="카카오톡 아이콘"></a></li>
+                </ul>
+            </div>
+    
+            <div class="ft_info">
+                <ul>
+                    <li><img src="../img/logo_roumit.png" alt="로움아이티 로고"> 로움아이티(주)</li>
+                    <li>팩스 : 070-7950-5114</li>
+                    <li>주소 : 서울시 영등포구 영신로 220 KnK디지털타워 11층 1112호</li>
+                    <li>대표 : 박승현</li>
+                    <li>사업자등록번호 : 847-87-00259</li>
+                    <li>통신판매업종신고증 : 2019-서울영등포-1992호</li>
+                </ul>
+    
+                <p>© Roumit. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        var host = window.location.host;
+        var subdomain = host.split('.')[0];
+
+        $(".rpt_list a").on('click', function() {
+            var hrefValue = $(this).attr('href')
+            var queryString = hrefValue.split('?')[1];
+
+            if (subdomain == 'publ') {
+                $(this).attr('href', `https://sitsemormgmt.smjb.co.kr/mrprt_send_040.act?${queryString}`).attr('target', '_blank');
+            }
+            
+        })
+    </script>
+</body>
+</html>

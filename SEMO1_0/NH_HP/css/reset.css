@@ -1,0 +1,53 @@
+@charset "utf-8"; /* CSS Document */
+
+
+/* @webfont */
+@font-face { font-family: NanumBarunGothicLight; font-style:normal; font-weight:300; src:local('Nanum Barun Gothic Light'),local('Nanum Barun Gothic-Light'),local('NanumBarunGothic Light'); src:url(../font/NanumBarunGothicLight.eot); src:url(../font/NanumBarunGothicLight.eot?#iefix) format('embedded-opentype'),
+url(../font/NanumBarunGothicLight.woff) format('woff'),
+url(../font/NanumBarunGothicLight.ttf) format('truetype'); } 
+@font-face { font-family:NanumBarunGothic; font-style:normal; font-weight:400; src:local('Nanum Barun Gothic Regular'),local('Nanum Barun Gothic-Regular'),local('NanumBarunGothic Regular'); src:url(../font/NanumBarunGothic.eot); src:url(../font/NanumBarunGothic.eot?#iefix) format('embedded-opentype'),
+url(../font/NanumBarunGothic.woff) format('woff'),
+url(../font/NanumBarunGothic.ttf) format('truetype'); } 
+@font-face { font-family:NanumBarunGothicBold; font-style:normal; font-weight:700; src:local('Nanum Barun Gothic Bold'),local('Nanum Barun Gothic-Bold'),local('NanumBarunGothic Bold'); src:url(../font/NanumBarunGothicBold.eot); src:url(../font/NanumBarunGothicBold.eot?#iefix) format('embedded-opentype'),
+url(../font/NanumBarunGothicBold.woff) format('woff'),
+url(../font/NanumBarunGothicBold.ttf) format('truetype'); } 
+
+
+@font-face { font-family:'Pretendard'; src: url("../font/Pretendard-Thin.woff2") format("woff2"); font-weight: 100; } 
+@font-face { font-family:'Pretendard'; src: url("../font/Pretendard-ExtraLight.woff2") format("woff2"); font-weight: 200; } 
+@font-face { font-family:'Pretendard'; src: url("../font/Pretendard-Light.woff2") format("woff2"); font-weight: 300; } 
+@font-face { font-family:'Pretendard'; src: url("../font/Pretendard-Regular.woff2") format("woff2"); font-weight: 400; } 
+@font-face { font-family:'Pretendard'; src: url("../font/Pretendard-Medium.woff2") format("woff2"); font-weight: normal; } 
+@font-face { font-family:'Pretendard'; src: url("../font/Pretendard-SemiBold.woff2") format("woff2"); font-weight: 600; } 
+@font-face { font-family:'Pretendard Variable'; src: url("../font/Pretendard-Bold.woff2"); font-weight: bold; } 
+@font-face { font-family:'Pretendard Variable'; src: url("../font/Pretendard-ExtraBold.woff2"); font-weight: 800; } 
+@font-face { font-family:'Pretendard'; src: url("../font/Pretendard-Black.woff2"); font-weight: 900; } 
+
+/* 공통 */
+* { margin:0; padding:0; } 
+*, :after, :before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; } 
+html, body { width:100%; height:100%; } 
+header,nav,section,article,aside,footer,hgroup,menu,canvas,figcaption,figure { display:block; } 
+html,body,table,th,td,div,p,ol,ul,li,img,a,h1,h2,h3,h4,h5,h6,form,fieldset,label,input,textarea,select,span,iframe,dl,dt,dd,pre,blockquote,time,hr, img { margin:0; padding:0; } 
+
+/* basic */
+body { font-family: 'Pretendard'; font-size:12px; color:#000; } 
+div,p,ol,ul,li,img,a,h1,h2,h3,form,span,iframe,dl,dt,dd { } 
+dl,ul,ol, li { list-style:none; } 
+fieldset { border:none; } 
+legend,caption,hr { display:none; } 
+img { border:none; } 
+img,label { vertical-align:middle; } 
+label { vertical-align:middle; height:13px; font-family: 'Pretendard'; } 
+input { vertical-align:middle; } 
+input.i_space { padding-right:2px !important; padding-left:2px !important; *padding-left:1px !important; } 
+input.dis,select.dis { background:#f4f4f4 !important; color:#bbb !important; } 
+input,select,textarea { vertical-align:middle; font-family: 'Pretendard'; font-size:12px; border:1px solid #cbcbcb; } 
+textarea { padding:6px 0 6px 4px; color:#555; *padding-left:1px; resize:vertical; } 
+select { display:inline-block; color:#555; height:23px; padding:2px 2px 2px 3px !important; } 
+a { text-decoration: none; } 
+html, h1, h2, h3, h4, h5, h6, form, fieldset, img { border: 0; } 
+label, input, button, select, img { vertical-align: middle; font-size: 1em; } 
+button{cursor: pointer;}
+.swiper-button-prev:after, .swiper-rtl .swiper-button-next:after { display: none; } 
+.swiper-button-next:after, .swiper-rtl .swiper-button-prev:after { display: none; } 

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/intro.css">
+    <title>퍼블리셔 가이드</title>
+</head>
+
+<body>
+    <!-- wrapper -->
+    <div class="wrapper">
+        <!-- introCont -->
+        <div class="introCont">
+            <div class="workIntro">
+                <div class="infoWrap">
+                    <img src="../../img/logo_kt_jangbu.png" class="logo" alt="사장님 장부비서 로고">
+                    <div>
+                        <div class="skills">
+                            <strong>WORK DETAIL</strong>
+                            <h1 class="mainTit">사장님 장부비서 홈페이지</h1>
+                        </div>
+                        <div class="skills">
+                            <strong>Jquery / AWS</strong>
+                            <p>
+                                외주로 개발되어있던 php 언어를 html, css, jquery로 재구축 후 AWS를 이용하여 반영한 홈페이지
+                            </p>
+                            <p>
+                                post 방식의 ajax 통신을 통해 설치링크 발송 및 세무사 수 및 프리미엄 세무서비스 신청자목록을 보여줌.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="preview">
+                <div class="main">
+                    <img src="../../img/preview_kt_hp.png" alt="메인페이지">
+                </div>
+                <div class="detail">
+                    <div class="left">
+                        <div class="areaImg">
+                            <img src="../../img/detail_kt_hp.png" alt="ajax 통신이미지">
+                        </div>
+                        <p>forEach를 이용하여 가입 수만큼 테이블을 생성하여 보여줌. 한 스크롤 섹션당 12항목의 테이블 생성</p>
+                    </div>
+                    <div class="right">
+                        <div class="areaImg">
+                            <img src="../../img/detail_kt_hp02.png" alt="ajax 통신이미지2">
+                        </div>
+                        <p>대기 및 등록 세무대리인, 우수세무사 누적액 카운팅 애니메이션(odometer.js)</p>
+                    </div>
+                </div>
+            </div>
+            <h2 class="subTit">1. 디바이스 및 작업 기준</h2>
+            <table class="tblReference">
+                <colgroup>
+                    <col width="20%">
+                    <col width="30%">
+                    <col>
+                </colgroup>
+                <tr>
+                    <th>구분</th>
+                    <th>기준</th>
+                    <th>비고</th>
+                </tr>
+                <tr>
+                    <th>디바이스</th>
+                    <td>
+                        PC
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>반응형 중단점(Break Point)</th>
+                    <td>적응형 페이지로 해당사항없음</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>HTML 파일명</th>
+                    <td>index.html</td>
+                    <td></td>
+                </tr>
+            </table>
+            <h2 class="subTit">2. 폴더 및 파일 기준</h2>
+            <table class="tblReference">
+                <colgroup>
+                    <col width="20%">
+                    <col width="30%">
+                    <col>
+                </colgroup>
+                <tr>
+                    <th>구분</th>
+                    <th>폴더명</th>
+                    <th>하위폴더 및 파일</th>
+                    <th>비고</th>
+                </tr>
+                <tr>
+                    <th>HTML 마크업 페이지</th>
+                    <td>/SEMO1_0/KT_HP</td>
+                    <td>
+                        index.html<br>
+                        proto/sub1.html<br>
+                        proto/sub2.html<br>
+                        proto/sub3.html<br>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>HTML Index</th>
+                    <td>index.html</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>공통 CSS 01.</th>
+                    <td>css/</td>
+                    <td>
+                        reset.css<br>
+                        common.css<br>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>공통 CSS 02.(라이브러리)</th>
+                    <td>css/</td>
+                    <td>
+                        swiper-bundle.min.css<br>
+                        odometer-theme-default.css
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>업무 CSS.</th>
+                    <td>css/</td>
+                    <td>kt.css</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>공통 Font 01.</th>
+                    <td>font/</td>
+                    <td>
+                        Pretendard-Light.woff2<br>
+                        Pretendard-Regular.woff2<br>
+                        Pretendard-Medium.woff2<br>
+                        Pretendard-SemiBold.woff2<br>
+                        Pretendard-Bold.woff2<br>
+                        Pretendard-ExtraBold.woff2
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>이미지 리소스 01.</th>
+                    <td>img/</td>
+                    <td>tax/</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>UX용 JS 01.</th>
+                    <td>js/</td>
+                    <td>
+                        kt.js<br>
+                        kt.api.js
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>UX용 JS 02.(라이브러리)</th>
+                    <td>js/</td>
+                    <td>
+                        jquery-3.5.1.min.js<br>
+                        swiper-bundle.min.js<br>
+                        wow.min.js<br>
+                        odometer.js
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>약관 PDF</th>
+                    <td>pdf/</td>
+                    <td>
+                        kt_terms.pdf<br>
+                        kt_privacy.pdf<br>
+                    </td>
+                    <td>이용약관 및 개인정보처리방침</td>
+                </tr>
+            </table>
+        </div>
+        <!-- //introCont -->
+    </div>
+    <!-- //wrapper -->
+
+  <script src="../../js/jquery-3.5.1.min.js"></script>
+    <script></script>
+</body>
+
+</html>

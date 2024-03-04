@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<title>실시간정보수집센터</title>
+<link rel="stylesheet" href="../css/reset_taxp.css">
+<link rel="stylesheet" href="../css/app_header.css"><!-- [D] 세무대리인용 header -->
+<link rel="stylesheet" href="../css/content_taxp.css"><!-- [D] 세무대리인용 -->
+
+<!-- custom scrollbar plugin css -->
+<link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+  <script src="../js/lib/jquery/jquery-1.12.4.min.js"></script>
+<script src="../js/lib/jquery/jquery-ui-1.10.4.min.js"></script>
+<!-- custom scrollbar plugin -->
+<script src="../js/design/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../js/design/jquery.placeholder.min.js"></script>
+<script src="../js/lib/plugin/smart.popup.js"></script>
+<script src="../js/comm/common.js"></script>
+<script>
+$(function(){
+	// Invoke the plugin
+	$('input, textarea').placeholder({customClass:'my-placeholder'});
+	
+	 // 보기설정 보기
+    $('#pageListStg').on("click", function(event){
+        if($('#option_menu').is(':visible')){
+            $("#option_menu").hide();
+        }else{
+            $("#option_menu").show();
+        }
+    });
+});
+
+//가입하기 팝업
+function fn_joinPop(){
+	var $form = $("<form method='post'></form>");
+    open_smartPop({href: "./user_info_003.html", width:480, height:597, scrolling:false, target:window, frm:$form});
+}
+
+
+
+</script>
+
+</head>
+<body class="lnb_bg lnb_bg"><!-- [D] 메뉴영역(접기 : class="fold", 펼치기 : class="lnb_bg") -->
+
+<!-- 수임처 개선 -->
+<!-- header -->
+<div class="app_header rinfo">
+	<div class="app_header_inner">
+		<div class="ah_l">
+			<h1>실시간정보수집센터</h1>
+		</div>
+
+		<div class="ah_r">
+			<ul class="ah_menu">
+				
+				<!-- <li style="position:absolute;top:-16px;left:-47px;"><a href="#none" class="btn_alarm" title="알림"><em class="alarm_num" style="display: none;"></em></a></li>
+				<li><a href="#none"><img src="../img/txof/app_header/ic_top04.png" alt="">SMS</a></li>
+				<li style="position:relative;">
+					<a href="https://academyserp.notion.site/4ee92f23a9184afda550d61faf10a5e3" target="_blink"><img src="../img/txof/app_header/ic_top05.png" alt="">메뉴얼</a>
+				</li> -->
+				<li>
+					<span class="weTalk">
+						<a href="#none">We Talk <!--span class="talk_conting_num"></span>  -->
+							<span class="talk_conting_num" style="display: none;">N</span>
+						</a>
+					</span>	
+				</li>
+				<li><a href="#none"><img src="../img/txof/app_header/ic_top02.png" alt="">로그아웃</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<!-- //header -->
+<!-- //수임처 개선 -->
+
+<div class="wrap"><!-- [D] 상세검색일 경우(class="mh") -->
+	<!-- Container -->
+	<div class="container">
+		
+		
+		
+		
+		
+		
+		
+		<!-- lnb box -->
+		<!-- lnb box -->
+		<div class="lnb_box">
+		
+			<!-- (modify)20220804 lnb_boxInn, mCustomScrollbar 추가 / 레이어 위치 이동 -->
+			<!-- lnb_boxInn -->
+			<div class="lnb_boxInn mCustomScrollbar">
+				<!-- lnb top 추가 -->
+				<div class="lnb_top">
+					<!-- user view -->
+					<div class="user_view">
+						<div class="user_r_side">
+							<p class="icon_user"><strong>홍길동</strong> 님</p>
+							<a class="btn_set" title="환경설정"></a><!-- 2019-09-27 -->
+						</div>
+						<div class="select_wrap">
+							<div class="area_select">
+								<span>담당자</span>
+								<a href="javascript:;">전체</a>
+		
+								<!-- 활성화 시 on 클래스 추가 -->
+								<ul class="select_box on">
+									<li>
+										<a href="javascript:;">
+											<p>담당자 전체</p>
+											<span class="num">599</span>
+										</a>
+									</li>
+									<li class="user_list">
+										<a href="javascript:;">
+											<p>박담당</p>
+											<span class="num">55</span>
+										</a>
+									</li>
+									<li class="user_list">
+										<a href="javascript:;">
+											<p>이담당</p>
+											<span class="num">55</span>
+										</a>
+									</li>
+									<li class="user_list">
+										<a href="javascript:;">
+											<p>김담당</p>
+											<span class="num">55</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!-- //user view -->
+				</div>
+				<!-- //lnb top 추가 -->
+		
+				<div class="alarm_wrap">
+					<dl id="" style="margin-bottom:0;"><!-- (modify)20220810 스타일 추가 -->
+						<dd class="on">
+							<div class="line first">실시간정보수집</div>
+						</dd>
+					</dl>
+				</div>
+			</div>
+			<!-- //lnb_boxInn -->
+		
+		</div>
+		<!-- //lnb box -->
+
+		</div>
+		<!-- //lnb box -->
+
+
+
+
+
+		<!-- content -->
+		<div class="content">
+
+			<div class="content_wrap">
+
+
+
+
+
+				<!-- 상단타이틀 -->
+				<div class="title_wrap mgb25">
+					<div class="left">
+						<h1><span class="company">나라백반</span> | <span class="businum">123-45-67890</span></h1>
+					</div>
+					<div class="right">
+						<div class="cntalign">
+							<a class="btn_ico_back" href="#none"><span class="blind">뒤로가기</span></a>
+						</div>
+					</div>
+				</div>
+				<div class="title_wrap h1type">
+					<div class="left">
+						<h1>실시간 정보수집 내역</h1>
+						
+					</div>
+				</div>
+				<!-- //상단타이틀 -->
+
+
+
+				<!-- 버튼영역 -->
+				<div class="title_wrap mgt10">
+					<!-- left -->
+					<div class="left">
+						<div class="tb_cust_dv cboth mgl0">
+							<div class="setinner">
+							</div><!--ic_up뒤에 down 붙히면 아이콘 변경-->
+							<div class="setinner">
+								<div class="settxt">
+									<label><input type="radio" name="sendType" checked="checked">전체</label>
+									<label>&nbsp;&nbsp;<input type="radio" name="sendType">수집실행기간</label>
+									<div class="select_date">
+										<div class="date_wrap">
+											<select>
+												<option>2022</option>
+											</select>
+											<select>
+												<option>1</option>
+											</select>
+										</div>
+										<span class="bar">~</span>
+										<div class="date_wrap">
+											<select>
+												<option>2022</option>
+											</select>
+											<select>
+												<option>12</option>
+											</select>
+										</div>
+									</div>
+									<label class="mgl25"><input type="checkbox">실패건 조회</label>
+								</div>
+							</div>
+						</div>
+					</div><!-- //left -->
+
+					<!-- right -->
+					<div class="right">
+						
+						<!-- 2022-10-17 위치 변경 및 보기설정 제거 -->
+						<!-- 검색 -->
+						<div class="cntalign">
+							<div class="input_box">
+								<input type="text" value="" placeholder="검색어를 입력하세요" style="width:180px;"><a href="#none"><img src="../img/txof/btn/btn_topsearch.gif" alt="조회"></a>
+							</div>
+							<a href="#none" class="btn_rud_semor"><span>정보 수집</span></a>
+						</div><!-- //검색 -->
+						
+					</div><!-- //right -->
+				</div>
+				<!-- //버튼영역 -->
+				
+				<!-- 리스트 테이블 -->
+				<!-- 리스트 테이블 상단 -->
+				<div class="list_scroll_top" style="overflow:hidden;"><!-- [D] 하단테이블 세로스크롤 발생시 pdr 클래스 추가 -->
+					<table class="tbl_result" summary="">
+						<caption></caption>
+						<colgroup>
+						<col style="width:12%;">
+						<col style="width:12%;">
+						<col style="width:12%;">
+						<col style="width:12%;">
+						<col style="width:12%;">
+						<col style="width:10%;">
+						<col style="width:10%;">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col"><div>거래처명</div></th>
+								<th scope="col"><div>사업자번호</div></th>
+								<th scope="col"><div>대표자/담당자</div></th>
+								<th scope="col"><div>홈택스수임동의</div></th>
+								<th scope="col"><div>최근 결과 (전체/성공/실패)</div></th>
+								<th scope="col"><div>최근수집결과</div></th>
+								<th scope="col"><div>자료수집</div></th>
+							</tr>
+						</thead>
+					</table>
+				</div>
+				<!-- //리스트 테이블 상단 -->
+				<div class="list_scroll" style="">
+					<table class="tbl_result" summary="">
+						<caption></caption>
+						<colgroup>
+							<col style="width:25px;">
+							<col style="width:150px;">
+							<col style="width:100px;">
+							<col style="width:100px;">
+							<col style="width:100px;">
+							<col style="width:150px;">
+							<col style="width:200px;">
+						</colgroup>
+						<tfoot style="display:table-tfoot;"><!-- [D] style="display: none / table-tfoot;" -->
+							<tr class="no_hover">
+								<td colspan="7" class="no_info txta">
+									<div>
+										<h2>정보 수집 내역이 없습니다.</h2>
+										<br>
+										<strong class="fs14">
+											보고서를 보내기 위해 전년도부터 당월까지 데이터를 수집합니다.<br>
+											최초데이터를 수집하시겠습니까?
+										</strong>
+										<p><br>※ 매출/매입/인건비/사업자정보 등 총 10여종의 데이터를 수집합니다.</p>
+										<a href="#none" class="info_btn"><span>수집</span></a>
+									</div>
+								</td>
+							</tr>
+						</tfoot>
+					</table>
+				</div>
+				
+				
+			</div>
+		   <!-- //content_wrap -->
+			
+		</div>
+		<!-- //content -->
+		
+		
+		
+		
+
+	</div>
+	<!-- //Container -->
+
+
+
+
+	<!-- footer 추가 : 20180828 -->
+	<div class="footer">
+		<!-- Copy right -->
+		<div class="copyright_wrap">
+			<div class="copyright_box">
+				<p>Copyright(c) Roumit. All rights reserved.</p>
+			</div>
+			<div class="ft_menu"></div>
+		</div>
+		<!-- //Copy right -->
+	</div>
+	<!-- //footer -->
+</div>
+<!-- //wrap -->
+
+
+</body>
+</html>
+

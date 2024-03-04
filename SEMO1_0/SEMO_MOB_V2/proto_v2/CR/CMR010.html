@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css_v2/semo_style.css">
+    <link rel="stylesheet" href="../../css_v2/main.css">
+    <link rel="stylesheet" href="../../css_v2/kt_style.css">
+
+  <script src="../../js_v2/jquery-3.5.1.min.js"></script>
+    <script src="../../js_v2/wow.min.js"></script>
+
+    <title>CMR010</title>
+</head>
+<body>
+    <div class="title b_white">
+        <div class="title_left">
+          <i class="ico_cen left_arrow"></i>
+        </div>
+
+    </div>
+    <main class="cmr-aim_wrap">
+        <section class="cmr-aim">
+            <article class="cmr-aim_header">
+                <div class="my_town">
+                    <h1>내사업장 동네 : </h1>
+                    <span>미등록</span>
+                    <button class="btn">
+                        <i class="ico_cont"></i>
+                    </button>
+                </div>
+                <div class="main_tit">
+                    <h1>
+                        으쌰으쌰 목표 달성까지<br>
+                        얼마 남았지? 🌴
+                    </h1>
+                </div>
+                <div class="header-gauge_wrap">
+                    <div class="vertical-gauge_wrap">
+                        <!-- 활성화 Class is-active -->
+                        <div class="vertical-gauge gauge01">
+                            <div class="item"></div>
+                            <i class="ico_cont"></i>
+                        </div>
+                         <!-- 활성화 Class is-active -->
+                        <div class="vertical-gauge gauge02">
+                            <div class="item"></div>
+                            <i class="ico_cont"></i>
+                        </div>
+                         <!-- 활성화 Class is-active -->
+                        <div class="vertical-gauge gauge03">
+                            <div class="item"></div>
+                            <i class="ico_cont"></i>
+                        </div>
+                    </div>
+                    <div class="sub_tit">
+                        <h2>수정한 정보는 다음 달부터 반영되어요</h2>
+                    </div>
+                </div>
+            </article>
+            <article class="cmr-aim_content">
+                <div class="content_progress">
+                    <div class="progress_tit">
+                        <div class="name">
+                            <h1>매출 :</h1>
+                            <span>27%</span>
+                        </div>
+                        <div class="cost">
+                            <div class="number">
+                                <span>4,085,000원</span>
+                            </div>
+                            <div class="arr">
+                                <i class="ico_cont"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gauge_bar_bg is-active">
+                        <div class="gauge_bar gauge_20">
+                            <span>400만</span>
+                        </div>
+                        <p>1,500만</p>
+                    </div>
+                </div>
+                <div class="content_progress">
+                    <div class="progress_tit">
+                        <div class="name">
+                            <h1>지출 :</h1>
+                            <span>78%</span>
+                        </div>
+                        <div class="cost">
+                            <div class="number">
+                                <span>7,850,000원</span>
+                            </div>
+                            <div class="arr">
+                                <i class="ico_cont"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gauge_bar_bg">
+                        <div class="gauge_bar">
+                            <span>785만</span>
+                        </div>
+                        <p>1,500만</p>
+                    </div>
+                </div>
+                <div class="content_progress">
+                    <div class="progress_tit">
+                        <div class="name">
+                            <h1>손익 :</h1>
+                            <span>27%</span>
+                        </div>
+                        <div class="cost">
+                            <div class="number">
+                                <span>4,085,000원</span>
+                            </div>
+                            <div class="arr">
+                                <i class="ico_cont"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gauge_bar_bg is-active">
+                        <div class="gauge_bar">
+                            <span>0</span>
+                        </div>
+                        <p>1,500만</p>
+                    </div>
+                </div>
+            </article>
+        </section>
+        <div class="popup_bg" id="slide_popup" style="display: none;">
+            <div class="popup bottom ssm_pop02">
+                <div class="popup_title hung">
+                    <i class="ico_cen del"></i>
+                </div>
+                <div class="tit">
+                    <span>순이익이 늘어야 진짜!</span>
+                </div>
+                <div class="subtit">
+                    <span>월&nbsp;<em>손익</em>&nbsp;목표는 얼마 일까요?</span>
+                </div>
+                <div class="target">
+                    <div class="cost">
+                        <div class="number">
+                            <input type="text" placeholder="금액 입력" value="9,999,999,999">
+                        </div>
+                        <p>원</p>
+                    </div>
+                    <div class="text">
+                        <span>9,999,999,999원</span>
+                    </div>
+                </div>
+                <div class="tip">
+                    <em>Tip.</em>
+                    <span>부가세를 제외한 금액을 목표로 잡는 것이<br>더 정확해요</span>
+                </div>
+                <div class="long_button">
+                    <span>저장하고 닫기</span>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+
+// 애니메이션 테스트
+$(document).ready(function () {
+    $(".vertical-gauge").click(function(){
+        $(this).addClass("is-active");
+    });
+});
+
+
+    </script>
+</body>
+</html>

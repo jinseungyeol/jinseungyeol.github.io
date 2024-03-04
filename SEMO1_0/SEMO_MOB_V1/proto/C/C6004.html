@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../../css/semo_cont.css">
+  <link rel="stylesheet" href="../../css/semo_cont_nh.css">
+  <title>SEMO</title>
+  <style>
+    
+  </style>
+</head>
+
+<!-- C6004 -->
+
+<body>
+  <div class="new_content">
+    <div class="cont_bg">
+      <!-- 상단 타이틀 -->
+      <!-- <div class="title">배달앱 증빙</div> -->
+      <!-- //상단 타이틀 -->
+      <div class="wrap auto">
+        <!-- 2021-01-05 day_content 추가 -->
+        <!-- 2021-01-05 html 수정 -->
+        <div class="day_content">
+          <div class="day_list day_years">
+            <div class="day_btn">▼</div>
+            <!-- 2021-01-05 day_years day_btn 추가 -->
+            <label for="years">년</label>
+            <select name="years" class="day_years">
+              <option value="2020">2020</option>
+              <option value="2019">2019</option>
+              <option value="2018">2018</option>
+              <option value="2017">2017</option>
+            </select>
+          </div>
+          <div class="day_list day_month">
+            <div class="day_btn">▼</div>
+            <!-- 2021-01-05 day_month day_btn추가 --> 
+            <label for="month">월</label>
+            <select name="month" class="day_month">
+              <option value="">1</option>
+              <option value="">2</option>
+              <option value="">3</option>
+              <option value="">4</option>
+              <option value="">5</option>
+              <option value="">6</option>
+              <option value="">7</option>
+              <option value="">8</option>
+            </select>
+          </div>
+        </div>
+        <!--// 2021-01-05 html 수정 //-->
+        <div class="app_list_back">
+          <div class="app_list_wrap">
+            <div class="app_list_box">
+              <!-- app_list on클래스로 제어 -->
+              <a class="app_list on click"><i class="logo_al_all"></i></a><!-- 2021-01--06 click클래스로 보더 배경색 제어 -->
+              <a class="app_list on"><i class="logo_al_1010"></i></a>
+              <a class="app_list"><i class="logo_al_1020"></i></a>
+              <a class="app_list" style="display:none;"><i class="logo_al_1030"></i></a>
+              <a class="app_list" style="display:none;"><i class="logo_al_1040"></i></a>
+              <a class="app_list" style="display:none;"><i class="logo_al_1050"></i></a>
+              <!--
+                logo_al_all 전체보기
+                logo_al_1010 배달의 민족
+                logo_al_1020 요기요
+                logo_al_1030 배달통
+                logo_al_1040 배고파
+                logo_al_1050 쿠팡잇츠
+               -->
+              <!--// app_list on클래스로 제어 -->
+            </div>
+            <div class="deli_pay_wrap">
+              <div class="deli_pay_cell">
+                <!-- deli_pay_cell hide로 제어 -->
+                <div class="deli_pay_title">
+                  <div class="deli_pay_con">
+                    <span class="deli_pay_top">
+                      <p>[배달의민족]</p>
+                      <!--
+                      <p class="c_gray">20.10.01(월) ~ 20.10.31(월)</p>
+                      -->
+                      <div>설정</div>
+                    </span>
+                    <span>총 매출 <b>99,999</b>건</span>
+                    <span>
+                      <b class="won">999,999,999</b>
+                      <i class="ico_cen"></i>
+                      <!-- 2021-01-07 won ￦생성클래스 -->
+                    </span>
+                  </div>
+                </div>
+                <div class="deli_pay_text">
+                  <span>
+                    <p class="set_fontbold">
+                      <!-- set_fontbold 클래스 추가 -->
+                      <span>배달의민족</span>
+                      <span>(999건)</span>
+                    </p>
+                    <b>baemin</b>
+                  </span>
+                  <span>
+                    <p>
+                      <span>- 신용카드</span>
+                      <span>(652건)</span>
+                    </p>
+                    <b>￦12,450,000</b>
+                    <!-- 미등록시 = <b class="#0095ff; set_text_underline">등록해 주세요</b> -->
+                  </span>
+                  <span>
+                    <p>
+                      <span>- 현금영수증</span>
+                      <span>(123건)</span>
+                    </p>
+                    <b>￦12,450,000</b>
+                  </span>
+                  <span class="set_pdb2">
+                    <p>
+                      <span>- 기타(휴대폰 등)</span>
+                      <span>(22건)</span>
+                    </p>
+                    <b>￦12,450,000</b>
+                  </span>
+
+                </div>
+              </div>
+              <div class="deli_pay_cell hide">
+                <!-- deli_pay_cell hide로 제어 -->
+                <div class="deli_pay_info">
+                  <div class="ico_cen deli_pay_info_ico"></div>
+                  <span>매월 10일 이후에 제공됩니다.</span>
+                  <span class="set_mgt17">
+                    <p>ㆍ</p>
+                    <p>배달앱 데이터는 매월 10일 이후에 확정된 부가세 신고 기준 데이터로 조회합니다.</p>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 2021-01-07 deli_notice 클래스 추가 -->
+          <div class="deli_notice">
+            <p>ㆍ</p>
+            <p> 각 배달앱에서 제공하는 확정된 부가세 신고 기준
+              데이터로 조회합니다.</p>
+          </div>
+          <div class="banner_special">
+            <div class="ico_cen"></div>
+          </div>
+        </div>
+        <!--// 2021-01-07 deli_notice 클래스 추가 -->
+
+
+      </div>
+
+    </div>
+    <div class="water_mark">Powered by coocon</div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../css_v2/semo_style.css">
+  <link rel="stylesheet" href="../../css_v2/jin.css">
+  <script src="../../js_v2/jquery-3.5.1.min.js"></script>
+  <title>카드매출 관리</title>
+</head>
+<body>
+
+  <!-- 헤더 타이틀 -->
+  <div class="title b_white">
+    <div class="title_left">
+      <i class="ico_cen left_arrow"></i>
+    </div>
+    <span class="title_text">홈택스 관리</span>
+  </div>
+
+  <!-- ************* 홈택스 관리 컨텐츠 START ************* -->
+  <div class="basic_wrapper">
+
+    <!-- *** 1. 가맹점 정보 *** -->
+    <section class="franchise_wrap set_mgb45">
+
+      <!-- 가맹점 로고 -->
+      <article class="franchise">
+        <div class="logo">
+          <span class="ico_cen hometax"></span>
+        </div>
+        <div class="store">
+          <h1 class="elipsis">빨강망토 차차네 식당입니다</h1>
+          <p class="elipsis">정차차 | 103-99-02052</p>
+        </div>
+      </article>
+  
+      <!-- 최근 수집 일시 박스 -->
+      <article class="recent_box_wrap">
+        <div class="recent_box">
+          <div class="date">
+            <p>최근 수집 일시</p>
+            <div class="flex_ac">
+              <em>2022-01-17 오후 17:28</em>
+              <span class="ico_cen refresh_02"></span>
+            </div>
+          </div>
+  
+          <div class="state">
+          <!-- error 클래스 추가시 '연결오류' 활성화 -->
+            <p>정상</p>
+            <span>연결오류</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 연결해제버튼 -->
+      <article class="btn_r_gray_wrap">
+        <button class="btn_gray_bd">삭제하기</button>
+      </article>
+      
+    </section>
+
+    <!-- *** 2. 연결된 공동인증서 *** -->
+    <section class="franchise_wrap link">
+
+      <!-- 타이틀 -->
+      <div class="sub_tit">
+        <h1>연결된 공동인증서</h1>
+      </div>
+
+      <!-- 1. 개인용 공동인증서 // 개인용, 기업용 둘 중 하나만 보여집니다. -->
+      <article class="franchise">
+      <!-- error01 , error01 클래스로 분기처리 -->
+        <div class="logo">
+          <span class="ico_cen"></span>
+        </div>
+        <div class="store">
+          <p class="elipsis end">정선영()0020048201807132061015111</p>
+          <p>개인/금융결제원</p>
+          <p class="set_mgb0">만료일 | 2022.11.27 (잔여27일)</p>
+        </div>
+      </article>
+      <!-- 2. 기업용 공동인증서 -->
+      <!-- error01 , error01 클래스로 분기처리 -->
+      <article class="franchise enter error01">
+          <div class="logo">
+            <span class="ico_cen"></span>
+          </div>
+          <div class="store">
+            <p class="elipsis end">정선영()0020048201807132061015111</p>
+            <p>기업/금융결제원</p>
+            <p class="set_mgb0">만료일 | 2022.11.27 (잔여27일)</p>
+          </div>
+        </article>
+      <!-- 인증서 교체버튼 -->
+      <article class="btn_r_gray_wrap">
+        <button class="btn_r_gray">
+          <em>인증서 교체하기</em>
+          <span class="ico_cen right_01"></span>
+        </button>
+        <button class="btn_gray_bd">세무대리인 관리번호 입력필요</button>
+      </article>
+
+    </section>
+  </div>
+  <!-- ************* 홈택스 관리 컨텐츠 END ************* -->
+</body>
+</html>

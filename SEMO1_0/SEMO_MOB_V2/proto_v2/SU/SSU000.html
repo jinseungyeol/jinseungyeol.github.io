@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css_v2/semo_style.css">
+    <!-- <link rel="stylesheet" href="../../css_v2/kt_style.css"> -->
+    <link rel="stylesheet" href="../../css_v2/nh_style.css">
+  <script src="../../js_v2/jquery-3.5.1.min.js"></script>
+    <title>S_회원가입01</title>
+</head>
+<body>
+  
+  <!-- ## 헤더타이틀 ## -->
+  <div class="title b_white">
+    <div class="title_left">
+      <i class="ico_cen left_arrow"></i>
+    </div>
+    <span class="title_text">회원가입</span>
+  </div>
+
+  <div class="basic_wrapper">
+    <div class="wrap_pd20">
+
+      <!-- ## 회원가입 진행순서 ## -->
+      <section class="join_process_wrap">
+        <span class="join_process bgc_sig">1</span>
+        <span class="join_process">●</span>
+        <span class="join_process">●</span>
+      </section>
+
+      <!-- ## 약관 동의 ## -->
+      <section class="agree_wrap">
+        <article class="all_wrap">
+          <div class="all">
+            <div class="all_checkbox">
+              <input type="checkbox" id="all_check">
+              <label for="all_check"></label>
+            </div>
+            <em>약관 전체동의</em>
+          </div>
+        </article>
+        
+        <article class="each_wrap">
+          <div class="each">
+            <div class="left">
+              <div class="inner">
+                <input type="checkbox" id="check_01">
+                <label for="check_01"></label>
+              </div>
+            </div>
+
+            <div class="right">
+              <div class="main">
+                <p><em>[필수]</em> 세모장부 이용약관 동의</p>
+                <i class="ico_cen right_bold"></i>
+              </div>
+            </div>
+          </div>
+          <div class="each">
+            <div class="left">
+              <div class="inner">
+                <input type="checkbox" id="check_02">
+                <label for="check_02"></label>
+              </div>
+            </div>
+
+            <div class="right">
+              <div class="main">
+                <p><em>[필수]</em> 개인정보 처리방침 동의</p>
+                <i class="ico_cen right_bold"></i>
+              </div>
+            </div>
+          </div>
+          <div class="each">
+            <div class="left">
+              <div class="inner">
+                <input type="checkbox" id="check_03">
+                <label for="check_03"></label>
+              </div>
+            </div>
+
+            <div class="right">
+              <div class="main">
+                <p><em>[필수]</em> 거래정보 조회위임 동의</p>
+                <i class="ico_cen right_bold"></i>
+              </div>
+            </div>
+          </div>
+          <div class="each confirm active">
+            <div class="left">
+              <div class="inner">
+                <input type="checkbox" id="check_04">
+                <label for="check_04"></label>
+              </div>
+            </div>
+
+            <div class="right">
+              <div class="main">
+                <p><em>[필수]</em> 휴대폰 본인확인 서비스</p>
+                <i class="ico_cen right_bold"></i>
+              </div>
+              
+              <div class="sub_box">
+                <div class="sub">
+                  <p>통신사 이용약관 동의</p>
+                  <p>본인확인 서비스 이용약관 동의</p>
+                  <p>개인정보 수집 · 이용 및 위탁 동의</p>
+                  <p>고유식별정보 처리 동의</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="each">
+            <div class="left">
+              <div class="inner">
+                <input type="checkbox" id="check_05">
+                <label for="check_05"></label>
+              </div>
+            </div>
+
+            <div class="right">
+              <div class="main">
+                <p><em class="choice">[선택]</em> 신용정보 제 3자 제공 동의</p>
+                <i class="ico_cen right_bold"></i>
+              </div>
+            </div>
+          </div>
+          <div class="each">
+            <div class="left">
+              <div class="inner">
+                <input type="checkbox" id="check_06">
+                <label for="check_06"></label>
+              </div>
+            </div>
+
+            <div class="right">
+              <div class="main">
+                <p><em class="choice">[선택]</em> 마케팅 활용 동의</p>
+                <i class="ico_cen right_bold"></i>
+              </div>
+            </div>
+          </div>
+          <div class="each">
+            <div class="left">
+              <div class="inner">
+                <input type="checkbox" id="check_07">
+                <label for="check_07"></label>
+              </div>
+            </div>
+
+            <div class="right">
+              <div class="main">
+                <p><em class="choice">[선택]</em> 마케팅 활용 수신 동의</p>
+                <i class="ico_cen right_bold"></i>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+    </div>
+
+
+    <!-- ## 버튼 ## -->
+    <div class="bot_fix">
+      <!-- bgc_sig 클래스로 제어 -->
+      <button type="button" class="type_A bgc_sig">
+        <span>확인</span>
+      </button>
+    </div>
+
+  </div>
+
+  <script>
+
+    // 작은 체크박스 토글
+    // $('.each .inner').click(function(){
+    //   if($(this).parents(".each").hasClass("confirm")) {
+    //     $(".each.confirm").toggleClass("active");
+    //   }
+    //   $(this).parent().siblings().children(".sub_box").toggle();
+    //   $(this).children().toggleClass('check_sig');
+    // });
+    
+  </script>
+
+</body>
+
+</html>

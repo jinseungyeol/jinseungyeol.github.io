@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../../css/semo_cont.css">
+  <link rel="stylesheet" href="../../css/semo_cont_ibk.css" />
+
+  <title>SEMO</title>
+</head>
+<body>
+  <div class="new_content">
+    <!--뒤로가기-->
+    <div class="header">
+      <div class="process_bar_box">
+        <p class="process_bar" style="width:50%;"></p> <!--진행 상태 width %값으로 최소 0 ~ 최대 100%-->
+      </div>
+      <a class="btn_back"><i class="ico_back"></i><em class="new_blind">뒤로가기</em></a>
+    </div>
+    <!--//뒤로가기-->
+
+    <div class="cont_bg cont_pd_hd"> <!-- 클래스 cont_pd_hd fix_button header 포함 패딩-->
+      
+      <!-- 상단 타이틀 -->
+      <div class="title">회원가입</div>
+      <!-- //상단 타이틀 -->
+
+      <!-- 회원가입 -->
+      <div class="wrap join"> 
+        <!-- 로그인 비밀번호 입력 -->
+        <div class="join_box">
+          
+          <div class="title_sub">(선택) 권유 받은 IBK영업점을 선택해 주세요.</div>
+
+          <div class="branch_wrap">
+            <div class="join_block type2">
+              <input type="text" class="join_input type2" placeholder="영업점 입력" value="당산">
+              <button class="btn_branch bgc_green">검색</button>
+            </div>
+            <!-- 영업점 리스트 -->
+            <div class="branch_box">
+              <div>영업점</div>
+              <ul>
+                <li class="branch_list">당산동 IBK지점</li>
+                <li class="branch_list">당산역 IBK지점</li>
+              </ul>
+            </div>
+            <!-- //영업점 리스트 -->
+          </div>
+          <p class="noti_star color">
+            <i class="character"></i>
+            <span>권유 영업점은 수정이 불가하며, 회원가입 후 설정에서 다시 등록이 가능합니다.</span>  
+          </p>
+        </div>
+        <!-- //로그인 비밀번호 입력 -->
+
+        <!-- 영업점 선택 -->
+        <div class="join_box4">
+          <div class="title_sub">(선택) 추천/할인코드를 입력해 주세요. </div>
+
+          <div class="join_block">
+            <input type="text" class="join_input" placeholder="대소문자 구분 없음"  value="FC01445">
+          </div>
+
+          <p class="noti_star color">
+            <i class="character"></i>
+            <span>세무사 또는 제휴사에서 추천/할인코드를 받으신 분들만 입력해 주세요.</span> <!--2020-09-15 문구수정-->   
+          </p>
+        </div>
+        <!-- //영업점 선택 -->
+
+      </div>
+      <!-- //회원가입 -->
+      
+    </div>
+ 
+
+    <!-- 하단 fix 버튼 -->
+    <div class="btm_fix">
+      <span class="bgc_green">다음</span>
+    </div>
+    <!-- 하단 fix 버튼 -->
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css_v2/semo_style.css">
+    <link rel="stylesheet" href="../../css_v2/ione_style.css">
+
+  <script src="../../js_v2/jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#search1").click(function(){
+                $("#search2").toggle();
+                $(".search_address").toggleClass("search");           
+            });
+        });
+    </script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="title">
+        <div class="title_left">
+            <i class="ico_cen left_arrow"></i>
+        </div>
+        <span class="title_text">주소검색</span>
+    </div>
+    <div class="basic_wrapper ">
+        <div class="title_select_section" id="search1">
+            <input type="text" value="전체주소" readonly>
+            <i class="ico_cen down"></i>
+        </div>
+        <div class="title_serach_section " id="search2" style="display: none;">
+            <i class="ico_cen search"></i>
+            <input type="text" placeholder="영등포로 91, 영등포동8가, 세교동 1-2">
+        </div>
+        
+        <!-- 주소 검색하기 전 -->
+        <div class="search_address">
+            <i class="ico_cen location set_mgb17"></i>
+            <b>주소를 검색해주세요.</b>
+            <span>
+                <p><b>도로명+건물번호</b> 예)영신로 220</p>
+                <p><b>지역명(동/리)+번지</b> 예)영등포동8가 92</p>
+                <p><b>지역명(동/리)+ 건물명</b> 예)영등포동8가 knk타워</p>
+            </span>
+        </div>
+
+        <!-- 주소 검색하기 후 -->
+        <div class="address_list_wrap set_mgt10"  style="display: none;">
+            <div class="address_list">
+                <span>07228</span>
+                <p>서울 영등포구 영신로 220 (KnK디지털타워)</p>
+                <em>서울 영등포구 영등포동8가 92</em>
+            </div>
+            <div class="address_list">
+                <span>07228</span>
+                <p>경기 평택시 영신로 220 (평택여자종합고등학교)</p>
+                <em>경기 평택시 세교동 1-2</em>
+            </div>
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>

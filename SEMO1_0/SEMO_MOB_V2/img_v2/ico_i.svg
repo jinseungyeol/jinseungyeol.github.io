@@ -1,0 +1,15 @@
+<svg id="ico_error_에러_아이콘" data-name="ico_error_에러 아이콘" xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 38 38">
+    <defs>
+        <style>
+            .cls-2{fill:#a2a2a2}
+        </style>
+    </defs>
+    <g id="패스_596" data-name="패스 596" style="fill:none">
+        <path d="M19 0A19 19 0 1 1 0 19 19 19 0 0 1 19 0z" style="stroke:none"/>
+        <path d="M19 1A17.882 17.882 0 0 0 6.272 6.272C2.872 9.672 1 14.192 1 19s1.872 9.328 5.272 12.728C9.672 35.128 14.192 37 19 37s9.328-1.872 12.728-5.272C35.128 28.328 37 23.808 37 19s-1.872-9.328-5.272-12.728C28.328 2.872 23.808 1 19 1m0-1c10.493 0 19 8.507 19 19s-8.507 19-19 19S0 29.493 0 19 8.507 0 19 0z" style="fill:#8b8e94;stroke:none"/>
+    </g>
+    <g id="그룹_342" data-name="그룹 342" transform="rotate(180 10.458 15.154)">
+        <path id="사각형_121" data-name="사각형 121" class="cls-2" d="M0 0h3.834v14.088H0z"/>
+        <path id="사각형_122" data-name="사각형 122" class="cls-2" transform="translate(0 18.611)" d="M0 0h3.834v4.696H0z"/>
+    </g>
+</svg>

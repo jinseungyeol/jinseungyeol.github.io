@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../../css/semo_cont.css">
+  <!-- <link rel="stylesheet" href="../../css/semo_cont_ibk.css" /> -->
+  <title>SEMO</title>
+  <style>
+    .loan_title {
+      color: #000000;
+      font-size: 20px;
+      letter-spacing: -0.8px;
+      line-height: 1.48;
+      word-break: keep-all;
+    }
+    .loan_intro{display: flex; flex-direction: column;}
+    .loan_intro .loan_title + span{font-size: 16px; color: #000000; margin-top: 8px;} 
+    .loan_intro p{font-size: 16px; color: #000000; margin-top: 18px;}
+    .loan_vod{width: calc(100% + 30px);margin-left: -15px; background-color: #e8e8e8; height: 212px; margin-top: 37px;}
+    .loan_dot{position: absolute; bottom: 60px; left: 50%; display: flex; justify-content: center; transform: translateX(-50%); gap: 8px;}
+    .loan_dot .dot{width: 15px; height: 15px; background-color: #e8e8e8; border-radius: 50%;}
+    .loan_dot .dot.on{background-color: #1bd9ac;}
+    .c_00b981{color: #00b981;}
+    .set_mgt6{margin-top: 6px !important;}
+    .loan_main_text{line-height: 1.47; word-break: keep-all;}
+  </style>
+</head>
+
+<body>
+  <div class="new_content">
+
+    <div class="cont_bg cont_pd">
+      <!-- 클래스 cont_pd fix_button 포함 패딩-->
+
+      <!-- 상단 타이틀 -->
+      <div class="title"></div>
+      <!-- //상단 타이틀 -->
+      
+      <div class="wrap account">
+        <div class="loan_intro">
+          <b class="loan_title">다양한 업종의 사장님 지원!
+          </b>
+          <span class="loan_sub_text set_mgt6"></span>
+          <p class="loan_main_text set_mgt7">
+            <span>전국 3만명의 사장님이 세모장부로, 
+              세무/경영 업무를 혁신하고 계십니다.</span> 
+
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+    <div class="loan_dot">
+      <div class="dot on"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+    <!-- 하단 fix 버튼 -->
+    <div class="btm_button">
+      <span class="bgc_green">계좌연결하기</span>
+      <!--클래스 bgc_green 배경색-->
+    </div>
+    <!-- 하단 fix 버튼 -->
+  </div>
+</body>
+
+</html>

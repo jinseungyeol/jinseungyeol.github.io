@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="14" height="22" viewBox="0 0 14 22">
+    <defs>
+        <clipPath id="j8bgvrmmka">
+            <path data-name="사각형 16885" style="fill:none" d="M0 0h22v14H0z"/>
+        </clipPath>
+    </defs>
+    <g data-name="그룹 65385" transform="rotate(90 7 7)" style="clip-path:url(#j8bgvrmmka)">
+        <path data-name="패스 45903" d="M20.565 14a1.38 1.38 0 0 1-1.024-.462l-8.363-9.177-8.739 9.2a1.364 1.364 0 0 1-2.03-.022 1.624 1.624 0 0 1 .021-2.18L11.22 0l10.37 11.378a1.623 1.623 0 0 1-.02 2.18 1.381 1.381 0 0 1-1 .441" style="fill:#a8a8a8"/>
+    </g>
+</svg>

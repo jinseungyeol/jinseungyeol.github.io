@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../css/semo_cont.css">
+  <script src="../../js/jquery-3.5.1.min.js"></script>
+  <title>S_회원가입03</title>
+</head>
+<body>
+
+  <div class="new_content pretendard btn_fix">
+    <div class="cont_bg padding20">
+
+      <!-- 회원가입 진행순서 ======================================================= -->
+      <div class="join_process">
+
+        <span class="one c_sig">●</span>
+
+        <span class="two c_sig">●</span>
+
+        <span class="three set_mgr0 now">●</span>
+        <!-- now 클래스로 활성화 -->
+        <em class="active">3</em>
+      </div>
+
+      <!-- 필수 정보 입력 ======================================================= -->
+      <div class="ness_info">
+        <div class="cnt">
+          <div class="tit">
+            <h1 class="c_b2">상세 정보를 입력해 주세요</h1>
+          </div>
+
+        <!-- 상호명 -->
+        <div class="info_box_wrap busi">
+          <label for="info06" class="info_box">
+            <div class="left">
+              <input type="text" id="info06" required="required">
+              <p>상호명<i>*</i></p>
+            </div>
+            <div class="right">
+              <span class="ico_cen close_01"></span>
+            </div>
+          </label>
+
+          <em>상호명을 입력해 주세요</em>
+          <!-- info_box_wrap 클래스에 error 클래스 추가해주시면 보입니다. -->
+
+        </div>
+
+        <!-- 사업장주소 -->
+        <div class="info_box_wrap adress">
+          <label for="info07" class="info_box">
+            <div class="left">
+              <textarea id="ness02" required="required" readonly="readonly">서울특별시 영등포구 영신로 220 (KnK디지털타워)
+              </textarea>
+              <p>사업장주소<i>*</i></p>
+            </div>
+          </label>
+
+          <em>사업장주소를 입력해 주세요</em>
+          <!-- info_box_wrap 클래스에 error 클래스 추가해주시면 보입니다. -->
+
+        </div>
+
+        <!-- 상세주소 -->
+        <div class="info_box_wrap detail">
+          <label for="ness03" class="info_box">
+            <div class="left">
+              <input type="text" id="ness03" required="required">
+              <p>상세주소<i>*</i></p>
+            </div>
+            <div class="right">
+              <span class="ico_cen close_01"></span>
+            </div>
+          </label>
+
+          <em>상세주소를 입력해 주세요</em>
+          <!-- info_box_wrap 클래스에 error 클래스 추가해주시면 보입니다. -->
+
+        </div>
+
+        <!-- 업종 -->
+        <div class="info_box_wrap sector">
+          <label for="ness04" class="info_box">
+            <div class="left">
+              <input type="text" id="ness04" value="기사식당" required="required" readonly="readonly">
+              <p>업종</p>
+            </div>
+          </label>
+        </div>
+
+        <!-- 추천코드 -->
+        <div class="info_box_wrap code loading">
+          <label for="ness05" class="info_box">
+            <div class="left">
+              <input type="text" id="ness05" required="required">
+              <span class="ico_cen check_03"></span>
+              <p>추천코드</p>
+            </div>
+            <div class="right">
+              <span class="ico_cen close_01"></span>
+            </div>
+          </label>
+
+          <em>유효하지 않은 추천코드입니다.</em>
+          <!-- info_box_wrap 클래스에 error 클래스 추가해주시면 보입니다. -->
+
+          <div class="confirm">
+            <b class="c_b1">노란우산공제 프로모션 (6개월)</b>
+          </div>
+          <!-- info_box_wrap 클래스에 loading 클래스 추가해주시면 보입니다. -->
+
+        </div>
+
+    </div>
+
+    <!-- 버튼 ======================================================= -->
+    <div class="btm_button h65">
+      <!-- active 클래스로 활성화 -->
+
+        <span class="bgc_gray04">확인</span>
+      </div>
+
+  </div>
+
+  <script>
+
+    $('.ness_info .info_box_wrap').click(function(){
+      $(this).addClass('active');
+      $(this).siblings('.busi, .detail, .code').removeClass('active');
+    })
+
+
+  </script>
+  
+</body>
+</html>

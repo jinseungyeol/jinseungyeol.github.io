@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/semo_cont.css">
+  <script src="../../js/jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".list_store_title").click(function(){
+                $(this).siblings().slideToggle();
+                $(this).find("i").toggleClass("up");
+            });
+
+            if($(".title_serach_section").css("display")=="block"){
+                $(".list_store_name").removeClass("set_mgt40");
+            }
+
+        });
+
+    </script>
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="new_content">
+        <div class="cont_bg  padding20">
+            <div class="title_v2 ">
+                <div class="title_left_v2">
+                    <i class="ico_cen left_arrow"></i>
+                </div>
+                <span class="title_text_v2">나의 고객관리</span>
+                <div class="title_right_v2">
+                    <i class="ico_cen search"></i>
+                    <i class="ico_cen setting"></i>
+                </div>
+            </div>
+            <div class="title_serach_section b_gray" style="display: none;">
+                <input type="text" placeholder="검색어를 입력해주세요">
+                <i class="ico_cen del_gray"></i>
+                <i class="ico_cen search"></i>
+            </div>
+            <div class="list_store_wrapper">
+                <div class="list_store_name set_mgt40">
+                    <span>
+                        <b class="elipsis">로움세무회계법인</b>
+                        <i class="ico_cen right_b"></i>
+                    </span>
+                    <div class="list_store_right on">
+                        <i class="ico_cen ico_master "></i>
+                        <p>마스터</p>
+                    </div>
+                </div>
+                <div class="list_store_name set_mgt40">
+                    <span>
+                        <b class="elipsis">로움세무회계법인</b>
+                        <i class="ico_cen right_b"></i>
+                    </span>
+                    <i class="ico_cen master"></i>
+                </div>
+                <div class="list_store_content manage set_mgt15">
+                    <div class="list_store_name">
+                        <span>
+                            <b class="elipsis">로움세무회계법인</b>
+                            <i class="ico_cen right_b"></i>
+                        </span>
+                        <div class="list_store_right on">
+                            <i class="ico_cen ico_master "></i>
+                            <p>마스터</p>
+                        </div>
+                    </div>
+                    <div class="list_store_title">
+                        <em>즐겨찾기 3</em>
+                        <i class="ico_cen down"></i>
+                    </div>
+                    <div class="list_store_cell_wrap">
+                        <div class="list_store_cell">
+                            <div class="list_store_con">
+                                <i class="ico_cen store_star on"></i>
+                                <div class="test1">
+                                    <span class="list_manage_title">
+                                        <p class="elipsis">가나치킨 광화문점
+                                        </p>
+                                        <i class="ico_cen ico_new"></i>
+                                    </span>
+                                    <span>
+                                        <p>김세모</p>
+                                        <em>
+
+                                            123-45-67890</em>
+                                        <i class="ico_cen down"></i>
+                                    </span>
+                                </div>
+                                <i class="ico_cen master on"></i>
+                            </div>
+                            <div class="list_store_cell_detail" style="display: none;">
+                                <span>
+                                    <em>휴대폰번호</em>
+                                    <p class="set_text_underline">
+                                        <i class="ico_cen ico_tel"></i> 010-1234-5678</p>
+                                </span>
+                                <span>
+                                    <em>주소</em>
+                                    <p>
+                                        <i class="ico_cen ico_location"></i>
+                                        서울시 영등포구 영신로 220 <br>
+                                        KnK빌딩 1112호</p>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="list_store_cell">
+                            <div class="list_store_con">
+                                <i class="ico_cen store_star"></i>
+                                <div>
+                                    <span class="list_manage_title">
+                                        <p class="elipsis">가나치킨 광화문점
+                                        </p>
+                                        <i class="ico_fail_red">인증실패</i>
+                                    </span>
+                                    <span>
+                                        <p>김세모</p>
+                                        <em>
+
+                                            123-45-67890</em>
+                                        <i class="ico_cen down"></i>
+                                    </span>
+                                </div>
+                                <i class="ico_cen master"></i>
+                            </div>
+                            <div class="list_store_cell_detail">
+                                <span>
+                                    <em>휴대폰번호</em>
+                                    <p class="set_text_underline">
+                                        <i class="ico_cen"></i>
+                                        010-1234-5678</p>
+                                </span>
+                                <span>
+                                    <em>주소</em>
+                                    <p>
+                                        <i class="ico_cen"></i>
+                                        서울시 영등포구 영신로 220 <br>
+                                        KnK빌딩 1112호</p>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="list_store_cell">
+                            <div class="list_store_con">
+                                <i class="ico_cen store_star"></i>
+                                <div>
+                                    <p class="elipsis">가나치킨 광화문점</p>
+                                    <span>
+                                        <p>김세모</p>
+                                        <em>123-45-67890</em>
+                                        <i class="ico_cen down"></i>
+                                    </span>
+                                </div>
+                                <i class="ico_cen master"></i>
+                            </div>
+                            <div class="list_store_cell_detail">
+                                <span>
+                                    <em>휴대폰번호</em>
+                                    <p class="set_text_underline">
+                                        <i class="ico_cen"></i>
+                                        010-1234-5678</p>
+                                </span>
+                                <span>
+                                    <em>주소</em>
+                                    <p>
+                                        <i class="ico_cen"></i>
+                                        서울시 영등포구 영신로 220 <br>
+                                        KnK빌딩 1112호</p>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="list_store_content manage">
+                    <div class="list_store_title">
+                        <em>미인증 3</em>
+                        <i class="ico_cen down"></i>
+                    </div>
+                    <div class="list_store_cell_wrap">
+                        <div class="list_store_cell uncert">
+                            <div class="list_store_con">
+                                <div>
+                                    <span class="list_manage_title">
+                                        <p class="elipsis">가나치킨 광화문점
+                                        </p>
+                                        <i class="ico_uncert_gray">미인증</i>
+                                    </span> <span>
+                                        <p>김세모</p>
+                                        <em>123-45-67890</em>
+                                        <i class="ico_cen down"></i>
+                                    </span>
+                                </div>
+                                <i class="ico_cen master"></i>
+                            </div>
+
+                        </div>
+                        <div class="list_store_cell uncert">
+                            <div class="list_store_con">
+                                <div>
+                                    <span class="list_manage_title">
+                                        <p class="elipsis">가나치킨 광화문점
+                                        </p>
+                                        <i class="ico_uncert_gray">미인증</i>
+                                    </span> <span>
+                                        <p>김세모</p>
+                                        <em>123-45-67890</em>
+                                        <i class="ico_cen down"></i>
+                                    </span>
+                                </div>
+                                <i class="ico_cen master"></i>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="list_store_content manage my_customer">
+                    <div class="list_store_title">
+                        <em>나의 고객 3</em>
+                        <i class="ico_cen down"></i>
+                    </div>
+                    <div class="list_store_cell_wrap">
+                        <div class="list_store_cell">
+                            <div class="list_store_con">
+                                <div>
+                                    <span class="list_manage_title">
+                                        <p class="elipsis">가나가게
+                                        </p>
+                                    </span> <span>
+                                        <p>김세모</p>
+                                        <em>123-45-67890</em>
+                                        <i class="ico_cen down"></i>
+                                    </span>
+                                </div>
+                                <i class="ico_cen master"></i>
+                            </div>
+                        </div>
+                        <div class="list_store_cell">
+                            <div class="list_store_con">
+                                <div>
+                                    <span class="list_manage_title">
+                                        <p class="elipsis">가나가게
+                                        </p>
+                                        <i class="ico_uncert_gray">미동의</i>
+                                    </span> <span>
+                                        <p>김세모</p>
+                                        <em>123-45-67890</em>
+                                        <i class="ico_cen down"></i>
+                                    </span>
+                                </div>
+                                <i class="ico_cen master"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="active_button b_gray set_mgb30 set_mgt30">
+                    <i class="ico_cen plus_gray"></i>
+                    <span>나의 사업장 등록</span>
+                </div>
+            </div>
+
+            <!-- <div class="btm_button info">
+                    <span>직원관리 도움말</span>
+                </div> -->
+
+        </div>
+    </div>
+
+</body>
+
+</html>

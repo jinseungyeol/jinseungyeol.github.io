@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../../css/semo_cont.css">
+  <title>SEMO</title>
+</head>
+<body>
+  <div class="new_content">
+
+    <div class="cont_bg"> 
+
+      <!-- 상단 타이틀 -->
+      <div class="title">계좌 증빙</div>
+      <!-- //상단 타이틀 -->
+
+      <div class="wrap document">
+        <div>
+          <div class="condition_head_wrap">
+             <div class="tab_box">
+              <span class="on">전체</span> <!--활성 클래스 on-->
+              <span>입금</span>
+              <span>출금</span>
+            </div>
+            <div class="condition_date_wrap"><!--날짜설정 박스 보이기 활성클래스 on-->
+              <div class="condition_date_border">
+                <div class="condition_date_box">
+                  <span class="on">오늘</span>  <!--활성클래스 on-->
+                  <span>어제</span>
+                  <span>이번달</span>
+                  <span>저번달</span>
+                  <span>검색</span>
+                </div>
+              </div>
+              <div class="condition_search_detail_box">
+                <div class="condition_search_detail">
+                  <div class="csd_input_box">
+                    <input type="text" placeholder="내용 또는 금액 입력 (최근 30일)">
+                    <button class="csd_input_btn">조회</button>
+                  </div>
+                  <div class="csd_calendar_box set_mgt10">
+                    <p>2020-06-09</p>
+                    <span>-</span>
+                    <p>2020-07-09</p>
+                  </div>
+                  <div class="csd_select_date_box set_mgt10">
+                    <input type="radio" id="date_week" class="search_date" name="search_date" value="7일">
+                    <label for="date_week">7일</label>
+                    <input type="radio" id="date_month" class="search_date" name="search_date" value="1개월">
+                    <label for="date_month">1개월</label>
+                    <input type="radio" id="date_qmonth" class="search_date" name="search_date" value="3개월">
+                    <label for="date_qmonth">3개월</label>
+                    <input type="radio" id="date_hyear" class="search_date" name="search_date" value="6개월">
+                    <label for="date_hyear">6개월</label>
+                  </div>
+                  <div class="csd_select_acc_box set_mgt10">
+                    <div class="csd_selected_acc">
+                      <p>
+                        <i class="logo_bank"></i>
+                        <span>전체계좌</span>
+                      </p>
+                      <a class="csd_arr"><i class="ico_cen"></i><em class="new_blind">선택</em></a>
+                    </div>
+                    <div class="csd_select_acc">
+                      <ul>
+                        <li>
+                          <i class="logo_bank"></i>
+                          <p>
+                            <span>전체계좌</span>
+                            <span>47900932341222</span>
+                          </p>
+                        </li>
+                        <li>
+                          <i class="logo_bank ico_lb003"></i>
+                          <p>
+                            <span>IBK기업은행 (두드림 성공통장)</span>
+                            <span>47900932341222</span>
+                          </p>
+                        </li>
+                        <li>
+                          <i class="logo_bank ico_lb003"></i>
+                          <p>
+                            <span>IBK기업은행 (두드림 성공통장)</span>
+                            <span>47900932341222</span>
+                          </p>
+                        </li>
+                        <li> 
+                          <i class="logo_bank ico_lb003"></i>
+                          <p>
+                            <span>IBK기업은행 (두드림 성공통장)</span>
+                            <span>47900932341222</span>
+                          </p>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> 
+          <div>
+            <div class="pay_detail_result_wrap">
+              <p class="noti_comm result fail">
+                <i class="ico_cen"></i>
+                <span>
+                  해당 계좌에 조회 가능한 <br/>
+                  거래 내역이 없습니다.
+                </span>
+              </p>
+                <p class="noti_comm set_mgt20 set_top_cen">
+                  <i class="ico_cen"></i>
+                  <span>
+                    최초 등록 시, 최근 3개월 내 거래가 없는 경우<br/>
+                    내역을 가져오지 못할 수 있습니다.<br/>
+                    자세한 내역은 해당 은행에서 확인해 주세요. 
+                  </span>
+                </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

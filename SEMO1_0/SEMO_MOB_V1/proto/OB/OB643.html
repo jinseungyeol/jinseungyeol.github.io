@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../../css/semo_cont.css" />
+  <link rel="stylesheet" href="../../css/semo_cont_ibk.css" />
+  <title>SEMO</title>
+</head>
+
+<body>
+  <div class="new_content">
+
+    <div class="cont_bg cont_pd">
+      <!-- 클래스 cont_pd fix_button 포함 패딩-->
+
+      <!-- 상단 타이틀 -->
+      <div class="title">기간연장신청</div>
+      <!-- //상단 타이틀 -->
+
+      <div class="wrap account">
+        <div class="progress_state_box">
+          <span class="suc"></span>
+          <!--신청 진행 완료 활성 클래스 suc-->
+          <span class="suc"></span>
+          <!--신청 진행 완료 활성 클래스 suc-->
+          <span class="suc"></span>
+          <!--신청 진행 활성 클래스 on-->
+          <span class="on"></span>
+        </div>
+        <div>
+          <div class="result_box set_mg20">
+            <!-- hide 클래스로 제어 -->
+            <!-- 2021-01-18 result_box set_mg20 클래스 추가 -->
+            <div class="result_wrap success">
+              <!--성공 활성 클래스 seccess-->
+              <i class="ico_rw success"><em class="new_blind">성공아이콘</em></i>
+              <!--success-->
+              <span class="success"><strong>대출 기간연장 약정 신청 완료</strong>
+              </span>
+            </div>
+          </div>
+          <div class="loan_cont_box">
+            <!-- hide 클래스로 제어 -->
+            <div class="loan_noti_box">
+              <p>
+                ① 변경 전 대출 만기일에 이자수납이 완료되어야 기간연장이 가능하오니 확인하여 미리 챙겨주시기 바랍니다. 
+                여신약정서는 IBK기업은행 기업뱅킹의 뱅킹 > 대출 > 대출계좌조회 메뉴에서 조회 가능합니다.
+                
+              </p> <br>
+              <p>
+                ② 여신약정서는 IBK기업은행 기업뱅킹의 뱅킹 > 대출 > 대출계좌조회 메뉴에서 조회 가능합니다
+              </p>
+            </div>
+            <div class="loan_check_box">
+              <div class="lcb_list">
+                <p>
+                  <span class="div_tit">기간연장신청일</span>
+                  <span class="div_txt">2021-03-31</span>
+                </p>
+                <p>
+                  <span class="div_tit">대출계좌번호</span>
+                  <span class="div_txt">1234-56789-1234</span>
+                </p>
+                <p>
+                  <span class="div_tit">변경 전 대출만기일</span>
+                  <span class="div_txt">2020-04-31</span>
+                </p>
+                <p>
+                  <span class="div_tit">변경 후 대출만기일</span>
+                  <span class="div_txt">2021-08-01</span>
+                </p>
+                <p>
+                  <span class="div_tit">변경 전 대출금액</span>
+                  <span class="div_txt">99,999,999</span>
+                </p>
+                <p>
+                  <span class="div_tit">변경 후 대출금액</span>
+                  <span class="div_txt">30,000,000</span>
+                </p>
+                <p>
+                  <span class="div_tit">변경 전 대출금액
+                  </span>
+                  <span class="div_txt"><em>999,999,999</em>원</span>
+                </p>
+                <p>
+                  <span class="div_tit">변경 후 대출금액</span>
+                  <span class="div_txt"><em>30,000,000</em>원</span>
+  
+                </p>
+                <p>
+                  <span class="div_tit">변경 전 대출이자율
+                  </span>
+                  <span class="div_txt"><em>1.5000</em>%</span>
+                </p>
+                <p>
+                  <span class="div_tit">변경 후 대출이자율
+                  </span>
+                  <span class="div_txt"><em>1.5000</em>%</span>
+                </p>
+              </div>
+              <div class="lcb_list">
+                <span class="lcb_tit">특약사항</span>
+                <p>
+                  <span class="div_sen">
+                    최초 여신실행일로부터 3년간은 기준금리(단, 기준금리가 1.5%이하시에는 1.5% 적용) 초과분을 특별히 감면 받았음을 확인하고,
+                    3년이 경과한 시점부터는 감면된 금리를 환원하기로 합니다.
+                    [제도별 특약 55]
+                  </span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 취소버튼 눌렀을 시 팝업 끝-->
+    <!-- 최종수입적용약정이율 표시 팝업 -->
+    <div class="popup_bg hide">
+      <!-- hide클래스 가리기 -->
+      <div class="popup pt_top2">
+        <!-- 2020-12-04 pt_top2클래스 추가 -->
+        <div class="popup_txt">
+          <span class="popup_tit"></span>
+          <span class="popup_sub pt_pd3">
+            적용 예상 대출금리는 1.5% 입니다
+          </span>
+        </div>
+        <div class="popup_btn">
+          <span class="">취소</span>
+          <span class="bgc_green">확인</span>
+          <!--클래스 bgc_green 배경색-->
+        </div>
+      </div>
+    </div>
+    <!-- 최종수입적용약정이율 표시 팝업 끝 -->
+
+    <!-- 토스트 팝업 내용 -->
+    <div class="toast hide">
+      <span>모든 항목에 체크해주세요.</span>
+    </div>
+    <!-- 토스트 팝업 -->
+
+    <!-- 하단 fix 버튼 -->
+    <div class="btm_fix">
+      <span href="../OB/OB630.html" class="bgc_green">확인</span>
+      <!--클래스 bgc_green 배경색-->
+    </div>
+    <!-- 하단 fix 버튼 -->
+  </div>
+</body>
+
+</html>

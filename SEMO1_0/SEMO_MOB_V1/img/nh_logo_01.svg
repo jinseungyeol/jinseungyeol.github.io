@@ -1,0 +1,12 @@
+<svg id="농협카드" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="88" height="88" viewBox="0 0 88 88">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="사각형_16751" data-name="사각형 16751" width="88" height="88" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="그룹_65188" data-name="그룹 65188" transform="translate(0 0)" clip-path="url(#clip-path)">
+    <path id="패스_50299" data-name="패스 50299" d="M44,0A44,44,0,1,1,0,44,44,44,0,0,1,44,0" transform="translate(0 0)" fill="#00a84d"/>
+    <path id="패스_50300" data-name="패스 50300" d="M44.466,10.281,32.9,16.089,21.348,10.281,32.9,32.259Z" transform="translate(10.624 5.117)" fill="#ffa600"/>
+    <path id="패스_50301" data-name="패스 50301" d="M52.544,26.678l-.177-.151,8.252-3.466V11.468L46.286,17.575,38.349,32.614a12.048,12.048,0,1,1-2.822,0c-.174-.335-7.932-15.038-7.932-15.038L13.3,11.468V23.061l8.234,3.466-.174.151a23.727,23.727,0,1,0,31.2,0Z" transform="translate(6.583 5.708)" fill="#ffa600"/>
+  </g>
+</svg>

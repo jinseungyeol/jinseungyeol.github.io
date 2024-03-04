@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../../css/semo_cont.css">
+  <title>SEMO</title>
+</head>
+<body>
+  <div class="new_content">
+
+    <div class="cont_bg cont_pd"> <!-- 클래스 cont_pd fix_button 포함 패딩-->
+
+      <!-- 상단 타이틀 -->
+      <div class="title">간편송금</div>
+      <!-- //상단 타이틀 -->
+
+      <!-- 설정 -->
+      <div class="transfer_setting">
+        <a class="btn_ccount_set"><i></i><em class="new_blind">설정</em></a>
+        <div class="ts_menu">
+          <ul>
+            <li>송금내역보기</li>
+            <li>송금계좌설정</li>
+            <li>핀번호 설정</li>
+          </ul>
+        </div>
+      </div>
+      <!-- //설정 -->
+
+      <!-- IBK 로고 -->
+      <i class="ibk_logo_tit"></i>
+      <!-- //IBK 로고 -->
+
+            
+      <!-- 간편송금 -->
+      <div class="wrap account">
+        <div class="account_box">
+          <div class="transfer_input_box">
+            <span class="tib_tit">보낼금액 (원)</span>
+            <input class="tib_input" value="2,500,000">
+            <div class="nomal_noti"> 
+              <span> 일 송금한도는 2,000,000 원입니다. <a class="btn_quiery"><i></i><em class="new_blind">궁금한것</em></a></span>
+            </div>
+          </div>
+          <div class="transfer_input_box">
+            <span class="tib_tit">내 통장 표시 내용</span>
+            <input class="tib_input" value="가나다 상사1">
+          </div>
+          <div class="transfer_input_box">
+            <span class="tib_tit">받는 통장 표시 내용</span>
+            <input class="tib_input"  placeholder="최대8자 (생략시 출금통장 예금주명)">
+          </div>
+          <div class="transfer_input_box">
+            <span class="tib_tit">출금 용도 설정</span>
+            <div class="tib_wrap">
+              <div class="tib_box">
+                <span class="tib_input ico_arr_a">카드대금</span>
+                <a class="btn_ti_class"><i></i><em class="new_blind">분류클릭</em></a>
+              </div>
+              <!-- 분류 팝업 -->
+              <div class="popup_layer">
+                <div class="pl_tit">출금 용도 설정</div>
+                <a class="btn_pl_close"><i></i><em class="new_blind">닫기</em></a>
+                <div class="pl_list_box">
+                  <div class="out_set_box">
+                    <p class="osb_list on">매입지출</p> <!--활성화 클래스 on-->
+                    <p class="osb_list">임대료</p>
+                    <p class="osb_list">카드대금</p>
+                    <p class="osb_list">이자납입</p>
+                    <p class="osb_list">기타출금</p>
+                    <p class="osb_list">내계좌송금</p>
+                    <p class="osb_list">급여</p>
+                    <p class="osb_list">세금납부</p>
+                  </div>
+                </div>
+              </div>
+              <!-- //분류 팝업 -->
+            </div>
+          </div>
+          <div class="transfer_input_box">
+            <span class="tib_tit">메모</span>
+            <input class="tib_input" placeholder="한글 25자까지 입력 가능">
+          </div>
+        </div>
+      </div>
+      <!-- //간편송금 -->
+      
+    </div>
+
+    <!-- 하단 fix 버튼 -->
+    <div class="btm_fix">
+      <span class="bgc_green">보내기 (수수료 무료 <em class="ft_count">10</em>회 남음)</span> <!--클래스 bgc_green 배경색-->
+    </div>
+    <!-- 하단 fix 버튼 -->
+  </div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="27.608" height="27.626" viewBox="0 0 27.608 27.626">
+    <defs>
+        <linearGradient id="krfivliiva" x1=".915" x2=".105" y2=".877" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#d3c9fb"/>
+            <stop offset="1" stop-color="#b7e0e6"/>
+        </linearGradient>
+        <clipPath id="lj8ozz15tb">
+            <path data-name="패스 60987" d="m338.744 12.8 5.211 3.179a4.2 4.2 0 0 0 4.369 0l5.211-3.179a4.2 4.2 0 0 1 5.767 5.776l-3.174 5.209a4.188 4.188 0 0 0 0 4.373l3.174 5.212a4.2 4.2 0 0 1-5.767 5.771l-5.211-3.174a4.179 4.179 0 0 0-4.369 0l-5.211 3.174a4.2 4.2 0 0 1-5.767-5.771l3.174-5.212a4.187 4.187 0 0 0 0-4.373l-3.174-5.209a4.185 4.185 0 0 1 5.767-5.776" transform="translate(-332.334 -12.16)" style="fill:url(#krfivliiva)"/>
+        </clipPath>
+    </defs>
+    <g data-name="그룹 86976" style="opacity:.59">
+        <g data-name="그룹 86975" style="clip-path:url(#lj8ozz15tb)">
+            <path data-name="사각형 24955" transform="translate(-1.65 -1.652)" style="fill:url(#krfivliiva)" d="M0 0h30.911v30.931H0z"/>
+        </g>
+    </g>
+</svg>

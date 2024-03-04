@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../../css/semo_cont.css">
+  <link rel="stylesheet" href="../../css/semo_cont_ibk.css">
+  <title>SEMO</title>
+</head>
+<body>
+  <div class="new_content">
+
+    <div class="cont_bg cont_pd"> <!-- 클래스 cont_pd fix_button 포함 패딩-->
+      <!-- 상단 타이틀 -->
+      <div class="title">간편송금</div>
+      <!-- //상단 타이틀 -->
+
+      <div class="wrap document">
+        <div class="easy_send_select">
+          <div>
+            <div class="user_mark bussi">기업</div>
+            <div class="ess_bank">IBK기업</div>
+            <div class="ess_account">
+              <span>1234-5678-12345-52</span>
+              <a class="btn_select"><i class="ico_cen"></i><em class="new_blind">계좌선택</em></a>
+            </div>
+          </div>
+          <div class="ess_history">송금관리</div><!--2020-10-19 문구수정-->
+        </div>
+        <div class="easy_send_input set_mgt30"> <!--2020-08-06 클래스 변경 set_mgt35 -> set_mgt30-->
+          <p>보낼 금액</p>
+          <div>
+            <!--2020-08-04 숫자 입력후 클래스 off 제거 // 숫자길이만큼 인풋테그 조정 => 스크립트로 조정-->
+            <input type="text" class="esi_edit" placeholder="금액을 입력해 주세요" value="123456" style="width: 122px;"> 
+            <!--2020-08-04 숫자 입력후 클래스 off 제거 // 숫자길이만큼 인풋테그 조정 => 스크립트로 조정-->
+            <span>원<span>
+          </div>
+        </div>
+        <div class="easy_send_info">
+          <!--2020-07-30 &nbsp;&nbsp; 추가-->
+          <p>
+            <span>
+              잔액:&nbsp;&nbsp; 
+              <strong class="c_red esi_fail">조회실패</strong> 
+              <a class="esi_refresh"><i class="ico_cen"></i><em class="new_blind">갱신 버튼</em></a>
+            </p>
+          <p>
+            <span>남은 송금한도:&nbsp;&nbsp;<em>3,000,000</em>원</span>
+            <a><i class="ico_cen"></i><em class="new_blind">? 버튼</em></a>
+          </p>
+          <!--2020-07-30 &nbsp;&nbsp; 추가-->
+        </div>
+      </div>
+    </div>
+
+    <!-- 하단 fix 버튼 -->
+    <div class="btm_fix">
+      <span class="bgc_green">다음</span>
+    </div>
+    <!-- 하단 fix 버튼 -->
+  </div>
+</body>
+</html>

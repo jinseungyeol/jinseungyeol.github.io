@@ -1,0 +1,275 @@
+@charset "utf-8";
+/* COMMON */
+.inner {position: relative; padding: 0 20px; margin: 0 auto;}
+
+.loadingWrap {display: none; position: fixed; left: 0; right: 0; bottom: 0; top: 0; z-index: 1101;}
+.loadingWrap .dim {position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.5);}
+.loadingWrap .loadingInner {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);} 
+
+body.loading {overflow: hidden;}
+body.loading .loadingWrap {display: block;}
+
+/* HEADER */
+.btnfitApply {position: fixed; bottom: 0; left: 0; right: 0; display: flex; align-items: center; justify-content: center; height: 120px; background: #F4F4F4; border-radius: 60px 60px 0 0; box-shadow: 0 0 10px 20px rgba(0,0,0,0.15); z-index: 4;}
+.btnfitApply .content {display: flex; align-items: center; justify-content: center;}
+.btnfitApply .content .deadline {display: flex; align-items: center; margin-right: 50px}
+.btnfitApply .content .deadline span {margin-right: 30px; font-size: 32px; font-weight: 600;}
+.btnfitApply .content .deadline em {width: 270px; font-size: 52px; font-weight: 600;}
+.btnfitApply .content .btnApply {display: flex; align-items: center; height: 80px; padding: 0 45px; color: #fff; font-weight: 600; font-size: 30px; background: linear-gradient(90deg, rgba(1,181,255,1) 0%, rgba(96,69,242,1) 100%); border-radius: 60px;}
+.btnfitApply .content .btnApply .arrow {display: flex; align-items: center; margin-left: 30px;}
+.btnfitApply .content .btnApply .arrow img {animation: ani_opacity 1s linear infinite}
+.btnfitApply .content .btnApply .arrow img:nth-child(2) {animation-delay: 0.1s;}
+.btnfitApply .content .btnApply .arrow img:nth-child(3) {animation-delay: 0.2s;}
+
+/* VISUAL */
+.visual {padding: 0px 0 120px; background: linear-gradient(90deg, rgba(23,74,185,1) 0%, rgba(23,0,166,1) 100%);}
+.visual .txt {width: 100%; height: calc(100vh - 120px); background: url(../img/txt_visual.png) no-repeat center / contain;}
+
+/* BENEFIT */
+.benefit {padding: 120px 0; background: linear-gradient(90deg, rgba(23,74,185,1) 0%, rgba(23,0,166,1) 100%); text-align: center}
+.benefit .benefitList {display: flex; justify-content: center; margin-top: 82px; transition: .5s;}
+.benefit .benefitList > li:nth-child(2) {transition-delay: .45s;}
+.benefit .benefitList > li:nth-child(3) {transition-delay: .6s;}
+.benefit .benefitList > li .txt {margin-top: 20px;}
+.benefit .benefitList > li .txt p {color: #fff; font-size: 36px;}
+
+/* DIFFERENCE */
+.difference {padding: 120px 0; text-align: center;}
+.difference .inner {max-width: 1280px; margin: 0 auto;}
+.difference h1 {margin-bottom: 66px;}
+.difference .areaVideo {border: 1px solid #e1e1e1; border-radius: 20px; overflow: hidden;}
+.difference .areaVideo video {width: 100%; vertical-align: top;}
+
+/* SOLUTION */
+.solution {padding: 178px 0; background: #F1F8FF; text-align: center; overflow: hidden;}
+.solution h1 {margin-bottom: 178px;}
+.solution .carousel {display: flex; animation: ani_LtoR 40s linear infinite}
+.solution .carousel .boxWrap {display: flex; gap: 36px;}
+.solution .carousel .box {width: 380px; padding: 36px; border-radius: 20px; background: #fff;}
+.solution .carousel .box img {display: block; margin-left: auto; margin-bottom: 73px;}
+.solution .carousel .box p {font-size: 40px; text-align: left;}
+.solution .carousel .box strong {display: block;}
+
+/* SATISFACTION */
+.satisfaction {aspect-ratio: 640/483; background: linear-gradient(90deg, rgba(23,74,185,1) 0%, rgba(23,0,166,1) 100%);}
+.satisfaction .inner {display: flex; justify-content: center; align-items: center; aspect-ratio: inherit; padding: 0; background: url(../img/bg_satisfaction.png) no-repeat top center / auto 100%;}
+.satisfaction .satisBox {flex: 1; max-width: 1680px; display: flex; justify-content: space-between; align-items: center; padding: 5.83% 4.17%; margin: 0 40px; background: #fff; border-radius: 50px;}
+.satisfaction .satisBox .left p {margin-top: 60px; font-weight: bold; font-size: 26px; color: #1562e5; transition-delay: .45s;}
+.satisfaction .satisBox .right {margin-left: 10%; position: relative;}
+.satisfaction .satisBox .right .txt {position: absolute; top: 24px; left: 0; width: calc(100% - 200px); transform: scale(0);}
+.satisfaction .satisBox .right .graph {display: flex; justify-content: space-between; align-items: flex-end; gap: 19px; height: 449px;}
+.satisfaction .satisBox .right .graph .item {width: 128px;}
+.satisfaction .satisBox .right .graph .item .bar {height: 0; background: #D9D9D9; transition: 0.35s; border-radius: 20px 20px 0 0;}
+.satisfaction .satisBox .right .graph .item p {opacity: 0; margin-top: 46px; font-size: 26px; color: #bcbcbc; text-align: center; transition: .15s;}
+.satisfaction .satisBox .right .graph .item.semoreport .bar {background: linear-gradient(180deg, rgba(0,184,255,1) 0%, rgba(98,65,240,1) 100%);}
+.satisfaction .satisBox .right .graph .item.semoreport p {color: #6241f0}
+
+/* SATISFACTION : ACTIVE */
+.satisfaction .satisBox .right .txt.active {transform: scale(1); animation: ani_scale 0.3s linear;}
+.satisfaction .satisBox .right .graph .item.active:nth-child(1) .bar {height: 103px;}
+.satisfaction .satisBox .right .graph .item.active:nth-child(2) .bar {height: 174px;}
+.satisfaction .satisBox .right .graph .item.active:nth-child(3) .bar {height: 360px;}
+.satisfaction .satisBox .right .graph .item.active p {opacity: 1;}
+
+/* NEED */
+.need {padding: 126px 0; background: linear-gradient(90deg, rgba(23,74,185,1) 0%, rgba(23,0,166,1) 100%);}
+.need .inner {max-width: 1680px;}
+.need h1 {margin-bottom: 108px; text-align: center;}
+.need .needBox {padding: 120px 40px; background: #fff; border-radius: 50px;}
+.need .needList {width: fit-content; margin: 0 auto;}
+.need .needList > li {display: flex; align-items: center;}
+.need .needList > li:nth-child(2) {transition-delay: .45s;}
+.need .needList > li:nth-child(3) {transition-delay: .6s;}
+.need .needList > li:nth-child(4) {transition-delay: .75s;}
+.need .needList > li:nth-child(5) {transition-delay: .9s;}
+.need .needList > li + li {margin-top: 50px;}
+.need .needList > li img {margin-right: 29px;}
+.need .needList > li span {color: #013ebb; font-size: 40px; font-weight: bold; transition: .5s;}
+.need .needTxt {margin-top: 120px; text-align: center;}
+.need .needTxt p {margin-bottom: 40px; font-size: 40px; color: #fff;}
+.need .needTxt .infoTxt {max-width: 990px; margin: 0 auto; aspect-ratio: 33/2; background: url(../img/txt_need02.png) no-repeat center / contain;}
+
+/* APPLY */
+.apply {width: 100%; min-height: 100vh; position: relative; display: flex; align-items: center; padding: 40px 0; background: #242441; overflow: hidden;}
+.apply .inner {max-width: 1680px; flex: 1;}
+.apply .description {max-width: 988px; margin: 0 auto;}
+.apply .description h1 {font-size: 52px; color: #cddffa; font-weight: normal; text-align: center;}
+.apply .description .txtBox {width: fit-content; margin: 20px auto 60px;}
+.apply .description .txtBox p {font-size: 20px; font-weight: 600; color: #cddffa;}
+.apply .description .txtBox p + p {margin-top: 4px;}
+.apply #applyForm .inputWrap {display: flex;}
+.apply #applyForm .inputWrap .col + .col {margin-left: 69px;}
+.apply #applyForm .inputWrap .col + .col .inputBox .formTit {text-align: right;}
+.apply #applyForm .inputBox {display: flex; align-items: center}
+.apply #applyForm .inputBox + .inputBox {margin-top: 30px;}
+.apply #applyForm .inputBox .formTit {width: 116px; margin-right: 28px; color: #5C6BA0; font-size: 24px;}
+.apply #applyForm .inputBox .field {width: 315px;}
+.apply #applyForm .inputBox .field.num {display: flex; align-items: center;}
+.apply #applyForm .inputBox .field input {height: 60px; padding: 0 15px; font-size: 24px; border-radius: 10px;}
+.apply #applyForm .inputBox .field input::placeholder {color: #D8D8D8;}
+.apply #applyForm .inputBox .field input:focus {padding: 0 10px; border: 5px solid #5C6BA0;}
+.apply #applyForm .inputBox .field input[name='BIZ_NO']:nth-of-type(2) {width: 60px;}
+.apply #applyForm .inputBox .field .divide {margin: 0 6px; color: #fff; font-size: 24px;}
+.apply #applyForm .useService {display: flex; align-items: center; justify-content: space-between; margin: 30px 0 42px;}
+.apply #applyForm .useService .formTit {color: #5C6BA0; font-size: 24px;}
+.apply #applyForm .useService .selectBox {position: relative;}
+.apply #applyForm .useService .selectBox > a {position: relative; display: flex; justify-content: space-between; align-items: center; width: 315px; height: 60px; padding: 0 15px; background: #fff; border-radius: 10px; z-index: 1;}
+.apply #applyForm .useService .selectBox > a span {font-size: 24px; color: #d8d8d8;}
+.apply #applyForm .useService .selectBox .selectList {display: none; position: absolute; top: calc(100% - 5px); left: 0; right: 0; padding-top: 5px; background: #fff; border-radius: 0 0 10px 10px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); overflow: hidden;}
+.apply #applyForm .useService .selectBox .selectList > li + li {border-top: 1px solid #ced4da;}
+.apply #applyForm .useService .selectBox .selectList > li a {display: block; height: 60px; line-height: 60px; padding-left: 15px; font-size: 24px;}
+.apply #applyForm .interest {margin-bottom: 75px;}
+.apply #applyForm .interest .formTit {color: #5C6BA0; font-size: 24px;}
+.apply #applyForm .interest .checkList {display: flex; align-items: center; flex-wrap: wrap;}
+.apply #applyForm .interest .checkList > li {margin-top: 20px;}
+.apply #applyForm .interest .checkList > li label {display: flex; align-items: center; margin-right: 60px; cursor: pointer;}
+.apply #applyForm .interest .checkList > li label input[type='checkbox']:checked {background: url(../img/ico_check_rect_on.png) no-repeat center;}
+.apply #applyForm .interest .checkList > li label span {margin-left: 20px; color: #fff; font-size: 28px; font-weight: 600;}
+.apply #applyForm .privacy {display: flex; align-items: center; justify-content: space-between;}
+.apply #applyForm .privacy .areaCheck {display: flex; align-items: center;}
+.apply #applyForm .privacy .areaCheck label {display: flex; align-items: center; cursor: pointer;}
+.apply #applyForm .privacy .areaCheck input[type='checkbox'] {border: none; background: url(../img/ico_check_circle.png) no-repeat center / contain;}
+.apply #applyForm .privacy .areaCheck input[type='checkbox']:checked {background-image: url(../img/ico_check_circle_on.png);}
+.apply #applyForm .privacy .areaCheck label span {margin-left: 16px; color: #fff; font-size: 28px; font-weight: 600;}
+.apply #applyForm .privacy .areaCheck a {position: relative; margin-left: 10px; color: #fff; font-weight: 600; font-size: 28px;}
+.apply #applyForm .privacy .areaCheck a::before {content: ''; position: absolute; top: calc(100% - 8px); left: 0; right: 0; height: 2px; background: #fff;}
+.apply #applyForm .privacy .btnSubmit {color: #3f4804; font-size: 32px; font-weight: 600; width: 415px; height: 80px; border-radius: 100px; background: #787aad; transition: 0.35s;}
+
+/* APPLY : ACTIVE */
+.apply #applyForm .useService .selectBox.active > a {padding: 0 10px; border: 5px solid #5C6BA0;}
+.apply #applyForm .useService .selectBox.active .selectList {display: block;}
+.apply #applyForm .privacy .btnSubmit.active {background: #33ED94;}
+
+/* MEDIA QUERY */
+@media screen and (max-width:1023px){
+    /* TABLET */
+    /* HEADER */
+    .btnfitApply {height: auto; border-radius: 40px 40px 0 0; overflow: hidden; background: transparent;}
+    .btnfitApply .content {flex: 1; flex-direction: column-reverse;}
+    .btnfitApply .content .btnApply {width: 100%; height: 65px; justify-content: center; font-size: 18px; border-radius: 0; font-size: 20px;}
+    .btnfitApply .content .btnApply .arrow {margin-left: 10px;}
+    .btnfitApply .content .btnApply .arrow img {width: 11px;}
+    .btnfitApply .content .deadline {width: 100%; justify-content: center; height: 50px; margin-right: 0; background: #f4f4f4;}
+    .btnfitApply .content .deadline span {margin-right: 15px; font-size: 15px;}
+    .btnfitApply .content .deadline em {width: auto; font-size: 21px;}
+
+    /* VISUAL */
+    .visual {padding: 0 0 115px;}
+    .visual .inner {height: calc(100vh - 115px);}
+    .visual .txt {max-width: 440px; height: calc(100vh - 115px); margin: 0 auto; aspect-ratio: 2/3; background-image: url(../img/txt_visual_mobile.png);}
+
+    /* BENEFIT */
+    .benefit {padding-top: 50px;}
+    .benefit h1 {max-width: 320px; margin: 0 auto;}
+    .benefit .benefitList {display: block; margin-top: 60px;}
+    .benefit .benefitList > li img {max-width: 300px;}
+    .benefit .benefitList > li + li {margin-top: 80px;}
+    .benefit .benefitList > li .txt p {font-size: 20px;}
+
+    /* DIFFRERENCE */
+    .difference h1 {max-width: 320px; margin: 0 auto 60px;}
+    .difference .areaVideo {margin: 0 -20px; border-radius: 0; border: none;}
+
+    /* NEED */
+    .need h1 {max-width: 400px; margin: 0 auto; margin-bottom: 54px;}
+    .need .needBox {padding: 30px 20px; border-radius: 20px;}
+    .need .needList > li + li {margin-top: 20px;}
+    .need .needList > li img {width: 18px; margin-right: 10px;}
+    .need .needList > li span {font-size: 18px;}
+    .need .needTxt {margin-top: 29px;}
+    .need .needTxt p {margin-bottom: 10px; font-size: 16px;}
+    .need .needTxt .infoTxt {max-width: 320px; aspect-ratio: 16/3; background-image: url(../img/txt_need02_mobile.png);}
+
+    /* SOLUTION */
+    .solution {padding-top: 80px;}
+    .solution h1 {max-width: 400px; margin: 0 auto; margin-bottom: 76px;}
+    .solution .carousel {display: block; animation: none;}
+    .solution .carousel .boxWrap {gap: 26px; animation: ani_LtoR 40s linear infinite;}
+    .solution .carousel .boxWrap + .boxWrap {margin-top: 26px; animation: ani_RtoL 40s linear infinite; transition: .5s;}
+    .solution .carousel .box {display: flex; flex-direction: column; flex: 1 0 220px; height: 220px; padding: 20px;}
+    .solution .carousel .box img {width: 60px; margin-bottom: 0;}
+    .solution .carousel .box p {margin-top: auto; font-size: 20px;}
+
+    /* SATISFACTION */
+    .satisfaction .satisBox {margin-bottom: 0;}
+    .satisfaction .satisBox h1 {max-width: 320px;}
+    .satisfaction .satisBox {display: block; margin: 140px 20px; padding: 35px; border-radius: 20px;}
+    .satisfaction .satisBox .left {width: fit-content; margin: 0 auto;}
+    .satisfaction .satisBox .left p {margin-top: 30px; font-size: 18px;}
+    .satisfaction .satisBox .right {width: fit-content; margin: 0 auto;}
+    .satisfaction .satisBox .right .txt {width: 150px; top: 70px;}
+    .satisfaction .satisBox .right .graph {max-width: 330px; height: 350px;}
+    .satisfaction .satisBox .right .graph .item p {margin-top: 20px; font-size: 16px;}
+
+    /* SATISFACTION : active */
+    .satisfaction .satisBox .right .graph .item.active:nth-child(1) .bar {height: 75px;}
+    .satisfaction .satisBox .right .graph .item.active:nth-child(2) .bar {height: 120px;}
+    .satisfaction .satisBox .right .graph .item.active:nth-child(3) .bar {height: 250px;}
+
+    /* APPLY */
+    .apply {background-image: none;}
+    .apply::before {background: #0F1737;}
+    .apply .description h1 {font-size: 30px;}
+    .apply .description h1 strong span {display: block;}
+    .apply .description .txtBox p {font-size: 15px;}
+    .apply #applyForm .inputWrap {display: block;}
+    .apply #applyForm .inputWrap .col + .col {margin-left: 0; margin-top: 30px;}
+    .apply #applyForm .inputWrap .col + .col .inputBox .formTit {text-align: left;}
+    .apply #applyForm .inputBox .formTit {width: 100%; margin-bottom: 8px; font-size: 20px;}
+    .apply #applyForm .inputBox {display: block;}
+    .apply #applyForm .inputBox .field {flex: 1; width: auto;}
+    .apply #applyForm .inputBox .field input {height: 50px; font-size: 18px;}
+    .apply #applyForm .useService {display: block;}
+    .apply #applyForm .useService .formTit {margin-bottom: 8px; font-size: 20px;}
+    .apply #applyForm .useService .formTit span {display: block;}
+    .apply #applyForm .useService .selectBox > a {width: 100%; height: 50px;}
+    .apply #applyForm .useService .selectBox > a span {font-size: 18px;}
+    .apply #applyForm .useService .selectBox .selectList > li a {height: 50px; line-height: 50px; font-size: 18px;}
+    .apply #applyForm .interest .formTit {font-size: 20px;}
+    .apply #applyForm .interest .checkList {display: grid; grid-template-columns: repeat(2, 1fr);}
+    .apply #applyForm .interest .checkList > li label {margin-right: 0;}
+    .apply #applyForm .interest .checkList > li label span {font-size: 18px;}
+    .apply #applyForm .privacy {display: block;}
+    .apply #applyForm .privacy .areaCheck {margin-bottom: 40px;}
+    .apply #applyForm .privacy .areaCheck label span {margin-left: 10px; font-size: 18px;}
+    .apply #applyForm .privacy .areaCheck a {font-size: 18px;}
+    .apply #applyForm .privacy .areaCheck a::before {display: none;}
+    .apply #applyForm .privacy .btnSubmit {width: 100%; height: 60px; font-size: 20px;}
+}
+
+@media screen and (max-width:767px) {
+	/* Mobile */
+    /* BENEFIT */
+    .benefit .benefitList > li img {width: 240px;}
+}
+
+@media screen and (max-width:444px) {
+    /* 예외 처리 */
+    /* SATISFACTION */
+    .satisfaction {aspect-ratio: 48/100;}
+    .satisfaction .inner {background-image: url(../img/bg_satisfaction_mobile.png);}
+    .satisfaction .satisBox {margin-top: 60px;}
+    .satisfaction .satisBox .right .graph .item {width: auto;}
+}
+
+/* ANIMATION */
+@keyframes ani_opacity {
+    0% {opacity: 0; visibility: hidden;}
+    100% {opacity: 1; visibility: visible;}
+}
+
+@keyframes ani_LtoR {
+    0% {transform: translateX(-100%);}
+    100% {transform: translateX(0);}
+}
+
+@keyframes ani_RtoL {
+    0% {transform: translateX(0);}
+    100% {transform: translateX(-100%);}
+}
+
+@keyframes ani_scale {
+    0% {transform: scale(0);}
+    50% {transform: scale(1.1);}
+    100% {transform: scale(1);}
+}

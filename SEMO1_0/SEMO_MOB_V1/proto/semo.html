@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/semo_cont.css">
+  <script src="../js/jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".ham").click(function () {
+                $(this).toggleClass("del");
+                var $del = $(".ham").hasClass("del");
+                if ($del === true) {
+                    $(".semo_menu_wrap").fadeIn().css("width", "100%");
+                } else {
+                    $(".semo_menu_wrap").fadeOut();
+
+                }
+            });
+            $(".native > i").click(function () {
+                $(this).addClass("on").siblings().removeClass("on")
+            });
+
+            const url = [
+                'B내계좌/B213 copy 2.html',
+                'C증빙자료/C000.html',
+                'MH_알림/MH000.html',
+                '',
+                'F더보기/F000_new.html',
+            ]
+
+            const popupUrl = [
+                'C증빙자료/C780.html',
+                'C증빙자료/C716.html',
+                'MH_알림/MH000.html',
+                '',
+                'C증빙자료/C6004.html',
+                'C증빙자료_타이틀/C600_등록된_직원_없는_경우.html',
+                "MH_알림/MH000.html",
+                "MH_알림/MH000.html"
+            ]
+
+
+            $(".native > i").click(function () {
+                const tabIndex = $(".native > i").index(this);
+                $(".iframe_box").attr('src', url[tabIndex]);
+                // $(".html_number span").text(url[tabIndex].split('/')[1])
+
+                if ($(this).data('clicked', true)) {
+                    $(".semo_menu_wrap").css("display", "none");
+                    $(".ham").removeClass("del");
+                }
+
+            });
+            $(".semo_menu_wrap ul li").click(function () {
+                const popupIndex = $(".semo_menu_wrap ul li").index(this);
+                console.log(popupIndex)
+                $(".iframe_box").attr('src', popupUrl[popupIndex]);
+                var $list = $(".semo_menu_wrap ul li");
+
+                if ($(this).data('clicked', true)) {
+                    $(".semo_menu_wrap").css("display", "none");
+                    $(".ham").removeClass("del");
+                }
+
+
+
+            });
+
+            // 인수인계 내역 슬라이드
+            $(".history").click(function () {
+                $(this).toggleClass("red");
+                $(".taking_over_box").css("left", "68%");
+                if (!$("i.history").hasClass("red")) {
+                    $(".taking_over_box").css("left", "50%");
+                }
+            });
+
+            // 검색 인풋창 데이터 받아오기
+            $(".html_number input").keyup(function (key) {
+                var input_data = $(".html_number input").val();
+                // var value_check = input_data.charAt(0);
+                if (key.keyCode == 13) {
+                    input_data + ".html";
+
+                    $(".iframe_box").attr('src', "" + input_data + ".html");
+                    console.log(input_index);
+
+                }
+
+
+            });
+            var input_front = [
+                "A회원가입/", "B내계좌/", "C증빙자료/", "B내계좌/", "C증빙자료/", "C증빙자료_타이틀/", "D알림/", "E세모톡/", "F더보기/",
+                "G더보기/", "J/", "MA/", "MB_로그인_회원가입/", "MC_메인/", "MF/", "MG/", "MH_알림/", "NA/", "NB/", "O/",
+                "OA/", "OB/", "OC/", "OG/", "P공지", "SWK"
+            ]
+            console.log(input_front);
+
+
+
+            $(".p_right_box > li").click(function () {
+                var child = $(this).clone(true);
+                child.find(".p_con_title").remove();
+                $(".data_popup > .textarea > .htmlContent").text($(child).html());
+                $(".data_popup").fadeIn();
+                $(".textarea .delete").on("click", () => {
+                    $(".data_popup").fadeOut();
+                });
+
+            });
+
+        });
+    </script>
+    <style>
+        html {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+        .ico_cen {
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        i.n_b_1 {
+            background-image: url(../img/n_b_1.png);
+            width: 50px;
+            height: 50px;
+        }
+
+        i.n_b_2 {
+            background-image: url(../img/n_b_2.png);
+            width: 50px;
+            height: 50px;
+        }
+
+        i.n_b_3 {
+            background-image: url(../img/n_b_3.png);
+            width: 50px;
+            height: 50px;
+        }
+
+        i.n_b_4 {
+            background-image: url(../img/n_b_4.png);
+            width: 50px;
+            height: 50px;
+        }
+
+        i.n_b_5 {
+            background-image: url(../img/n_b_5.png);
+            width: 50px;
+            height: 50px;
+        }
+
+        i.n_b_1.on {
+            background-image: url(../img/n_b_1_g.png);
+        }
+
+        i.n_b_2.on {
+            background-image: url(../img/n_b_2_g.png);
+        }
+
+        i.n_b_3.on {
+            background-image: url(../img/n_b_3_g.png);
+        }
+
+        i.n_b_4.on {
+            background-image: url(../img/n_b_4_g.png);
+        }
+
+        i.n_b_5.on {
+            background-image: url(../img/n_b_5_g.png);
+        }
+
+        .native {
+            width: 100%;
+            height: 80px;
+            position: absolute;
+            bottom: 0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .native>i {
+            width: 80px;
+            height: 80px;
+            cursor: pointer;
+        }
+
+        .semo_menu_wrap {
+            position: absolute;
+            width: 0%;
+            height: calc(100% - 65px);
+            background-color: #ffffff;
+            top: 0;
+            left: 0;
+            padding-top: 65px;
+            display: none;
+        }
+
+        .semo_menu_wrap ul {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            padding-left: 0;
+        }
+
+        .semo_menu_wrap ul li {
+            padding: 15px 30px;
+            font-family: 'Noto Sans KR';
+            cursor: pointer;
+            text-align: center;
+        }
+
+        i.ham {
+            background-image: url(../img/ham.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        i.ham.del {
+            background-image: url(../img/del.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        i.history {
+            background-image: url(../img/clock.svg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        i.click {
+            background-image: url(../img/click.svg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        i.red {
+            background-image: url(../img/clock_red.svg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        i.back {
+            background-image: url(../img/back.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        iframe {
+            border-width: 0;
+            border-style: unset;
+            border-color: unset;
+            border-image: unset;
+        }
+
+        .taking_over_box {
+            width: 360px;
+            height: 716px;
+            position: fixed;
+            left: 50%;
+            max-height: 716px;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 5px 5px 15px 5px #c8c8c8;
+            padding: 25px 25px;
+            border-radius: 10px;
+            transition: 0.5s ease-in-out;
+            overflow-y: auto;
+        }
+
+        .taking_over_date {
+            font-size: 22px;
+            font-weight: bold;
+            color: #222222;
+        }
+
+        .taking_over_text {
+            margin-top: 15px;
+        }
+
+        .taking_over_text>li {
+            margin-top: 15px;
+            border-bottom: 1px solid #c8c8c8;
+            padding-bottom: 15px;
+        }
+
+        .taking_over_text>li>div {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .taking_over_text>li:last-child {
+            border-bottom: 0;
+        }
+
+        .taking_over_text>li>span {
+            margin-top: 8px;
+            color: #222222;
+        }
+
+        .html_number {
+            position: absolute;
+            top: 14px;
+            left: 70px;
+        }
+
+        .html_number input {
+            font-size: 20px;
+            color: #222222;
+            font-weight: bold;
+            outline: 0;
+            border: 0;
+            width: 200px;
+            padding: 5px;
+            border-radius: 8px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="iframe_wrap"
+        style="width: 414px; height: 736px; box-shadow: 5px 5px 15px 5px #c8c8c8; position: relative; height: 100vh; max-height: 736px; padding: 65px 0 80px; border-radius: 10px; z-index: 10; background-color: #ffffff;">
+        <div class="semo_menu_wrap">
+            <ul>
+                <li>매입증빙</li>
+                <li>매출증빙</li>
+                <li>계좌증빙</li>
+                <li>건강보험증빙</li>
+                <li>배달앱증빙</li>
+                <li>직원관리</li>
+                <li>거래처관리</li>
+                <li>알림</li>
+            </ul>
+        </div>
+
+        <i class="ham"
+            style="width: 30px; height: 30px; position: absolute; top: 15px; right: 30px; cursor: pointer;"></i>
+        <i class="back" style="width: 30px; height: 30px; position: absolute; top: 15px; left: 25px; cursor: pointer;"
+            onclick="javascript:history.back(-1);"></i>
+        <i class="history"
+            style="width: 35px; height: 35px; position: absolute; top: 13px; right: 77px; cursor: pointer;"></i>
+        <div class="html_number">
+            <input type="text" placeholder="html파일 명 입력">
+        </div>
+        <div class="native">
+            <i class="ico_cen n_b_1 on"></i>
+            <i class="ico_cen n_b_2"></i>
+            <i class="ico_cen n_b_3"></i>
+            <i class="ico_cen n_b_4"></i>
+            <i class="ico_cen n_b_5"></i>
+        </div>
+        <iframe class="iframe_box" src="B내계좌/B213 copy 2.html" width="414px" height="100%" name="main"></iframe>
+
+    </div>
+    <div class="taking_over_box">
+        <ul class="taking_over_text">
+            <span class="taking_over_date">2021-04-14</span>
+            <li>
+                <span>
+                    파일명 : <b>OB000.html</b>
+                </span>
+                <span>
+                    수정내용 :
+                </span>
+                <p></p>
+            </li>
+        </ul>
+        <ul class="taking_over_text">
+            <span class="taking_over_date">2021-04-13</span>
+            <li>
+                <div>
+                    <span>
+                        파일명 : B213.html
+                    </span>
+                    <span>
+                        수정내용 :
+                    </span>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

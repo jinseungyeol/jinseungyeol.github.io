@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="prefix__ico_small_bank12_새마을금고" width="40" height="40" viewBox="0 0 40 40">
+    <defs>
+        <linearGradient id="prefix__linear-gradient" x1=".594" x2=".278" y1=".238" y2="1.398" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#38b8ef"/>
+            <stop offset="1" stop-color="#004b9e"/>
+        </linearGradient>
+        <linearGradient id="prefix__linear-gradient-2" x1=".503" x2=".494" y1=".934" y2="-.373" xlink:href="#prefix__linear-gradient"/>
+        <linearGradient id="prefix__linear-gradient-3" x1=".154" x2="1.091" y1=".51" y2=".433" xlink:href="#prefix__linear-gradient"/>
+    </defs>
+    <circle id="prefix__타원_74" cx="20" cy="20" r="20" fill="#08376b" data-name="타원 74"/>
+    <g id="prefix__그룹_484" data-name="그룹 484" transform="translate(-432.081 -2483.828)">
+        <g id="prefix__그룹_481" data-name="그룹 481" transform="translate(453.648 2498.994)">
+            <g id="prefix__그룹_480" data-name="그룹 480">
+                <g id="prefix__그룹_479" data-name="그룹 479">
+                    <path id="prefix__패스_953" fill="url(#prefix__linear-gradient)" d="M480.533 2509.859a7.941 7.941 0 0 0-1.837.213 3.956 3.956 0 0 1-.291 3.827 3.666 3.666 0 1 1-1.733 5.692v5.115a7.926 7.926 0 1 0 3.861-14.848z" data-name="패스 953" transform="translate(-476.672 -2509.859)"/>
+                </g>
+            </g>
+        </g>
+        <path id="prefix__패스_954" fill="url(#prefix__linear-gradient-2)" d="M447.6 2522.206a3.651 3.651 0 0 1-3.123-5.565 8.668 8.668 0 0 1-1.2-4.852 7.925 7.925 0 1 0 7.239 14.089v-5.115a3.659 3.659 0 0 1-2.916 1.443z" data-name="패스 954" transform="translate(0 -12.036)"/>
+        <g id="prefix__그룹_483" data-name="그룹 483" transform="translate(443.917 2491.953)">
+            <g id="prefix__그룹_482" data-name="그룹 482">
+                <path id="prefix__패스_955" fill="url(#prefix__linear-gradient-3)" d="M468.128 2498.736a8.16 8.16 0 1 0-15.211 5.281 3.653 3.653 0 0 1 2.691-1.178 3.7 3.7 0 0 1 1.183.195 3.947 3.947 0 0 1 6.54-4.419 8.79 8.79 0 0 1 4.797.121z" data-name="패스 955" transform="translate(-451.925 -2491.953)"/>
+            </g>
+        </g>
+    </g>
+</svg>

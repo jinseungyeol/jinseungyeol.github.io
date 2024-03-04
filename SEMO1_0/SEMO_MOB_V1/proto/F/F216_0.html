@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../../css/semo_cont.css">
+  <title>SEMO</title>
+  <style>
+    .deli_certi{padding-bottom: 75px;}
+    .deli_center:last-child{padding-left: unset; padding-left: 21px; width: calc(100% - 21px);}
+    .setting_box > .deli_center_con .deli_center:first-child{padding-left: unset;width: calc(100% - 21px); justify-content: flex-start; margin-bottom: 17px; padding-left: 21px;}
+    .deli_center{display: flex; flex-direction: unset; width: 100%; gap: unset;}
+    .deli_center_con{display: flex; flex-direction: column; width: 100%; margin-top: unset; padding: 20px 0; border-top: 1px solid #c8c8c8; border-bottom: 1px solid #c8c8c8; }
+    .deli_center_con.fail{border-top: unset; border-bottom: unset; text-align: center; justify-content: center; flex-direction: unset;}
+    .deli_center_con.hide + .deli_center_con{border-top: unset; border-bottom: unset; flex-direction: unset; }
+    .deli_center > span{ font-size: 16px;}
+    .deli_center span:first-child{color: #a9adb5; font-weight: normal;  width: auto; text-align: left;}
+    .deli_center span:last-child{color: #000000; font-weight: bold;}
+    .deli_complete_text{width: 100%; justify-content: flex-start; left: 0;}
+  </style>
+</head>
+<!-- F216_0, F216_1 -->
+
+<body>
+  <div class="new_content">
+    <div class="cont_bg cont_pd">
+      <!-- 클래스 cont_pd fix_button 포함 패딩-->
+      <div class="wrap setting set_mgt_unset">
+        <div class="setting_box">
+          <div class="deli_certi set_pdt88">
+            <div class="deli_icon">
+              <div class="r_complete"></div>
+              <!-- 
+               r_complete 등록이 완료되었습니다.
+               r_fail 등록이 실패하였습니다.
+             -->
+            </div>
+            <span class="deli_check">배달앱 등록이 완료되었습니다.</span>
+            <!-- 
+              완료 : 배달앱 등록이 완료되었습니다
+              오류 : 배달앱 등록이 실패하였습니다. 
+            -->
+          </div>
+          <div class="deli_center_con">
+            <div class="deli_center">
+              <!-- 2021-03-02 내용수정 -->
+              <span style="margin-right: 12px;">증빙기관</span>
+              <span>배달의 민족</span>
+            </div>
+            <div class="deli_center">
+              <span style="margin-right:26.5px;">아이디</span>
+              <span>semojangbu</span>
+            </div>
+            <!--// 2021-03-02 내용수정 -->
+          </div>
+          <div class="deli_center_con hide fail"><!-- 2021-03-02 fail클래스 추가 -->
+            <div class="deli_fail">
+              <span>해당 기관의 관련페이지 변경으로
+                거래가 실패하였습니다.[80002F32]</span>
+            </div>
+          </div>
+          <span class="deli_complete_text hide">
+            <p>ㆍ</p>
+            <p>배달앱은 부가세신고자료 기반으로 조회합니다.</p>
+            <!-- 
+               완료 : 배달앱은 부가세신고자료 기반으로 조회합니다.
+               오류 : 배달앱 계정을 다시 등록해주세요. 동일한 오류가 계속 
+                      발생할 경우 고객센터 > 1:1문의로 문의주세요.
+             -->
+          </span>
+        </div>
+      </div>
+      <!-- 하단 fix 버튼 -->
+      <div class="btm_button">
+        <span class="bgc_green">확인</span>
+        <!--클래스 bgc_green 배경색-->
+      </div>
+      <!-- 하단 fix 버튼 -->
+    </div>
+</body>
+
+</html>

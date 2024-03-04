@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page2_1</title>
+  <!-- CSS & JS -->
+  <link rel="stylesheet" href="../css/semo_pc.css">
+  <script src="../js/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+  
+  <div class="cont_bg">
+    <div class="container resist">
+      <div class="certificate_title">
+        <h1>인증서 하이패스로 빠르고 편하게!</h1>
+        <p>
+          PC에서 등록한 인증서는 APP에 동시 저장되며
+          모든 정보는 암호화되어 안전하게 보관됩니다.
+        </p>
+      </div>
+      <div class="join_box">
+        <b>세모장부 서비스 가입정보를 입력해 주세요.</b>
+        <div class="join_info_wrap">
+          <div class="join_info business">
+          <!-- input 값 오류일 때 error 클래스 추가 -->
+
+            <p>사업자번호</p>
+            <!-- P 태그 active 클래스로 제어 -->
+
+            <input type="number" placeholder="123 - 45 - 67890" oninput="maxLengthCheck(this)" maxlength="10">
+
+          </div>
+          <div class="join_info phone">
+          <!-- input 값 오류일 때 error 클래스 추가 -->
+          
+            <p>휴대폰번호</p>
+
+            <input type="number" placeholder="010 - 1234 - 5678" oninput="maxLengthCheck(this)" maxlength="11">
+            <!-- input박스 display: none; 상태 -->
+
+          </div>
+          <div class="join_info birth">
+            <p>생년월일</p>
+
+            <div class="birth_box">
+            <!-- birth_box display: none; 상태 -->
+            <!-- input 값 오류시 birth_box에 error 클래스 추가 -->
+            
+              <input type="number"  placeholder="801231" class="birth_front" oninput="maxLengthCheck(this)" maxlength="6" name="resident">
+              <p>-</p>
+              <input type="number" class="birth_back" oninput="maxLengthCheck(this)" maxlength="1" name="resident">
+              <div class="circle">
+                <span>●</span>
+                <span>●</span>
+                <span>●</span>
+                <span>●</span>
+                <span>●</span>
+                <span>●</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="btn button_sig">확인</d>
+      <!-- button_sig 로 제어 / 제휴사별 컬러 -->
+    </div>
+  </div>
+
+  <script>
+
+    // Input[type=number] maxlength 설정하기
+    function maxLengthCheck(object) {
+      if (object.value.length > object.maxLength) {
+        object.value = object.value.slice(0, object.maxLength);
+      }
+    } 
+  
+
+    // $(".join_info.business input").keyup(function () {
+    //   if ($(this).val().length > 9) {
+    //     $(".join_info.phone input").show();
+    //     $(".join_info.phone input").focus();
+    //     $(this).siblings().addClass('active');
+    //   }
+    // });
+
+    // $(".join_info.phone input").keyup(function () {
+    //   if ($(this).val().length > 10) {
+    //     $(".join_info.birth .birth_box").show();
+    //     $(".join_info.birth .birth_front").focus();
+    //     $(this).siblings().addClass('active');
+    //     $('.birth_box').addClass('active');
+    //   }
+    // });
+
+    // $(".birth_box .birth_front").keyup(function () {
+    //   if ($(this).val().length > 5) {
+    //     $(".join_info.birth .birth_back").focus();
+    //   }
+    // });
+
+    // $(".birth_box .birth_back").keyup(function () {
+    //   if ($(this).val().length > 0) {
+    //     $(".btn").addClass('active');
+    //     $(this).parent().siblings().addClass('active');
+    //   }
+    // });
+    
+    $('.birth_box').click(function(){
+      $(this).addClass('active');
+    })
+    $('.join_info input').click(function(){
+      $(this).parent().siblings('.join_info.birth').children('.birth_box').removeClass('active');
+    })
+    
+  </script>
+
+</body>
+</html>

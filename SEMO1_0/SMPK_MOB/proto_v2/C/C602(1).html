@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css_v2/semo_style.css">
+  <script src="/js_v2/jquery-3.5.1.min.js"></script>
+    <!-- <script src="/js_v2/design.js"></script> -->
+    <script>
+        $(document).ready(function(){
+            $("i.search").click(function(){
+                $(this).toggleClass("active");
+                if($("i.search").hasClass("active")){
+                    $(".title_serach_section").css("display","flex");
+                    $(".content_list_wrapper").css("height","calc(100vh - 84.165vw)");
+                } else{
+                    $(".title_serach_section").css("display","none");
+                    $(".content_list_wrapper").css("height","calc(100vh - 64.165vw)");
+                }
+            });
+        });
+    </script>
+    <title>C602(1)</title>
+</head>
+
+<body>
+    <div class="popup_bg req" style="height:100%; display: none;" >
+        <div class="popup bottom" style="bottom: 0;">
+            <div class="popup_title">
+                <b>직원서류 요청하기</b>
+                <i class="ico_cen del"></i>
+            </div>
+            <div class="popup_document_con" style="max-height:61vh; padding:0 5.937vw 22vw;">
+                <div class="popup_document sec1">
+                    <span>
+                        <em>이름</em>
+                        <p>김세모</p>
+                    </span>
+                    <span>
+                        <em>휴대폰번호</em>
+                        <p>010-1234-5678</p>
+                    </span>
+                </div>
+                <div class="popup_document sec2">
+                    <em>
+                        개인정보는 급여명세서 발송을 위해 필요한 정보입니다.
+                    </em>
+                    <span>
+                        <i class="ico_cen check_sig"></i>
+                        <b>생년월일</b>
+                    </span>
+                    <span>
+                        <i class="ico_cen check_sig"></i>
+                        <b>급여계좌</b>
+                    </span>
+                    <span>
+                        <i class="ico_cen check_sig"></i>
+                        <b>이메일</b>
+                    </span>
+                    <span>
+                        <i class="ico_cen check_sig"></i>
+                        <b>주소</b>
+                    </span>
+                </div>
+                <div class="popup_document sec3">
+                    <b class="popup_content_title">입사서류</b>
+                    <em>입사시 필요한 항목을 체크해 주세요</em>
+                    <span>
+                        <input type="checkbox" id="document1">
+                        <label for="document1">주민등록등본 </label>
+                    </span>
+                    <span>
+                        <input type="checkbox" id="document2">
+                        <label for="document2">보건증 (만료일자 기재)</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" id="document3">
+                        <label for="document3">가족관계증명서 (부양가족 별도 거주시)</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" id="document4">
+                        <label for="document4">차량등록증(본인명의차량, 비과세 공제시)</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" id="document5">
+                        <label for="document5">신분증 사본 (주민증, 운전면허증, 여권) </label>
+                    </span>
+                    <span>
+                        <input type="checkbox" id="document6">
+                        <label for="document6">자격증 사본</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" id="document7">
+                        <label for="document7">직접입력하기</label>
+                    </span>
+                </div>
+                <div class="popup_document_send">
+                    <input type="checkbox" id="send">
+                    <label for="send">세모근태관리 앱 설치 안내도 함께 발송하기 </label>
+                </div>
+              
+            </div>
+            <div class="btm_button bottom_fix active">
+                <span>직원에게 요청하기</span>
+            </div>
+        </div>
+    </div>
+    <div class="title b_white">
+        <div class="title_left">
+            <i class="ico_cen left_arrow"></i>
+        </div>
+        <span class="title_text">직원관리</span>
+        <div class="title_right">
+            <i class="ico_cen share"></i>
+            <i class="ico_cen search "></i>
+            <i class="ico_cen info"></i>
+        </div>
+    </div>
+    <div class="basic_wrapper sample">
+        <div class="under_button_click" style="display: none;">
+            <span>아래 직원등록 버튼을 눌러 <br>
+                직원 정보를 입력해 주세요.
+            </span>
+            <span class="staff_reg_info">
+                <div>
+                    <i class="ico_cen"></i>
+                    <i class="ico_cen"></i>
+                    <i class="ico_cen"></i>
+                </div>
+            </span>
+        </div>
+        <div class="under_button_click" style="display: none;">
+            <span>검색결과가 없습니다</span>c_s
+        </div>
+        <div class="title_serach_section" style="display: none;">
+            <i class="ico_cen search"></i>
+            <input type="text" placeholder="직원명을 검색해 주세요">
+        </div>
+        <div class="padding_wrapper20 sample_wrap">
+
+            <div class="sample"></div>
+            <!-- 샘플이미지 -->
+            
+            <div class="content_title set_pdt17 set_pdb17">
+                <b class="content_title_text">전체 <b>5</b></b>
+                <div class="onoff_input_wrap">
+                    <div class="onoff_input">
+                        <input type="checkbox" id="slideOne" name="check">
+                        <label for="slideOne"></label>
+                        <span>퇴직자포함</span>
+                        <div class="onoff_input_bg"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content_list_wrapper">
+                <div class="listview">
+                    <div class="listview_cell">
+                        <div class="listview_cell_title">
+                            <em>정규직 &nbsp;<em> 2</em></em>
+                            <i class="ico_cen up_gray"></i>
+                        </div>
+                        <div class="listview_con">
+                            <span>
+                                <div>
+                                    <i class="semo_f_4"></i>
+                                    <p>정규직원</p>
+                                </div>
+                                <span>21.02.02</span>
+                            </span>
+                            <span>
+                                <div>
+                                    <i class="semo_absence"></i>
+                                    <p>휴직</p>
+                                    <em class="f_gray">&nbsp; (휴직)</em>
+                                </div>
+                                <span class="f_gray">21.10.10</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="listview">
+                    <div class="listview_cell">
+                        <div class="listview_cell_title">
+                            <em>계약직 &nbsp;<em> 2</em></em>
+                            <i class="ico_cen up_gray"></i>
+                        </div>
+                        <div class="listview_con">
+                            <span>
+                                <div>
+                                    <i class="semo_f_4"></i>
+                                    <p>계약직원</p>
+                                </div>
+                                <p class="list_status d_expire">서류만료</p>
+                            </span>
+                            <span>
+                                <div>
+                                    <i class="semo_absence"></i>
+                                    <p>퇴사</p>
+                                    <em class="f_red">&nbsp; (퇴사)</em>
+                                </div>
+                                <span class="f_red">21.12.12</span>
+                            </span>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="listview">
+                    <div class="listview_cell">
+                        <div class="listview_cell_title">
+                            <em>일용직 &nbsp;<em> 1</em></em>
+                            <i class="ico_cen up_gray"></i>
+                        </div>
+                        <div class="listview_con">
+                            <span>
+                                <div>
+                                    <i class="semo_f_2"></i>
+                                    <p>일용직원</p>
+                                </div>
+                                <p class="list_status contract">계약만료예정</p>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="btn_bottom_fix bgc_white01">
+                <div class="btn_sample">
+                    <i class="ico_cont info_02"></i>
+                    <u>직원정보 샘플 보기</u>
+                </div>
+                <div class="add_button_wrap pos_static">
+                    <button class="add_button">
+                        <i class="ico_cont plus_01"></i>
+                        <em>직원등록</em>
+                    </button>
+                </div>
+            </div>
+            <!-- <div class="btm_button info">
+                <span>직원관리 도움말</span>
+            </div> -->
+        </div>
+        <div class="toast">
+            <span>직원등록이 완료되었습니다</span>
+        </div>
+    </div>
+</body>
+
+</html>

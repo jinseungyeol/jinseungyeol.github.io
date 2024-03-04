@@ -1,0 +1,177 @@
+@charset "utf-8";
+
+/* smpk partner-product.css Ver 1 */
+/* ###########Animation */
+/* 도장 */
+@-webkit-keyframes pulse {
+  0%{
+    opacity: 0;
+  }
+  10%{
+    opacity:.5;
+    transform-origin: 50% 50%;
+    transform: rotate(-2deg) scale(5);
+    transition: all .3s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+  }
+  100%{
+    opacity:1;
+    transform: rotate(-15deg) scale(1);
+  }
+}
+
+@keyframes checkmark1 { 
+  0% { height: 0; width: 0; opacity: 1; } 
+  1% { border-right: 2.5px solid white; border-top: 2.5px solid white; height: 0; width: 0; opacity: 1; } 
+  20% { border-right: 2.5px solid white; border-top: 2.5px solid white; height: 0; width: 5px; opacity: 1; } 
+  40% { border-right: 2.5px solid white; border-top: 2.5px solid white; height: 9.5px; width: 5px; opacity: 1; } 
+  100% { border-right: 2.5px solid white; border-top: 2.5px solid white; height: 9.5px; width: 5px; opacity: 1; } 
+} 
+@keyframes checkmark2 { 
+  0% { height: 0; width: 0; opacity: 1; } 
+  1% { border-right: 2.5px solid #e3e6e9; border-top: 2.5px solid #e3e6e9; height: 0; width: 0; opacity: 1; } 
+  20% { border-right: 2.5px solid #e3e6e9; border-top: 2.5px solid #e3e6e9; height: 0; width: 5px; opacity: 1; } 
+  40% { border-right: 2.5px solid #e3e6e9; border-top: 2.5px solid #e3e6e9; height: 9.5px; width: 5px; opacity: 1; } 
+  100% { border-right: 2.5px solid #e3e6e9; border-top: 2.5px solid #e3e6e9; height: 9.5px; width: 5px; opacity: 1; } 
+} 
+
+img {max-width: 100%;}
+
+/****************************** [SB140]_IEP010 ******************************/
+.jehyu-promotion {background-color: #f2f5f8; padding-top: 13.4vw;}
+.jehyu-promotion .fix-top-nav {background-color: #17bf98;}
+.jehyu-promotion .fix-top-nav_main-tit .main-tit_txt {position: absolute; top: 50%; left: 50%; transform:  translate(-50%, -50%);}
+.jehyu-promotion .main-tit_txt {font-size: 1.562rem; color: #fff; font-weight: bold;}
+.jehyu-promotion .fix-top-nav_main-tit .check-area {padding: 4vw; margin: -4vw;}
+.jehyu-promotion .left-arrow {width: 2.5vw; height: 4.166vw; background-image: url(../img_v2/left_white.svg); background-size: contain;}
+.jehyu-promotion .fix-top-nav_right-txt {color: #fff; margin-left: auto; font-size: 0.875rem;}
+
+/* #### Sec1 START */
+.jehyu-promotion .header-tit .main-txt {margin-top: 15.555vw; margin-bottom: 12.2222vw;}
+.jehyu-promotion .header-tit .main-txt .ico_cont {width: 69.444vw; height: 57.083vw; background-image: url(../img_v2/jehyu-promotion_txt01.png); margin: 0 auto;}
+
+/* Sec1 - 슬라이드 이미지 */
+.jehyu-promotion .slide-img-wrap {margin: 10.833vw 0;}
+.jehyu-promotion .slide-img {width: 27.777vw; height: 27.777vw;}
+.jehyu-promotion .slide-img .ico_cont {width: inherit; height: inherit; box-shadow: 3px 10px 20px 0 rgba(0, 0, 0, 0.16); border-radius: 50%;}
+.jehyu-promotion .header-tit > .swiper-wrapper {-webkit-transition-timing-function : linear; transition-timing-function : linear; pointer-events: none;}
+.jehyu-promotion .slide-img .ico_cont.img01 {background-image: url(../img_v2/jehyu-promotion_icon01.png);}
+.jehyu-promotion .slide-img .ico_cont.img02 {background-image: url(../img_v2/jehyu-promotion_icon02.png);}
+.jehyu-promotion .slide-img .ico_cont.img03 {background-image: url(../img_v2/jehyu-promotion_icon03.png);}
+.jehyu-promotion .slide-img .ico_cont.img04 {background-image: url(../img_v2/jehyu-promotion_icon04.png);}
+/* Sec1 END #### */
+
+
+/* #### Sec2 START */
+.jehyu-promotion .link-status {margin-top: 6.111vw;}
+.jehyu-promotion .link-status .main-txt {margin-bottom: 10.763vw;}
+.jehyu-promotion .link-status .main-txt .ico_cont {width: 57.972vw; height: 21.041vw; background-image: url(../img_v2/jehyu-promotion_txt02.png); margin: 0 auto;}
+
+/* Sec2 - 연결하기 */
+.jehyu-promotion .connect-wrap {padding: 5.555vw; margin: 0 5.555vw; background-color: #fff; border-radius: 4.166vw;}
+.jehyu-promotion .connect-items {display: grid; grid-template-columns: repeat(3, 1fr); grid-row-gap: 5.555vw;}
+.jehyu-promotion .connect-item {text-align: center;}
+.jehyu-promotion .connect-item .connect-item_logo {width: 19.166vw; height: 19.166vw; margin: 0 auto; position: relative;}
+.jehyu-promotion .connect-item .connect-item_logo .ico_cont {width: inherit; height: inherit;}
+.jehyu-promotion .connect-item .connect-item_logo .logo01 {background-image: url(../img_v2/jehyu-promotion_icon05.png);}
+.jehyu-promotion .connect-item .connect-item_logo .logo02 {background-image: url(../img_v2/jehyu-promotion_icon06.png);}
+.jehyu-promotion .connect-item .connect-item_logo .logo03 {background-image: url(../img_v2/jehyu-promotion_icon07.png);}
+.jehyu-promotion .connect-item .connect-item_logo .logo04 {background-image: url(../img_v2/jehyu-promotion_icon08.png);}
+.jehyu-promotion .connect-item .connect-item_logo .logo05 {background-image: url(../img_v2/jehyu-promotion_icon09.png);}
+.jehyu-promotion .connect-item .connect-item_logo .logo06 {background-image: url(../img_v2/jehyu-promotion_icon10.png);}
+.jehyu-promotion .connect-item .connect-item_type {font-size: 0.875rem; color: #b7b7b7; margin: 2.222vw 0;}
+.jehyu-promotion .connect-item .btn-link-wrap {display: inline-block; padding: 3vw; margin: -3vw;}
+.jehyu-promotion .connect-item .btn-link {background-color: #3e444e; color: #fff; padding: 1.666vw 2.5vw; box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.16); border-radius: 2.777vw;}
+
+/* Sec2 - 연결완료 */
+.connect-item.is-complete {position: relative;}
+.connect-item.is-complete::before {content: ''; position: absolute; width: 100%; height: 115%; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: rgba(255, 255, 255, 0.7); z-index: 1;}
+.connect-item.is-complete .connect-item_logo .ico_cont::before {content: ''; display: inline-block; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url(../img_v2/jehyu-promotion_icon14.png) no-repeat center / contain;-webkit-animation-name: pulse; animation-name: pulse; -webkit-animation-duration: 0.5s; animation-duration: 0.5s;-webkit-animation-fill-mode:forwards; animation-fill-mode:forwards; z-index: 2;}
+
+/* Sec2 - 응모권 개수 */
+.jehyu-promotion .current-count {display: flex; justify-content: center; align-items: center; background-color: #313131; margin: 0 5.555vw; border-radius: 4.166vw; padding: 4.166vw 0;}
+.jehyu-promotion .current-count_txt {color: #d6d6d6; font-size: 1.562rem;}
+.jehyu-promotion .current-count_num {display: inline-block; margin-left: 4.166vw; color: #ffed31; font-size: 1.875rem; font-weight: bold;}
+/* Sec2 END #### */
+
+
+/* #### Sec3 START */
+.jehyu-promotion .event-way {margin: 25vw 0;}
+.jehyu-promotion .event-way .ico_cont {width: 69.444vw; height: 90.138vw; background-image: url(../img_v2/jehyu-promotion_txt03_1.png);margin: 0 auto;}
+/* Sec3 END #### */
+
+
+/* #### Sec4 START */
+.jehyu-promotion .benefit-wrap .main-txt {margin-bottom: 10.833vw;}
+.jehyu-promotion .benefit-wrap .main-txt .ico_cont {width: 67.777vw; height: 20.972vw; background-image: url(../img_v2/jehyu-promotion_txt04.png); margin: 0 auto;}
+
+/* Sec4 - 혜택01 */
+.jehyu-promotion .benefit {position: relative; margin: 0 5.555vw;}
+.jehyu-promotion .benefit .ico_cont {margin: 0 auto;}
+.jehyu-promotion .benefit .banner01 {width: 100%; height: 135.861vw;}
+.jehyu-promotion .benefit .btn-premium {position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%); padding: 3.055vw 5.111vw; background-color: #e0e5eb; border-radius: 5.555vw; display: flex; align-items: center; white-space: nowrap;}
+.jehyu-promotion .benefit .btn-premium .ico_cont {width: 4.166vw; height: 4.166vw; background-image: url(../img_v2/info-navy-90x90.png); margin-right: 1.388vw;}
+.jehyu-promotion .benefit .btn-premium .btn-premium_txt {color: #3e4653; font-size: 0.875rem;}
+
+/* Sec4 - 혜택02 */
+.jehyu-promotion .benefit .banner02 {width: 100%; height: 168.416vw; background-image: url(../img_v2/jehyu-promotion_banner02_1.png); margin-top: 8.333vw;}
+/* Sec4 END #### */
+
+
+/* #### Sec5 START */
+.jehyu-promotion .ticket-draw {margin: 25vw 0 13.888vw;}
+.jehyu-promotion .ticket-draw .main-txt {margin-bottom: 10.555vw;}
+.jehyu-promotion .ticket-draw .main-txt .ico_cont {width: 50.833vw; height: 21vw; background-image: url(../img_v2/jehyu-promotion_txt05.png); margin: 0 auto;}
+
+/* Sec5 - 상품박스 */
+.jehyu-promotion .product-box {margin: 0 5.555vw; background-color: #fff; border-radius: 5.555vw;}
+.jehyu-promotion .product-box .ico_cont {width: 100%; height: 84.861vw; background-image: url(../img_v2/jehyu-promotion_banner03_1.png); margin: 0 auto;}
+/* Sec5 END #### */
+
+
+/* #### Footer START */
+.jehyu-promotion .footer-info {background-color: #343639; padding: 11.111vw 5.555vw;}
+.jehyu-promotion .footer-info .main-txt {font-size: 1.437rem; color: #e3e3e3; font-weight: bold;}
+.jehyu-promotion .footer-info_term {color: #e3e3e3; margin-top: 6.944vw;}
+.jehyu-promotion .footer-info_term .info-tit {margin-bottom: 1.111vw; font-size: 0.812rem;}
+.jehyu-promotion .footer-info_term .info-val {color: #b5b5b5; font-size: 0.75rem;}
+.jehyu-promotion .footer-info_term .info-val li {list-style: disc; margin-left: 5.555vw; word-break: keep-all; margin-bottom: 1.111vw;}
+/* Footer END #### */
+
+
+/****************************** [SB140]_IEP050 ******************************/
+.jehyu-promotion.attendance_check .header-tit .main-txt .ico_cont {background-image: url(../img_v2/txt_attendanceCheck1.png);}
+.jehyu-promotion.attendance_check .link-status .main-txt .ico_cont {background-image: url(../img_v2/txt_attendanceCheck2.png);}
+
+/* 출석체크 진행률 */
+.jehyu-promotion.attendance_check .section_progress {padding: 0 5.555vw;}
+.jehyu-promotion.attendance_check .section_progress .box_progress {padding: 4.1667vw 5.555vw; background-color: #fff; border: 1px solid #e7eef6; border-radius: 5.555vw;}
+
+.jehyu-promotion.attendance_check .section_progress .box_progress .tit_state {display: flex; align-items: center; justify-content: space-between; margin-bottom: 2px;}
+.jehyu-promotion.attendance_check .section_progress .box_progress .tit_state span {color: #2b2b2b;}
+.jehyu-promotion.attendance_check .section_progress .box_progress .tit_state .day_current {padding: 2.2222vw 4.7222vw; color: #2b2b2b; background-color: #f2f5f8; font-weight: bold; border-radius: 10px;}
+
+.jehyu-promotion.attendance_check .section_progress .box_progress .img_state {position: relative;}
+.jehyu-promotion.attendance_check .section_progress .box_progress .img_state #lottieFire {position: absolute; left: 0; width: 90px; margin-left: -25px;}
+.jehyu-promotion.attendance_check .section_progress .box_progress .img_state .ic_location_pink {width: 60px; height: 60px; background-image: url(../img_v2/ic_location_pink.png); margin-right: -14px; margin-left: auto;}
+
+.jehyu-promotion.attendance_check .section_progress .box_progress .bar_state_wrap .bar_state {height: 4.1667vw; margin-top: 2.7778vw; background-color:#efefef; border-radius: 2.2222vw; overflow: hidden;}
+.jehyu-promotion.attendance_check .section_progress .box_progress .bar_state_wrap .bar_state .current {width: 0%; height: 100%; background-color: #17bf98; border-radius: 2.2222vw;}
+.jehyu-promotion.attendance_check .section_progress .box_progress .bar_state_wrap .per {margin-top: 1.6667vw; color: #808080;}
+
+.jehyu-promotion.attendance_check .link-status {margin-top: 22.2222vw;}
+.jehyu-promotion.attendance_check .link-status .main-txt {margin-bottom: 0;}
+
+.jehyu-promotion.attendance_check .connect-items {grid-template-columns: repeat(4, 1fr);}
+.jehyu-promotion.attendance_check .connect-items .connect-item {position: relative;}
+.jehyu-promotion.attendance_check .connect-items .connect-item.is_complete .connect-item_logo {border: 1px solid #17bf98; color: #17bf98;}
+.jehyu-promotion.attendance_check .connect-item .connect-item_logo {width: 17.2222vw; height: 17.2222vw; display: flex; align-items: center; justify-content: center; background-color: #ebeff4; border-radius: 50%; border: 1px solid #e3e6e9; color: #717c8a;}
+.jehyu-promotion.attendance_check .connect-item .checkmark-circle .background {width: 20px; height: 20px; background-color: #fff; border: 1px solid #e3e6e9;}
+.jehyu-promotion.attendance_check .connect-item .checkmark-circle .background.bgc_sig {border-color: transparent;}
+.jehyu-promotion.attendance_check .connect-item .checkmark-circle {position: absolute; right: 0; top: 0; width: 20px; height: 20px;}
+.jehyu-promotion.attendance_check .connect-item .checkmark-circle .checkmark.draw:after {animation-name: checkmark2; left: 3px;}
+.jehyu-promotion.attendance_check .connect-item .checkmark-circle .bgc_sig + .checkmark.draw:after {animation-name: checkmark1; left: 3px;}
+
+.jehyu-promotion.attendance_check .benefit-content {margin: 80px 3.5vw;}
+.jehyu-promotion.attendance_check .benefit-content .ico_cont {width: 100%; height: 108vw; background-image: url(../img_v2/card_semo_premiumService.png);}
+.jehyu-promotion.attendance_check .table_premium-service {margin: 0 5vw; margin-bottom: 80px;}
+.jehyu-promotion.attendance_check .table_premium-service .ico_cont {width: 100%; height: 148vw;}

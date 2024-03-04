@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="../../css/semo_cont.css" />
+    <link rel="stylesheet" href="../../css/semo_cont_ibk.css" />
+    <title>SEMO</title>
+  </head>
+  <body>
+    <div class="new_content">
+      <div class="cont_bg">
+        <div class="ibk_main">
+          <div class="user_wrapper">
+            <p>
+              <span class="user_business">세모치킨 압구정점</span>
+              <span class="user_name"><em>홍길동</em> 님</span>
+            </p>
+            <a class="user_guide"><i></i>사용 가이드</a>
+          </div>
+
+          <div class="account_wrapper">
+            <div class="account_display">
+              <div
+                class="account_carousel"
+                style="width: calc(3200% - 1316px); left: calc(-300% + 126px);"
+              >
+                <!--카드 개수만큼 width값 변경 whdth: calc((카드개수*100)% - ((카드개수*56) - (카드개수*13) - (카드개수*1) - 28)px)-->
+                <!--카드 이동시 left: calc(-((카드개수-1)*100)% + ((43 * (해당하는 카드의 순서-1)) - (1 * (해당하는 카드의 순서-1)))px)씩 변경-->
+                <!--ex) 2번째 => left: calc(-(100*1)% + (43*1 - 1)px) 3번째 => left: calc(-(100*2)% + (43*2 - 2)px) -->
+                <div class="account_box">
+                  <div class="account_total">
+                    <p class="top">
+                      <span class="total_acount">전체계좌 <em>4</em>개</span>
+                      <span>
+                        <span class="date">20.12.30 13:55:46 </span>
+                        <a class="btn_refresh"><i class="ico_cen"></i></a> <!--2020-05-29 ico_cen 클래스 추가-->
+                      </span>
+                    </p>
+                    <p class="middle">
+                      <span>총 잔액</span>
+                      <span><em>3,300,000,000</em>원</span>
+                    </p>
+                    <div class="bottom">
+                      <p>
+                        <span>입금 <em class="c_blue_new">5</em>건</span>
+                        <span><em>14,000,000</em>원</span>
+                      </p>
+                      <p>
+                        <span>출금 <em class="c_orange">2</em>건</span>
+                        <span><em>16,000,000</em>원</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="account_box">
+                  <div class="account_detail">
+                    <p class="top">
+                      <span>
+                        <!-- 2020-06-05 --> 
+                        <!-- .ico_lb003 -> ibk기업 / .ico_lb004 -> 국민 / .ico_lb020 -> 우리 / .ico_lb088 -> 신한 / 
+                          .ico_lb081 -> 하나 / .ico_lb011 -> 농협 / .ico_lb023 -> sc / .ico_lb027 -> 씨티 / 
+                          .ico_lb002 -> 산업 / .ico_lb071 -> 우체국 / .ico_lb032 -> 부산 / .ico_lb045 -> 새마을 / 
+                          .ico_lb034 -> 광주 / .ico_lb007 -> 수협 / .ico_lb031 -> 대구 / .ico_lb039 -> 경남 / 
+                          .ico_lb035 -> 제주 / .ico_lb037 -> 전북 / .ico_lb089 -> k / .ico_lb048 -> 신협 -->
+                          <i class="ico_lb003"></i>
+                        <span>547801-01-017795</span>
+                        <span>IBK평생주거래기업통장</span>
+                      </span>
+                      <span class="date">20.12.30 13:55:46 </span>
+                    </p>
+                    <p class="middle">
+                      <span><em>11,352,650</em> 원</span>
+                    </p>
+                  </div>
+                  <div class="bottom on">
+                    <!--버튼 2개-->
+                    <button>거래내역조회</button>
+                    <span class="bar"></span>
+                    <button>간편송금</button>
+                  </div>
+                </div>
+                <div class="account_box">
+                  <div class="account_detail">
+                    <p class="top">
+                      <span>
+                        <!-- 2020-06-05 --> 
+                        <!-- .ico_lb003 -> ibk기업 / .ico_lb004 -> 국민 / .ico_lb020 -> 우리 / .ico_lb088 -> 신한 / 
+                          .ico_lb081 -> 하나 / .ico_lb011 -> 농협 / .ico_lb023 -> sc / .ico_lb027 -> 씨티 / 
+                          .ico_lb002 -> 산업 / .ico_lb071 -> 우체국 / .ico_lb032 -> 부산 / .ico_lb045 -> 새마을 / 
+                          .ico_lb034 -> 광주 / .ico_lb007 -> 수협 / .ico_lb031 -> 대구 / .ico_lb039 -> 경남 / 
+                          .ico_lb035 -> 제주 / .ico_lb037 -> 전북 / .ico_lb089 -> k / .ico_lb048 -> 신협 -->
+                          <i class="ico_lb003"></i>
+                        <span>547801-01-017795</span>
+                        <span>IBK평생주거래기업통장</span>
+                      </span>
+                      <span class="date">20.12.30 13:55:46 </span>
+                    </p>
+                    <p class="middle">
+                      <span><em>11,352,650</em> 원</span>
+                    </p>
+                  </div>
+                  <div class="bottom">
+                    <button>거래내역조회</button>
+                  </div>
+                </div>
+                <div class="account_box">
+                  <div class="account_detail">
+                    <p class="top">
+                      <span>
+                        <!-- 2020-06-05 --> 
+                        <!-- .ico_lb003 -> ibk기업 / .ico_lb004 -> 국민 / .ico_lb020 -> 우리 / .ico_lb088 -> 신한 / 
+                          .ico_lb081 -> 하나 / .ico_lb011 -> 농협 / .ico_lb023 -> sc / .ico_lb027 -> 씨티 / 
+                          .ico_lb002 -> 산업 / .ico_lb071 -> 우체국 / .ico_lb032 -> 부산 / .ico_lb045 -> 새마을 / 
+                          .ico_lb034 -> 광주 / .ico_lb007 -> 수협 / .ico_lb031 -> 대구 / .ico_lb039 -> 경남 / 
+                          .ico_lb035 -> 제주 / .ico_lb037 -> 전북 / .ico_lb089 -> k / .ico_lb048 -> 신협 -->
+                          <i class="ico_lb003"></i>
+                        <span>547801-01-017795</span>
+                        <span>IBK평생주거래기업통장</span>
+                      </span>
+                      <span class="date">20.12.30 13:55:46 </span>
+                    </p>
+                    <p class="middle">
+                      <span><em>11,352,650</em> 원</span>
+                    </p>
+                  </div>
+                  <div class="bottom">
+                    <button>거래내역조회</button>
+                  </div>
+                </div>
+                <div class="account_box">
+                  <div class="account_detail">
+                    <p class="top">
+                      <span>
+                        <!-- 2020-06-05 --> 
+                        <!-- .ico_lb003 -> ibk기업 / .ico_lb004 -> 국민 / .ico_lb020 -> 우리 / .ico_lb088 -> 신한 / 
+                          .ico_lb081 -> 하나 / .ico_lb011 -> 농협 / .ico_lb023 -> sc / .ico_lb027 -> 씨티 / 
+                          .ico_lb002 -> 산업 / .ico_lb071 -> 우체국 / .ico_lb032 -> 부산 / .ico_lb045 -> 새마을 / 
+                          .ico_lb034 -> 광주 / .ico_lb007 -> 수협 / .ico_lb031 -> 대구 / .ico_lb039 -> 경남 / 
+                          .ico_lb035 -> 제주 / .ico_lb037 -> 전북 / .ico_lb089 -> k / .ico_lb048 -> 신협 -->
+                          <i class="ico_lb003"></i>
+                        <span>547801-01-017795</span>
+                        <span>IBK평생주거래기업통장</span>
+                      </span>
+                      <span class="date">20.12.30 13:55:46 </span>
+                    </p>
+                    <p class="middle">
+                      <span><em>11,352,650</em> 원</span>
+                    </p>
+                  </div>
+                  <div class="bottom">
+                    <button>거래내역조회</button>
+                  </div>
+                </div>
+                <div class="account_box">
+                  <div class="account_detail">
+                    <p class="top">
+                      <span>
+                        <i></i>
+                        <span>547801-01-017795</span>
+                        <span>IBK평생주거래기업통장</span>
+                      </span>
+                      <span class="date">20.12.30 13:55:46 </span>
+                    </p>
+                    <p class="middle">
+                      <span><em>11,352,650</em> 원</span>
+                    </p>
+                  </div>
+                  <div class="bottom">
+                    <button>거래내역조회</button>
+                  </div>
+                </div>
+                <div class="account_box">
+                  <div class="account_detail">
+                    <p class="top">
+                      <span>
+                        <i></i>
+                        <span>547801-01-017795</span>
+                        <span>IBK평생주거래기업통장</span>
+                      </span>
+                      <span class="date">20.12.30 13:55:46 </span>
+                    </p>
+                    <p class="middle">
+                      <span><em>11,352,650</em> 원</span>
+                    </p>
+                  </div>
+                  <div class="bottom">
+                    <button>거래내역조회</button>
+                  </div>
+                </div>
+                <div class="account_box">
+                  <div class="account_detail">
+                    <p class="top">
+                      <span>
+                        <i></i>
+                        <span>547801-01-017795</span>
+                        <span>IBK평생주거래기업통장</span>
+                      </span>
+                      <span class="date">20.12.30 13:55:46 </span>
+                    </p>
+                    <p class="middle">
+                      <span><em>11,352,650</em> 원</span>
+                    </p>
+                  </div>
+                  <div class="bottom">
+                    <button>거래내역조회</button>
+                  </div>
+                </div>
+                <div class="account_box">
+                  <div class="account_detail">
+                    <p class="top">
+                      <span>
+                        <i></i>
+                        <span>547801-01-017795</span>
+                        <span>IBK평생주거래기업통장</span>
+                      </span>
+                      <span class="date">20.12.30 13:55:46 </span>
+                    </p>
+                    <p class="middle">
+                      <span><em>11,352,650</em> 원</span>
+                    </p>
+                  </div>
+                  <div class="bottom">
+                    <button>거래내역조회</button>
+                  </div>
+                </div>
+                <div class="account_box">
+                  <div class="account_detail">
+                    <p class="top">
+                      <span>
+                        <i></i>
+                        <span>547801-01-017795</span>
+                        <span>IBK평생주거래기업통장</span>
+                      </span>
+                      <span class="date">20.12.30 13:55:46 </span>
+                    </p>
+                    <p class="middle">
+                      <span><em>11,352,650</em> 원</span>
+                    </p>
+                  </div>
+                  <div class="bottom">
+                    <button>거래내역조회</button>
+                  </div>
+                </div>
+                <div class="account_box">
+                  <div class="account_detail">
+                    <p class="top">
+                      <span>
+                        <i></i>
+                        <span>547801-01-017795</span>
+                        <span>IBK평생주거래기업통장</span>
+                      </span>
+                      <span class="date">20.12.30 13:55:46 </span>
+                    </p>
+                    <p class="middle">
+                      <span><em>11,352,650</em> 원</span>
+                    </p>
+                  </div>
+                  <div class="bottom">
+                    <button>거래내역조회</button>
+                  </div>
+                </div>
+                <div class="account_box">
+                  <div class="account_detail">
+                    <p class="top">
+                      <span>
+                        <i></i>
+                        <span>547801-01-017795</span>
+                        <span>IBK평생주거래기업통장</span>
+                      </span>
+                      <span class="date">20.12.30 13:55:46 </span>
+                    </p>
+                    <p class="middle">
+                      <span><em>11,352,650</em> 원</span>
+                    </p>
+                  </div>
+                  <div class="bottom">
+                    <button>거래내역조회</button>
+                  </div>
+                </div>
+                <div class="account_box">
+                  <div class="account_detail">
+                    <p class="top">
+                      <span>
+                        <i></i>
+                        <span>547801-01-017795</span>
+                        <span>IBK평생주거래기업통장</span>
+                      </span>
+                      <span class="date">20.12.30 13:55:46 </span>
+                    </p>
+                    <p class="middle">
+                      <span><em>11,352,650</em> 원</span>
+                    </p>
+                  </div>
+                  <div class="bottom">
+                    <button>거래내역조회</button>
+                  </div>
+                </div>
+                <div class="account_box">
+                  <div class="account_detail">
+                    <p class="top">
+                      <span>
+                        <i></i>
+                        <span>547801-01-017795</span>
+                        <span>IBK평생주거래기업통장</span>
+                      </span>
+                      <span class="date">20.12.30 13:55:46 </span>
+                    </p>
+                    <p class="middle">
+                      <span><em>11,352,650</em> 원</span>
+                    </p>
+                  </div>
+                  <div class="bottom">
+                    <button>거래내역조회</button>
+                  </div>
+                </div>
+                <div class="account_box">
+                  <div class="account_detail">
+                    <p class="top">
+                      <span>
+                        <i></i>
+                        <span>547801-01-017795</span>
+                        <span>IBK평생주거래기업통장</span>
+                      </span>
+                      <span class="date">20.12.30 13:55:46 </span>
+                    </p>
+                    <p class="middle">
+                      <span><em>11,352,650</em> 원</span>
+                    </p>
+                  </div>
+                  <div class="bottom">
+                    <button>거래내역조회</button>
+                  </div>
+                </div>
+                <div class="account_box">
+                  <div class="account_detail">
+                    <p class="top">
+                      <span>
+                        <i></i>
+                        <span>547801-01-017795</span>
+                        <span>IBK평생주거래기업통장</span>
+                      </span>
+                      <span class="date">20.12.30 13:55:46 </span>
+                    </p>
+                    <p class="middle">
+                      <span><em>11,352,650</em> 원</span>
+                    </p>
+                  </div>
+                  <div class="bottom">
+                    <button>거래내역조회</button>
+                  </div>
+                </div>
+                <div class="account_box">
+                  <div class="account_detail">
+                    <p class="top">
+                      <span>
+                        <i></i>
+                        <span>547801-01-017795</span>
+                        <span>IBK평생주거래기업통장</span>
+                      </span>
+                      <span class="date">20.12.30 13:55:46 </span>
+                    </p>
+                    <p class="middle">
+                      <span><em>11,352,650</em> 원</span>
+                    </p>
+                  </div>
+                  <div class="bottom">
+                    <button>거래내역조회</button>
+                  </div>
+                </div>
+                <div class="account_box">
+                  <div class="account_detail">
+                    <p class="top">
+                      <span>
+                        <i></i>
+                        <span>547801-01-017795</span>
+                        <span>IBK평생주거래기업통장</span>
+                      </span>
+                      <span class="date">20.12.30 13:55:46 </span>
+                    </p>
+                    <p class="middle">
+                      <span><em>11,352,650</em> 원</span>
+                    </p>
+                  </div>
+                  <div class="bottom">
+                    <button>거래내역조회</button>
+                  </div>
+                </div>
+                <div class="account_box">
+                  <div class="account_detail">
+                    <p class="top">
+                      <span>
+                        <i></i>
+                        <span>547801-01-017795</span>
+                        <span>IBK평생주거래기업통장</span>
+                      </span>
+                      <span class="date">20.12.30 13:55:46 </span>
+                    </p>
+                    <p class="middle">
+                      <span><em>11,352,650</em> 원</span>
+                    </p>
+                  </div>
+                  <div class="bottom">
+                    <button>거래내역조회</button>
+                  </div>
+                </div>
+                <div class="account_box">
+                  <div class="account_detail">
+                    <p class="top">
+                      <span>
+                        <i></i>
+                        <span>547801-01-017795</span>
+                        <span>IBK평생주거래기업통장</span>
+                      </span>
+                      <span class="date">20.12.30 13:55:46 </span>
+                    </p>
+                    <p class="middle">
+                      <span><em>11,352,650</em> 원</span>
+                    </p>
+                  </div>
+                  <div class="bottom">
+                    <button>거래내역조회</button>
+                  </div>
+                </div>
+                <div class="account_box">
+                  <div class="account_detail">
+                    <p class="top">
+                      <span>
+                        <i></i>
+                        <span>547801-01-017795</span>
+                        <span>IBK평생주거래기업통장</span>
+                      </span>
+                      <span class="date">20.12.30 13:55:46 </span>
+                    </p>
+                    <p class="middle">
+                      <span><em>11,352,650</em> 원</span>
+                    </p>
+                  </div>
+                  <div class="bottom">
+                    <button>거래내역조회</button>
+                  </div>
+                </div>
+                <div class="account_box">
+                  <div class="account_detail">
+                    <p class="top">
+                      <span>
+                        <i></i>
+                        <span>547801-01-017795</span>
+                        <span>IBK평생주거래기업통장</span>
+                      </span>
+                      <span class="date">20.12.30 13:55:46 </span>
+                    </p>
+                    <p class="middle">
+                      <span><em>11,352,650</em> 원</span>
+                    </p>
+                  </div>
+                  <div class="bottom">
+                    <button>거래내역조회</button>
+                  </div>
+                </div>
+                <div class="account_box">
+                  <div class="account_detail">
+                    <p class="top">
+                      <span>
+                        <i></i>
+                        <span>547801-01-017795</span>
+                        <span>IBK평생주거래기업통장</span>
+                      </span>
+                      <span class="date">20.12.30 13:55:46 </span>
+                    </p>
+                    <p class="middle">
+                      <span><em>11,352,650</em> 원</span>
+                    </p>
+                  </div>
+                  <div class="bottom">
+                    <button>거래내역조회</button>
+                  </div>
+                </div>
+                <div class="account_box">
+                  <div class="account_detail">
+                    <p class="top">
+                      <span>
+                        <i></i>
+                        <span>547801-01-017795</span>
+                        <span>IBK평생주거래기업통장</span>
+                      </span>
+                      <span class="date">20.12.30 13:55:46 </span>
+                    </p>
+                    <p class="middle">
+                      <span><em>11,352,650</em> 원</span>
+                    </p>
+                  </div>
+                  <div class="bottom">
+                    <button>거래내역조회</button>
+                  </div>
+                </div>
+                <div class="account_box">
+                  <div class="account_detail">
+                    <p class="top">
+                      <span>
+                        <i></i>
+                        <span>547801-01-017795</span>
+                        <span>IBK평생주거래기업통장</span>
+                      </span>
+                      <span class="date">20.12.30 13:55:46 </span>
+                    </p>
+                    <p class="middle">
+                      <span><em>11,352,650</em> 원</span>
+                    </p>
+                  </div>
+                  <div class="bottom">
+                    <button>거래내역조회</button>
+                  </div>
+                </div>
+                <div class="account_box">
+                  <div class="account_detail">
+                    <p class="top">
+                      <span>
+                        <i></i>
+                        <span>547801-01-017795</span>
+                        <span>IBK평생주거래기업통장</span>
+                      </span>
+                      <span class="date">20.12.30 13:55:46 </span>
+                    </p>
+                    <p class="middle">
+                      <span><em>11,352,650</em> 원</span>
+                    </p>
+                  </div>
+                  <div class="bottom">
+                    <button>거래내역조회</button>
+                  </div>
+                </div>
+                <div class="account_box">
+                  <div class="account_detail">
+                    <p class="top">
+                      <span>
+                        <i></i>
+                        <span>547801-01-017795</span>
+                        <span>IBK평생주거래기업통장</span>
+                      </span>
+                      <span class="date">20.12.30 13:55:46 </span>
+                    </p>
+                    <p class="middle">
+                      <span><em>11,352,650</em> 원</span>
+                    </p>
+                  </div>
+                  <div class="bottom">
+                    <button>거래내역조회</button>
+                  </div>
+                </div>
+                <div class="account_box">
+                  <div class="account_detail">
+                    <p class="top">
+                      <span>
+                        <i></i>
+                        <span>547801-01-017795</span>
+                        <span>IBK평생주거래기업통장</span>
+                      </span>
+                      <span class="date">20.12.30 13:55:46 </span>
+                    </p>
+                    <p class="middle">
+                      <span><em>11,352,650</em> 원</span>
+                    </p>
+                  </div>
+                  <div class="bottom">
+                    <button>거래내역조회</button>
+                  </div>
+                </div>
+                <div class="account_box">
+                  <div class="account_add">
+                    <i></i>
+                    <span>
+                      인증서로 한번에 개인/사업용<br />
+                      계좌를 등록하세요.
+                    </span>
+                  </div>
+                  <div class="bottom">
+                    <button>계좌 간편등록</button>
+                  </div>
+                </div>
+                <div class="account_box">
+                  <div class="account_add">
+                    <i></i>
+                    <span>
+                      인증서로 한번에 개인/사업용<br />
+                      계좌를 등록하세요.
+                    </span>
+                  </div>
+                  <div class="bottom">
+                    <button>계좌 간편등록</button>
+                  </div>
+                </div>
+                <div class="account_box">
+                  <div class="account_add">
+                    <i></i>
+                    <span>
+                      인증서로 한번에 개인/사업용<br />
+                      계좌를 등록하세요.
+                    </span>
+                  </div>
+                  <div class="bottom">
+                    <button>계좌 간편등록</button>
+                  </div>
+                </div>
+                <div class="account_box">
+                  <div class="account_add">
+                    <i></i>
+                    <span>
+                      인증서로 한번에 개인/사업용<br />
+                      계좌를 등록하세요.
+                    </span>
+                  </div>
+                  <div class="bottom">
+                    <button>계좌 간편등록</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="account_pagination">
+              <!-- 기본 페이지 개수는 3개-->
+              <!-- 페이지가 1,2,3,4로 3개 이상일 때 3페이지에서 오른쪽쪽으로 이동하면서 3개만 보여짐 2,3,4  -->
+              <!--  왼쪽도 동일  -->
+              <a class="arr left"><i></i></a>
+              <div class="ap_display">
+                <div class="ap_carousel" style="left: -60px;">
+                  <!--.ap_carousel 이동은 left: -30px 씩이동 -->
+                  <!--.ap_carousel transition 효과 때문에 처음엔 활성 or 비활성 클래스를 주지 않음 -->
+                  <!--.ap_carousel 해당 페이지이면 활성 클래스 on -->
+                  <!--.ap_carousel 해당 페이지변경 되면 활성 클래스 on이 비활성 클래 off로 변경 -->
+                  <!-- 페이지 개수가 3개 이상이면 양쪽에 페이지 제외하고 나머지는 항상 중앙에 배치 -->
+                  <a class="number off">1</a>
+                  <!--해당 페이지 비활성화 클래스 off-->
+                  <a class="number off">2</a>
+                  <!--해당 페이지 비활성화 클래스 off-->
+                  <a class="number off">3</a>
+                  <!--해당 페이지 비활성화 클래스 off-->
+                  <a class="number on">4</a>
+                  <!--해당 페이지 활성화 클래스 oㅜ-->
+                </div>
+              </div>
+              <a class="arr right" style="visibility: hidden;"><i></i></a>
+              <!--마지막 일때 안보임-->
+            </div>
+          </div>
+
+          <div class="banner_wrapper">
+            <div class="banner_pagination">
+              <!-- em 테그 transition 효과 때문에 처음엔 활성 or 비활성 클래스를 주지 않음 -->
+              <!-- em 테그 해당 페이지이면 활성 클래스 on -->
+              <!-- em 테그 해당 페이지변경 되면 활성 클래스 on이 비활성 클래 off로 변경 -->
+              <em class="off"></em>
+              <em class="on"></em>
+            </div>
+            <div class="banner_box">
+              <div class="banner_carousel" style="width: 200%; left: -100%;">
+                <!--.banner_carousel 배너 개수 만큼 width 값주기 width: (페이지 개수*100)% -->
+                <!--.banner_carousel 이동시 left: -100%; 씩 -->
+                <a href="#" class="bgc_yellow">
+                  <div>
+                    <p><span class="c_navy">개인사업자</span> 비대면계좌개설</p>
+                    <p>
+                      개인사업자 고객님!<br />
+                      첫거래도 은행 방문없이 App에서 계좌계설하세요~
+                    </p>
+                  </div>
+                  <div class="img_1"></div>
+                </a>
+                <a href="#" class="bgc_navy">
+                  <div>
+                    <p class="c_white">
+                      <span class="c_yellow">소상공인</span> 2차 금융지원대출
+                    </p>
+                    <p class="c_white">
+                      코로나19 피해 소상공인에 금융지원을 위한 신용보증기금-IBK의 협약대출 상품입니다.
+                    </p>
+                  </div>
+                  <div class="img_2"></div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="semo_wrapper">
+            <div class="semo_text">
+              <i></i>
+              <p>
+                <span>소상공인 사장님을 위한 매출 관리 & 절세 습관</span>
+                <span>담당세무사가 1:1 무료 컨설팅을 해드립니다.</span>
+              </p>
+            </div>
+            <div class="set_pdrl15">
+              <button class="btn_consulting on">
+                <!--세모주치의가 있을 경우 활성화 클래스 on-->
+                <p>
+                  <i></i>
+                  <span>
+                    <span>나의 1:1 세모주치의</span>
+                    <span>신청 바로가기</span>
+                  </span>
+                </p>
+                <i class="arr_right"></i>
+              </button>
+              <div class="semo_function">
+                <div>
+                  <p>
+                    <i class="camera"></i>
+                    <span>수기증빙</span>
+                  </p>
+                  <p>
+                    <i class="out"></i>
+                    <span>매입증빙</span>
+                  </p>
+                  <p>
+                    <i class="in"></i>
+                    <span>매출증빙</span>
+                  </p>
+                </div>
+                <div>
+                  <p>
+                    <i class="person"></i>
+                    <span>직원관리</span>
+                  </p>
+                  <p>
+                    <i class="paper"></i>
+                    <span>서류함</span>
+                  </p>
+                  <p>
+                    <i class="business"></i>
+                    <span>거래처관리</span>
+                  </p>
+                </div>
+              </div>
+              <button class="btn_semo">전체보기 <i></i></button>
+            </div>
+          </div>
+
+          <div class="report_wrapper">
+            <p>
+              <i class="ico_check_b"></i>
+              <span>
+                <span>매일 아침</span>
+                <span>나의 사업현황을 확인해 보세요</span>
+              </span>
+            </p>
+            <i class="arr_right"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

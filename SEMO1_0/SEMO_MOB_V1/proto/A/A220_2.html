@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../../css/semo_cont.css">
+  <!-- <link rel="stylesheet" href="../../css/semo_cont_ibk.css"> -->
+  <title>SEMO</title>
+</head>
+
+<body>
+  <div class="new_content">
+    <div class="cont_bg cont_pd">
+      <!-- 클래스 cont_pd fix_button 포함 패딩-->
+      <!-- 상단 타이틀 -->
+      <div class="title">계정 조회 결과</div>
+      <!-- //상단 타이틀 -->
+      <!-- 인증서 한 번에 등록하기 -->
+      <div class="wrap join">
+        <div class="cbi_alret">
+          <!-- hide클래스로 제어 -->
+          <div class="cbi_alret_con">
+            <div class="cbi_search"></div>
+            <span>해당 인증서로 조회된 <b>모든 계정이 등록</b>되어 있습니다.
+              추가 등록할 계정이 없습니다.</span>
+          </div>
+        </div>
+        <div class="certi_box">
+          <div class="title_sub">
+            계정 조회가 완료되었습니다.<br>
+            아래의 공인(공동)인증서에 연결된 계정입니다.
+          </div>
+          <!-- 인증서 -->
+          <div class="cbi_box set_mgb26">
+            <div class="certi_info_box normal">
+              <i class="ico_certi_m"></i>
+              <div class="certi_info">
+                <p>
+                  <span class="certi_cmp_name">웹케시글로벌(webcashglob 112233445566778899112233</span>
+                </p>
+                <p>
+                  <span class="certi_class">기업</span><i>,</i>
+                  <span class="certi_use">용도제한용</span><i>/</i>
+                  <span class="certi_issue">금융결제원</span>
+                </p>
+                <p>
+                  <span class="certi_end">만료일</span>
+                  <span><em class="certi_end_data">2020.10.31</em> class="certi_end_txt">(만료)</class=></span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- //인증서 -->
+          <!-- 리스트 -->
+          <div class="set_full">
+            <div class="check_all_box set_cent_ri">
+              <input type="checkbox" id="check_all" checked>
+              <label for="check_all">전체 선택</label>
+            </div>
+            <!-- 은행 목록 -->
+            <div class="search_result_list_wrap">
+              <!-- 은행 목록 총계-->
+              <div class="search_result_total_box set_cent_le on">
+                <div class="sr_total set_cent_le">
+                  <span class="set_cent_le">계좌&nbsp;&nbsp;<em class="number">5</em>&nbsp;개</span>
+                  <a class="btn_info"><i class="ico_cen"></i><em class="new_blind">? 버튼</em></a>
+                </div>
+                <div class="sr_box sr_look set_cen_cen">조회</div>
+                <div class="sr_box sr_send set_cen_cen">송금</div>
+              </div>
+              <!-- //은행 목록 총계-->
+              <!-- 은행-->
+              <div class="search_result_box">
+                <ul>
+                  <li class="srb_list set_cent_le">
+                    <div class="srb_info set_top_le">
+                      <p>
+                        <span class="srb_bank set_cen_cen">
+                          <i class="logo_bank ico_lb003"></i> IBK기업
+                          <!-- 
+                            .ico_lb003 -> ibk기업 / .ico_lb004 -> 국민 / .ico_lb020 -> 우리 / .ico_lb088 -> 신한 / 
+                            .ico_lb081 -> 하나 / .ico_lb011 -> 농협 / .ico_lb023 -> sc / .ico_lb027 -> 씨티 / 
+                            .ico_lb002 -> 산업 / .ico_lb071 -> 우체국 / .ico_lb032 -> 부산 / .ico_lb045 -> 새마을 / 
+                            .ico_lb034 -> 광주 / .ico_lb007 -> 수협 / .ico_lb031 -> 대구 / .ico_lb039 -> 경남 / 
+                            .ico_lb035 -> 제주 / .ico_lb037 -> 전북 / .ico_lb089 -> k / .ico_lb048 -> 신협 
+                          -->
+                        </span>
+                        <span class="onoffBox srb_class busi">
+                          <!--기업 활성 클래스 busi-->
+                          <input type="checkbox" id="onoffCheck" class="onoffCheck">
+                          <label for="onoffCheck" class="onoffCheck">
+                            <span class="slider"></span>
+                            <span class="onoff"></span>
+                          </label>
+                        </span>
+                      </p>
+                      <p>
+                        <span class="srb_name">사업자전용계좌</span>
+                        <span class="srb_act">1234-5678-12345-52</span>
+                      </p>
+                    </div>
+                    <div class="srb_box sr_look set_cen_cen">
+                      <input type="checkbox" id="check_one" class="check_one" checked>
+                    </div>
+                    <div class="srb_box sr_send set_cen_cen">
+                      <input type="checkbox" id="check_one" class="check_one" checked>
+                    </div>
+                  </li>
+                  <li class="srb_list set_cent_le">
+                    <div class="srb_info set_top_le">
+                      <p>
+                        <span class="srb_bank set_cen_cen">
+                          <i class="logo_bank ico_lb003"></i> IBK기업
+                        </span>
+                        <span class="onoffBox srb_class indi">
+                          <!--개인 활성 클래스 indi-->
+                          <input type="checkbox" id="onoffCheck" class="onoffCheck" />
+                          <label for="onoffCheck" class="onoffCheck">
+                            <span class="slider"></span>
+                            <span class="onoff"></span>
+                          </label>
+                        </span>
+                      </p>
+                      <p>
+                        <span class="srb_name">성공든든행복통장</span>
+                        <span class="srb_act">1234-5678-12345-52</span>
+                      </p>
+                    </div>
+                    <div class="srb_box sr_look set_cen_cen">
+                      <div class="srb_look_b srb_add">추가<br>입력</div>
+                    </div>
+                    <div class="srb_box sr_send set_cen_cen">
+                      <div class=" srb_suc">등록</div>
+                    </div>
+                  </li>
+                  <li class="srb_list set_cent_le">
+                    <div class="srb_info set_top_le">
+                      <p>
+                        <span class="srb_bank set_cen_cen">
+                          <i class="logo_bank ico_lb003"></i> IBK기업
+                        </span>
+                        <span class="onoffBox srb_class">
+                          <input type="checkbox" id="onoffCheck" class="onoffCheck" />
+                          <label for="onoffCheck" class="onoffCheck">
+                            <span class="slider"></span>
+                            <span class="onoff"></span>
+                          </label>
+                        </span>
+                      </p>
+                      <p>
+                        <span class="srb_name">든든행복통장</span>
+                        <span class="srb_act">1234-5678-12345-52</span>
+                      </p>
+                    </div>
+                    <div class="srb_box sr_look set_cen_cen">
+                      <div class="srb_look_b srb_re">재<br>입력</div>
+                    </div>
+                    <div class="srb_box sr_send set_cen_cen">
+                      <div class=" srb_fail">실패</div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <!-- //은행-->
+            </div>
+            <!-- //은행 목록 -->
+            <!-- 카드 목록 -->
+            <div class="search_result_list_wrap">
+              <!-- 카드 목록 총계-->
+              <div class="search_result_total_box set_cent_le">
+                <p class="sr_total set_cent_le">
+                  <span class="set_cent_le">카드&nbsp;&nbsp;<em class="number">5</em>&nbsp;개</span>
+                </p>
+                <p class="sr_box sr_look set_cen_cen">조회</p>
+              </div>
+              <!-- //카드 목록 총계-->
+
+              <!-- 카드-->
+              <div class="search_result_box">
+                <ul>
+                  <li class="srb_list set_cent_le">
+                    <div class="srb_info set_top_le">
+                      <p>
+                        <span class="user_mark bussi">기업</span>
+                        <!--기업 활성화 클래스 bussi-->
+                      </p>
+                      <p>
+                        <span class="srb_name">사업자전용계좌</span>
+                        <span class="srb_act">1234-5678-12345-52</span>
+                      </p>
+                    </div>
+                    <div class="srb_box sr_send set_cen_cen">
+                      <input type="checkbox" id="check_one" class="check_one" checked>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <!-- //카드-->
+            </div>
+            <!-- //카드 목록 -->
+            <!-- 홈택스 목록 -->
+            <div class="search_result_list_wrap">
+              <!-- 홈택스 정보-->
+              <div class="search_result_total_box set_cent_le">
+                <p class="sr_total set_cent_le">
+                  <span class="set_cent_le">홈택스</span>
+                </p>
+                <p class="sr_box sr_look set_cen_cen">조회</p>
+              </div>
+              <!-- //홈택스 정보-->
+
+              <!-- 홈택스-->
+              <div class="search_result_box">
+                <ul>
+                  <li class="srb_list set_cent_le">
+                    <span class="hometax">세금계산서 / 현금영수증 / 계산서 등</span>
+                    <div class="srb_box sr_send set_cen_cen">
+                      <div class=" srb_fail">실패</div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <!-- //홈택스-->
+            </div>
+            <!-- //홈택스 목록 -->
+          </div>
+          <!-- //리스트 -->
+        </div>
+        <!-- 안내 -->
+        <div class="noti_box posi_defalt">
+          <p class="noti_comm set_top_le">
+            <i class="ico_cen"></i>
+            <span>기관의 계정정보가 보이지 않으시나요?</span>
+          </p>
+          <div class="noti_box_list">
+            <ul>
+              <li>- 등록하시려는 기관에 공인(공동)인증서가 등록되지 않은 경우에 계정등록 실패가 발생합니다.</li>
+              <li>- 계정정보 등록 중 통신상태가 불안정하거나 이외 다양한 원인으로 장애가 발생하였을 수 있습니다.</li>
+              <li>- 계정정보가 계속 등록되지 않는다면 고객센터 1:1 문의 주세요. <a href="https://semojangbu1004.oqupie.com/portals/668"><u>고객센터 바로가기</u></a></li>
+            </ul>
+          </div>
+        </div>
+        <!-- 안내 -->
+      </div>
+      <!-- //인증서 한 번에 등록하기 -->
+    </div>
+    <!-- 하단 fix 버튼 -->
+    <div class="btm_fix">
+      <span class="bgc_green">다음</span>
+    </div>
+    <!-- 하단 fix 버튼 -->
+  </div>
+</body>
+</html>

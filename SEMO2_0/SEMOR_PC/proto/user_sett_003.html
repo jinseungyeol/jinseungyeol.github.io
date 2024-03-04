@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<title>세모리포트</title>
+<link rel="stylesheet" href="../css/reset_taxp.css">
+<link rel="stylesheet" href="../css/app_header.css"><!-- [D] 세무대리인용 header -->
+<link rel="stylesheet" href="../css/content_taxp.css"><!-- [D] 세무대리인용 -->
+
+<!-- custom scrollbar plugin css -->
+<link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+  <script src="../js/lib/jquery/jquery-1.12.4.min.js"></script>
+<script src="../js/lib/jquery/jquery-ui-1.10.4.min.js"></script>
+<!-- custom scrollbar plugin -->
+<script src="../js/design/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../js/design/jquery.placeholder.min.js"></script>
+<script src="../js/lib/plugin/smart.popup.js"></script>
+<script src="../js/comm/common.js"></script>
+<script>
+$(function(){
+	// Invoke the plugin
+	$('input, textarea').placeholder({customClass:'my-placeholder'});
+});
+
+
+</script>
+
+</head>
+<body class=""><!-- [D] 메뉴영역(접기 : class="fold", 펼치기 : class="lnb_bg") -->
+
+<!-- 수임처 개선 -->
+<!-- header -->
+<div class="app_header">
+	<div class="app_header_inner">
+		<div class="ah_l">
+			<h1>세모리포트</h1>
+		</div>
+
+		<div class="ah_r">
+			<ul class="ah_menu">
+				<!-- 
+				<li style="position:absolute;top:-16px;left:-47px;"><a href="#none" class="btn_alarm" title="알림"><em class="alarm_num" style="display: none;"></em></a></li>
+				<li><a href="#none"><img src="../img/txof/app_header/ic_top04.png" alt="">SMS</a></li>
+				<li style="position:relative;">
+					<a href="https://academyserp.notion.site/4ee92f23a9184afda550d61faf10a5e3" target="_blink"><img src="../img/txof/app_header/ic_top05.png" alt="">메뉴얼</a>
+				</li>
+				<li><a href="#none"><img src="../img/txof/app_header/ic_top02.png" alt="">로그아웃</a></li>
+				-->
+			</ul>
+		</div>
+	</div>
+</div>
+<!-- //header -->
+<!-- //수임처 개선 -->
+
+<div class="wrap"><!-- [D] 상세검색일 경우(class="mh") -->
+	<!-- Container -->
+	<div class="container">
+		
+		
+
+
+		<!-- content -->
+		<div class="content">
+
+			
+			<div class="content_wrap">
+
+				<div class="cust_dv_wrap nobd"><!-- [D] 편집기능 눌렀을때 class="edit_on" 추가 -->
+
+					<div class="top_cust_tit">
+						<div class="left">
+							<div class="cntalign"><h1 class="ipt_none">미소야</h1></div>
+							<div class="cntalign">
+								<!-- 사업자번호/대표자/전화번호/팩스번호 -->
+								<ul class="top_list">
+									<li class="col1"><span class="ipt_none">311-88-00892</span>&nbsp;</li>
+									<li class="col2"><strong><span class="ipt_none">홍길동</span>&nbsp;대표</strong></li>
+								</ul>
+								<!-- //사업자번호/대표자/전화번호/팩스번호 -->
+							</div>
+						</div>
+						<div class="right">
+							<div class="cntalign">
+								<a class="btn_ico_back" href="#none"><span class="blind">뒤로가기</span></a>
+							</div>
+						</div>
+					</div>
+
+					<!-- 탭영역/버튼 -->
+					<div class="tabType02">
+						<!-- (modify)20220718 순서 변경 -->
+						<ul>
+							<li><a href="#none">가입정보조회</a></li>
+							<li><a href="#none">보고서발송</a></li>
+							<li><a href="#none">거래증빙</a></li>
+							<li class="on"><a href="#none">용도설정</a></li>
+							<li><a href="#none">직원급여정보 <span class="flag_new">N</span></a></li>
+							<li><a href="#none">리포트이력</a></li>
+						</ul>
+						<!-- //(modify)20220718 순서 변경 -->
+						<div class="right">
+							
+						</div>
+					</div>
+					<!-- //탭영역/버튼 -->
+
+					<!-- 탭영역/버튼 -->
+					<div class="tabType01 mgt20 mgb10">
+						<ul>
+							<li><a href="#none">매출용도</a></li>
+							<li><a href="#none">매입용도</a></li>
+							<li class="on"><a href="#none">입금용도</a></li>
+							<li><a href="#none">출금용도</a></li>
+						</ul>
+					</div>
+					<!-- //탭영역/버튼 -->
+					
+					<div class="list_scroll_nomin">
+						<!-- 리스트 테이블 -->
+						<table class="tbl_result" summary="">
+							<caption></caption>
+							<colgroup>
+								<col style="width: 10%;">
+								<col style="width: *;">
+								<col style="width: 10%;">
+								<col style="width: 10%;">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col"><div>용도명</div></th>
+									<th scope="col"><div>내용</div></th>
+									<th scope="col"><div>손익구분</div></th>
+									<th scope="col"><div>사용여부</div></th>
+								</tr>
+							</thead>
+							<tfoot>
+								<tr>
+									<td colspan="4" class="tac"><div><a href="#none">더 많은 용도를 표시하고, 필요한 용도는 추가로 설정할 수 있어요&nbsp;&nbsp;<img src="../img/txof/ico/ico_view.png" alt=""></a></div></td> <!-- 위로 표시하는 img는 ico_view2.png-->
+								</tr>
+							</tfoot>
+							<tbody>
+								<tr>
+									<td><div>매입대금지급</div></td>
+									<td><div class="tx_ellipsis_max">거래처 매입 대금 지급</div></td>
+									<td><div></div></td>
+									<td><div><a href="#none" class="btn_onoff on"><span class="blind">ON</span></a></div></td>   <!-- OFF 설정은 <a href="#none" class="btn_onoff off"><span class="blind">OFF</span></a> -->
+									<!-- 
+									<td><div><a href="#none" class="btn_onoff off"><span class="blind">OFF</span></a></a></div></td>
+									<td><div><a href="#none" class="btn_onoff dis"><span class="blind">OFF</span></a></a></div></td>
+									 -->
+								</tr>
+								<tr>
+									<td><div>매입대금지급</div></td>
+									<td><div class="tx_ellipsis_max">거래처 매입 대금 지급</div></td>
+									<td><div>손익</div></td>
+									<td><div><a href="#none" class="btn_onoff on"><span class="blind">ON</span></a></div></td>   <!-- OFF 설정은 <a href="#none" class="btn_onoff off"><span class="blind">OFF</span></a> -->
+									<!-- 
+									<td><div><a href="#none" class="btn_onoff off"><span class="blind">OFF</span></a></a></div></td>
+									<td><div><a href="#none" class="btn_onoff dis"><span class="blind">OFF</span></a></a></div></td>
+									 -->
+								</tr>
+							</tbody>
+						</table>
+						<!-- //리스트 테이블 -->
+					</div>
+					<!-- //2021-04-22 -->
+					<div class="right"  style="position: absolute; right: 0px;padding:10px 0 10px 0;">
+						<a href="#none" class="t_hover_b">[전체ON]</a>&nbsp;&nbsp;<a href="#none" class="t_hover_b">[ON/OFF 초기화]</a>
+					</div>
+					
+				</div>
+				
+				
+			</div>
+		   <!-- //content_wrap -->
+			
+		</div>
+		<!-- //content -->
+		
+		
+		
+		
+
+	</div>
+	<!-- //Container -->
+
+
+
+
+	<!-- footer 추가 : 20180828 -->
+	<div class="footer">
+		<!-- Copy right -->
+		<div class="copyright_wrap">
+			<div class="copyright_box">
+				<p>Copyright(c) <strong>Webcash.</strong> All rights reserved.</p>
+			</div>
+			<div class="ft_menu"></div>
+		</div>
+		<!-- //Copy right -->
+	</div>
+	<!-- //footer -->
+</div>
+<!-- //wrap -->
+
+
+</body>
+</html>
+

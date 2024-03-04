@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="user-scalable=yes, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+	<link rel="stylesheet" href="../../css/semo_cont.css">
+</head>
+<body>
+
+	<!-- content -->
+	<div class="content">
+
+		<div class="m_cont m_cont_pd"><!-- 하단 버튼 있는경우 m_cont_pd 추가 -->
+
+			<div class="m_info_wrap">
+				<div class="set_eylbx">
+          <table> 
+            <colgroup><col style="width:90px;"><col></colgroup> <!--2020-06-24 width값 변경-->
+            <tbody>
+              <tr>
+                <th><i class="c_red">*</i> 회사명</th>
+                <td><input type="text" placeholder="회사명을 입력해주세요."/></td>
+              </tr>
+              <tr>
+                <th><i class="c_red">*</i> 핸드폰 번호</th> <!--2020-06-17 클래스 변경 c_tran -> c_red-->
+                <td><input type="text" placeholder="숫자만 입력해주세요."/></td> <!-- type = number 에서 type = text로 변경-->
+              </tr>
+              <tr>
+                <th><i class="c_red">*</i> 주민번호</th>
+                <td class="reg"><input type="number" class="reg_b"/> - <input type="number" class="reg_s"/> ******</td>
+              </tr>
+              <tr>
+                <th><i class="c_red">*</i> 입사일자</th>
+                <td><input type="text" placeholder="입사일자를 입력해주세요."/></td>
+              </tr>
+              <tr>
+                <th class="vtc_al"><i class="c_red">*</i> 월급여액</th>
+                <td>
+                  <input type="text" placeholder="월급여액을 입력해주세요.(원)"/><span style="display:none;">원</span> <!-- 2019-10-25 입력전 '원' 표시제거-->
+                  <div class="rdbx type1">
+                    <label>
+                      <input type="radio" name="salary">
+                      <span>세전 (세금포함)</span>
+                    </label>
+                    <label>
+                      <input type="radio" name="salary">
+                      <span>세후</span>
+                    </label>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th><i class="c_red">*</i> 소득구분</th>
+                <td>
+                  <div class="rdbx type2">
+                    <label>
+                      <input type="radio" name="income">
+                      <span>근로소득</span>
+                    </label>
+                    <label>
+                      <input type="radio" name="income">
+                      <span>사업소득</span>
+                    </label>
+                    <label>
+                      <input type="radio" name="income">
+                      <span>기타</span>
+                    </label>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th><i class="c_tran">*</i> 소득공제</th>
+                <td>
+                  <div class="ckbox">
+                    <label>
+                      <input type="checkbox" name="deduction">
+                      <span>식대</span>
+                    </label>
+                    <label>
+                      <input type="checkbox" name="deduction">
+                      <span>본인명의 차량</span>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th><i class="c_tran">*</i> 부양가족수</th>
+                <td><input type="text" placeholder="부양가족수를 입력해주세요.(명)"/><span style="display:none;">명</span></td><!-- 2019-10-25 입력전 '명' 표시제거-->
+              </tr>
+              <tr>
+                <th class="vtc_al"><i class="c_tran">*</i> 메모</th>
+                <td>
+                  <textarea placeholder="직원관련 메모를 작성하실 수 있습니다."></textarea>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <table>
+            <colgroup><col style="width:200px;"><col></colgroup>
+            <tbody>
+              <tr>
+                <th><i class="c_tran">*</i> 첨부서류</th>
+                <td class="arr"></td>
+              </tr>
+            </tbody>
+          </table>
+				</div>
+			</div>
+    </div>
+    
+		<!-- 하단 fix버튼 -->
+		<div class="btn_fix_botm">
+			<div class="inner">
+				<a class="off">저장하기</a>
+			</div>
+		</div>
+		<!-- //하단 fix버튼 -->
+	</div>
+	<!-- //content -->
+
+</body>
+</html>

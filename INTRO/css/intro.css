@@ -112,7 +112,7 @@ a { color:inherit; font-size: inherit; text-decoration:none }
 .introCont .moveLink {display: inline-block; margin-bottom: 2px; color: #12997a; text-decoration: underline;}
 
 .workIntro {padding-top: 50px;}
-.workIntro .infoWrap {display: flex; align-items: center; max-width: 1200px; margin: 0 auto; gap: 90px}
+.workIntro .infoWrap {display: flex; align-items: center; max-width: 1300px; margin: 0 auto; gap: 90px}
 .workIntro .infoWrap .logo {width: 250px; height: 250px; border-radius: 42px; border: 1px solid #d1d1d1}
 .workIntro .infoWrap .roumit.logo {background: #535B64; padding: 0 30px}
 .workIntro .infoWrap .skills .mainTit {margin-bottom: 40px}

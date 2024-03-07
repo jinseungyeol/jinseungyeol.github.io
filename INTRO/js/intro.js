@@ -21,3 +21,4 @@ function fn_fadeLoadImg() {
         $(".overlay img").eq(index).css({"right": 50, "opacity": 0});
     });
 };
+

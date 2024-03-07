@@ -6,9 +6,6 @@
 
 ::selection {background: #535B64; color: #fff}
 html { position:relative; height:100%; } 
-/* html::-webkit-scrollbar {width: 15px;}
-html::-webkit-scrollbar-track {background: #eeeeee}
-html::-webkit-scrollbar-thumb {background:  #535B64; border-radius: 10px;} */
 html,body { font-family:'Pretendard'; color:#111; font-weight:normal; -webkit-text-size-adjust:none; -moz-text-size-adjust:none; -ms-text-size-adjust:none; -webkit-tap-highlight-color:transparent; line-height: 1.5 } 
 html,body,div,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,address,cite,code,del,dfn,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,input,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video { margin:0; padding:0; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; -webkit-tap-highlight-color:transparent; -webkit-text-size-adjust:none; -webkit-touch-callout:none; -webkit-font-smoothing:antialiased; -webkit-user-select: auto; font-size: 15px } 
 body,button,h1,h2,h3,h4,h5,input,select,table,textarea { font-family:'Pretendard'; margin:0; padding:0 } 
@@ -32,9 +29,17 @@ a { color:inherit; font-size: inherit; text-decoration:none }
 .pointColor02 {color: #12997a}
 
 /* iframe */
-.headerFrame {width: 100%; height: 70px}
-.snbFrame {position: relative; z-index: 1; width: 280px; height: calc(100vh - 70px); margin-top: -6px; box-shadow: 3px 0px 5px -2px rgba(0,0,0,0.1)}
-.contentFrame {position: absolute; top: 70px; left: 280px; width: calc(100% - 280px); height: calc(100vh - 70px)}
+.headerFrameWrap {position: relative}
+.headerFrameWrap .headerFrame {width: 100%; height: 70px}
+.snbFrame {position: relative; z-index: 1; width: 280px; height: calc(100vh - 70px); margin-top: -6px; box-shadow: 3px 0px 5px -2px rgba(0,0,0,0.1); background: #fff; transition: .35s}
+.contentFrame {position: absolute; top: 70px; left: 280px; width: calc(100% - 280px); height: calc(100vh - 70px); background: #fff; transition: .35s}
+
+/* iframe : active */
+.headerFrameWrap.active .trigger span {position: absolute}
+.headerFrameWrap.active .trigger span:nth-child(1) {top: 50%; transform: translateY(-50%) rotate(45deg)}
+.headerFrameWrap.active .trigger span:nth-child(2) {opacity: 0; visibility: hidden}
+.headerFrameWrap.active .trigger span:nth-child(3) {top: 50%; transform: translateY(-50%) rotate(-45deg)}
+.headerFrameWrap.active ~ .snbFrame {transform: translateX(0)}
 
 /* includeHeader */
 .includeHeader {background: #535B64}
@@ -47,6 +52,14 @@ a { color:inherit; font-size: inherit; text-decoration:none }
 .includeHeader .inner nav ul li.active {background: #fff}
 .includeHeader .inner nav ul li.active a {color: #111}
 .includeHeader .inner nav ul li.active a::before {content: ''; position: absolute; top: 20px; right: -10px; width: 6px; height: 6px; background: #FF5353; border-radius: 50%}
+
+/* trigger */
+.trigger {opacity: 0; visibility: hidden; position: absolute; top: 50%; left: 12px; transform: translateY(-50%); display: flex; flex-direction: column; justify-content: center; align-items: center; width: 48px; height: 48px; border-radius: 4px}
+.trigger span {width: 32px; height: 2px; background: #fff; border-radius: 2px; transition: .35s}
+.trigger span:nth-child(2) {margin: 6px 0}
+
+/* trigger : hover */
+.trigger:hover span {background: #000}
 
 /* snb */
 .pageListWrap {padding: 0 20px}
@@ -77,7 +90,7 @@ a { color:inherit; font-size: inherit; text-decoration:none }
 .tblReference tr.update {background: #baf9e1;}
 .tblReference tr:hover {background: #17bf981c; transition: .35s;}
 .tblReference th {padding: 10px; background-color: #788496; border: 1px solid #d1d1d1; color: #fff; font-size: 16px; text-align: left; word-break: keep-all;}
-.tblReference td {padding: 10px; border: 1px solid #ccc; font-size: 16px; word-break: keep-all;}
+.tblReference td {padding: 10px; border: 1px solid #ccc; font-size: 16px}
 
 .tabMenuList {display: flex; gap: 4px;}
 .tabMenuList li {position:relative; width: auto; margin-top: 5px; border: 1px solid #ddd; border-bottom: none; border-radius: 3px 3px 0 0}
@@ -97,27 +110,6 @@ a { color:inherit; font-size: inherit; text-decoration:none }
 .introCont .infoNotice .infoTit .ps {font-size: 14px; font-weight: 500; color: #8a8a8b;}
 .introCont .infoTxtWrap p {margin-bottom: 5px; font-size: 15px}
 .introCont .moveLink {display: inline-block; margin-bottom: 2px; color: #12997a; text-decoration: underline;}
-
-/* introItemWrap */
-/* .introItemWrap .itemList {display: grid; grid-template-columns: repeat(auto-fit, 300px); grid-gap: 20px}
-.introItemWrap .itemList li > div {display: block; border-radius: 24px; background-color: #fff; color: #3e3e3e; box-shadow: 0 0 10px 1px rgb(0,0,0,0.1); transition: 0.35s; overflow: hidden} 
-.introItemWrap .itemList li > div .content {min-height: 450px; padding: 28px 24px 0 24px}
-.introItemWrap .itemList li > div .logo { display: flex; align-items: center; justify-content: center; width: 55px; height: 55px; margin-bottom: 20px; border-radius: 5px }
-.introItemWrap .itemList li > div .areaTit h2 {font-size: 20px} 
-.introItemWrap .itemList li > div .areaTit .date { color: #949eb2; font-size: 16px } 
-.introItemWrap .itemList li > div .areaTxt { margin-top: 24px } 
-.introItemWrap .itemList li > div .areaTxt strong { color: #4e5664; font-size: 18px } 
-.introItemWrap .itemList li > div .areaTxt p { margin-top: 12px; font-size: 18px; color: #5e656e } 
-.introItemWrap .itemList li.roumit > div .logo {background: #535B64} 
-.introItemWrap .itemList li.roumit > div .logo img { width: 42px } 
-.introItemWrap .itemList li > div .areaMove {display: flex; align-items: center; margin-top: 20px; border-top: 1px solid #f1f1f1;}
-.introItemWrap .itemList li > div .areaMove a {flex: 1; display: flex; align-items: center; justify-content: center; height: 70px; line-height: 70px; font-size: 18px; font-weight: 600; transition: .15s}
-.introItemWrap .itemList li > div .areaMove a span {margin-left: 14px; transition: .15s}
-.introItemWrap .itemList li > div .areaMove a img {opacity: 0; visibility: hidden; width: 8px; margin-left: 6px; transform: translateX(-15px); transition: .15s}
-.introItemWrap .itemList li > div .areaMove a + a {border-left: 1px solid #f1f1f1}
-.introItemWrap .itemList li > div .areaMove a:hover {background: #535B64; color: #fff}
-.introItemWrap .itemList li > div .areaMove a:hover span {margin-left: 0}
-.introItemWrap .itemList li > div .areaMove a:hover img {opacity: 1; visibility: visible; transform: translateX(0)} */
 
 .workIntro {padding-top: 50px;}
 .workIntro .infoWrap {display: flex; align-items: center; max-width: 1200px; margin: 0 auto; gap: 90px}
@@ -190,3 +182,27 @@ a { color:inherit; font-size: inherit; text-decoration:none }
 #searchInput {height: 40px; padding: 0 20px; border-radius: 27px; border: none; background: #fff; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);}
 #searchInput:focus {border: 1px solid #c8c8c8; padding: 0 19px;}
 #noResultsMsg {padding: 150px 0 200px ; text-align: center; font-size: 18px; font-weight: 600;}
+
+/* Media Query */
+@media screen and (max-width: 1023px) {
+  /* iframe */
+  .headerFrameWrap .headerFrame {height: 60px}
+  .snbFrame {transform: translateX(-280px)}
+  .contentFrame {top: 60px; transform: translateX(-280px); width: 100%}
+
+  /* trigger */
+  .trigger {opacity: 1; visibility: visible}
+  
+  /* includeHeader */
+  .includeHeader .inner {height: 60px; justify-content: flex-end}
+  .includeHeader .inner .logo h1 img {height: 30px}
+
+  .workIntro .infoWrap {display: block; width: fit-content; margin: 0 auto}
+  .workIntro .infoWrap .logo {width: 150px; height: 150px; margin-bottom: 40px}
+  .workIntro .infoWrap .skills .mainTit {font-size: 28px}
+
+  .preview .detail {display: block; margin-top: 100px}
+  .preview .detail > div.right {margin-top: 100px}
+  .preview .detail > div .areaImg {height: 250px}
+  .preview .detail > div p {margin-top: 10px}
+}

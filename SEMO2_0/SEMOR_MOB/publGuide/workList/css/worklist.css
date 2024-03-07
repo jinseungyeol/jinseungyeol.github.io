@@ -32,7 +32,7 @@ a {color:inherit; font-size: inherit; text-decoration: none;}
 .areaFloatingBtn a img {vertical-align: middle}
 .areaFloatingBtn a p {font-size: 0.8rem; font-weight: 600}
 
-.tabMenuList li {position:relative; width: auto; margin-top: 5px; border: 1px solid #ddd; border-bottom: none; border-radius: 3px 3px 0 0}
+.tabMenuList li {position:relative; width: auto; margin-top: 5px; border: 1px solid #ddd; border-bottom: none; border-radius: 3px 3px 0 0; white-space: nowrap}
 .tabMenuList li a.btnTab {display: block; padding: 8px 12px; color: #666; font-size: 15px;}
 
 /* active */
@@ -85,4 +85,8 @@ body.active .areaFloatingBtn.btnTop {opacity: 1; visibility: visible}
     .content .tabContentWrap table .remark {display: none}
     .content .tabContentWrap table .depth4 {display: none}
     .content .tabContentWrap table .depth5 {display: none}
+}
+
+@media screen and (min-width: 859px) {
+    .tabMenuList.swiper-wrapper {transform: translate3d(20px, 0px, 0px) !important}
 }

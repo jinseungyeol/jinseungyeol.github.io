@@ -8,7 +8,7 @@
     <link rel="icon" href="/INTRO/img/favicon.ico">
     <link rel="stylesheet" href="INTRO/css/intro.css">
     <script src="https://publ.roumit.com/js/firebase_include.js"></script>
-  <script src="INTRO/js/jquery-3.5.1.min.js"></script>
+    <script src="INTRO/js/jquery-3.5.1.min.js"></script>
     <script src="INTRO/js/intro.js"></script>
     <title>Jinseungyeol's Portfolio</title>
     <style>
@@ -18,7 +18,14 @@
 
 <body>
     <!-- header -->
-    <iframe src="INTRO/prducts/index_top.html" class="headerFrame" frameborder="0"></iframe>
+    <div class="headerFrameWrap">
+        <button type="button" class="trigger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <iframe src="INTRO/prducts/index_top.html" class="headerFrame" frameborder="0"></iframe>
+    </div>
     <!-- //header -->
     <!-- snb -->
     <iframe src="INTRO/prducts/index_left.html" class="snbFrame" frameborder="0"></iframe>
@@ -26,7 +33,19 @@
     <!-- content -->
     <iframe src="/SEMO2_0/SEMOR_MOB/index.html" class="contentFrame" name="introProduct" frameborder="0"></iframe>
     <!-- //content -->
-    <div id='googleSignOutBtn'>로그아웃</div>
+
+    <script>
+
+        $('.trigger').on('click', function() {
+            $(this).parent().toggleClass('active');
+        })
+
+        $(window).on('resize', function() {
+            if(window.innerWidth > 767) {
+                $(".headerFrameWrap").removeClass('active');
+            }
+        })
+    </script>
 </body>
 
 </html>

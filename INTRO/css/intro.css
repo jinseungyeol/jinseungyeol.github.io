@@ -116,6 +116,7 @@ a { color:inherit; font-size: inherit; text-decoration:none }
 .workIntro .infoWrap .logo {width: 250px; height: 250px; border-radius: 42px; border: 1px solid #d1d1d1}
 .workIntro .infoWrap .roumit.logo {background: #535B64; padding: 0 30px}
 .workIntro .infoWrap .skills .mainTit {margin-bottom: 40px}
+.workIntro .infoWrap .skills .mainTit .contribute {color: #8a8a8b; font-size: 16px}
 .workIntro .infoWrap .skills strong {display: block; margin: 0 0 15px; font-size: 20px; color: rgba(165, 165, 165); font-weight: 600}
 .workIntro .infoWrap .skills p {font-size: 18px; word-break: keep-all; line-height: 1.5}
 .workIntro .infoWrap .skills p + p {margin-top: 20px}
@@ -184,6 +185,10 @@ a { color:inherit; font-size: inherit; text-decoration:none }
 #noResultsMsg {padding: 150px 0 200px ; text-align: center; font-size: 18px; font-weight: 600;}
 
 /* Media Query */
+@media screen and (max-width: 767px) {
+  .workIntro .infoWrap .skills .mainTit .contribute {display: block}
+}
+
 @media screen and (max-width: 1023px) {
   /* iframe */
   .headerFrameWrap .headerFrame {height: 60px}

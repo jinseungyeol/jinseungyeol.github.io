@@ -44,7 +44,8 @@ body.active .areaFloatingBtn.btnTop {opacity: 1; visibility: visible}
 
 /* content */
 .wrapper {padding: 0 20px}
-.wrapper h1 {margin: 15px 0; font-size: 25px;}
+.wrapper h1 {margin: 15px 0; font-size: 25px}
+.wrapper h1 .contribute {color: #8a8a8b; font-size: 16px}
 
 .container {position: relative}
 
@@ -82,6 +83,10 @@ body.active .areaFloatingBtn.btnTop {opacity: 1; visibility: visible}
 #noResultsMsg {padding: 150px 0 200px ; text-align: center; font-size: 18px; font-weight: 600;}
 
 /* Media Query */
+@media screen and (max-width: 767px) {
+    .wrapper h1 .contribute {display: block}
+}
+
 @media screen and (max-width: 980px) {
     .content .tabContentWrap table .remark {display: none}
     .content .tabContentWrap table .depth4 {display: none}

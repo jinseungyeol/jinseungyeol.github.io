@@ -29,7 +29,7 @@ var semorprtApi = {
             ajaxUrl = "https://uatsemormgmt.smjb.co.kr/";
         }
 
-        $('body').addClass('loading');
+        // $('body').addClass('loading');
 		
 		$.ajax({
             type: "POST",

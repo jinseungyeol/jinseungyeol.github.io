@@ -95,8 +95,8 @@ a { color:inherit; font-size: inherit; text-decoration:none }
 .tblReference th {padding: 10px; background-color: #788496; border: 1px solid #d1d1d1; color: #fff; font-size: 16px; text-align: left; word-break: keep-all;}
 .tblReference td {padding: 10px; border: 1px solid #ccc; font-size: 16px}
 
-.tabMenuList {display: flex; gap: 4px;}
-.tabMenuList li {position:relative; width: auto; margin-top: 5px; border: 1px solid #ddd; border-bottom: none; border-radius: 3px 3px 0 0}
+.tabMenuList {display: flex; gap: 4px; padding: 0 30px; overflow-x: auto}
+.tabMenuList li {position:relative; width: auto; margin-top: 5px; border: 1px solid #ddd; border-bottom: none; border-radius: 3px 3px 0 0; white-space: nowrap}
 .tabMenuList li a.btnTab {display: block; padding: 8px 12px; color: #666; font-size: 15px;}
 
 /* active */
@@ -106,7 +106,7 @@ a { color:inherit; font-size: inherit; text-decoration:none }
 /* introCont */
 .introCont {padding: 15px 30px 25px;} 
 .introCont .infoNotice {margin-bottom: 20px;}
-.introCont nav {position: sticky; top: -1px; margin: 0 -30px; padding-left: 30px; padding-top: 20px; border-bottom: 1px solid #ddd; background: #fff;}
+.introCont nav {position: sticky; top: -1px; margin: 0 -30px; padding-top: 20px; border-bottom: 1px solid #ddd; background: #fff;}
 .introCont .verTit {position: relative; display: block; margin: 100px 0 30px; padding-left: 22px; font-size: 28px; font-weight: 600} 
 .introCont .verTit::before {content: ''; position: absolute; top: 0; left: 0; width: 10px; height: 100%; background: #17bf98}
 .introCont .infoNotice .infoTit {margin: 20px 0 6px; font-size: 18px; font-weight: bold;}

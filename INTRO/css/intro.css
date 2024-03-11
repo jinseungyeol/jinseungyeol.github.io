@@ -190,7 +190,7 @@ a { color:inherit; font-size: inherit; text-decoration:none }
 /* Media Query */
 @media screen and (max-width: 767px) {
   /* tblReference */
-  .tblReferenceWrap {overflow-x: auto; margin-right: -30px}
+  .tblReferenceWrap {overflow-x: auto; margin-right: -30px; padding-right: 30px}
   .tblReferenceWrap .tblReference {min-width: 767px}
 
   .workIntro .infoWrap .skills .mainTit .contribute {display: block}

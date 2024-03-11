@@ -84,7 +84,7 @@ body.active .areaFloatingBtn.btnTop {opacity: 1; visibility: visible}
 
 /* Media Query */
 @media screen and (max-width: 767px) {
-    .content .tabContentWrap .tableWrap {overflow-x: auto; margin-right: -20px}
+    .content .tabContentWrap .tableWrap {overflow-x: auto; margin-right: -20px; padding-right: 20px}
     .content .tabContentWrap .tableWrap table {min-width: 767px}
 
     .wrapper h1 .contribute {display: block}

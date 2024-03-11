@@ -189,6 +189,10 @@ a { color:inherit; font-size: inherit; text-decoration:none }
 
 /* Media Query */
 @media screen and (max-width: 767px) {
+  /* tblReference */
+  .tblReferenceWrap {overflow-x: auto; margin-right: -30px}
+  .tblReferenceWrap .tblReference {min-width: 767px}
+
   .workIntro .infoWrap .skills .mainTit .contribute {display: block}
 }
 
@@ -206,11 +210,11 @@ a { color:inherit; font-size: inherit; text-decoration:none }
   .includeHeader .inner .logo h1 img {display: none}
 
   .workIntro .infoWrap {display: block; width: fit-content; margin: 0 auto}
-  .workIntro .infoWrap .logo {width: 150px; height: 150px; margin-bottom: 40px}
+  .workIntro .infoWrap .logo {width: 100px; height: 100px; margin-bottom: 40px; border-radius: 20px}
   .workIntro .infoWrap .skills .mainTit {font-size: 28px}
 
-  .preview .detail {display: block; margin-top: 100px}
-  .preview .detail > div.right {margin-top: 100px}
-  .preview .detail > div .areaImg {height: 250px}
+  .preview .detail {display: block; margin-top: 40px}
+  .preview .detail > div.right {margin-top: 40px}
+  .preview .detail > div .areaImg {aspect-ratio: 16/9; height: auto}
   .preview .detail > div p {margin-top: 10px}
 }

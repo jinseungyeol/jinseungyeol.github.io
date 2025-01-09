@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>tax_slry_004B / tax_slry_004C</title>
+    <link rel="stylesheet" href="../../css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../../css/mobiscroll.jquery.min.css">
+    <link rel="stylesheet" href="../../css/semoR_base.css">
+    <link rel="stylesheet" href="../../css/semoR_common.css">
+    <link rel="stylesheet" href="../../css/semoR_style.css">
+    <link rel="stylesheet" href="../../css/semoR_rept.css">
+  <script src="../../js/jquery-3.5.1.min.js"></script>
+    <script src="../../js/jquery-ui.min.js"></script>
+    <script src="../../js/swiper-bundle.min.js"></script>
+    <script src="../../js/mobiscroll.jquery.min.js"></script>
+    <script src="../../js/semoR_ui.js"></script>
+</head>
+
+<body>
+    <!-- wrapper -->
+    <div class="wrapper">
+        <!-- header -->
+        <div class="header">
+            <h1 class="subTit">일용직 급여 상세</h1>
+            <ul class="topMenu">
+                <li class="left">
+                    <a class="btnBack" href="javascript:;" role="button"><span class="blind">뒤로가기</span></a>
+                </li>
+            </ul>
+        </div>
+        <!-- //header -->
+
+        <!-- container -->
+        <div class="container">
+            <div class="areaTop">
+                <div class="infoArea busi middle">
+                    <div class="ico daily">
+                        <i></i>
+                    </div>
+                    <div class="cont">
+                        <div class="info">
+                            <p class="name">나세모</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <ul class="payDataList">
+                <li>
+                    <dl>
+                        <dt>
+                            <p class="key">급여합계</p>
+                            <span class="qm">
+                                <span class="infoTxt02">+ 주휴수당</span>
+                                <a href="javascript:;" class="btnQmGray" role="button">
+                                    <span class="blind">팝업호출버튼</span>
+                                </a>
+                            </span>
+                        </dt>
+                        <dd>
+                            <p class="val">390,000원<p>
+                            <p class="infoTxt02">0원</p>
+                        </dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>
+                            <p class="key">근무일수</p>
+                        </dt>
+                        <dd>
+                            <p class="val">0일</p>
+                        </dd>
+                    </dl>
+                </li>
+                <li>
+                    <dl>
+                        <dt>
+                            <p class="key">근무시간</p>
+                        </dt>
+                        <dd>
+                            <p class="val">39시간</p>
+                        </dd>
+                    </dl>
+                </li>
+            </ul>
+            <hr class="grayLine02">
+
+            <div class="productWrap">
+                <h3 class="defTit">
+                    <span>2023년 03월</span>
+                    <p class="date time">근무일자</p>
+                </h3>
+                <div class="areaCalendar">
+                    <!-- viewer 클래스로 수정가능 달력과 불가능 달력 분기처리 -->
+                    <div class="viewer">
+                        <div id="mobiCalendar"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="areaBtmFixed">
+                <div class="areaBodyBtn">
+                    <button type="button" class="btnPointBg pointBgColor">확인</button>
+                </div>
+            </div>
+        </div>
+        <!-- //container -->
+    </div>
+    <!-- //wrapper -->
+
+    <script>
+        $(function () {
+            //캘린더
+            var myCalendar = $('#mobiCalendar').mobiscroll().datepicker({
+                theme: 'ios',  //테마
+                themeVariant: 'light',  //테마 색상
+                controls: ['calendar'],
+                display: 'inline',  // 보여줄 모드
+                min: '2023-03-01', //최소날짜
+                max: '2023-03-31', //최대날짜
+                touchUi: true,  // 'auto'로 하면 플랫폼에 따라 터치 UI가 자동으로 활성화
+                locale: mobiscroll.locale.ko, //언어설정
+                selectMultiple: true, //다중선택
+                onInit: function (event, inst) {
+                    inst.setVal([
+                        '2023-03-02T00:00',
+                        '2023-03-03T00:00',
+                        '2023-03-09T00:00',
+                        '2023-03-10T00:00',
+                        '2023-03-16T00:00',
+                        '2023-03-17T00:00',
+                        '2023-03-23T00:00',
+                        '2023-03-24T00:00',
+                        '2023-03-30T00:00',
+                        '2023-03-31T00:00'
+                    ], true); 
+                }, //날짜선택
+                onPageLoading: function (event, inst) {
+                    getPrices(event.firstDay, function callback(bookings) {
+                        inst.setOptions({
+                            labels: bookings.labels,
+                            invalid: bookings.invalid
+                        });
+                    });
+                }, //라벨 넣어주기
+            }).mobiscroll('getInst');  //getInst = 개체 인스턴스를 반환
+
+            function getPrices(d, callback) {
+                var invalid = [],
+                    labels = [];
+
+                labels.push(
+                    {
+                        start: '2023-03-02',
+                        title: '3시간',
+                        textColor: '#111'
+                    },
+                    {
+                        start: '2023-03-03',
+                        title: '3시간',
+                        textColor: '#111'
+                    },
+                    {
+                        start: '2023-03-09',
+                        title: '3시간',
+                        textColor: '#111'
+                    },
+                    {
+                        start: '2023-03-10',
+                        title: '3시간',
+                        textColor: '#111'
+                    },
+                    {
+                        start: '2023-03-16',
+                        title: '3시간',
+                        textColor: '#111'
+                    },
+                    {
+                        start: '2023-03-17',
+                        title: '3시간',
+                        textColor: '#111'
+                    },
+                    {
+                        start: '2023-03-23',
+                        title: '3시간',
+                        textColor: '#111'
+                    },
+                    {
+                        start: '2023-03-24',
+                        title: '3시간',
+                        textColor: '#111'
+                    },
+                    {
+                        start: '2023-03-30',
+                        title: '3시간',
+                        textColor: '#111'
+                    },
+                    {
+                        start: '2023-03-31',
+                        title: '3시간',
+                        textColor: '#111'
+                    },
+                );
+
+                callback({ labels: labels, invalid: invalid });
+            }
+
+        });
+    </script>
+</body>
+</html>

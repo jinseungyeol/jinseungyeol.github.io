@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<title>세무대리인 for 경리나라</title>
+<link rel="stylesheet" href="../css/reset_taxp.css">
+<link rel="stylesheet" href="../css/content_taxp.css"><!-- [D] 세무대리인용 -->
+
+<!-- custom scrollbar plugin css -->
+<link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+<script src="https://publ.roumit.com/js/firebase_include.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+<!-- custom scrollbar plugin -->
+<script src="../js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../js/jquery.placeholder.min.js"></script>
+<script>
+$(function(){
+	// Invoke the plugin
+	$('input, textarea').placeholder({customClass:'my-placeholder'});
+});
+</script>
+
+</head>
+
+<body>
+
+<div class="pop_wrap" style="width:560px;">
+
+	<!-- 팝업 헤더 -->
+	<div class="pop_header">
+		<h1>홈택스 수임 요청</h1>
+		<a href="#none" onClick="self.close()" class="btn_popclose"><img src="../img/txof/btn/btn_popclose.gif" alt="팝업닫기"></a>
+	</div>
+	<!-- //팝업 헤더 -->
+
+	<!-- 팝업 컨텐츠 -->
+	<div class="pop_container">
+
+		<!-- 2022-06-30 -->
+		<!-- 타이틀 영역 -->
+		<div class="stitle_wrap bno">
+			<div class="left">
+				<h2 class="bul_2">수임처 정보 조회</h2>
+			</div>
+		</div>
+		<!-- //타이틀 영역 -->
+		<div class="top_infobox2">
+			<ul>
+				<li>※ '수임요청'을 클릭하시면 홈택스에 자동으로 수임요청이 됩니다.</li>
+				<li>※ 수임요청 후 요청 결과를 수임처에게 SMS로 전송할 수 있습니다. <a href="#none" class="txt_b txt_uline">미리보기</a></li>
+			</ul>
+		</div>
+		<!-- //2022-06-30 -->
+
+		<!-- 테이블 영역 -->
+		<div class="mgb10" style="padding:0 10px;">
+			<table class="tbl_input8" summary="">
+				<caption></caption>
+				<colgroup><col style="width:180px;"><col></colgroup>
+				<tbody>
+					<tr>
+						<th><div>유형구분<span class="txt_r">*</span></div></th>
+						<td>
+							<div class="setting_combo" style="display:;">
+								<label><input type="radio" checked=""> 개인사업자</label>&nbsp;&nbsp;&nbsp;
+								<label><input type="radio"> 법인사업자</label>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<th><div>사업자등록번호<span class="txt_r">*</span></div></th>
+						<td>
+							<div class="ipt_bx line_r" style="width:150px;">
+								<input type="text" value="107-85-27739">
+								<!-- <a href="#none" class="btn_del"></a> -->
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<th class="vat"><div>대표자 주민등록번호<span class="txt_r">*</span></div></th>
+						<td>
+							<div class="ipt_bx line_r" style="width:150px;">
+								<input type="text" placeholder="숫자만 입력(13자리)" value="">
+								<!-- <a href="#none" class="btn_del"></a> -->
+							</div>
+							<p class="sinfo">※ 위멤버스클럽은 주민등록번호를 수집하지 않습니다.</p>
+						</td>
+					</tr>
+					<tr>
+						<th><div>전화번호<span class="txt_r">*</span></div></th>
+						<td>
+							<div class="telcell">
+								<input type="text" style="width:35px;" value="02" class="line_r"> - 
+								<input type="text" style="width:45px;" value="3779" class="line_r"> - 
+								<input type="text" style="width:45px;" value="2904" class="line_r">
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<th><div>휴대전화번호<span class="txt_r">*</span></div></th>
+						<td>
+							<div class="telcell">
+								<input type="text" style="width:35px;" value="010" class="line_r"> - 
+								<input type="text" style="width:45px;" value="9960" class="line_r"> - 
+								<input type="text" style="width:45px;" value="9094" class="line_r">
+								<label><input type="checkbox" checked name=""> 국세정보수신동의</label>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<th><div>전자우편주소</div></th>
+						<td>
+							<div class="telcell">
+								<input type="text" style="width:70px;" value="010" class="line_r"> @ 
+								<input type="text" style="width:75px;" value="9094" class="line_r">
+								<label><input type="checkbox" checked name=""> 국세정보수신동의</label>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<th><div>수임일자<span class="txt_r">*</span></div></th>
+						<td><div class="telcell">
+							<input type="text" style="width:80px;" value="" class="line_r">
+							<a href="#none"><img src="../img/txof/ico/ico_calendar.png" alt="달력"></a>
+						</div></td>
+					</tr>
+					<tr>
+						<th><div>정보제공범위<span class="txt_r">*</span></div></th>
+						<td>
+							<div class="setting_combo" style="display:;">
+								<label><input type="radio" checked=""> 타소득포함</label>&nbsp;&nbsp;&nbsp;
+								<label><input type="radio"> 해당사업장</label>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<!-- //테이블 영역 -->
+
+		<!-- 하단버튼 -->
+		<div class="tac">
+			<a href="#none" class="btn_style1_b"><span>수임 요청</span></a>
+		</div>
+		<!-- //하단버튼 -->
+
+	</div>
+	<!-- //팝업 컨텐츠 -->
+</div>
+
+</body>
+</html>

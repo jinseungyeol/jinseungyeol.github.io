@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<title>세무대리인 for 경리나라</title>
+<link rel="stylesheet" href="../css/reset_taxp.css">
+<link rel="stylesheet" href="../css/app_header.css"><!-- [D] 세무대리인용 header -->
+<link rel="stylesheet" href="../css/content_taxp.css"><!-- [D] 세무대리인용 -->
+
+<!-- custom scrollbar plugin css -->
+<link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+<script src="https://publ.roumit.com/js/firebase_include.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+<!-- custom scrollbar plugin -->
+<script src="../js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../js/jquery.placeholder.min.js"></script>
+<script>
+	$(function(){
+		// Invoke the plugin
+		$('input, textarea').placeholder({customClass:'my-placeholder'});
+		// 상담문의
+		$( "#btn_notice" ).on( "click", function() {
+			$("#pop_notice").toggle();
+		});
+		// 담당자지정
+		$( "#btn_manager" ).on( "click", function() {
+			$("#pop_manager").toggle();
+		});
+		// 작업일시
+		$( "#btn_last_work" ).on( "click", function() {
+			$("#pop_last_work").toggle();
+		});
+		// 그룹지정 /* 수임처 개선 */
+		$( "#btn_group" ).on( "click", function() {
+			$("#pop_group").toggle();
+		});
+	} );
+</script>
+
+</head>
+
+<body class="lnb_bg lnb_bg"><!-- [D] 메뉴영역(접기 : class="fold", 펼치기 : class="lnb_bg") -->
+<div class="pop_wrap" style="top:145px;left:25px;width:280px; display: none;" id="pop_manager">
+
+	<!-- 팝업 헤더 -->
+	<div class="pop_header">
+		<h1>담당자 지정</h1>
+		<a href="#none" onclick="document.getElementById('pop_manager').style.display='none'" class="btn_popclose"><img src="../img/txof/btn/btn_popclose.gif" alt="팝업닫기"></a>
+	</div>
+	<!-- //팝업 헤더 -->
+
+	<!-- 팝업 컨텐츠 -->
+	<div class="pop_container">
+		<div class="info_box6 mgb10">
+			<p><strong>경리 아웃소싱 담당직원을 지정하세요</strong></p>
+		</div>
+
+		<!-- 테이블(1) -->
+		<table class="tbl_input8" summary="">
+			<caption></caption>
+			<colgroup><col></colgroup>
+			<tbody>
+				<tr>
+					<td><div><label><input type="radio" checked> 김한나</label></div></td>
+				</tr>
+				<tr>
+					<td><div><label><input type="radio"> 박나영</label></div></td>
+				</tr>
+				<tr>
+					<td><div><label><input type="radio"> 장나라</label></div></td>
+				</tr>
+				<tr>
+					<td><div><label><input type="radio"> 한소미</label></div></td>
+				</tr>
+			</tbody>
+		</table>
+		<!-- //테이블(1) -->
+
+		<!-- 버튼영역 -->
+		<div class="tac t_line mgt15">
+			<!-- <a href="#none" class="btn_style1_b"><span>저장</span></a> -->
+			<a href="#none" class="btn_style1"><span>확인</span></a>
+		</div>
+		<!-- //버튼영역 -->
+
+	</div>
+	<!-- //팝업 컨텐츠 -->
+</div>
+
+<!-- 수임처 개선 -->
+<div class="pop_wrap" style="top:145px;left:125px;width:280px; display: none;" id="pop_group">
+
+	<!-- 팝업 헤더 -->
+	<div class="pop_header">
+		<h1>그룹 지정</h1>
+		<a href="#none" onclick="document.getElementById('pop_group').style.display='none'" class="btn_popclose"><img src="../img/txof/btn/btn_popclose.gif" alt="팝업닫기"></a>
+	</div>
+	<!-- //팝업 헤더 -->
+
+	<!-- 팝업 컨텐츠 -->
+	<div class="pop_container">
+		<div class="info_box6 mgb10">
+			<p><strong>그룹을 지정하세요</strong></p>
+		</div>
+
+		<!-- 테이블(1) -->
+		<table class="tbl_input8" summary="">
+			<caption></caption>
+			<colgroup><col></colgroup>
+			<tbody>
+				<tr>
+					<td><div><label><input type="checkbox" checked> 경리나라</label></div></td>
+				</tr>
+				<tr>
+					<td><div><label><input type="checkbox"> 세모장부</label></div></td>
+				</tr>
+			</tbody>
+		</table>
+		<!-- //테이블(1) -->
+
+		<!-- 버튼영역 -->
+		<div class="tac t_line mgt15">
+			<a href="#none" class="btn_style1"><span>확인</span></a>
+		</div>
+		<!-- //버튼영역 -->
+
+	</div>
+	<!-- //팝업 컨텐츠 -->
+</div>
+<!-- //수임처 개선 -->
+
+<!-- 수임처 개선 -->
+<!-- header -->
+<div class="app_header">
+	<div class="app_header_inner">
+		<div class="ah_l">
+			<h1>수임처</h1>
+		</div>
+
+		<div class="ah_r">
+			<ul class="ah_menu">
+				<!-- <li><a href="https://www.serp.co.kr/evnt_0001_01.act?prod_gb=SERP&biz_no=5680601206&biz_nm=%EB%B0%95%EA%B8%B0%EC%A0%95%EC%84%B8%EB%AC%B4%EC%82%AC%EC%82%AC%EB%AC%B4%EC%8B%A4" target="_blank" style="margin-top:-7px;"><img src="../img/txof/app_header/btn_recommend.gif" alt="경리나라 추천하기"></a></li>
+				<li><a href="#none" class="ic_new" id="btn_notice"><img src="../img/txof/app_header/ic_top01.png" alt="">상담문의</a></li> -->
+				<!-- 수임처 개선 -->
+				<li style="position:relative;">
+					<a href="#none"><img src="../img/txof/app_header/ic_top03.png" alt="">관리자</a>
+					<!-- 관리자 레이어 -->
+					<div class="ly_bx_wrap" style="top:20px;right:0;display:none;">
+						<div class="inner">
+							<p>이영미 010-2313-4353</p>
+							<p>신정호 010-6774-8811</p>
+							<p>최기종 010-3303-5711</p>
+							<p>최기종 010-3303-5711</p>
+							<p>최기종 010-3303-5711</p>
+							<p>최기종 010-3303-5711</p>
+						</div>
+					</div>
+					<!-- //관리자 레이어 -->
+				</li>
+				<!-- //수임처 개선 -->
+				<li><a href="#none"><img src="../img/txof/app_header/ic_top02.png" alt="">로그아웃</a></li>
+			</ul>
+			<!-- (layer)알림 -->
+			<div class="ly_app_header" style="top:45px;right:14px;width:365px;display: none;" id="pop_notice">
+				<div class="ly_notibx_tit">
+					<h3>알림</h3>
+				</div>
+				<div class="ly_notibx_cont">
+					<!-- 스크롤 영역 -->
+					<div class="ly_notibx_scroll">
+						<ul>
+							<li>
+								<img src="../img/txof/app_header/bg_alarm_noti.png" alt="" class="ic_alarm">
+								<div class="tit"><strong>웹케시네트웍스(주)</strong>의 관리자님이 상담 신청하였습니다.</div>
+								<div><span><img src="../img/txof/app_header/ic_tel02.png" alt="">&nbsp;010-9276-8033</span></div>
+								<div class="date">2018년 9월 11일 (화요일)</div>
+							</li>
+							<li>
+								<img src="../img/txof/app_header/bg_alarm_noti.png" alt="" class="ic_alarm">
+								<div class="tit"><strong>웹케시벡터</strong>의 최기종님이 상담 신청하였습니다.</div>
+								<div><span><img src="../img/txof/app_header/ic_tel02.png" alt="">&nbsp;010-3303-5711</span></div>
+								<div class="date">2018년 9월 6일 (목요일)</div>
+							</li>
+							<li></li>
+						</ul>
+					</div>
+					<!-- //스크롤 영역 -->
+				</div>
+			</div>
+			<!-- //(layer)알림 -->
+		</div>
+	</div>
+</div>
+<!-- //header -->
+<!-- //수임처 개선 -->
+
+<div class="wrap">
+	<!-- Container -->
+	<div class="container">
+		<!-- lnb box -->
+		<div class="lnb_box">
+		</div>
+		<!-- //lnb box -->
+		<!-- content wrap -->
+		<div class="content">
+
+			<div class="content_wrap">
+
+				<!-- 상단타이틀 -->
+				<div class="title_wrap h1type">
+					<div class="left">
+						<h1>거래처 조회</h1>
+					</div>
+
+					<div class="right">
+						<!-- 검색 -->
+						<div class="cntalign">
+							<div class="input_box">
+								<input type="text" value="" placeholder="검색어를 입력하세요" style="width:180px;"><a href="#none"><img src="../img/txof/btn/btn_topsearch.gif" alt="조회"></a>
+							</div>
+						</div><!-- //검색 -->
+						<div class="cntalign">
+							<a href="#none" class="icon" title="보기설정"><img src="../img/txof/btn/btn_list.gif" alt="보기설정"></a>
+							<!-- layer -->
+							<div class="ly2_pop_wrap" style="display: none; z-index:9998;">
+								<!-- 팝업 컨텐츠 -->
+								<div class="ly2_pop_container">
+									<!-- title -->
+									<div class="ly2_pop_title_wrap">
+										<div class="left"><h2 class="bul_2">보기설정</h2></div>
+										<div class="right">
+											<a href="#none"><img src="../img/txof/btn/btn_go_last.gif" alt=""></a> <a href="#none"><img src="../img/txof/btn/btn_go_next.gif" alt=""></a> <a href="#none"><img src="../img/txof/btn/btn_go_prev.gif" alt=""></a> <a href="#none"><img src="../img/txof/btn/btn_go_first.gif" alt=""></a>
+										</div>
+									</div>
+									<!-- //title -->
+									<!-- 보기항목 -->
+									<div class="view_setting_lst mgt5">
+										<ul>
+											<li class="dis"><label for=""><input type="checkbox" id="" checked="checked" disabled>사업자번호</label></li>
+											<li class="dis"><label for=""><input type="checkbox" id="" checked="checked" disabled>대표자명</label></li><!-- [D] 선택 -->
+											<li class="dis"><label for=""><input type="checkbox" id="" checked="checked" disabled>연락처</label></li><!-- [D] 선택 + 비활성, <li> 안에 class="dis" 추가 -->
+											<li class="dis"><label for=""><input type="checkbox" id="" checked="checked" disabled>최종 조회일시</label></li>
+											<li class="dis"><label for=""><input type="checkbox" id="" checked="checked" disabled>담당자</label></li>
+											<li><label for=""><input type="checkbox" id="">경리나라 수임</label></li>
+											<li><label for=""><input type="checkbox" id="">경리나라 서비스</label></li>
+											<li><label for=""><input type="checkbox" id="">세모장부 수임</label></li>
+										</ul>
+									</div>
+									<!-- //보기항목 -->
+									<!-- 하단버튼 -->
+									<div class="cboth">
+										<div class="f_left">
+											<a href="#none" class="btn_style1"><span>초기화</span></a>
+										</div>
+										<div class="f_right">
+											<a href="#none" class="btn_style1_b"><span>저장</span></a>
+											<a href="#none" class="btn_style1"><span>취소</span></a>
+										</div>
+									</div>
+									<!-- //하단버튼 -->
+								</div>
+								<!-- //팝업 컨텐츠 -->
+							</div>
+							<!-- //layer -->
+						</div>
+					</div>
+				</div>
+				<!-- //상단타이틀 -->
+
+				<!-- 버튼영역 -->
+				<div class="title_wrap">
+					<!-- left -->
+					<div class="left">
+						<!-- 2019-07-29 -->
+						<div class="cntalign btnbx_wrap">
+							<a class="btn_style1" href="#none" id=""><span id="">담당자 지정</span></a>
+							<!-- 담당자지정 layer -->
+							<div class="ly_group_slbx" style="display:block;">
+								<div class="inner">
+									<div class="slbx_cont">
+										<label><input type="checkbox" checked="">황찬연</label>
+										<label><input type="checkbox" checked="">황윤재</label>
+										<label><input type="checkbox">김정태</label>
+										<label><input type="checkbox">정성훈</label>
+									</div>
+									<div class="slbx_btn">
+										<a href="#none" class="btn_style_lys"><span>저장</span></a>
+									</div>
+								</div>
+							</div>
+							<!-- //담당자지정 layer -->
+						</div>
+						<!-- //2019-07-29 -->
+						<!-- 2019-08-08 삭제 -->
+						<div class="cntalign" style="display:none;">
+							<a class="btn_style1 group" href="#none" id=""><span id="">그룹지정</span></a>
+							<!-- 그룹지정 layer -->
+							<div class="ly_group_slbx" style="display:none;">
+								<div class="inner">
+									<div class="slbx_cont">
+										<label><input type="checkbox">매출</label>
+										<label><input type="checkbox">매입</label>
+										<label><input type="checkbox">거래처그룹</label>
+										<label><input type="checkbox">거래처그룹</label>
+									</div>
+									<div class="slbx_btn">
+										<a href="#none" class="btn_style_lys"><span>저장</span></a>
+									</div>
+								</div>
+							</div>
+							<!-- //그룹지정 layer -->
+						</div>
+						<!-- //2019-08-08 삭제 -->
+						<!-- 2019-08-08 -->
+						<div class="cntalign">
+							<a class="btn_style1"><span><strong>수임요청</strong></span></a>
+						</div>
+						<div class="cntalign btnbx_wrap">
+							<a class="btn_style1 move"><span><strong>이동</strong></span></a>
+							<!-- 이동 layer -->
+							<div class="ly_filter type3" style="display:none;">
+								<ul class="ly_filter_inner" style="top:11px;left:-64px;">
+									<li class="ic_del"><a href="#none">휴지통으로 이동</a></li>
+									<li class="ic_grp"><a href="#none">'그룹지정'으로 이동</a></li>
+								</ul>
+							</div>
+							<!-- //이동 layer -->
+							<!-- 그룹지정 layer -->
+							<div class="ly_group_slbx" style="display:;">
+								<div class="inner">
+									<div class="slbx_cont">
+										<label><input type="checkbox">매출</label>
+										<label><input type="checkbox">매입</label>
+										<label><input type="checkbox">거래처그룹</label>
+										<label><input type="checkbox">거래처그룹</label>
+									</div>
+									<div class="slbx_btn">
+										<a href="#none" class="btn_style_lys"><span>저장</span></a>
+									</div>
+								</div>
+							</div>
+							<!-- //그룹지정 layer -->
+						</div>
+						<!-- //2019-08-08 -->
+						<div class="cntalign">
+							<!-- 정렬 -->
+							<div class="ly_filter type3">
+								<a href="#none" class="" id="btn_last_work">최종수정일 <span class="dorder"></span></a><!-- [D] 내림차순 클래스 aorder / 오름차순 클래스 dorder -->
+								<ul class="ly_filter_inner" style="display: none;" id="pop_last_work">
+									<li><strong>정렬기준</strong></li>
+									<li class="list">
+										<ul>
+											<li><a href="#none" class="on"><strong>최종수집일시</strong></a></li>
+											<li><a href="#none"><strong>거래처명</strong></a></li>
+										</ul>
+									</li>
+									<li><strong>정렬방식</strong></li>
+									<li class="list">
+										<ul>
+											<li><a href="#none" class="on"><strong>오름차순</strong><span class="aorder"></span></a></li>
+											<li><a href="#none"><strong>내림차순</strong><span class="dorder"></span></a></li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+							<!-- //정렬 -->
+						</div>
+					</div><!-- //left -->
+
+					<!-- right -->
+					<div class="right">
+						<div class="cntalign">
+							<a class="btn_style1_b gadd" href="#none"><span id="">거래처 등록</span></a>
+						</div>
+					</div><!-- //right -->
+				</div>
+				<!-- //버튼영역 -->
+
+				<!-- 리스트 테이블 -->
+				<!-- 리스트 테이블 상단 -->
+				<div class="list_scroll_top" style="overflow:hidden;"><!-- [D] 하단테이블 세로스크롤 발생시 pdr 클래스 추가 -->
+					<table class="tbl_result" summary="">
+						<caption></caption>
+						<colgroup>
+						<col style="width:25px;">
+						<col style="width:150px;">
+						<col style="width:100px;">
+						<col style="width:100px;">
+						<col style="width:100px;">
+						<col style="width:150px;">
+						<col style="width:100px;">
+						<col style="width:120px;">
+						<col style="width:100px;">
+						<col style="width:110px;"><!-- 2019-07-29 -->
+						<col style="width:30px;">
+						<!-- 2019-06-26 -->
+						<col style="width:100px;">
+						<col style="width:20px;">
+						<!-- //2019-06-26 -->
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col"><div class="tac"><input type="checkbox"></div></th>
+								<th scope="col"><div>거래처명</div></th>
+								<th scope="col"><div>사업자번호</div></th>
+								<th scope="col"><div>대표자명</div></th>
+								<th scope="col"><div>연락처</div></th>
+								<th scope="col"><div>최종 조회일시</div></th>
+								<th scope="col"><div>경리나라 수임</div></th>
+								<th scope="col"><div>경리나라 서비스</div></th>
+								<th scope="col"><div>세모장부 수임</div></th>
+								<th scope="col"><div>담당자</div></th>
+								<th scope="col"><div></div></th>
+								<th scope="col"><div></div></th>
+								<th scope="col"><div></div></th>
+							</tr>
+						</thead>
+					</table>
+				</div>
+				<!-- //리스트 테이블 상단 -->
+				<div class="list_scroll" style="">
+					<table class="tbl_result" summary="">
+						<caption></caption>
+						<colgroup>
+						<col style="width:25px;">
+						<col style="width:150px;">
+						<col style="width:100px;">
+						<col style="width:100px;">
+						<col style="width:100px;">
+						<col style="width:150px;">
+						<col style="width:100px;">
+						<col style="width:120px;">
+						<col style="width:100px;">
+						<col style="width:110px;"><!-- 2019-07-29 -->
+						<col style="width:30px;">
+						<!-- 2019-06-26 -->
+						<col style="width:100px;">
+						<col style="width:20px;">
+						<!-- //2019-06-26 -->
+						</colgroup>
+						<tfoot style="display:none;"><!-- [D] style="display: none / table-tfoot;" -->
+							<tr class="no_hover">
+								<td colspan="10" class="no_info"><div>등록된 거래처가 없습니다.<br>'거래처추가'를 클릭하여 거래처를 추가하세요.</div></td>
+							</tr>
+						</tfoot>
+						<tbody style="display: table-tbody;"><!-- [D] style="display: none / table-tbody;" -->
+							<tr class="bg_on"><!-- [D] new 일때 class="bg_on" -->
+								<td><div class="tac"><input type="checkbox"></div></td>
+								<td><div style="position:relative;"><!-- [D] 말줄임 처리 class= tx_ellipsis_max3 -->
+									<a href="#none" class="t_hover tx_ellipsis_max3" title="(주)하나인더스트리">(주)하나인더스트리</a>
+									<img src="../img/txof/ico/ico_new.png" alt="">
+									<!-- 2019-07-15 -->
+									<!-- 레이어 -->
+									<div class="layertype1" style="top:27px;left:10px;z-index:1;">
+										<ul>
+											<li><a href="#none">경리나라로 접속</a></li>
+											<li><a href="#none">세모장부로 접속</a></li>
+										</ul>
+									</div>
+									<!-- //레이어 -->
+									<!-- //2019-07-15 -->
+								</div></td>
+								<td><div><a href="#none" class="t_hover">311-88-00892</a></div></td><!-- 2019-08-02 t_hover 클래스 추가 -->
+								<td><div><a href="#none" class="t_hover">신영훈</a></div></td><!-- 2019-08-02 t_hover 클래스 추가 -->
+								<td>051-879-7188</td>
+								<td><div>2018-11-11 09:22</div></td>
+								<td><div><a href="#none">미동의</a></div></td>
+								<td><div class="tx_ellipsis_max">기장대행</div></td>
+								<td><div><a href="#none">미동의</a></div></td>
+								<!-- 2019-07-29 -->
+								<td><div style="position:relative;">
+									황찬연 외 1명
+									<!-- 레이어 -->
+									<div class="layertype1" style="padding:0;top:27px;right:0;z-index:1;">
+										<div class="ly_inner">
+											<p>황찬연</p>
+											<p>정성훈</p>
+											<p>정성훈</p>
+											<p>정성훈</p>
+											<p>정성훈</p>
+											<p>정성훈</p>
+										</div>
+									</div>
+									<!-- //레이어 -->
+								</div></td>
+								<!-- //2019-07-29 -->
+								<td>
+									<div style="position:relative;z-index:1;">
+										<div class="ico_ly_wrap"><a class="ico_memo color_white" href="#none" data="memoN"><span class="blind">메모</span></a></div>
+									</div>
+								</td>
+								<td><div>
+									<a href="#none"><img src="../img/txof/ico/ico_serp_on.png" alt=""></a>
+									<a href="#none"><img src="../img/txof/ico/ico_semo_on.png" alt=""></a><!-- 수임처 개선 -->
+								</div></td>
+								<td><div></div></td>
+							</tr>
+							<tr>
+								<td><div class="tac"><input type="checkbox"></div></td>
+								<td><div style="position:relative;"><!-- [D] 말줄임 처리 class= tx_ellipsis_max3 -->
+									<a href="#none" class="t_hover tx_ellipsis_max3" title="(주)하나인더스트리">(주)하나인더스트리</a>
+								</div></td>
+								<td><div><a href="#none" class="t_hover">311-88-00892</a></div></td><!-- 2019-08-02 t_hover 클래스 추가 -->
+								<td><div><a href="#none" class="t_hover">신영훈</a></div></td><!-- 2019-08-02 t_hover 클래스 추가 -->
+								<td>051-879-7188</td>
+								<td><div>2018-11-11 09:22</div></td>
+								<td><div>미동의</div></td>
+								<td><div class="tx_ellipsis_max"></div></td>
+								<td><div>미동의</div></td>
+								<td><div>이과장</div></td>
+								<td>
+									<div style="position:relative;z-index:1;">
+										<div class="ico_ly_wrap"><a class="ico_memo color_white" href="#none" data="memoN"><span class="blind">메모</span></a></div>
+									</div>
+								</td>
+								<td><div>
+									<a href="#none"><img src="../img/txof/ico/ico_serp_on.png" alt=""></a>
+									<a href="#none"><img src="../img/txof/ico/ico_semo_on.png" alt=""></a><!-- 수임처 개선 -->
+								</div></td>
+								<td><div></div></td>
+							</tr>
+							<tr class="bg_off"><!-- [D] 경리나라 가입고객 아닌경우 class="bg_off" -->
+								<td><div class="tac"><input type="checkbox"></div></td>
+								<td><div style="position:relative;"><!-- [D] 말줄임 처리 class= tx_ellipsis_max3 -->
+									<a href="#none" class="t_hover tx_ellipsis_max3" title="(주)하나인더스트리">(주)하나인더스트리</a>
+								</div></td>
+								<td><div><a href="#none" class="t_hover">311-88-00892</a></div></td><!-- 2019-08-02 t_hover 클래스 추가 -->
+								<td><div><a href="#none" class="t_hover">신영훈</a></div></td><!-- 2019-08-02 t_hover 클래스 추가 -->
+								<td>051-879-7188</td>
+								<td><div>2018-11-11 09:22</div></td>
+								<td><div>동의</div></td>
+								<td><div></div></td>
+								<td><div>동의요청</div></td>
+								<td><div>김사장</div></td>
+								<td>
+									<div style="position:relative;z-index:1;">
+										<div class="ico_ly_wrap">
+											<a class="ico_memo color_white" href="#none" data="memoN"><span class="blind">메모</span></a>
+										</div>
+									</div>
+								</td>
+								<td><div style="position:relative;">
+									<a href="#none"><img src="../img/txof/ico/ico_serp_off.png" alt=""></a>
+									<a href="#none"><img src="../img/txof/ico/ico_semo_on.png" alt=""></a><!-- 수임처 개선 -->
+									<!-- 수임처 개선 -->
+									<!-- layer (경리나라 tip) -->
+									<div class="layertype1" style="display:;top:-2px;left:-270px;width:auto;z-index:2;padding:0;*padding:0;">
+										<div class="toptail_layer" style="padding:0;*padding:0;">
+											<span class="tail rgt" style="right:-7px;top:9px;"></span>
+											<div style="padding:10px;line-height:17px;">
+												<span class="ico_tip">경리나라를 사용중인 업체는 파란색으로<br> 표시됩니다.</span>
+											</div>
+										</div>
+									</div>
+									<!-- //layer (경리나라 tip) -->
+									<!-- //수임처 개선 -->
+								</div></td>
+								<td><div></div></td>
+							</tr>
+							<tr>
+								<td><div class="tac"><input type="checkbox"></div></td>
+								<td><div style="position:relative;"><!-- [D] 말줄임 처리 class= tx_ellipsis_max3 -->
+									<a href="#none" class="t_hover tx_ellipsis_max3" title="(주)하나인더스트리">(주)하나인더스트리</a>
+								</div></td>
+								<td><div><a href="#none" class="t_hover">311-88-00892</a></div></td><!-- 2019-08-02 t_hover 클래스 추가 -->
+								<td><div><a href="#none" class="t_hover">신영훈</a></div></td><!-- 2019-08-02 t_hover 클래스 추가 -->
+								<td>051-879-7188</td>
+								<td><div>2018-11-11 09:22</div></td>
+								<td><div>미동의</div></td>
+								<td><div class="tx_ellipsis_max"></div></td>
+								<td><div>
+									<a href="#none">미동의</a>
+								</div></td>
+								<td><div>이과장</div></td>
+								<td>
+									<div style="position:relative;z-index:1;">
+										<div class="ico_ly_wrap"><a class="ico_memo color_white" href="#none" data="memoN"><span class="blind">메모</span></a></div>
+									</div>
+								</td>
+								<td><div>
+									<a href="#none"><img src="../img/txof/ico/ico_serp_on.png" alt=""></a>
+									<a href="#none"><img src="../img/txof/ico/ico_semo_on.png" alt=""></a><!-- 수임처 개선 -->
+									<a href="#none"><img src="../img/txof/ico/ico_divide.png" alt=""></a><!-- 수임처 개선 -->
+								</div></td>
+								<td><div></div></td>
+							</tr>
+							<tr>
+								<td><div class="tac"><input type="checkbox"></div></td>
+								<td><div style="position:relative;"><!-- [D] 말줄임 처리 class= tx_ellipsis_max3 -->
+									<a href="#none" class="t_hover tx_ellipsis_max3" title="(주)하나인더스트리">(주)하나인더스트리</a>
+								</div></td>
+								<td><div><a href="#none" class="t_hover">311-88-00892</a></div></td><!-- 2019-08-02 t_hover 클래스 추가 -->
+								<td><div><a href="#none" class="t_hover">신영훈</a></div></td><!-- 2019-08-02 t_hover 클래스 추가 -->
+								<td>051-879-7188</td>
+								<td><div>2018-11-11 09:22</div></td>
+								<td><div>미동의</div></td>
+								<td><div class="tx_ellipsis_max"></div></td>
+								<td><div style="position:relative;">
+									<a href="#none">미동의</a>
+								</div></td>
+								<td><div>이과장</div></td>
+								<td>
+									<div style="position:relative;z-index:1;">
+										<div class="ico_ly_wrap">
+											<a class="ico_memo color_white" href="#none" data="memoN"><span class="blind">메모</span></a>
+										</div>
+									</div>
+								</td>
+								<td><div>
+									<a href="#none"><img src="../img/txof/ico/ico_serp_on.png" alt=""></a>
+									<a href="#none"><img src="../img/txof/ico/ico_semo_on.png" alt=""></a><!-- 수임처 개선 -->
+									<a href="#none"><img src="../img/txof/ico/ico_divide.png" alt=""></a><!-- 수임처 개선 -->
+								</div></td>
+								<td><div></div></td>
+							</tr>
+							<tr>
+								<td><div class="tac"><input type="checkbox"></div></td>
+								<td><div style="position:relative;"><!-- [D] 말줄임 처리 class= tx_ellipsis_max3 -->
+									<a href="#none" class="t_hover tx_ellipsis_max3" title="(주)하나인더스트리">(주)하나인더스트리</a>
+								</div></td>
+								<td><div><a href="#none" class="t_hover">311-88-00892</a></div></td><!-- 2019-08-02 t_hover 클래스 추가 -->
+								<td><div><a href="#none" class="t_hover">신영훈</a></div></td><!-- 2019-08-02 t_hover 클래스 추가 -->
+								<td>051-879-7188</td>
+								<td><div>2018-11-11 09:22</div></td>
+								<td><div>미동의</div></td>
+								<td><div class="tx_ellipsis_max"></div></td>
+								<td><div><a href="#none">동의요청</a></div></td>
+								<td><div>이과장</div></td>
+								<td>
+									<div style="position:relative;z-index:1;">
+										<div class="ico_ly_wrap">
+											<a class="ico_memo color_white" href="#none" data="memoN"><span class="blind">메모</span></a>
+										</div>
+									</div>
+								</td>
+								<td><div style="position:relative;">
+									<a href="#none"><img src="../img/txof/ico/ico_serp_on.png" alt=""></a>
+									<a href="#none"><img src="../img/txof/ico/ico_semo_off.png" alt=""></a><!-- 수임처 개선 -->
+									<a href="#none"><img src="../img/txof/ico/ico_divide.png" alt=""></a><!-- 수임처 개선 -->
+									<!-- 수임처 개선 -->
+									<!-- layer (세모장부 tip) -->
+									<div class="layertype1" style="display:;top:-2px;left:-245px;width:auto;z-index:2;padding:0;*padding:0;">
+										<div class="toptail_layer" style="padding:0;*padding:0;">
+											<span class="tail rgt" style="right:-7px;top:9px;"></span>
+											<div style="padding:10px;line-height:17px;">
+												<span class="ico_tip">세모장부를 사용중인 업체는 파란색으로<br> 표시됩니다.</span>
+											</div>
+										</div>
+									</div>
+									<!-- //layer (세모장부 tip) -->
+								</div></td>
+								<td><div></div></td>
+							</tr>
+							<tr>
+								<td><div class="tac"><input type="checkbox"></div></td>
+								<td><div style="position:relative;"><!-- [D] 말줄임 처리 class= tx_ellipsis_max3 -->
+									<a href="#none" class="t_hover tx_ellipsis_max3" title="(주)하나인더스트리">(주)하나인더스트리</a>
+								</div></td>
+								<td><div><a href="#none" class="t_hover">311-88-00892</a></div></td><!-- 2019-08-02 t_hover 클래스 추가 -->
+								<td><div><a href="#none" class="t_hover">신영훈</a></div></td><!-- 2019-08-02 t_hover 클래스 추가 -->
+								<td>051-879-7188</td>
+								<td><div>2018-11-11 09:22</div></td>
+								<td><div>미동의</div></td>
+								<td><div class="tx_ellipsis_max"></div></td>
+								<td><div><a href="#none">미동의</a></div></td>
+								<td><div>이과장</div></td>
+								<td>
+									<div style="position:relative;z-index:1;">
+										<div class="ico_ly_wrap">
+											<a class="ico_memo color_white" href="#none" data="memoN"><span class="blind">메모</span></a>
+										</div>
+									</div>
+								</td>
+								<td><div>
+									<a href="#none"><img src="../img/txof/ico/ico_serp_on.png" alt=""></a>
+									<a href="#none"><img src="../img/txof/ico/ico_semo_on.png" alt=""></a><!-- 수임처 개선 -->
+								</div></td>
+								<td><div></div></td>
+							</tr>
+							<tr>
+								<td><div class="tac"><input type="checkbox"></div></td>
+								<td><div style="position:relative;"><!-- [D] 말줄임 처리 class= tx_ellipsis_max3 -->
+									<a href="#none" class="t_hover tx_ellipsis_max3" title="(주)하나인더스트리">(주)하나인더스트리</a>
+								</div></td>
+								<td><div><a href="#none" class="t_hover">311-88-00892</a></div></td><!-- 2019-08-02 t_hover 클래스 추가 -->
+								<td><div><a href="#none" class="t_hover">신영훈</a></div></td><!-- 2019-08-02 t_hover 클래스 추가 -->
+								<td>051-879-7188</td>
+								<td><div>2018-11-11 09:22</div></td>
+								<td><div>미동의</div></td>
+								<td><div class="tx_ellipsis_max"></div></td>
+								<td><div><a href="#none">미동의</a></div></td>
+								<td><div>이과장</div></td>
+								<td>
+									<div style="position:relative;z-index:1;">
+										<div class="ico_ly_wrap">
+											<a class="ico_memo color_white" href="#none" data="memoN"><span class="blind">메모</span></a>
+										</div>
+									</div>
+								</td>
+								<td><div>
+									<a href="#none"><img src="../img/txof/ico/ico_serp_on.png" alt=""></a>
+									<a href="#none"><img src="../img/txof/ico/ico_semo_on.png" alt=""></a><!-- 수임처 개선 -->
+								</div></td>
+								<td><div></div></td>
+							</tr>
+							<tr>
+								<td><div class="tac"><input type="checkbox"></div></td>
+								<td><div style="position:relative;"><!-- [D] 말줄임 처리 class= tx_ellipsis_max3 -->
+									<a href="#none" class="t_hover tx_ellipsis_max3" title="(주)하나인더스트리">(주)하나인더스트리</a>
+								</div></td>
+								<td><div><a href="#none" class="t_hover">311-88-00892</a></div></td><!-- 2019-08-02 t_hover 클래스 추가 -->
+								<td><div><a href="#none" class="t_hover">신영훈</a></div></td><!-- 2019-08-02 t_hover 클래스 추가 -->
+								<td>051-879-7188</td>
+								<td><div>2018-11-11 09:22</div></td>
+								<td><div>미동의</div></td>
+								<td><div class="tx_ellipsis_max"></div></td>
+								<td><div><a href="#none">미동의</a></div></td>
+								<td><div>이과장</div></td>
+								<td>
+									<div style="position:relative;z-index:1;">
+										<div class="ico_ly_wrap">
+											<a class="ico_memo color_white" href="#none" data="memoN"><span class="blind">메모</span></a>
+
+											<!-- 메모수정 활성 -->
+											<div class="tip_layerpopup memolyp" style="display:; top: -2px; right: 130%;" id="pop_memo">
+												<div class="tip_layerpopup_po">
+													<span class="tail"></span>
+													<!-- 메모칼라선택 -->
+													<div class="memocolor_layer">
+														<ul class="select_edit"><!-- [D] 메모선택창 오픈 - textarea활성시 -->
+															<li class="color_blue select"><span class="bg"></span><a href="#none" title="Blue"></a></li><!-- [D] 선택클래스 select -->
+															<li class="color_green "><span class="bg"></span><a href="#none" title="Green"></a></li>
+															<li class="color_yellow "><span class="bg"></span><a href="#none" title="Yellow"></a></li>
+															<li class="color_orange "><span class="bg"></span><a href="#none" title="Orange"></a></li>
+															<li class="color_red "><span class="bg"></span><a href="#none" title="Red"></a></li>
+														</ul>
+													</div>
+													<!-- //메모칼라선택 -->
+													<div class="memoeditarea">
+														<div style="display: none;">
+															<p>요청자 : 안기택<br>
+															연락처 : 031-780-9252<br>
+															사용프로그램 : 법인카드<br>
+															매우 우수 고객으로 특별한 대우가 필요함</p>
+															<div class="cboth"><strong>Update : 2017-08-28 11:12:07</strong><strong class="name">홍길동</strong></div>
+														</div>
+
+														<div style="display: block;"><!-- [D] 메모수정 활성 -->
+															<textarea cols="" rows="">메모 처음 입력시 연락처 : 031-780-9252 사용프로그램 : 법인카드 매우 우수 고객으로 특별한 대우가 필요함</textarea>
+															<div class="t_right"><a href="#none" class="btn_style_lys" onclick="document.getElementById('pop_memo').style.display='none'"><span>저장</span></a></div>
+														</div>
+													</div>
+												</div>
+											</div><!-- //메모 -->
+
+										</div>
+									</div>
+								</td>
+								<td><div>
+									<a href="#none"><img src="../img/txof/ico/ico_serp_on.png" alt=""></a>
+									<a href="#none"><img src="../img/txof/ico/ico_semo_on.png" alt=""></a><!-- 수임처 개선 -->
+								</div></td>
+								<td><div></div></td>
+							</tr>
+							<tr>
+								<td><div class="tac"><input type="checkbox"></div></td>
+								<td><div style="position:relative;"><!-- [D] 말줄임 처리 class= tx_ellipsis_max3 -->
+									<a href="#none" class="t_hover tx_ellipsis_max3" title="(주)하나인더스트리">(주)하나인더스트리</a>
+								</div></td>
+								<td><div><a href="#none" class="t_hover">311-88-00892</a></div></td><!-- 2019-08-02 t_hover 클래스 추가 -->
+								<td><div><a href="#none" class="t_hover">신영훈</a></div></td><!-- 2019-08-02 t_hover 클래스 추가 -->
+								<td>051-879-7188</td>
+								<td><div>2018-11-11 09:22</div></td>
+								<td><div>미동의</div></td>
+								<td><div class="tx_ellipsis_max"></div></td>
+								<td><div><a href="#none">미동의</a></div></td>
+								<td><div>이과장</div></td>
+								<td>
+									<div style="position:relative;z-index:1;">
+										<div class="ico_ly_wrap">
+											<a class="ico_memo color_white" href="#none" data="memoN"><span class="blind">메모</span></a>
+										</div>
+									</div>
+								</td>
+								<td><div>
+									<a href="#none"><img src="../img/txof/ico/ico_serp_on.png" alt=""></a>
+									<a href="#none"><img src="../img/txof/ico/ico_semo_on.png" alt=""></a><!-- 수임처 개선 -->
+								</div></td>
+								<td><div></div></td>
+							</tr>
+							<tr>
+								<td><div class="tac"><input type="checkbox"></div></td>
+								<td><div style="position:relative;"><!-- [D] 말줄임 처리 class= tx_ellipsis_max3 -->
+									<a href="#none" class="t_hover tx_ellipsis_max3" title="(주)하나인더스트리">(주)하나인더스트리</a>
+								</div></td>
+								<td><div><a href="#none" class="t_hover">311-88-00892</a></div></td><!-- 2019-08-02 t_hover 클래스 추가 -->
+								<td><div><a href="#none" class="t_hover">신영훈</a></div></td><!-- 2019-08-02 t_hover 클래스 추가 -->
+								<td>051-879-7188</td>
+								<td><div>2018-11-11 09:22</div></td>
+								<td><div>미동의</div></td>
+								<td><div class="tx_ellipsis_max"></div></td>
+								<td><div><a href="#none">미동의</a></div></td>
+								<td><div>이과장</div></td>
+								<td>
+									<div style="position:relative;z-index:1;">
+										<div class="ico_ly_wrap">
+											<a class="ico_memo color_white" href="#none" data="memoN"><span class="blind">메모</span></a>
+										</div>
+									</div>
+								</td>
+								<td><div>
+									<a href="#none"><img src="../img/txof/ico/ico_serp_on.png" alt=""></a>
+									<a href="#none"><img src="../img/txof/ico/ico_semo_on.png" alt=""></a><!-- 수임처 개선 -->
+								</div></td>
+								<td><div></div></td>
+							</tr>
+							<tr>
+								<td><div class="tac"><input type="checkbox"></div></td>
+								<td><div style="position:relative;"><!-- [D] 말줄임 처리 class= tx_ellipsis_max3 -->
+									<a href="#none" class="t_hover tx_ellipsis_max3" title="(주)하나인더스트리">(주)하나인더스트리</a>
+									<!-- 2019-07-15 -->
+									<!-- 레이어 -->
+									<div class="layertype1" style="bottom:27px;left:10px;z-index:1;">
+										<ul>
+											<li><a href="#none">경리나라로 접속</a></li>
+											<li><a href="#none">세모장부로 접속</a></li>
+										</ul>
+									</div>
+									<!-- //레이어 -->
+									<!-- //2019-07-15 -->
+								</div></td>
+								<td><div><a href="#none" class="t_hover">311-88-00892</a></div></td><!-- 2019-08-02 t_hover 클래스 추가 -->
+								<td><div><a href="#none" class="t_hover">신영훈</a></div></td><!-- 2019-08-02 t_hover 클래스 추가 -->
+								<td>051-879-7188</td>
+								<td><div>2018-11-11 09:22</div></td>
+								<td><div>미동의</div></td>
+								<td><div class="tx_ellipsis_max"></div></td>
+								<td><div><a href="#none">미동의</a></div></td>
+								<!-- 2019-07-29 -->
+								<td><div style="position:relative;">
+									황찬연 외 1명
+									<!-- 레이어 -->
+									<div class="layertype1" style="padding:0;bottom:27px;right:0;z-index:1;">
+										<div class="ly_inner">
+											<p>황찬연</p>
+											<p>정성훈</p>
+											<!-- <p>정성훈</p>
+											<p>정성훈</p>
+											<p>정성훈</p>
+											<p>정성훈</p> -->
+										</div>
+									</div>
+									<!-- //레이어 -->
+								</div></td>
+								<!-- //2019-07-29 -->
+								<td>
+									<div style="position:relative;z-index:1;">
+										<div class="ico_ly_wrap">
+											<a class="ico_memo color_white" href="#none" data="memoN"><span class="blind">메모</span></a>
+										</div>
+									</div>
+								</td>
+								<td><div>
+									<a href="#none"><img src="../img/txof/ico/ico_serp_on.png" alt=""></a>
+									<a href="#none"><img src="../img/txof/ico/ico_semo_on.png" alt=""></a><!-- 수임처 개선 -->
+								</div></td>
+								<td><div></div></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- //리스트 테이블 -->
+
+				<!-- Paging wrap -->
+				<div class="paging_wrap">
+					<!-- combo -->
+					<div class="combo_wrap">
+						<div class="combo_style">
+							<a href="#none" class="btn_style btn_combo_down"><span>12</span></a>
+							<ul class="up" style="display: none;">
+								<li><a href="#none">200</a></li>
+								<li><a href="#none">150</a></li>
+								<li><a href="#none">100</a></li>
+								<li><a href="#none">50</a></li>
+								<li><a href="#none">12</a></li>
+							</ul>
+						</div>
+					</div>
+					<!-- //combo -->
+					<!-- pagination -->
+					<div class="paging"><!-- [D] 비활성상태는 on class 제거 -->
+						<a href="#none" class="btn_pag_cntr first"><span class="blind">first</span></a><a href="#none" class="btn_pag_cntr prev"><span class="blind">previous</span></a>
+						<span class="pag_num">
+							<a href="#none" class="on">1</a>
+						</span>
+						<a href="#none" class="btn_pag_cntr next on"><span class="blind">next</span></a><a href="#none" class="btn_pag_cntr last on"><span class="blind">last</span></a>
+					</div>
+					<!-- //pagination -->
+					<!-- unit 
+					<div class="unit_wrap">
+						<span class="txt_unit">총 25건 / 6,000,000원</span>
+					</div>
+					<!-- //unit -->
+				</div>
+				<!-- //Paging wrap -->
+
+			</div>
+		</div>
+		<!-- //content wrap -->
+	</div>
+	<!-- //Container -->
+</div>
+<!-- //wrap -->
+
+</body>
+</html>
+

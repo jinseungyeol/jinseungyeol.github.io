@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>vwmr_banr_001_1</title>
+    <link rel="stylesheet" href="../../css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../../css/mobiscroll.jquery.min.css">
+    <link rel="stylesheet" href="../../css/semoR_base.css">
+    <link rel="stylesheet" href="../../css/semoR_common.css">
+    <link rel="stylesheet" href="../../css/semoR_style.css">
+    <link rel="stylesheet" href="../../css/semoR_rept.css">
+  <script src="../../js/jquery-3.5.1.min.js"></script>
+    <script src="../../js/jquery-ui.min.js"></script>
+    <script src="../../js/swiper-bundle.min.js"></script>
+    <script src="../../js/mobiscroll.jquery.min.js"></script>
+    <script src="../../js/semoR_ui.js"></script>
+</head>
+
+<script>
+    $(document).ready(function () {
+        slidePop(this);
+    });
+</script>
+
+<body>
+    <!-- wrapper -->
+    <div class="wrapper">
+        <!-- header -->
+        <div class="header">
+            <h1 class="subTit">슬라이드팝업(slidePop)</h1>
+            <ul class="topMenu">
+                <li class="left">
+                    <a class="btnBack" href="javascript:;" role="button"><span class="blind">뒤로가기</span></a>
+                </li>
+            </ul>
+        </div>
+        <!-- //header -->
+    </div>
+    <!-- //wrapper -->
+
+    <div class="popWrap slidePop wide">
+        <div class="dim" onclick="popdimClose(this);return false;">클릭시 팝업 닫힘</div>
+        <div class="popInner">
+            <div class="popTit">
+                <a href="javascript:;" class="btnPopClose" onclick="popClose(this);return false;" title="팝업닫기" role="button"></a>
+            </div>
+            <div class="popCont">
+                <div class="areaBannerImg">
+                    <img src="../../img/banner_review.png" alt="이용후기" class="bannerImg">
+                </div>
+                <div class="benefit">
+                    <div class="item">
+                        <strong>혜택1 :</strong>
+                        <span class="defTxt02">사장님 매장 홍보영상 제작 (100만원 상당)</span>
+                    </div>
+                    <div class="item">
+                        <strong>혜택2 :</strong>
+                        <span class="defTxt02">삼성 공기청정기 제공 (50만원 상당)</span>
+                    </div>
+                </div>
+                <div class="accorToggleList">
+                    <li>
+                        <a href="javascript:;" class="accordionToggle">
+                            <span class="infoTxt">개인정보 수집 및 마케팅 정보 수신</span>
+                        </a>
+                        <div class="accordionToggleWrap">
+                            <div class="roundBoxWrap type02">
+                                <div class="roundBox">
+                                    <ul class="qnaList">
+                                        <li>
+                                            <div class="areaAnswer">
+                                                <p class="defTxt02">
+                                                    로움아이티㈜는 우수고객사례를 통한 컨텐츠 제작에 
+                                                    희망하는 신청자를 대상으로 아래와 같이 개인정보를 
+                                                    수집합니다. 수집한 개인정보는 우수고객사례 신청 접
+                                                    수와 진행을 위해서만 이용되며, ‘개인정보보호법’ 등 
+                                                    관계 법령에 의하여 안전하게 관리됩니다. 
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="areaAnswer">
+                                                <p class="defTxt02">
+                                                    아래의 개인정보 수집은 우수고객사례 접수 및 연락을 
+                                                    위한 기본적인 내용으로 이를 거부하실 경우, 본 우수
+                                                    고객사례 이벤트 신청이 불가능합니다. 1. 수집하는 
+                                                    개인정보 항목 - 사업장명, 사업자번호, 성함, 핸드폰
+                                                    번호,  2. 개인정보의 수집 및 이용목적 - 우수고객
+                                                    사례 신청 접수를 위한 정보의 확보 - 우수고객사례 
+                                                    컨텐츠 제작을 위한 정보의 확보 - 컨텐츠 제작 후 추가 
+                                                    혜택(사은품) 제공을 위한 기록보전 3. 개인정보의 이
+                                                    용기간 - 우수고객사례 컨텐츠 제작 기간동안 - 종료 
+                                                    후 별도의 요청이 없는 경우 자동갱신됩니다.
+                                                </p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="accordionToggle">
+                            <span class="infoTxt">사진 및 영상 촬영 동의</span>
+                        </a>
+                        <div class="accordionToggleWrap">
+                            <div class="roundBoxWrap type02">
+                                <div class="roundBox">
+                                    <ul class="qnaList">
+                                        <li>
+                                            <div class="areaAnswer">
+                                                <p class="defTxt02">
+                                                    인터뷰 장면 사진 및 영상으로 세모리포트 홈페이지 
+                                                    및 공식 SNS 그 외 채널에서 세모리포트 안내/홍보 
+                                                    컨텐츠에 사용됩니다. 
+                                                </p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </div>
+            </div>
+            <div class="popBtnWrap">
+                <button type="button" class="btnNotFocus flex3_5">취소</button>
+                <button type="button" class="btnPointBg pointBgColor">신청하기</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

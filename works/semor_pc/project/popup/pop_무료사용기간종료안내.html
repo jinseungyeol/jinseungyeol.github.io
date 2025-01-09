@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<title>무료사용기간종료안내</title>
+<link rel="stylesheet" href="../css/reset_taxp.css">
+<link rel="stylesheet" href="../css/app_header.css"><!-- [D] 세무대리인용 header -->
+<link rel="stylesheet" href="../css/content_taxp.css"><!-- [D] 세무대리인용 -->
+
+<!-- custom scrollbar plugin css -->
+<link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+<script src="https://publ.roumit.com/js/firebase_include.js"></script>
+<script src="../js/lib/jquery/jquery-1.12.4.min.js"></script>
+<script src="../js/lib/jquery/jquery-ui-1.10.4.min.js"></script>
+<!-- custom scrollbar plugin -->
+<script src="../js/design/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../js/design/jquery.placeholder.min.js"></script>
+<script src="../js/lib/plugin/smart.popup.js"></script>
+<script src="../js/comm/common.js"></script>
+<style>
+	body, p {margin: 0;}
+	ul {padding: 0;}
+	li {list-style: none;}
+	.pop_wrap, .pop_wrap .pop_container {all: unset;}
+	.pop_container .free_end {display: flex; justify-content: center; align-items: center; height: 100vh; box-sizing: border-box; background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(238,244,255,1) 100%); text-align: center;}
+	.pop_container .free_end.has_header {height: calc(100vh - 45px);} /* 2024-12-13 */
+	.pop_container .free_end .fe_tit strong {font-size: 32px; color: #3049FF; font-weight: bold;}
+	.pop_container .free_end .fe_tit strong.black_tit {color: #222;}/* 2024-11-28 */
+	.pop_container .free_end .fe_txt_box {margin: 20px 0 40px;}/* 2024-11-28 */
+	.pop_container .free_end .fe_txt_box p {font-size: 24px; font-weight: bold; color: #222; line-height: 1.5;}
+	.pop_container .free_end .fe_txt_box .gr_txt {display: block; margin-top: 24px; font-size: 16px; color: #848484; font-weight: bold;}
+	/* 2024-11-28 */
+	.pop_container .free_end .fe_box_list {display: flex;}
+	.pop_container .free_end .fe_box_list > li {width: 320px; padding: 40px; box-sizing: border-box; background: #fff; border-radius: 20px; box-shadow: 0 0 16px 4px rgba(0,0,0,0.08);}
+	.pop_container .free_end .fe_box_list > li + li {margin-left: 20px;}
+	.pop_container .free_end .fe_box_list > li .product_txt {margin-top: 16px;}
+	.pop_container .free_end .fe_box_list > li .product_txt strong {font-size: 28px; font-weight: 600; color: #202020;}
+	.pop_container .free_end .fe_box_list > li .product_txt p {margin-top: 20px;}
+	.pop_container .free_end .fe_box_list > li .product_txt p span {display: block; font-weight: 600; font-size: 16px; color: #7c7c7c;}
+	.pop_container .free_end .fe_box_list > li .btn_style1_b {margin-top: 40px;}
+	.pop_container .free_end .fe_box_wrap .info_txt {margin-top: 40px; font-size: 20px; font-weight: 600; color: #8a8a8b;}
+	/* //2024-11-28 */
+	.pop_container .free_end .btn_area a {display: block; margin: 0 auto;}
+	.pop_container .free_end .btn_area .b_under {width: fit-content; margin: 30px auto 0; color: #ADAEB2; font-size: 16px; font-weight: bold; text-decoration: underline;} 
+
+	/* 2024-12-13 */
+	.pop_container .free_end .btn_style1_b {all: unset; display: inline-block; width: 240px; height: 60px; font-size: 18px; line-height: 60px; color: #fff; border-radius: 12px; font-weight: bold; background: linear-gradient(90deg, rgba(53,21,237,1) 0%, rgba(151,21,237,1) 100%); text-align: center; cursor: pointer;}
+	.pop_container .free_end .btn_style1_b span {all: unset; color: #fff;}
+</style>
+</head>
+
+<body>
+
+<div class="pop_wrap">
+
+	<!-- 팝업 컨텐츠 -->
+	<div class="pop_container">
+
+		<div class="free_end">
+			<div class="tac">
+				<div class="fe_tit">
+					<strong class="black_tit">위멤버스 1개월 무료 사용기간 종료 안내</strong>
+				</div>
+				<div class="fe_txt_box">
+					<span class="gr_txt">우리 세무사무소에 맞는 회원 서비스로 지금 바로 시작해보세요.</span>
+				</div>
+				<div class="fe_box_wrap">
+					<ul class="fe_box_list">
+						<li>
+							<img src="../img/txof/ico/ico_rect_wemembers.svg" alt="위멤버스">
+							<div class="product_txt">
+								<strong>위멤버스</strong>
+								<p>
+									<span>위멤버스 유료회원으로</span>
+									<span>신청합니다.</span>
+								</p>
+							</div>
+							<a href="#none" class="btn_style1_b">
+								<span>신청하러 가기</span>
+							</a>
+						</li>
+						<li>
+							<img src="../img/txof/ico/ico_rect_semoreprot.svg" alt="세모리포트">
+							<div class="product_txt">
+								<strong>세모리포트</strong>
+								<p>
+									<span>위멤버스 무료 체험을 유지하며</span>
+									<span>세모리포트를 신청합니다.</span>
+								</p>
+							</div>
+							<a href="#none" class="btn_style1_b">
+								<span>신청하러 가기</span>
+							</a>
+						</li>
+					</ul>
+					<p class="info_txt">※ 서비스 신청은 관리자만 가능합니다.</p>
+				</div>
+				<div class="btn_area">
+					<a href="#none" class="b_under">닫기</a>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<!-- //팝업 컨텐츠 -->
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="../css/aos.css">
+  <link rel="stylesheet" href="../css/reset_taxp.css">
+  <link rel="stylesheet" href="../css/semoR_vat.css">
+  <script src="https://publ.roumit.com/js/firebase_include.js"></script>
+  <script src="../js/lib/jquery/jquery-1.12.4.min.js"></script>
+  <script src="../js/lib/plugin/aos.js"></script>
+  <title>부가세 절세 진단서비스</title>
+</head>
+<body>
+  <!-- wrapper -->
+  <div class="wrapper">
+    <!-- container -->
+    <div class="container">
+      <div class="savingWrap">
+        <div class="inner">
+          <div class="areaTit">
+            <h1 class="defTit">
+              <span>부가세 절세</span>
+              <span>진단서비스</span>
+            </h1>
+            <p>
+              <span>사장님의 숨겨진 세금</span>
+              <span>절세 가능금액을 찾아드립니다.</span>
+            </p>
+          </div>
+          <!-- certiForm -->
+          <form id="certiForm" novalidate>
+            <div class="busiNum mobile"> <!-- active 클래스 추가시 simpleCerti노출, mobile 클래스 추가 시 입력창 hide -->
+              <div>
+                <p class="formTit">사업자번호</p>
+                <input type="tel" name="BIZ_NO" placeholder="000-00-00000" maxlength="12">
+              </div>
+              <button type="button" class="">사업자 인증</button> <!-- active 클래스 추가시 버튼 활성화 -->
+            </div>
+            <div class="simpleCerti">
+              <div class="agree">
+                <p class="formTit">인증 및 세무컨설팅 개인정보 활용 동의</p>
+                <ul class="checkList">
+                  <li>
+                    <div>
+                      <label>
+                        <input type="checkbox">
+                        <span>개인정보 수집이용 동의 (필수)</span>
+                      </label>
+                      <a href="javascript:;">
+                        <img src="../img/homepage/ico_ts_right_gray.png" alt="개인정보 수집이용 동의 이동">
+                      </a>
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <label>
+                        <input type="checkbox">
+                        <span>마케팅 활용 동의 (필수)</span>
+                      </label>
+                      <a href="javascript:;">
+                        <img src="../img/homepage/ico_ts_right_gray.png" alt="마케팅 활용 동의 이동">
+                      </a>
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <label>
+                        <input type="checkbox">
+                        <span>마케팅 활용 수신 동의 (필수)</span>
+                      </label>
+                      <a href="javascript:;">
+                        <img src="../img/homepage/ico_ts_right_gray.png" alt="마케팅 활용 수신 동의 이동">
+                      </a>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="inputWrap">
+                <p>
+                  사장님의 부가세 절세 가능금액 조회를 위해 <strong>본인인증을 진행합니다</strong>
+                </p>
+                <div class="inputBox">
+                  <input type="text" placeholder="이름" maxlength="100">
+                </div>
+                <div class="telBox">
+                  <div class="inputBox">
+                    <input type="tel" name="APPL_CNTC" maxlength="13" placeholder="휴대폰번호 입력 (‘-’ 제외)">
+                  </div>
+                </div>
+              </div>
+              <div class="btnWrap">
+                <button type="submit" class="btnBgBlue02">부가세 절세진단 실행</button> <!-- active 클래스 추가시 버튼활성화 -->
+              </div>
+            </div>
+            <div class="pcOnly">
+              <p class="pointTxt">
+                <span>법인 사업자는 </span>
+                <span>PC에서만 진행 가능합니다.</span>
+              </p>
+              <p>
+                <span>기업용 공동인증서가 등록된</span>
+                <span>컴퓨터에서 접속해주세요 !</span>
+              </p>
+            </div>
+          </form>
+          <!-- //certiForm -->
+        </div>
+      </div>
+    </div>
+    <!-- //container -->
+  </div>
+  <!-- //wrapper -->
+
+  <script>
+    // 사업자번호 하이픈 자동생성
+    $('input[name="BIZ_NO"]').on('input', function () {
+      var autoHypen = $(this).val().replace(/[^0-9]/g, '').replace(/^(\d{0,3})(\d{0,2})(\d{0,5})$/g, '$1-$2-$3').replace(/-{1,2}$/g, '');
+
+      $(this).val(autoHypen);
+    })
+    // 연락처 하이픈 자동생성
+    $('input[name="APPL_CNTC"]').on('input', function () {
+      var autoHypen = $(this).val().replace(/[^0-9]/g, '').replace(/^(\d{0,3})(\d{0,4})(\d{0,4})$/g, "$1-$2-$3").replace(/(\-{1,2})$/g, "");
+
+      $(this).val(autoHypen);
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<title>실적현황</title>
+<link rel="stylesheet" href="../css/reset_taxp.css">
+<link rel="stylesheet" href="../css/app_header.css"><!-- [D] 세무대리인용 header -->
+<link rel="stylesheet" href="../css/swiper-bundle.min.css"> <!-- 스와이퍼 슬라이드 -->
+<link rel="stylesheet" href="../css/content_taxp.css"><!-- [D] 세무대리인용 -->
+
+<!-- 스와이퍼 슬라이드 -->
+<script src="https://publ.roumit.com/js/firebase_include.js"></script>
+  <script src="../js/lib/swiper/swiper-bundle.min.js"></script>
+<!-- custom scrollbar plugin css -->
+<link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+<!-- custom scrollbar plugin -->
+<script src="../js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../js/jquery.placeholder.min.js"></script>
+
+</head>
+
+<body>
+
+	<div class="statusSwiper">
+		<div class="contWrap swiper-wrapper">
+			<!-- statusWrap -->
+			<div class="statusWrap swiper-slide">
+				<div class="bg"></div>
+				<div class="inner">
+					<div class="content">
+						<div class="areaTit cboth">
+							<div class="top">
+								<button type="button" class="btnReload">
+									<h1>
+										세모리포트 실적현황
+									</h1>
+									<img src="../img/txof/ico/ico_reload.png" alt="">
+								</button>
+								<select id="refresh_1">
+									<option value="">없음</option>
+									<option value="">5분</option>
+									<option value="">10분</option>
+									<option value="">30분</option>
+								</select>
+							</div>
+							<div class="bottom">
+								<p>세무사무소 전용 프리미엄 앱</p>
+								<span class="SEARCH_REPORT_DATE">2022년 12월 13일(화)</span>
+							</div>
+						</div>
+		
+						<div class="areaData">
+							<div class="cell">
+								<div class="roundBox">
+									<h2 class="tit">Total <span class="standard">(설치기준)</span></h2>
+									<div class="txt">
+										<p class="count">0</p>
+										<div class="progressBar">
+											<div class="currentBar" style="width: 42%"></div>
+										</div>
+									</div>
+								</div>
+								<div class="roundBox">
+									<h2 class="tit">Today <span class="standard">(설치기준)</span></h2>
+									<div class="txt">
+										<p class="count">0</p>
+										<!-- + 시 plus클래스로 변경 -->
+										<p class="change minus">-10</p>
+									</div>
+								</div>
+								<div class="roundBox">
+									<h2 class="tit">YesterDay <span class="standard">(설치기준)</span></h2>
+									<div class="txt">
+										<p class="count">0</p>
+									</div>
+								</div>
+							</div>
+							<div class="cell">
+								
+							</div>
+							<div class="cell">
+								<div class="accordionWrap">
+									<div class="roundBox semo">
+										<h2 class="tit">가입 세무사 현황</h2>
+										<div class="txt">
+											<ul class="dataList">
+												<li>
+													<strong>Total</strong>
+													<p>0</p>
+												</li>
+												<li>
+													<strong>Today</strong>
+													<p>0</p>
+												</li>
+												<li>
+													<strong>YesterDay</strong>
+													<p>0</p>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class="accordionToggleWrap">
+										<div class="roundBox semo">
+											<div class="tblWrap">
+												<table class="tblData">
+													<colgroup>
+														<col>
+														<col width="15%">
+														<col width="15%">
+														<col width="15%">
+													</colgroup>
+													<thead>
+														<th></th>
+														<th>Total</th>
+														<th>Today</th>
+														<th>YesterDay</th>
+													</thead>
+													<tbody>
+														<td class="name">세무법인 청년들</td>
+														<td>1</td>
+														<td>1</td>
+														<td>1</td>
+													</tbody>
+													<tbody>
+														<td class="name">김조겸 스타세무회계</td>
+														<td>1</td>
+														<td>1</td>
+														<td>1</td>
+													</tbody>
+													<tbody>
+														<td class="name">세무법인 세청</td>
+														<td>1</td>
+														<td>1</td>
+														<td>1</td>
+													</tbody>
+													<tbody>
+														<td class="name">늘친절한 세무사</td>
+														<td>1</td>
+														<td>1</td>
+														<td>1</td>
+													</tbody>
+													<tbody>
+														<td class="name">사장님최고 세무사</td>
+														<td>1</td>
+														<td>1</td>
+														<td>1</td>
+													</tbody>
+												</table>
+											</div>
+											<div class="areaBodyBtn">
+												<button class="btnMore">
+													더보기
+												</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- //statusWrap -->
+			<!-- statusWrap -->
+			<div class="statusWrap swiper-slide">
+				<div class="bg"></div>
+				<div class="inner">
+					<div class="content">
+						<div class="areaTit cboth">
+							<div class="top">
+								<button type="button" class="btnReload">
+									<h1>
+										세모리포트 실적현황
+									</h1>
+									<img src="../img/txof/ico/ico_reload.png" alt="">
+								</button>
+								<select id="refresh_1">
+									<option value="">없음</option>
+									<option value="">5분</option>
+									<option value="">10분</option>
+									<option value="">30분</option>
+								</select>
+							</div>
+							<div class="bottom">
+								<p>소상공인 사장님과 세무사님의 미소는 우리의 행복입니다.</p>
+								<span class="SEARCH_REPORT_DATE">2022년 12월 13일(화)</span>
+							</div>
+						</div>
+		
+						<div class="areaData">
+							<div class="cell">
+								<div class="roundBox">
+									<h2 class="tit">Total</h2>
+									<div class="txt">
+										<p class="count">0</p>
+										<div class="progressBar">
+											<div class="currentBar" style="width: 42%"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="cell">
+								<div class="roundBox">
+									<h2 class="tit">Total</h2>
+									<div class="txt">
+										<p class="count">0</p>
+										<!-- + 시 plus클래스로 변경 -->
+										<p class="change minus">-10</p>
+									</div>
+								</div>
+								<div class="roundBox">
+									<h2 class="tit">YesterDay</h2>
+									<div class="txt">
+										<p class="count">0</p>
+									</div>
+								</div>
+							</div>
+							<div class="cell">
+								<div class="roundBox">
+									<h2 class="tit">최근가입</h2>
+									<div class="txt">
+										<span class="join">가입자1, 가입자2, 가입자3</span>
+									</div>
+								</div>
+							</div>
+							<div class="cell">
+								<div class="roundBox semo">
+									<h2 class="tit">세무사</h2>
+									<div class="txt">
+										<ul class="dataList">
+											<li>
+												<strong>Total</strong>
+												<p>0</p>
+											</li>
+											<li>
+												<strong>Today</strong>
+												<p>0</p>
+											</li>
+											<li>
+												<strong>YesterDay</strong>
+												<p>0</p>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="roundBox ione">
+									<h2 class="tit">수임처</h2>
+									<div class="txt">
+										<ul class="dataList">
+											<li>
+												<strong>Total</strong>
+												<p>0</p>
+											</li>
+											<li>
+												<strong>Today</strong>
+												<p>0</p>
+											</li>
+											<li>
+												<strong>YesterDay</strong>
+												<p>0</p>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- //statusWrap -->
+
+		</div>
+	</div>
+	<div class="swiper-button-next"></div>
+	<div class="swiper-button-prev"></div>
+
+	<script>
+		var swiper = new Swiper(".statusSwiper", {
+			effect: 'fade',
+			// autoplay: true,
+			navigation: {
+				nextEl: ".swiper-button-next",
+				prevEl: ".swiper-button-prev",
+			},
+		});
+
+		$(".accordionWrap .tit").on('click', function() {
+			$(this).toggleClass('active');
+			$(this).parent('.roundBox').siblings('.accordionToggleWrap').stop().slideToggle()
+		})
+	</script>
+
+</body>
+</html>
+

@@ -1,0 +1,593 @@
+@charset "utf-8";
+
+/* 리포트 rprt_list_001 */
+.reportList {margin-bottom: 20px}
+.reportList li {position: relative; padding: 20px 0; border-top: 1px solid #c8c8c8}
+.reportList li:last-child {border-bottom: 1px solid #e1e1e1}
+.reportList li .rCont {float: right}
+.reportList li .reportCont .defTit {display: inline-block; margin: 11px 0 10px; font-weight: 600; font-size: 1.266rem}
+.reportList li .reportCont .defTit .badge {width: 38px; margin-left: 8px; height: 19px; font-size: 0.8rem; line-height: 18px; font-weight: 500}
+
+/* 리포트 상세 rprt_dtls_002 */
+.reportMsgList > li {padding: 10px 0}
+.reportMsgList > li .defTxt {word-break: keep-all}
+.areaStateMsg {margin: 20px 0; text-align: right}
+
+/* 리포트 첫 인사 rprt_dtls_001 */
+.welcomeList > li {padding-bottom: 70%; border-bottom: 5px solid #f6f6f6; background: no-repeat right bottom 10px / 68.75% auto}
+.welcomeList > li:last-child {border: none}
+.welcomeList > li.list01 {background-image: url(../img/img_welcome02.png)}
+.welcomeList > li.list01 .defTit {width: fit-content; padding-top: 8px}
+.welcomeList > li.list01 .defTit::before {content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background-color: #12997a}
+.welcomeList > li.list02 {background-image: url(../img/img_welcome03.png)}
+.welcomeList > li.list03 {background-image: url(../img/img_welcome04.png)}
+.welcomeList > li.list04 {background-image: url(../img/img_welcome05.png)}
+.welcomeList > li.list05 {background-image: url(../img/img_welcome06.png)}
+.welcomeList > li.list06 {padding: 130px 0; margin: 0 -20px -20px -20px; background-color: #17bf98}
+.welcomeList > li.list06 .defTit {margin: 0; text-align: center; color: #fff}
+
+/* 리포트 상세 rprt_dtls_009 */
+.reportPayList li .txt {position: relative; display: inline-block; margin-left: 8px; padding-left: 16px;}
+.reportPayList li .txt::before {content: 'ㄴ'; position: absolute; left: 0; top: 0}
+
+/* 더보기 */
+.areaFootBanner {position: fixed; left: 0; bottom: 73px; width: 100%; padding: 0 20px 20px}
+.areaFootBanner div {background: red; height: 80px; text-align: center; line-height: 80px;}
+
+/* areaFilter */
+.areaFilter + .accTransferList > li h4.defTit {margin-top: 0}
+
+/* 세무탭 tax_tab_001 */
+.taxMenuList {display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; margin-top: 13px}
+.taxMenuList > li {flex: 0 0 calc(50% - 8px); border: 1px solid #ebeff3; border-radius: 16px; background: #fafafa}
+.taxMenuList .moveLink {display: block; padding: 1.25rem}
+.taxMenuList .moveLink .imgTaxTab {width: 36px}
+.taxMenuList .moveLink h4.defTit {margin: 15px 0 7px}
+.taxMenuList .moveLink .defTxt02 {display: inline-block; line-height: 16px}
+
+/* 종합소득세 tax_ictx_001 */
+.ictxVisual .defTit {color: #6a6a6a}
+.ictxVisual img {display: block; width: 180px; margin: 90px auto 73px; text-align: center}
+.noticeBox .titLine {height: 1px; margin: 15px 0; border: none; background: #222}
+
+/* 종합소득세 tax_ictx_003 */
+.ictxTab {padding: 35px 0 30px}
+.ictxTab .list {display: flex; justify-content: space-around}
+.ictxTab .list li {text-align: center}
+.ictxTab .list li p {font-size: 1.133rem}
+.ictxTab .list li .num {font-size: 1.533rem; font-weight: 600; color: #6a6a6a}
+.ictxList {padding: 30px 20px 100px}
+.ictxList.bgGrayCnt {margin-bottom: -20px}
+.ictxList .accordionToggle::after {right: 20px; background-image: url(../img/ico_ts_down.png)}
+.ictxList .depth01 > li {background: #fff; border-radius: 8px}
+.ictxList .depth01 > li + li {margin-top: 12px}
+.ictxList .depth01 > li > .accordionToggle {padding: 20px}
+.ictxList .depth01 > li > .accordionToggle .tit {font-size: 1.4rem; font-weight: 600}
+.ictxList .depth01 > li > .accordionToggle .tit .order {margin-right: 8px}
+.ictxList .depth01 > li > .accordionToggleWrap {padding: 0 20px 20px}
+.ictxList .depth02 {padding-top: 23px; border-top: 1px solid #c1c1c1}
+.ictxList .depth02 > li + li {margin-top: 24px}
+.ictxList .depth02 > li .tit {padding-left: 30px; font-size: 1.133rem}
+.ictxList .depth02 > li.error .tit {background: url(../img/ico_error.png) no-repeat left center / 18px}
+.ictxList .depth02 > li.complete > .accordionToggle,
+.ictxList .depth02 > li.error > .accordionToggle {background-position: right center; background-size: 11px}
+.ictxList .depth02 > li > .accordionToggle::after {background-size: 11px; right: 0}
+.ictxList li.proof .depth02 > li .tit {background: url(../img/ico_check.png) no-repeat left center / 18px; color: #c7c7c7}
+.ictxList li .depth02 > li.complete .tit {background: url(../img/ico_check_on.png) no-repeat left center / 18px; color: #111}
+.ictxList .depth02 .defTxt02 {margin: 8px 0; font-size: 0.933rem}
+.ictxList .depth02 .btnLink {color: #0088ff; text-decoration: underline}
+.ictxList li.history .depth02 .dataList li.error .infoArea .ico i {background-image: url(../img/ico_error.png)}
+.ictxList .infoArea {margin-bottom: 15px}
+.ictxList .infoArea .ico + .cont {padding-left: 6px}
+.ictxList .infoArea.acc .ico i {width: 15px; height: 15px}
+.ictxList .infoArea.card .ico i {width: 15px; height: 21px}
+.ictxList .switch .switchLabel {margin: 0px 5px 0 0; vertical-align: top; color: #12997a}
+.ictxList .switch .slider {width: 25px; height: 14px; border-radius: 7px}
+.ictxList .switch .slider::before {top: -3px; left: -7px}
+.ictxList .switch input:checked ~ .slider::before {transform: translateX(18px)}
+.ictxList .accTransferList li {padding: 4px 0}
+.ictxList .accTransferList li .accordionToggleWrap .grayLine {margin: 15px 0}
+.ictxList .accTransferList li .accordionToggle {height: 20px}
+.ictxList .accTransferList li .accordionToggle::after {width: 100%; height: inherit; left: 0; background-size: 11px}
+.ictxList .accTransferList dl dt, 
+.ictxList .accTransferList dl dd {font-size: 0.866rem}
+.ictxList .btnResist {background: url(../img/ico_addPhoto.png) no-repeat right center / 1.666rem}
+.dataList > li {margin: 14px 0}
+.dataList > li .item {position: relative}
+.dataList > li .item .info {font-size: 0.933rem}
+.dataList > li .item .date.time {margin-left: 3px}
+.dataList > li .item .info + .date.time {margin: 6px 0 0}
+.dataList > li:first-child {margin-top: 18px} 
+.dataList > li + li {padding-top: 14px; border-top: 1px solid #c1c1c1}
+.dataList > li .item .rCont {position: absolute; top: 0; right: 0}
+.dataList > li .item .rCont button {display: block; padding: 5px; margin: -5px; font-size: 0.933rem}
+.dataList > li .item .rCont .figure {font-size: 0.933rem}
+.dataList > .error .item,
+.dataList > .error .item .date.time {color: #c7c7c7}
+.dataList > .error .item .rCont {width: 18px}
+
+/* 종합소득세 조회 및 제출 tax_ictx_001 */
+.formWrap.selectAll > .dotListMsg {padding-left: 36px}
+.formWrap.selectAll > .dotListMsg > li {margin-top: 7px; color: #85888d}
+
+/* 민원증명 tax_cppr_001, tax_cppr_002 */
+.ApplyListWrap .listWrap > li {padding: 10px 0}
+.ApplyListWrap .listWrap > li .menu .tit {font-size: 1rem; font-weight: 500}
+.ApplyListWrap .areaBodyBtn {margin-top: 50px}
+
+/* 소득금액증명 tax_cppr_008 */
+.listTypeInput > li.cpa .formHolder .formTit {flex: 1 0 auto}
+.listTypeInput > li.cpa .formHolder .fieldGroup {justify-content: flex-end}
+.listTypeInput > li.cpa .fieldGroup .col {flex: 0 0 4.333rem}
+.listTypeInput > li.cpa .fieldGroup .col input {border: none}
+.listTypeInput > li.cpa .fieldGroup .col.backNum,
+.listTypeInput > li.cpa .fieldGroup .divider {opacity: 0; visibility: hidden}
+.listTypeInput > li.cpa .fieldGroup .col#birthDate {position: relative; left: -22px}
+.listTypeInput > li.cpa .fieldGroup .col.backNum {flex: 0 0 5.2rem}
+.listTypeInput > li.cpa .fieldGroup .col.backNum input {padding-left: 3px; text-align: left; font-size: 0.8rem; /* 주민번호 뒷자리 히든 폰트사이즈 분기처리 */}
+.listTypeInput > li.cpa .fieldGroup .divider {width: 10px}
+.listTypeInput > li.cpa .placeHolder {position: absolute; top: 50%; right: 0px; transform: translateY(-50%); font-size: 1.133rem; color: #c7c7c7}
+.listTypeInput > li.cpa.active .col.backNum,
+.listTypeInput > li.cpa.active .divider {opacity: 1; visibility: visible}
+.listTypeInput > li.cpa.active .fieldGroup .col#birthDate {left: 0}
+.listTypeInput > li.rrn {margin-top: 28px}
+.listTypeInput > li.rrn .areaTxt {margin-top: 9px}
+
+/* 급여작성 직원선택팝업 tax_slry_005_1 */
+.popWrap.slidePop .busiInfoWrap .listWrap .menu {padding: 23px 20px; border: 1px solid #000;}
+.popWrap.slidePop .formWrap .total .formHolder input[type=radio] + label.check {width: 100%; padding: 18px 20px}
+.popWrap.slidePop .formWrap .total .formHolder input[type=radio] + label.check::before {left: unset; right: 20px; background-image: url(../img/ico_radio.png)}
+.popWrap.slidePop .formWrap .total .formHolder input[type=radio]:checked + label.check {color: #12997a}
+.popWrap.slidePop .formWrap .total .formHolder input[type=radio]:checked + label.check::before {background-image: url(../img/ico_radio_on.png)}
+
+/* 최초 급여작성 tax_slry_000 */
+.taxVisual .areaTop {text-align: center}
+.taxVisual .areaTop h4.defTit {color: #6d6d6d}
+.taxVisual .areaBtmFixed .imgVisual {margin-bottom: 5.067rem}
+
+/* 최초 급여작성2 tax_slry_001 tax_slry_001D */
+.memoBox {position: relative; padding: 46px 0 15px 15px; border: 1px solid #adb0b7; border-radius: 10px}
+.memoBox textarea { width: 100%; height: 120px}
+.memoBox textarea::placeholder {color: #c7c7c7}
+.memoBox .btnCloseRdGray {display: none; position: absolute; top: 94px; right: 9px;}
+.memoBox .btnCloseRdGray + textarea {padding-right: 48px}
+.memoBox .tit {position: absolute; top: 15px; left: 15px; padding-left: 20px; background: url(../img/ico_document_gray03.png) no-repeat left center / 12px; color: #c7c7c7}
+.memoBox.focus {border-color: #12997a}
+.memoBox.focus .tit {color: #12997a; background-image: url(../img/ico_document_green.png)}
+.slryWrap .areaSubmit {margin-bottom: 40px}
+.slryWrap .areaSubmit .memoBox {margin-bottom: 20px}
+.slryWrap .imgAttachList {margin-top: 32px}
+
+/* 급여작성 수정 tax_slry_002 */
+.totalFocusList {margin: 20px 0 15px}
+.totalFocusList > li {padding: 12px 0}
+.totalFocusList > li .figureWrap .infoTxt02 {line-height: 1}
+.totalFocusList > li.total .figureWrap .figure {font-size: 1.4rem}
+.totalFocusList > li:not(.total) .infoArea.busi .rCont .figureWrap {display: flex; align-items: center}
+.totalFocusList > li .infoArea.busi .rCont .figureWrap .figure {margin-left: 5px; font-size: 1.267rem}
+.totalFocusList > li .infoArea.busi .rCont .figureWrap .figure.underline {text-decoration: underline}
+.totalFocusList > li .infoArea.busi .rCont .figureWrap .workTime + .figure {margin-left: 28px}
+.totalFocusList > li .infoArea.busi .rCont .figureWrap .workTime {color: #8a8a8b; font-size: 1.133rem}
+.totalFocusList > li.total .infoArea.busi .figureWrap .figure {font-size: 1.4rem; font-weight: 600}
+.totalFocusList > li .infoArea.busi .rCont .figureWrap .btnEditGray {margin-left: 5px}
+.totalFocusList > li .radioList {justify-content: flex-end}
+
+/* 일용직 급여 상세 tax_slry_004 */
+.payDataList dl dt .key,
+.payDataList dl dd .val {font-size: 1.133rem}
+.payDataList dl dd .val {font-weight: 600}
+.payDataList dl dd .infoTxt02 {display: inline-block}
+.workDayWrap {margin-bottom: 50px}
+.workDayWrap .areaCenterBtn {margin-top: 20px}
+
+/* 근무조건 설정 팝업 tax_slry_004_1 */
+.formHolder.miniWage .inputList.type04 .formTit {color: #bababa}
+.formHolder.miniWage input:read-only {border: none; color: #bababa}
+.listTypeInput > li .areaCalcSlry {display: flex; justify-content: space-between; align-items: center}
+.listTypeInput > li .areaCalcSlry .tit,
+.listTypeInput > li .areaCalcSlry .calc {font-size: 1.133rem; color: #8a8a8b}
+
+/* 일용소득 근무 캘린더 tax_slry_007 */
+.slryWrap .areaSelect {display: flex; align-items: center; justify-content: space-between; margin-top: 14px; line-height: 1}
+.slryWrap .payData .roundBox {display: flex; align-items: center; justify-content: space-between; margin: 30px 0 20px}
+.slryWrap .payData .roundBox .tit {color: #8a8a8b; font-size: 1rem}
+.slryWrap .payData .roundBox .val {font-weight: 600; font-size: 1rem}
+
+/* 더보기탭 메인 vwmr_tab_001 */
+.vwmrMenu .listWrap {margin-top: 13px}
+.vwmrMenu .listWrap > li .moveLink {position: relative; padding-left: 45px}
+.vwmrMenu.rept {margin-top: 20px}
+.vwmrMenu.rept .listWrap > li {background: no-repeat left 5px center / 25px}
+.vwmrMenu.rept .listWrap > li .moveLink {padding-left: 65px}
+.vwmrMenu.rept .listWrap > li .moveLink .rCont .defTxt01 {font-size: 0.866rem}
+.vwmrMenu .listWrap > li {background: no-repeat left center / 25px}
+.vwmrMenu .listWrap > li .areaNew {position: absolute; top: -9px; right: 0}
+.vwmrMenu .listWrap > li.menu01 {background-image: url(../img/ico_vwmrMenu01.png)}
+.vwmrMenu .listWrap > li.menu02 {background-image: url(../img/ico_vwmrMenu02.png)}
+.vwmrMenu .listWrap > li.menu03 {background-image: url(../img/ico_vwmrMenu03.png)}
+.vwmrMenu .listWrap > li.menu04 {background-image: url(../img/ico_vwmrMenu04.png)}
+.vwmrMenu .listWrap > li.menu05 {background-image: url(../img/ico_vwmrMenu05.png)}
+.vwmrMenu .listWrap > li.menu06 {background-image: url(../img/ico_vwmrMenu06.png)}
+.vwmrMenu .listWrap > li.menu07 {background-image: url(../img/ico_vwmrMenu07.png)}
+.vwmrMenu .listWrap > li.menu08 {background-image: url(../img/ico_vwmrMenu08.png)}
+.vwmrMenu .listWrap > li.menu09 {padding: 13px 10px; margin: 0 -10px 13px; background-image: url(../img/ico_vwmrMenu09.png); background-position: left 15px center; border: 1px solid #12997a; border-radius: 10px}
+.vwmrMenu .listWrap > li.menu09 a {padding-right: 28px}
+.vwmrMenu .listWrap > li.menu10 {background-image: url(../img/ico_vwmrMenu10.png)}
+.bannerWrap {margin: 0 -20px; padding: 0 20px; overflow: hidden}
+.bannerWrap .btnPagination {margin-top: 10px; text-align: center}
+.vwmrMenu .bannerWrap .btnPagination .swiper-pagination-bullet {background: #ebebeb; opacity: 1}
+.vwmrMenu .bannerWrap .btnPagination .swiper-pagination-bullet-active {background: #8A8A8B}
+.partnerList {margin-bottom: 15px}
+.partnerList > li {width: 20%; float: left; margin-top: 15px}
+.partnerList > li + li {margin-left: 6.666%}
+.partnerList > li:nth-child(5n) {margin-left: 0}
+.partnerList > li .moveLink {display: block; height: 64px; padding: 0; margin: 0;  text-align: center; border: 1px dashed #bfbfbf; border-radius: 8px}
+.partnerList > li .moveLink.active {border-style: solid}
+.partnerList > li .moveLink img {width: 26px; margin: 6px 0 7px}
+.partnerList > li .moveLink p {font-size: 0.8rem}
+.bannerList > li a {display: block}
+.bannerList > li a {text-align: center}
+
+/* 직원정보 vwmr_empl_002 */
+.emplInfoWrap {margin-bottom: 20px}
+.emplInfoWrap .areaTop {margin-bottom: 40px}
+.emplInfoWrap .productWrap {margin-bottom: 60px}
+.emplInfoWrap h4.defTit {margin: 10px 0 30px}
+.emplInfoWrap .listTypeInput {margin-bottom: 60px}
+.emplInfoWrap .listTypeInput li:first-child {margin-top: 0}
+.emplInfoWrap .listTypeInput .radioList {margin-top: 20px; justify-content: flex-end}
+.emplInfoWrap .listTypeInput .radioList input[type="radio"] {display: inline-block; position: static}
+.emplInfoWrap .areaFile {margin-top: 26px}
+
+.btnUpload {display: block; background: url(../img/ico_attach.png) no-repeat right center / 24px; font-size: 1.133rem; font-weight: 600}
+.btnUpload input[type='file'] {display: none}
+
+/* 직원정보 vwmr_empl_009 */
+.busiAccordion {margin-bottom: 60px; border-top: 1px solid #e1e1e1}
+.busiAccordion > li {border-bottom: 1px solid #e1e1e1}
+.busiAccordion .accordionToggle::after {background-image: url(../img/ico_ts_down_gray.png); background-size: 11px}
+.busiAccordion .accordionToggle .tit {padding: 13px 0; color: #919191; font-size: 0.866rem}
+.busiAccordion .listWrap {margin: 0}
+.busiAccordion .listWrap .infoArea .rCont .infoTxt { padding: 0; background-image: none; text-decoration: none; font-size: 0.8rem}
+
+/* 직원상세정보 vwmr_empl_010 */
+.areaBodyBtn .btnBdGray {font-size: 1rem; background: #fff}
+.btnBdGray {padding: 0 10px;border: 1px solid #8a8a8b; color: #8a8a8b; border-radius: 4px}
+.btnBdGray.disabled {color: #dbdbdb; border-color: #dbdbdb; pointer-events: none}
+.btnBdGrayWrap .btnBdGray {height: 29px; line-height: 28px}
+.btnBdGrayWrap .btnBdGray + .btnBdGray {margin-left: 3px}
+
+.listDot.type05 {border-top: 1px solid #e1e1e1}
+.listDot.type05 > li:not(:last-child) {border-bottom: 1px solid #e1e1e1}
+.listDot.type05 > li .tit {padding: 20px 0 20px 10px}
+.listDot.type05 > li .tit::before {top: 20px}
+
+/* 퇴사처리 요청하기 vwmr_empl_011 */
+.busiInfoWrap .listDot .listTypeInput {padding: 0 10px}
+
+/* 퇴사처리 요청하기 vwmr_empl_014A */
+.tblPayStub.type02 {margin: 15px 0 20px}
+.tblPayStub.type02 thead th {text-align: left; color: #bababa; font-weight: 500; font-size: 0.933rem}
+.tblPayStub.type02 thead th:last-child {text-align: right}
+.tblPayStub.type02 tbody td {font-size: 1rem}
+.tblPayStub.type02 tbody td:nth-child(1) {color: #8a8a8b}
+.tblPayStub.type02 tbody td:nth-child(3) {font-size: 1rem}
+.tblPayStub.type02 tbody td:last-child {text-align: right}
+.tblPayStub.type02 tbody td .name.ellipsis {display: inline-block; max-width: 7rem; vertical-align: bottom}
+
+/* 직원정보 수정하기  */
+.btnSelect.disabled {background: none !important; color: #111 !important; pointer-events: none}
+.btnSelect.disabled::after {content: none}
+
+/* 세금 리스트 vwmr_tbmt_001 */
+.taxReturnList + .taxList {border-top: 1px solid #111}
+.taxList {margin-bottom: 25px}
+.taxList > li {padding: 16px 0}
+.taxList > li:not(:last-child) {border-bottom: 1px solid #e1e1e1; padding: 16px 0}
+.taxList > li.titArea .defTit {margin: 0; padding-left: 23px; background: url(../img/ico_message_gray03.png) no-repeat center left / 15px}
+.taxList > li.titArea .rCont .val {font-size: 1.133rem}
+.taxList > li .infoArea .cont .info + .txt {margin-top: 0.533rem}
+.taxList > li .infoArea .cont .info .name {font-size: 1.133rem}
+.taxList > li .infoArea .rCont .moveLink .figure {font-size: 1.133rem}
+.taxList > li .infoArea .rCont {text-align: right}
+.taxList > li .infoArea .rCont .badge + .moveLink {height: 27px; margin-top: 7px; justify-content: flex-end}
+.taxList > li .infoArea .rCont .moveLink .tsRight {width: 7px; margin-left: 8px}
+
+.taxReturnList {margin-bottom: 30px}
+.taxReturnList > li {margin-top: 20px}
+.taxReturnList > li > div {display: flex; align-items: stretch}
+.taxReturnList > li > div .left {flex: 0 0 70px; display: flex; flex-direction: column; justify-content: center; padding: 6px 13px; margin-right: 15px; text-align: center; border: 1px solid #C1C1C1; border-radius: 8px}
+.taxReturnList > li > div .right {display: flex; flex-direction: column; justify-content: center}
+.taxReturnList > li > div .left .dayNum {font-size: 1.6667rem; font-weight: 600}
+.taxReturnList > li > div .left .day {font-size: 1rem; color: #8a8a8b}
+.taxReturnList > li > div .right .tit {font-weight: 600; font-size: 1.133rem; color: #8a8a8b}
+.taxReturnList > li > div .right p {font-size: 1rem; margin-top: 8px}
+
+/* 세금 리스트 vwmr_tbmt_001A */
+.tbmtInquiry .productWrap {margin-bottom: 60px}
+.tbmtInquiry .productWrap .confirmMsg {display: block; padding: 10px 0 0}
+.pushTxt {display: inline-block; padding-left: 28px; background: url(../img/ico_message_gray02.png) no-repeat center left / 20px; font-size: 1.133rem; color: #c7c7c7}
+
+/* 거래처 즐겨찾기 리스트 vwmr_bzaq_003 */
+.FavoritesList {padding-bottom: 17px; border-bottom: 1px solid #e1e1e1}
+.FavoritesList > li + li {margin-top: 26px;}
+.infoArea .rCont .star {display: block; width: 30px; height: 30px; background: url(../img/ico_favorite_off.png) no-repeat right center / 20px;}
+.FavoritesList .infoArea .rCont .star {background-image: url(../img/ico_favorite_on.png)}
+
+/* 거래처 즐겨찾기 리스트 vwmr_bzaq_004 */
+.borderWrap {padding: 10px 0; border-top: 1px solid #e1e1e1; border-bottom: 1px solid #e1e1e1}
+
+/* 계정 vwmr_mgmt_002 */
+.account.defTxt02 {font-size: 1rem}
+
+/* 더보기 > 급여 vwmr_slry_002 */
+.paymentWrap .areaTop {margin-bottom: 18px}
+.paymentWrap .areaTop .btnSelect {font-size: 1.2667rem} /* 아래 코드의 케이스로 수정해야함 */
+.paymentWrap .titArea .btnSelect {font-size: 1.2667rem}
+
+/* 급여대장 vwmr_slry_003 */
+.taxList > li .infoArea + .payDataWrap {padding-top: 13px}
+.payDataList > li {padding: 6px 0}
+.payDataList dl {display: table; width: 100%}
+.payDataList dl dt, .payDataList dl dd {display: table-cell; font-size: 1.133rem}
+.payDataList dl dd {text-align: right; font-weight: 600}
+.payDataList .preTax dd {color: #ababab}
+.payDataList > li.average dt,
+.payDataList > li.average dd {font-weight: 600; font-size: 1.2667rem}
+
+/* 급여명세서 전송하기 vwmr_slry_004 */
+.tblPayStubWrap {padding-top: 10px}
+.tblPayStub thead th {padding-bottom: 15px; font-size: 1rem; font-weight: 600; border-bottom: 1px solid #e1e1e1}
+.tblPayStub tbody td {padding: 12px 0}
+.tblPayStub tbody td:nth-child(3) {font-size: 0.933rem}
+.tblPayStub tbody td .btnPreview img {width: 20px}
+.tblPayStub tbody td .badge {width: 100%; font-size: 0.866rem; border-radius: 3px}
+
+/* 급여명세서 미리보기 vwmr_slry_005 */
+.busiDataList .total dl dt {color: #000; font-weight: 600; font-size: 1.133rem}
+.busiDataList .total dl dd {font-weight: 600; font-size: 1.133rem}
+h2.defTit .badge {vertical-align: middle; margin-bottom: 4px}
+.calcLabor {border-bottom: 1px solid #e1e1e1}
+.calcLabor > .accordionToggle {padding: 20px 0; color: #a8a8a8}
+.calcLabor > .accordionToggle::after {width: 11px; background-image: url(../img/ico_ts_down_gray.png)}
+.thanksToMsg {padding: 20px 0 25px;}
+.thanksToMsg .store {margin: 8px 0 26px; font-size: 1.133rem; font-weight: 600}
+.thanksToMsg .date.time {font-size: 1rem}
+.thanksToMsg .rCont img {width: 82px}
+
+/* 매출·매입 내역 vwmr_bill_001 */
+.busiDataList .total + li {border-top: 1px solid #c1c1c1}
+
+/* 계좌 상세보기 fin_acct_009 */
+.collectDate {display: flex; align-items: center; justify-content: space-between}
+.collectDate .areaTxt .tit {color: #4a4a4a; font-size: 1rem}
+.collectDate .areaTxt .btnReload {display: flex; align-items: center}
+.collectDate .areaTxt .btnReload img {width: 22px; margin-left: 8px}
+.collectDate .rCont .btnUnderline {font-size: 1rem}
+.collectDate .rCont [class^="pointColor"] {font-size: 1rem}
+.moveLink.bgGray {background-color: #f2f5f7; height: 33px; padding: 0 11px; margin: 0; border-radius: 7px}
+.moveLink.bgGray span {font-size: 1rem}
+
+.accDetail .infoArea.acc .cont .info .name {color: #565656}
+
+/* fin_acct_009B */
+.moveAccCert span {font-size: 0.933rem; color: #c7c7c7}
+
+/* fin_acct_009C */
+.areaAccCert {margin-top: 16px; text-align: right}
+.moveAccCert {padding-right: 15px; background: url(../img/ico_ts_right_gray.png) no-repeat right center / 7px}
+.moveAccCert .pointColor03 {padding-left: 21px; background: url(../img/ico_error02.png) no-repeat left center / 15px}
+
+/* 등록한 계좌, 카드 없을때 fin_acct_017 */
+.moveLink .roundBoxWrap.type03 {flex: 1}
+.moveLink .roundBoxWrap.type03 .roundBox {background: url(../img/ico_message_green.png) no-repeat right 16px center / 50px #f1fbf9; border-radius: 15px}
+.moveLink .roundBoxWrap.type03 .roundBox .defTit {margin-top: 0}
+.moveLink .roundBoxWrap.type03 .roundBox .defTxt02 {line-height: 1.38}
+
+/* 원천세 납부 fin_tran_072 */
+.busiInfoWrap .listDot > li .accTransferList {padding-left: 10px}
+.busiInfoWrap .listDot > li .accTransferList li {padding: 5px 0}
+
+/* 송금확인증 fin_tran_025 */
+.busiDataList .total dl dt .confirmNum {color: #8a8a8a; font-size: 1rem; font-weight: 500; white-space: nowrap}
+.confirmation .busiDataList dl dt {color: #111}
+.confirmation .busiDataList .total + li {padding-top: 10px}
+.confirmation .busiDataList .areaInfo {border-top: 1px solid #000}
+.confirmation .busiDataList .areaInfo .infoTxt03 {word-break: keep-all}
+.areaSeal {text-align: center}
+.areaSeal img {width: 100px; margin-top: 11.5px}
+.areaSeal .omitted {display: inline-block; width: 50px; padding: 8px 0; margin-left: 10px; color: #ff684a; border: 1px solid #ff684a; border-radius: 10px}
+.areaSeal .omitted p {line-height: 1.2}
+
+/* 급여 송금하기 fin_tran_062 */
+.tblPayStubWrap .tblPayStub .disabled td {color: #c7c7c7}
+.tblPayStubWrap .tblPayStub .disabled .btnBdGray {padding: 0}
+
+/* 하이패스 sett_cert_002 */
+.qnaList > li {padding: 20px 0;}
+.qnaList > li:not(:last-child) {border-bottom: 1px solid #e1e1e1}
+.qnaList > li .question {position: relative; padding-left: 20px; font-size: 0.933rem; font-weight: normal}
+.qnaList > li .question::before {content: 'Q.'; position: absolute; left: 0; top: -2px}
+.qnaList > li .areaAnswer {padding-left: 20px; padding-top: 8px}
+
+/* 하이패스 sett_cert_005 */
+.accList {border-top: 1px solid #c8c8c8; margin-top: 16px}
+.accList > li {float: left; width: 33.3333%; margin-top: 15px}
+.accList > li .infoArea .ico + .cont {padding-left: 6px}
+.accList > li .infoArea.acc .ico i {width: 18px; height: 18px}
+.accList > li .infoArea.card .ico i {width: 18px; height: 25px}
+
+/* 하이패스 수집 sett_cert_010 */
+.accCollectList {margin-bottom: 20px}
+.accCollectList > li {padding: 7px 0}
+.accCollectList > li.item {padding-top: 20px; margin-top: 13px; border-top: 1px solid #e1e1e1}
+.accCollectList > li .infoArea .cont .info .name {font-size: 1.133rem}
+.accCollectList > li.item .infoArea .ico + .cont {padding-left: 10px}
+.accCollectList > li.item .infoArea .cont .info .name {font-size: 1.267rem}
+.accCollectList > li.item .confirmMsg {padding: 22px 0 0 0}
+.collectWrap .rCont .figure {margin-right: 25px; font-weight: 600; font-size: 1.133rem}
+.collectWrap .infoArea .cont .txt .num {font-size: 1rem}
+.collectWrap .roundBoxWrap.type02 .roundBox {background: #fafafa}
+
+/* user_join_001 로그인 */
+.joinWrap .areaCert {margin-top: 60px; text-align: center}
+
+/* 내정보 sett_user_001_1 */
+.myInfoWrap {margin-bottom: 100px}
+.myInfoWrap .busiDataList {padding: 0 10px}
+.myInfoWrap .busiDataList > li {padding: 10px 0}
+.myInfoWrap .busiDataList > li .grayLine03 {margin: 10px -10px 0}
+.myInfoWrap .accTransferList {padding: 15px 20px 0 10px}
+.myInfoWrap .accTransferList li dl dt {color: #111; font-size: 0.933rem}
+.myInfoWrap .accTransferList li dl dd {font-size: 0.933rem}
+.myInfoWrap .accTransferList li .confirmMsg {padding-top: 25px}
+
+/* 약관팝업 sett_user_006 */
+.popWrap.slidePop .formWrap .accordionToggle::after {width: 30px; height: 100%; right: 9.5px}
+.popWrap.slidePop .formWrap .formHolder input[type="checkbox"] + label.check {padding-left: 54px}
+.popWrap.slidePop .formWrap .formHolder label.check::before {left: 16px}
+.popWrap.slidePop .formWrap .total .formHolder { margin-bottom: 15px; border-radius: 7px; border: 1px solid #c7c7c7} 
+.popWrap.slidePop .formWrap .total .formHolder label.check {padding: 18px 0; cursor: pointer}
+.popWrap.slidePop .formWrap .cont {margin-bottom: 15px}
+.popWrap.slidePop .formWrap .cont .formHolder {padding: 8px 0;}
+.popWrap.slidePop .formWrap .cont .formHolder input[type="checkbox"] + label.check {width: fit-content; cursor: pointer}
+.popWrap.slidePop .formWrap .cont .formHolder label.check::before {background-image: url(../img/ico_check.png); background-size: 15px; background-position: center}
+.popWrap.slidePop .formWrap .cont .formHolder .btnView {position: absolute; right: 9.5px; top: 50%; transform: translateY(-50%); width: 30px; height: 100%; background: url(../img/ico_ts_right_gray.png) no-repeat center / 7px}
+.popWrap.slidePop .formWrap .cont .formHolder.active label.check::before {background-image: url(../img/ico_check_on.png)}
+.popWrap.slidePop .formWrap .total .formHolder.active {border:1px solid #12997a}
+
+/* 계좌선택 팝업 fin_tran_005_1 */
+.popWrap.slidePop .infoArea.acc .cont .txt .balance {font-size: 0.866rem; color: #8a8a8b}
+
+/* 용도선택팝업 상호명 ellipsis */
+label[for='rrnBackNum'] .ellipsis {display: inline-block; max-width: 60px; vertical-align: bottom}
+
+/* 세무카페 tax_txcf_002 */
+.scrollTabWrap + .boardList > li:first-child {padding-top: 5px}
+.boardList {margin: 0 -20px 15px}
+.boardList > li {padding: 20px; border-bottom: 1px solid #e1e1e1}
+.boardList > li .board {display: flex; align-items: center; gap: 30px}
+.boardList > li .board strong {display: block}
+.boardList > li .board .cont {min-width: 0}
+.boardList > li .board .rCont {min-width: 54px; max-width: 54px; margin-left: auto}
+.boardList > li .board .rCont img {border-radius: 8px}
+
+/* terms 약관 */
+.termsTit {margin: 40px 0 10px; font-size: 1.066rem; font-weight: bold}
+.termsTxt {margin-top: 10px; font-size: 0.933rem}
+.termsOlList > li + li {padding-top: 10px}
+.termsSubList {margin: 7px 0 0 28px}
+.termsSubList > li {text-indent: -0.8rem; font-size: 0.933rem}
+.termsSubList > li + li {padding-top: 7px}
+.termsSubList .termsSubListDash {margin: 7px 0 0 10px}
+.termsSubListDash {margin: 7px 0 0 20px}
+.roundNum {font-size: 0.733rem; vertical-align: middle}
+.tblWrap table th {padding: 10px; font-size: 0.866rem; background-color: #f3f3f3; border: 1px solid #a9adb5}
+.tblWrap table td {padding: 10px; font-size: 0.866rem; border: 1px solid #a9adb5}
+.tblWrap .termsSubList {margin: 0}
+.tblWrap .termsSubList > li span {font-size: 0.866rem}
+.termsDate {margin-top: 10px}
+
+/* 세금 납부하기 trns_slry_001 */
+.infoArea .cont .pay {display: block; font-weight: 600; font-size: 1.133rem}
+.infoArea .cont .payComplete {font-size: 1rem}
+
+/* 세금납부서 trns_tax_001A */
+.payTaxWrap {margin-bottom: 65px}
+.titArea .areaBadge {position: relative}
+.titArea .areaBadge .badge {position: absolute; top: 0.2rem; right: 0}
+.virtualAccList {padding-left: 10px}
+.virtualAccList > li label {display: block; padding: 10px 0}
+.virtualAccList > li label .infoArea .cont .txt .name {display: inline-block; width: 4.2313rem; font-size: 1rem; color: #111}
+.virtualAccList > li label .infoArea > .rCont {padding-left: 0}
+
+/* 세금납부하기 trns_tax_000B */
+.infoArea.tax .cont .info .name {font-size: 1.133rem}
+.infoArea.tax .cont .txt .balance {font-size: 1.2667rem}
+.infoArea.tax .cont .deadLine {font-size: 1rem}
+.infoArea.tax .rCont .state {font-size: 1.133rem}
+
+.areaBtmWrap {margin-top: 47px}
+.areaBtmWrap .txtArea + .areaBodyBtn {margin-top: 16px}
+.areaBtmWrap .areaBodyBtn button {height: 60px; line-height: 60px}
+
+/* 매출·매입 내역 vwmr_bill_003 */
+.accListWrap > ul .dailyWrap > li {border-bottom: 1px solid #e1e1e1}
+.accListWrap > ul:last-child .dailyWrap > li:last-child {border-bottom: none}
+
+/* 매출·매입 내역 요약 vwmr_bill_007 */
+.busiDataWrap .summary:first-child {border-bottom: 1px solid #111}
+.busiDataWrap .summary .busiDataList {margin-bottom: 15px}
+.busiDataWrap .summary .busiDataList:first-of-type {border-top: 1px solid #e1e1e1}
+.busiDataList .cbcList > li {padding: 7px 0}
+
+/* 알림페이지 noti_list_001 */
+.notiWrap .reportList li:first-child {border-top: none}
+.notiWrap .reportList li.news .reportCont {margin: -20px; padding: 20px; background: #fffdef}
+.notiWrap .reportList li .reportCont .defTit {margin: 0; font-size: 0.866rem; font-weight: bold}
+.notiWrap .reportList li .reportCont .txtArea {display: flex; align-items: flex-end}
+.notiWrap .reportList li .reportCont .defTxt01.ellipsis {display: -webkit-box; -webkit-line-clamp: 2;-webkit-box-orient: vertical; white-space: inherit; margin-top: 17px; font-size: 0.933rem; color: #111}
+.notiWrap .reportList li.fix .reportCont .txtArea {padding-right: 30px; background: url(../img/ico_pushpin.png) no-repeat right bottom / 19px}
+
+/* 알림상세페이지 noti_dtls_001 */
+.notiDtlsWrap {margin-bottom: 40px}
+.notiDtlsWrap .reportList li {border-top: none}
+.notiDtlsWrap .reportList li .reportCont .defTit {margin: 0; font-size: 1.133rem}
+.notiDtlsWrap .areaFile {margin-top: 10px}
+
+/*  vwmr_banr_001_1 */
+.benefit .item {display: flex}
+.benefit .item + .item {margin-top: 5px}
+.benefit .item strong {flex: none; margin-right: 4px; font-size: 1.067rem; font-weight: 600}
+.benefit .item .defTxt02 {font-size: 1.067rem}
+
+.popWrap .areaBannerImg {display: block; margin: 0 auto; max-width: 500px}
+.popWrap .benefit {margin: 17px 0 19px}
+.popWrap .popInner .popCont .roundBox .qnaList > li {padding: 0}
+.popWrap .popInner .popCont .roundBox .qnaList > li:first-child {padding: 0}
+.popWrap .popInner .popCont .roundBox .qnaList > li + li {margin-top: 30px}
+.popWrap .popInner .popCont .roundBox .qnaList > li .areaAnswer {padding: 0}
+
+.accorToggleList li + li {margin-top: 16px}
+.accorToggleList li .accordionToggle .infoTxt {font-size: 1rem}
+
+/* 보고서 보안 강화 lock_code_001 */
+.lockCodeWrap .areaLogo {padding: 20px 0; text-align: center}
+.lockCodeWrap .areaLogo img {height: 40px}
+.lockCodeWrap .certAccorBox {position: relative; height: 49px; margin-top: 34px}
+.lockCodeWrap .certAccorBox .inner {position: absolute; top: 0; left: 0; right: 0; max-width: 320px; margin: 0 auto; border: 1px solid #EFEFEF; background: #fff; border-radius: 12px; transition: .35s;}
+.lockCodeWrap .certAccorBox .inner .accordionToggle {padding: 12px 16px; margin-right: 16px;}
+.lockCodeWrap .certAccorBox .inner .infoTxt {color: #222; font-size: 0.933rem}
+.lockCodeWrap .certAccorBox .inner .listDot.type02 {padding: 0 16px 12px 16px}
+.lockCodeWrap .certAccorBox .inner .listDot.type02 > li {padding: 2px 5px;}
+.lockCodeWrap .certAccorBox.active .inner {box-shadow: 0 0 12px 2px rgba(0,0,0,0.08)}
+.lockCodeWrap .certInput {padding-top: 20px; text-align: center}
+.lockCodeWrap .certInput img {width: 110px}
+.lockCodeWrap .certInput strong {display: block; margin: 28px 0 24px; font-size: 1.333rem}
+.lockCodeWrap .certInput strong span {display: block}
+.lockCodeWrap .certInput .inputWrap {text-align: left}
+.lockCodeWrap .certInput .inputWrap input[type='tel'] {height: 50px; margin-bottom: 8px; border: 1px solid #EFEFEF; border-radius: 12px; text-align: center; font-size: 1.2rem; font-weight: 600;}
+.lockCodeWrap .certInput .inputWrap input[type='tel']:focus {padding-bottom: 1px}
+.lockCodeWrap .certInput .inputWrap .infoTxt03 {opacity: 0; visibility: hidden; transition: .35s}
+.lockCodeWrap .certInput .inputWrap.error input[type='tel'] {border-color: #ff684a}
+.lockCodeWrap .certInput .inputWrap.error .infoTxt03 {opacity: 1; visibility: visible}
+
+@media screen and (max-width: 320px) {
+    .taxList .infoArea .rCont .badge + .moveLink {margin-top: 2px}
+}
+
+@media screen and (min-width: 501px) {
+    .container.type02 {box-shadow: none}
+}
+@media screen and (min-width: 768px) {
+    .lockCodeWrap .certInput {margin-top: 160px}
+    .lockCodeWrap .certInput img {width: auto}
+    .lockCodeWrap .certInput strong {margin: 64px 0 40px}
+    .lockCodeWrap .certInput strong span {display: inline; font-size: 24px}
+    .lockCodeWrap .certInput .inputWrap input[type='tel'] {display: block; max-width: 480px; margin: 0 auto;}
+    .lockCodeWrap .areaBtmFixed {position: static; transform: none; max-width: 480px; padding: 0; margin: 0 auto}
+}
+
+/* 삭제예정 */
+.btnQm {display: flex; align-items: center}
+.btnQm img {width: 15px; margin-left: 5px}

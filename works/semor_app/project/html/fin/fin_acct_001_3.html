@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>fin_acct_001_3</title>
+    <link rel="stylesheet" href="../../css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../../css/mobiscroll.jquery.min.css">
+    <link rel="stylesheet" href="../../css/semoR_base.css">
+    <link rel="stylesheet" href="../../css/semoR_common.css">
+    <link rel="stylesheet" href="../../css/semoR_style.css">
+    <link rel="stylesheet" href="../../css/semoR_rept.css">
+  <script src="../../js/jquery-3.5.1.min.js"></script>
+    <script src="../../js/jquery-ui.min.js"></script>
+    <script src="../../js/swiper-bundle.min.js"></script>
+    <script src="../../js/mobiscroll.jquery.min.js"></script>
+    <script src="../../js/semoR_ui.js"></script>
+</head>
+
+<body>
+
+    <div class="popWrap slidePop">
+        <div class="dim" onclick="popdimClose(this);return false;">클릭시 팝업 닫힘</div>
+        <div class="popInner">
+            <div class="popTit">
+                <a href="javascript:;" class="btnPopClose" onclick="popClose(this);return false;" title="팝업닫기"
+                    role="button"></a>
+                <h1>
+                    해당 계좌 또는 카드는 연결이 불가해요
+                </h1>
+            </div>
+            <div class="popCont">
+                <ul class="qnaList">
+                    <li>
+                        <div class="areaAnswer">
+                            <p class="defTxt02">
+                                카카오뱅크 · 토스뱅크 · 케이뱅크의 계좌와 카드를 사업용으로 사용하고 계신가요? 해당 은행은 모바일뱅킹 전용 은행으로 PC인터넷뱅킹 서비스를 제공하지 않는 은행입니다.
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="areaAnswer">
+                            <p class="defTxt02">
+                                현재 세모리포트는 <span class="defTxt">인터넷뱅킹을 제공하는 은행들의 내역만을 수집</span>하고 있기 때문에 위 은행의 계좌 및 카드 내역의 제공은 불가함을 안내드립니다.
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="areaAnswer">
+                            <p class="defTxt02">
+                                더 궁금한 점이 있다면 채팅 상담으로 문의해 주세요.
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="popBtnWrap">
+                <a href="javascript:;" class="moveLink bgGray">
+                    <span class="pointColor06">채팅으로 문의하기</span>
+                    <div class="rCont">
+                        <img class="tsRight" src="../../img/ico_ts_right_gray.png" alt="오른쪽화살표">
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            slidePop(this);
+        });
+    </script>
+</body>
+
+</html>

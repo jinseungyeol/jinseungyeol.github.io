@@ -1,0 +1,523 @@
+@charset "utf-8";
+
+/* reset */
+@font-face {font-family: 'Pretendard'; font-weight: normal; src: url(../font/Pretendard-Medium.woff2) format('woff2');}
+@font-face {font-family: 'Pretendard'; font-weight: 600; src: url(../font/Pretendard-SemiBold.woff2) format('woff2');}
+@font-face {font-family: 'Pretendard'; font-weight: bold; src: url(../font/Pretendard-Bold.woff2) format('woff2');}
+
+html {position:relative;height:100%}
+html,body {font-family:'Pretendard'; color:#111; font-weight:normal; -webkit-text-size-adjust:none;-moz-text-size-adjust:none; -ms-text-size-adjust:none; -webkit-tap-highlight-color:transparent; -webkit-user-select:none; line-height: 1.5}
+html,body,div,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,address,cite,code,del,dfn,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,input,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video {margin:0; padding:0; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; -webkit-tap-highlight-color:transparent;-webkit-text-size-adjust:none; -webkit-touch-callout:none; -webkit-font-smoothing:antialiased; font-size: 15px}
+body,button,h1,h2,h3,h4,h5,input,select,table,textarea {font-family:'Pretendard'; margin:0; padding:0}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,legend,select,input,textarea,p,blockquote,th,td,menu,button,a,span,strong,label,header,footer,section,article,aside,nav,hgroup,details,figure,figcaption {word-break:break-word; box-sizing:border-box;-moz-box-sizing:border-box; -webkit-box-sizing:border-box; -ms-box-sizing:border-box} /* 여백을 포함한 사이즈 설정*/ 
+h1,h2,h3,h4,h5,h6,input,select,textarea,button,option {color:inherit; font-family:'Pretendard'; font-size:100%; font-weight:normal}
+h1,h2,h3,h4,h5,h6,strong,b,th {font-weight:bold}
+em,var,address,i {font-style:normal}
+ul,ol,li {list-style:none}
+legend,fieldset,button,img {border:0}
+img {max-width:100%; vertical-align:top}
+input,select,textarea,button,label,strong,a,time {vertical-align:inherit}
+input,select,textarea,button,option {font-family:inherit; font-weight:inherit}
+input,select,textarea {appearance:none; -webkit-appearance:none; border-radius: 0}
+input:focus, textarea:focus {outline-style: none; box-shadow: none; border: 0px}
+textarea {resize:none; border: none}
+button,select,option {color:inherit; text-transform:none} 
+table {table-layout:fixed; width:100%; border-collapse:collapse; border-spacing:0} 
+button {background:none; cursor:pointer; white-space: nowrap; overflow:visible}
+a {color:inherit; font-size: inherit; text-decoration:none}
+
+/** important 정의 **/
+.pointColor {color: #17bf98 !important} /* 버튼 ( 혹시 모를 제휴사 분기처리 컬러 )*/
+.pointColor02 {color: #12997a !important} /* 영역강조 ( 혹시 모를 제휴사 분기처리 컬러 ) */
+.pointColor03 {color: #ff5353 !important} /* 출금 및 기한 색상 */
+.pointColor04 {color: #0088ff !important} /* 입금 */
+.pointColor05 {color: #111 !important}
+.pointColor06 {color: #a2a5ac !important}
+.pointBgColor {background: #17bf98 !important} /* 버튼 ( 혹시 모를 제휴사 분기처리 컬러 )*/
+.dB {display :block !important}
+.dIb {display: inline-block !important}
+.dN {display: none !important}
+.posR {position: relative !important}
+.posA {position: absolute !important}
+.mg0 {margin: 0 !important}
+.mgt0 {margin-top: 0 !important}
+.mgb0 {margin-bottom: 0 !important}
+.mgt15 {margin-top: 15px !important}
+.mgb25 {margin-bottom: 25px !important;}
+.pd0 {padding: 0 !important}
+.pdt0 {padding-top: 0 !important}
+.pdb0 {padding-bottom: 0 !important}
+.w35p {width: 35% !important}
+.w50p {width: 50% !important}
+.flex3_5 {flex: 3.5 !important}
+.taLeft {text-align: left !important}
+.taCenter {text-align: center !important}
+.taLeft {text-align: left !important}
+.taRight {text-align: right !important}
+.fontSize19 {font-size: 1.266rem !important}
+.bdNone {border: none !important}
+.fwNormal {font-weight:normal !important}
+.fwBold {font-weight:bold !important}
+
+/* setting */
+.blind {position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); border: 0; white-space: nowrap}
+.ellipsis {display:block; overflow:hidden; white-space:nowrap; text-overflow:ellipsis}
+.clear:after {content:''; display:block; clear:both}
+
+/**************************************************
+
+	z-index 정리
+	header : 1100		
+	header > mainTit : 1100		
+	areaTopFixed : 1100
+	areaBtmFixed : 1100
+	popWrap : 1101
+	popWrap popInner : 1201
+
+**************************************************/
+
+/**************************************************
+
+	REM 폰트 15PX 기준
+
+	10px --> 0.666rem
+	12px --> 0.8rem
+	13px --> 0.866rem
+	14px --> 0.933rem
+	16px --> 1.066rem
+	17px --> 1.133rem
+	18px --> 1.2rem
+	19px --> 1.266rem
+	21px --> 1.4rem
+	23px --> 1.533rem
+	25px --> 1.666rem
+	26px --> 1.733rem
+
+**************************************************/
+
+/* wrap */
+.wrapper {background: #fff}
+.container {min-height: 100%; padding: 0 20px 20px}
+.bgGrayCnt {background: #f4f5f7; margin: 0 -20px -20px}
+
+/* header */
+.header {position: fixed; top: 0; left: 0; width: 100%; height: 60px; background: #fff; z-index: 1100}
+.header > .mainTit {position: relative; z-index: 1100; width: fit-content; height: 60px; line-height: 60px; font-size: 1.533rem; padding-left: 20px}
+.header > .mainTit .defTit {color: #6a6a6a; font-size: 0.866rem}
+.header > .subTit {height: 60px; padding-left: 54px; line-height: 63px; font-size: 1.066rem; font-weight: 500}
+.header > .topMenu {position: absolute; top: 0; left: 0; bottom: 0; width: 100%; padding: 0 10px}
+.header > .topMenu .left {float: left}
+.header > .topMenu .right {float: right}
+.header > .topMenu li a {display: inline-block; width: 45px; height: 60px; background: no-repeat center center / 25px}
+.header > .topMenu li .btnCounseler {background-image: url(../img/ico_counseler.png)}
+.header > .topMenu li .btnConnect {background-image: url(../img/ico_connect.png)}
+.header > .topMenu li .btnBack {background-image: url(../img/ico_arr_left.png)}
+.header > .topMenu li .btnSet {background-image: url(../img/ico_set.png)}
+.header > .topMenu li .btnSet02 {background-image: url(../img/ico_set02.png)}
+.header > .topMenu li .btnSearch {background-image: url(../img/ico_search.png)}
+.header > .topMenu li .btnSetFin {background-image: url(../img/ico_setAccount.png)}
+.header > .topMenu li .btnExcelDown {background-image: url(../img/ico_excelDown.png)}
+.header > .topMenu li .btnAddFin {background-image: url(../img/ico_addFin.png)}
+.header > .topMenu li .btnChat {background-image: url(../img/ico_message.png)}
+.header > .topMenu li .btnShare {background-image: url(../img/ico_share.png)}
+.header > .topMenu li .btnClose {background-image: url(../img/ico_close.png)}
+
+/* title 정의 */
+.defTit {position: relative; margin: 25px 0 10px; font-weight: 600; font-size: 1rem}
+.defTit + .defTit {margin-top: 0}
+h1.defTit {font-size: 1.666rem}
+h2.defTit {font-size: 1.4rem}
+h3.defTit {font-size: 1.266rem}
+h4.defTit {font-size: 1.133rem}
+p.defTit {font-size: 1rem}
+.titArea {position: relative}
+.titArea .rCont {position: absolute; top: 50%; right: 0; transform: translateY(-50%)}
+.titArea .defTxt01 {color: #6a6a6a}
+.titArea.divide {border-bottom: 1px solid #000}
+
+/* Text 정의 */
+.defTxt {font-size: 1rem; color: #111; word-break: keep-all}
+.defTxt01 {font-size: 1rem; color: #85888d}
+.defTxt02 {font-size: 0.866rem; color: #8a8a8b}
+.infoTxt, .infoTxtCheck, .infoTxtSend {display: inline-block; padding: 4px 0 4px 21px; font-size: 0.866rem; background:  no-repeat left center / 15px; color: #bababa; word-break: keep-all}
+.infoTxt {color: #bababa; background-image: url(../img/ico_info_gray.png)} /* 회색 */
+.infoTxt02 {color: #bababa; font-size: 0.866rem; line-height: 1.42}
+.infoTxtCheck {color: #12997a; background-image: url(../img/ico_check_on.png)}
+.infoTxtSend {padding-left: 26px; background-image: url(../img/ico_message_gray.png); background-size: 20px}
+.dotListMsg > li {position: relative; padding-left: 8px; font-size: 0.8rem}
+.dotListMsg > li::before {content: '·'; position: absolute; top: 0px; left: 0}
+
+/* 헤더 외 상단 고정 */
+.areaTopFixed {position: fixed; top: 50px; left: 20px; right: 20px; background-color: #fff; z-index: 1100}
+.areaTopFixed .areaFilter {margin-bottom: 0}
+
+/* button 정의 */
+button.disabled {background: #ebebeb !important; color: #c7c7c7 !important}
+a.disabled {background: #ebebeb !important; color: #c7c7c7 !important}
+a.disabledType02 * {color: #c7c7c7 !important} /* fin_acct_001_1 팝업 텍스트 회색처리 */
+.btnPointBg {color: #fff}
+.btnPointBg .consult {display: inline-block; padding-left: 40px; background: url(../img/ico_message_white.png) no-repeat left center / 30px}
+.btnPointBg .plus {display: inline-block; padding-left: 21px; background: url(../img/ico_plus_white.png) no-repeat left center / 15px}
+.areaBtmFixed {position: fixed; left: 0; bottom: 0; display: table; table-layout: fixed; width: 100%; padding: 0 20px 20px; background-color: #fff; z-index: 1100}
+.areaBtmFixed .txtArea {text-align: center; margin-bottom: 10px}
+.areaBtmFixed .areaBodyBtn button {height: 60px; line-height: 60px}
+.areaBtmFixed .formWrap {margin-bottom: 20px}
+.areaBodyBtn {display: flex; margin: 0 -4px}
+.areaBodyBtn button {height: 45px; flex: 6; line-height: 45px; margin: 0 4px; text-align: center; font-weight: 600; font-size: 1.266rem; border-radius: 7px}
+.areaBodyBtn.type02 button {height: 45px; line-height: 45px; font-size: 1rem; font-weight: normal}
+.areaBodyBtn button.pointColor02 {border: 1px solid #12997a}
+.areaBodyBtn .btnListMore {margin-bottom: 20px; height: 30px; line-height: 30px; font-size: 0.866rem}
+.areaBodyBtn .btnListMore span {padding-left: 19px; background: url(../img/ico_ts_down.png) no-repeat left center / 11px}
+.areaBodyBtn .btnPlus {height: 30px; line-height: 30px}
+.areaBodyBtn .btnPlus span {padding-left: 20px; background: url(../img/ico_plus_gray.png) no-repeat left center / 15px}
+.areaBodyBtnFull {display: flex}
+.areaBodyBtnFull.type02 {border-radius: 3px; overflow: hidden; border: 1px solid #c8c8c8} /* 보더 타입 */
+.areaBodyBtnFull.type02 button {flex: 1; height: 36px; line-height: 36px; background: #fafafa; font-size: 1rem}
+.areaBodyBtnFull.type02 button + button {border-left: 1px solid #c8c8c8}
+.btnSelect {font-size: 1.133rem; font-weight: 600}
+.btnSelect::after {content: '▼'; display: inline-block; margin: -1px 0 0 6px; font-size: 0.666rem; vertical-align: middle}
+.btnNotFocus {background: #dddfe1; color: #222}
+.btnHistory {display: block; height: 1.8rem; line-height: 1.8rem; padding-right: 31px; font-size: 0.866rem; background: url(../img/ico_reload02.png) no-repeat right center / 23px}
+.btnRelookup::after,
+.btnAddPhoto::after {content: ''; display: inline-block; width: 25px; height: 25px; margin: 0 0 5px 5px; vertical-align: middle; background: no-repeat 0 0 / cover}
+.btnRelookup::after {background-image: url(../img/ico_reload.png)}
+.btnAddPhoto::after {background-image: url(../img/ico_addPhoto.png)}
+.btnPayStub {padding-left: 20px; color: #8a8a8b; font-size: 0.933rem; background: url(../img/ico_document_gray.png) no-repeat left center / 15px; text-decoration: underline}
+.btnDownload {padding: 5px 0 5px 24px; color: #8a8a8b; text-decoration: underline; background: url(../img/ico_fileDownload.png) no-repeat left center / 16px}
+.btnDownload.pdf {background-image: url(../img/ico_pdf.png)}
+.btnDownload.excel {background-image: url(../img/ico_excel.png)}
+.btnDownload.word {background-image: url(../img/ico_word.png)}
+.btnDownload.ppt {background-image: url(../img/ico_ppt.png)}
+.btnUnderline {display: inline-block; padding: 13px 0; font-size: 0.866rem; text-decoration: underline}
+.btnInfo .infoTxt {text-decoration: underline}
+.btnUpdate {display: block}
+.btnUpdate .reload {width: 22px; vertical-align: middle}
+.btnDetail {padding: 5px; margin: -5px; font-size: 1rem; color: #b1b1b1; text-decoration: underline}
+.btnRemitHistory {padding-left: 20px; background: url(../img/ico_remit_green.png) no-repeat left center / 18px; font-size: 0.933em; color: #12997a}
+
+/* input 정의 */
+input {width: 100%; height: 40px; line-height: 40px; box-sizing: border-box; border-style: initial; border: initial; border-image: initial; background: initial; font-size: 1.133rem; border-bottom: 1px solid #e3e3e3}
+input::placeholder {color: #c7c7c7}
+input:focus {border-bottom: 1px solid #12997a}
+input:read-only {border: none}
+input[type="radio"],input[type="checkbox"] {width:26px; height:26px; margin:0; padding:0; border:0; vertical-align:middle;-webkit-appearance:none; cursor: pointer}
+label {cursor: pointer}
+input[type="checkbox"] {background: url(../img/ico_bg_check.png) no-repeat center / 26px}
+input[type="checkbox"]:checked {background-image: url(../img/ico_bg_check_on.png)}
+input[type="radio"] {background: url(../img/ico_radio.png) no-repeat center / 26px}
+input[type="radio"]:checked {background-image: url(../img/ico_radio_on.png)}
+
+/* popup 세팅 */
+.popWrap {display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1101}
+.dim {display: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.7); font-size: 0}
+.popWrap .popInner {position: absolute; background-color: #fff; overflow: hidden; z-index: 1201}
+.popWrap .popInner .popTit h1 {font-size: 1.2rem}
+.popWrap .popInner .popCont::-webkit-scrollbar {display: none}
+.popWrap .popInner .popCont {background-color: #fff; overflow-y: scroll; -webkit-overflow-scrolling: touch}
+.popWrap .popInner .popCont .busiDataList dl dt {width: auto}
+.popWrap .popInner .popCont .busiDataList dl dd {width: auto}
+.popWrap .popInner .popCont .termsTit {font-size: 1.066rem}
+.popWrap .popInner .popCont .termsTxt {word-break: keep-all}
+.popWrap .popInner .popCont .termsList > li + li {margin-top: 15px}
+.popWrap .popInner .popCont .qnaList > li {padding: 10px 0; border: none}
+.popWrap .popInner .popCont .qnaList > li:first-child {padding-top: 0}
+.popWrap .popInner .popCont .qnaList > li .areaAnswer {padding-left: 0}
+.popWrap .popInner .popCont .qnaList > li .areaAnswer .defTxt02 {font-size: 1rem}
+.popWrap .popInner .popCont .areaBodyBtn {margin: 0 0 40px 0}
+.popWrap .popBtnWrap { display: flex; justify-content: center}
+.popWrap .popBtnWrap button {flex: 6; height: 60px; font-size: 1.266rem; font-weight: 600; background-color: #fff; border-radius: 7px}
+.popWrap .popBtnWrap .moveLink.bgGray {margin-left: auto}
+/* 센터팝업 */
+.popWrap.centerLayer .popInner {max-width: 345px; width: calc(100% - 40px); top: 50%;  transform: translateY(-50%); border-radius: 20px}
+.popWrap.centerLayer .popInner .popTit {padding: 30px 20px 30px; text-align: center}
+.popWrap.centerLayer .popInner .popTit .errorCode {font-size: 1rem; margin-bottom: 15px; color: #afafaf}
+.popWrap.centerLayer .popInner .popCont {padding: 0 20px 20px}
+.popWrap.centerLayer .popInner .popCont .txtArea {text-align: center}
+.popWrap.centerLayer .popInner .popCont .welcomeTxt {width: 100%}
+.popWrap.centerLayer .popBtnWrap {display: table; table-layout: fixed; width: 100%}
+.popWrap.centerLayer .popBtnWrap .cell {display: table-cell; text-align: center}
+.popWrap.centerLayer .popBtnWrap .cell button {width: 100%; font-size: 1rem; cursor: pointer}
+.popWrap.centerLayer .popBtnWrap .cell .btnNotFocus {color: #acacac}
+.popWrap.centerLayer.notice .popInner {max-width: 270px}
+/* 하단 슬라이드팝업 */
+.popWrap.slidePop .popInner {width: 100%; left: 0; bottom: 0; transform: translate3d(0, 100%, 0); padding: 30px 20px; border-radius: 20px 20px 0 0; transition: transform .3s}
+.popWrap.slidePop .popInner .popTit {padding-bottom: 15px}
+.popWrap.slidePop .popInner .popTit .btnPopClose {display: block; margin-left: auto; width: 30px; height: 30px; background: url(../img/ico_close.png) no-repeat center / 20px}
+.popWrap.slidePop .popInner .popCont {max-height: 40vh}
+.popWrap.slidePop .popInner .popCont .selectList li {padding: 4px 0}
+.popWrap.slidePop .popInner .popCont .selectList li .menu {display: flex; justify-content: space-between; align-items: center; padding: 18px 20px; border: 1px solid #dfdfdf; border-radius: 6px}
+.popWrap.slidePop .popInner .popCont .selectList li .menu .tit {font-size: 1.2rem; font-weight: 600}
+.popWrap.slidePop .popInner .popCont .selectList li .menu .rCont {display: flex; align-items: center}
+.popWrap.slidePop .popInner .popCont .selectList li .menu .rCont img {width: 7px; margin-left: 10px}
+.popWrap.slidePop .popInner .popCont .tabTit {font-size: 1rem}
+.popWrap.slidePop .popInner .popCont .dotListMsg {margin-bottom: 20px}
+.popWrap.slidePop .popInner .popCont .dotListMsg > li {font-size: 1rem; word-break: keep-all; margin-top: 10px; color: #85888d}
+.popWrap.slidePop .popInner .popCont .dotListMsg > li:first-child {margin-top: 0}
+.popWrap.slidePop .popBtnWrap .areaBodyBtn {flex: 1}
+
+/* searchBar */
+.searchBar {position: relative}
+.searchBar > input {padding-left: 13px; margin-top: 5px; background: #f8f8f8; border-radius: 27px; border: none; font-size: 1rem}
+.searchBar > .btnSearch {position: absolute; right: 13px; top: 9px; width: 30px; padding: 5px}
+.searchBar .keywordList {padding: 0 10px; border-bottom: 1px solid #c8c8c8}
+.searchBar .keywordList li {display: flex; justify-content: space-between}
+.searchBar .keywordList li a {display: block; padding: 13px 0; font-size: 1rem; color: #adb0b7}
+
+/* badge 스타일 */
+.badge {display: inline-block; width: 57px; height: 22px; line-height: 21px; border: 1px solid #000; border-radius: 20px; font-size: 0.866rem; text-align: center}
+.badge.btnSelect {width: 74px}
+.badge.color01 {border-color: #22d6ac; color: #22d6ac} /* 급여기장 및 대표계좌 */
+.badge.color02 {border-color: #cf8afe; color: #cf8afe} /* 민원증명 */
+.badge.color03 {border-color: #6fa4f2; color: #6fa4f2} /* 정보 */
+.badge.color04 {border-color: #ff7a7a; color: #ff7a7a} /* 보고서 */
+.badge.color05 {border-color: #cecece; background-color: #cecece; color: #fff} /* 납부완료 */
+.badge.color06 {border-color: #f3fff4; background-color: #f3fff4; color: #12997a} /* 납부대기 */
+.badge.color07 {border-color: #ffecde; background-color: #ffecde; color: #fe7979} /* 기한만료 */
+.badge.color08 {border-color: #ffa561; color: #ffa561} /* 부가세 */
+.badge.color09 {border-color: #f595a0; color: #f595a0} /* 공지 */
+.badge.disabled {opacity: 0; visibility: hidden}
+
+/* toggle 정의 */
+.switch {cursor: pointer}
+.switch span {display: inline-block; margin: 4px 5px 0 0; color: #b4bac4; font-size: 0.866rem}
+.switch input {display: none}
+.switch .slider {display: inline-block; position: relative; margin-top: 2px; width: 42px; height: 22px; background: #e9e9eb; border-radius: 15px; vertical-align: top; -webkit-transition: .4s; transition: .4s}
+.switch .slider::before {content: ''; position: absolute; top: 1px; left: 1px; width: 20px; height: 20px; background: #fff; border-radius: 50%; -webkit-transition: .4s; transition: .4s}
+.switch input:checked ~ .slider {background: #1bd9ac} 
+.switch input:checked ~ .slider::before {transform: translateX(20px)} 
+.switchLabel { color: #12997a; text-decoration: underline}
+
+/* infoArea */
+.infoArea {position: relative; display: flex; flex-wrap: wrap}
+.infoArea + .infoArea {margin-top: 8px}
+.infoArea .tit {width: 100%; font-size: 1.133rem}
+.infoArea .areaBadge {width: 100%; margin-bottom: 5px}
+.infoArea .areaBadge .badge {width: fit-content; padding: 0 8px; font-size: 0.733rem}
+.infoArea .ico i {display: block; image-rendering: -webkit-optimize-contrast; /* 크롬 이미지 렌더링 */ background: no-repeat center center / contain}
+.infoArea .ico .icoStaff {background: url(../img/ico_staff_gray.png) no-repeat center / 17px, #f9f9f9} /* 직원 아이콘 */
+.infoArea .ico .icoStore {background: url(../img/ico_store_gray.png) no-repeat center / 17px, #f9f9f9} /* 거래처 아이콘 */
+.infoArea .ico .icosemoR {width: 60px; height: 60px; background: url(../img/ico_logo_semoReport.png) no-repeat center / 60px} /* 세모R 로고 */
+.infoArea .ico .icoBank {width: 40px; height: 40px; background: url(../img/ico_bank_green.png) no-repeat center / 40px} /* 은행 아이콘 */
+.infoArea .ico .icoCard {width: 40px; height: 40px; background: url(../img/ico_card_green.png) no-repeat center / 40px} /* 카드 아이콘 */
+.infoArea .ico + .cont {padding-left: 12px}
+.infoArea .cont .info .name {font-size: 1rem; font-weight: 600}
+.infoArea .cont .account {color: #ababab; font-size: 0.866rem}
+.infoArea .cont .txt .num {color: #8a8a8b; font-weight: 600; font-size: 0.866rem}
+.infoArea .cont .txt .purpose {color: #ababab; font-size: 0.866rem; text-decoration: underline}
+.infoArea .rCont {margin-left: auto}
+.infoArea .rCont .figureWrap {text-align: right}
+.infoArea .rCont .figure {font-size: 1rem; font-weight: 600}
+.infoArea .rCont .figure + .defTxt02 {margin-top: 2px}
+.infoArea .rCont .btnConnect {padding: 10px 0; color: #c7c7c7; font-size: 1rem}
+.infoArea .rCont .account {font-size: 1rem}
+.infoArea .moveLink .rCont .tsRight {margin-top: 2px}
+.infoArea .moveLink .state + .rCont .tsRight {margin-top: 0}
+/* infoArea 계좌 */
+.infoArea.acc .ico {margin-top: 8px}
+.infoArea.acc .ico.small i {width: 18px; height: 18px}
+.infoArea.acc .ico.small + .cont {padding-left: 6px}
+.infoArea.acc .ico i {width: 30px; height: 30px}
+.infoArea.acc:has(.ico) .areaBadge {margin-left: 42px}
+.infoArea.acc .cont .info .name.ellipsis {max-width: 130px}
+.infoArea.acc .cont .info .date.time {margin-top: 3px}
+.infoArea.acc .cont .txt .balance {font-size: 1.4rem; font-weight: 600}
+.infoArea.acc .rCont .btnRemit {width: 4rem; height: 35px; line-height: 33px; margin: 19px 0; background: #fff; border-radius: 8px; border: 1px solid #12997a; font-size: 1rem}
+/* infoArea card */
+.infoArea.card .ico {margin-top: 3px}
+.infoArea.card .ico i {width: 28px; height: 39px}
+.infoArea.card:has(.ico) .areaBadge {margin-left: 40px}
+/* infoArea 인증서 */
+.infoArea.certi {display: block}
+.infoArea.certi .ico {position: absolute; top: 10px; width: 40px}
+.infoArea.certi .ico + .cont {padding-left: 54px}
+.infoArea.certi .cont .info {display: block}
+/* infoArea 사업장 */
+.infoArea.busi .ico i {width: 35px; height: 35px; text-align: center; line-height: 35px; color: #aaa; background-color: #f9f9f9; border: 1px solid #efefef; border-radius: 50%; font-size: 0.866rem}
+.infoArea.busi .cont .info .name {font-size: 1.133rem}
+/* infoArea 비활성화 */
+.infoArea.disabled .cont .txt .num,
+.infoArea.disabled .cont .info .name,
+.infoArea.disabled .cont .agency,
+.infoArea.disabled .cont .deadLine,
+.infoArea.disabled .areaBadge .badge {color: #c7c7c7}
+.infoArea.disabled .ico {filter: grayscale(1)}
+.infoArea.disabled .areaBadge .badge {border-color: #c7c7c7}
+/* infoArea 수직중앙 */
+.infoArea.middle {align-items: center}
+.infoArea.middle .ico {margin-top: 0}
+
+/* 은행 */
+.infoArea .ico i.bk002 {background-image: url(../img/bk_kdb.svg)} /* 산업 */
+.infoArea .ico i.bk003 {background-image: url(../img/bk_ibk.svg)} /* 기업 */
+.infoArea .ico i.bk004 {background-image: url(../img/bk_kb.svg)} /* 국민 */
+.infoArea .ico i.bk007 {background-image: url(../img/bk_sh.svg)} /* 수협 */
+.infoArea .ico i.bk011 {background-image: url(../img/bk_nh.svg)} /* 농협 */
+.infoArea .ico i.bk012 {background-image: url(../img/bk_nhch.svg)} /* 농협중앙회 */
+.infoArea .ico i.bk020 {background-image: url(../img/bk_woori.svg)} /* 우리 */
+.infoArea .ico i.bk023 {background-image: url(../img/bk_sc.svg)} /* SC제일 */
+.infoArea .ico i.bk027 {background-image: url(../img/bk_citi.svg)} /* 씨티 */
+.infoArea .ico i.bk031 {background-image: url(../img/bk_dgb.svg)} /* 대구 */
+.infoArea .ico i.bk032 {background-image: url(../img/bk_bnk.svg)} /* 부산 */
+.infoArea .ico i.bk034 {background-image: url(../img/bk_jb.svg)} /* 광주 */
+.infoArea .ico i.bk035 {background-image: url(../img/bk_jeju.svg)} /* 제주 */
+.infoArea .ico i.bk037 {background-image: url(../img/bk_jb.svg)} /* 전북 */
+.infoArea .ico i.bk039 {background-image: url(../img/bk_bnk.svg)} /* 경남은행 */
+.infoArea .ico i.bk045 {background-image: url(../img/bk_mg.svg)} /* 새마을 */
+.infoArea .ico i.bk048 {background-image: url(../img/bk_cu.svg)} /* 신협 */
+.infoArea .ico i.bk050 {background-image: url(../img/bk_sb.svg)} /* 상호저축 */
+.infoArea .ico i.bk054 {background-image: url(../img/bk_hsbc.svg)} /* HSBC */
+.infoArea .ico i.bk055 {background-image: url(../img/bk_deutsche.svg)} /* 도이치은행 */
+.infoArea .ico i.bk057 {background-image: url(../img/bk_jp.svg)} /* JP모건 */
+.infoArea .ico i.bk060 {background-image: url(../img/bk_boa.svg)} /* BOA */
+.infoArea .ico i.bk061 {background-image: url(../img/bk_bnp.svg)} /* BNP파리바 */
+.infoArea .ico i.bk062 {background-image: url(../img/bk_icbc.svg)} /* 중국공상 */
+.infoArea .ico i.bk063 {background-image: url(../img/bk_china.svg)} /* 중국 */
+.infoArea .ico i.bk064 {background-image: url(../img/bk_sj.svg)} /* 산림조합 */
+.infoArea .ico i.bk067 {background-image: url(../img/bk_ccb.svg)} /* 중국건설 */
+.infoArea .ico i.bk071 {background-image: url(../img/bk_epost.svg)} /* 우체국 */
+.infoArea .ico i.bk081 {background-image: url(../img/bk_keb.svg)} /* 하나 */
+.infoArea .ico i.bk088 {background-image: url(../img/bk_jeju.svg)} /* 신한 */
+.infoArea .ico i.bk089 {background-image: url(../img/bk_kbank.svg)} /* 케이 */
+.infoArea .ico i.bk090 {background-image: url(../img/bk_kakao.svg)} /* 카카오 */
+.infoArea .ico i.bk092 {background-image: url(../img/bk_toss.svg)} /* 토스 */
+.infoArea.disabled .ico i.bk002 {background-image: url(../img/bk_kdb_gray.svg)} /* 산업 gray */
+.infoArea.disabled .ico i.bk003 {background-image: url(../img/bk_ibk_gray.svg)} /* 기업 gray */
+.infoArea.disabled .ico i.bk004 {background-image: url(../img/bk_kb_gray.svg)} /* 국민 gray */
+.infoArea.disabled .ico i.bk007 {background-image: url(../img/bk_sh_gray.svg)} /* 수협 gray */
+.infoArea.disabled .ico i.bk011 {background-image: url(../img/bk_nh_gray.svg)} /* 농협 gray */
+.infoArea.disabled .ico i.bk012 {background-image: url(../img/bk_nhch_gray.svg)} /* 농협중앙회 gray */
+.infoArea.disabled .ico i.bk020 {background-image: url(../img/bk_woori_gray.svg)} /* 우리 gray */
+.infoArea.disabled .ico i.bk023 {background-image: url(../img/bk_sc_gray.svg)} /* SC제일 gray */
+.infoArea.disabled .ico i.bk027 {background-image: url(../img/bk_citi_gray.svg)} /* 씨티 gray */
+.infoArea.disabled .ico i.bk031 {background-image: url(../img/bk_dgb_gray.svg)} /* 대구 gray */
+.infoArea.disabled .ico i.bk032 {background-image: url(../img/bk_bnk_gray.svg)} /* 부산 gray */
+.infoArea.disabled .ico i.bk034 {background-image: url(../img/bk_jb_gray.svg)} /* 광주 gray */
+.infoArea.disabled .ico i.bk035 { background-image: url(../img/bk_jeju_gray.svg); } /* 제주 gray */
+.infoArea.disabled .ico i.bk037 {background-image: url(../img/bk_jb_gray.svg)} /* 전북 gray */
+.infoArea.disabled .ico i.bk039 {background-image: url(../img/bk_bnk_gray.svg)} /* 경남은행 gray */
+.infoArea.disabled .ico i.bk045 {background-image: url(../img/bk_mg_gray.svg)} /* 새마을 gray */
+.infoArea.disabled .ico i.bk048 {background-image: url(../img/bk_cu_gray.svg)} /* 신협 gray */
+.infoArea.disabled .ico i.bk050 {background-image: url(../img/bk_sb_gray.svg)} /* 상호저축 gray */
+.infoArea.disabled .ico i.bk054 {background-image: url(../img/bk_hsbc_gray.svg)} /* HSBC gray */
+.infoArea.disabled .ico i.bk055 {background-image: url(../img/bk_deutsche_gray.svg)} /* 도이치은행 gray */
+.infoArea.disabled .ico i.bk057 {background-image: url(../img/bk_jp_gray.svg)} /* JP모건 gray */
+.infoArea.disabled .ico i.bk060 {background-image: url(../img/bk_boa_gray.svg)} /* BOA gray */
+.infoArea.disabled .ico i.bk061 {background-image: url(../img/bk_bnp_gray.svg)} /* BNP파리바 gray */
+.infoArea.disabled .ico i.bk064 {background-image: url(../img/bk_sj_gray.svg)} /* 산림조합 gray */
+.infoArea.disabled .ico i.bk067 {background-image: url(../img/bk_ccb_gray.svg)} /* 중국건설 gray */
+.infoArea.disabled .ico i.bk071 {background-image: url(../img/bk_epost_gray.svg)} /* 우체국 gray */
+.infoArea.disabled .ico i.bk081 {background-image: url(../img/bk_keb_gray.svg)} /* 하나 gray */
+.infoArea.disabled .ico i.bk088 {background-image: url(../img/bk_jeju_gray.svg)} /* 신한 gray */
+.infoArea.disabled .ico i.bk089 {background-image: url(../img/bk_kbank_gray.svg)} /* 케이 gray */
+.infoArea.disabled .ico i.bk090 {background-image: url(../img/bk_kakao_gray.svg)} /* 카카오 gray */
+.infoArea.disabled .ico i.bk092 {background-image: url(../img/bk_toss_gray.svg)} /* 토스 gray */
+
+/* 카드 */
+.infoArea .ico i.bk30000001 {background-image: url(../img/bk_card_kb.png)} /* 국민카드 */
+.infoArea .ico i.bk30000002 { background-image: url(../img/bk_card_hyundai.png)} /* 현대카드 */
+.infoArea .ico i.bk30000003 { background-image: url(../img/bk_card_samsung.png)} /* 삼성카드 */
+.infoArea .ico i.bk30000006 { background-image: url(../img/bk_card_BC.png)} /* BC카드 */
+.infoArea .ico i.bk30000008 { background-image: url(../img/bk_card_shinhan.png)} /* 신한카드 */
+.infoArea .ico i.bk30000009 { background-image: url(../img/bk_card_citi.png); } /* 씨티카드 */
+.infoArea .ico i.bk30000015 { background-image: url(../img/bk_card_keb.png)} /* 하나카드 */
+.infoArea .ico i.bk30000017 { background-image: url(../img/bk_card_lotte.png)} /* 롯데카드 */
+.infoArea .ico i.bk30000018 { background-image: url(../img/bk_card_woori.png)} /* 우리카드 */
+.infoArea .ico i.bk30000019 { background-image: url(../img/bk_card_lotte.png)} /* 롯데카드 */
+.infoArea .ico i.bk30000021 { background-image: url(../img/bk_card_nh.png)} /* NH농협카드 */
+.infoArea.disabled .ico i.bk30000001 {background-image: url(../img/bk_card_kb_gray.png)} /* 국민카드 gray */
+.infoArea.disabled .ico i.bk30000002 { background-image: url(../img/bk_card_hyundai_gray.png)} /* 현대카드 gray */
+.infoArea.disabled .ico i.bk30000003 { background-image: url(../img/bk_card_samsung_gray.png)} /* 삼성카드 gray */
+.infoArea.disabled .ico i.bk30000006 { background-image: url(../img/bk_card_BC_gray.png)} /* BC카드 gray */
+.infoArea.disabled .ico i.bk30000008 { background-image: url(../img/bk_card_shinhan_gray.png)} /* 신한카드 gray */
+.infoArea.disabled .ico i.bk30000009 { background-image: url(../img/bk_card_citi_gray.png)} /* 씨티카드 gray */
+.infoArea.disabled .ico i.bk30000015 { background-image: url(../img/bk_card_keb_gray.png)} /* 하나카드 gray */
+.infoArea.disabled .ico i.bk30000017 { background-image: url(../img/bk_card_lotte_gray.png)} /* 롯데카드 gray */
+.infoArea.disabled .ico i.bk30000018 { background-image: url(../img/bk_card_woori_gray.png)} /* 우리카드 gray */
+.infoArea.disabled .ico i.bk30000019 { background-image: url(../img/bk_card_lotte_gray.png)} /* 롯데카드 gray */
+.infoArea.disabled .ico i.bk30000021 { background-image: url(../img/bk_card_nh_gray.png); } /* NH농협카드 gray */
+
+/* 용도설정 */
+.accSelectList {display: grid; grid-template-columns: repeat(3, 1fr); grid-row-gap: 22px}
+.accSelectList > li .infoArea {display: block; text-align: center}
+.accSelectList > li .infoArea .cont .txt {word-break: keep-all}
+.accSelectList > li .infoArea .ico + .cont {padding: 0; padding-top: 10px}
+.accSelectList > li .infoArea .ico i {display: block; margin: 0 auto; width: 50px; height: 50px}
+
+/* 매입 */
+.infoArea .ico i.B001 {background-image: url(../img/ico_purchase01.png)} /* 매입 */
+.infoArea .ico i.B002 {background-image: url(../img/ico_purchase02.png)} /* 임차료 */
+.infoArea .ico i.B003 {background-image: url(../img/ico_purchase10.png)} /* 기타매입 */
+.infoArea .ico i.B004 {background-image: url(../img/ico_purchase03.png)} /* 식대ㆍ경조사비 */
+.infoArea .ico i.B005 {background-image: url(../img/ico_purchase04.png)} /* 세금과공과 */
+.infoArea .ico i.B006 {background-image: url(../img/ico_purchase05.png)} /* 소모품비 */
+.infoArea .ico i.B007 {background-image: url(../img/ico_purchase06.png)} /* 퀵ㆍ택배비 */
+.infoArea .ico i.B008 {background-image: url(../img/ico_purchase07.png)} /* 접대비 */
+.infoArea .ico i.B009 {background-image: url(../img/ico_purchase08.png)} /* 지급수수료 */
+.infoArea .ico i.B010 {background-image: url(../img/ico_purchase09.png)} /* 차량유지비 */
+.infoArea .ico i.B000 {background-image: url(../img/ico_purchase11.png)} /* 미지정 */
+.infoArea .ico i.B999 {background-image: url(../img/ico_purchase12.png)} /* 세무사설정 */
+.accSelectList > li.active .infoArea .ico i.B001 {background-image: url(../img/ico_B001_on.png)} 
+.accSelectList > li.active .infoArea .ico i.B002 {background-image: url(../img/ico_B002_on.png)} 
+.accSelectList > li.active .infoArea .ico i.B003 {background-image: url(../img/ico_B003_on.png)} 
+.accSelectList > li.active .infoArea .ico i.B004 {background-image: url(../img/ico_B004_on.png)} 
+.accSelectList > li.active .infoArea .ico i.B005 {background-image: url(../img/ico_B005_on.png)} 
+.accSelectList > li.active .infoArea .ico i.B006 {background-image: url(../img/ico_B006_on.png)} 
+.accSelectList > li.active .infoArea .ico i.B007 {background-image: url(../img/ico_B007_on.png)} 
+.accSelectList > li.active .infoArea .ico i.B008 {background-image: url(../img/ico_B008_on.png)} 
+.accSelectList > li.active .infoArea .ico i.B009 {background-image: url(../img/ico_B009_on.png)} 
+.accSelectList > li.active .infoArea .ico i.B010 {background-image: url(../img/ico_B010_on.png)} 
+.accSelectList > li.active .infoArea .ico i.B000 {background-image: url(../img/ico_B000_on.png)} 
+.accSelectList > li.active .infoArea .ico i.B999 {background-image: url(../img/ico_B999_on.png)}
+
+/* 입금 */
+.infoArea .ico i.I001 {background-image: url(../img/ico_deposit01.png)} /* 매출대금수금 */
+.infoArea .ico i.I002 {background-image: url(../img/ico_deposit02.png)} /* 대출금차입 */
+.infoArea .ico i.I003 {background-image: url(../img/ico_deposit05.png)} /* 현금입금 */
+.infoArea .ico i.I004 {background-image: url(../img/ico_deposit06.png)} /* 타계좌입금 */
+.infoArea .ico i.I005 {background-image: url(../img/ico_deposit07.png)} /* 카드매출대금입금 */
+.infoArea .ico i.I006 {background-image: url(../img/ico_deposit08.png)} /* 기타수납 */
+.infoArea .ico i.I010 {background-image: url(../img/ico_deposit03.png)} /* 예적금만기 */
+.infoArea .ico i.I011 {background-image: url(../img/ico_deposit04.png)} /* 이자수익 */
+.infoArea .ico i.I000 {background-image: url(../img/ico_deposit09.png)} /* 미지정 */
+.infoArea .ico i.I999 {background-image: url(../img/ico_deposit10.png)} /* 세무사설정 */
+.accSelectList > li.active .infoArea .ico i.I001 {background-image: url(../img/ico_I001_on.png)}
+.accSelectList > li.active .infoArea .ico i.I002 {background-image: url(../img/ico_I002_on.png)}
+.accSelectList > li.active .infoArea .ico i.I003 {background-image: url(../img/ico_I003_on.png)}
+.accSelectList > li.active .infoArea .ico i.I004 {background-image: url(../img/ico_I004_on.png)}
+.accSelectList > li.active .infoArea .ico i.I005 {background-image: url(../img/ico_I005_on.png)}
+.accSelectList > li.active .infoArea .ico i.I006 {background-image: url(../img/ico_I006_on.png)}
+.accSelectList > li.active .infoArea .ico i.I010 {background-image: url(../img/ico_I010_on.png)}
+.accSelectList > li.active .infoArea .ico i.I011 {background-image: url(../img/ico_I011_on.png)}
+.accSelectList > li.active .infoArea .ico i.I000 {background-image: url(../img/ico_I000_on.png)}
+.accSelectList > li.active .infoArea .ico i.I999 {background-image: url(../img/ico_I999_on.png)}
+
+/* 출금 */
+.infoArea .ico i.O001 {background-image: url(../img/ico_withdraw01.png)} /* 매입대금지급 */
+.infoArea .ico i.O002 {background-image: url(../img/ico_withdraw02.png)} /* 대출금상환 */
+.infoArea .ico i.O003 {background-image: url(../img/ico_withdraw03.png)} /* 예적금불입 */
+.infoArea .ico i.O004 {background-image: url(../img/ico_withdraw04.png)} /* 이자납부 */
+.infoArea .ico i.O005 {background-image: url(../img/ico_withdraw05.png)} /* 급여 */
+.infoArea .ico i.O006 {background-image: url(../img/ico_withdraw06.png)} /* 현금인출 */
+.infoArea .ico i.O007 {background-image: url(../img/ico_withdraw07.png)} /* 타계좌출금 */
+.infoArea .ico i.O008 {background-image: url(../img/ico_withdraw08.png)} /* 세금과공과 */
+.infoArea .ico i.O009 {background-image: url(../img/ico_withdraw09.png)} /* 카드대금결제 */
+.infoArea .ico i.O010 {background-image: url(../img/ico_withdraw10.png)} /* 기타지출 */
+.infoArea .ico i.O000 {background-image: url(../img/ico_withdraw11.png)} /* 미지정 */
+.infoArea .ico i.O999 {background-image: url(../img/ico_withdraw12.png)} /* 세무사설정 */
+.accSelectList > li.active .infoArea .ico i.O001 {background-image: url(../img/ico_O001_on.png)}
+.accSelectList > li.active .infoArea .ico i.O002 {background-image: url(../img/ico_O002_on.png)}
+.accSelectList > li.active .infoArea .ico i.O003 {background-image: url(../img/ico_O003_on.png)}
+.accSelectList > li.active .infoArea .ico i.O004 {background-image: url(../img/ico_O004_on.png)}
+.accSelectList > li.active .infoArea .ico i.O005 {background-image: url(../img/ico_O005_on.png)}
+.accSelectList > li.active .infoArea .ico i.O006 {background-image: url(../img/ico_O006_on.png)}
+.accSelectList > li.active .infoArea .ico i.O007 {background-image: url(../img/ico_O007_on.png)}
+.accSelectList > li.active .infoArea .ico i.O008 {background-image: url(../img/ico_O008_on.png)}
+.accSelectList > li.active .infoArea .ico i.O009 {background-image: url(../img/ico_O009_on.png)}
+.accSelectList > li.active .infoArea .ico i.O010 {background-image: url(../img/ico_O010_on.png)}
+.accSelectList > li.active .infoArea .ico i.O000 {background-image: url(../img/ico_O000_on.png)}
+.accSelectList > li.active .infoArea .ico i.O999 {background-image: url(../img/ico_O999_on.png)}
+
+/* Media Query */
+@media screen and (max-width : 359px) {
+	html {font-size: 13.5px}
+}

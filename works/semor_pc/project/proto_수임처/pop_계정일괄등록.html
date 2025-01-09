@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<title>세무대리인 for 경리나라</title>
+<link rel="stylesheet" href="../css/reset_taxp.css">
+<link rel="stylesheet" href="../css/content_taxp.css"><!-- [D] 세무대리인용 -->
+
+<!-- custom scrollbar plugin css -->
+<link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+<script src="https://publ.roumit.com/js/firebase_include.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+<!-- custom scrollbar plugin -->
+<script src="../js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../js/jquery.placeholder.min.js"></script>
+<script>
+$(function(){
+	// Invoke the plugin
+	$('input, textarea').placeholder({customClass:'my-placeholder'});
+});
+</script>
+
+</head>
+
+<body>
+
+<div class="pop_wrap" style="width:650px;">
+
+	<!-- 팝업 헤더 -->
+	<div class="pop_header">
+		<h1>계정 일괄 등록</h1>
+		<a href="#none" onClick="self.close()" class="btn_popclose"><img src="../img/txof/btn/btn_popclose.gif" alt="팝업닫기"></a>
+	</div>
+	<!-- //팝업 헤더 -->
+
+	<!-- 팝업 컨텐츠 -->
+	<div class="pop_container">
+
+		<div class="title_wrap">
+			<div class="left"></div>
+			<div class="right">
+				<div class="cntalign"><a href="#none" class="btn_style1 excel2"><span>양식 다운로드</span></a></div>
+				<div class="cntalign"><a href="#none" class="btn_style1_b"><span>파일 불러오기</span></a></div>
+			</div>
+		</div>
+
+		<!-- 리스트 테이블 -->
+		<div class="list_scroll_top pdr" style="overflow:hidden;">
+			<!-- <div class="list_scroll_top pdr" style="overflow:hidden;"> --><!-- 하단테이블 세로스크롤 발생시 pdr 클래스 추가 -->
+			<table class="tbl_result" summary="">
+				<caption></caption>
+				<colgroup>
+				<col style="">
+				<col style="width:180px;">
+				<col style="width:150px;">
+				</colgroup>
+				<thead>
+					<tr>
+						<th scope="col"><div>사이트명</div></th>
+						<th scope="col"><div>주소</div></th>
+						<th scope="col"><div>ID</div></th>
+					</tr>
+				</thead>
+			</table>
+		</div>
+		<div class="tbl_layout" style="border-bottom:1px solid #b4b4b4;height:238px;min-width:100%;overflow-y:auto;overflow-x:auto;">
+			<table class="tbl_result" summary="">
+				<caption></caption>
+				<colgroup>
+				<col style="">
+				<col style="width:180px;">
+				<col style="width:150px;">
+				</colgroup>
+				<tfoot style="display:none;"><!-- display: none / table-tfoot -->
+					<tr class="no_hover">
+						<td colspan="3" class="no_info"><div>등록된 파일이 없습니다.</div></td>
+					</tr>
+				</tfoot>
+				<tbody>
+					<tr>
+						<td><div class="tx_ellipsis_max" title="홈택스">홈택스</div></td>
+						<td><div>www.hometax.go.kr</div></td>
+						<td><div>Taxhometax</div></td>
+					</tr>
+					<tr>
+						<td><div class="tx_ellipsis_max" title="여신금융협회">여신금융협회</div></td>
+						<td><div>www.cardsales.or.kr</div></td>
+						<td><div>taxPointid</div></td>
+					</tr>
+					<tr>
+						<td><div class="tx_ellipsis_max" title="경리나라">경리나라</div></td>
+						<td><div>www.serp.co.kr</div></td>
+						<td><div>serp@tax.co.kr</div></td>
+					</tr>
+					<tr>
+						<td><div class="tx_ellipsis_max" title="11번가">11번가</div></td>
+						<td><div>www.11st.co.kr</div></td>
+						<td><div>TaxMarket</div></td>
+					</tr>
+					<tr>
+						<td><div class="tx_ellipsis_max" title="G마켓">G마켓</div></td>
+						<td><div>www.gmarket.co.kr</div></td>
+						<td><div>TaxMarket</div></td>
+					</tr><tr>
+						<td><div class="tx_ellipsis_max" title="홈택스">홈택스</div></td>
+						<td><div>www.hometax.go.kr</div></td>
+						<td><div>Taxhometax</div></td>
+					</tr>
+					<tr>
+						<td><div class="tx_ellipsis_max" title="여신금융협회">여신금융협회</div></td>
+						<td><div>www.cardsales.or.kr</div></td>
+						<td><div>taxPointid</div></td>
+					</tr>
+					<tr>
+						<td><div class="tx_ellipsis_max" title="경리나라">경리나라</div></td>
+						<td><div>www.serp.co.kr</div></td>
+						<td><div>serp@tax.co.kr</div></td>
+					</tr>
+					<tr>
+						<td><div class="tx_ellipsis_max" title="11번가">11번가</div></td>
+						<td><div>www.11st.co.kr</div></td>
+						<td><div>TaxMarket</div></td>
+					</tr>
+					<tr>
+						<td><div class="tx_ellipsis_max" title="G마켓">G마켓</div></td>
+						<td><div>www.gmarket.co.kr</div></td>
+						<td><div>TaxMarket</div></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<!-- //리스트 테이블 -->
+
+		<!-- 하단버튼 -->
+		<div class="tac mgt15">
+			<a href="#none" class="btn_style1_b"><span>파일 저장</span></a>
+		</div>
+		<!-- //하단버튼 -->
+
+	</div>
+	<!-- //팝업 컨텐츠 -->
+</div>
+
+</body>
+</html>

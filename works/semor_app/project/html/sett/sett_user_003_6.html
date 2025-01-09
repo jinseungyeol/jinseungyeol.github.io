@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>sett_user_003_6</title>
+    <link rel="stylesheet" href="../../css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../../css/mobiscroll.jquery.min.css">
+    <link rel="stylesheet" href="../../css/semoR_base.css">
+    <link rel="stylesheet" href="../../css/semoR_common.css">
+    <link rel="stylesheet" href="../../css/semoR_style.css">
+    <link rel="stylesheet" href="../../css/semoR_rept.css">
+  <script src="../../js/jquery-3.5.1.min.js"></script>
+    <script src="../../js/jquery-ui.min.js"></script>
+    <script src="../../js/swiper-bundle.min.js"></script>
+    <script src="../../js/mobiscroll.jquery.min.js"></script>
+    <script src="../../js/semoR_ui.js"></script>
+    <script>
+        $(document).ready(function () {
+            popCenter(this);
+        });
+    </script>
+</head>
+
+<body>
+    <!-- wrapper -->
+    <div class="wrapper">
+        <!-- header -->
+        <div class="header">
+            <ul class="topMenu">
+                <li class="left">
+                    <a class="btnBack" href="javascript:;" role="button"><span class="blind">뒤로가기</span></a>
+                </li>
+            </ul>
+        </div>
+        <!-- //header -->
+
+        <!-- container -->
+        <div class="container">
+            <h3 class="defTit">
+                본인명의 휴대폰으로<br>
+                인증을 진행할게요
+            </h3>
+            <ul class="listTypeInput">
+                <li>
+                    <div class="formHolder">
+                        <div class="inputList type02">
+                            <strong class="formTit">가입자명</strong>
+                            <div class="fieldGroup">
+                                <div class="col">
+                                    <input type="text" placeholder="가입자명 입력" value="한지훈">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="formHolder">
+                        <div class="inputList type02">
+                            <strong class="formTit">주민등록번호</strong>
+                            <div class="fieldGroup">
+                                <div class="col">
+                                    <input type="number" placeholder="생년월일 6자리" maxlength="6" value="920321">
+                                </div>
+                                <span class="divider">-</span>
+                                <div class="col backNum">
+                                    <input type="text" maxlength="1">
+                                    <span class="dot">● ● ● ● ● ● ●</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="formHolder">
+                        <div class="fieldGroup bdNone">
+                            <div class="inputList type02">
+                                <strong class="formTit">휴대폰번호</strong>
+                            </div>
+                            <ul class="selectDivision3_7">
+                                <li>
+                                    <div class="stList col">
+                                        <a href="javascript:;">LG U+</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <!-- 인증요청 버튼 활성화시 active -->
+                                    <div class="inputWrap active">
+                                        <input type="text" placeholder="휴대폰번호 입력" value="010-2352-2312">
+                                        <a href="javascript:;" class="btnLookup" role="button">재요청</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="formHolder">
+                        <div class="inputList type02">
+                            <strong class="formTit">인증번호</strong>
+                            <input type="text" placeholder="인증번호 입력" value="231542" autofocus>
+                            <span class="countDown">00:00</span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="areaBtmFixed">
+                <div class="areaBodyBtn">
+                    <!-- 활성화시 pointBgColor -->
+                    <button type="button" class="btnPointBg pointBgColor">확인</button>
+                </div>
+            </div>
+        </div>
+        <!-- //container -->
+    </div>
+    <!-- //wrapper -->
+
+    <div class="popWrap centerLayer">
+        <div class="dim" onclick="popdimClose(this);return false;">클릭시 팝업 닫힘</div>
+        <div class="popInner">
+            <div class="popTit">
+                <h1>본인인증 실패</h1>
+            </div>
+            <div class="popCont">
+                <div class="txtArea">
+                    <p class="defTxt">
+                        입력하신 정보를 확인해주세요<br>
+                        본인인증은 가입자 명의로만 진행할 수
+                        있어요
+                    </p>
+                </div>
+            </div>
+            <div class="popBtnWrap">
+                <div class="cell"></div>
+                <div class="cell">
+                    <button onclick="popClose(this);return false;" type="button">확인</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

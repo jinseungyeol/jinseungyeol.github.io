@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<title>세모리포트</title>
+<link rel="stylesheet" href="../css/reset_taxp.css">
+<link rel="stylesheet" href="../css/app_header.css"><!-- [D] 세무대리인용 header -->
+<link rel="stylesheet" href="../css/content_taxp.css"><!-- [D] 세무대리인용 -->
+
+<!-- custom scrollbar plugin css -->
+<link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+<script src="https://publ.roumit.com/js/firebase_include.js"></script>
+  <script src="../js/lib/jquery/jquery-1.12.4.min.js"></script>
+<script src="../js/lib/jquery/jquery-ui-1.10.4.min.js"></script>
+<!-- custom scrollbar plugin -->
+<script src="../js/design/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../js/design/jquery.placeholder.min.js"></script>
+<script src="../js/lib/plugin/smart.popup.js"></script>
+<script src="../js/comm/common.js"></script>
+<script>
+$(function(){
+  // Invoke the plugin
+  $('input, textarea').placeholder({customClass:'my-placeholder'});
+
+
+  //온라인 매출 보고서 팝업
+  $(".com_move_page").on("click",function(){
+    var pageUrl = "./"+$(this).text()+".html";
+    window.open(pageUrl);
+  });
+
+});
+
+
+</script>
+
+</head>
+<body>
+
+<!-- 수임처 개선 -->
+<!-- header -->
+<div class="app_header">
+  <div class="app_header_inner">
+    <div class="ah_l">
+      <h1>세모리포트</h1>
+    </div>
+  </div>
+</div>
+<!-- //header -->
+<!-- //수임처 개선 -->
+
+<div class="wrap"><!-- [D] 상세검색일 경우(class="mh") -->
+  <!-- Container -->
+  <div class="container">
+
+    <!-- content -->
+    <div class="content">
+
+      <div class="content_wrap">
+
+
+
+
+
+        <!-- 상단타이틀 -->
+        <div class="title_wrap h1type" style="margin-bottom:0;">
+          <div class="left">
+            <h1>세모리포트 PC 버전&nbsp;<span>퍼블리싱 현황 및 수정사항에 대한 공유 관리 </span></h1>
+          </div>
+        </div>
+        <!-- //상단타이틀 -->
+
+        <!-- 리스트 테이블 -->
+        <!-- 리스트 테이블 상단 -->
+        <div class="list_scroll_top" style="overflow:hidden;"><!-- [D] 하단테이블 세로스크롤 발생시 pdr 클래스 추가 -->
+          <table class="tbl_result" summary="">
+            <caption></caption>
+            <colgroup>
+            <col style="width:6%;">
+            <col style="width:5%;">
+            <col style="width:8%;">
+            <col style="width:5%;">
+            <col style="width:10%;">
+            <col style="width:7%;">
+            <col style="width:7%;">
+            <col style="width:*;">
+            </colgroup>
+            <thead>
+              <tr>
+                <th scope="col"><div>1Depth명</div></th>
+                <th scope="col"><div>1DepthID</div></th>
+                <th scope="col"><div>2Depth명</div></th>
+                <th scope="col"><div>2DepthID</div></th>
+                <th scope="col"><div>상세화면명</div></th>
+                <th scope="col"><div>화면ID</div></th>
+                <th scope="col"><div>완료일</div></th>
+                <th scope="col"><div>비고</div></th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+        <!-- //리스트 테이블 상단 -->
+
+
+
+        <div class="list_scroll" style="">
+          <table class="tbl_result" summary="">
+            <caption></caption>
+            <colgroup>
+            <col style="width:6%;">
+            <col style="width:5%;">
+            <col style="width:8%;">
+            <col style="width:5%;">
+            <col style="width:10%;">
+            <col style="width:7%;">
+            <col style="width:7%;">
+            <col style="width:*;">
+            </colgroup>
+            <tbody style="display: table-tbody;"><!-- [D] style="display: none / table-tbody;" -->
+              <tr class=""><!-- [D] new 일때 class="" -->
+                <td><div class="t_center">랜딩페이지</div></td>
+                <td><div class="t_center">land</div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></td>
+              </tr>
+              <tr class=""><!-- [D] new 일때 class="" -->
+                <td><div class="t_center">가입고객관리</div></td>
+                <td><div class="t_center">user</div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+              </tr>
+              <tr class=""><!-- [D] new 일때 class="" -->
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">서비스 이용신청</div></td>
+                <td><div class="t_center">join</div></td>
+                <td><div class="t_center">수임처 세모R 신규가입</div></td>
+                <td><div class="t_center"><a href="#none" class="t_hover_b com_move_page">user_join_001</a>&nbsp;</div></td>
+                <td><div class="t_center">2022-10-05</div></td>
+                <td><div class="t_center">[2022-10-10][Lloyd] - content_wrap 하위 html 전체 변경 (기획서에 맞춰서 퍼블 디자인 변경 ㅜㅡ;; 죄송.. 샘플을 이제야 봤음)</div></td>
+              </tr>
+              <tr class=""><!-- [D] new 일때 class="" -->
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">세모리포트 서비스 이용약관(필수)</div></td>
+                <td><div class="t_center"><a href="#none" class="t_hover_b com_move_page">user_join_002</a></div></td>
+                <td><div class="t_center">2022-10-14</div></td>
+                <td><div class="t_center"></div></td>
+              </tr>
+              <tr class=""><!-- [D] new 일때 class="" -->
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">개인정보처리방침(필수)</div></td>
+                <td><div class="t_center"><a href="#none" class="t_hover_b com_move_page">user_join_003</a></div></td>
+                <td><div class="t_center">2022-10-14</div></td>
+                <td><div class="t_center"></div></td>
+              </tr>
+              <tr class=""><!-- [D] new 일때 class="" -->
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">개인정보 제3자 제공동의(필수)</div></td>
+                <td><div class="t_center"><a href="#none" class="t_hover_b com_move_page">user_join_004</a></div></td>
+                <td><div class="t_center">2022-10-14</div></td>
+                <td><div class="t_center"></div></td>
+              </tr>
+              <tr class="bg_on"><!-- [D] new 일때 class="" -->
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">가입고객관리</div></td>
+                <td><div class="t_center">info</div></td>
+                <td><div class="t_center">미가입 탭</div></td>
+                <td><div class="t_center"><a href="#none" class="t_hover_b com_move_page">user_info_001</a>&nbsp;<span class="flag_new">N</span></div></td>
+                <td><div class="t_center">2023-03-14</div></td>
+                <td><div class="t_center"></div></td>
+              </tr>
+              <tr class="bg_on"><!-- [D] new 일때 class="" -->
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">가입고객관리</div></td>
+                <td><div class="t_center">info</div></td>
+                <td><div class="t_center">가입 탭</div></td>
+                <td><div class="t_center"><a href="#none" class="t_hover_b com_move_page">user_info_001_2</a>&nbsp;<span class="flag_new">N</span></div></td>
+                <td><div class="t_center">2023-03-14</div></td>
+                <td><div class="t_center"></div></td>
+              </tr>
+              <tr class="bg_on"><!-- [D] new 일때 class="" -->
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">가입고객관리</div></td>
+                <td><div class="t_center">info</div></td>
+                <td><div class="t_center">상세조회</div></td>
+                <td><div class="t_center"><a href="#none" class="t_hover_b com_move_page">user_info_001_3</a>&nbsp;<span class="flag_new">N</span></div></td>
+                <td><div class="t_center">2023-03-14</div></td>
+                <td><div class="t_center"></div></td>
+              </tr>
+              <tr class=""><!-- [D] new 일때 class="" -->
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">수임처 세모R 신규가입</div></td>
+                <td><div class="t_center">user_info_002</div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">-</div></td>
+              </tr>
+              <tr class=""><!-- [D] new 일때 class="" -->
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">설치메시지 설정</div></td>
+                <td><div class="t_center"><a href="#none" class="t_hover_b com_move_page">user_info_003</a>&nbsp;</div></td>
+                <td><div class="t_center">2022-10-05</div></td>
+                <td><div class="t_center">-</div></td>
+              </tr>
+              <tr class=""><!-- [D] new 일때 class="" -->
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">설치메시지 발송</div></td>
+                <td><div class="t_center">user_info_004</div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">-</div></td>
+              </tr>
+              <tr class=""><!-- [D] new 일때 class="" -->
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">최초데이터 수집</div></td>
+                <td><div class="t_center"><a href="#none" class="t_hover_b com_move_page">user_info_004_1</a></div></td>
+                <td><div class="t_center">2023-01-16</div></td>
+                <td><div class="t_center">실시간 데이터 수집 - 가입완료 팝업</div></td>
+              </tr>
+              <tr class=""><!-- [D] new 일때 class="" -->
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">최초데이터 수집</div></td>
+                <td><div class="t_center"><a href="#none" class="t_hover_b com_move_page">user_info_004_2</a></div></td>
+                <td><div class="t_center">2023-01-16</div></td>
+                <td><div class="t_center">실시간 데이터 수집 - 수집 완료 팝업</div></td>
+              </tr>
+              <tr class="bg_on"><!-- [D] new 일때 class="" -->
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">가입정보 상세조회</div></td>
+                <td><div class="t_center"><a href="#none" class="t_hover_b com_move_page">user_info_005</a>&nbsp;<span class="flag_new">N</span></div></td>
+                <td><div class="t_center">2023-03-14</div></td>
+                <td><div class="t_center">-</div></td>
+              </tr>
+              <tr class=""><!-- [D] new 일때 class="" -->
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">수임처 담당자 추가가입</div></td>
+                <td><div class="t_center"><a href="#none" class="t_hover_b com_move_page">user_info_006</a>&nbsp;</div></td>
+                <td><div class="t_center">2022-10-07</div></td>
+                <td><div class="t_center">-</div></td>
+              </tr>
+              <tr class=""><!-- [D] new 일때 class="" -->
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">채팅 팝업</div></td>
+                <td><div class="t_center">user_info_007</div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">-</div></td>
+              </tr>
+
+
+
+              <tr class=""><!-- [D] new 일때 class="" -->
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">보고서발송</div></td>
+                <td><div class="t_center">rept</div></td>
+                <td><div class="t_center">보고서 리스트</div></td>
+                <td><div class="t_center"><a href="#none" class="t_hover_b com_move_page">user_rept_001</a>&nbsp;</div></td>
+                <td><div class="t_center">2022-10-10</div></td>
+                <td><div class="t_center">-</div></td>
+              </tr>
+              <tr class=""><!-- [D] new 일때 class="" -->
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">매입/매출 손익보고서 생성</div></td>
+                <td><div class="t_center">user_rept_002</div></td>
+                <td><div class="t_center">2022-10-10</div></td>
+                <td><div class="t_center">[2022-10-10][Lloyd] - user_rept_004 와 동일한 형식이라 참고 하세요.</div></td>
+              </tr>
+              <tr class=""><!-- [D] new 일때 class="" -->
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">보고서 조회 및 발송</div></td>
+                <td><div class="t_center">user_rept_003</div></td>
+                <td><div class="t_center">2022-10-10</div></td>
+                <td><div class="t_center">[2022-10-10][Lloyd] - user_rept_005 와 동일한 형식이라 참고 하세요.</div></td>
+              </tr>
+              <tr class=""><!-- [D] new 일때 class="" -->
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">부가세 예상세액 보고서 생성</div></td>
+                <td><div class="t_center"><a href="#none" class="t_hover_b com_move_page">user_rept_004</a>&nbsp;</div></td>
+                <td><div class="t_center">2022-10-10</div></td>
+                <td><div class="t_center">-</div></td>
+              </tr>
+              <tr class=""><!-- [D] new 일때 class="" -->
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">보고서 조회 및 발송</div></td>
+                <td><div class="t_center"><a href="#none" class="t_hover_b com_move_page">user_rept_005</a>&nbsp;</div></td>
+                <td><div class="t_center">2022-10-10</div></td>
+                <td><div class="t_center">-</div></td>
+              </tr>
+              <tr class=""><!-- [D] new 일때 class="" -->
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">세무사 보고서 작성 및 생성</div></td>
+                <td><div class="t_center"><a href="#none" class="t_hover_b com_move_page">user_rept_006</a>&nbsp;</div></td>
+                <td><div class="t_center">2022-10-10</div></td>
+                <td><div class="t_center">-</div></td>
+              </tr>
+              <tr class=""><!-- [D] new 일때 class="" -->
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">보고서 조회 및 발송</div></td>
+                <td><div class="t_center">user_rept_007</div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">-</div></td>
+              </tr>
+
+
+
+              <tr class="">
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">거래증빙</div></td>
+                <td><div class="t_center">evdc</div></td>
+                <td><div class="t_center">거래증빙 Null 리스트</div></td>
+                <td><div class="t_center">user_evdc_001</div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">[2022-10-10][Lloyd] - user_evdc_003와 동일한 화면이지만 거래 없는경우 문구 주석 참고 하세요.</div></td>
+              </tr>
+              <tr class="">
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">거래증빙 자료수집</div></td>
+                <td><div class="t_center">user_evdc_002</div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">[2022-10-10][Lloyd] - 해당 화면은 Tony에게 문의 필요(클라이언트 스크래핑 모듈 화면으로 보임)</div></td>
+              </tr>
+              <tr class="bg_on">
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">매출조회</div></td>
+                <td><div class="t_center"><a href="#none" class="t_hover_b com_move_page">user_evdc_003</a>&nbsp;<span class="flag_new">N</span></div></td>
+                <td><div class="t_center">2023-03-13</div></td>
+                <td><div class="t_center">-</div></td>
+              </tr>
+              <tr class="">
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">매입조회</div></td>
+                <td><div class="t_center"><a href="#none" class="t_hover_b com_move_page">user_evdc_004</a>&nbsp;</div></td>
+                <td><div class="t_center">2022-10-10</div></td>
+                <td><div class="t_center">-</div></td>
+              </tr>
+              <tr class="">
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">매입 간이영수증 조회</div></td>
+                <td><div class="t_center"><a href="#none" class="t_hover_b com_move_page">user_evdc_004_1</a></div></td>
+                <td><div class="t_center">2023-01-02</div></td>
+                <td><div class="t_center">-</div></td>
+              </tr>
+              <tr class="">
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">자료다운로드 팝업</div></td>
+                <td><div class="t_center"><a href="#none" class="t_hover_b com_move_page">user_evdc_004_1_pop</a></div></td>
+                <td><div class="t_center">2023-01-02</div></td>
+                <td><div class="t_center">-</div></td>
+              </tr>
+              <tr class="">
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">매입 간이영수증 조회 팝업</div></td>
+                <td><div class="t_center"><a href="#none" class="t_hover_b com_move_page">user_evdc_004_2</a></div></td>
+                <td><div class="t_center">2023-01-02</div></td>
+                <td><div class="t_center">-</div></td>
+              </tr>
+              <tr class="bg_on">
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">입출내역조회</div></td>
+                <td><div class="t_center"><a href="#none" class="t_hover_b com_move_page">user_evdc_005</a>&nbsp;<span class="flag_new">N</span></a></div></td>
+                <td><div class="t_center">2023-03-14</div></td>
+                <td><div class="t_center">-</div></td>
+              </tr>
+              <tr class="bg_on">
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">매입 간이영수증 조회</div></td>
+                <td><div class="t_center"><a href="#none" class="t_hover_b com_move_page">user_evdc_006</a>&nbsp;<span class="flag_new">N</span></div></td>
+                <td><div class="t_center">2023-03-14</div></td>
+                <td><div class="t_center">-</div></td>
+              </tr>
+              <tr class="bg_on">
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">수기증빙 조회 팝업</div></td>
+                <td><div class="t_center"><a href="#none" class="t_hover_b com_move_page">user_evdc_007</a>&nbsp;<span class="flag_new">N</span></div></td>
+                <td><div class="t_center">2023-03-13</div></td>
+                <td><div class="t_center">-</div></td>
+              </tr>
+              <tr class="bg_on">
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">매입 간이영수증 조회</div></td>
+                <td><div class="t_center"><a href="#none" class="t_hover_b com_move_page">user_evdc_008</a>&nbsp;<span class="flag_new">N</span></div></td>
+                <td><div class="t_center">2023-03-13</div></td>
+                <td><div class="t_center">-</div></td>
+              </tr>
+              <tr class="bg_on">
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">수기증빙 조회 등록</div></td>
+                <td><div class="t_center"><a href="#none" class="t_hover_b com_move_page">user_evdc_009</a>&nbsp;<span class="flag_new">N</span></div></td>
+                <td><div class="t_center">2023-03-14</div></td>
+                <td><div class="t_center">-</div></td>
+              </tr>
+
+
+              <tr class="">
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">용도설정</div></td>
+                <td><div class="t_center">sett</div></td>
+                <td><div class="t_center">매출용도 목록</div></td>
+                <td><div class="t_center"><a href="#none" class="t_hover_b com_move_page">user_sett_001</a>&nbsp;</div></td>
+                <td><div class="t_center">2022-10-10</div></td>
+                <td><div class="t_center">-</div></td>
+              </tr>
+              <tr class="">
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">매입용도 목록</div></td>
+                <td><div class="t_center"><a href="#none" class="t_hover_b com_move_page">user_sett_002</a>&nbsp;</div></td>
+                <td><div class="t_center">2022-10-10</div></td>
+                <td><div class="t_center">-</div></td>
+              </tr>
+              <tr class="">
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">입금용도 목록</div></td>
+                <td><div class="t_center"><a href="#none" class="t_hover_b com_move_page">user_sett_003</a>&nbsp;</div></td>
+                <td><div class="t_center">2022-10-10</div></td>
+                <td><div class="t_center">-</div></td>
+              </tr>
+              <tr class="">
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">출금용도 목록</div></td>
+                <td><div class="t_center">user_sett_004</div></td>
+                <td><div class="t_center">2022-10-10</div></td>
+                <td><div class="t_center">[2022-10-10][Lloyd] - user_sett_003와 동일한 화면</div></td>
+              </tr>
+					<tr class="">
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">직접용도설정 팝업</div></td>
+                <td><div class="t_center"><a href="#none" class="t_hover_b com_move_page">user_sett_005</a>&nbsp;&nbsp;</div></td>
+                <td><div class="t_center">2022-11-10</div></td>
+                <td><div class="t_center"></div></td>
+              </tr>
+
+
+              <tr class="">
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">직원급여정보</div></td>
+                <td><div class="t_center">empl</div></td>
+                <td><div class="t_center">전체/입사/퇴사 리스트</div></td>
+                <td><div class="t_center"><a href="#none" class="t_hover_b com_move_page">user_empl_001</a></div></td>
+                <td><div class="t_center">2022-10-10</div></td>
+                <td><div class="t_center">[2023-01-02] 고객관리메뉴개선 관련수정</div></td>
+              </tr>
+              <tr class="">
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">직원정보 상세보기</div></td>
+                <td><div class="t_center"><a href="#none" class="t_hover_b com_move_page">user_empl_002</a></div></td>
+                <td><div class="t_center">2022-10-10</div></td>
+                <td><div class="t_center">[2023-01-02] 고객관리메뉴개선 관련수정</div></td>
+              </tr>
+
+
+
+              <tr class="">
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">리포트 이력</div></td>
+                <td><div class="t_center">hist</div></td>
+                <td><div class="t_center">리포트 발송이력</div></td>
+                <td><div class="t_center"><a href="#none" class="t_hover_b com_move_page">user_hist_001</a>&nbsp;</div></td>
+                <td><div class="t_center">2022-10-10</div></td>
+                <td><div class="t_center">-</div></td>
+              </tr>
+              <tr class="">
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">리포트 상세보기</div></td>
+                <td><div class="t_center">user_hist_002</div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">[2022-10-10][Lloyd] - user_rept_005와 동일한 화면</div></td>
+              </tr>
+
+
+
+
+              <tr class="">
+                <td><div class="t_center">어드민 관리</div></td>
+                <td><div class="t_center">mgnt</div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">-</div></td>
+              </tr>
+              <tr class="">
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">리포트 설정</div></td>
+                <td><div class="t_center">rept</div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"><a href="#none" class="t_hover_b com_move_page">mgnt_rept_001</a></div></td>
+                <td><div class="t_center">2022-10-13</div></td>
+                <td><div class="t_center">-</div></td>
+              </tr>
+
+
+
+
+              <tr class="">
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">세무지식 관리</div></td>
+                <td><div class="t_center">cafe</div></td>
+                <td><div class="t_center">게시글 목록</div></td>
+                <td><div class="t_center"><a href="#none" class="t_hover_b com_move_page">mgnt_cafe_001</a>&nbsp;</div></td>
+                <td><div class="t_center">2022-11-07</div></td>
+                <td><div class="t_center">-</div></td>
+              </tr>
+              <tr class="">
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">글쓰기</div></td>
+                <td><div class="t_center">mgnt_cafe_002</div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">-</div></td>
+              </tr>
+              <tr class="">
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">카테고리관리</div></td>
+                <td><div class="t_center">mgnt_cafe_003</div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">-</div></td>
+              </tr>
+              <tr class="">
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">카테고리 미리보기</div></td>
+                <td><div class="t_center">mgnt_cafe_004</div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">-</div></td>
+              </tr>
+
+
+
+
+              <tr class="">
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">웰컴팝업 관리</div></td>
+                <td><div class="t_center">wpop</div></td>
+                <td><div class="t_center">디폴트 웰컴팝업</div></td>
+                <td><div class="t_center"><a href="#none" class="t_hover_b com_move_page">mgnt_wpop_001</a></div></td>
+                <td><div class="t_center">2022-10-17</div></td>
+                <td><div class="t_center">-</div></td>
+              </tr>
+              <tr class="">
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">웰컴팝업 추가/수정</div></td>
+                <td><div class="t_center"><a href="#none" class="t_hover_b com_move_page">mgnt_wpop_002</a></div></td>
+                <td><div class="t_center">2022-10-30</div></td>
+                <td><div class="t_center">-</div></td>
+              </tr>
+
+
+
+              <tr class="">
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">결제정보 관리</div></td>
+                <td><div class="t_center">pamt</div></td>
+                <td><div class="t_center">결제정보 조회</div></td>
+                <td><div class="t_center"><a href="#none" class="t_hover_b com_move_page">mgnt_pamt_001</a></div></td>
+                <td><div class="t_center">2022-10-13</div></td>
+                <td><div class="t_center">-</div></td>
+              </tr>
+              <tr class="">
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">청구납부내역</div></td>
+                <td><div class="t_center"><a href="#none" class="t_hover_b com_move_page">mgnt_pamt_002</a></div></td>
+                <td><div class="t_center">2022-10-13</div></td>
+                <td><div class="t_center">-</div></td>
+              </tr>
+              <tr class="">
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">청구서 상세조회</div></td>
+                <td><div class="t_center"><a href="#none" class="t_hover_b com_move_page">mgnt_pamt_003</a></div></td>
+                <td><div class="t_center">2022-10-13</div></td>
+                <td><div class="t_center">-</div></td>
+              </tr>
+              <tr class="bg_on"><!-- [D] new 일때 class="" -->
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">ufld</div></td>
+                <td><div class="t_center">사용자필드 설정 페이지</div></td>
+                <td><div class="t_center"><a href="#none" class="t_hover_b com_move_page">mgnt_ufld_001</a>&nbsp;<span class="flag_new">N</span></div></td>
+                <td><div class="t_center">2023-03-14</div></td>
+                <td><div class="t_center"></div></td>
+              </tr>
+              <tr class="bg_on"><!-- [D] new 일때 class="" -->
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">사용자필드 수정 팝업</div></td>
+                <td><div class="t_center"><a href="#none" class="t_hover_b com_move_page">mgnt_ufld_002</a>&nbsp;<span class="flag_new">N</span></div></td>
+                <td><div class="t_center">2023-03-13</div></td>
+                <td><div class="t_center"></div></td>
+              </tr>
+
+              <tr class="">
+                <td><div class="t_center">실시간 정보수집</div></td>
+                <td><div class="t_center">infoc</div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">-</div></td>
+              </tr>
+              <tr class="">
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">rinfo</div></td>
+                <td><div class="t_center">실시간정보수집현황</div></td>
+                <td><div class="t_center"><a href="#none" class="t_hover_b com_move_page">infoc_rinfo_001</a></div></td>
+                <td><div class="t_center">2022-12-30</div></td>
+                <td><div class="t_center">-</div></td>
+              </tr>
+              <tr class="">
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"><a href="#none" class="t_hover_b com_move_page">infoc_rinfo_002</a></div></td>
+                <td><div class="t_center">2022-12-30</div></td>
+                <td><div class="t_center">-</div></td>
+              </tr>
+              <tr class="">
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">최초정보수집팝업</div></td>
+                <td><div class="t_center"><a href="#none" class="t_hover_b com_move_page">infoc_rinfo_003</a></div></td>
+                <td><div class="t_center">2022-12-30</div></td>
+                <td><div class="t_center">-</div></td>
+              </tr>
+              <tr class="">
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">정보수집팝업</div></td>
+                <td><div class="t_center"><a href="#none" class="t_hover_b com_move_page">infoc_rinfo_004</a></div></td>
+                <td><div class="t_center">2022-12-30</div></td>
+                <td><div class="t_center">-</div></td>
+              </tr>
+              <tr class="">
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">정보수집중 팝업</div></td>
+                <td><div class="t_center"><a href="#none" class="t_hover_b com_move_page">infoc_rinfo_005</a></div></td>
+                <td><div class="t_center">2022-12-30</div></td>
+                <td><div class="t_center">[2023-01-12] 프로그레스바 추가</div></td>
+              </tr>
+              <tr class="">
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">정보수집중 팝업_다건</div></td>
+                <td><div class="t_center"><a href="#none" class="t_hover_b com_move_page">infoc_rinfo_005_1</a></div></td>
+                <td><div class="t_center">2023-01-17</div></td>
+                <td><div class="t_center">[2023-01-17] .selectBox 클래스 레이아웃 수정</div></td>
+              </tr>
+              <tr class="">
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">정보수집완료</div></td>
+                <td><div class="t_center"><a href="#none" class="t_hover_b com_move_page">infoc_rinfo_006</a></div></td>
+                <td><div class="t_center">2022-12-30</div></td>
+                <td><div class="t_center">-</div></td>
+              </tr>
+              <tr class="">
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">정보수집내역</div></td>
+                <td><div class="t_center"><a href="#none" class="t_hover_b com_move_page">infoc_rinfo_007</a></div></td>
+                <td><div class="t_center">2022-12-30</div></td>
+                <td><div class="t_center">-</div></td>
+              </tr>
+              <tr class="">
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">정보수집내역_내역없음</div></td>
+                <td><div class="t_center"><a href="#none" class="t_hover_b com_move_page">infoc_rinfo_007_1</a></div></td>
+                <td><div class="t_center">2022-12-30</div></td>
+                <td><div class="t_center">-</div></td>
+              </tr>
+              <tr class="">
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">인증서 자동로그인 팝업</div></td>
+                <td><div class="t_center"><a href="#none" class="t_hover_b com_move_page">infoc_rinfo_009</a></div></td>
+                <td><div class="t_center">2022-12-30</div></td>
+                <td><div class="t_center">-</div></td>
+              </tr>
+              <tr>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">정보수집완료 팝업_다건_정상</div></td>
+                <td><div class="t_center"><a href="#none" class="t_hover_b com_move_page">infoc_rinfo_012</a></div></td>
+                <td><div class="t_center">2023-01-17</div></td>
+                <td><div class="t_center"></div></td>
+              </tr>
+              <tr>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">정보수집완료 팝업_다건_오류</div></td>
+                <td><div class="t_center"><a href="#none" class="t_hover_b com_move_page">infoc_rinfo_013</a></div></td>
+                <td><div class="t_center">2023-01-17</div></td>
+                <td><div class="t_center"></div></td>
+              </tr>
+              <tr class="">
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">인증서미등록</div></td>
+                <td><div class="t_center"><a href="#none" class="t_hover_b com_move_page">infoc_rcert_001</a></div></td>
+                <td><div class="t_center">2022-12-30</div></td>
+                <td><div class="t_center">-</div></td>
+              </tr>
+              <tr class="">
+                <td><div class="t_center">리포트 발송</div></td>
+                <td><div class="t_center">mrprt</div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">-</div></td>
+              </tr>
+              <tr class="">
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">사업분석 - 수정팝업</div></td>
+                <td><div class="t_center"><a href="#none" class="t_hover_b com_move_page">mrprt_rept_000_1</a></div></td>
+                <td><div class="t_center">2023-01-17</div></td>
+                <td><div class="t_center"></div></td>
+              </tr>
+              <tr class="">
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">사업분석 - 변경이력팝업</div></td>
+                <td><div class="t_center"><a href="#none" class="t_hover_b com_move_page">mrprt_rept_000_3</a></div></td>
+                <td><div class="t_center">2023-01-17</div></td>
+                <td><div class="t_center"></div></td>
+              </tr>
+              <tr class="">
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">사업분석 - 미리보기팝업</div></td>
+                <td><div class="t_center"><a href="#none" class="t_hover_b com_move_page">mrprt_rept_000_4</a></div></td>
+                <td><div class="t_center">2023-01-17</div></td>
+                <td><div class="t_center"></div></td>
+              </tr>
+              <tr class="">
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">사업분석 - 미리보기팝업_기능</div></td>
+                <td><div class="t_center"><a href="#none" class="t_hover_b com_move_page">mrprt_rept_000_5</a></div></td>
+                <td><div class="t_center">2023-01-17</div></td>
+                <td><div class="t_center"></div></td>
+              </tr>
+              <tr class="bg_n">
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">사업분석 - 발송확인팝업</div></td>
+                <td><div class="t_center"><a href="#none" class="t_hover_b com_move_page">mrprt_rept_000_6</a></div></td>
+                <td><div class="t_center">2023-01-17</div></td>
+                <td><div class="t_center"></div></td>
+              </tr>
+              <tr class="">
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">사업분석 - 예약발송팝업</div></td>
+                <td><div class="t_center"><a href="#none" class="t_hover_b com_move_page">mrprt_rept_000_7</a></div></td>
+                <td><div class="t_center">2023-01-17</div></td>
+                <td><div class="t_center"></div></td>
+              </tr>
+              <tr class="">
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">리포트 발송</div></td>
+                <td><div class="t_center"><a href="#none" class="t_hover_b com_move_page">mrprt_rept_001</a></div></td>
+                <td><div class="t_center">2023-01-16</div></td>
+                <td><div class="t_center">-</div></td>
+              </tr>
+              <tr class="">
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">사업분석 - 요약</div></td>
+                <td><div class="t_center"><a href="#none" class="t_hover_b com_move_page">mrprt_rept_101</a></div></td>
+                <td><div class="t_center">2023-01-17</div></td>
+                <td><div class="t_center"></div></td>
+              </tr>
+              <tr class="">
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">사업분석 - 기능</div></td>
+                <td><div class="t_center"><a href="#none" class="t_hover_b com_move_page">mrprt_rept_102</a></div></td>
+                <td><div class="t_center">2023-01-17</div></td>
+                <td><div class="t_center"></div></td>
+              </tr>
+              <tr class="">
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">사업분석 - 상세</div></td>
+                <td><div class="t_center"><a href="#none" class="t_hover_b com_move_page">mrprt_rept_103</a></div></td>
+                <td><div class="t_center">2023-01-17</div></td>
+                <td><div class="t_center"></div></td>
+              </tr>
+              <tr class="">
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center"></div></td>
+                <td><div class="t_center">사업분석 - 오류, 발송대기, 발송완료</div></td>
+                <td><div class="t_center"><a href="#none" class="t_hover_b com_move_page">mrprt_rept_104</a></div></td>
+                <td><div class="t_center">2023-01-17</div></td>
+                <td><div class="t_center"></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- //리스트 테이블 -->
+
+
+
+
+      </div>
+       <!-- //content_wrap -->
+    </div>
+    <!-- //content -->
+  </div>
+  <!-- //Container -->
+
+
+
+
+  <!-- footer 추가 : 20180828 -->
+  <div class="footer">
+    <!-- Copy right -->
+    <div class="copyright_wrap">
+      <div class="copyright_box">
+        <p>Copyright(c) <strong>Webcash.</strong> All rights reserved.</p>
+      </div>
+      <div class="ft_menu"></div>
+    </div>
+    <!-- //Copy right -->
+  </div>
+  <!-- //footer -->
+</div>
+<!-- //wrap -->
+
+
+</body>
+</html>
+

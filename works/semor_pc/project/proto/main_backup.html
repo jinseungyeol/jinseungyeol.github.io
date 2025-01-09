@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta content='세모리포트' property='og:title' />
+    <meta content='https://www.semoreport.com' property='og:url'/>
+    <meta content="../img/semo_thumb.png" property='og:image'/>
+    <meta content="사장님이 선정한 1등 보고서" property="og:description"/>
+
+    <link rel="icon" href="../img/ico_main0802.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/semo.css">
+    <link rel="stylesheet" href="../css/aos.css">
+    <link rel="stylesheet" href="../css/swiper.min.css">
+    <link rel="stylesheet" href="../css/jquery.fullPage.css">
+    <link rel="stylesheet" href="../css/odometer-theme-default.css">
+    <script src="https://publ.roumit.com/js/firebase_include.js"></script>
+  <script src="../js/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
+    <script src="../js/jquery.fullPage.js"></script>
+    <script src="../js/wow.min.js"></script>
+    <script src="../js/jquery.fullPage.js"></script>
+    <script src="../js/odometer.js"></script>
+    <script src="../js/aos.js"></script>
+    <script src="../js/semo.js"></script>
+    <script src="../js/semo.api.js"></script>
+    <title>세모리포트</title>
+
+    
+</head>
+<script>
+    var index;
+    // swiper 처리를 위한 변수 선언
+    var swiper1;
+    var swiper2;
+    var swiper3;
+    var swiper4;
+    var swiper5;
+    var scrollodometer;
+    var page1 = 1;   // 신규고객 가입현황 페이지 번호
+    var page2 = 1;   // 프리미엄 세무서비스 페이지 번호
+    var TOT_TXOF_CNT;
+    var R_BZAQ_CNT;
+
+    $(document).ready(function () {
+      
+
+        // ####### object Control ###########
+        swiper1 = new Swiper('.swiper-container', {
+            effect: 'fade',
+            loop: true,
+            speed: 1500,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
+
+        swiper3 = new Swiper('.swiper-containerY2', {
+            slidesPerView: 3,
+            spaceBetween: 22,
+            centeredSlides: false,
+            loop: true,
+            navigation: {
+                nextEl: '.swiper-button-next5',
+                prevEl: '.swiper-button-prev5',
+            },
+        });
+
+        swiper4 = new Swiper('.swiper-containerY', {
+            slidesPerView: 3,
+            spaceBetween: 22,
+            centeredSlides: false,
+            loop: true,
+            navigation: {
+                nextEl: '.swiper-button-next4',
+                prevEl: '.swiper-button-prev4',
+            },
+        });
+
+        swiper5 = new Swiper('.swiper-container3', {
+            slidesPerView: 1,
+            centeredSlides: true,
+            navigation: {
+                nextEl: '.swiper-button-next3',
+                prevEl: '.swiper-button-prev3',
+            },
+            pagination: {
+                el: '.swiper-pagination3',
+                clickable: true,
+            },
+        });
+        
+        // 우수 세무사 , 세모리포트 고객수 
+        
+
+
+       
+
+        // scrollodometer = $(".main02").offset().top - 500;
+
+         scrollodometer = $(".main02").offset().top - 500;
+
+        $(window).on('scroll', function () {
+            if (scrollodometer < $(window).scrollTop()) {
+                $('.odometer1').html(numberToKorean(TOT_TXOF_CNT));
+                $('.odometer2').html(numberToKorean(R_BZAQ_CNT));
+            }
+        });
+
+
+        // ####### Event 핸들링 ###########
+        $(".tab_nav li").click(function () {
+            var a = $(this).index();
+            $(".tab_nav li").not($(this)).removeClass("active");
+            $(this).addClass("active");
+            $(".con_box .tab_con").removeClass("active");
+            $(".con_box .tab_con").eq(a).addClass("active");
+        });
+
+
+
+
+        
+        // 신규 고객 가입현황 스크롤 처리
+        $('#scrollPage1').scroll(function () {
+            if ($(this).prop('scrollHeight') - Math.round($(this).scrollTop()) <= $(this).height()) {
+                page1++;
+                fn_getList(page1);
+            }
+        });
+
+        // 프리미엄 세무서비스 스크롤 처리
+
+        $('#scrollPage2').scroll(function () {
+            if ($(this).prop('scrollHeight') - Math.round($(this).scrollTop()) <= $(this).height()) {
+                page2++;
+                fn_consultList(page2);
+            }
+        });
+
+        // 보고서 핸들링
+
+        $('.secProduct .tabList li').on('click', function() {
+        var index = $(this).index();
+
+        $(this).addClass('active').siblings().removeClass('active');
+        $('.secProduct .tabPannel').eq(index).addClass('active').siblings().removeClass('active');
+    })
+
+    AOS.init({
+        disable: function () {
+            var maxWidth = 800;
+            return window.innerWidth < maxWidth;
+        }
+         });
+
+
+         
+        // ####### 업무 init ###########
+        // 가입/누적/송금 현황 ajax 조회
+         fn_taxCnt();
+        
+        fn_getList(page1);
+        
+        fn_consultList(page2);
+
+        fn_consult_Cnt();
+
+        fn_urlParams("sub1");
+
+    }); // End ready
+
+    
+
+    
+    // 금액 한글 변환 함수
+    function numberToKorean(number) {
+        var intNumber = +number;
+        var inputNumber = intNumber < 0 ? false : intNumber;
+        var unitWords = ['', '만', '억', '조', '경'];
+        var splitUnit = 10000;
+        var splitCount = unitWords.length;
+        var resultArray = [];
+        var resultString = '';
+
+        for (var i = 0; i < splitCount; i++) {
+            var unitResult = (inputNumber % Math.pow(splitUnit, i + 1)) / Math.pow(splitUnit, i);
+            unitResult = Math.floor(unitResult);
+            if (unitResult > 0) {
+                resultArray[i] = unitResult;
+            }
+        }
+
+        for (var i = 0; i < resultArray.length; i++) {
+            if (!resultArray[i]) continue;
+            resultString = String(resultArray[i]) + unitWords[i] + resultString;
+        }
+
+        return resultString;
+    }   // End numberToKorean
+
+
+    //우수 세무사 , 리포트 고객수 조회
+    function fn_taxCnt(){
+        
+        var param = {};
+        // 공통부
+        param.API_ID    = "SMR_SEMO_RPRT_STTS_R01"; // ESMR_SEMO_RPRT_STTS_R01 [세모리포트 가입현황] Ajax 호출
+
+        // 개별부 REQ_DATA
+        param.REQ_DATA              = {};
+
+        semoApi.callAjax(param, function(data){
+            
+    		if (data.RSLT_CD == '0000') {
+    		     TOT_TXOF_CNT    = data.RESP_DATA.TOT_TXOF_CNT;        // 세무사 가입수
+                 R_BZAQ_CNT     = data.RESP_DATA.R_BZAQ_CNT;        // 수입처 가입수
+                
+                // 가입수 현황 스크롤 이벤트 처리
+                $(window).on('scroll', function () {
+                    if (scrollodometer < $(window).scrollTop()) {
+                        $('.odometer1').html(numberToKorean(TOT_TXOF_CNT));       //세무사 가입수
+                        $('.odometer2').html(numberToKorean(R_BZAQ_CNT));       // 수입처 가입수
+                    }
+                });
+    		}else{
+    		    // 가입수 스크롤 이벤트 처리
+                $(window).on('scroll', function () {
+                    if (scrollodometer < $(window).scrollTop()) {
+                        $('.odometer1').html(0);    // 세무사 가입수
+                        $('.odometer2').html(0);    // 수입처 가입수
+                    }
+                });
+    		}
+            console.log((TOT_TXOF_CNT));
+            
+    	});
+
+    }   // End fn_taxCnt
+           
+
+    // 실시간 고객가입현황
+    function fn_getList(page1) {
+        
+        var param = {};
+        // 공통부
+        param.API_ID    = "EXTN_PROD_R003"; // EXTN_PROD_R003 [실시간 고객가입현황] Ajax 호출
+
+        // 개별부 REQ_DATA
+        param.REQ_DATA              = {};
+        param.REQ_DATA.PROD_CD      = "SEMO_000";
+        param.REQ_DATA.PAGE_NO      = page1;
+        param.REQ_DATA.PAGE_SZ      = "15";
+        
+
+        semoApi.callAjax(param, function(data){
+            // console.log('통신 성공 !!'+JSON.stringify(data));
+            if (data.RSLT_CD == '0000') {
+                $("#getList_Cnt").html(data.RESP_DATA.NEW_CNT);
+                data.RESP_DATA.REC.forEach(function (item) {
+                    let ymd = item.NEW_DT.substr(0, 4) + "-" + item.NEW_DT.substr(4, 2) + "-" + item.NEW_DT.substr(6, 2);
+
+                    if (item.IS_NEW) {
+                        var row = '';
+                        row += '<tr>';
+                        row += '<td>' + ymd + '</td>';
+                        row += '<td>' + item.BSNN_NM + ' 에서 가입하셨습니다.<span class="new_icon">NEW</span></td>';
+                        row += '<td>' + item.TPBS + '</td>';
+                        row += '</tr>';
+                    } else {
+                        var row = '';
+                        row += '<tr>';
+                        row += '<td>' + ymd + '</td>';
+                        row += '<td>' + item.BSNN_NM + ' 에서 가입하셨습니다.</td>';
+                        row += '<td>' + item.TPBS + '</td>'; 
+                        row += '</tr>';
+                    }
+                    $('#table-body').append(row);
+                })
+            } else {
+                // console.log('api Error')
+            }
+            
+        }); 
+        
+    }   // End fn_getList
+
+
+
+    // 무료절세컨설팅 신청자현황
+    function fn_consultList(page2) {
+        
+        var param = {};
+        // 공통부
+        param.API_ID    = "EXTN_HOME_R001"; // EXTN_HOME_R001 [무료절세컨설팅 신청자현황] Ajax 호출
+
+        // 개별부 REQ_DATA
+        param.REQ_DATA              = {};
+        param.REQ_DATA.PROD_CD      = "SEMO_000";
+        param.REQ_DATA.PAGE_NO      = page2;
+        param.REQ_DATA.PAGE_SZ      = "12";
+
+        semoApi.callAjax(param, function(data){
+            // console.log('통신 성공 !!'+JSON.stringify(data));
+            if (data.RSLT_CD == '0000') {
+                data.RESP_DATA.REC.forEach(function (item) {
+                    let ymd = item.NEW_DT.substr(0, 4) + "-" + item.NEW_DT.substr(4, 2) + "-" + item.NEW_DT.substr(6, 2);
+
+                    if (item.IS_NEW) {
+                        var row = '';
+                        row += '<tr>';
+                        row += '<td>' + ymd + '</td>';
+                        row += '<td>' + item.BSNN_NM + ' 에서 가입하셨습니다.<span class="new_icon">NEW</span></td>';
+                        row += '<td>' + item.TPBS + '</td>';
+                        row += '</tr>';
+                    } else {
+                        var row = '';
+                        row += '<tr>';
+                        row += '<td>' + ymd + '</td>';
+                        row += '<td>' + item.BSNN_NM + ' 에서 가입하셨습니다.</td>';
+                        row += '<td>' + item.TPBS + '</td>'; 
+                        row += '</tr>';
+                    }
+                    $('#table-body2').append(row);
+                })
+            } else {
+                // console.log('api Error')
+            }
+            
+        }); 
+        
+    }   // End fn_consultList
+
+    //무료절세컨설팅 신청자 건수 
+    function fn_consult_Cnt() {
+        
+        var param = {};
+        // 공통부
+        param.API_ID    = "EXTN_HOME_R002"; // EXTN_HOME_R001 [무료절세컨설팅 신청자현황] Ajax 호출
+
+        // 개별부 REQ_DATA
+        param.REQ_DATA              = {};
+        param.REQ_DATA.PROD_CD      = "SEMO_000";
+        
+        // param.RESP_DATA.TOT_CNT     = "";
+
+        semoApi.callAjax(param, function(data){
+            // console.log('통신 성공 !!'+JSON.stringify(data));
+            if (data.RSLT_CD == '0000') {
+                // console.log(data)
+                $("#consult_Cnt").html(data.RESP_DATA.TOT_CNT);
+
+            } else {
+                // console.log('api Error')
+            }
+            
+        }); 
+        
+    }   // End fn_consult_Cnt
+
+    // sub1 파라미터 호출
+
+    function fn_urlParams(pageName) {
+        $('.main03 .swiper-container2 li').click(function () {
+            var params = { index: $(this).data("swiper-slide-index") };
+            var urlParam = $.param(params);
+            
+            location.href = `${pageName}.html?${urlParam}`;
+        });
+    }
+    
+
+    
+</script>
+<body>
+
+    <header id="header">
+        <div class="header_wrapper">
+            <h1 class="hd_logo">
+                <a href="main.html"><img src="../img/logo_semoR_W120.png" alt="세모리포트"></a>
+            </h1>
+            <nav id="gnb">
+                <ul>
+                    <li>
+                        <a href="sub1.html">프리미엄 보고서</a>
+                    </li>
+                    <li>
+                        <a href="sub2.html">세모주치의</a>
+                    </li>
+                    <li>
+                        <a href="https://report.appplay.co.kr/cert_mgmt_002.act" target="_blank">인증서 하이패스</a>
+                    </li>
+                    <li>
+                        <a href="https://qe398.channel.io/support-bots/74565" target="_blank">고객센터</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="wrapper">
+        <div id="container_wr">
+            <div class="fixed_btn">                        
+                <a class="btnConsult" href="https://www.semoreport.com/html/owner.html?PATH_CD=HO_RPT" target="_blank">프리미엄 세무서비스 신청</a>
+            </div>
+            <div id="container">
+                <div class="top_slogan ">
+                    <p>특별한 <strong>프리미엄 보고서</strong>로 사장님의 <strong class="animate__animated animate__bounce">성공</strong>을 돕습니다</p>
+                </div>
+                <section class="main_visual">
+                    <div class="visual_box">
+                        <div class="lat_mvsual swiper-container">
+                            <ul class="swiper-wrapper">
+                                <li class="galley_li swiper-slide">
+                                    <img src="../img/Main_slide_01.png" alt="">
+                                   
+                                </li>
+                                <li class="galley_li swiper-slide">
+                                    <img src="../img/Main_slide_02.png">
+                                    
+                                </li>
+                                <li class="galley_li swiper-slide">
+                                    <img src="../img/main_03_01.jpg">
+                                </li>
+                            </ul>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="main02">
+                    <div class="inner">
+                        <ul>
+                            <li>
+                                <span class="odometer1 odometer ft_play">0</span>
+                                <p>세모리포트 우수 세무사</p>
+                            </li>
+                            <li>
+                                <span class="odometer2 odometer ft_play">0</span>
+                                <p>세모리포트 고객수</p>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="secProduct">
+                    <div class="sec_inner">
+                        <div class="areaTabMenu aos-init aos-animate" data-aos="fade-up">
+                            <ul class="tabList">
+                                <li class="active">
+                                    <button class="tabMenu">보고서</button>
+                                </li>
+                                <li class="">
+                                    <button class="tabMenu">직원/급여</button>
+                                </li>
+                                <li class="">
+                                    <button class="tabMenu">민원증명</button>
+                                </li>
+                                <li>
+                                    <button class="tabMenu">간이영수증</button>
+                                </li>
+                                <li>
+                                    <button class="tabMenu">간편송금</button>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tabPannelWrap">
+                            <div class="tabPannel active">
+                                <div class="areaTxt">
+                                    <h2 class="defTit aos-init aos-animate" data-aos="fade-right" data-aos-delay="820" data-aos-duration="1000">
+                                        <span class="pointColor02">프리미엄 보고서 6종 제공</span>
+                                    </h2>
+                                    <p class="infoTxt aos-init" data-aos="fade-right" data-aos-delay="860" data-aos-duration="1500">
+                                        보이는 경영, 위기 대응을 위해<br>
+                                        세금, 매출, 손익 현황을<br>
+                                        매월 알려드립니다<br>
+                                    </p>
+                                    <a href="sub1.html" class="link">보고서 자세히 보기</a>
+                                </div>
+                                <div class="areaMockup">
+                                    <img src="../img/mockup_preview.png" alt="보고서 미리보기" data-aos="fade-up" data-aos-delay="990" data-aos-duration="2000" class="aos-init aos-animate">
+                                </div>
+                            </div>
+                            <div class="tabPannel">
+                                <div class="areaTxt">
+                                    <h2 class="defTit">
+                                        <span class="pointColor02">급여</span>를 쉽고 간편하게
+                                    </h2>
+                                    <p class="infoTxt aos-init" >
+                                        직원별 급여현황 및 이달의 급여를<br>
+                                        앱을 통해 간편하게 소통합니다
+                                    </p>
+                                </div>
+                                <div class="areaMockup">
+                                    <img src="../img/mockup_preview02.png" alt="급여업무 미리보기">
+                                </div>
+                            </div>
+                            <div class="tabPannel">
+                                <div class="areaTxt">
+                                    <h2 class="defTit">
+                                        <span class="pointColor02">민원서류</span>를 5분이면 간편하게<br>
+                                    </h2>
+                                    <p class="infoTxt">
+                                        간편하게 앱으로 신청하면<br>
+                                        빠르게 발급해 사장님의 시간을 지켜 드립니다.
+                                    </p>
+                                </div>
+                                <div class="areaMockup">
+                                    <img src="../img/mockup_preview03.png" alt="민원증명 미리보기">
+                                </div>
+                            </div>
+                            <div class="tabPannel">
+                                <div class="areaTxt">
+                                    <h2 class="defTit">
+                                        절세의 시작 <span class="pointColor02">증빙관리</span><br>
+                                        편하게 관리하세요
+                                    </h2>
+                                    <p class="infoTxt">
+                                        간편하게 사진만 찍어서 올리세요<br>
+                                        누락되지 않고 절세에 반영해 드립니다
+                                    </p>
+                                </div>
+                                <div class="areaMockup">
+                                    <img src="../img/mockup_preview04.png" alt="간이영수증 미리보기">
+                                </div>
+                            </div>
+                            <div class="tabPannel">
+                                <div class="areaTxt">
+                                    <h2 class="defTit">
+                                        <span class="pointColor02">급여, 거래처 송금</span>을 간편하게
+                                    </h2>
+                                    <p class="infoTxt">
+                                        세금계산서에서 간편하게 송금<br>
+                                        직원 급여도 간편하게 송금<br>
+                                        세금 납부도 간편 하게 납부
+                                    </p>
+                                </div>
+                                <div class="areaMockup">
+                                    <img src="../img/mockup_preview05.png" alt="간편송금 미리보기">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="main04">
+                    <div class="inner">
+                        <h2 class="moveEff wow">세모리포트 <strong>도입 <b>효과</b></strong></h2>
+                        <p class="moveEff wow">사장님의 쉽고 간편한 경영을 지원합니다</p>
+                        <ul class="moveEff wow">
+                            <li>
+                                <strong class="moveEff wow">80<b>%</b>
+                                    <img src="../img/ico_up.png" alt="상승 화살표" class="moveEff wow"></strong>
+                                <span>개선</span>
+                                <div class="img_box"></div>
+                                <p>경영 관리</p>
+                            </li>
+                            <li>
+                                <strong class="moveEff wow">90<b>%</b> <img src="../img/ico_down02.png" alt="감소 화살표" class="moveEff"></strong>
+                                <span>절감</span>
+                                <div class="img_box"></div>
+                                <p>업무 시간</p>
+                            </li>
+                            <li>
+                                <strong class="moveEff wow">200<b>만원</b> <img src="../img/ico_up.png" alt="상승 화살표" class="moveEff"></strong>
+                                <span>절세</span>
+                                <div class="img_box"></div>
+                                <p>절세 효과</p>
+                            </li>
+                            <li>
+                                <strong class="moveEff wow">150<b>%</b> <img src="../img/ico_up.png" alt="상승 화살표" class="moveEff"></strong>
+                                <span>개선</span>
+                                <div class="img_box"></div>
+                                <p>직원 관리</p>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="main05 " id="main05">
+                    <div class="inner">
+                        <h2 class="moveEff wow"><strong>다양한 업종</strong>의 소상공인 사장님들의 <span>경영</span>을 돕습니다</h2>
+                        <div class="main05_board moveEff wow">
+                            <div class="pic_main05">
+                                <ul>
+                                    <li class="galley_li">
+                                        <h3>음식점/카페</h3>
+                                        <img src="../img/main05_01.png">
+                                        <dl>
+                                            <dt>카드매출, 배달앱 매출 조회로 매출관리가 쉬워집니다.</dt>
+                                            <dd>다른 곳에서는 불러오지 못하는 매출 내역으로 손익 계산하기가 쉬워졌어요</dd>
+                                            <dd>- 의정부XXX고기집 -</dd>
+                                        </dl>
+                                        <a href="#main07" class="btn_more02">+ 더보기</a>
+                                    </li>
+                                    <li class="galley_li">
+                                        <h3>서비스업</h3>
+                                        <img src="../img/main05_02.png">
+                                        <dl>
+                                            <dt>매출, 매입, 현금흐름을 보고서로 관리할 수 있어요.</dt>
+                                            <dd>매출, 매입 랭킹 TOP3 분석으로 어떤 부분에 더 집중해야 하는지 파악할 수 있었어요.</dd>
+                                            <dd>- 마포XXX미용실 -</dd>
+                                        </dl>
+                                        <a href="#main07" class="btn_more02">+ 더보기</a>
+                                    </li>
+                                    <li class="galley_li">
+                                        <h3>건설/임대업</h3>
+                                        <img src="../img/main05_03.png">
+                                        <dl>
+                                            <dt>수기증빙 관리가 쉬워 영수증 모을 필요가 없어요.</dt>
+                                            <dd>계산서랑 영수증을 잃어버리는 경우가 많은데 바로 사진 찍고 세무사에게 전송하니 좋아요.</dd>
+                                            <dd>- 판교XXX가공식품 공장 -</dd>
+                                        </dl>
+                                        <a href="#main07" class="btn_more02">+ 더보기</a>
+                                    </li>
+                                    <li class="galley_li">
+                                        <h3>쇼핑몰</h3>
+                                        <img src="../img/main05_04.png">
+                                        <dl>
+                                            <dt>쇼핑몰 매출 조회 기능을 도입할 예정입니다.</dt>
+                                            <dd>부가세 예상금액을 알림으로 알려줘서 세금 대비를 미리 할 수 있어요.</dd>
+                                            <dd>- 어필XX쇼핑몰 -</dd>
+                                        </dl>
+                                        <a href="#main07" class="btn_more02">+ 더보기</a>
+                                    </li>
+                                    <li class="galley_li">
+                                        <h3>병의원</h3>
+                                        <img src="../img/main05_05.png">
+                                        <dl>
+                                            <dt>건강보험매출  조회가 가능합니다.</dt>
+                                            <dd>정확하게 확인하기 어려운 건강보험매출의 내역을 빠르게 확인할 수 있어서 좋아요.</dd>
+                                            <dd>- 청담동XXX여성의원 -</dd>
+                                        </dl>
+                                        <a href="#main07" class="btn_more02">+ 더보기</a>
+                                    </li>
+                                    <li class="galley_li">
+
+                                        <h3>기타 업종</h3>
+                                        <img src="../img/main05_06.png">
+                                        <dl>
+                                            <dt>직원들의 기본 정보를 한 번에 관리할 수 있어요.</dt>
+                                            <dd>직원들의 입·퇴사 정보나 근로 계약서 등 다양한 서류들을 한 번에 관리할 수 있어서 편해요.</dd>
+                                            <dd>- 부천XXX카페 -</dd>
+                                        </dl>
+                                        <a href="https://www.semojangbu.com/sub1/7" class="btn_more02">+ 더보기</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="main06">
+                    <div class="inner">
+                        <img src="../img/ico_main06.png" alt="영상 아이콘" class="moveEff wow">
+                        <h2 class="moveEff wow"><strong>영상</strong>으로 만나는 <b>세모리포트</b></h2>
+                        <div class="moveEff wow">
+                            <span>세모리포트 <strong>소개 영상</strong></span>
+                            <div class="video_box">
+                                <div class="swiper-containerY2">
+                                    <ul class="swiper-wrapper">
+                                        <li class="swiper-slide">
+                                            <a href="https://youtu.be/vAHAqmj4MS4" class="lt_img" target="_blank">
+                                                <img src="https://img.youtube.com/vi/vAHAqmj4MS4/0.jpg">
+                                                <span><img src="../img/ico_play.png"></span>
+                                            </a>
+                                            <p>세무사가 말하는 세모리포트</p>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="https://youtu.be/Ut_YdBgmuRY" class="lt_img" target="_blank">
+                                                <img src="https://img.youtube.com/vi/Ut_YdBgmuRY/0.jpg">
+                                                <span><img src="../img/ico_play.png"></span>
+                                            </a>
+                                            <p>세무사가 말하는 세모리포트의 기능</p>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="https://youtu.be/nPJbmtdu_Jw" class="lt_img" target="_blank">
+                                                <img src="https://img.youtube.com/vi/nPJbmtdu_Jw/0.jpg">
+                                                <span><img src="../img/ico_play.png"></span>
+                                            </a>
+                                            <p>좋은세무서비스 세모리포트</p>
+                                        </li>
+                                    </ul>
+                                <span class="swiper-notification"></span></div>
+                                <div class="swiper-button-next5"></div>
+                                <div class="swiper-button-prev5"></div>
+                            </div>
+                        </div>
+                        <div class="moveEff wow">
+                            <span>세모리포트<strong>고객 후기</strong></span>
+                            <div class="video_box">
+                                <div class="swiper-containerY ">
+                                    <ul class="swiper-wrapper">
+                                        <li class="swiper-slide">
+                                            <a href="https://youtu.be/gupC6qwiyR4" class="lt_img" target="_blank">
+                                                <img src="https://img.youtube.com/vi/gupC6qwiyR4/0.jpg">
+                                                <span><img src="../img/ico_play.png"></span>
+                                            </a>
+                                            <p>김포 디저트 카페 사장님 인터뷰</p>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="https://youtu.be/O3WBkWw37Rw" class="lt_img" target="_blank">
+                                                <img src="https://img.youtube.com/vi/O3WBkWw37Rw/0.jpg">
+                                                <span><img src="../img/ico_play.png"></span>
+                                            </a>
+                                            <p>마포구 미용실 사장님 인터뷰</p>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="https://youtu.be/6ApYv0DR54E" class="lt_img" target="_blank">
+                                                <img src="https://img.youtube.com/vi/6ApYv0DR54E/0.jpg">
+                                                <span><img src="../img/ico_play.png"></span>
+                                            </a>
+                                            <p>숨가득, 젊은 사장님 인터뷰</p>
+                                        </li>
+                                    </ul>
+                                <span class="swiper-notification"></span>
+                            </div>
+                                <div class="swiper-button-next4"></div>
+                                <div class="swiper-button-prev4"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="main07" class="main07">
+                    <div class="inner">
+                        <h2 class="moveEff">소상공인 사장님은 왜 <b>세모리포트</b>를 <strong>좋아할까요 ?</strong></h2>
+                        <ul class="tab_nav moveEff">
+                            <li class="active">고객 이용 후기</li>
+                            <li>신규 고객 가입 현황
+                                <span id="getList_Cnt">
+                                   
+                                </span>
+                            </li>
+                        </ul>
+
+                        <div class="con_box moveEff">
+                            <div class="tab_con box01 active main07_board">
+                                <div class="con_box">
+                                    <div class="consult_con active">
+                                        <div class="pic_main07 lat_sub02 swiper-containers1">
+                                            <ul class="swiper-wrapper ">
+                                                <li class="galley_li swiper-slide">
+                                                    <img src="../img/pic_01.jpg">
+                                                    <dl>
+                                                        <dt>의정부 부산양대창</dt>
+                                                        <dd>카드매출, 배달앱 매출을 확인할 수 있어서 좋아요.</dd>
+                                                        <dd>미리 확인하기 힘든 매출 내역들을 한번에 확인할 수 있어 사업 자금관리에 좋아요.</dd>
+                                                    </dl>
+                                                </li>
+                                                <li class="galley_li swiper-slide">
+                                                    <img src="../img/pic_02.jpg">
+                                                    <dl>
+                                                        <dt>한솔서비스</dt>
+                                                        <dd>수기 영수증 관리가 편해졌어요.</dd>
+                                                        <dd>가끔씩 놓치는 수기증빙관리를 사진만 찍어서 보관하면 세무사에게 따로 전달할 필요가 없어서 너무 편해요.</dd>
+                                                    </dl>
+                                                </li>
+                                                <li class="galley_li swiper-slide">
+                                                    <img src="../img/pic_03.jpg">
+                                                    <dl>
+                                                        <dt>마포 수수한헤어살롱</dt>
+                                                        <dd>매출, 매입, 현금흐름 보고서로 관리하니까 순이익이 올랐어요.</dd>
+                                                        <dd>매출, 매입에 대한 보고서로 사업에 많은 도움을 받고 있어요. 사업자금을 더 체계적으로 관리할 수 있어서 좋아요.</dd>
+                                                    </dl>
+                                                </li>
+                                                <li class="galley_li swiper-slide">
+                                                    <img src="../img/pic_04.jpg">
+                                                    <dl>
+                                                        <dt>인테리어숲</dt>
+                                                        <dd>세금 신고 때 마다 증빙자료를 모을 필요가 없어요.</dd>
+                                                        <dd>증빙을 실시간으로 불러와서 세무사님한테 전송해주니까 편하고요,증빙도 더 정확하게 관리할 수 있어요.</dd>
+                                                    </dl>
+                                                </li>
+                                                <li class="galley_li swiper-slide">
+                                                    <img src="../img/pic_05.jpg">
+                                                    <dl>
+                                                        <dt>카페디에이</dt>
+                                                        <dd>직원들을 관리하기가 편해졌어요.</dd>
+                                                        <dd>직원들의 입·퇴사 정보 외에도 다양한 서류들을 한 눈에 볼 수 있어서 관리가 한결 쉬워졌어요.</dd>
+                                                    </dl>
+                                                </li>
+                                                <li class="galley_li swiper-slide">
+                                                    <img src="../img/pic_06.jpg">
+                                                    <dl>
+                                                        <dt>유엔지쇼핑몰</dt>
+                                                        <dd>커뮤니티 기능으로 몰랐던 사업정보 얻고 있어요.</dd>
+                                                        <dd>처음 사업을 시작하면서 잘 몰랐던, 세무, 절세, 경영정보를 매주 확인할 수 있으니 참 유익해요!</dd>
+                                                    </dl>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab_con box02 main0702_board">
+                                <div class="lat_main0702">
+                                    <div class="scrollWrap" id="scrollPage1">
+                                        <table>
+                                            <thead>
+                                            <tr>
+                                                <th>가입일</th>
+                                                <th>제목</th>
+                                                <th>업종</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody id="table-body">
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="main08">
+                    <div class="inner">
+                        <h2 class="moveEff">사장님이 줄 서서 신청하는 <strong>프리미엄 세무서비스</strong></h2>
+                        <div class="count_box moveEff">
+                            현재 신청자 <span id="consult_Cnt"></span> 명
+                        </div>
+
+                        <div class="con_box moveEff">
+                            <div class="slide_box">
+                                <div class="swiper-container3">
+                                    <ul class="swiper-wrapper">
+                                        <li class="swiper-slide s1" style="width: 380px;">
+                                            <h3><img src="../img/ico_main0801.png" alt="후기 아이콘"> 프리미엄 세무 서비스 후기</h3>
+                                            <ol>
+                                                <li><span>★★★★★</span> <strong>열림식당</strong>
+                                                    <p>제가 모르던 돈을 찾아주셔서 감사 드려요</p></li>
+                                                <li><span>★★★★★</span> <strong>미리미용실</strong>
+                                                    <p>정말 좋은 세무서비스라는 생각이 들었어요</p></li>
+                                                <li><span>★★★★★</span> <strong>두루갈비</strong>
+                                                    <p>세금 폭탄 문제를 덕분에 해결했어요</p></li>
+                                                <li><span>★★★★★</span> <strong>정민인테리어</strong>
+                                                    <p>믿을 수 있는 분이 생겨서 감사 드려요</p></li>
+                                                <li><span>★★★★★</span> <strong>꿈나무이야기</strong>
+                                                    <p>친절하고 나를 위해주는 마음 감사해요</p></li>
+                                                <li><span>★★★★★</span> <strong>와이드뮤직</strong>
+                                                    <p>세무사님 너무 친절하게 도움 주셔서 감사해요</p></li>
+                                                <li><span>★★★★★</span> <strong>헤세더</strong>
+                                                    <p>추천 받았는데 진짜 좋네요 감사합니다</p></li>
+                                                <li><span>★★★★★</span> <strong>제스터살롱</strong>
+                                                    <p>소상공인을 위한 마음 감사해요</p></li>
+                                                <li><span>★★★★★</span> <strong>루마 전문점</strong>
+                                                    <p>경영, 세금, 경영을 알게 해주셔서 감사해요</p></li>
+                                            </ol>
+                                        </li>
+                                        <li class="swiper-slide s2" style="width: 380px;">
+                                            <h3><img src="../img/ico_main0802.png" alt="세모장부 심볼"> 세모주치의 절세 컨설팅이란 ?</h3>
+                                            <ol>
+                                                <li class="list01"><img src="../img/ico_slider_tit01.png" alt="무료 아이콘"> 무료절세 <b>컨설팅 1회</b> ( 방문 / 비대면 )</li>
+                                                <li class="list02"><img src="../img/ico_slider_tit04.png" alt="서류 아이콘"> <strong>매월 사업분석 보고서 등</strong> 5종 사업 보고서 제공</li>
+                                                <li class="list03"><img src="../img/ico_slider_tit05.png" alt="밝은 전구 아이콘"> 증빙 및 경영 모니터링, <strong>알림 제공</strong></li>
+                                                <li class="list04"><img src="../img/ico_slider_tit06.png" alt="알람 아이콘"> 정부제도 및 지원금 관련 알림 제공</li>
+                                            </ol>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-button-next3"></div>
+                                <div class="swiper-button-prev3"></div>
+                                <div class="swiper-pagination3"></div>
+                            </div>
+                            <div class="table_box">
+                                <div class="lat_main08">
+                                    <div class="scrollWrap" id="scrollPage2">
+                                        <table>
+                                            <thead>
+                                            <tr>
+                                                <th>신청일</th>
+                                                <th>제목</th>
+                                                <th>업종</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody id="table-body2">
+                                               
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn_box">
+                            <button class="btn_pop02"><a target="_blank" href="https://www.semoreport.com/html/owner.html?PATH_CD=HO_RPT">프리미엄 세무서비스 신청하기</a></button>
+                            <a href="sub2.html#section1">우수 세무사 보러가기</a>
+                        </div>
+                    </div>
+                </section>
+
+            
+            </div>
+        </div>
+    </main>
+
+    <footer id="footer">
+        <div class="inner">
+            <div class="ft_top">
+                <ul>
+                    <li><a href="terms1.html">이용약관</a></li>
+                    <li><a href="terms2.html">개인정보처리방침</a></li>
+                </ul>
+                <ul class="follow">
+                    <li><a href="https://blog.naver.com/kk8848" target="_blank"><img src="../img/ico_sns01.png" alt="블로그 아이콘" title=""></a></li>
+                    <li><a href="https://www.facebook.com/semojangbu/" target="_blank"><img src="../img/ico_sns02.png" alt="페이스북 아이콘" title=""></a></li>
+                    <li><a href="https://www.youtube.com/channel/UCiwljN47deLcr25KHBDYEEQ?view_as=subscriber" target="_blank"><img src="../img/ico_sns03.png" alt="유튜브 아이콘" title=""></a></li>
+                    <li><a href="https://www.instagram.com/semo_jangbu/?hl=ko" target="_blank"><img src="../img/ico_sns04.png" alt="인스타그램 아이콘"></a></li>
+                    <li><a href="https://pf.kakao.com/_aeyyT" target="_blank"><img src="../img/ico_sns05.png" alt="카카오톡 아이콘"></a></li>
+                </ul>
+            </div>
+            <div class="ft_info">
+                <ul>
+                    <li><img src="../img/logo_roumit.png" alt="로움아이티 로고"> 로움아이티(주)</li>
+                    <li>팩스 : 070-7950-5114</li>
+                    <li>주소 : 서울시 영등포구 영신로 220 KnK디지털타워 11층 1112호</li>
+                    <li>대표 : 박승현</li>
+                    <li>사업자등록번호 : 847-87-00259</li>
+                    <li>통신판매업종신고증 : 2019-서울영등포-1992호</li>
+                </ul>
+                <p>© Roumit. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

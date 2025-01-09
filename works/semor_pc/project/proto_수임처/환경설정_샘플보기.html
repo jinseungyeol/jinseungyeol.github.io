@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<title>세무대리인 for 경리나라</title>
+<link rel="stylesheet" href="../css/reset_taxp.css">
+<link rel="stylesheet" href="../css/app_header.css"><!-- [D] 세무대리인용 header -->
+<link rel="stylesheet" href="../css/content_taxp.css"><!-- [D] 세무대리인용 -->
+
+<!-- custom scrollbar plugin css -->
+<link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+<script src="https://publ.roumit.com/js/firebase_include.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+<!-- custom scrollbar plugin -->
+<script src="../js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../js/jquery.placeholder.min.js"></script>
+</head>
+
+<body class="lnb_bg"><!-- [D] 메뉴영역(접기 : class="fold", 펼치기 : class="lnb_bg") -->
+
+<!-- 수임처 개선 -->
+<!-- header -->
+<div class="app_header">
+	<div class="app_header_inner">
+		<div class="ah_l">
+			<h1>수임처</h1>
+		</div>
+
+		<div class="ah_r">
+			<ul class="ah_menu">
+				<!-- <li><a href="https://www.serp.co.kr/evnt_0001_01.act?prod_gb=SERP&biz_no=5680601206&biz_nm=%EB%B0%95%EA%B8%B0%EC%A0%95%EC%84%B8%EB%AC%B4%EC%82%AC%EC%82%AC%EB%AC%B4%EC%8B%A4" target="_blank" style="margin-top:-7px;"><img src="../img/txof/app_header/btn_recommend.gif" alt="경리나라 추천하기"></a></li>
+				<li><a href="#none" class="ic_new" id="btn_notice"><img src="../img/txof/app_header/ic_top01.png" alt="">상담문의</a></li> -->
+				<!-- 수임처 개선 -->
+				<li style="position:relative;">
+					<a href="#none"><img src="../img/txof/app_header/ic_top03.png" alt="">관리자</a>
+					<!-- 관리자 레이어 -->
+					<div class="ly_bx_wrap" style="top:20px;right:0;display:none;">
+						<div class="inner">
+							<p>이영미 010-2313-4353</p>
+							<p>신정호 010-6774-8811</p>
+							<p>최기종 010-3303-5711</p>
+							<p>최기종 010-3303-5711</p>
+							<p>최기종 010-3303-5711</p>
+							<p>최기종 010-3303-5711</p>
+						</div>
+					</div>
+					<!-- //관리자 레이어 -->
+				</li>
+				<!-- //수임처 개선 -->
+				<li><a href="#none"><img src="../img/txof/app_header/ic_top02.png" alt="">로그아웃</a></li>
+			</ul>
+			<!-- (layer)알림 -->
+			<div class="ly_app_header" style="top:45px;right:14px;width:365px;display: none;" id="pop_notice">
+				<div class="ly_notibx_tit">
+					<h3>알림</h3>
+				</div>
+				<div class="ly_notibx_cont">
+					<!-- 스크롤 영역 -->
+					<div class="ly_notibx_scroll">
+						<ul>
+							<li>
+								<img src="../img/txof/app_header/bg_alarm_noti.png" alt="" class="ic_alarm">
+								<div class="tit"><strong>웹케시네트웍스(주)</strong>의 관리자님이 상담 신청하였습니다.</div>
+								<div><span><img src="../img/txof/app_header/ic_tel02.png" alt="">&nbsp;010-9276-8033</span></div>
+								<div class="date">2018년 9월 11일 (화요일)</div>
+							</li>
+							<li>
+								<img src="../img/txof/app_header/bg_alarm_noti.png" alt="" class="ic_alarm">
+								<div class="tit"><strong>웹케시벡터</strong>의 최기종님이 상담 신청하였습니다.</div>
+								<div><span><img src="../img/txof/app_header/ic_tel02.png" alt="">&nbsp;010-3303-5711</span></div>
+								<div class="date">2018년 9월 6일 (목요일)</div>
+							</li>
+							<li></li>
+						</ul>
+					</div>
+					<!-- //스크롤 영역 -->
+				</div>
+			</div>
+			<!-- //(layer)알림 -->
+		</div>
+	</div>
+</div>
+<!-- //header -->
+<!-- //수임처 개선 -->
+
+<div class="wrap">
+	<!-- Container -->
+	<div class="container">
+		<!-- lnb box -->
+		<div class="lnb_box">
+		</div>
+		<!-- //lnb box -->
+		<!-- content wrap -->
+		<div class="content">
+
+			<div class="content_wrap">
+
+				<!-- 상단타이틀 -->
+				<div class="title_wrap h1type">
+					<div class="left">
+						<h1>환경설정</h1>
+					</div>
+
+					<div class="right"></div>
+				</div>
+				<!-- //상단타이틀 -->
+
+				<!-- 타이틀영역 -->
+				<div class="title_wrap mgt30">
+					<div class="left">
+						<div class="cntalign"><h2 class="bul_2">기본 정보 설정</h2></div>
+					</div>
+				</div>
+				<!-- //타이틀영역 -->
+				<div class="setw">
+					<div class="cntalign">
+						<div class="settxt">· 세무사의 관리번호를 설정 합니다</div>
+						<div class="setting_combo" style="display:;">
+							<!-- 입력 전 -->
+							<span class="setting_combo_in">
+								<span>w00001</span>
+								<div class="btn"><a class="edit"><span class="blind">수정</span></a></div>
+							</span>
+							<!-- //입력 전 -->
+						</div>
+					</div>
+
+					<div class="cntalign">
+						<div class="settxt">· 세무사의 관리번호를 설정 합니다</div>
+						<span class="ipt_align"><span class="inbx ipt"><!-- 입력시 ipt 클래스 추가 -->
+							<input type="text" placeholder="영문1+숫자5" value=""><a href="#none" class="btn_del"><span class="blind">삭제</span></a>
+						</span></span>
+						<a href="#none" class="btn_style3_b"><span>저장</span></a>
+						<a href="#none" class="btn_style3"><span>취소</span></a>
+					</div>
+
+					<div class="cntalign">
+						<div class="settxt">· 국민연금 관리번호를 설정 합니다</div>
+						<div class="setting_combo" style="display:;">
+							<!-- 입력 전 -->
+							<span class="setting_combo_in">
+								<span>636-27-00316-0</span>
+								<div class="btn"><a class="edit"><span class="blind">취소</span></a></div>
+							</span>
+							<!-- //입력 전 -->
+						</div>
+					</div>
+
+					<div class="cntalign">
+						<div class="settxt">· 국민연금 관리번호를 설정 합니다</div>
+						<span class="ipt_align" style="width:197px;">
+							<input type="text" class="tac" style="width:35px;" value="123"> -
+							<input type="text" class="tac" style="width:25px;" value="45"> -
+							<input type="text" class="tac" style="width:50px;" value="67890"> -
+							<input type="text" class="tac" style="width:20px;" value="1">
+						</span>
+						<a href="#none" class="btn_style3_b"><span>저장</span></a>
+						<a href="#none" class="btn_style3"><span>취소</span></a>
+					</div>
+				</div>
+
+				<!-- 2021-02-16 -->
+				<!-- 타이틀영역 -->
+				<div class="title_wrap mgt30">
+					<div class="left">
+						<div class="cntalign"><h2 class="bul_2">4대보험 공단자료 자동 수집 설정</h2></div>
+					</div>
+				</div>
+				<!-- //타이틀영역 -->
+				<div class="txt_g" style="padding-left:15px;">※ 4대 보험 자동수집 기능을 사용하시면 공단 자료수집을 매월 자동으로 조회 합니다.</div>
+				<div class="setw mgt20">
+					<div class="cntalign">
+						<div class="settxt">&middot; 4대보험 공단 자동수집 기능을 사용합니다.</div>
+						<a href="#none" class="btn_onoff off"><span class="blind">ON</span></a><!-- 버튼 on/off -->
+					</div>
+					<div class="cntalign">
+						<div class="settxt">&middot; 4대보험 공단 자동수집 기능을 사용합니다.</div>
+						<a href="#none" class="btn_onoff on"><span class="blind">ON</span></a><!-- 버튼 on/off -->
+					</div>
+				</div>
+				<div class="ctf_wrap mgt20">
+					<ul>
+						<li class="ctf01">
+							<div><strong>건강보험</strong>
+							<span>인증서를 등록하세요</span></div>
+							<a href="#none" class="btn_style1_b"><span>등록</span></a>
+						</li>
+						<li class="ctf02">
+							<div><strong>국민연금</strong>
+							<span>인증서를 등록하세요</span></div>
+							<a href="#none" class="btn_style1_b"><span>등록</span></a>
+						</li>
+						<li class="ctf03">
+							<div><strong>고용보험</strong>
+							<span>인증서를 등록하세요</span></div>
+							<a href="#none" class="btn_style1_b"><span>등록</span></a>
+						</li>
+					</ul>
+					<ul>
+						<li class="ctf01 on">
+							<div><strong>건강보험</strong>
+							<span>2020-11-13 만기</span></div>
+							<a href="#none" class="btn_style1_b"><span>교체</span></a>
+							<a href="#none" class="btn_style1_g"><span>삭제</span></a>
+						</li>
+						<li class="ctf02 on">
+							<div><strong>국민연금</strong>
+							<span class="txt_r">2020-11-13 만기</span></div>
+							<a href="#none" class="btn_style1_b"><span>교체</span></a>
+							<a href="#none" class="btn_style1_g"><span>삭제</span></a>
+						</li>
+						<li class="ctf03 on">
+							<div><strong>고용보험</strong>
+							<span>2020-11-13 만기</span></div>
+							<a href="#none" class="btn_style1_b"><span>교체</span></a>
+							<a href="#none" class="btn_style1_g"><span>삭제</span></a>
+						</li>
+					</ul>
+				</div>
+				<!-- //2021-02-16 -->
+
+				<!-- 2021-03-16 -->
+				<!-- 타이틀영역 -->
+				<div class="title_wrap mgt30">
+					<div class="left">
+						<div class="cntalign"><h2 class="bul_2">경리나라 세무사 배너 등록 
+						<a href="#none"><img src="../img/txof/ico/icon_q_s.png" alt=""></a>
+						<!-- 레이어 -->
+						<div class="ly_rbox" style="display:;top:30px;left:85px;">
+							<div class="ly_rbox_in">
+								<span class="bg" style="top:-7px;left:89px;"></span>
+								수임처 경리나라에 세무사 전용 배너를 달아 드립니다.<br />
+								WEMEMBERS 등급별로 다영한 배너를 달 수 있습니다.
+							</div>
+						</div>
+						<!-- //레이어 -->
+						[ 나의 등급 <span class="iconlv gold"> 골드</span> ] </h2></div> <!-- 등급 골드 : gold , 브론즈 : bronze  -->
+					</div>
+				</div>
+				<!-- //타이틀영역 -->
+				<div class="setw mgt20">
+					<div class="cntalign">
+						<div class="settxt">&middot; 거래처 메뉴 하단에 배너를 등록합니다. <a href="#none" class="txt_b">샘플보기</a></div>
+						<a href="#none" class="btn_onoff off"><span class="blind">ON</span></a> <span class="mgl10">기본제공</span><!-- 버튼 on/off -->
+						<div class="btn_open mgt10" style="display:none;">
+							<div class="add_banner"><a href="#none"><span>+</span><br />이미지를 등록하세요</a></div>
+							<div class="info txt_g">이미지 사이즈 210 X 110 px 이하 (JPG, PNG 파일)</div>
+						</div>
+					</div>
+					<div class="cntalign">
+						<div class="settxt">&middot; 거래처 메뉴 하단에 배너를 등록합니다. <a href="#none" class="txt_b">샘플보기</a></div>
+						<a href="#none" class="btn_onoff on"><span class="blind">ON</span></a> <span class="mgl10">기본제공</span><!-- 버튼 on/off -->
+						<div class="btn_open mgt10" style="display:;">
+							<div class="add_banner"><a href="#none"><span>+</span><br />이미지를 등록하세요</a></div>
+							<div class="info txt_g">이미지 사이즈 210 X 110 px 이하 (JPG, PNG 파일)</div>
+						</div>
+					</div>
+					<div class="cntalign">
+						<div class="settxt">&middot; 거래처 메뉴 하단에 배너를 등록합니다. <a href="#none" class="txt_b">샘플보기</a></div>
+						<a href="#none" class="btn_onoff on"><span class="blind">ON</span></a> <span class="mgl10">기본제공</span><!-- 버튼 on/off -->
+						<div class="btn_open mgt10" style="display:;">
+							<div class="add_banner">
+								<a href="#none" style="display:none;"><span>+</span><br />이미지를 등록하세요</a>
+								<a href="#none"><img src="../img/txof/banner_sample.png" alt="샘플"></a>
+							</div>
+							<div class="info txt_g">이미지 사이즈 210 X 110 px 이하 (JPG, PNG 파일)</div>
+						</div>
+					</div>
+					<div class="cntalign">
+						<div class="settxt">&middot; 경리나라 로고 하단에 회사명을 등록합니다. <a href="#none" class="txt_b">샘플보기</a></div>
+						<a href="#none" class="btn_onoff off"><span class="blind">ON</span></a> <span class="iconlv bronze mgl10"> 브론즈</span> 이상<!-- 버튼 on/off --><!-- 등급 골드 : gold , 브론즈 : bronze  -->
+						<div class="btn_open mgt10" style="display:none;">
+						</div>
+					</div>
+					<div class="cntalign">
+						<div class="settxt">&middot; 경리나라 로고 하단에 회사명을 등록합니다. <a href="#none" class="txt_b">샘플보기</a></div>
+						<a href="#none" class="btn_onoff on"><span class="blind">ON</span></a> <span class="iconlv bronze mgl10"> 브론즈</span> 이상<!-- 버튼 on/off --><!-- 등급 골드 : gold , 브론즈 : bronze  -->
+						<div class="btn_open mgt10" style="display:;">
+							<div><input type="text" placeholder="(로고 하단에 문구를 입력합니다)" value="" style="width:220px;height:25px;padding:0 10px;"></div>
+							<div class="info txt_g">최대 자리수 15자리</div>
+						</div>
+					</div>
+					<div class="cntalign">
+						<div class="settxt">&middot; 경리나라 최초 화면에 배너를 등록합니다. <a href="#none" class="txt_b">샘플보기</a></div>
+						<a href="#none" class="btn_onoff off"><span class="blind">ON</span></a> <span class="iconlv gold mgl10"> 골드</span> 이상<!-- 버튼 on/off --><!-- 등급 골드 : gold , 브론즈 : bronze  -->
+						<div class="btn_open mgt10" style="display:none;">
+							<div class="add_banner"><a href="#none"><span>+</span><br />이미지를 등록하세요</a></div>
+							<div class="info txt_g">이미지 사이즈 210 X 110 px 이하 (JPG, PNG 파일)</div>
+						</div>
+					</div>
+					<div class="cntalign">
+						<div class="settxt">&middot; 경리나라 최초 화면에 배너를 등록합니다. <a href="#none" class="txt_b">샘플보기</a></div>
+						<a href="#none" class="btn_onoff on"><span class="blind">ON</span></a> <span class="iconlv gold mgl10"> 골드</span> 이상<!-- 버튼 on/off --><!-- 등급 골드 : gold , 브론즈 : bronze  -->
+						<div class="btn_open mgt10" style="display:;">
+							<div class="add_banner gold"><a href="#none"><span>+</span><br />이미지를 등록하세요</a></div>
+							<div class="info txt_g">이미지 사이즈 410 X 110 px 이하 (JPG, PNG 파일)</div>
+						</div>
+					</div>
+				</div>
+				<!-- //2021-03-16 -->
+
+				<!-- 타이틀영역 -->
+				<div class="title_wrap mgt30">
+					<div class="left">
+						<div class="cntalign"><h2 class="bul_2">세모장부와 연결설정</h2></div>
+					</div>
+				</div>
+				<!-- //타이틀영역 -->
+				<div class="setw">
+					<div class="cntalign">
+						<div class="settxt">수임처 거래처정보를 세모장부 고객관리센터로 자료를 공유합니다</div>
+						<a href="#none" class="btn_onoff off"><span class="blind">ON</span></a><!-- 버튼 on/off -->
+					</div>
+					<div class="cntalign">
+						<div class="settxt">수임처 거래처정보를 세모장부 고객관리센터로 자료를 공유합니다</div>
+						<a href="#none" class="btn_onoff on"><span class="blind">ON</span></a><!-- 버튼 on/off -->
+					</div>
+				</div>
+
+				<!-- 2020-12-04 삭제 -->
+				<!-- 타이틀영역 -->
+				<div class="title_wrap mgt30" style="display:none;">
+					<div class="left">
+						<div class="cntalign"><h2 class="bul_2">세무사 관리번호 설정합니다.</h2></div>
+						<div class="cntalign mgl25">
+							<span class="ipt_align"><span class="inbx">w00001</span></span>
+							<a href="#none" class="btn_style3"><span>수정</span></a>
+						</div>
+					</div>
+				</div>
+				<!-- //타이틀영역 -->
+
+				<!-- 타이틀영역 -->
+				<div class="title_wrap mgt30" style="display:none;">
+					<div class="left">
+						<div class="cntalign"><h2 class="bul_2">세무사 관리번호 설정합니다.</h2></div>
+						<div class="cntalign mgl25">
+							<span class="ipt_align"><span class="inbx ipt"><!-- 입력시 ipt 클래스 추가 -->
+								<input type="text" placeholder="영문1+숫자5" value=""><!-- <a href="#none" class="btn_del"><span class="blind">삭제</span</a> -->
+							</span></span>
+							<a href="#none" class="btn_style3_b"><span>저장</span></a>
+							<a href="#none" class="btn_style3"><span>취소</span></a>
+						</div>
+					</div>
+				</div>
+				<!-- //타이틀영역 -->
+
+				<!-- 타이틀영역 -->
+				<div class="title_wrap mgt30" style="display:none;">
+					<div class="left">
+						<div class="cntalign"><h2 class="bul_2">세무사 관리번호 설정합니다.</h2></div>
+						<div class="cntalign mgl25">
+							<span class="ipt_align"><span class="inbx ipt"><!-- 입력시 ipt 클래스 추가 -->
+								<input type="text" placeholder="영문1+숫자5" value="W00001"><a href="#none" class="btn_del"><span class="blind">삭제</span></a>
+							</span></span>
+							<a href="#none" class="btn_style3_b"><span>저장</span></a>
+							<a href="#none" class="btn_style3"><span>취소</span></a>
+						</div>
+					</div>
+				</div>
+				<!-- //타이틀영역 -->
+
+				<!-- 타이틀영역 -->
+				<div class="title_wrap mgt30" style="display:none;">
+					<div class="left">
+						<div class="cntalign"><h2 class="bul_2">세무사 관리번호 설정합니다.</h2></div>
+						<div class="cntalign mgl25">
+							<span class="ipt_align"><span class="inbx">w00002</span></span>
+							<a href="#none" class="btn_style3"><span>수정</span></a>
+						</div>
+					</div>
+				</div>
+				<!-- //타이틀영역 -->
+
+				<!-- 타이틀영역 -->
+				<div class="title_wrap mgt30" style="display:none;">
+					<div class="left">
+						<div class="cntalign"><h2 class="bul_2">국민연금 관리번호를 설정 합니다.</h2></div>
+						<div class="cntalign mgl25">
+							<span class="ipt_align"><span class="inbx">123-45-67890-0</span></span>
+							<a href="#none" class="btn_style3"><span>수정</span></a>
+						</div>
+					</div>
+				</div>
+				<!-- //타이틀영역 -->
+
+				<!-- 타이틀영역 -->
+				<div class="title_wrap mgt30" style="display:none;">
+					<div class="left">
+						<div class="cntalign"><h2 class="bul_2">국민연금 관리번호를 설정 합니다.</h2></div>
+						<div class="cntalign mgl25">
+							<span class="ipt_align" style="width:197px;">
+								<input type="text" class="tac" style="width:35px;" value="123"> -
+								<input type="text" class="tac" style="width:25px;" value="45"> -
+								<input type="text" class="tac" style="width:50px;" value="67890"> -
+								<input type="text" class="tac" style="width:20px;" value="1">
+							</span>
+							<a href="#none" class="btn_style3_b"><span>저장</span></a>
+							<a href="#none" class="btn_style3"><span>수정</span></a>
+						</div>
+					</div>
+				</div>
+				<!-- //타이틀영역 -->
+				<!-- //2020-12-04 삭제 -->
+
+			</div>
+		</div>
+		<!-- //content wrap -->
+	</div>
+	<!-- //Container -->
+</div>
+<!-- //wrap -->
+
+<!-- 2021-10-29 -->
+<div class="sample_wrap">
+	<div class="dim"></div>
+	<a href="#none" class="btn_close"><img src="../img/txof/btn/btn_big_close.png" alt="닫기"></a>
+	<div class="samlpe_img">
+		<!-- <a href="#none" class="btn_close"><img src="../img/txof/btn/btn_big_close.png" alt="닫기"></a> -->
+		<div class="imgw">
+			<div class="posiw">
+				<img src="../img/txof/banner_sample.png" alt="">
+				<a href="#none" class="btn_btclose"><p>닫기</p></a>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //2021-10-29 -->
+
+</body>
+</html>
+

@@ -1,0 +1,21 @@
+@charset 'utf-8';
+
+/* reset */
+@font-face {font-family: 'Pretendard'; font-weight: normal; src: url(../fonts/Pretendard-Medium.woff2) format('woff2');}
+@font-face {font-family: 'Pretendard'; font-weight: 600; src: url(../fonts/Pretendard-SemiBold.woff2) format('woff2');}
+@font-face {font-family: 'Pretendard'; font-weight: bold; src: url(../fonts/Pretendard-Bold.woff2) format('woff2');}
+@font-face {font-family: 'Great Vibes'; font-weight: 400; src: url(../fonts/GreatVibes-Regular.ttf) format('woff2');}
+
+* {box-sizing: border-box;}
+html, body {font-family: 'Pretendard'; line-height: 1; color: #222;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed,  figure, figcaption, footer, header, hgroup,  menu, nav, output, ruby, section, summary, time, mark, audio, video {margin: 0; padding: 0; border: 0;	font-size: 100%; vertical-align: baseline; word-break: keep-all;}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {display: block;}
+ol, ul {list-style: none;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after,
+q:before, q:after {content: ''; content: none;}
+table {border-collapse: collapse; border-spacing: 0;}
+a {color: inherit; text-decoration: none;}
+em {font-style: normal;}
+img {max-width: 100%; vertical-align: top;}

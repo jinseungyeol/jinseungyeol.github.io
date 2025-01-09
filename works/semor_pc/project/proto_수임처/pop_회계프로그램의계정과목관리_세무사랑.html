@@ -1,0 +1,871 @@
+﻿<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<title>세무대리인 for 경리나라</title>
+<link rel="stylesheet" href="../css/reset_taxp.css">
+<link rel="stylesheet" href="../css/content_taxp.css"><!-- [D] 세무대리인용 -->
+
+<!-- custom scrollbar plugin css -->
+<link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+<script src="https://publ.roumit.com/js/firebase_include.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+<!-- custom scrollbar plugin -->
+<script src="../js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../js/jquery.placeholder.min.js"></script>
+<script>
+$(function(){
+	// Invoke the plugin
+	$('input, textarea').placeholder({customClass:'my-placeholder'});
+});
+</script>
+
+</head>
+
+<body>
+
+<div class="pop_wrap" style="width:850px;">
+
+	<!-- 팝업 헤더 -->
+	<div class="pop_header">
+		<h1>회계프로그램의 거래처를 관리합니다.</h1>
+		<a href="#none" onClick="self.close()" class="btn_popclose"><img src="../img/txof/btn/btn_popclose.gif" alt="팝업닫기"></a>
+	</div>
+	<!-- //팝업 헤더 -->
+
+	<!-- 팝업 컨텐츠 -->
+	<div class="pop_container">
+
+		<div class="title_wrap h1type">
+			<div class="left">
+				<div class="cntalign">
+					<div class="title">
+						<h2 class="tx_title">계정과목 관리</h2>
+					</div>
+				</div>
+			</div>
+			<div class="right">
+				<div class="cntalign">
+					<!-- 검색 가능상태 -->
+					<div class="input_box"><!-- [D] 상세검색일 경우 비활성 class="off", <input disabled> 추가 -->
+						<input type="text" value="" placeholder="검색어를 입력하세요" style="width:200px;"><a href="#none"><img src="../img/txof/btn/btn_topsearch.gif" alt="조회"></a>
+					</div>
+					<!-- //검색 가능상태 -->
+				</div>
+				<div class="cntalign"><a href="#none" class="icon" title="엑셀"><img src="../img/txof/btn/btn_excel.gif" alt="엑셀"></a></div>
+			</div>
+		</div>
+
+		<div class="title_wrap">
+			<div class="left">
+				<div class="cntalign"><a href="#none" class="btn_style1"><span>일괄 변경</span></a></div>
+				<div class="cntalign mgl10">
+					<div class="list2_tab">
+						<ul>
+							<li><div class="li_tab"><a class="on">전체<span>(111)</span></a>&nbsp;|</div></li>
+							<li><div class="li_tab"><a>기본용도<span>(100)</span></a>&nbsp;|</div></li>
+							<li><div class="li_tab"><a class="gr_add">추가 용도<span>(10)</span></a></div></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="right">
+				<div class="cntalign">
+					<p style="margin-top:7px;">※ 경리나라 용도 <strong>100</strong>개중 <strong>99</strong>개가 계정등록 되었습니다.</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- 리스트 테이블 -->
+		<div class="list_scroll_top pdr" style="overflow:hidden;">
+			<!-- <div class="list_scroll_top pdr" style="overflow:hidden;"> --><!-- 하단테이블 세로스크롤 발생시 pdr 클래스 추가 -->
+			<table class="tbl_result" summary="">
+				<caption></caption>
+				<colgroup>
+				<col style="width:30px;"><!-- 2021-10-15 -->
+				<col style="width:100px;">
+				<col style="width:120px;">
+				<col style="width:120px;">
+				<col style="width:120px;">
+				</colgroup>
+				<thead>
+					<tr>
+						<th scope="col"><div><input type="checkbox" name=""></div></th><!-- 2021-10-15 -->
+						<th scope="col"><div>구분</div></th>
+						<th scope="col"><div>경리나라용도</div></th>
+						<th scope="col"><div>회계 계정과목 코드</div></th>
+						<th scope="col"><div>현장명</div></th>
+					</tr>
+				</thead>
+			</table>
+		</div>
+		<div class="tbl_layout" style="border-bottom:1px solid #b4b4b4;height:340px;min-width:100%;overflow-y:auto;overflow-x:auto;">
+			<table class="tbl_result" summary="">
+				<caption></caption>
+				<colgroup>
+				<col style="width:30px;"><!-- 2021-10-15 -->
+				<col style="width:100px;">
+				<col style="width:120px;">
+				<col style="width:120px;">
+				<col style="width:120px;">
+				</colgroup>
+				<tfoot style="display:none;"><!-- display: none / table-tfoot -->
+					<tr class="no_hover">
+						<td colspan="4" class="no_info"><div>등록된 거래처가 없습니다.</div></td>
+					</tr>
+				</tfoot>
+				<tbody>
+					<tr>
+						<td scope="col"><div><input type="checkbox" name=""></div></td><!-- 2021-10-15 -->
+						<td><div>기본용도</div></td>
+						<td><div class="tx_ellipsis_max" title="매출">매출</div></td>
+						<td><div>0401</div></td>
+						<td><div>
+							<div class="card_combo no_line" style="padding:0;"><!-- 입력전에만 no_line 클래스 추가 -->
+								<!-- 입력 전 -->
+								<span class="card_combo_in" style="display:none;">
+									<span class="bg">
+									</span>
+									<div class="btn"><a class="edit"><span class="blind">수정</span></a></div>
+								</span>
+								<!-- //입력 전 -->
+								<!-- 입력 후 -->
+								<span class="card_combo_in">
+									<span class="bg">
+										<input type="text" value="상품매출" placeholder="입력">
+										<!-- <a class="btn_del"><span class="blind">삭제</span></a> -->
+									</span>
+									<a class="btn_open"><span class="blind">열기</span></a>
+								</span>
+								<!-- //입력 후 -->
+								<!-- 콤보박스 -->
+								<div class="card_combo_layer tbl_w" style="max-height:225px;overflow-x:hidden;overflow-y:auto;z-index:1;display:none;">
+									<div class="combo_inputbx">
+										<input type="text" value="매출" placeholder="입력" style="width: 100%;">
+										<a class="btn_del"><span class="blind">삭제</span></a>
+									</div>
+									<div class="combo_tbl">
+										<table>
+											<caption></caption>
+											<colgroup><col style="width:60px"><col></colgroup>
+											<!-- 테이블제목 -->
+											<tbody><tr>
+												<th><div>코드</div></th>
+												<th><div>계정과목명</div></th>
+											</tr>
+											<!-- //테이블제목 -->
+											<!-- 테이블내용 -->
+											<tr>
+												<td><div>0400</div></td>
+												<td><div>매출</div></td>
+											</tr>
+											<tr>
+												<td><div>0401</div></td>
+												<td><div>상품매출</div></td>
+											</tr>
+											<tr>
+												<td><div>0402</div></td>
+												<td><div>제품매출</div></td>
+											</tr>
+											<tr>
+												<td><div>0403</div></td>
+												<td><div>기타매출</div></td>
+											</tr>
+											<!-- //테이블내용 -->
+										</tbody></table>
+									</div>
+									<div class="combo_add">
+										<a href="#none" class="txt_b">+ 기타 계정과목 추가</a>
+									</div>
+								</div>
+								<!-- //콤보박스 -->
+							</div>
+						</div></td>
+					</tr>
+					<tr>
+						<td scope="col"><div><input type="checkbox" name=""></div></td><!-- 2021-10-15 -->
+						<td><div>기본용도</div></td>
+						<td><div class="tx_ellipsis_max" title="매출">매출</div></td>
+						<td><div>0401</div></td>
+						<td><div>
+							<div class="card_combo no_line" style="padding:0;"><!-- 입력전에만 no_line 클래스 추가 -->
+								<!-- 입력 전 -->
+								<span class="card_combo_in" style="display:none;">
+									<span class="bg">
+									</span>
+									<div class="btn"><a class="edit"><span class="blind">수정</span></a></div>
+								</span>
+								<!-- //입력 전 -->
+								<!-- 입력 후 -->
+								<span class="card_combo_in">
+									<span class="bg">
+										<input type="text" value="상품매출" placeholder="입력">
+										<!-- <a class="btn_del"><span class="blind">삭제</span></a> -->
+									</span>
+									<a class="btn_open"><span class="blind">열기</span></a>
+								</span>
+								<!-- //입력 후 -->
+								<!-- 콤보박스 -->
+								<div class="card_combo_layer tbl_w" style="max-height:225px;overflow-x:hidden;overflow-y:auto;z-index:1;display:none;">
+									<div class="combo_inputbx">
+										<input type="text" value="매출" placeholder="입력" style="width: 100%;">
+										<a class="btn_del"><span class="blind">삭제</span></a>
+									</div>
+									<div class="combo_tbl">
+										<table>
+											<caption></caption>
+											<colgroup><col style="width:60px"><col></colgroup>
+											<!-- 테이블제목 -->
+											<tbody><tr>
+												<th><div>코드</div></th>
+												<th><div>계정과목명</div></th>
+											</tr>
+											<!-- //테이블제목 -->
+											<!-- 테이블내용 -->
+											<tr>
+												<td><div>0400</div></td>
+												<td><div>매출</div></td>
+											</tr>
+											<tr>
+												<td><div>0401</div></td>
+												<td><div>상품매출</div></td>
+											</tr>
+											<tr>
+												<td><div>0402</div></td>
+												<td><div>제품매출</div></td>
+											</tr>
+											<tr>
+												<td><div>0403</div></td>
+												<td><div>기타매출</div></td>
+											</tr>
+											<!-- //테이블내용 -->
+										</tbody></table>
+									</div>
+									<div class="combo_add">
+										<a href="#none" class="txt_b">+ 기타 계정과목 추가</a>
+									</div>
+								</div>
+								<!-- //콤보박스 -->
+							</div>
+						</div></td>
+					</tr>
+					<tr>
+						<td scope="col"><div><input type="checkbox" name=""></div></td><!-- 2021-10-15 -->
+						<td><div>기본용도</div></td>
+						<td><div class="tx_ellipsis_max" title="매출">매출</div></td>
+						<td><div>0401</div></td>
+						<td><div>
+							<div class="card_combo no_line" style="padding:0;"><!-- 입력전에만 no_line 클래스 추가 -->
+								<!-- 입력 전 -->
+								<span class="card_combo_in" style="display:none;">
+									<span class="bg">
+									</span>
+									<div class="btn"><a class="edit"><span class="blind">수정</span></a></div>
+								</span>
+								<!-- //입력 전 -->
+								<!-- 입력 후 -->
+								<span class="card_combo_in">
+									<span class="bg">
+										<input type="text" value="상품매출" placeholder="입력">
+										<!-- <a class="btn_del"><span class="blind">삭제</span></a> -->
+									</span>
+									<a class="btn_open"><span class="blind">열기</span></a>
+								</span>
+								<!-- //입력 후 -->
+								<!-- 콤보박스 -->
+								<div class="card_combo_layer tbl_w" style="max-height:225px;overflow-x:hidden;overflow-y:auto;z-index:1;display:none;">
+									<div class="combo_inputbx">
+										<input type="text" value="매출" placeholder="입력" style="width:100%;">
+										<a class="btn_del"><span class="blind">삭제</span></a>
+									</div>
+									<div class="combo_tbl">
+										<table>
+											<caption></caption>
+											<colgroup><col style="width:60px"><col></colgroup>
+											<!-- 테이블제목 -->
+											<tbody><tr>
+												<th><div>코드</div></th>
+												<th><div>계정과목명</div></th>
+											</tr>
+											<!-- //테이블제목 -->
+											<!-- 테이블내용 -->
+											<tr>
+												<td><div>0400</div></td>
+												<td><div>매출</div></td>
+											</tr>
+											<tr>
+												<td><div>0401</div></td>
+												<td><div>상품매출</div></td>
+											</tr>
+											<tr>
+												<td><div>0402</div></td>
+												<td><div>제품매출</div></td>
+											</tr>
+											<tr>
+												<td><div>0403</div></td>
+												<td><div>기타매출</div></td>
+											</tr>
+											<!-- //테이블내용 -->
+										</tbody></table>
+									</div>
+									<div class="combo_add">
+										<a href="#none" class="txt_b">+ 기타 계정과목 추가</a>
+									</div>
+								</div>
+								<!-- //콤보박스 -->
+							</div>
+						</div></td>
+					</tr>
+					<tr>
+						<td scope="col"><div><input type="checkbox" name=""></div></td><!-- 2021-10-15 -->
+						<td><div>기본용도</div></td>
+						<td><div class="tx_ellipsis_max" title="매출">매출</div></td>
+						<td><div>0401</div></td>
+						<td><div>
+							<div class="card_combo no_line" style="padding:0;"><!-- 입력전에만 no_line 클래스 추가 -->
+								<!-- 입력 전 -->
+								<span class="card_combo_in" style="display:none;">
+									<span class="bg">
+									</span>
+									<div class="btn"><a class="edit"><span class="blind">수정</span></a></div>
+								</span>
+								<!-- //입력 전 -->
+								<!-- 입력 후 -->
+								<span class="card_combo_in">
+									<span class="bg">
+										<input type="text" value="상품매출" placeholder="입력">
+										<!-- <a class="btn_del"><span class="blind">삭제</span></a> -->
+									</span>
+									<a class="btn_open"><span class="blind">열기</span></a>
+								</span>
+								<!-- //입력 후 -->
+								<!-- 콤보박스 -->
+								<div class="card_combo_layer tbl_w" style="max-height:225px;overflow-x:hidden;overflow-y:auto;z-index:1;display:none;">
+									<div class="combo_inputbx">
+										<input type="text" value="매출" placeholder="입력" style="width:100%;">
+										<a class="btn_del"><span class="blind">삭제</span></a>
+									</div>
+									<div class="combo_tbl">
+										<table>
+											<caption></caption>
+											<colgroup><col style="width:60px"><col></colgroup>
+											<!-- 테이블제목 -->
+											<tbody><tr>
+												<th><div>코드</div></th>
+												<th><div>계정과목명</div></th>
+											</tr>
+											<!-- //테이블제목 -->
+											<!-- 테이블내용 -->
+											<tr>
+												<td><div>0400</div></td>
+												<td><div>매출</div></td>
+											</tr>
+											<tr>
+												<td><div>0401</div></td>
+												<td><div>상품매출</div></td>
+											</tr>
+											<tr>
+												<td><div>0402</div></td>
+												<td><div>제품매출</div></td>
+											</tr>
+											<tr>
+												<td><div>0403</div></td>
+												<td><div>기타매출</div></td>
+											</tr>
+											<!-- //테이블내용 -->
+										</tbody></table>
+									</div>
+									<div class="combo_add">
+										<a href="#none" class="txt_b">+ 기타 계정과목 추가</a>
+									</div>
+								</div>
+								<!-- //콤보박스 -->
+							</div>
+						</div></td>
+					</tr>
+					<tr>
+						<td scope="col"><div><input type="checkbox" name=""></div></td><!-- 2021-10-15 -->
+						<td><div>기본용도</div></td>
+						<td><div class="tx_ellipsis_max" title="매출">매출</div></td>
+						<td><div>0401</div></td>
+						<td><div>
+							<div class="card_combo no_line" style="padding:0;"><!-- 입력전에만 no_line 클래스 추가 -->
+								<!-- 입력 전 -->
+								<span class="card_combo_in" style="display:none;">
+									<span class="bg">
+									</span>
+									<div class="btn"><a class="edit"><span class="blind">수정</span></a></div>
+								</span>
+								<!-- //입력 전 -->
+								<!-- 입력 후 -->
+								<span class="card_combo_in">
+									<span class="bg">
+										<input type="text" value="상품매출" placeholder="입력">
+										<!-- <a class="btn_del"><span class="blind">삭제</span></a> -->
+									</span>
+									<a class="btn_open"><span class="blind">열기</span></a>
+								</span>
+								<!-- //입력 후 -->
+								<!-- 콤보박스 -->
+								<div class="card_combo_layer tbl_w" style="max-height:225px;overflow-x:hidden;overflow-y:auto;z-index:1;display:none;">
+									<div class="combo_inputbx">
+										<input type="text" value="매출" placeholder="입력" style="width:100%;">
+										<a class="btn_del"><span class="blind">삭제</span></a>
+									</div>
+									<div class="combo_tbl">
+										<table>
+											<caption></caption>
+											<colgroup><col style="width:60px"><col></colgroup>
+											<!-- 테이블제목 -->
+											<tbody><tr>
+												<th><div>코드</div></th>
+												<th><div>계정과목명</div></th>
+											</tr>
+											<!-- //테이블제목 -->
+											<!-- 테이블내용 -->
+											<tr>
+												<td><div>0400</div></td>
+												<td><div>매출</div></td>
+											</tr>
+											<tr>
+												<td><div>0401</div></td>
+												<td><div>상품매출</div></td>
+											</tr>
+											<tr>
+												<td><div>0402</div></td>
+												<td><div>제품매출</div></td>
+											</tr>
+											<tr>
+												<td><div>0403</div></td>
+												<td><div>기타매출</div></td>
+											</tr>
+											<!-- //테이블내용 -->
+										</tbody></table>
+									</div>
+									<div class="combo_add">
+										<a href="#none" class="txt_b">+ 기타 계정과목 추가</a>
+									</div>
+								</div>
+								<!-- //콤보박스 -->
+							</div>
+						</div></td>
+					</tr>
+					<tr>
+						<td scope="col"><div><input type="checkbox" name=""></div></td><!-- 2021-10-15 -->
+						<td><div>기본용도</div></td>
+						<td><div class="tx_ellipsis_max" title="매출">매출</div></td>
+						<td><div>0401</div></td>
+						<td><div>
+							<div class="card_combo no_line" style="padding:0;"><!-- 입력전에만 no_line 클래스 추가 -->
+								<!-- 입력 전 -->
+								<span class="card_combo_in" style="display:none;">
+									<span class="bg">
+									</span>
+									<div class="btn"><a class="edit"><span class="blind">수정</span></a></div>
+								</span>
+								<!-- //입력 전 -->
+								<!-- 입력 후 -->
+								<span class="card_combo_in">
+									<span class="bg">
+										<input type="text" value="상품매출" placeholder="입력">
+										<!-- <a class="btn_del"><span class="blind">삭제</span></a> -->
+									</span>
+									<a class="btn_open"><span class="blind">열기</span></a>
+								</span>
+								<!-- //입력 후 -->
+								<!-- 콤보박스 -->
+								<div class="card_combo_layer tbl_w" style="max-height:225px;overflow-x:hidden;overflow-y:auto;z-index:1;display:none;">
+									<div class="combo_inputbx">
+										<input type="text" value="매출" placeholder="입력" style="width:100%;">
+										<a class="btn_del"><span class="blind">삭제</span></a>
+									</div>
+									<div class="combo_tbl">
+										<table>
+											<caption></caption>
+											<colgroup><col style="width:60px"><col></colgroup>
+											<!-- 테이블제목 -->
+											<tbody><tr>
+												<th><div>코드</div></th>
+												<th><div>계정과목명</div></th>
+											</tr>
+											<!-- //테이블제목 -->
+											<!-- 테이블내용 -->
+											<tr>
+												<td><div>0400</div></td>
+												<td><div>매출</div></td>
+											</tr>
+											<tr>
+												<td><div>0401</div></td>
+												<td><div>상품매출</div></td>
+											</tr>
+											<tr>
+												<td><div>0402</div></td>
+												<td><div>제품매출</div></td>
+											</tr>
+											<tr>
+												<td><div>0403</div></td>
+												<td><div>기타매출</div></td>
+											</tr>
+											<!-- //테이블내용 -->
+										</tbody></table>
+									</div>
+									<div class="combo_add">
+										<a href="#none" class="txt_b">+ 기타 계정과목 추가</a>
+									</div>
+								</div>
+								<!-- //콤보박스 -->
+							</div>
+						</div></td>
+					</tr>
+					<tr>
+						<td scope="col"><div><input type="checkbox" name=""></div></td><!-- 2021-10-15 -->
+						<td><div>기본용도</div></td>
+						<td><div class="tx_ellipsis_max" title="매출">매출</div></td>
+						<td><div>0401</div></td>
+						<td><div>
+							<div class="card_combo no_line" style="padding:0;"><!-- 입력전에만 no_line 클래스 추가 -->
+								<!-- 입력 전 -->
+								<span class="card_combo_in" style="display:none;">
+									<span class="bg">
+									</span>
+									<div class="btn"><a class="edit"><span class="blind">수정</span></a></div>
+								</span>
+								<!-- //입력 전 -->
+								<!-- 입력 후 -->
+								<span class="card_combo_in">
+									<span class="bg">
+										<input type="text" value="상품매출" placeholder="입력">
+										<!-- <a class="btn_del"><span class="blind">삭제</span></a> -->
+									</span>
+									<a class="btn_open"><span class="blind">열기</span></a>
+								</span>
+								<!-- //입력 후 -->
+								<!-- 콤보박스 -->
+								<div class="card_combo_layer tbl_w" style="max-height:225px;overflow-x:hidden;overflow-y:auto;z-index:1;display:none;">
+									<div class="combo_inputbx">
+										<input type="text" value="매출" placeholder="입력" style="width:100%;">
+										<a class="btn_del"><span class="blind">삭제</span></a>
+									</div>
+									<div class="combo_tbl">
+										<table>
+											<caption></caption>
+											<colgroup><col style="width:60px"><col></colgroup>
+											<!-- 테이블제목 -->
+											<tbody><tr>
+												<th><div>코드</div></th>
+												<th><div>계정과목명</div></th>
+											</tr>
+											<!-- //테이블제목 -->
+											<!-- 테이블내용 -->
+											<tr>
+												<td><div>0400</div></td>
+												<td><div>매출</div></td>
+											</tr>
+											<tr>
+												<td><div>0401</div></td>
+												<td><div>상품매출</div></td>
+											</tr>
+											<tr>
+												<td><div>0402</div></td>
+												<td><div>제품매출</div></td>
+											</tr>
+											<tr>
+												<td><div>0403</div></td>
+												<td><div>기타매출</div></td>
+											</tr>
+											<!-- //테이블내용 -->
+										</tbody></table>
+									</div>
+									<div class="combo_add">
+										<a href="#none" class="txt_b">+ 기타 계정과목 추가</a>
+									</div>
+								</div>
+								<!-- //콤보박스 -->
+							</div>
+						</div></td>
+					</tr>
+					<tr>
+						<td scope="col"><div><input type="checkbox" name=""></div></td><!-- 2021-10-15 -->
+						<td><div>기본용도</div></td>
+						<td><div class="tx_ellipsis_max" title="매출">매출</div></td>
+						<td><div>0401</div></td>
+						<td><div>
+							<div class="card_combo no_line" style="padding:0;"><!-- 입력전에만 no_line 클래스 추가 -->
+								<!-- 입력 전 -->
+								<span class="card_combo_in" style="display:none;">
+									<span class="bg">
+									</span>
+									<div class="btn"><a class="edit"><span class="blind">수정</span></a></div>
+								</span>
+								<!-- //입력 전 -->
+								<!-- 입력 후 -->
+								<span class="card_combo_in">
+									<span class="bg">
+										<input type="text" value="상품매출" placeholder="입력">
+										<!-- <a class="btn_del"><span class="blind">삭제</span></a> -->
+									</span>
+									<a class="btn_open"><span class="blind">열기</span></a>
+								</span>
+								<!-- //입력 후 -->
+								<!-- 콤보박스 -->
+								<div class="card_combo_layer tbl_w" style="max-height:225px;overflow-x:hidden;overflow-y:auto;z-index:1;display:none;">
+									<div class="combo_inputbx">
+										<input type="text" value="매출" placeholder="입력" style="width:100%;">
+										<a class="btn_del"><span class="blind">삭제</span></a>
+									</div>
+									<div class="combo_tbl">
+										<table>
+											<caption></caption>
+											<colgroup><col style="width:60px"><col></colgroup>
+											<!-- 테이블제목 -->
+											<tbody><tr>
+												<th><div>코드</div></th>
+												<th><div>계정과목명</div></th>
+											</tr>
+											<!-- //테이블제목 -->
+											<!-- 테이블내용 -->
+											<tr>
+												<td><div>0400</div></td>
+												<td><div>매출</div></td>
+											</tr>
+											<tr>
+												<td><div>0401</div></td>
+												<td><div>상품매출</div></td>
+											</tr>
+											<tr>
+												<td><div>0402</div></td>
+												<td><div>제품매출</div></td>
+											</tr>
+											<tr>
+												<td><div>0403</div></td>
+												<td><div>기타매출</div></td>
+											</tr>
+											<!-- //테이블내용 -->
+										</tbody></table>
+									</div>
+									<div class="combo_add">
+										<a href="#none" class="txt_b">+ 기타 계정과목 추가</a>
+									</div>
+								</div>
+								<!-- //콤보박스 -->
+							</div>
+						</div></td>
+					</tr>
+					<tr>
+						<td scope="col"><div><input type="checkbox" name=""></div></td><!-- 2021-10-15 -->
+						<td><div>기본용도</div></td>
+						<td><div class="tx_ellipsis_max" title="매출">매출</div></td>
+						<td><div>0401</div></td>
+						<td><div>
+							<div class="card_combo no_line" style="padding:0;"><!-- 입력전에만 no_line 클래스 추가 -->
+								<!-- 입력 전 -->
+								<span class="card_combo_in" style="display:none;">
+									<span class="bg">
+									</span>
+									<div class="btn"><a class="edit"><span class="blind">수정</span></a></div>
+								</span>
+								<!-- //입력 전 -->
+								<!-- 입력 후 -->
+								<span class="card_combo_in">
+									<span class="bg">
+										<input type="text" value="상품매출" placeholder="입력">
+										<!-- <a class="btn_del"><span class="blind">삭제</span></a> -->
+									</span>
+									<a class="btn_open"><span class="blind">열기</span></a>
+								</span>
+								<!-- //입력 후 -->
+								<!-- 콤보박스 -->
+								<div class="card_combo_layer tbl_w" style="max-height:225px;overflow-x:hidden;overflow-y:auto;z-index:1;display:none;">
+									<div class="combo_inputbx">
+										<input type="text" value="매출" placeholder="입력" style="width:100%;">
+										<a class="btn_del"><span class="blind">삭제</span></a>
+									</div>
+									<div class="combo_tbl">
+										<table>
+											<caption></caption>
+											<colgroup><col style="width:60px"><col></colgroup>
+											<!-- 테이블제목 -->
+											<tbody><tr>
+												<th><div>코드</div></th>
+												<th><div>계정과목명</div></th>
+											</tr>
+											<!-- //테이블제목 -->
+											<!-- 테이블내용 -->
+											<tr>
+												<td><div>0400</div></td>
+												<td><div>매출</div></td>
+											</tr>
+											<tr>
+												<td><div>0401</div></td>
+												<td><div>상품매출</div></td>
+											</tr>
+											<tr>
+												<td><div>0402</div></td>
+												<td><div>제품매출</div></td>
+											</tr>
+											<tr>
+												<td><div>0403</div></td>
+												<td><div>기타매출</div></td>
+											</tr>
+											<!-- //테이블내용 -->
+										</tbody></table>
+									</div>
+									<div class="combo_add">
+										<a href="#none" class="txt_b">+ 기타 계정과목 추가</a>
+									</div>
+								</div>
+								<!-- //콤보박스 -->
+							</div>
+						</div></td>
+					</tr>
+					<tr >
+						<td scope="col"><div><input type="checkbox" name=""></div></td><!-- 2021-10-15 -->
+						<td><div class="add_gr">추가용도</div></td>
+						<td><div class="tx_ellipsis_max add_gr" title="직원경조사비">직원경조사비</div></td>
+						<td><div>0401</div></td>
+						<td><div>
+							<div class="card_combo no_line" style="padding:0;"><!-- 입력전에만 no_line 클래스 추가 -->
+								<!-- 입력 전 -->
+								<span class="card_combo_in" style="display:none;">
+									<span class="bg">
+									</span>
+									<div class="btn"><a class="edit"><span class="blind">수정</span></a></div>
+								</span>
+								<!-- //입력 전 -->
+								<!-- 입력 후 -->
+								<span class="card_combo_in">
+									<span class="bg">
+										<input type="text" value="상품매출" placeholder="입력">
+										<!-- <a class="btn_del"><span class="blind">삭제</span></a> -->
+									</span>
+									<a class="btn_open"><span class="blind">열기</span></a>
+								</span>
+								<!-- //입력 후 -->
+								<!-- 콤보박스 -->
+								<div class="card_combo_layer tbl_w btm" style="max-height:225px;overflow-x:hidden;overflow-y:auto;z-index:1;display:none;">
+									<div class="combo_inputbx">
+										<input type="text" value="매출" placeholder="입력" style="width:100%;">
+										<a class="btn_del"><span class="blind">삭제</span></a>
+									</div>
+									<div class="combo_tbl">
+										<table>
+											<caption></caption>
+											<colgroup><col style="width:60px"><col></colgroup>
+											<!-- 테이블제목 -->
+											<tbody><tr>
+												<th><div>코드</div></th>
+												<th><div>계정과목명</div></th>
+											</tr>
+											<!-- //테이블제목 -->
+											<!-- 테이블내용 -->
+											<tr>
+												<td><div>0400</div></td>
+												<td><div>매출</div></td>
+											</tr>
+											<tr>
+												<td><div>0401</div></td>
+												<td><div>상품매출</div></td>
+											</tr>
+											<tr>
+												<td><div>0402</div></td>
+												<td><div>제품매출</div></td>
+											</tr>
+											<tr>
+												<td><div>0403</div></td>
+												<td><div>기타매출</div></td>
+											</tr>
+											<!-- //테이블내용 -->
+										</tbody></table>
+									</div>
+									<div class="combo_add">
+										<a href="#none" class="txt_b">+ 기타 계정과목 추가</a>
+									</div>
+								</div>
+								<!-- //콤보박스 -->
+							</div>
+						</div></td>
+					</tr>
+					<tr>
+						<td scope="col"><div><input type="checkbox" name=""></div></td><!-- 2021-10-15 -->
+						<td><div>기본용도</div></td>
+						<td><div class="tx_ellipsis_max" title="매출">매출</div></td>
+						<td><div>0401</div></td>
+						<td><div>
+							<div class="card_combo no_line" style="padding:0;"><!-- 입력전에만 no_line 클래스 추가 -->
+								<!-- 입력 전 -->
+								<span class="card_combo_in" style="display:none;">
+									<span class="bg">
+									</span>
+									<div class="btn"><a class="edit"><span class="blind">수정</span></a></div>
+								</span>
+								<!-- //입력 전 -->
+								<!-- 입력 후 -->
+								<span class="card_combo_in">
+									<span class="bg">
+										<input type="text" value="상품매출" placeholder="입력">
+										<!-- <a class="btn_del"><span class="blind">삭제</span></a> -->
+									</span>
+									<a class="btn_open"><span class="blind">열기</span></a>
+								</span>
+								<!-- //입력 후 -->
+								<!-- 콤보박스 -->
+								<div class="card_combo_layer tbl_w btm" style="max-height:225px;overflow-x:hidden;overflow-y:auto;z-index:1;display:;"><!-- 콤보박스 위로 열릴려면 btm 넣어주세요!! -->
+									<div class="combo_inputbx">
+										<input type="text" value="매출" placeholder="입력" style="width:100%;">
+										<a class="btn_del"><span class="blind">삭제</span></a>
+									</div>
+									<div class="combo_tbl">
+										<table>
+											<caption></caption>
+											<colgroup><col style="width:60px"><col></colgroup>
+											<!-- 테이블제목 -->
+											<tbody><tr>
+												<th><div>코드</div></th>
+												<th><div>계정과목명</div></th>
+											</tr>
+											<!-- //테이블제목 -->
+											<!-- 테이블내용 -->
+											<tr>
+												<td><div>0400</div></td>
+												<td><div>매출</div></td>
+											</tr>
+											<tr>
+												<td><div>0401</div></td>
+												<td><div>상품매출</div></td>
+											</tr>
+											<tr>
+												<td><div>0402</div></td>
+												<td><div>제품매출</div></td>
+											</tr>
+											<tr>
+												<td><div>0403</div></td>
+												<td><div>기타매출</div></td>
+											</tr>
+											<!-- //테이블내용 -->
+										</tbody></table>
+									</div>
+									<div class="combo_add">
+										<a href="#none" class="txt_b">+ 기타 계정과목 추가</a>
+									</div>
+								</div>
+								<!-- //콤보박스 -->
+							</div>
+						</div></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<!-- //리스트 테이블 -->
+
+		<div class="mgt10">
+			<p class="tar">신고프로그램 : <strong>세무사랑</strong></p>
+		</div>
+
+	</div>
+	<!-- //팝업 컨텐츠 -->
+</div>
+
+</body>
+</html>

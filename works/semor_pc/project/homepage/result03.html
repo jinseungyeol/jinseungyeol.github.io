@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="../css/aos.css">
+  <link rel="stylesheet" href="../css/reset_taxp.css">
+  <link rel="stylesheet" href="../css/app_header.css">
+  <link rel="stylesheet" href="../css/content_taxp.css">
+  <link rel="stylesheet" href="../css/semo_rept.css">
+  <link rel="stylesheet" href="../css/semoR_vat.css">
+  <script src="https://publ.roumit.com/js/firebase_include.js"></script>
+  <script src="../js/lib/jquery/jquery-1.12.4.min.js"></script>
+  <script src="../js/lib/plugin/aos.js"></script>
+  <title>부가세 절세 진단서비스</title>
+</head>
+<body>
+  <!-- wrapper -->
+  <div class="wrapper">
+    <!-- header -->
+    <header id="vatHeader">
+      <div class="inner">
+        <div class="logoWrap">
+          <a href="javascript:;" class="textLogo">스타세무회계</a>
+          <a href="javascript:;" class="imgLogo">
+            <img src="" alt="세무사무소 로고">
+          </a>
+        </div>
+        <nav>
+          <ul>
+            <li class="inquiry">
+              <a href="javascript:;">문의하기</a>
+            </li>
+            <li>
+              <a href="javascript:;">공유하기</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- //header -->
+    <!-- container -->
+    <div class="container">
+      <div class="vatSavings" id="TXSV_Y_ESTX">
+        <!-- result -->
+        <section class="result">
+          <div class="inner">
+            <div class="visualImg" data-aos="fade-up" data-aos-once="true"></div>
+            <div class="textBox">
+              <p data-aos="fade-up" data-aos-once="true" data-aos-delay="500">
+                <span>사장님, 훌륭하십니다!</span>
+              </p>
+              <h1 class="defTit" data-aos="fade-up" data-aos-once="true" data-aos-delay="650">
+                <p>지금까지의 세금 신고는</p>
+                <p>이상없이 진행되었습니다.</p>
+              </h1>
+              <em class="infoTxt">
+                <P class="txtBlue" data-aos="fade-up" data-aos-once="true" data-aos-delay="800">
+                  <span>다음 예상세금이 궁금하시다면,</span>
+                </P>
+                <P data-aos="fade-up" data-aos-once="true" data-aos-delay="1000">
+                  <span><strong>세무 · 경영 6종 프리미엄보고서</strong>로</span>
+                  <span>세금을 미리 대비해보세요!</span>
+                </P>
+              </em>
+            </div>
+          </div>
+          <div class="floating">
+            <div class="btnWrap" data-aos="fade-up" data-aos-once="true" data-aos-delay="1150">
+              <button type="button" class="btnBgBlue">나의 세무사에게 요청하기</button>
+            </div>
+          </div>
+        </section>
+        <!-- //result -->
+        <!-- rprtVideo -->
+        <section class="rprtVideo">
+          <div class="inner">
+            <h1 class="defTit" data-aos="fade-up" data-aos-once="true">세모리포트란 ?</h1>
+            <div class="areaVideo" data-aos="fade-up" data-aos-once="true" data-aos-delay="350">
+              <video poster="../img/homepage/thum_promotion_semor.jpg" controls playsinline muted>
+                  <source src="../img/homepage/promotion_semor.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </section>
+        <!-- //rprtVideo -->
+      </div>
+    </div>
+    <!-- //container -->
+  </div>
+  <!-- //wrapper -->
+
+  <script>
+    $(function () {
+      // 비디오 핸들링
+      var promotionVideo = $(".rprtVideo video").get(0);
+      var isPlay = true; //한번만 자동재생을 위해
+
+      // 비디오 종료시 썸네일 이미지 노출
+      $('.rprtVideo video').on('ended', function() {
+        promotionVideo.load();
+        $(".rprtVideo .areaVideo").removeClass("play");
+      });
+      // 스크롤시 동영상 자동재생
+      $(window).on('scroll', function () {
+        if ($(window).scrollTop() > $(".rprtVideo").offset().top - 400 && isPlay == true) {
+          isPlay = false;
+          setTimeout(() => {
+            $(".rprtVideo .areaVideo").addClass("play");
+            promotionVideo.play();
+          }, 2000)
+        }
+      })
+      // AOS JS
+      AOS.init({
+        duration: 700,
+        disable: function () {
+          var maxWidth = 800;
+          return window.innerWidth < maxWidth;
+        }
+      });
+    })
+  </script>
+</body>
+</html>

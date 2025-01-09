@@ -1,0 +1,348 @@
+@charset "utf-8";
+
+/* animation */
+/* 완료 체크 애니메이션 */
+@keyframes checkmark { 
+    0% { height: 0; width: 0; opacity: 1} 
+    1% { border-right: 7.5px solid white; border-top: 7.5px solid white; height: 0; width: 0; opacity: 1} 
+    20% { border-right: 7.5px solid white; border-top: 7.5px solid white; height: 0; width: 15px; opacity: 1} 
+    40% { border-right: 7.5px solid white; border-top: 7.5px solid white; height: 26.5px; width: 15px; opacity: 1} 
+    100% { border-right: 7.5px solid white; border-top: 7.5px solid white; height: 26.5px; width: 15px; opacity: 1}
+}
+
+/* 오류 느낌표 애니메이션 */
+@-webkit-keyframes ex_mark { 
+    0% { height: 0} 100% { height: 25px} 
+} 
+@-webkit-keyframes dot { 
+    0% { height: 0} 100% { height: 7.5px} 
+} 
+
+/* 타이틀을 제외한 상단 top 영역 */
+.areaTop {margin: 11px 0 20px}
+.areaTop .slryPrice {font-size: 2rem}
+.areaTop .infoArea .cont .info .name.ellipsis {max-width: calc(100vw - 82px)}
+
+/* RoundBox */
+.roundBoxWrap {margin-bottom: 20px}
+.roundBox {margin-top: 13px; padding: 16px; border-radius: 10px; background: #fff}
+.roundBoxWrap.type02 .roundBox {background: #f5f7f8}
+
+/* List 정의 */
+.listWrap {margin-bottom: 15px}
+.listWrap > li {position: relative; padding: 15px 0}
+.listWrap > li .menu .rCont .btnDelete {width: 30px; height: 30px; background: url(../img/ico_close_gray.png) no-repeat right center / 20px}
+.listWrap > .defTit {margin-top: 20px}
+.listWrap .moveLink {margin: -13px; padding: 13px}
+.listWrap .menu {display: flex; align-items: center; justify-content: space-between}
+.listWrap .menu .tit {font-size: 1.133rem; font-weight: 600}
+.listWrap .menu .tit .date {font-size: 1rem}
+.listWrap .menu .rCont .state {font-size: 1rem}
+.listWrap .menu .rCont .switch .slider {margin: 0}
+/* listDot */
+.listDot > li .tit {position: relative; padding: 12px 0 12px 10px; font-size: 1.133rem; font-weight: 600}
+.listDot > li .tit::before {content: '·'; position: absolute; left: 0; top: 12px;}
+.listDot .accordionToggle::after {background-image: url(../img/ico_ts_down.png); background-size: 11px}
+.listDot .busiDataList {padding: 0 10px 20px 10px}
+.listDot.type02 > li {padding: 5px}
+.listDot.type02 > li .tit {padding: 0 0 0 10px; color: #8a8a8b; font-size: 0.933rem}
+.listDot.type02 > li .tit::before {top: 0}
+.listDot.type02 > li .stepArea {padding-left: 10px}
+.listDot.type03 {margin-bottom: 20px}
+.listDot.type03 > li:not(:first-child) {border-top: 1px solid #e1e1e1}
+.listDot.type03 > li .tit {display: inline-block; color: #8a8a8b}
+.listDot.type03 > li .areaData {float: right}
+.listDot.type03 > li .areaData .data {line-height: 3.3rem; font-size: 1.133rem}
+.listDot.type03 > li .infoArea .cont .txt .num {font-size: 1rem; color: #111}
+.listDot.type03 > li.work .tit {letter-spacing: 1.733rem} /* 보고서 쪽 업태, 업종 글자여백 세팅 */
+/* listNum */
+.listNum > li {display: flex}
+.listNum > li .num {margin-right: 6px}
+.listNumType02 > li strong {display: flex; font-weight: normal}
+.listNumType02 > li + li {margin-top: 10px}
+.listNumType02 > li strong {font-size: 0.933rem}
+.listNumType02 > li strong .num {flex: 0 0 auto; margin-right: 4px}
+
+/* stepArea */
+.stepList li {display: flex; padding: 13px 0}
+.stepList li .num {display: inline-block; margin-right: 8px; width: 25px; height: 25px; background-color: #17bf98; text-align: center; color: #fff; border-radius: 50%; line-height: 1.74}
+.stepList li .defTxt {font-size: 1.133rem}
+
+/* moveLink */
+.moveLink {display: flex; justify-content: space-between; align-items: center; padding: 5px; margin: -5px}
+.moveLink .tit {font-size: 1.133rem; font-weight: 600}
+.moveLink .rCont {display: flex; align-items: center}
+.moveLink .rCont .tsRight {display: block; width: 7px; margin-left: 8px}
+.moveLink .rCont .ver {color: #8a8a8b; font-size: 1.133rem}
+.moveLink.logout {color: #c7c7c7}
+
+.moveLinkGreen {padding-right: 13px; color: #12997a; font-size: 0.866rem; background: url(../img/ico_ts_right_green.png) no-repeat right center / 7px}
+
+/* accTransferList */
+.accTransferList li {padding: 10px 0}
+.accTransferList dl {display: table; width: 100%}
+.accTransferList dl dt, 
+.accTransferList dl dd {display: table-cell; font-size: 1rem}
+.accTransferList dl dt {text-align: left}
+.accTransferList dl dt .case {margin-left: 5px}
+.accTransferList dl dd {text-align: right; width: 58%}
+.accTransferList dl dd .infoArea {justify-content: flex-end}
+
+/* 계좌 내역 */
+.accListWrap {margin-bottom: 20px}
+.accListWrap > ul > li {position: relative; border-bottom: 1px solid #e1e1e1}
+.accListWrap > ul > li:last-child:not(.total) {border: none} 
+.accListWrap > ul > li.total {border-color: #000}
+.accListWrap > ul > li.total .infoArea {flex-wrap: wrap}
+.accListWrap > ul > li.total .infoArea.acc {padding: 15px 0;}
+.accListWrap > ul > li .defTit {margin: 20px 0 10px}
+.accListWrap > ul > li .infoArea.acc .cont .info .name.ellipsis {color:#565656}
+.accListWrap .confirmMsg {padding-top: 50px}
+
+/* accordionToggle */
+.accordionToggle {position: relative; display: block}
+.accordionToggle::after {content: ''; position: absolute; top: 50%; right: -4.5px; transform: translateY(-50%); width: 20px; height: 20px; background: url(../img/ico_ts_down.png) no-repeat center / 11px; cursor: pointer}
+.accordionToggle.active::after {transform: translateY(-50%) rotate(180deg)}
+.rData .accordionToggle {padding-right: 22px} /* 230102 오른쪽 데이터 들어간 어코디언케이스 추가 */
+.accordionToggleWrap {display: none}
+
+/* confirmMsg */
+.confirmMsg {position: relative; padding: 150px 0 35px; text-align: center}
+.confirmMsg strong {font-size: 1.666rem; display: block}
+.confirmMsg strong span {display: block; font-weight: normal; word-break: keep-all}
+.confirmMsg .defTit {margin-top: 0}
+.confirmMsg .subTxt {color: #c7c7c7; font-size: 1.133rem}
+.confirmMsg .subTxt + .subTxt {margin-top: 20px}
+/* confirmMsg type01 : 완료 */
+.confirmMsg.type01 .bgCheck {position: absolute; top: 70px; left: 50%; transform: translateX(-50%); width: 60px; height: 60px; background: #17bf98; border-radius: 50%} 
+.confirmMsg.type01 .bgCheck::after {content: ""; opacity: 1; width: 0; height: 0; position: absolute; top: 30px; left: 10px;  transform-origin: left top; border-right: 0 solid white; border-top: 0 solid white; -webkit-animation-delay: 100ms; -moz-animation-delay: 100ms; animation-delay: 100ms; -webkit-animation-duration: 2s; -moz-animation-duration: 2s; animation-duration: 2s; -webkit-animation-timing-function: ease-in-out; -moz-animation-timing-function: ease-in-out; animation-timing-function: ease-in-out; -webkit-animation-name: checkmark; -moz-animation-name: checkmark; animation-name: checkmark; -webkit-transform: scaleX(-1) rotate(135deg); -moz-transform: scaleX(-1) rotate(135deg); -ms-transform: scaleX(-1) rotate(135deg); -o-transform: scaleX(-1) rotate(135deg); transform: scaleX(-1) rotate(135deg); -webkit-animation-fill-mode: forwards; -moz-animation-fill-mode: forwards; animation-fill-mode: forwards; transition: 0.2s ease-in-out}
+/* confirmMsg type02 : 오류 */
+.confirmMsg.type02::after {content: ""; width: 7.5px; height: 0; position: absolute; top: 92px; left: 50%; transform: translate(-50%, -50%); background-color: #ffffff; border-radius: 2.5px; animation-name: ex_mark; -webkit-animation-duration: 1s; -webkit-animation-delay: 100ms; -webkit-animation-fill-mode: forwards}
+.confirmMsg.type02::before {content: ''; position: absolute; top: 70px; left: 50%; transform: translateX(-50%); width: 60px; height: 60px; background: #ff3d3d; border-radius: 50%}
+.confirmMsg.type02 .dot {content: ''; width: 7.5px; height: 7.5px; position: absolute; top: 112px; left: 50%; transform: translateX(-50%); background: #fff; animation-name: dot; -webkit-animation-duration: 0.5s; -webkit-animation-delay: 100ms; -webkit-animation-fill-mode: forwards}
+.confirmMsg.type03 {background: url(../img/img_loading_ictx.gif) no-repeat center top 40px / auto 90px} /* 종소세 수집중 */
+.confirmMsg.type04 {background: url(../img/ico_leaveStaff_green.png) no-repeat center top 60px / 60px} /* 퇴사처리 */
+.confirmMsg.type05 {background: url(../img/ico_welcome.png) no-repeat center top 40px / 80px} /* 웰컴 */
+.confirmMsg.type06 {background: url(../img/ico_confirmMsg.png) no-repeat center top 40px / 80px} /* 수집만료 */
+.confirmMsg.type07 {padding: 20px 0 35px} /* 상단여백 좁음 */
+.confirmMsg.type08 {padding: 75px 0 130px} /* 상단여백 좁고 하단이 넓음 */
+.confirmMsg.type09 {position: absolute; width: 100%; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 0} /* 페이지 중앙배치 */
+
+/* Form */
+.formHolder {position: relative}
+.formHolder input[type='checkbox'], .formHolder input[type='radio'] {display: none; position: absolute; top: 0; left: 0}
+.formHolder label.check {display: block; font-size: 1.133rem; font-weight: 600}
+.formHolder label.check::before {content: ''; position: absolute; top: 50%; left: 0; transform: translateY(-50%); width: 26px; height: 26px; background: url(../img/ico_bg_check.png) no-repeat left center / 26px;}
+.formHolder input[type="radio"] + label.check, .formHolder input[type="checkbox"] + label.check {position: relative; display: block; padding-left: 36px; width: calc(100% - 60px)}
+.formHolder.active label.check::before {background-image: url(../img/ico_bg_check_on.png)}
+.formHolder .inputWrap {position: relative;}
+.formHolder .inputWrap .btnLookup {position: absolute; top: 6px; right: 0; width: 67px; height: 25px; line-height: 24px; text-align: center; color: #8a8a8b; font-size: 0.8rem; border: 1px solid #000; border-radius: 14px;}
+.formHolder .inputWrap.active .btnLookup {border-color: #12997a; color: #12997a}
+.formHolder .inputWrap.active + .accHolder .name {color: #000;}
+.formHolder textarea {width: 100%; min-height: 7rem}
+.fieldGroup {position: relative; display: flex; display: -webkit-box}
+.fieldGroup .col {flex: 1 1 auto; -webkit-box-flex: 1}
+.fieldGroup .col.backNum {position: relative}
+.fieldGroup .col.backNum .dot {position: absolute; top: 0.8rem; left: 15px; font-size: 12px; color: #cfcfcf}
+.fieldGroup .divider {display: block; width: 29px; height: 40px; line-height: 40px; text-align: center}
+.fieldGroup .accHolder .name {color: #fff}
+.fieldGroup .btnSelect {display: block; margin-left: auto; color: #c7c7c7}
+.fieldGroup .btnSelect.selected {color: #111}
+.fieldGroup .btnSelect::after {color: #111}
+
+/* basic 제목 왼쪽, input 오른쪽 정렬 */
+.listTypeInput {margin-bottom: 20px}
+.listTypeInput > li {margin-top: 32px}
+.listTypeInput > li .formHolder .fieldGroup {display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap}
+.listTypeInput > li .formHolder .fieldGroup .divider {height: auto; line-height: initial}
+.listTypeInput > li .formHolder > .fieldGroup {padding: 10px 0; border-bottom: 1px solid #e1e1e1}
+.listTypeInput > li .formHolder > .fieldGroup.bdNone {padding: 0}
+.listTypeInput > li .formHolder .formTit {display: block; font-size: 1.133rem; font-weight: 600; color: #111}
+.listTypeInput > li .formHolder label.check::before {left: unset; right: 0}
+.listTypeInput > li .formHolder textarea {margin-top: 11px}
+
+/* inputList basic */
+.inputList .btnReset {display: none; position: absolute; bottom: 5px; right: -6px; width: 30px; height: 30px;}
+.inputList .btnReset img {width: 18px}
+.inputList input.inputed ~ .btnReset {display: block}
+.inputList input.checked {background: url(../img/ico_check_on.png) no-repeat center right / 15px auto}
+.inputList input.checked ~ .btnReset {display: none}
+
+/* type01 정보입력 오른쪽 정렬 */
+.inputList.type01 {position: relative}
+.inputList.type01 .formTit {position: absolute; top: 50%; transform: translateY(-50%); font-size: 1.133rem; font-weight: 600; color: #8a8a8b}
+.inputList.type01 input {padding-left: 30%; text-align: right; font-size: 1.133rem}
+
+/* type02 정보입력 세로 정렬 */
+.inputList.type02 {position: relative}
+.inputList.type02 input:read-only {padding: 1px; border-bottom: 1px solid #e1e1e1}
+.listTypeInput > li .formHolder .inputList.type02 .fieldGroup {flex-wrap: nowrap}
+.listTypeInput > li .formHolder .inputList.type02 .formTit {font-size: 1rem; color: #6d6d6d}
+.listTypeInput > li .formHolder .inputList.type02 input {font-size: 1.2667rem}
+.inputList.type02 .countDown {position: absolute; top: 30px; right: 0; font-size: 0.8rem}
+.inputList.type02 .btnSearch {position: absolute; right: 0; bottom: 5px}
+
+/* type03 오른쪽 정렬 (금액) */
+.inputList.type03 input {padding-left: 35%; height: 50px; line-height: 50px; text-align: right; font-size: 1.267rem}
+.inputList.type03 input:read-only {padding: 1px; border-bottom: 1px solid #e1e1e1}
+.inputList.type03 .infoArea {position: absolute; left: 0; top: 50%; transform: translateY(-50%)}
+.inputList.type03 .unit {display: none; position: absolute; top: 0px; right: 0; height: 50px; line-height: 50px}
+.inputList.type03 input.inputed {padding-right: 15px}
+.inputList.type03 input.inputed + .unit {display: block}
+
+/* type04 오른쪽 정렬 (금액 및 x 버튼) */
+.inputList.type04 {position: relative}
+.inputList.type04 .formTit {position: absolute; top: 50%; transform: translateY(-50%); font-size: 1.133rem; font-weight: 600; color: #8a8a8b}
+.inputList.type04 input {padding-left: 35%; text-align: right; font-size: 1.133rem}
+.inputList.type04 input:read-only {padding: 1px; border-bottom: 1px solid #e1e1e1}
+.inputList.type04 .unit {display: none; position: absolute; top: 0px; right: 0; height: 40px; line-height: 40px}
+.inputList.type04 .btnSelect::after {color: #222}
+.inputList.type04 .btnSelect {position: absolute; bottom: 7.25px; color: #c7c7c7}
+.inputList.type04 .btnSelect.date {left: 0}
+.inputList.type04 .btnSelect.time {left: 33.33333%}
+.inputList.type04 .btnSelect.time + input {padding-left: 62%}
+.inputList.type04 .btnSelect.selected {color: #111}
+.inputList.type04 input.inputed {padding-right: 40px}
+.inputList.type04 input.inputed + .unit {display: block; right: 25px}
+
+/* type05 예외 케이스 ( 좌측 제목 우측 날짜선택 케이스 ) */
+.inputList.type05 {display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #e1e1e1}
+.inputList.type05 .fieldGroup .btnSelect::after {position: absolute; right: 0; top: 3px}
+.inputList.type05 .stList a {padding: 0; background: none; border: none}
+.inputList.type05 .stList a input {color: #111}
+.inputList.type05 .stList a input[size="3"] {max-width: 70px}
+.inputList.type05 .stList a input[size="7"] {max-width: 102px}
+.inputList.type05 .stList a input[size="8"] {max-width: 108px}
+
+/* radioList */
+.radioList {display: flex; align-items: center}
+.radioList label {display: flex; align-items: center}
+.radioList label + label {margin-left: 26px}
+.radioList label input[type="radio"]:checked + span {color: #111}
+.radioList label span {margin-left: 6px; font-size: 1.133rem; color: #8a8a8b}
+
+/* select 정의 */
+.stList {position: relative}
+.stList a {position: relative; display: block; height: 40px; line-height: 40px; padding-right: 28px; border-bottom: 1px solid #e1e1e1; background-color: #fff; white-space: nowrap; background: url(../img/ico_ts_down.png) no-repeat right center / 11px; font-size: 1rem}
+.stList.date a {padding-right: 0; background-image: url(../img/ico_calendar.png); background-size: 18px}
+.stList.date a input {padding-right: 18px; text-align: center}
+.selectDivision3_7 {display: flex; display: -webkit-box; width: 100%}
+.selectDivision3_7 li {width: 70%; padding-left: 5px}
+.selectDivision3_7 li:first-child {width: 30%; padding-right: 5px; padding-left: 0} 
+.selectDivision3_7 .accHolder {margin-top: 11px; color: #c7c7c7; font-size: 1rem; text-align: right}
+
+/* 전체동의 Boxs */
+.formWrap.selectAll .total {position: relative}
+.formWrap.selectAll .rCont {position: absolute; top: 0; right: 0}
+.formWrap.selectAll .rCont img {display: block}
+
+/* 알림박스 */
+.noticeBox {padding: 25px 22px; margin-bottom: 20px; background: #f9f9f9; border-radius: 19px}
+.noticeBox .titArea .noticeTit {font-size: 1.133rem; font-weight: 600}
+.noticeBox .titArea .noticeTit02 {font-size: 1.4rem; font-weight: 600}
+.noticeBox .txtArea {margin-top: 8px}
+.noticeBox .txtArea .noticeTxt {font-size: 1.266rem;}
+.noticeBox .txtArea .noticeTxt + .noticeTxt {margin-top: 11px}
+.noticeBox .txtArea .subTxt {color: #85888d; font-size: 1rem}
+.noticeBox .infoArea {justify-content: center}
+.noticeBox .infoArea .ico i {width: 20px; height: 20px}
+.noticeBox .infoArea .ico + .cont {padding-left: 8px}
+.noticeBox .infoArea .cont .info .name {font-size: 1.133rem; font-weight: 600}
+
+/* tabMenu */
+.areaTabMenu {margin: 15px 0 23px}
+.tabMenuList {display: flex; justify-content: space-around; margin-bottom: -1px}
+.tabMenuList li {position:relative; z-index:1; flex: 1; text-align: center; border: 1px solid #c7c7c7}
+.tabMenuList li + li {margin-left: -1px}
+.tabMenuList li .btnTab {display: block; height: 45px; margin-right: -1px; line-height: 45px; font-size: 1.133rem; color: #8a8a8b}
+.tabMenuList li.active {z-index: 2; border: 1px solid #17bf98}
+.tabMenuList li.active .btnTab {color: #17bf98}
+.calendarWrap .fieldGroup {padding: 11px 20px 20px 20px}
+
+.tabMenuList.type02 {padding: 7px; background-color: #f9f9f9; border-radius: 30px; overflow: hidden}
+.tabMenuList.type02 li {border: none}
+.tabMenuList.type02 li .btnTab {height: 40px; line-height: 40px; font-size: 1.2rem}
+.tabMenuList.type02 li.active .btnTab {color: #111; box-shadow: 0px 3px 5px rgba(0,0,0,0.2); background-color: #fff; border-radius: 30px;}
+
+/* tabMenu 가로스크롤 */
+.scrollTabWrap {position: relative; overflow-y: hidden; margin: 0 -20px 15px}
+.scrollTabWrap::before {content: ''; position: absolute; left: 0; bottom: 0; width: 100%; height: 3px; background: #f5f7f8}
+.scrollTabList {overflow-x: scroll; display: flex; display: -webkit-box; padding: 0 4px 0 20px}
+.scrollTabList::-webkit-scrollbar {display: none}
+.scrollTabList > li > a {display: block; padding: 0 16px; height: 50px; line-height: 49px}
+.scrollTabList > li:first-of-type > a {margin-left: -16px}
+.scrollTabList > li > a span {display: inline-block; position: relative; font-size: 1.133rem; color: #8a8a8b}
+.scrollTabList > li.active > a span {color: #000; font-weight: 600}
+.scrollTabList > li.active > a span::before {content: ''; position: absolute; left: 50%; transform: translateX(-50%); bottom: 0; width: 35px; height: 3px; background: #000}
+
+/* 직원, 거래처 데이터 테이블형식 */
+.busiDataWrap .busiDataList {margin-bottom: 20px}
+.busiDataList > li {padding: 7px 0}
+.busiDataList dl {display: table; width: 100%}
+.busiDataList dl dt, .busiDataList dl dd {display: table-cell}
+.busiDataList dl dt {color: #8a8a8b; font-size: 1rem}
+.busiDataList dl dd {width: 57%; text-align: right; font-size: 1rem}
+.busiDataList .name {display: block}
+
+/* areaFilter */
+.areaFilter {margin: 25px 0 10px}
+.areaFilter > a {position: relative; display: flex; justify-content: space-between; align-items: center; padding-bottom: 10px; border-bottom: 1px solid #e1e1e1}
+.areaFilter .tit {color: #8a8a8b; font-size: 1rem}
+.areaFilter .tit img {width: 20px}
+.areaFilter .tit strong {color: #111; font-weight: 600}
+.areaFilter .rCont {display: flex; align-items: center}
+.areaFilter .rCont .tsRight {width: 7px}
+.areaFilter .rCont .reload {width: 23px; margin-left: 5px}
+
+/* 파일첨부리스트 */
+.fileList > li {position: relative; padding: 6px 0}
+.fileList > li .btnCloseRdGray {position: absolute; top: 50%; transform: translateY(-50%); right: 0}
+
+/* 이미지첨부리스트 */
+.imgAttachList {display: -webkit-box; overflow-x: scroll; padding-top: 8px; margin-right: -20px}
+.imgAttachList::-webkit-scrollbar {display: none}
+.imgAttachList li {position: relative; margin-right: 12px}
+.imgAttachList li:last-child {margin-right: 8px}
+.imgAttachList li img {border-radius: 8px}
+.imgAttachList li .btnCloseRdGray {position: absolute; top: -14px; right: -14px;z-index: 1}
+
+/* 달력 */
+.areaCalendar {margin-top: 30px}
+#mobiCalendar * {font-family: "Pretendard" !important}
+#mobiCalendar.mbsc-ios.mbsc-datepicker-inline {border: none}
+#mobiCalendar .mbsc-ios.mbsc-calendar-controls {display: none}
+#mobiCalendar .mbsc-calendar-day-inner {height: 4.333rem}
+#mobiCalendar .mbsc-ios.mbsc-calendar-week-day {font-size: 1rem; color: #8a8a8b}
+#mobiCalendar .mbsc-ios.mbsc-calendar-week-day[aria-label="토요일"],
+#mobiCalendar .mbsc-ios.mbsc-calendar-week-day[aria-label="일요일"] {color: #ff5353}
+#mobiCalendar .mbsc-ios.mbsc-selected .mbsc-calendar-cell-text {width: 1.625em; height: 1.625em; margin: 0.1875em; font-size: 1rem; line-height: 1.625em; background: #12997a; color: #fff}
+#mobiCalendar .mbsc-calendar-day-outer {pointer-events: none}
+#mobiCalendar .mbsc-ios.mbsc-calendar-day-text {padding: 0.221rem; background: #f1f1f1; border-color: #f1f1f1; border-radius: 4px; border: 1px solid transparent;}
+
+#mobiCalendar .mbsc-ios.mbsc-calendar-today {color: #111}
+#mobiCalendar .mbsc-calendar-label-text {font-size: 0.667rem; text-align: center; font-weight: 500; overflow: visible}
+#mobiCalendar .mbsc-ios.mbsc-calendar-label {color: transparent; padding: 0}
+#mobiCalendar .mbsc-calendar-text {margin: 0}
+
+/* 수정가능한 달력과 불가능한 달력 분기처리 */
+.viewer #mobiCalendar {pointer-events: none}
+.viewer #mobiCalendar .mbsc-ios.mbsc-selected .mbsc-calendar-cell-text {background: transparent; border: 1px solid #17bf98; color: #111}
+.viewer #mobiCalendar .mbsc-calendar-day-outer.mbsc-disabled .mbsc-calendar-day-text {display: none}
+
+
+/* changeView */
+.changeView {display: flex; align-items: center}
+.changeView .tit {margin: 0 10px; font-size: 1.267rem; font-weight: 600}
+.changeView button {width: 30px; height: 30px}
+.changeView .btnPrev {background: url(../img/ico_ts_left.png) no-repeat center / 7px}
+.changeView .btnNext {background: url(../img/ico_ts_right.png) no-repeat center / 7px}
+
+/* Etc */
+.date.time {color: #ababab; font-size: 0.866rem; font-weight: 500}
+hr.grayLine {height: 1px; border: none; background: #c8c8c8; margin: 10px 0 0}
+hr.grayLine02 {height: 9px; margin: 10px -20px; border: none; background: #f8f9fb}
+hr.grayLine03 {height: 1px; border: none; background: #f1f1f1; margin: 10px 0 0}
+.new {position: relative}
+.new::after {content: ''; position: absolute; top: -3px; right: -12px; width: 8px; height: 8px; border-radius: 50%; background: red}
+.clipboard {display: inline-block}
+.clipboard img {width: 13px; margin-left: 4px; vertical-align: middle}

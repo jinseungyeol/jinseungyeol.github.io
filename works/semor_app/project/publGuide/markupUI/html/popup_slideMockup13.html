@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>fin_acct_002_2 / popup_slideMockup13</title>
+    <link rel="stylesheet" href="../../../css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../../../css/mobiscroll.jquery.min.css">
+    <link rel="stylesheet" href="../../../css/semoR_base.css">
+    <link rel="stylesheet" href="../../../css/semoR_common.css">
+    <link rel="stylesheet" href="../../../css/semoR_style.css">
+    <link rel="stylesheet" href="../../../css/semoR_rept.css">
+  <script src="../../../js/jquery-3.5.1.min.js"></script>
+    <script src="../../../js/jquery-ui.min.js"></script>
+    <script src="../../../js/swiper-bundle.min.js"></script>
+    <script src="../../../js/mobiscroll.jquery.min.js"></script>
+    <script src="../../../js/semoR_ui.js"></script>
+</head>
+
+<script>
+    $(document).ready(function () {
+        slidePop(this);
+
+    });
+</script>
+
+<body>
+    <!-- wrapper -->
+    <div class="wrapper">
+        <!-- header -->
+        <div class="header">
+            <h1 class="subTit">슬라이드팝업(slidePop)</h1>
+            <ul class="topMenu">
+                <li class="left">
+                    <a class="btnBack" href="javascript:;" role="button"><span class="blind">뒤로가기</span></a>
+                </li>
+            </ul>
+        </div>
+        <!-- //header -->
+    </div>
+    <!-- //wrapper -->
+
+    <div class="popWrap slidePop">
+        <div class="dim" onclick="popdimClose(this);return false;">클릭시 팝업 닫힘</div>
+        <div class="popInner">
+            <div class="popTit">
+                <a href="javascript:;" class="btnPopClose" onclick="popClose(this);return false;" title="팝업닫기"
+                    role="button"></a>
+                <h1>출금용도 선택하기</h1>
+            </div>
+            <div class="popCont">
+                <ul class="accSelectList withdraw clear">
+                    <li>
+                        <a href="javascript:;" role="button">
+                            <div class="infoArea">
+                                <div class="ico">
+                                    <i class="O001"><span class="blind">용도이미지</span></i>
+                                </div>
+                                <div class="cont">
+                                    <p class="txt">
+                                        직접설정 입금용도1
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" role="button">
+                            <div class="infoArea">
+                                <div class="ico">
+                                    <i class="O002"><span class="blind">용도이미지</span></i>
+                                </div>
+                                <div class="cont">
+                                    <p class="txt">
+                                        직접설정 입금용도2
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" role="button">
+                            <div class="infoArea">
+                                <div class="ico">
+                                    <i class="O003"><span class="blind">용도이미지</span></i>
+                                </div>
+                                <div class="cont">
+                                    <p class="txt">
+                                        직접설정 입금용도3
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" role="button">
+                            <div class="infoArea">
+                                <div class="ico">
+                                    <i class="O004"><span class="blind">용도이미지</span></i>
+                                </div>
+                                <div class="cont">
+                                    <p class="txt">이자납부</p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" role="button">
+                            <div class="infoArea">
+                                <div class="ico">
+                                    <i class="O005"><span class="blind">용도이미지</span></i>
+                                </div>
+                                <div class="cont">
+                                    <p class="txt">급여</p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" role="button">
+                            <div class="infoArea">
+                                <div class="ico">
+                                    <i class="O006"><span class="blind">용도이미지</span></i>
+                                </div>
+                                <div class="cont">
+                                    <p class="txt">현금인출</p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" role="button">
+                            <div class="infoArea">
+                                <div class="ico">
+                                    <i class="O007"><span class="blind">용도이미지</span></i>
+                                </div>
+                                <div class="cont">
+                                    <p class="txt">
+                                        타계좌 출금
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" role="button">
+                            <div class="infoArea">
+                                <div class="ico">
+                                    <i class="O009"><span class="blind">용도이미지</span></i>
+                                </div>
+                                <div class="cont">
+                                    <p class="txt">
+                                        세금과 공과
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" role="button">
+                            <div class="infoArea">
+                                <div class="ico">
+                                    <i class="O008"><span class="blind">용도이미지</span></i>
+                                </div>
+                                <div class="cont">
+                                    <p class="txt">
+                                        카드대금 결제
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" role="button">
+                            <div class="infoArea">
+                                <div class="ico">
+                                    <i class="O010"><span class="blind">용도이미지</span></i>
+                                </div>
+                                <div class="cont">
+                                    <p class="txt">기타지출</p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" role="button">
+                            <div class="infoArea">
+                                <div class="ico">
+                                    <i class="O000"><span class="blind">용도이미지</span></i>
+                                </div>
+                                <div class="cont">
+                                    <p class="txt">미지정</p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" role="button">
+                            <div class="infoArea">
+                                <div class="ico">
+                                    <i class="O999"><span class="blind">용도이미지</span></i>
+                                </div>
+                                <div class="cont">
+                                    <p class="txt">
+                                        세무사 설정1
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" role="button">
+                            <div class="infoArea">
+                                <div class="ico">
+                                    <i class="O999"><span class="blind">용도이미지</span></i>
+                                </div>
+                                <div class="cont">
+                                    <p class="txt">
+                                        세무사 설정2
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" role="button">
+                            <div class="infoArea">
+                                <div class="ico">
+                                    <i class="O999"><span class="blind">용도이미지</span></i>
+                                </div>
+                                <div class="cont">
+                                    <p class="txt">
+                                        세무사 설정3
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </div>
+                <ul class="listTypeInput">
+                    <li>
+                        <div class="formHolder">
+                            <label class="check" for="rrnBackNum">
+                                ‘<span class="ellipsis">빅마켓빅마켓빅마켓</span>’ 내역에 동일하게 적용할까요?
+                            </label>
+                            <input type="checkbox" id="rrnBackNum" class="inputed">
+                        </div>
+                    </li>
+                </ul>
+                <div class="popBtnWrap">
+                        <button type="button" class="btnPointBg pointBgColor">추가하기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

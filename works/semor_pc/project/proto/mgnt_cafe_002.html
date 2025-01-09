@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<title>세모리포트</title>
+<link rel="stylesheet" href="../css/reset_taxp.css">
+<link rel="stylesheet" href="../css/app_header.css"><!-- [D] 세무대리인용 header -->
+<link rel="stylesheet" href="../css/content_taxp.css"><!-- [D] 세무대리인용 -->
+<link rel="stylesheet" href="../css/semo_rept.css"><!-- [D] 세무대리인용 -->
+
+<!-- custom scrollbar plugin css -->
+<link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+<script src="https://publ.roumit.com/js/firebase_include.js"></script>
+  <script src="../js/lib/jquery/jquery-1.12.4.min.js"></script>
+<script src="../js/lib/jquery/jquery-ui-1.10.4.min.js"></script>
+<!-- custom scrollbar plugin -->
+<script src="../js/design/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../js/design/jquery.placeholder.min.js"></script>
+<script src="../js/lib/plugin/smart.popup.js"></script>
+<script src="../js/comm/common.js"></script>
+<script>
+$(function(){
+  // Invoke the plugin
+  $('input, textarea').placeholder({customClass:'my-placeholder'});
+  
+  
+  // 보기설정 보기
+    $('#btn_showhide').on("click", function(event){
+    	if($(this).hasClass("down")){
+    		$("#tbl_area").show();
+    		$(this).removeClass("down");
+    	}else{
+    		$("#tbl_area").hide();
+    		$(this).addClass("down");
+    	}
+    });
+    
+});
+</script>
+
+</head>
+
+
+<body style="width:480px;"><!-- 팝업 사이즈 600*497 -->
+
+	<div class="pop_wrap" style="width:480px;">
+		<!-- 팝업 헤더 -->
+		<div class="pop_header">
+		  <h1>카테고리 관리</h1>
+		  <a href="#" onclick="cf_close_smartPop('fn_category_search','');" class="btn_popclose">
+			<img src="../img/txof/btn/btn_popClose_white.gif" alt="팝업닫기">
+		  </a>
+		</div>
+	  
+			<!-- 팝업 컨텐츠 -->
+			<div class="pop_container">
+		  
+			  <div class="title_wrap">
+				<div class="left">
+				  <h2 class="no_bg">세무정보 지식 카테고리를 관리합니다.</h2>
+				</div>
+				<div class="right">
+				</div>
+			  </div>
+			  <div class="stitle_wrap">
+				  <div class="left">
+					  <input type="text" id="ins_clas_nm" name="ins_clas_nm" style="width:180px;" placeholder="(카테고리를 입력하세요)" value=""> 
+					  <button type="button" class="btn_style2_g" id=""><span>추가</span></button>
+					  <button type="button" class="btn_style1_b" id=""><span>수정</span></button>
+			
+				  </div>
+				  <div class="right">
+					  <a href="#none" onclick="fn_movelast();return false;"><img src="../img/txof/btn/btn_down_1st.svg" alt=""></a> 
+					  <a href="#none" onclick="fn_movedown();return false;"><img src="../img/txof/btn/btn_down.svg" alt=""></a> 
+					  <a href="#none" onclick="fn_moveup();return false;"><img src="../img/txof/btn/btn_up.svg" alt=""></a> 
+					  <a href="#none" onclick="fn_movefirst();return false;"><img src="../img/txof/btn/btn_up_1st.svg" alt=""></a>
+				  </div>
+			  </div>
+			  <div class="list_scroll" style="max-height: 216px;">
+				<table class="tbl_result" summary="">
+					<caption></caption>
+					<colgroup>
+					<col style="width:*;">
+					<col style="width:100px;">
+					</colgroup>
+					<tbody style="display: table-tbody;" id="category_list">                     
+					  <tr id="clas_3">           
+						  <td>              
+							  <div class="t_left">                   
+								  <input type="radio" name="category" id="category_3" value="3" onclick="fn_check(3)"><label for="category_3">부가세</label>               
+							  </div>           
+						  </td>           
+						  <td>               
+							  <div class="t_center"><input type="checkbox" class="onoff_tg" checked="checked"></div>           
+						  </td>       
+					  </tr>       
+					  <tr id="clas_4">           
+						  <td>               
+							  <div class="t_left">                   
+								  <input type="radio" name="category" id="category_4" value="4" onclick="fn_check(4)"><label for="category_4">원천세(4대보험)</label>               
+							  </div>           
+						  </td>           
+						  <td>               
+							  <div class="t_center"><input type="checkbox" class="onoff_tg" checked="checked"></div>           
+						  </td>      
+					  </tr>       
+					  <tr id="clas_5">           
+						  <td>               
+							  <div class="t_left">                   
+								  <input type="radio" name="category" id="category_5" value="5" onclick="fn_check(5)"><label for="category_5">테스트1</label>               
+							  </div>           
+						  </td>           
+						  <td>               
+							  <div class="t_center"><input type="checkbox" class="onoff_tg" checked="checked"></div>           
+						  </td>       
+					  </tr>       
+					  <tr id="clas_6">           
+						  <td>               
+							  <div class="t_left">                   
+								  <input type="radio" name="category" id="category_6" value="6" onclick="fn_check(6)"><label for="category_6">기본</label>               
+							  </div>           
+						  </td>           
+						  <td>               
+							  <div class="t_center"><input type="checkbox" class="onoff_tg" checked="checked"></div>           
+						  </td>       
+					  </tr>
+					  <tr id="clas_1">           
+						  <td>               
+							  <div class="t_left">                   
+								  <input type="radio" name="category" id="category_1" value="1" onclick="fn_check(1)"><label for="category_1">기본</label>               
+							  </div>           
+						  </td>           
+						  <td>               
+							  <div class="t_center"><input type="checkbox" class="onoff_tg" checked="checked"></div>           
+						  </td>       
+					  </tr>
+					  <tr id="clas_2">          
+						  <td>               
+							  <div class="t_left">                   
+								  <input type="radio" name="category" id="category_2" value="2" onclick="fn_check(2)"><label for="category_2">종소세</label>               
+							  </div>           
+						  </td>           
+						  <td>               
+							  <div class="t_center"><input type="checkbox" class="onoff_tg" checked="checked"></div>           
+						  </td>       
+					  </tr>
+				  </tbody>
+				</table>
+			</div>
+			  <div class="mgt10">
+				  * 저장을 하셔야 정렬순서 변경이 됩니다. 
+			  </div>
+		  
+			  <!-- 하단버튼 -->
+			  <div class="tac">
+				<a href="#none" onclick="close_smartPop('fn_category_search','');" class="btn_style_gray_big"><span>취소</span></a>
+				<a href="#none" class="btn_style_big" id="btn_ok"><span>저장</span></a>
+			  </div>
+			  <!-- //하단버튼 -->
+	  
+		  
+			</div>
+			<!-- //팝업 컨텐츠 -->
+	  </div>
+</body>
+</html>

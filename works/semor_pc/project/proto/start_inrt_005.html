@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<title>세모리포트 인트로</title>
+<link rel="stylesheet" href="../css/reset_taxp.css">
+<link rel="stylesheet" href="../css/app_header.css">
+<link rel="stylesheet" href="../css/content_taxp.css">
+<link rel="stylesheet" href="../css/w2ui-2.0.css">
+<!-- custom scrollbar plugin css -->
+<link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+<script src="https://publ.roumit.com/js/firebase_include.js"></script>
+  <script src="../js/lib/jquery/jquery-1.12.4.min.js"></script>
+<script src="../js/lib/jquery/jquery-ui-1.10.4.min.js"></script>
+<script src="../js/lib/plugin/w2ui.js"></script>
+
+<!-- custom scrollbar plugin -->
+<script src="../js/design/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../js/design/jquery.placeholder.min.js"></script>
+<script src="../js/lib/plugin/smart.popup.js"></script>
+<script src="../js/comm/common.js"></script>
+
+</head>
+<body>
+<!-- 최초 가입자 / 두번째 사용자 분기처리css revisit  -->
+<div class="start_inrt ">
+
+	<header class="inrt_header">
+		<div class="inner">
+			<div class="left">
+				<div class="logo">
+					<img src="../img/txof/ico/semor_logo_w.svg" alt="세모리포트">
+					<span class="hd_title">세모리포트 X 로움세무회계법인</span>
+				</div>
+			</div>
+			<div class="right">
+					<button type="button" class="chat_btn">
+						<img src="../img/txof/ico/ico_chat_b.svg" alt="채팅">
+						<span>채팅상담</span>
+					</button>
+					
+			</div>
+		</div>
+		
+	</header>
+		<section class="inrt_005">
+			<div class="prg_wrap">
+				<ul>
+					<li class="pgr_01 checked">
+						
+						<div class="num">
+						</div>
+
+					</li>
+					<li class="pgr_02 active">
+						<div class="num">
+                            2
+						</div>
+                        <div class="txt">
+							<p>보고서 발송하기</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="inner">
+                <!-- article tag show/hide 해주시면됩니다. -->
+                <!-- 보고서를 만들어볼까용 -->
+                <article style="display: ;">
+                    <div class="main_tit">
+                        <h1>담당자님, 이제 보고서를 만들어볼까요?</h1>
+                    </div>
+                    <div class="grid_wrap">
+                            <div id="grid_01" style="height: 286px"></div>
+                            
+                    </div>
+                    <div class="info_box">
+                        <div class="info_text">
+                            <span>※ 선택한 거래처는 <strong>체험버전</strong>으로 별도 이용 요금이 청구되지 않으며, 실제와 유사한 보고서를 생성해드립니다.</span>
+                        </div>
+                    </div>
+                    <div class="inrt_bottom">
+                        <div class="button_wrap">
+                            <button type="button" class="back_btn">← 뒤로</button>
+                            <!-- 활성화  class active -->
+                            <button type="button" class="submit_btn active">리포트 생성하기</button>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- 보고서를 발송해볼까용 -->
+                <article>
+                    <div class="main_tit">
+                        <h1>처음으로 나에게 보고서를 발송해 볼까요?</h1>
+                        <h2>발송해보고싶은 보고서를 선택해주세요.</h2>
+                    </div>
+                    <div class="select_wrap">
+                        <ul>
+                            <li class="list01">
+                                <input type="checkbox">
+                                <label for="inrt_box1">
+                                    <p>사업분석 보고서</p>
+                                </label>
+                            </li>
+                            <li class="list02">
+                                <input type="checkbox">
+                                <label for="">
+                                    <p>매출 보고서</p>
+                                </label>
+                                
+                            </li>
+                            <li class="list03">
+                                <input type="checkbox">
+                                <label for="">
+                                    <p>매입 보고서</p>
+                                </label>
+                            </li>
+                            <li class="list04">
+                                <input type="checkbox" checked>
+                                <label for="">
+                                    <p>예상부가세 보고서</p>
+                                </label>
+                            </li>
+                            <li class="list05">
+                                <input type="checkbox">
+                                <label for="">
+                                    <p>거래처 매출장 보고서</p>
+                                </label>
+                            </li>
+                            <li class="list06">
+                                <input type="checkbox">
+                                <label for="">
+                                    <p>거래처 매입장 보고서</p>
+                                </label>
+                            </li>
+                            <li class="list07">
+                                <input type="checkbox" checked>
+                                <label for="">
+                                    <p>영수증 보고서</p>
+                                </label>
+                            </li>
+                            <li class="list08">
+                                <input type="checkbox">
+                                <label for="">
+                                    <p>인건비 보고서</p>
+                                </label>
+                            </li>
+                            <li class="list09">
+                                <input type="checkbox">
+                                <label for="">
+                                    <p>부가세 신고분석 보고서</p>
+                                </label>
+                            </li>
+                          
+                        </ul>
+                    </div>
+                    <div class="submit_wrap">
+                        <div class="submit_tit">
+                            휴대폰 번호
+                        </div>
+                        <div class="submit">
+                            <input type="text" placeholder="010-1234-5678">
+                            <!-- 활성화 class active -->
+                            <button type="button" class="">
+                                발송하기
+                            </button>
+                        </div>
+                    </div>
+                    <div class="inrt_bottom">
+                        <div class="button_wrap">
+                            <button type="button" class="submit_btn active">다음</button>
+                        </div>
+                    </div>
+                </article>
+
+			</div>
+		</section>
+		
+	
+</div>
+<script>
+//  tab menu start
+
+
+
+// tab menu end
+
+// grid 1 start
+let grid_01 = new w2grid({
+		name: 'grid_01',
+		box: '#grid_01',
+		show: {
+			
+			selectColumn: true //체크박스 생성
+		},
+		columns: [
+			{ field: 'fname', text: '거래처명', size: '250px', }, // frozen: true 필드 고정
+			{ field: 'lname', text: '사업자번호', size: '151px', style: 'text-align: center' },
+			{ field: 'th_03', text: '대표자', size: '150px', style: 'text-align: center' },
+
+			
+
+		],
+		records: [
+			{ "recid": 1, "fname": "오봉집 범계점", "lname": "138-10-80671", "th_03": "유로제" },
+			{ "recid": 2, "fname": "오쌤수학학원", "lname": "510-90-46218", "th_03": "한지훈" },
+			{ "recid": 3, "fname": "더블유(W)모텔", "lname": "873-33-01104", "th_03": "이테스트" },
+			{ "recid": 4, "fname": "해밀아카데미학원", "lname": "208-93-00644", "th_03": "양테스트" },
+			{ "recid": 5, "fname": "T_팔각도 신도림역점", "lname": "169-25-01320", "th_03": "정토니" },
+			{ "recid": 6, "fname": "T_총각네_마포점", "lname": "686-33-00840", "th_03": "정TONY" },
+			{ "recid": 7, "fname": "T_메이드유의원", "lname": "490-12-01321", "th_03": "이데이빗" },
+			{ "recid": 8, "fname": "T_열린공인중개사사무소", "lname": "105-09-92472", "th_03": "한배찌" }
+			
+			
+		]
+	})
+</script>
+
+
+</body>
+</html>
+

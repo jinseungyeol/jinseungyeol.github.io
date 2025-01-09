@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
+    <circle data-name="타원 84" cx="50" cy="50" r="50" style="fill:#f74867"/>
+    <g data-name="그룹 517">
+        <path data-name="패스 1496" d="M927.142 1495.071H888.08v4.725h39.062v49.457H888.08v4.726h43.788v-58.908z" transform="translate(-855.202 -1475.071)" style="fill:#fff"/>
+        <path data-name="사각형 146" transform="translate(25.002 31.341)" style="fill:#fff" d="M0 0h4.725v36.069H0z"/>
+        <path data-name="패스 1497" d="M910.149 1519.071h-5.671l-16.066 17.995 16.066 18.075h5.671l-16.066-18.075z" transform="translate(-855.378 -1487.731)" style="fill:#fff"/>
+    </g>
+</svg>

@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<title>보고서 그룹추가</title>
+<link rel="stylesheet" href="../css/reset_taxp.css">
+<link rel="stylesheet" href="../css/app_header.css"><!-- [D] 세무대리인용 header -->
+<link rel="stylesheet" href="../css/content_taxp.css"><!-- [D] 세무대리인용 -->
+<link rel="stylesheet" href="../css/swiper-bundle.min.css" ><!-- [D] 세무대리인용 -->
+<link rel="stylesheet" href="../css/w2ui_2.0.css">
+<link rel="stylesheet" href="../css/semo_rept.css">
+
+<!-- custom scrollbar plugin css -->
+<link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+<script src="https://publ.roumit.com/js/firebase_include.js"></script>
+  <script src="../js/lib/jquery/jquery-1.12.4.min.js"></script>
+<script src="../js/lib/jquery/jquery-ui-1.10.4.min.js"></script>
+<script src="../js/lib/swiper/swiper-bundle.min.js"></script>
+<!-- custom scrollbar plugin -->
+<script src="../js/lib/plugin/w2ui.js"></script>
+<script src="../js/design/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../js/design/jquery.placeholder.min.js"></script>
+<script src="../js/lib/plugin/smart.popup.js"></script>
+<script src="../js/comm/common.js"></script>
+
+
+</head>
+<body style="width:1000px;"><!-- [D] 메뉴영역(접기 : class="fold", 펼치기 : class="lnb_bg") -->
+
+<!-- 그룹추가 팝업 -->
+	<div class="window_open">
+		<div class="pop_wrap h_auto" style=" display: none ;">
+
+			<!-- 팝업 컨텐츠 -->
+			<div class="pop_container">
+				<!-- 20240411 title_wrap 통으로 변경 -->
+				<div class="title_wrap h1type">
+					<div class="left">
+						<h1>
+							보고서 그룹추가
+							<span>거래처는 하나의 그룹에만 소속 될 수 있습니다.</span>
+						</h1>
+					</div>
+					<div class="right">
+						
+						<div class="cntalign">
+							<button type="button" class="btn_cancel" id="top_cancel_btn" style=""><span>취소</span></button>
+						</div>
+						<div class="cntalign">
+							<button type="button" class="btn_style1_b" id="top_save_btn" style=""><span>다음</span></button>
+						</div>
+						
+					</div>
+				</div>
+				<div class="group_wrap">
+					<div class="top_srch">
+						<div class="left">
+							<p>그룹명</p>
+							<!-- 20240411 input width 값 변경 780px > 550px -->
+							<input type="text" value="" id="dtl_sch_word" placeholder="그룹명을 입력해주세요.(0/20자)" style="width: 550px;">
+						</div>
+						<div class="right">
+							<div class="cntalign">
+								<div class="src_box">
+									<div class="inner">
+										<img src="../img/txof/ico/search_14x14.svg" alt="" class="src_icon">
+										<input type="text" placeholder="검색">
+										<div class="dtl_box">
+											<img src="../img/txof/ico/line_7070.svg" alt="" class="line">
+											<!-- dtl_btn click시 active 클래스  -->
+											<button class="dtl_btn" type="button">
+												<span>상세</span>
+											</button>
+										</div>
+									</div>
+									<div class="dtsch" style="display: none;">
+										<!--  -->
+										<div class="dtsch_box">
+											<!-- 가입일자 -->
+											<div class="list_box type_02">
+												<ul class="dtsch_list">
+													<div class="dts_tit">
+														<span>가입일자</span>
+													</div>
+													<ul class="cont_list">
+														<li class="list_item">
+															<div class="cal_box">
+																<div class="cal_item">
+																	<input type="text" readonly value="2024-01-01">
+																	<img src="../img/txof/ico/ico_cal_14x14.svg" alt="달력">
+																</div>
+																<span class="line">-</span>
+																<div class="cal_item">
+																	<input type="text" readonly value="2024-01-31">
+																	<img src="../img/txof/ico/ico_cal_14x14.svg" alt="달력">
+																</div>
+															</div>
+														</li>
+														
+													</ul>
+												</ul>
+											</div>
+		
+											<!-- 라디오 -->
+											<div class="list_box">
+												<ul class="dtsch_list">
+													<div class="dts_tit">
+														<span>검토여부</span>
+													</div>
+													<ul class="cont_list">
+														<li class="list_item">
+															<label><input type="radio" name="dtsch">전체</label>
+														</li>
+														<li class="list_item">
+															<label><input type="radio" name="dtsch">완료</label>
+														</li>
+														<li class="list_item">
+															<label><input type="radio" name="dtsch">완료</label>
+														</li>
+													</ul>
+												</ul>
+											</div>
+		
+											<!-- 경리나라 -->
+											<div class="list_box">
+												<ul class="dtsch_list">
+													<div class="dts_tit">
+														<span>경리나라</span>
+													</div>
+													<ul class="cont_list">
+														<li class="list_item">
+															<label><input type="checkbox" name="dtsch">가입</label>
+														</li>
+														<li class="list_item">
+															<label><input type="checkbox" name="dtsch">미가입</label>
+														</li>
+													</ul>
+												</ul>
+											</div>
+										</div>
+		
+										<!-- 공통 -->
+										<div class="dtsch_box">
+											<!-- 사업자 구분 -->
+											<div class="list_box">
+												<ul class="dtsch_list">
+													<div class="dts_tit">
+														<span>사업자 구분</span>
+													</div>
+													<ul class="cont_list">
+														<li class="list_item">
+															<label><input type="checkbox" name="dtsch">개인</label>
+														</li>
+														<li class="list_item">
+															<label><input type="checkbox" name="dtsch">법인</label>
+														</li>
+													</ul>
+												</ul>
+											</div>
+		
+											<!-- 계약상태 -->
+											<div class="list_box">
+												<ul class="dtsch_list">
+													<div class="dts_tit">
+														<span>계약상태</span>
+													</div>
+													<ul class="cont_list">
+														<li class="list_item">
+															<label><input type="checkbox" name="dtsch">기장개인</label>
+														</li>
+														<li class="list_item">
+															<label><input type="checkbox" name="dtsch">신고개인</label>
+														</li>
+														<li class="list_item">
+															<label><input type="checkbox" name="dtsch">기장법인</label>
+														</li>
+														<li class="list_item">	
+															<label><input type="checkbox" name="dtsch">신고법인</label>
+														</li>
+														<li class="list_item">
+															<label><input type="checkbox" name="dtsch">아웃소싱</label>
+														</li>
+														<li class="list_item">
+															<label><input type="checkbox" name="dtsch">자문계약</label>
+														</li>
+														<li class="list_item">
+															<label><input type="checkbox" name="dtsch">조세불복</label>
+														</li>
+														<li class="list_item">
+															<label><input type="checkbox" name="dtsch">미등록</label>
+														</li>
+													</ul>
+												</ul>
+											</div>
+		
+											<!-- 과세유형 -->
+											<div class="list_box">
+												<ul class="dtsch_list">
+													<div class="dts_tit">
+														<span>과세유형</span>
+													</div>
+													<ul class="cont_list">
+														<li class="list_item">
+															<label><input type="checkbox" name="dtsch">일반</label>
+														</li>
+														<li class="list_item">
+															<label><input type="checkbox" name="dtsch">간이</label>
+														</li>
+														<li class="list_item">										
+															<label><input type="checkbox" name="dtsch">면세</label>
+														</li>
+														<li class="list_item">
+															<label><input type="checkbox" name="dtsch">비영리</label>
+														</li>
+														<li class="list_item">
+															<label><input type="checkbox" name="dtsch">과세특례</label>
+														</li>
+													</ul>
+												</ul>
+											</div>
+		
+											<!-- 휴폐업 구분 -->
+											<div class="list_box">
+												<ul class="dtsch_list">
+													<div class="dts_tit">
+														<span>휴폐업 구분</span>
+													</div>
+													<ul class="cont_list">
+														<li class="list_item">
+															<label><input type="checkbox" name="dtsch">장상</label>
+														</li>
+														<li class="list_item">
+															<label><input type="checkbox" name="dtsch">휴업</label>
+														</li>
+														<li class="list_item">
+															<label><input type="checkbox" name="dtsch">폐업</label>
+														</li>
+														<li class="list_item">
+															<label><input type="checkbox" name="dtsch">미등록</label>
+														</li>
+													</ul>
+												</ul>
+											</div>
+											
+											<!-- 검색어 -->
+											<div class="list_box type_02">
+												<ul class="dtsch_list">
+													<div class="dts_tit">
+														<span>검색어</span>
+													</div>
+													<div class="src_box" >
+														<div class="inner">
+															<input type="text" placeholder="거래처명,대표자명,사업자번호,휴대폰번호">
+														</div>
+													
+													</div>
+												</ul>
+											</div>
+		
+											<!-- 업종 -->
+											<div class="list_box type_02">
+												<ul class="dtsch_list">
+													<div class="dts_tit">
+														<span>업종</span>
+													</div>
+													<ul class="cont_list">
+														<li>
+															<div class="sel_checkBox">
+																<div class="box_title" id="">
+																	<span>업종 전체</span>
+																	<!-- ul 노출시 addClass up -->
+																	<button type="button" class="up"></button>
+																</div>
+																<div class="checkList" id="indstryList" style="display: ;">
+																	<ul>
+																		<li class="list_title">
+																			<div class="left">
+																				<label for="INDSTRY_ALL"><input type="radio" value="" id="INDSTRY_ALL" name="SEL_INDSTRY_CD">업종 전체</label>
+																			</div>
+																			<div class="right">
+																			</div>
+																		</li>
+																		<li class="list_item">
+																			<div class="left">
+																				<label for="">
+																					<input type="radio" name="" id="" value="">
+																					<span name="" title="제조업">제조업</span>
+																				</label>
+																			</div>
+																			<div class="right">
+																				<span name="">(1개)</span>
+																			</div>
+																		</li>
+																		<li class="list_item">
+																			<div class="left">
+																				<label for="">
+																					<input type="radio" name="" id="" value="">
+																					<span name="" title="건설업">건설업</span>
+																				</label>
+																			</div>
+																			<div class="right">
+																				<span name="">(1개)</span>
+																			</div>
+																		</li>
+																		<li class="list_item">
+																			<div class="left">
+																				<label for="">
+																					<input type="radio" name="" id="" value="G">
+																					<span name="" title="도매 및 소매업">도매 및 소매업</span>
+																				</label>
+																			</div>
+																			<div class="right">
+																				<span name="">(1개)</span>
+																			</div>
+																		</li>
+																		<li class="list_item">
+																			<div class="left">
+																				<label for="">
+																					<input type="radio" name="" id="" value="G">
+																					<span name="" title="숙박 및 음식점업">숙박 및 음식점업</span>
+																				</label>
+																			</div>
+																			<div class="right">
+																				<span name="">(1개)</span>
+																			</div>
+																		</li>
+																		<li class="list_item">
+																			<div class="left">
+																				<label for="">
+																					<input type="radio" name="" id="" value="G">
+																					<span name="" title="부동산업">부동산업</span>
+																				</label>
+																			</div>
+																			<div class="right">
+																				<span name="">(1개)</span>
+																			</div>
+																		</li>
+																		<li class="list_item">
+																			<div class="left">
+																				<label for="">
+																					<input type="radio" name="" id="" value="G">
+																					<span name="" title="전문,과학 및 기술 서비스업">전문,과학 및 기술 서비스업</span>
+																				</label>
+																			</div>
+																			<div class="right">
+																				<span name="INDSTRY_TOT">(1개)</span>
+																			</div>
+																		</li>
+																		<li class="list_item">
+																			<div class="left">
+																				<label for="">
+																					<input type="radio" name="" id="" value="G">
+																					<span name="" title="보건업 및 사회복지 서비스업">보건업 및 사회복지 서비스업</span>
+																				</label>
+																			</div>
+																			<div class="right">
+																				<span name="INDSTRY_TOT">(1개)</span>
+																			</div>
+																		</li>
+																		
+																		<li class="list_item">
+																			<div class="left">
+																				<label for="INDSTRY_G">
+																					<input type="radio" name="SEL_INDSTRY_CD" id="INDSTRY_G" value="G">
+																					<span name="STR_INDSTRY_NM" title="협회 및 단체, 수리 및 기타 개인 서비스업">협회 및 단체, 수리 및 기타 개인 서비스업</span>
+																			</label></div>
+																			<div class="right">
+																				<span name="INDSTRY_TOT">(999개)</span>
+																			</div>
+																		</li>
+																	</ul>
+																</div>
+															</div>
+														</li>
+													</ul>
+												</ul>
+											</div>
+		
+											<!-- 보고서 그룹 -->
+											<div class="list_box type_02">
+												<ul class="dtsch_list">
+													<div class="dts_tit">
+														<span>보고서 그룹</span>
+													</div>
+													<ul class="cont_list">
+														<li>
+															<div class="sel_checkBox">
+																<div class="box_title" id="schIndstryDiv">
+																	<input type="text" readonly value="보고서 발송 그룹을 선택해주세요">
+																	<!-- <span>보고서 발송 그룹을 선택해주세요</span> -->
+																	<!-- ul 노출시 addClass up -->
+																	<button type="button" class="down"></button>
+																</div>
+																<div class="checkList" id="indstryList" style="display: none;">
+																	<ul>
+																		<li class="list_item">
+																			<div class="left">
+																				<label><input type="checkbox" name="SEL_RPRT_GRP" value=""><span name="" title="그룹 미설정 거래처">그룹 미설정 거래처sdfasfsdfsdfsdfsdf</span></label>
+																			</div>
+																			<div class="right">
+																				<span name="RPRT_GRP_TOT">13</span>
+																			</div>
+																		</li>
+																		<li class="list_item">
+																			<div class="left">
+																				<label><input type="checkbox" name="SEL_RPRT_GRP" value=""><span name="" title="그룹 미설정 거래처">그룹 미설정 거래처</span></label>
+																			</div>
+																			<div class="right">
+																				<span name="RPRT_GRP_TOT">13</span>
+																			</div>
+																		</li>
+																		<li class="list_item">
+																			<div class="left">
+																				<label><input type="checkbox" name="SEL_RPRT_GRP" value=""><span name="" title="그룹 미설정 거래처">그룹 미설정 거래처</span></label>
+																			</div>
+																			<div class="right">
+																				<span name="RPRT_GRP_TOT">13</span>
+																			</div>
+																		</li>
+			
+																	</ul>
+																</div>
+															</div>
+														</li>
+														<li>
+															
+														</li>
+													</ul>
+													
+												</ul>
+											</div>
+		
+											<!-- 버튼  -->
+											<div class="button_wrap">
+												<button type="button" class="btn_style2_g" id="btn_smpl" style=""><span>초기화</span></button>
+												<button type="button" class="btn_style1_b" id="schBtn"><span>조회</span></button>
+											</div>
+										</div>
+										
+									</div>
+								</div>	
+							</div>
+						</div>
+						
+					</div>
+					<!-- 20240411 top_srch 삭제 -->
+					<!-- 20240411 table_wrap 삭제 -->
+					<div class="grid_multi_wrap">
+						<div class="grid_box col1">
+							<div id="grid_01" class="grid"></div>
+						</div>
+						<div class="toggle_btn_wrap">
+							<button class="toggle_add_btn">
+								<span>추가</span>
+								<img src="../img/txof/btn/arr_w_16.svg">
+							</button>
+							<button class="toggle_remove_btn">
+								<img src="../img/txof/btn/arr_g_left_16.svg">
+								<span>제거</span>
+							</button>
+						</div>
+						<div class="grid_box col2">
+							<div id="grid_02" class="grid"></div>
+						</div>
+					</div>
+					<div class="grid_foot_info">
+						<!-- 선택일시 span class gr_text_yellow / 조회시 span class gr_text_blue  -->
+						<p>( <span class="gr_text_blue">선택 데이터 100건</span>  / 전체 데이터 : 10,000건)</p>
+					</div>
+				</div>		 
+			<!-- //팝업 컨텐츠 -->
+		   </div>	  
+		</div>
+		
+		<div class="pop_wrap h_auto" style="width:; display: block ;">
+
+			<div class="pop_container">
+				<div class="group_custom">
+					<div class="title">
+						<div class="left">
+							<span><strong>‘목요일’</strong>에 생성하고 싶은 보고서를 선택하세요.</span>
+
+						</div>
+						<div class="right ">
+							<div class="btn_wrap">
+								<button type="button" class="btn_cancel" id="top_cancel_btn" style=""><span>취소</span></button>
+								<button type="button" class="btn_style1_b" id="top_save_btn" style=""><span>다음</span></button>
+							</div>
+							
+						</div>
+					</div>
+					 <div class="custom_wrap">
+						<table class="semo_tbl">
+							<colgroup>
+								<col style="width: 120px;">
+								<col style="width: 95px;">
+								<col style="width: 95px;">
+								<col style="width: 150px;">
+							</colgroup>
+							<tbody>
+								<tr>
+									<th class="name tal"><div>보고서명</div></th>
+									<th><div>보고서 생성</div></th>
+									<th><div>자동발송</div></th>
+									<th><div>자동발송 주기 설정</div></th>
+								</tr>
+								<!-- 사업분석 -->
+								<tr>
+									<td class="name">
+										<div>사업분석</div>
+									</td>
+									<td class="tac">
+										<div><input type="checkbox" class="onoff_tg" name="" value=""></div>
+									</td>
+									<td class="tac">
+										<div><input type="checkbox" class="onoff_tg" name="" value=""></div>
+									</td>
+									<td>
+										<div class="optBox_wrap">
+											<!-- optBox open 제어 class active -->
+											<div class="optBox box01 active">
+												<div class="tit">
+													<span>매월</span>
+													<i class="icon"></i>
+												</div>
+												<div class="list"  style="display: block;">
+													<ul>
+														<li>
+															<input type="radio" checked="checked" id="CYCL_0_RPRT05" name="AUTO_RPRT05_CYCL" value="M01">
+															<label for="CYCL_0_RPRT05">매월(20일)</label>
+														</li>
+														<li>
+															<input type="radio" id="CYCL_1_RPRT05" name="AUTO_RPRT05_CYCL" value="Q01">
+															<label for="CYCL_1_RPRT05">분기</label>
+														</li><li>
+															<input type="radio" id="CYCL_2_RPRT05" name="AUTO_RPRT05_CYCL" value="H01">
+															<label for="CYCL_2_RPRT05">반기</label>
+														</li>
+													</ul>
+												</div>
+											</div>
+									</div>
+									</td>
+								</tr>
+								<!-- 매출 -->
+								<tr>
+									<td class="name">
+										<div>매출</div>
+									</td>
+									<td class="tac">
+										<div><input type="checkbox" class="onoff_tg" name="" value=""></div>
+									</td>
+									<td class="tac">
+										<div><input type="checkbox" class="onoff_tg" name="" value=""></div>
+									</td>
+									<td>
+										<div class="optBox_wrap">
+											<!-- optBox open 제어 class active -->
+											<div class="optBox box02">
+												<div class="tit">
+													<span>매월</span>
+													<i class="icon"></i>
+												</div>
+												<div class="list">
+													<ul>
+														<li>
+															<input type="radio" checked="checked" id="CYCL_0_RPRT05" name="AUTO_RPRT05_CYCL" value="M01">
+															<label for="CYCL_0_RPRT05">매월(20일)</label>
+														</li>
+														<li>
+															<input type="radio" id="CYCL_1_RPRT05" name="AUTO_RPRT05_CYCL" value="Q01">
+															<label for="CYCL_1_RPRT05">분기</label>
+														</li><li>
+															<input type="radio" id="CYCL_2_RPRT05" name="AUTO_RPRT05_CYCL" value="H01">
+															<label for="CYCL_2_RPRT05">반기</label>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<!-- 매입 -->
+								<tr>
+									<td class="name">
+										<div>매입</div>
+									</td>
+									<td class="tac">
+										<div><input type="checkbox" class="onoff_tg" name="" value=""></div>
+									</td>
+									<td class="tac">
+										<div><input type="checkbox" class="onoff_tg" name="" value=""></div>
+									</td>
+									<td>
+										<div class="optBox_wrap">
+											<!-- optBox open 제어 class active -->
+											<div class="optBox box03">
+												<div class="tit">
+													<span>매월</span>
+													<i class="icon"></i>
+												</div>
+												<div class="list">
+													<ul>
+														<li>
+															<input type="radio" checked="checked" id="CYCL_0_RPRT05" name="AUTO_RPRT05_CYCL" value="M01">
+															<label for="CYCL_0_RPRT05">매월(20일)</label>
+														</li>
+														<li>
+															<input type="radio" id="CYCL_1_RPRT05" name="AUTO_RPRT05_CYCL" value="Q01">
+															<label for="CYCL_1_RPRT05">분기</label>
+														</li><li>
+															<input type="radio" id="CYCL_2_RPRT05" name="AUTO_RPRT05_CYCL" value="H01">
+															<label for="CYCL_2_RPRT05">반기</label>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<!-- 예상 부가세 -->
+								<tr>
+									<td class="name">
+										<div>예상 부가세</div>
+									</td>
+									<td class="tac">
+										<div><input type="checkbox" class="onoff_tg" name="" value=""></div>
+									</td>
+									<td class="tac">
+										<div><input type="checkbox" class="onoff_tg" name="" value=""></div>
+									</td>
+									<td>
+										<div class="optBox_wrap">
+											<!-- optBox open 제어 class active -->
+											<div class="optBox box04">
+												<div class="tit">
+													<span>매월</span>
+													<i class="icon"></i>
+												</div>
+												<div class="list">
+													<ul>
+														<li>
+															<input type="radio" checked="checked" id="CYCL_0_RPRT05" name="AUTO_RPRT05_CYCL" value="M01">
+															<label for="CYCL_0_RPRT05">매월(20일)</label>
+														</li>
+														<li>
+															<input type="radio" id="CYCL_1_RPRT05" name="AUTO_RPRT05_CYCL" value="Q01">
+															<label for="CYCL_1_RPRT05">분기</label>
+														</li><li>
+															<input type="radio" id="CYCL_2_RPRT05" name="AUTO_RPRT05_CYCL" value="H01">
+															<label for="CYCL_2_RPRT05">반기</label>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<!-- 거래처 매출장 -->
+								<tr>
+									<td class="name">
+										<div>거래처 매출장</div>
+									</td>
+									<td class="tac">
+										<div><input type="checkbox" class="onoff_tg" name="" value=""></div>
+									</td>
+									<td class="tac">
+										<div><input type="checkbox" class="onoff_tg" name="" value=""></div>
+									</td>
+									<td>
+										<div class="optBox_wrap">
+											<!-- optBox open 제어 class active -->
+											<div class="optBox box05">
+												<div class="tit">
+													<span>분기</span>
+													<i class="icon"></i>
+												</div>
+												<div class="list">
+													<ul>
+	
+														<li>
+															<input type="radio" id="CYCL_1_RPRT05" name="AUTO_RPRT05_CYCL" value="Q01">
+															<label for="CYCL_1_RPRT05">분기</label>
+														</li><li>
+															<input type="radio" id="CYCL_2_RPRT05" name="AUTO_RPRT05_CYCL" value="H01">
+															<label for="CYCL_2_RPRT05">반기</label>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<!-- 거래처 매입장 -->
+								<tr>
+									<td class="name">
+										<div>거래처 매입장</div>
+									</td>
+									<td class="tac">
+										<div><input type="checkbox" class="onoff_tg" name="" value=""></div>
+									</td>
+									<td class="tac">
+										<div><input type="checkbox" class="onoff_tg" name="" value=""></div>
+									</td>
+									<td class="tac">
+										<div class="optBox_wrap">
+											<!-- optBox open 제어 class active -->
+											<div class="optBox box06">
+												<div class="tit">
+													<span>분기</span>
+													<i class="icon"></i>
+												</div>
+												<div class="list">
+													<ul>
+	
+														<li>
+															<input type="radio" id="CYCL_1_RPRT05" name="AUTO_RPRT05_CYCL" value="Q01">
+															<label for="CYCL_1_RPRT05">분기</label>
+														</li><li>
+															<input type="radio" id="CYCL_2_RPRT05" name="AUTO_RPRT05_CYCL" value="H01">
+															<label for="CYCL_2_RPRT05">반기</label>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<!-- 영수증 -->
+								<tr>
+									<td class="name">
+										<div>영수증</div>
+									</td>
+									<td class="tac">
+										<div><input type="checkbox" class="onoff_tg" name="" value=""></div>
+									</td>
+									<td class="tac">
+										<div><input type="checkbox" class="onoff_tg" name="" value=""></div>
+									</td>
+									<td>
+										<div class="optBox_wrap">
+											<!-- optBox open 제어 class active -->
+											<div class="optBox box07">
+												<div class="tit">
+													<span>매월(1일)</span>
+													<i class="icon"></i>
+												</div>
+												<div class="list">
+													<ul>
+														<li>
+															<input type="radio" checked="checked" id="CYCL_0_RPRT05" name="AUTO_RPRT05_CYCL" value="M01">
+															<label for="CYCL_0_RPRT05">매월(1일)</label>
+														</li>
+														<li>
+															<input type="radio" id="CYCL_1_RPRT05" name="AUTO_RPRT05_CYCL" value="Q01">
+															<label for="CYCL_1_RPRT05">분기</label>
+														</li><li>
+															<input type="radio" id="CYCL_2_RPRT05" name="AUTO_RPRT05_CYCL" value="H01">
+															<label for="CYCL_2_RPRT05">반기</label>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<!-- 인건비 -->
+								<tr>
+									<td class="name">
+										<div>인건비</div>
+									</td>
+									<td class="tac">
+										<div><input type="checkbox" class="onoff_tg" name="" value=""></div>
+									</td>
+									<td class="tac">
+										<div class="text01">해당없음</div>
+									</td>
+									<td class="tac">
+										<div class="text01">해당없음</div>
+									</td>
+								</tr>
+								<!-- 부가세 신고분석 -->
+								<tr>
+									<td class="name">
+										<div>부가세 신고분석</div>
+									</td>
+									<td class="tac">
+										<div><input type="checkbox" class="onoff_tg" name="" value=""></div>
+									</td>
+									<td class="tac">
+										<div class="text01">해당없음</div>
+									</td>
+									<td class="tac">
+										<div class="text01">해당없음</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					 </div>
+				</div>
+				<!-- <div class="pop_db_btn">
+					<button type="button">이전</button>
+					<button type="button" class="active">저장</button>
+				</div> -->
+			</div>
+		</div>
+
+		<div class="pop_wrap bd_round" style="width:960px; display: none ;">
+
+			<div class="pop_container">
+				<div class="group_custom">
+					<div class="title">
+					  <span><strong>‘ 새로운 그룹 A’</strong>에 생성하고 싶은 보고서를 선택하세요.</span>
+					</div>
+					<div class="custom_box">
+						<div class="top">
+							<ul>
+								<li class="name">보고서명</li>
+								<li>사업분석 보고서</li>
+								<li>매출 보고서</li>
+								<li>매입 보고서</li>
+								<li>예상 부가세 보고서</li>
+								
+								<li>인건비 보고서</li>
+								<li>부가세 신고분석 보고서</li>
+							</ul>
+						</div>
+						<div class="toggle_wrap">
+							<ul>
+								<li class="name">보고서 생성</li>
+								<li>
+									<input type="checkbox" class="onoff_tg"></input>
+								</li>
+								<li>
+									<input type="checkbox" class="onoff_tg"></input>
+								</li>
+								<li>
+									<input type="checkbox" class="onoff_tg"></input>
+								</li>
+								<li>
+									<input type="checkbox" class="onoff_tg"></input>
+								</li>
+								<li>
+									<input type="checkbox" class="onoff_tg"></input>
+								</li>
+								<li>
+									<input type="checkbox" class="onoff_tg"></input>
+								</li>
+							</ul>
+							
+							<ul>
+								<li class="name">자동발송 </li>
+								<li>
+									<input type="checkbox" class="onoff_tg"></input>
+								</li>
+								<li>
+									<input type="checkbox" class="onoff_tg"></input>
+								</li>
+								<li>
+									<input type="checkbox" class="onoff_tg"></input>
+								</li>
+								<li>
+									<input type="checkbox" class="onoff_tg"></input>
+								</li>
+								<li>
+									<span>해당없음</span>
+								</li>
+								<li>
+									<span>해당없음</span>
+								</li>
+							</ul>
+							<ul>
+								<li class="name">자동발송 주기 설정 </li>
+								<li>
+									<div class="optBox_wrap">
+										<!-- optBox open 제어 class active -->
+										<div class="optBox box01 active">
+											<div class="tit">
+												<span>매월</span>
+												<i class="icon"></i>
+											</div>
+											<div class="list">
+												<ul>
+													<li>
+														<input type="radio" name="opt" id="opt1">
+														<label for="opt1">매월</label>
+													</li>
+													<li>
+														<input type="radio" name="opt" id="opt2">
+														<label for="opt2">분기</label>
+													</li><li>
+														<input type="radio" name="opt" id="opt3">
+														<label for="opt3">반기</label>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="optBox_wrap">
+										<!-- optBox open 제어 class active -->
+										<div class="optBox box01 ">
+											<div class="tit">
+												<span>매월</span>
+												<i class="icon"></i>
+											</div>
+											<div class="list">
+												<ul>
+													<li>
+														<input type="radio" name="opt" id="opt1">
+														<label for="opt1">매월</label>
+													</li>
+													<li>
+														<input type="radio" name="opt" id="opt2">
+														<label for="opt2">분기</label>
+													</li><li>
+														<input type="radio" name="opt" id="opt3">
+														<label for="opt3">반기</label>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="optBox_wrap">
+										<!-- optBox open 제어 class active -->
+										<div class="optBox box01 active">
+											<div class="tit">
+												<span>매월</span>
+												<i class="icon"></i>
+											</div>
+											<div class="list">
+												<ul>
+													<li>
+														<input type="radio" name="opt" id="opt1">
+														<label for="opt1">매월</label>
+													</li>
+													<li>
+														<input type="radio" name="opt" id="opt2">
+														<label for="opt2">분기</label>
+													</li><li>
+														<input type="radio" name="opt" id="opt3">
+														<label for="opt3">반기</label>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="optBox_wrap">
+										<!-- optBox open 제어 class active -->
+										<div class="optBox box01 active">
+											<div class="tit">
+												<span>매월</span>
+												<i class="icon"></i>
+											</div>
+											<div class="list">
+												<ul>
+													<li>
+														<input type="radio" name="opt" id="opt1">
+														<label for="opt1">매월</label>
+													</li>
+													<li>
+														<input type="radio" name="opt" id="opt2">
+														<label for="opt2">분기</label>
+													</li><li>
+														<input type="radio" name="opt" id="opt3">
+														<label for="opt3">반기</label>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<span>해당없음</span>
+								</li>
+								<li>
+									<span>해당없음</span>
+								</li>
+							</ul>
+						</div>
+	
+					</div>
+				</div>
+				<div class="pop_db_btn">
+					<button type="button">닫기</button>
+					<button type="button" class="active">저장</button>
+				</div>
+			</div>
+		</div>
+	<!-- //그룹추가 팝업 -->
+	
+		<!-- toast-message -->
+		<div class="toast-message type02" style="">
+			<p>이미 존재하는 그룹명입니다</p>
+		</div>
+		<!-- //toast-message -->
+	</div>
+	
+
+<!-- //wrap -->
+<script type="module">
+    let grid_01 = new w2grid({
+		name: 'grid_01',
+		box: '#grid_01',
+		show: {
+			
+			selectColumn: true //체크박스 생성
+		},
+		columns: [
+			{ field: 'fname', text: 'No.', size: '40px' ,attr: 'align=center'}, // frozen: true 필드 고정
+			{ field: 'type', text: '종류', size: '80px',attr: 'align=center' },
+			{ field: 'th_03', text: '메뉴', size: '80px', style: 'text-align: center' },
+			{ field: 'th_04', text: '진행 기간', size: '150px', style: 'text-align: center'  },
+			{ field: 'th_05', text: '제목', size: '200px', style: 'text-align: left' },
+			{ field: 'th_06', text: '조회 수', size: '100px', style: 'text-align: center' }
+
+		],
+		records: [
+			{ "recid": 1, "fname": "12", "type": "PC", "th_03": "홈", "th_04": "22.06.10~", "th_05":"[설문] 세무사 피드백 공기청정기", "th_06": "25,000회", "th_07": "한지훈", "th_08": "22.06.10 08:46:00", "th_09":"한배찌", "th_10":"22.06.10 08:46:00"
+				, w2ui: { class:{ th_05:"t_hover_b", th_06:"txt_sig"}} },
+			{ "recid": 2, "fname": "11", "type": "APP", "th_03": "더보기", "th_04": "22.06.10~23.06.10", "th_05":"[광고] 비플식권 프로모션 배너", "th_06": "130회", "th_07": "한지훈", "th_08": "22.06.10 08:46:00", "th_09":"한배찌", "th_10":"22.06.10 08:46:00"
+				, w2ui: { class:{  th_05:"t_hover_b", th_06:"txt_sig" }} },
+			{ "recid": 3, "fname": "10", "type": "APP", "th_03": "더보기", "th_04": "22.06.10~23.06.10", "th_05":"[광고] 세모리포트 정기세미나 홍보", "th_06": "260회", "th_07": "한지훈", "th_08": "22.06.10 08:46:00", "th_09":"한배찌", "th_10":"22.06.10 08:46:00"
+				, w2ui: { class:{  th_05:"t_hover_b", th_06:"txt_sig" }} },
+			{ "recid": 4, "fname": "9", "type": "APP", "th_03": "더보기", "th_04": "22.06.10~23.06.10", "th_05":"[광고] 세모리포트 정기세미나 홍보", "th_06": "130회", "th_07": "한지훈", "th_08": "22.06.10 08:46:00", "th_09":"한배찌", "th_10":"22.06.10 08:46:00"
+				, w2ui: { class:{  th_05:"t_hover_b", th_06:"txt_sig" }} },
+			{ "recid": 5, "fname": "8", "type": "APP", "th_03": "더보기", "th_04": "22.06.10~23.06.10", "th_05":"제목", "th_06": "130회", "th_07": "한지훈", "th_08": "22.06.10 08:46:00", "th_09":"한배찌", "th_10":"22.06.10 08:46:00"
+				, w2ui: { class:{  th_05:"t_hover_b", th_06:"txt_sig" }} },
+				
+			{ "recid": 6, "fname": "7", "type": "PC", "th_03": "메인 메뉴", "th_04": "22.06.10~23.06.10", "th_05":"제목", "th_06": "130회", "th_07": "한지훈", "th_08": "22.06.10 08:46:00", "th_09":"한배찌", "th_10":"22.06.10 08:46:00"
+				, w2ui: { class:{  th_05:"t_hover_b", th_06:"txt_sig" }} },
+
+			{ "recid": 7, "fname": "7", "type": "PC", "th_03": "메인 메뉴", "th_04": "22.06.10~23.06.10", "th_05":"제목", "th_06": "130회", "th_07": "한지훈", "th_08": "22.06.10 08:46:00", "th_09":"한배찌", "th_10":"22.06.10 08:46:00"
+				, w2ui: { class:{  th_05:"t_hover_b", th_06:"txt_sig" }} },
+
+			{ "recid": 8, "fname": "7", "type": "PC", "th_03": "메인 메뉴", "th_04": "22.06.10~23.06.10", "th_05":"제목", "th_06": "130회", "th_07": "한지훈", "th_08": "22.06.10 08:46:00", "th_09":"한배찌", "th_10":"22.06.10 08:46:00"
+				, w2ui: { class:{  th_05:"t_hover_b", th_06:"txt_sig" }} },
+			{ "recid": 6, "fname": "7", "type": "PC", "th_03": "메인 메뉴", "th_04": "22.06.10~23.06.10", "th_05":"제목", "th_06": "130회", "th_07": "한지훈", "th_08": "22.06.10 08:46:00", "th_09":"한배찌", "th_10":"22.06.10 08:46:00"
+				, w2ui: { class:{  th_05:"t_hover_b", th_06:"txt_sig" }} },
+
+			{ "recid": 7, "fname": "7", "type": "PC", "th_03": "메인 메뉴", "th_04": "22.06.10~23.06.10", "th_05":"제목", "th_06": "130회", "th_07": "한지훈", "th_08": "22.06.10 08:46:00", "th_09":"한배찌", "th_10":"22.06.10 08:46:00"
+				, w2ui: { class:{  th_05:"t_hover_b", th_06:"txt_sig" }} },
+
+			{ "recid": 8, "fname": "7", "type": "PC", "th_03": "메인 메뉴", "th_04": "22.06.10~23.06.10", "th_05":"제목", "th_06": "130회", "th_07": "한지훈", "th_08": "22.06.10 08:46:00", "th_09":"한배찌", "th_10":"22.06.10 08:46:00"
+				, w2ui: { class:{  th_05:"t_hover_b", th_06:"txt_sig" }} },
+			{ "recid": 6, "fname": "7", "type": "PC", "th_03": "메인 메뉴", "th_04": "22.06.10~23.06.10", "th_05":"제목", "th_06": "130회", "th_07": "한지훈", "th_08": "22.06.10 08:46:00", "th_09":"한배찌", "th_10":"22.06.10 08:46:00"
+				, w2ui: { class:{  th_05:"t_hover_b", th_06:"txt_sig" }} },
+
+			{ "recid": 7, "fname": "7", "type": "PC", "th_03": "메인 메뉴", "th_04": "22.06.10~23.06.10", "th_05":"제목", "th_06": "130회", "th_07": "한지훈", "th_08": "22.06.10 08:46:00", "th_09":"한배찌", "th_10":"22.06.10 08:46:00"
+				, w2ui: { class:{  th_05:"t_hover_b", th_06:"txt_sig" }} },
+
+			{ "recid": 8, "fname": "7", "type": "PC", "th_03": "메인 메뉴", "th_04": "22.06.10~23.06.10", "th_05":"제목", "th_06": "130회", "th_07": "한지훈", "th_08": "22.06.10 08:46:00", "th_09":"한배찌", "th_10":"22.06.10 08:46:00"
+				, w2ui: { class:{  th_05:"t_hover_b", th_06:"txt_sig" }} },
+		]
+	})
+    let grid_02 = new w2grid({
+		name: 'grid_02',
+		box: '#grid_02',
+		show: {
+			selectColumn: true //체크박스 생성
+		},
+		columns: [
+			{ field: 'fname', text: '추가된 거래처명', size: '100%' , style: 'text-align: left'}
+
+		]
+	})
+
+</script>
+
+
+</body>
+</html>
+

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<title>세모리포트</title>
+<link rel="stylesheet" href="../css/reset_taxp.css">
+<link rel="stylesheet" href="../css/app_header.css"><!-- [D] 세무대리인용 header -->
+<link rel="stylesheet" href="../css/content_taxp.css"><!-- [D] 세무대리인용 -->
+
+<!-- custom scrollbar plugin css -->
+<link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+<script src="https://publ.roumit.com/js/firebase_include.js"></script>
+  <script src="../js/lib/jquery/jquery-1.12.4.min.js"></script>
+<script src="../js/lib/jquery/jquery-ui-1.10.4.min.js"></script>
+<!-- custom scrollbar plugin -->
+<script src="../js/design/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../js/design/jquery.placeholder.min.js"></script>
+<script src="../js/lib/plugin/smart.popup.js"></script>
+<script src="../js/comm/common.js"></script>
+<script>
+$(function(){
+  // Invoke the plugin
+  $('input, textarea').placeholder({customClass:'my-placeholder'});
+});
+</script>
+
+</head>
+
+
+<body style="width:430px;"><!-- 팝업 사이즈 430*547 -->
+
+<div class="pop_wrap" style="width:430px;">
+
+  <!-- 팝업 헤더 -->
+  <div class="pop_header">
+    <h1>수임처 직원 추가가입</h1>
+    <a href="#" onClick="close_smartPop();" class="btn_popclose"><img src="../img/txof/btn/btn_popclose_white.gif" alt="팝업닫기"></a>
+  </div>
+  <!-- //팝업 헤더 -->
+
+  <!-- 팝업 컨텐츠 -->
+  <div class="pop_container">
+
+    <div class="title_wrap">
+      <div class="left">
+        <h2 class="no_bg">수임처 직원을 세모Report 모바일에 추가 가입합니다.</h2>
+      </div>
+      <div class="right">
+      </div>
+    </div>
+
+    <div class="data_list_v " style="height: 253px;"><!-- 2019-10-22 mCustomScrollbar 클래스 추가 -->
+      <div class="cust_wrap cboth" style="height:250px;">
+          <div class="tbl_input_set cboth">
+				<table>
+					<colgroup><col style="width:120px;"><col></colgroup>
+					<tbody>
+						<tr>
+							<th scope="row"><div>이름</div></th>
+							<td>
+								<div class="ipt" ><input type="text" placeholder="이름을 입력해 주세요" value="" style="width:200px;"></div>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row"><div>휴대폰번호</div></th>
+							<td>
+								<div class="ipt" ><input type="text" placeholder="휴대폰번호를 입력해 주세요" value="" style="width:200px;"></div>
+							</td>
+						</tr>
+						
+						<tr>
+							<th scope="row"><div>직급</div></th>
+							<td>
+								<div class="ipt" ><input type="text" placeholder="직급을 입력해 주세요" value="" style="width:200px;"></div>
+							</td>
+						</tr>
+						
+						<tr>
+							<th scope="row"><div>이메일</div></th>
+							<td>
+								<div class="ipt" ><input type="text" placeholder="이메일을 입력해 주세요" value="" style="width:200px;"></div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+          </div>
+          <div class="ftcl_gray mgt20">세모Report 서비스를 신청하면 설치 안내 메세지가 자동 발송됩니다.</div>
+      </div>
+    </div>
+
+    <!-- 하단버튼 -->
+    <div class="tac">
+      <a href="#none" class="btn_style1_b"><span>확인</span></a>
+      <a href="#none"  onClick="close_smartPop();" class="btn_style1"><span>닫기</span></a>
+    </div>
+    <!-- //하단버튼 -->
+
+
+  </div>
+  <!-- //팝업 컨텐츠 -->
+</div>
+
+</body>
+</html>

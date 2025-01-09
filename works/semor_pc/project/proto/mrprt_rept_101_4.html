@@ -1,0 +1,2191 @@
+<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<title>mrprt_send_101_4 매출매입 보고서 수정</title>
+<link rel="stylesheet" href="../css/reset_taxp.css">
+<link rel="stylesheet" href="../css/app_header.css"><!-- [D] 세무대리인용 header -->
+<link rel="stylesheet" href="../css/content_taxp.css"><!-- [D] 세무대리인용 -->
+
+<!-- custom scrollbar plugin css -->
+<link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+<script src="https://publ.roumit.com/js/firebase_include.js"></script>
+  <script src="../js/lib/jquery/jquery-1.12.4.min.js"></script>
+<script src="../js/lib/jquery/jquery-ui-1.10.4.min.js"></script>
+<!-- custom scrollbar plugin -->
+<script src="../js/design/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../js/design/jquery.placeholder.min.js"></script>
+<script src="../js/lib/plugin/smart.popup.js"></script>
+<script src="../js/comm/common.js"></script>
+<script>
+
+
+</script>
+
+</head>
+<body class="lnb_bg lnb_bg"> <!-- [D] 메뉴영역(접기 : class="fold", 펼치기 : class="lnb_bg") -->
+ 
+<!-- 수임처 개선 -->
+<!-- header -->
+<div class="app_header">
+	<div class="app_header_inner">
+		<div class="ah_l">
+			<h1>세모Report</h1>
+		</div>
+
+		<div class="ah_r">
+			<ul class="ah_menu mgt10">
+				<!-- 
+				<li style="position:absolute;top:-16px;left:-47px;"><a href="#none" class="btn_alarm" title="알림"><em class="alarm_num" style="display: none;"></em></a></li>
+				<li><a href="#none"><img src="../img/txof/app_header/ic_top04.png" alt="">SMS</a></li>
+				<li style="position:relative;">
+					<a href="https://academyserp.notion.site/4ee92f23a9184afda550d61faf10a5e3" target="_blink"><img src="../img/txof/app_header/ic_top05.png" alt="">메뉴얼</a>
+				</li>
+				<li><a href="#none"><img src="../img/txof/app_header/ic_top02.png" alt="">로그아웃</a></li>
+				-->
+				<li>
+					<span class="updateInfo">
+						<a href="#none">업데이트 안내
+							<span class="talk_conting_num" style="display: none;">N</span>
+						</a>
+					</span>
+				</li>
+				<li>
+					<!-- 알림 있을때 new 클래스 -->
+					<span class="weTalk newAlarm">
+						<a href="#none">We Talk
+							<span class="talk_conting_num" style="display: none;">N</span>
+						</a>
+					</span>
+				</li>
+				<li class="txtMenu">
+					<a href="https://qe398.channel.io/support-bots/50502" target="_blink">채팅상담</a>
+					<a href="https://semojangbu.notion.site/semojangbu/1fb5342cd4324ec99d471048fb437e92" target="_blink">도움말</a>
+					<a href="http://report.semojangbu.com" target="_blink">공지사항</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="wrap">
+	<!-- Container -->
+	<div class="container">
+		<!-- lnb box -->
+		<div class="lnb_box">
+		
+			<!-- (modify)20220804 lnb_boxInn, mCustomScrollbar 추가 / 레이어 위치 이동 -->
+			<!-- lnb_boxInn -->
+			<div class="lnb_boxInn mCustomScrollbar _mCS_1 mCS_no_scrollbar">
+				<div id="mCSB_1" class="mCustomScrollBox mCS-light mCSB_vertical mCSB_inside" style="max-height: none;" tabindex="0"><div id="mCSB_1_container" class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y" style="position:relative;top:0;left:0;" dir="ltr">
+				<!-- lnb top 추가 -->
+				<div class="lnb_top">
+					<!-- user view -->
+					<div class="user_view">
+						<div class="user_r_side">
+							<p class="icon_user"><strong>강윤아</strong> 님</p>
+						</div>
+						<!-- 관리자만 담당자 select 노출 -->
+						
+						
+						<!-- 법인, 개인 select -->
+						<div class="select_wrap">
+							<div class="area_select">
+								<span>사업자</span>
+								<div class="tabType01">
+									<ul class="cboth" id="sel_bzaq_gb_ul">
+										<!-- 활성화시 on 클래스 -->
+										<li class="on" id="li_biz" data-biz_dv="" style="border-radius: 3px 0px 0px 3px;">
+											<a href="#none">전체</a>
+										</li>
+										<li id="li_biz11" data-biz_dv="11">
+											<a href="#none">개인</a>
+										</li>
+										<li id="li_biz22" data-biz_dv="22" style="border-radius: 0px 3px 3px 0px;">
+											<a href="#none">법인</a>
+										</li>
+									</ul>
+								</div>
+		
+							</div>
+						</div>
+					</div>
+					<!-- //user view -->
+				</div>
+				<!-- //lnb top 추가 -->
+				<div class="alarm_wrap">
+					<div class="mygroupLst">
+						<ul>
+							<!-- 그룹 -->
+							<li class="off" id="li_group"><!-- 활성화클래스 on -->
+								<div class="mygroupLst_tit">
+									<a href="#none" class="">
+										<img src="../img/txof/ico/ico_reptGroupManage.png" class="mCS_img_loaded">
+										그룹관리
+									</a>
+									<div class="mygroup_btn">
+										<i class="btn"></i>
+									</div>
+								</div>
+								<div class="mygroupCont">					
+								<!-- 20180906 수정 -->
+									<dl class="mygroup" id="grp_dl_area" style="display:;">
+										<dd class="off" name="GRP_AREA" code="0000000003" code_nm="dsfsdaf">
+											<a href="#none">
+												<div class="line tooltipWrap rt">
+													<div class="left grp_left_div">
+														<span class="txt" name="GRP_NM">dsfsdaf</span>
+														<div class="tooltip">
+															<p class="tit" name="GRP_FULL_NM">dsfsdaf</p>
+															<p></p>
+														</div>
+														<button type="button" class="btnEdit"><img src="../img/txof/btn/btn_edit_w3.png" width="14px" class="mCS_img_loaded"></button>
+													</div>
+													<div class="right">
+														<span class="groupCount" name="GRP_CNT">0</span>
+														<button type="button" class="btnEdit grp_edit_btn">
+															<img src="/img/txof/btn/btn_edit_w3.png" width="14px" class="mCS_img_loaded">
+														</button>
+														<div class="tooltip grp_tooltip"><!-- acitve시 활성화 -->
+															<ul class="hoverList">
+																<li>
+																	<button type="button" class="grp_nm_mod">그룹명 변경</button>
+																</li>
+																<li>
+																	<button type="button" class="grp_clear">그룹 비우기</button>
+																</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</a>
+											<div class="new_group" style="display:none;">
+												<a href="#none">
+													<input type="text" id="">
+												</a>
+												<a href="#none" class="tmp_grp_mod">
+													<img src="../img/txof/btn/btn_new_group_ok.gif" alt="확인" id="" class="mCS_img_loaded"></a>
+												<a href="#none" class="tmp_grp_calc">
+													<img src="../img/txof/btn/btn_new_group_cnl.gif" alt="취소" id="" class="mCS_img_loaded"></a>
+											</div>
+										</dd>
+									</dl>
+									<span class="btn_group_plus" id="">그룹추가</span>
+								</div>
+								<div class="new_group new_grp_add" style="display: none;">
+									<input type="text" id="">
+									<a href="#none" id="save_group">
+										<img src="../img/txof/btn/btn_new_group_ok.gif" alt="확인" id="" class="mCS_img_loaded">
+									</a>
+									<a href="#none" id="canc_group">
+										<img src="user_empl_001.html.bak" alt="취소" id="" class="mCS_img_loaded">
+									</a>
+								</div>
+							</li>
+							<!-- //그룹 -->
+				
+						</ul>
+					</div>
+
+				
+					<div class="mygroupLst">
+						 <dl id="trcoFirst" data-url="user_info_001.act">
+							<dd class="off" id="user_info"> 
+								<div class="line first" id="GRP0">
+									<a href="#none">
+										<img src="../img/txof/ico/ico_user_mgmt.png" class="mCS_img_loaded">
+										<span>고객 관리</span> 
+										<span class="badge2">
+										<strong id="GRP">138</strong></span>
+									</a>
+								</div>
+							</dd>
+						</dl>										
+						<ul>
+							<li class="on" id="grp_wrap_rprt"><!-- 활성화클래스 on -->
+								<div class="mygroupLst_tit">
+									<a href="#none" class="" name="btn_left_menu">
+										<img src="../img/txof/ico/ico_reptManage.png" class="mCS_img_loaded">보고서 관리
+									</a>
+									<div class="mygroup_btn">
+										<i class="btn"></i>
+									</div>
+								</div>
+								<div class="mygroupCont">
+									<dl class="mygroup">
+										<dd class="on" id="mrprt_send" data-nm="보고서 발송" data-url="mrprt_send_001.act">
+											<a href="#none">
+												<div class="line">보고서 발송</div>
+											</a>
+											<!-- <div class="line">
+												보고서 발송 <span class="badge2"><strong ></strong></span>
+											</div> -->
+										</dd>
+										<dd class="off" id="mrprt_send" data-nm="보고서 발송" data-url="mrprt_send_001.act">
+											<a href="#none">
+												<div class="line">보고서 현황</div>
+											</a>
+										</dd>
+										<dd class="off" id="mrprt_hist" data-nm="리포트 이력" data-url="mrprt_hist_001.act">
+											<a href="#none">
+												<div class="line">보고서 이력</div>
+											</a>
+											<!-- <div class="line">
+												보고서 이력 <span class="badge2"><strong ></strong></span>
+											</div> -->
+										</dd>
+									</dl>
+								</div>
+							</li>
+						</ul>
+				   <!--  </div> -->
+					</div>
+					
+					<div class="mygroupLst">
+						<dl id="grp_wrap_cafe">
+							<dt class="menu"><img src="../img/txof/ico/ico_taxCafe.png" class="mCS_img_loaded">세무지식</dt>
+							<dd class="off mgnt_cafe" id="mgnt_cafe" data-nm="세무지식 관리" data-url="mgnt_cafe_001.act" data-param="{&quot;blbd_id&quot;:&quot;TXOF_CAFE&quot;,&quot;blbd_nm&quot;:&quot;세무지식 관리&quot;}">
+								<div class="line first">세무지식 관리</div>
+							</dd>
+						</dl>
+					</div>
+					
+					<div class="mygroupLst">		
+						<ul>
+							<li class="on" id="grp_wrap_realTime"><!-- 활성화클래스 on -->
+								<div class="mygroupLst_tit">
+									<a href="#none" class="" name="btn_left_menu">
+										<img src="../img/txof/ico/ico_relatime.png" class="mCS_img_loaded">실시간정보수집
+									</a>
+									<div class="mygroup_btn">
+										<i class="btn"></i>
+									</div>
+								</div>
+								<div class="mygroupCont">
+									<dl class="mygroup">
+										<dd class="off" id="infoc_rinfo" data-nm="정보수집현황" data-url="infoc_rinfo_001.act">
+											<a href="#none">
+												<div class="line">정보수집현황</div>
+											</a>
+											<!-- <div class="line">
+												보고서 발송 <span class="badge2"><strong ></strong></span>
+											</div> -->
+										</dd>
+										<dd class="off" id="infoc_rcert" data-nm="수집정보설정" data-url="infoc_rcert_001.act">
+											<a href="#none">
+												
+											</a>
+											<!-- <div class="line">
+												보고서 이력 <span class="badge2"><strong ></strong></span>
+											</div> -->
+										    <div class="tooltipWrap">
+                                                <div class="tooltipWrap">
+                                                    <p class="txt line" name="MENU_NM" style="color: rgb(196, 196, 196);">수집정보설정</p>
+                                                    <div class="tooltip">
+                                                        <p class="tit" name="TOOLTIP_TEXT">해당 메뉴는 관리자만 이용 가능합니다.</p><p>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </dd>
+									</dl>
+								</div>
+							</li>
+						</ul>
+					</div>
+				
+					<div class="mygroupLst">
+						<ul>
+							<li class="off" id="grp_wrap_main"><!-- 활성화클래스 on -->
+								<div class="mygroupLst_tit">
+									<a href="#none" class="" name="btn_left_menu"><img src="../img/txof/ico/ico_set.png" class="mCS_img_loaded">환경 설정</a>
+									<div class="mygroup_btn">
+										<i class="btn"></i>
+									</div>
+								</div>
+								<div class="mygroupCont"><!-- style="display: none;" -->
+									<dl class="mygroup">
+										<dd class="off" id="mgnt_wpop" data-nm="웰컴팝업 관리" data-url="mgnt_wpop_001.act">
+											<!-- <div class="line">
+												웰컴팝업 관리 <span class="badge2"><strong></strong></span>
+											</div> -->
+											<a href="#none">
+												
+											</a>
+										<div class="tooltipWrap">
+                                            <div class="tooltipWrap">
+                                                <p class="txt line" name="MENU_NM" style="color: rgb(196, 196, 196);">웰컴팝업 관리</p>
+                                                <div class="tooltip">
+                                                    <p class="tit" name="TOOLTIP_TEXT">해당 메뉴는 관리자만 이용 가능합니다.</p><p>
+                                                </p></div>
+                                            </div>
+                                        </div>
+                                    </dd>
+										<!-- <dd class="off" id="mgnt_pymt" data-nm="청구납부내역" data-url="mgnt_pymt_001.act" >
+											<span class=""></span>
+											<div class="line">
+												청구납부내역 <span class="badge2"><strong></strong></span>
+											</div>
+										</dd> -->
+										<dd class="off" id="mgnt_rept" data-nm="리포트 설정" data-url="mgnt_rept_001.act">
+											<a href="#none">
+												
+											</a>
+										   <!--  <div class="line">
+												리포트 설정 <span class="badge2"><strong></strong></span>
+											</div> -->
+										    <div class="tooltipWrap">
+                                                <div class="tooltipWrap">
+                                                    <p class="txt line" name="MENU_NM" style="color: rgb(196, 196, 196);">리포트 설정</p>
+                                                    <div class="tooltip">
+                                                        <p class="tit" name="TOOLTIP_TEXT">해당 메뉴는 관리자만 이용 가능합니다.</p><p>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </dd>
+										<dd class="off" id="mgnt_sett" data-nm="세무사무소 설정" data-url="mgnt_sett_001.act">
+											<a href="#none">
+												
+											</a>
+											<!-- <div class="line">
+												세무사무소 설정 <span class="badge2"><strong></strong></span>
+											</div> -->
+										    <div class="tooltipWrap">
+                                                <div class="tooltipWrap">
+                                                    <p class="txt line" name="MENU_NM" style="color: rgb(196, 196, 196);">세무사무소 설정</p>
+                                                    <div class="tooltip">
+                                                        <p class="tit" name="TOOLTIP_TEXT">해당 메뉴는 관리자만 이용 가능합니다.</p><p>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </dd>
+										<dd class="off" id="mgnt_feld" data-nm="사용자필드 설정" data-url="mgnt_feld_001.act">
+											<!-- <span class=""></span> -->
+											<a href="#none">
+												<div class="line">사용자필드 설정 </div>
+											</a>
+											<!-- <div class="line">
+												사용자필드 설정 <span class="badge2"><strong></strong></span>
+											</div> -->
+										</dd>
+									</dl>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<!-- 관리자만 노출 -->
+					<div class="mygroupLst">
+						<ul>
+							<li class="on"><!-- 활성화클래스 on -->
+								<div class="mygroupLst_tit">
+									<a href="#none" class="" name="btn_left_menu"><img src="../img/txof/ico/ico_set.png" class="mCS_img_loaded">어드민</a>
+									<div class="mygroup_btn">
+										<i class="btn"></i>
+									</div>
+								</div>
+								<div class="mygroupCont">
+									<dl class="mygroup">
+										<dd class="off admin_menu" id="admn_cafe" data-nm="세모카페 어드민" data-url="mgnt_cafe_001.act" data-param="{&quot;blbd_id&quot;:&quot;MGNT_CAFE&quot;,&quot;blbd_nm&quot;:&quot;세모카페 어드민&quot;}">
+											<a href="#none">
+												<div class="line">세모카페 어드민</div>
+											</a>
+											<!-- <div class="line">
+												세모카페 어드민 <span class="badge2"><strong></strong></span>
+											</div> -->
+										</dd>
+										<dd class="off admin_menu" id="admn_noti" data-nm="공지사항 관리" data-url="admn_noti_001.act">
+											<!-- <div class="line">
+												공지사항 관리 <span class="badge2"><strong></strong></span>
+											</div> -->
+											<a href="#none">
+												<div class="line">공지사항 관리</div>
+											</a>
+										</dd>
+										<dd class="off admin_menu" id="admn_scrp" data-nm="클라이언트 스크래핑 조회" data-url="admn_scrp_001.act">
+											<!-- <span class=""></span> -->
+											<!-- <div class="line">
+												클라이언트 스크래핑 조회 <span class="badge2"><strong></strong></span>
+											</div> -->
+											<a href="#none">
+												<div class="line">클라이언트 스크래핑 조회</div>
+											</a>
+										</dd>
+									</dl>
+								</div>
+							</li>
+						</ul>
+					</div>
+				
+				</div>
+			</div>
+			<div id="mCSB_1_scrollbar_vertical" class="mCSB_scrollTools mCSB_1_scrollbar mCS-light mCSB_scrollTools_vertical" style="display: none;"><div class="mCSB_draggerContainer"><div id="mCSB_1_dragger_vertical" class="mCSB_dragger" style="position: absolute; min-height: 30px; height: 0px; top: 0px;" oncontextmenu="return false;"><div class="mCSB_dragger_bar" style="line-height: 30px;"></div></div><div class="mCSB_draggerRail"></div></div></div></div></div>
+			<!-- //lnb_boxInn -->
+		
+		</div>
+		<!-- //lnb box -->
+
+		<!-- content -->
+		<div class="content">
+			<div class="content_wrap">
+				<!-- 상단타이틀 -->
+				<div class="title_wrap h1type">
+					<div class="left">
+						<h1>나라백반
+                            <span class="mgl10">123-45-67890</span>
+                            <span class="mgl10">마크킴 대표</span>
+
+                        </h1>
+
+					</div>
+					<div class="right">
+						<div class="cntalign">
+                            <a class="btn_ico_back" href="#none" id="mrprt_info_btn_back"><span class="blind">뒤로가기</span></a>
+                        </div>
+					</div>
+				</div>
+				<!-- //상단타이틀 -->
+
+				<!-- 버튼영역 -->
+                <div class="title_wrap">
+                    <div class="left">
+                        <div class="cntalign">
+                            <div class="title">
+                                <h2 class="tx_title">보고서</h2>
+                            </div>
+                        </div>
+                        <div class="cntalign">
+                            <div class="ly_filter type4">
+                                <a href="#none">전체</a>   
+                                <ul class="ly_filter_inner" id="user_gb_ul" style="min-width: 100px !important; width: 100px !important; display: none;">
+                                    <li class="user_gb_list"><a href="#none" data-user_gb="">전체</a></li>
+                                    <li class="user_gb_list"><a href="#none" data-user_gb="01">사업분석</a></li>
+                                    <li class="user_gb_list"><a href="#none" data-user_gb="02">매츨</a></li>
+                                    <li class="user_gb_list"><a href="#none" data-user_gb="03">매입</a></li>
+                                    <li class="user_gb_list"><a href="#none" data-user_gb="04">인건비</a></li>
+                                    <li class="user_gb_list"><a href="#none" data-user_gb="05">예상 부가세</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="cntalign" style="margin-left:30px;">
+                            <div class="title">
+                                <h2 class="tx_title">기간</h2>
+                            </div>
+                        </div>
+                        <div class="cntalign">
+                            <div class="ly_filter type4">
+                                <a href="#none" class="" id="sel_tax_gb">22.01</a>
+                            </div>
+                        </div>
+                        <div class="cntalign">
+                            <div class="ly_filter type4">
+                                <div class="swungDash">~</div>
+                            </div>
+                        </div>
+                        <div class="cntalign">
+                            <div class="ly_filter type4">
+                                <a href="#none" class="" id="sel_tax_gb">23.03</a>
+                            </div>
+                        </div>
+                        <div class="cntalign">
+							<div class="list3nd_tab rept">
+								<ul>
+									<!-- active시 on 클래스 -->
+									<li style="margin-left: 30px;"><a href="#none" class="target on" data-schgb="1">전체 <span class="txt_green" id="tot_cnt">1</span></a></li>
+									<li><a href="#none" class="err" data-schgb="2">오류 <span class="txt_r" id="err_cnt">0</span></a></li>
+									<li><a href="#none" class="wait" data-schgb="3">발송대기 <span class="txt_o" id="wat_cnt">1</span></a></li>
+									<li><a href="#none" class="complete" data-schgb="4">발송완료 <span class="txt_b" id="suc_cnt">0</span></a></li>
+								</ul>
+							</div>
+						</div>
+                    </div>
+                    <div class="right">
+                        <div class="cntalign" id="realt_info_coll"><a href="#none" class="btn_style1"><span class="fwn">실시간 정보수집</span></a></div>
+<!-- 							<div class="cntalign" id="rvew_y"><a href="#none" class="btn_style1"><span class="fwn">검토 완료</span></a></div> -->
+                        <div class="cntalign" id="rsvt_send_btn"><a href="#none" class="btn_style1"><span class="fwn">예약 발송</span></a></div>
+                        <div class="cntalign" id="imdt_send_btn"><a href="#none" class="btn_style1_b"><span>즉시 발송</span></a></div>
+                    </div>
+                </div>
+                <!-- 버튼영역 -->
+				<div class="tblScrollX">
+					<!-- 리스트 테이블 -->
+					<!-- 리스트 테이블 상단 -->
+					<div class="list_scroll_top"><!-- [D] 하단테이블 세로스크롤 발생시 pdr 클래스 추가 -->
+						<table class="tbl_result" summary="">
+							<caption></caption>
+							<colgroup>
+                                <col style="width:25px;"> <!-- 1. 체크박스 -->
+                                <col style="width:160px;"> <!-- 2. 보고서명-->
+                                <col style="width:80px;"> <!-- 3. 상태 -->
+                                <col style="width:80px;"> <!-- 4. 미리보기 -->
+                                <col style="width:80px;"> <!-- 5. 보고서--> 
+                                <col style="width:80px;"> <!-- 6. 검토 --> 
+                                <col style="width:100px;"> <!-- 7. 생성일자 -->
+                                <col style="width:140px;"> <!-- 8. 발송일시-->
+                                <col style="width:120px;"> <!-- 9. 고객확인일시 -->
+                                <col style="width:80px;"> <!-- 10. 변경이력 -->
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col"><div class="t_left"><input type="checkbox" name="chk_all"></div></th>
+									<th scope="col"><div class="t_left">보고서명</div></th>
+									<th scope="col"><div class="t_center">상태</div></th>
+									<th scope="col"><div class="t_center">미리보기</div></th>
+									<th scope="col"><div class="t_center">보고서</div></th>
+									<th scope="col"><div class="t_center">검토</div></th>
+									<th scope="col"><div class="t_center">생성일자</div></th>
+									<th scope="col"><div class="t_center">발송일시</div></th>
+									<th scope="col"><div class="t_center">고객확인일시</div></th>
+                                    <th scope="col"><div class="t_center">변경이력</div></th>
+								</tr>
+							</thead>
+						</table>
+					</div>
+					<!-- //리스트 테이블 상단 -->
+						<table class="tbl_result" summary="">
+                            <caption></caption>
+                            <colgroup>
+                                <col style="width:25px;"> <!-- 1. 체크박스 -->
+                                <col style="width:160px;"> <!-- 2. 보고서명-->
+                                <col style="width:80px;"> <!-- 3. 상태 -->
+                                <col style="width:80px;"> <!-- 4. 미리보기 -->
+                                <col style="width:80px;"> <!-- 5. 보고서--> 
+                                <col style="width:80px;"> <!-- 6. 검토 --> 
+                                <col style="width:100px;"> <!-- 7. 생성일자 -->
+                                <col style="width:140px;"> <!-- 8. 발송일시-->
+                                <col style="width:120px;"> <!-- 9. 고객확인일시 -->
+                                <col style="width:80px;"> <!-- 10. 변경이력 -->
+                            </colgroup>
+
+                            <tbody style="display: table-tbody;">
+                                <tr>
+                                    <td>
+                                        <div>
+                                            <input type="checkbox" name="terms">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_left">23년 03월 사업분석 보고서</div>
+                                    </td>
+									<td class="tac tool_bax">
+										<div class="t_center tooltipWrap btc">
+                                            <span class="qm">
+                                                <span name="CONFIRM" >
+                                                    <span  class="txt_r">생성오류</span>
+                                                </span>
+                                                <div class="tooltip">
+                                                    <p class="tit" name="confrmMsg">
+                                                        데이터 수집에 실패하였습니다.<br>
+                                                        실시간 정보수집 버튼을 통해 데이터를 수집해 주세요.
+                                                    </p>
+                                                </div>
+                                            </span>
+                                            <!-- 발송대기 txt_b / 생성오류 txt_r -->
+										</div>	
+                                    </td>
+                                    <td>
+                                        <div class="t_center" name="PREVIEW_BTN">
+                                            <a href="javascript:;" class="disabled">보기</a>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_center" name="PREVIEW_BTN">
+                                            <a href="javascript:;" class="disabled">수정</a>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_center" name="PREVIEW_BTN">
+                                            <a href="javascript:;" class="disabled">검토대기</a>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_center">
+                                            23.04.19
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_center">
+                                            --
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_center">
+                                            23.03.20 10:10
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_center" name="PREVIEW_BTN">
+                                            <a href="javascript:;" class="txt_b2 t_hover_blue">이력</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div>
+                                            <input type="checkbox" name="terms">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_left">23년 03월 사업분석 보고서 수정</div>
+                                    </td>
+                                    <td class="tac tool_bax">
+                        				<div class="tooltipWrap btc">
+                                            <span class="qm">
+                                                <span class="txt txt_r tool_bax" name="PROC_STTS">생성오류</span>
+                                                <div class="tooltip" name="LABR_ERR" style="min-width: 350px;">
+                                                    <p class="tit fwb">인건비 보고서가 생성되지 않았습니다.<p>
+                                                    <p class="tit">① 급여관리에서 급여대장을 등록해주세요.<p>
+                                                    <p class="tit">② 등록된 급여대장 데이터를 연결해주세요.<p> 
+                                                    <div class="areaBtn" style="padding: 10px;">
+                                                        <a href="#none" class="btn_style1_b" name="PAYMENT"><span>① 급여대장 등록하기</span></a>
+                                                        <a href="#none" class="btn_style1_b" name="LABR_CRE"><span>② 인건비 보고서 생성</span></a>
+                                                    </div>
+                                                 </div> 
+                                            </span>
+
+                        				</div> 
+                                    </td>
+                                    <td>
+                                        <div class="t_center" name="PREVIEW_BTN">
+                                            <a href="javascript:;" class="disabled">보기</a>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_center" name="PREVIEW_BTN">
+                                            <a href="javascript:;" class="disabled">수정</a>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_center" name="PREVIEW_BTN">
+                                            <a href="javascript:;" class="disabled">검토대기</a>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_center">
+                                            23.04.19
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_center">
+                                            -
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_center">
+                                            23.03.20 10:10
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_center" name="PREVIEW_BTN">
+                                            <a href="javascript:;" class="txt_b2 t_hover_blue">이력</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div>
+                                            <input type="checkbox" name="terms">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_left">23년 03월 매출매입 보고서</div>
+                                    </td>
+                                    <td class="tac tool_bax">
+										<div class="t_center tooltipWrap btc">
+                                            <!-- 발송대기 txt_b / 생성오류 txt_r -->
+                                            <span class="qm">
+                                                <span name="CONFIRM">
+                                                    <span  class="txt_r">생성오류</span>
+                                                </span>
+                                                <div class="tooltip">
+                                                    <p class="tit">
+                                                        최근 6개월이내에 PG · 배달 · 쇼핑 매출이 있습니다.<br> 
+                                                        (해당 데이터는 분기마다 수집됩니다)
+                                                    </p>	
+                                                    <p class="tit">
+                                                        해당 매출을 수기로 입력하면 보고서가 완성됩니다.
+                                                    </p>
+                                                </div>
+                                            </span>
+
+                                    </td>
+                                    <td>
+                                        <div class="t_center" name="PREVIEW_BTN">
+                                            <a href="javascript:;" class="disabled">보기</a>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_center" name="PREVIEW_BTN">
+                                            <a href="javascript:;" class="disabled">수정</a>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_center" name="PREVIEW_BTN">
+                                            <a href="javascript:;" class="disabled">검토대기</a>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_center">
+                                            23.04.19
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_center">
+                                            예약 23.03.20 10:10
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_center">
+                                            23.03.20 10:10
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_center" name="PREVIEW_BTN">
+                                            <a href="javascript:;" class="txt_b2 t_hover_blue">이력</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div>
+                                            <input type="checkbox" name="terms">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_left">23년 03월 매출매입 보고서</div>
+                                    </td>
+                                    <td class="tac tool_bax">
+										<div class="t_center tooltipWrap btc">
+                                            <!-- 발송대기 txt_b / 생성오류 txt_r -->
+                                            <span class="qm">
+                                                <span name="CONFIRM">
+                                                    <span  class="txt_r">생성오류</span>
+                                                </span>
+                                                <div class="tooltip">
+                                                    <p class="tit" name="confrmMsg">
+                                                        보고서 발송에 실패하였습니다. 다시 발송해주세요.
+                                                    </p>
+                                                </div>
+                                            </span>
+                                            
+										</div>	
+                                    </td>
+                                    <td>
+                                        <div class="t_center" name="PREVIEW_BTN">
+                                            <a href="javascript:;" class="disabled">보기</a>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_center" name="PREVIEW_BTN">
+                                            <a href="javascript:;" class="disabled">수정</a>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_center" name="PREVIEW_BTN">
+                                            <a href="javascript:;" class="disabled">검토대기</a>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_center">
+                                            23.04.19
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_center">
+                                            예약 23.03.20 10:10
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_center">
+                                            23.03.20 10:10
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_center" name="PREVIEW_BTN">
+                                            <a href="javascript:;" class="txt_b2 t_hover_blue">이력</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div>
+                                            <input type="checkbox" name="terms">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_left">23년 03월 매출매입 보고서</div>
+                                    </td>
+                                    <td class="tac tool_bax">
+										<div class="t_center tooltipWrap btc">
+                                            <!-- 발송대기 txt_b / 생성오류 txt_r -->
+                                            <span class="qm">
+                                                <span name="CONFIRM">
+                                                    <span  class="txt_r">생성오류</span>
+                                                </span>
+                                                <div class="tooltip">
+                                                    <p class="tit" name="confrmMsg">홈택스 수임동의가 되어있지 않아 데이터 수집에 실패하였습니다.<br> 
+                                                        수임처App에서 홈택스 수임동의 후에 실시간 정보수집을 진행해주세요.
+                                                    </p>
+                                                </div>
+                                            </span>
+                                            
+										</div>	
+                                    </td>
+                                    <td>
+                                        <div class="t_center" name="PREVIEW_BTN">
+                                            <a href="javascript:;" class="disabled">보기</a>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_center" name="PREVIEW_BTN">
+                                            <a href="javascript:;" class="disabled">수정</a>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_center" name="PREVIEW_BTN">
+                                            <a href="javascript:;" class="disabled">검토대기</a>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_center">
+                                            23.04.19
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_center">
+                                            예약 23.03.20 10:10
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_center">
+                                            23.03.20 10:10
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_center" name="PREVIEW_BTN">
+                                            <a href="javascript:;" class="txt_b2 t_hover_blue">이력</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div>
+                                            <input type="checkbox" name="terms">
+                                        </div>
+                                    </td>
+                                    <td>
+										<!-- 발송완료시 addClass txt_g -->
+                                        <div class="t_left">23년 03월 매출매입 보고서</div>
+                                    </td>
+                                    <td class="tac tool_bax">
+										<div class="t_center tooltipWrap btc">
+                                            <!-- 발송대기 txt_b / 생성오류 txt_r -->
+                                            <span name="CONFIRM">
+                                                <span  class="txt_b">발송대기</span>
+                                            </span>
+										</div>	
+                                    </td>
+                                    <td>
+                                        <div class="t_center" name="PREVIEW_BTN">
+                                            <a href="javascript:;" class="t_hover_blue">보기</a>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_center" name="PREVIEW_BTN">
+                                            <a href="javascript:;" class="t_hover_blue click_e">수정</a>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_center" name="PREVIEW_BTN">
+                                            <a href="javascript:;" class="t_hover_blue">검토대기</a>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_center">
+                                            23.04.19
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_center">
+                                            23.03.20 10:10
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_center">
+                                            23.03.20 10:10
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_center" name="PREVIEW_BTN">
+                                            <a href="javascript:;" class="txt_b2 t_hover_blue">이력</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div>
+                                            <input type="checkbox" name="terms">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_left txt_g">23년 03월 매출매입 보고서</div>
+                                    </td>
+                                    <td class="tac tool_bax">
+										<div class="t_center tooltipWrap btc">
+                                            <!-- 발송대기 txt_b / 생성오류 txt_r -->
+                                            <span name="CONFIRM">
+                                                <span>발송완료</span>
+                                            </span>
+										</div>	
+                                    </td>
+                                    <td>
+                                        <div class="t_center" name="PREVIEW_BTN">
+                                            <a href="javascript:;" class="t_hover_blue">보기</a>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_center" name="PREVIEW_BTN">
+                                            <a href="javascript:;" class="t_hover_blue">수정</a>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_center" name="PREVIEW_BTN">
+                                            <a href="javascript:;">검토완료</a>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_center">
+                                            23.04.19
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_center">
+                                            23.03.20 10:10
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_center">
+                                            23.03.20 10:10
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_center" name="PREVIEW_BTN">
+                                            <a href="javascript:;" class="txt_b2 t_hover_blue">이력</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div>
+                                            <input type="checkbox" name="terms">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_left txt_g">23년 03월 매출매입 보고서</div>
+                                    </td>
+                                    <td class="tac tool_bax">
+										<div class="t_center tooltipWrap btc">
+                                            <!-- 발송대기 txt_b / 생성오류 txt_r -->
+                                            <span name="CONFIRM">
+                                                <span>발송완료</span>
+                                            </span>
+										</div>	
+                                    </td>
+                                    <td>
+                                        <div class="t_center" name="PREVIEW_BTN">
+                                            <a href="javascript:;" class="t_hover_blue">보기</a>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_center" name="PREVIEW_BTN">
+                                            <a href="javascript:;" class="t_hover_blue">수정</a>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_center" name="PREVIEW_BTN">
+                                            <a href="javascript:;">검토완료</a>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_center">
+                                            23.04.19
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_center">
+                                            23.03.20 10:10
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_center">
+                                            23.03.20 10:10
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_center" name="PREVIEW_BTN">
+                                            <a href="javascript:;" class="txt_b2 t_hover_blue">이력</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div>
+                                            <input type="checkbox" name="terms">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_left txt_g">23년 03월 매출매입 보고서</div>
+                                    </td>
+                                    <td class="tac tool_bax">
+										<div class="t_center tooltipWrap btc">
+                                            <!-- 발송대기 txt_b / 생성오류 txt_r -->
+                                            <span name="CONFIRM">
+                                                <span>발송완료</span>
+                                            </span>
+										</div>	
+                                    </td>
+                                    <td>
+                                        <div class="t_center" name="PREVIEW_BTN">
+                                            <a href="javascript:;" class="t_hover_blue">보기</a>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_center" name="PREVIEW_BTN">
+                                            <a href="javascript:;" class="t_hover_blue">수정</a>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_center" name="PREVIEW_BTN">
+                                            <a href="javascript:;">검토완료</a>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_center">
+                                            23.04.19
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_center">
+                                            23.03.20 10:10
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_center">
+                                            23.03.20 10:10
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_center" name="PREVIEW_BTN">
+                                            <a href="javascript:;" class="txt_b2 t_hover_blue">이력</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div>
+                                            <input type="checkbox" name="terms">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_left txt_g">23년 03월 매출매입 보고서</div>
+                                    </td>
+                                    <td class="tac tool_bax">
+										<div class="t_center tooltipWrap btc">
+                                            <!-- 발송대기 txt_b / 생성오류 txt_r -->
+                                            <span name="CONFIRM">
+                                                <span>발송완료</span>
+                                            </span>
+										</div>	
+                                    </td>
+                                    <td>
+                                        <div class="t_center" name="PREVIEW_BTN">
+                                            <a href="javascript:;" class="t_hover_blue">보기</a>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_center" name="PREVIEW_BTN">
+                                            <a href="javascript:;" class="t_hover_blue">수정</a>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_center" name="PREVIEW_BTN">
+                                            <a href="javascript:;">검토완료</a>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_center">
+                                            23.04.19
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_center">
+                                            23.03.20 10:10
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_center">
+                                            23.03.20 10:10
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="t_center" name="PREVIEW_BTN">
+                                            <a href="javascript:;" class="txt_b2 t_hover_blue">이력</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                        
+                            </tbody>
+						</table>
+								
+					<!-- //리스트 테이블 -->
+				</div>
+				<!-- Paging wrap -->
+                <div class="paging_wrap">
+                    <!-- combo -->
+                    <div class="combo_wrap">
+                        <div class="combo_style">
+                            <a href="#none" class="btn_style btn_combo_down"><span>10</span></a>
+                            <ul class="up" style="display: none;">
+                                <li><a href="#none">20</a></li>
+                                <li><a href="#none">40</a></li>
+                                <li><a href="#none">100</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- //combo -->
+                    <!-- pagination -->
+                    <div class="paging"><!-- [D] 비활성상태는 on class 제거 -->
+                        <a href="#none" class="btn_pag_cntr first"><span class="blind">first</span></a><a href="#none" class="btn_pag_cntr prev"><span class="blind">previous</span></a>
+                        <span class="pag_num">
+                            <a href="#none" class="on">1</a><a href="#none">2</a><a href="#none">3</a><a href="#none">4</a><a href="#none">5</a><a href="#none">6</a><a href="#none">7</a><a href="#none">8</a><a href="#none">9</a><a href="#none">10</a>
+                        </span>
+                        <a href="#none" class="btn_pag_cntr next on"><span class="blind">next</span></a><a href="#none" class="btn_pag_cntr last on"><span class="blind">last</span></a>
+                    </div>
+                    <!-- //pagination -->
+                </div>
+                <!-- //Paging wrap -->
+				
+				
+			</div>
+		   <!-- //content_wrap -->
+			
+		</div>
+		<!-- //content -->
+     
+    
+	</div>
+	<!-- //Container -->
+    <div class="popup_pb_bg" style="display: block;">
+        <div class="popup_pb_inner">
+            <!-- 팝업영역  리스트영역 클래스 no-list_type / 미리보기 클래스 showPop -->
+            <div class="pop_wrap confirmRept">
+
+                <!-- 팝업 헤더 -->
+                <div class="pop_header">
+                    <h1 style="position: relative;">23년 03월 사업분석 보고서 수정</h1>
+                    <a href="#none" class="btn_popclose"><img src="../img/txof/btn/btn_popClose_white.gif" alt="팝업닫기"></a>
+                </div>
+                <!-- //팝업 헤더 -->
+                
+                <!-- 팝업 컨텐츠 -->
+                <div class="pop_container pd0" style="display: flex; height: 750px;">
+                    <div class="leftTab">
+                        <div class="input_box">
+                            <input type="text" value="" placeholder="검색어를 입력하세요">
+                            <a href="#none"><img src="../img/txof/btn/btn_topsearch.gif" alt="조회"></a>
+                        </div>
+                        <div class="reportListWrap">
+                            <div class="areaTit">
+                                <p class="count">총 35건</p>
+                                <div class="rCont">
+                                    <label><input type="checkbox"> 검토완료 제외</label>
+                                </div>
+                            </div>
+                            <ul class="reportList">
+                                <!-- 확인완료시 complete 클래스 추가 -->
+                                <li class="complete">
+                                    <a href="javascript:;">
+                                        <div class="titArea">
+                                            <strong class="tit">로움아이티</strong>
+                                            <span class="badge  color02">검토완료</span>
+                                        </div>
+                                        <div class="cntArea">
+                                            <div class="infoStaff">
+                                                <span>김세모</span>
+                                                <span>|</span>
+                                                <span>123-45-67890</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <!-- 활성화시 active 클래스 추가 -->
+                                <li class="active">
+                                    <a href="javascript:;">
+                                        <div class="titArea">
+                                            <strong class="tit">로움아이티</strong>
+                                            <span class="badge">검토완료</span>
+                                        </div>
+                                        <div class="cntArea">
+                                            <div class="infoStaff">
+                                                <span>김세모</span>
+                                                <span>|</span>
+                                                <span>123-45-67890</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <div class="titArea">
+                                            <strong class="tit">로움아이티</strong>
+                                        </div>
+                                        <div class="cntArea">
+                                            <div class="infoStaff">
+                                                <span>김세모</span>
+                                                <span>|</span>
+                                                <span>123-45-67890</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <div class="titArea">
+                                            <strong class="tit">로움아이티</strong>
+                                            <span class="badge">검토완료</span>
+                                        </div>
+                                        <div class="cntArea">
+                                            <div class="infoStaff">
+                                                <span>김세모</span>
+                                                <span>|</span>
+                                                <span>123-45-67890</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <div class="titArea">
+                                            <strong class="tit">로움아이티</strong>
+                                            <span class="badge color02">검토대기</span>
+                                        </div>
+                                        <div class="cntArea">
+                                            <div class="infoStaff">
+                                                <span>김세모</span>
+                                                <span>|</span>
+                                                <span>123-45-67890</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <div class="titArea">
+                                            <strong class="tit">로움아이티</strong>
+                                        </div>
+                                        <div class="cntArea">
+                                            <div class="infoStaff">
+                                                <span>김세모</span>
+                                                <span>|</span>
+                                                <span>123-45-67890</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <div class="titArea">
+                                            <strong class="tit">로움아이티</strong>
+                                        </div>
+                                        <div class="cntArea">
+                                            <div class="infoStaff">
+                                                <span>김세모</span>
+                                                <span>|</span>
+                                                <span>123-45-67890</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <div class="titArea">
+                                            <strong class="tit">로움아이티</strong>
+                                        </div>
+                                        <div class="cntArea">
+                                            <div class="infoStaff">
+                                                <span>김세모</span>
+                                                <span>|</span>
+                                                <span>123-45-67890</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <div class="titArea">
+                                            <strong class="tit">로움아이티</strong>
+                                        </div>
+                                        <div class="cntArea">
+                                            <div class="infoStaff">
+                                                <span>김세모</span>
+                                                <span>|</span>
+                                                <span>123-45-67890</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <div class="titArea">
+                                            <strong class="tit">로움아이티</strong>
+                                        </div>
+                                        <div class="cntArea">
+                                            <div class="infoStaff">
+                                                <span>김세모</span>
+                                                <span>|</span>
+                                                <span>123-45-67890</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="paging">
+                                <a href="#none" class="btn_pag_cntr first" style="margin-right: -5px"><span class="blind">first</span></a>
+                                <a href="#none" class="btn_pag_cntr prev"><span class="blind">previous</span></a>
+                                <span class="pag_num">
+                                    <a href="#none" class="on">1</a>
+                                    <a href="#none">2</a>
+                                    <a href="#none">3</a>
+                                    <a href="#none">4</a>
+                                    <a href="#none">5</a>
+                                </span>
+                                <a href="#none" class="btn_pag_cntr next on"><span class="blind">next</span></a><a href="#none"
+                                    class="btn_pag_cntr last on"><span class="blind">last</span></a>
+                            </div>
+                        </div>
+                    </div>
+
+                     
+                    <div class="title_wrap fixed">
+                        <div class="left cboth">
+                            <h1 class="flt">세모통닭 영등포점</h1>
+                            <div class="cntalign">
+                                <div class="list4nd_tab mgl20 mgt2">
+                                    <ul>
+                                        <li>
+                                            <p class="sub">개인사업자</p>
+                                        </li><!-- 활성화클래스 on -->
+                                        <li></li>
+                                        <li><span class="pipe sub">|</span></li>
+                                        <li>
+                                            <p class="sub">일반과세자</p>
+                                        </li><!-- 활성화클래스 on -->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <div class="cntalign"><a href="#none" class="btn_style5 preview"><span>미리보기</span></a></div>
+                            <div class="cntalign"><a href="#none" class="btn_style5"><span>변경이력</span></a></div>
+                        </div>
+                    </div>
+                        <div class="ipt_bx_wrap" style="overflow-y: scroll; padding: 65px 20px 100px; height: 700px; box-sizing: border-box;">
+
+                            <!-- 보고서 수정 -->
+                            <div id="rprt_data_div" style="display: block;">
+                                <div class="ipt_bx_in" style="padding-left: 390px; " >
+                                    <!-- 이미지 영역 -->
+                                    <div class="thumb" style="width: 350px;">
+                                        <div class="ipt_bx">
+                                            <table>
+                                                <tbody>
+                                                    <!-- 2019-08-23 -->
+                                                    <tr>
+                                                        <th scope="row">
+                                                            <div>인사말 작성</div>
+                                                            <textarea style="width: 350px; resize: none;" class="mgt20"></textarea>
+                                                        </th>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <div class="tar"><span>저장되었습니다. 2022.12.25 15:15</span></div>
+                                        </div>
+                                    </div>
+                                    <!-- //이미지 영역 -->
+                                    <!-- 테이블 영역 -->
+                                    <div class="ipt_bx">
+                                        <table class="" summary="">
+                                            <tbody>
+                                                <!-- 2019-08-23 -->
+                                                <tr>
+                                                    <th class="pdb9" scope="row" colspan="2">
+                                                        <div>요약</div>
+                                                    </th>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">
+                                                        <div>매출공급가액 <span class="txt_g">500건</span></div>
+                                                    </th>
+                                                    <td class="tar">
+                                                        <span>90,561,000원</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">
+                                                        <div>매출 세액</div>
+                                                    </th>
+                                                    <td class="tar">
+                                                        <span>205,561,000원</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="sum">
+                                                    <th scope="row">
+                                                        <div>매입공급가액 <span class="txt_g">400건</span></div>
+                                                    </th>
+                                                    <td class="tar">
+                                                        <span>40,561,000원</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">
+                                                        <div>매입 세액</div>
+                                                    </th>
+                                                    <td class="tar">
+                                                        <span>7,056,100원</span>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <div class="areaRudSemor">
+                                            <!-- 비활성화시 off클래스 추가 -->
+                                            <a href="#none" class="btn_rud_semor"><span>검토완료</span></a>
+                                            <span class="mgl4">최종검토 일자 : 2023-01-01 13:15</span>
+                                        </div>
+                                    </div>
+                                </div>
+                
+                                <div class="title_wrap mgt50">
+                                    <div class="left cboth">
+                                        <h1>
+                                            <div class="data_veiw">
+                                                매출
+                                                <span class="img_err">
+                                                    <a href="#none"><img src="../img/txof/ico/icon_q_b.png" alt="알림"></a>
+                                                    <!-- 레이어 -->
+                                                    <div class="ly_ico_notibx" style="top:32px; right: -100px; display: none;">
+                                                        <span class="tail" style="right: 102px"></span>
+                                                        <div class="inner">
+                                                            <p>카드/온라인 매출 세액 계산식</p>
+                                                            <p class="txt">공급가액 : 합계금액 * 100 / 110</p>
+                                                            <p class="txt">세액 : 합계금액 * 10 / 110</p>
+                                                        </div>
+                                                    </div>
+                                                    <!-- //레이어 -->
+                                                </span>
+                                                <span class="data_info">
+                                                    * 홈택스 기준으로 보고서 데이터 제공 (단, PG 배달 쇼핑 매출은 분기별 제공)
+
+                                                </span>
+                                            </div>
+
+                                        </h1>
+                                    </div>
+                                </div>
+                
+                                <!-- 리스트 테이블 -->
+                                <!-- 리스트 테이블 상단 -->
+                                <div class="list_scroll_top"><!-- [D] 하단테이블 세로스   크롤 발생시 pdr 클래스 추가 -->
+                                        <table class="tbl_result" summary="">
+                                            <caption></caption>
+                                            <colgroup>
+                                                <col style="width:15%;">
+                                                <col style="width:12%;">
+                                                <col style="width:12%;">
+                                                <col style="width:12%;">
+                                                <col style="width:12%;">
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col" class="tal"><div>구분</div></th>
+                                                    <th scope="col" class="tar"><div>건수</div></th>
+                                                    <th scope="col" class="tar"><div>공급가액</div></th>
+                                                    <th scope="col" class="tar"><div>세액</div></th>
+                                                    <th scope="col" class="tar"><div>합계금액</div></th>
+                                                </tr>
+                                            </thead>
+                                        </table>
+                                    
+                                </div>
+                                
+                                <!-- //리스트 테이블 상단 -->
+                                <div class="list_scroll"  style="overflow:visible;">
+                                    <table class="tbl_result slpc" summary="">
+                                        <caption></caption>
+                                        <colgroup>
+                                            <col style="width:15%;">
+                                            <col style="width:12%;">
+                                            <col style="width:12%;">
+                                            <col style="width:12%;">
+                                            <col style="width:12%;">
+                                        </colgroup>
+                
+                                        <tbody style="display: table-tbody;"><!-- [D] style="display: none / table-tbody;" -->
+                                            <tr>
+                                                <td class="tit"><div  class="tal">전자세금계산서</div></td>
+                                                <td><div class="tar">500</div></td>
+                                                <td><div class="tar">5,000,000</div></td>
+                                                <td><div class="tar">500,000</div></td>
+                                                <td><div class="tar">5,500,000</div></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tit"><div  class="tal">전자계산서</div></td>
+                                                <td><div class="tar">500</div></td>
+                                                <td><div class="tar">5,000,000</div></td>
+                                                <td><div class="tar">500,000</div></td>
+                                                <td><div class="tar">5,500,000</div></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tit"><div  class="tal">종이세금계산서</div></td>
+                                                <td>
+                                                    <!-- 입력되지않은 경우 err 클래스 -->
+                                                    <div class="tar err">
+                                                        <input type="text">
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <!-- PG·오픈마켓 매출이 있을 때 -->
+                                                    <div class="tar">
+                                                        <input type="text">
+                                                    </div>
+                                                </td>
+                                                <td><div class="tar">0</div></td>
+                                                <td><div class="tar">0</div></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tit"><div  class="tal">종이계산서</div></td>
+                                                <td>
+                                                    <!-- 입력되지않은 경우 err 클래스 -->
+                                                    <div class="tar">
+                                                        <input type="text">
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <!-- PG·오픈마켓 매출이 있을 때 -->
+                                                    <div class="tar">
+                                                        <input type="text">
+                                                    </div>
+                                                </td>
+                                                <td><div class="tar">0</div></td>
+                                                <td><div class="tar">0</div></td>
+                                            </tr>
+                                           
+                                            <tr>
+                                                <td class="tit"><div  class="tal">현금영수증</div></td>
+                                                <td><div class="tar">100</div></td>
+                                                <td><div class="tar">5,000,000</div></td>
+                                                <td><div class="tar">500,000</div></td>
+                                                <td><div class="tar">5,500,000</div></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tit"><div  class="tal">카드·제로페이</div></td>
+                                                <td><div class="tar">100</div></td>
+                                                <td><div class="tar">5,000,000</div></td>
+                                                <td><div class="tar">500,000</div></td>
+                                                <td><div class="tar">5,500,000</div></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tit tal">
+                                                    <div class="tblBox">
+                                                        <div class="tooltipWrap ">
+                                                            <span>PG·배달·쇼핑</span>
+                                                            <span class="qm">
+                                                                <img src="../img/txof/ico/icon_q_b.png" class="imgQmWhite">
+                                                                <div class="tooltip">
+                                                                    <p class="tit">
+                                                                        <strong>PG · 배달 · 쇼핑 매출 안내</strong>
+                                                                        분기가 끝나지 않은 경우 배달 매출만 활성화됩니다.<br>
+                                                                        분기마다 홈택스 데이터가 최종 업데이트되며,<br>
+                                                                        업데이트 후에는 수정이 불가합니다.
+                                                                    </p>
+                                                                </div>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td><div class="tar">100</div></td>
+                                                <td><div class="tar">5,000,000</div></td>
+                                                <td><div class="tar">500,000</div></td>
+                                                <td><div class="tar">5,500,000</div></td>
+                                            </tr>
+                                            
+                                            <tr class="low_tr">
+                                                <td class="tit"><div  class="tal">- PG·쇼핑</div></td>
+                                                <td><div class="tar">40</div></td>
+                                                <td><div class="tar">2,000,000</div></td>
+                                                <td><div class="tar">200,000</div></td>
+                                                <td><div class="tar">2,200,000</div></td>
+                                            </tr>
+                                            <tr class="low_tr">
+                                                <td class="tit"><div  class="tal">- 배달의 민족</div></td>
+                                                <td><div class="tar">20</div></td>
+                                                <td><div class="tar">1,000,000</div></td>
+                                                <td><div class="tar">100,000</div></td>
+                                                <td><div class="tar">1,100,000</div></td>
+                                            </tr>
+                                            <tr class="low_tr">
+                                                <td class="tit"><div  class="tal">- 요기요</div></td>
+                                                <td><div class="tar">20</div></td>
+                                                <td><div class="tar">1,000,000</div></td>
+                                                <td><div class="tar">100,000</div></td>
+                                                <td><div class="tar">1,100,000</div></td>
+                                            </tr>
+                                            <tr class="low_tr">
+                                                <td class="tit"><div  class="tal">- 쿠팡이츠</div></td>
+                                                <td><div class="tar">20</div></td>
+                                                <td><div class="tar">1,000,000</div></td>
+                                                <td><div class="tar">100,000</div></td>
+                                                <td><div class="tar">1,100,000</div></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="tit"><div  class="tal">기타(현금)</div></td>
+                                                <td><div class="tar">100</div></td>
+                                                <td><div class="tar">5,000,000</div></td>
+                                                <td><div class="tar">500,000</div></td>
+                                                <td><div class="tar">5,500,000</div></td>
+                                            </tr>
+                                            <tr class="sum">
+                                                <td class="tit"><div class="t_center">합계</div></td>
+                                                <td><div class="tar">200,000</div></td>
+                                                <td><div class="tar">1,000,000</div></td>
+                                                <td><div class="tar">1,000,000</div></td>
+                                                <td><div class="tar">1,000,000</div></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div class="title_wrap mgt50">
+                                    <div class="left cboth">
+                                        <h1>
+                                            <div class="data_veiw">
+                                                매입 
+                                            </div>
+
+                                        </h1>
+                                    </div>
+                                </div>
+                                <!-- //리스트 테이블 -->
+
+                                <div class="list_scroll_top"><!-- [D] 하단테이블 세로스   크롤 발생시 pdr 클래스 추가 -->
+                                    <table class="tbl_result" summary="">
+                                        <caption></caption>
+                                        <colgroup>
+                                            <col style="width:15%;">
+                                            <col style="width:12%;">
+                                            <col style="width:12%;">
+                                            <col style="width:12%;">
+                                            <col style="width:12%;">
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th scope="col" class="tal"><div>구분</div></th>
+                                                <th scope="col" class="tar"><div>건수</div></th>
+                                                <th scope="col" class="tar"><div>공급가액</div></th>
+                                                <th scope="col" class="tar"><div>세액</div></th>
+                                                <th scope="col" class="tar"><div>합계금액</div></th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                
+                                </div>
+                                
+                            <!-- //리스트 테이블 상단 -->
+                            <div class="list_scroll"  style="overflow:visible;">
+                                <table class="tbl_result slpc" summary="">
+                                    <caption></caption>
+                                    <colgroup>
+                                        <col style="width:15%;">
+                                        <col style="width:12%;">
+                                        <col style="width:12%;">
+                                        <col style="width:12%;">
+                                        <col style="width:12%;">
+                                    </colgroup>
+            
+                                    <tbody style="display: table-tbody;"><!-- [D] style="display: none / table-tbody;" -->
+                                        <tr>
+                                            <td class="tit"><div  class="tal">전자세금계산서</div></td>
+                                            <td><div class="tar">500</div></td>
+                                            <td><div class="tar">5,000,000</div></td>
+                                            <td><div class="tar">500,000</div></td>
+                                            <td><div class="tar">5,500,000</div></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tit"><div  class="tal">전자계산서</div></td>
+                                            <td><div class="tar">500</div></td>
+                                            <td><div class="tar">5,000,000</div></td>
+                                            <td><div class="tar">500,000</div></td>
+                                            <td><div class="tar">5,500,000</div></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tit"><div  class="tal">종이세금계산서</div></td>
+                                            <td>
+                                                <!-- 입력되지않은 경우 err 클래스 -->
+                                                <div class="tar">
+                                                    <input type="text">
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <!-- PG·오픈마켓 매출이 있을 때 -->
+                                                <div class="tar">
+                                                    <input type="text">
+                                                </div>
+                                            </td>
+                                            <td><div class="tar">0</div></td>
+                                            <td><div class="tar">0</div></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tit"><div  class="tal">종이계산서</div></td>
+                                            <td>
+                                                <!-- 입력되지않은 경우 err 클래스 -->
+                                                <div class="tar">
+                                                    <input type="text">
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <!-- PG·오픈마켓 매출이 있을 때 -->
+                                                <div class="tar">
+                                                    <input type="text">
+                                                </div>
+                                            </td>
+                                            <td><div class="tar">0</div></td>
+                                            <td><div class="tar">0</div></td>
+                                        </tr>
+                                       
+                                        <tr>
+                                            <td class="tit"><div  class="tal">현금영수증</div></td>
+                                            <td><div class="tar">100</div></td>
+                                            <td><div class="tar">5,000,000</div></td>
+                                            <td><div class="tar">500,000</div></td>
+                                            <td><div class="tar">5,500,000</div></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tit"><div  class="tal">카드</div></td>
+                                            <td><div class="tar">100</div></td>
+                                            <td><div class="tar">5,000,000</div></td>
+                                            <td><div class="tar">500,000</div></td>
+                                            <td><div class="tar">5,500,000</div></td>
+                                        </tr>
+                                     
+                                        <tr>
+                                            <td class="tit"><div  class="tal">기타(간이)</div></td>
+                                            <td><div class="tar">100</div></td>
+                                            <td><div class="tar">5,000,000</div></td>
+                                            <td><div class="tar">500,000</div></td>
+                                            <td><div class="tar">5,500,000</div></td>
+                                        </tr>
+                                        <tr class="sum">
+                                            <td class="tit"><div class="t_center">합계</div></td>
+                                            <td><div class="tar">200,000</div></td>
+                                            <td><div class="tar">1,000,000</div></td>
+                                            <td><div class="tar">1,000,000</div></td>
+                                            <td><div class="tar">1,000,000</div></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                
+
+                            <!-- 인건비 -->
+                            <div class="title_wrap mgt50">
+                                <div class="left cboth">
+                                    <h1>
+                                        <div class="data_veiw">
+                                            인건비
+                                        </div>
+                                    </h1>
+                                </div>
+                            </div>
+                            <!-- //리스트 테이블 -->
+                            <div class="list_scroll">
+                                <table class="tbl_result slpc" summary="">
+                                    <caption></caption>
+                                    <colgroup>
+                                        <col style="width:25%;">
+                                        <col style="width:45%;">
+                                        <col style="width:30%;">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" class="tal"><div>구분</div></th>
+                                            <th scope="col" class="t_center"><div>인원</div></th>
+                                            <th scope="col" class="tar"><div>지급금액</div></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="tit">
+                                                <div class="tal">근로 · 일용소득</div>
+                                            </td>
+                                            <td>
+                                                <div class="t_center">3</div>
+                                            </td>
+                                            <td>
+                                                <div class="tar">12,000,000</div>
+                                            </td>
+                                        </tr>
+                                        <tr class="low_tr">
+                                            <td>
+                                                <div class="tal"></div>
+                                            </td>
+                                            <td>
+                                                <div class="t_center"></div>
+                                            </td>
+                                            <td>
+                                                <div class="tar"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tit">
+                                                <div class="tal">사업소득</div>
+                                            </td>
+                                            <td>
+                                                <div class="t_center">1</div>
+                                            </td>
+                                            <td>
+                                                <div class="tar">3,000,000</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tit">
+                                                <div class="tal">기타소득</div>
+                                            </td>
+                                            <td>
+                                                <div class="t_center">10</div>
+                                            </td>
+                                            <td>
+                                                <div class="tar">11,000,000</div>
+                                            </td>
+                                        </tr>
+                                        <tr class="sum">
+                                            <td class="tit">
+                                                <div class="tal">합계</div>
+                                            </td>
+                                            <td>
+                                                <div class="t_center">15</div>
+                                            </td>
+                                            <td>
+                                                <div class="tar">29,000,000</div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <p class="data_info_bt">
+                                    * 원천징수이행상황신고서를 기준으로 작성됩니다.
+                                </p>
+                            </div>
+                              
+                            
+                        <!-- 인건비 끝 -->
+      
+                
+                            </div>    
+                            <!-- 보고서 수정 -->
+
+                            <!-- 변경 이력 -->
+
+                            <div id="rprt_chg_hist_div" style="display: none;">
+                                <div class="list_scroll_top" style="overflow:hidden;"><!-- [D] 하단테이블 세로스크롤 발생시 pdr 클래스 추가 -->
+                                    <table class="tbl_result" summary="">
+                                        <caption></caption>
+                                        <colgroup>
+                                            <col style="width:17%;">
+                                            <col style="width:10%;">
+                                            <col style="width:15%;">
+                                            <col style="width:12%;">
+                                            <col style="width:12%;">
+                                            <col style="width:12%;">
+                                            <col style="width:10%;">
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th scope="col"><div>변경일시</div></th>
+                                                <th scope="col"><div>카테고리</div></th>
+                                                <th scope="col" class="tal"><div>구분</div></th>
+                                                <th scope="col" class="tal"><div>항목명</div></th>
+                                                <th scope="col" class="tar"><div>변경 전</div></th>
+                                                <th scope="col" class="tar"><div>변경 후</div></th>
+                                                <th scope="col" class=""><div>처리자</div></th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                                <!-- //리스트 테이블 상단 -->
+                                <div class="list_scroll" style="">
+                                    <table class="tbl_result" summary="">
+                                        <caption></caption>
+                                        <colgroup>
+                                            <col style="width:17%;">
+                                            <col style="width:10%;">
+                                            <col style="width:15%;">
+                                            <col style="width:12%;">
+                                            <col style="width:12%;">
+                                            <col style="width:12%;">
+                                            <col style="width:10%;">
+                                        </colgroup>
+                                        <tfoot style="display:none;">
+                                            <tr class="no_hover">
+                                                <td colspan="7" class="no_info"><div>변경된 이력이 없습니다.</div></td>
+                                            </tr>
+                                        </tfoot>
+                                        <tbody style="display: table-tbody;">
+                                            <tr>
+                                                <td><div style="position:relative;" class="t_center" name="CHG_DTM">2023-03-24 19:32</div></td>
+                                                <td><div class="t_center" name="TRSC_DIV_NM">매출</div></td>
+                                                <td><div class="tal" name="EVDC_DIV_NM">종이세금계산서</div></td>
+                                                <td><div class="tal" name="CHG_ITEM_NM">건수</div></td>
+                                                <td><div class="tar" name="BEFR_VAL">0</div></td>
+                                                <td><div class="tar" name="AFTR_VAL">10</div></td>
+                                                <td><div class="tac" name="CHRG_NM">곽조이</div></td>
+                                            </tr>
+                                            <tr>
+                                                <td><div style="position:relative;" class="t_center" name="CHG_DTM">2023-03-24 19:32</div></td>
+                                                <td><div class="t_center" name="TRSC_DIV_NM">매출</div></td>
+                                                <td><div class="tal" name="EVDC_DIV_NM">종이세금계산서</div></td>
+                                                <td><div class="tal" name="CHG_ITEM_NM">공급가액</div></td>
+                                                <td><div class="tar" name="BEFR_VAL">0</div></td>
+                                                <td><div class="tar" name="AFTR_VAL">10</div></td>
+                                                <td><div class="tac" name="CHRG_NM">곽조이</div></td>
+                                            </tr>
+                                            <tr>
+                                                <td><div style="position:relative;" class="t_center" name="CHG_DTM">2023-03-24 19:19</div></td>
+                                                <td><div class="t_center" name="TRSC_DIV_NM">매출</div></td>
+                                                <td><div class="tal" name="EVDC_DIV_NM">종이세금계산서</div></td>
+                                                <td><div class="tal" name="CHG_ITEM_NM">건수</div></td>
+                                                <td><div class="tar" name="BEFR_VAL">0</div></td>
+                                                <td><div class="tar" name="AFTR_VAL">10</div></td>
+                                                <td><div class="tac" name="CHRG_NM">곽조이</div></td>
+                                            </tr>
+                                            <tr>
+                                                <td><div style="position:relative;" class="t_center" name="CHG_DTM">2023-03-24 19:19</div></td>
+                                                <td><div class="t_center" name="TRSC_DIV_NM">매출</div></td>
+                                                <td><div class="tal" name="EVDC_DIV_NM">종이세금계산서</div></td>
+                                                <td><div class="tal" name="CHG_ITEM_NM">공급가액</div></td>
+                                                <td><div class="tar" name="BEFR_VAL">0</div></td>
+                                                <td><div class="tar" name="AFTR_VAL">10</div></td>
+                                                <td><div class="tac" name="CHRG_NM">곽조이</div></td>
+                                            </tr>
+                                            <tr>
+                                                <td><div style="position:relative;" class="t_center" name="CHG_DTM">2023-03-10 09:49</div></td>
+                                                <td><div class="t_center" name="TRSC_DIV_NM">매입</div></td>
+                                                <td><div class="tal" name="EVDC_DIV_NM">종이계산서</div></td>
+                                                <td><div class="tal" name="CHG_ITEM_NM">건수</div></td>
+                                                <td><div class="tar" name="BEFR_VAL">1</div></td>
+                                                <td><div class="tar" name="AFTR_VAL">0</div></td>
+                                                <td><div class="tac" name="CHRG_NM">로우미</div></td>
+                                            </tr>
+                                            <tr>
+                                                <td><div style="position:relative;" class="t_center" name="CHG_DTM">2023-03-10 09:49</div></td>
+                                                <td><div class="t_center" name="TRSC_DIV_NM">매입</div></td>
+                                                <td><div class="tal" name="EVDC_DIV_NM">종이계산서</div></td>
+                                                <td><div class="tal" name="CHG_ITEM_NM">공급가액</div></td>
+                                                <td><div class="tar" name="BEFR_VAL">1</div></td>
+                                                <td><div class="tar" name="AFTR_VAL">0</div></td>
+                                                <td><div class="tac" name="CHRG_NM">로우미</div></td>
+                                            </tr>
+                                            <tr>
+                                                <td><div style="position:relative;" class="t_center" name="CHG_DTM">2023-03-10 09:49</div></td>
+                                                <td><div class="t_center" name="TRSC_DIV_NM">매출</div></td>
+                                                <td><div class="tal" name="EVDC_DIV_NM">종이계산서</div></td>
+                                                <td><div class="tal" name="CHG_ITEM_NM">건수</div></td>
+                                                <td><div class="tar" name="BEFR_VAL">1</div></td>
+                                                <td><div class="tar" name="AFTR_VAL">0</div></td>
+                                                <td><div class="tac" name="CHRG_NM">로우미</div></td>
+                                            </tr>
+                                            <tr>
+                                                <td><div style="position:relative;" class="t_center" name="CHG_DTM">2023-03-10 09:49</div></td>
+                                                <td><div class="t_center" name="TRSC_DIV_NM">매출</div></td>
+                                                <td><div class="tal" name="EVDC_DIV_NM">종이계산서</div></td>
+                                                <td><div class="tal" name="CHG_ITEM_NM">공급가액</div></td>
+                                                <td><div class="tar" name="BEFR_VAL">1</div></td>
+                                                <td><div class="tar" name="AFTR_VAL">0</div></td>
+                                                <td><div class="tac" name="CHRG_NM">로우미</div></td>
+                                            </tr>
+                                            <tr>
+                                                <td><div style="position:relative;" class="t_center" name="CHG_DTM">2023-03-10 09:49</div></td>
+                                                <td><div class="t_center" name="TRSC_DIV_NM">매입</div></td>
+                                                <td><div class="tal" name="EVDC_DIV_NM">종이세금계산서</div></td>
+                                                <td><div class="tal" name="CHG_ITEM_NM">건수</div></td>
+                                                <td><div class="tar" name="BEFR_VAL">1</div></td>
+                                                <td><div class="tar" name="AFTR_VAL">0</div></td>
+                                                <td><div class="tac" name="CHRG_NM">로우미</div></td>
+                                            </tr>
+                                            <tr>
+                                                <td><div style="position:relative;" class="t_center" name="CHG_DTM">2023-03-10 09:49</div></td>
+                                                <td><div class="t_center" name="TRSC_DIV_NM">매입</div></td>
+                                                <td><div class="tal" name="EVDC_DIV_NM">종이세금계산서</div></td>
+                                                <td><div class="tal" name="CHG_ITEM_NM">공급가액</div></td>
+                                                <td><div class="tar" name="BEFR_VAL">1</div></td>
+                                                <td><div class="tar" name="AFTR_VAL">0</div></td>
+                                                <td><div class="tac" name="CHRG_NM">로우미</div></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- //리스트 테이블 -->
+                                <div class="paging_wrap">
+                                    <div class="paging" id="CREATE_PG_LINK2"><a id="paging_first" href="javascript:" class="btn_pag_cntr first"><span class="blind">first</span></a><a id="paging_pre" href="javascript:" class="btn_pag_cntr prev"><span class="blind">previous</span></a><span class="pag_num"><a class="on">1</a><a>2</a><a>3</a><a>4</a><a>5</a><a>6</a><a>7</a><a>8</a><a>9</a><a>10</a> </span><a id="paging_next" href="javascript:" class="btn_pag_cntr next"><span class="blind">next</span></a><a id="paging_last" href="javascript:" class="btn_pag_cntr last"><span class="blind">last</span></a></div>
+                                </div>
+                                <!-- 보고서 변경이력 영역 끝-->
+                            </div>
+                            <!-- 변경 이력 -->
+                        </div>
+
+
+                    <div class="fixedBottom">
+                        <div class="tac">
+                            <a href="#none" class="btn_style_gray_big bd"><span>닫기</span></a>&nbsp;&nbsp
+        
+                            <!-- 비활성화시 disabled 클래스 -->
+                            <a href="#none"class="btn_style_big disabled"><span>저장</span></a></div>
+                        </div>
+                </div>
+                <!-- //팝업 컨텐츠 -->
+                    <!-- 미리보기 팝업 -->
+                    <div class="pop_wrap preview" style="width:400px;">
+                                
+                        <!-- 팝업 헤더 -->
+                        <div class="pop_header">
+                            <h1>보고서 미리보기</h1>
+                            <a href="#" onClick="close_smartPop();" class="btn_popclose">
+                                <img src="../img/txof/btn/btn_popclose_white.gif"
+                                    alt="팝업닫기">
+                            </a>
+                        </div>
+                        <!-- //팝업 헤더 -->
+                    
+                        <!-- 팝업 컨텐츠 -->
+                        <div class="pop_container">
+                    
+                            <div class="data_list_v">
+                                <div class="cust_wrap">
+                                    <a href="#none" class="btn_style5"><span>새로고침</span></a>
+                                    <img class="imgMockup" src="../img/txof/bg/bg_frame_v2.png" alt="">
+                                    <iframe
+                                        src="https://sitsemor.smjb.co.kr/vwmr_rept_102.act?REQ_DATA=wQNhwfVsEy05276ee34a734d14be45ec9f9aec3ff6cd80498645d307a56d892558a33599ad1dba3734b77f1cf13a60cdf914baea3c1340f154a0c946afa9574e1ede098d39831cf0c8754ca9e831054eff70046003289e5baf1d96cdb857b7521742174141c21cab9187af9a31956df13a104718391ea6a73534484a2cb03b3667434eab84c&PREVIEW_YN=Y&WEB_YN=Y"
+                                        frameborder="0"></iframe>
+                                </div>
+                            </div>
+                    
+                            <div class="areaSend">
+                                <div class="phoneNumWrap">
+                                    <input type="number">
+                                    <span class="divide">-</span>
+                                    <input type="number">
+                                    <span class="divide">-</span>
+                                    <input type="number">
+                                </div>
+                                <a href="#none" class="btn_style_gray_big bd"><span>나에게 발송</span></a>
+                            </div>
+                            <div class="areaSend user">
+                                <div class="phoneNumWrap">
+                                    <input type="number" value="010" readonly="readonly">
+                                    <span class="divide">-</span>
+                                    <input type="number" value="2703" readonly="readonly">
+                                    <span class="divide">-</span>
+                                    <input type="number" value="9626" readonly="readonly">
+                                </div>
+                                <a href="#none" class="btn_style_big"><span>고객에게 발송</span></a>
+                            </div>
+                    
+                    
+                        </div>
+                        <!-- //팝업 컨텐츠 -->
+                    </div>
+                     <!-- //미리보기 팝업 -->
+          
+            </div>
+        </div>
+
+    </div>
+	<!-- footer-->
+	<div class="footer">
+		<div class="copyright_wrap">
+			<div class="copyright_box">
+				<p>Copyright(c) <strong>Webcash.</strong> All rights reserved.</p>
+			</div>
+			<div class="ft_menu"></div>
+		</div>
+	</div>
+	<!-- //footer -->
+</div>
+<!-- //wrap -->
+<script>
+        $(document).ready(function () {
+        $(".click_e").click(function () {
+            $(".popup_pb_bg").css("display", "block"); 
+            // $(".popup_bg").hide();
+            // $(".popup.bottom").css("bottom", "-100%"); 
+            // $(".terms_01").css("display", "block"); 
+
+        });
+        $(".btn_popclose").click(function () {
+            $(".popup_pb_bg").css("display", "none"); 
+            
+
+        });
+
+    
+    })
+
+	
+
+	$(".btn_style5.preview").on("click", function() {
+			$(".pop_wrap.confirmRept").toggleClass("showPop");
+		})
+		
+		// <![CDATA[  <-- For SVG support
+		if ('WebSocket' in window) {
+			(function () {
+				function refreshCSS() {
+					var sheets = [].slice.call(document.getElementsByTagName("link"));
+					var head = document.getElementsByTagName("head")[0];
+					for (var i = 0; i < sheets.length; ++i) {
+						var elem = sheets[i];
+						var parent = elem.parentElement || head;
+						parent.removeChild(elem);
+						var rel = elem.rel;
+						if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+							var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+							elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+						}
+						parent.appendChild(elem);
+					}
+				}
+				var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+				var address = protocol + window.location.host + window.location.pathname + '/ws';
+				var socket = new WebSocket(address);
+				socket.onmessage = function (msg) {
+					if (msg.data == 'reload') window.location.reload();
+					else if (msg.data == 'refreshcss') refreshCSS();
+				};
+				if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+					console.log('Live reload enabled.');
+					sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+				}
+			})();
+		}
+		else {
+			console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+		}
+	// ]]>
+	
+
+</script>
+
+
+
+</body>
+</html>
+

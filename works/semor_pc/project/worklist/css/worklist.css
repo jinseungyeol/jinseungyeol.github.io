@@ -1,0 +1,89 @@
+/* @charset "utf-8"; */
+
+/* reset */
+@font-face { font-family: 'Pretendard'; font-weight: normal; src: url(../../font/Pretendard-Medium.woff2) format('woff2'); } 
+@font-face { font-family: 'Pretendard'; font-weight: 600; src: url(../../font/Pretendard-SemiBold.woff2) format('woff2'); } 
+@font-face { font-family: 'Pretendard'; font-weight: bold; src: url(../../font/Pretendard-Bold.woff2) format('woff2'); } 
+
+html { position:relative; min-height:100% } 
+html,body { font-family:'Pretendard'; color:#111; font-weight:normal; -webkit-text-size-adjust:none; -moz-text-size-adjust:none; -ms-text-size-adjust:none; line-height: 1.5 } 
+html,body,div,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,address,cite,code,del,dfn,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,input,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video { margin:0; padding:0; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; -webkit-text-size-adjust:none; -webkit-font-smoothing:antialiased; font-size: 15px } 
+body,button,h1,h2,h3,h4,h5,input,select,table,textarea { font-family:'Pretendard'; margin:0; padding:0 } 
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,legend,select,input,textarea,p,blockquote,th,td,menu,button,a,span,strong,label,header,footer,section,article,aside,nav,hgroup,details,figure,figcaption { word-break:break-word; box-sizing:border-box; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; -ms-box-sizing:border-box } /* 여백을 포함한 사이즈 설정*/ 
+h1,h2,h3,h4,h5,h6,input,select,textarea,button,option { color:inherit; font-family:'Pretendard'; font-size:100%; font-weight:normal } 
+h1,h2,h3,h4,h5,h6,strong,b,th { font-weight:bold } 
+em,var,address,i { font-style:normal } 
+ul,ol,li { list-style:none } 
+legend,fieldset,button,img { border:0 } 
+img { max-width:100%; vertical-align:top } 
+input,select,textarea,button,label,strong,a,time { vertical-align:inherit } 
+input,select,textarea,button,option { font-family:inherit; font-weight:inherit } 
+input,select,textarea { appearance:none; -webkit-appearance:none; border-radius: 0 } 
+input:focus, textarea:focus { outline-style: none; box-shadow: none; border: 0px } 
+textarea { resize:none; border: none } 
+button,select,option { color:inherit; text-transform:none } 
+table { border-collapse:collapse; border-spacing:0 } 
+button { background:none; cursor:pointer; white-space: nowrap; overflow:visible; outline: none } 
+a { color:inherit; font-size: inherit; text-decoration: none; } 
+
+/* common */
+.moveLink { color: #12997a; text-decoration: underline; } 
+.areaFloatingBtn { position: fixed; bottom: 40px; right: 20px; opacity: 0; visibility: hidden; z-index: 1100; transition: .35s } 
+.areaFloatingBtn a { display: block; width: 60px; height: 60px; padding-top: 7px; box-shadow: 4px 5px 8px rgba(0,0,0,0.28); background: #fff; text-align: center; border-radius: 50% } 
+.areaFloatingBtn a img { vertical-align: middle } 
+.areaFloatingBtn a p { font-size: 0.8rem; font-weight: 600 } 
+
+.tabMenuList { display: flex; gap: 4px; } 
+.tabMenuList li { position:relative; width: auto; margin-top: 5px; border: 1px solid #ddd; border-bottom: none; border-radius: 3px 3px 0 0 } 
+.tabMenuList li a.btnTab { display: block; padding: 8px 12px; color: #666; font-size: 15px; } 
+
+/* active */
+body.active .areaFloatingBtn.btnTop { opacity: 1; visibility: visible } 
+.tabMenuList li.active { background: #111 } 
+.tabMenuList li.active a.btnTab { color: #fff } 
+
+/* content */
+.wrapper { padding: 0 20px } 
+.wrapper h1 { margin: 15px 0; font-size: 25px; } 
+
+.container { position: relative } 
+
+.header { position: -webkit-sticky; position: sticky; top: -1px; margin: 0 -20px; padding: 20px 0 0 20px; border-bottom: 1px solid #ddd; background: #fff; overflow-x: scroll; overflow-y: hidden; } 
+.header::-webkit-scrollbar { display: none; } 
+
+.content { margin-top: 20px } 
+.content .tabContentWrap { margin-bottom: 25px; } 
+.content .tabContentWrap h2 { margin: 25px 0 10px; font-size: 15px } 
+.content .tabContentWrap table { width: 100% } 
+.content .tabContentWrap table tr:hover { background: #17bf981c; } 
+.content .tabContentWrap table tr.update { background: #baf9e1; } 
+.content .tabContentWrap table tr th { padding: 5px 0; background: #788496; color: #fff; border: 1px solid #d1d1d1; font-size: 13px; } 
+.content .tabContentWrap table tr td { padding: 5px; text-align: center; border: 1px solid #d1d1d1; word-break: keep-all; font-size: 13px; } 
+.content .tabContentWrap table tr td.pId { white-space: nowrap } 
+.content .tabContentWrap table tr td.pId a { text-decoration: underline } 
+.content .tabContentWrap table tr.unused td { background-color: #eee; color: #999; } 
+.listDot { margin-bottom: 20px } 
+.listDot li { position: relative; padding: 4px 10px; font-size: 15px } 
+.listDot li::before { content: "•"; position: absolute; left: 0 } 
+
+.moveGuideWrap { padding: 10px; background: #f6f6f6; border: 1px solid #efefef; border-radius: 10px } 
+.moveGuideWrap .col { flex: 1 0 auto; } 
+.moveGuideWrap .col .cont { display: flex; align-items: center; height: 40px; } 
+.moveGuideWrap strong { display: block; padding-bottom: 10px } 
+.moveGuideWrap .moveGuide { padding: 5px 22px 5px 8px; border: 1px solid #000; border-radius: 5px; background: url(../../common/img/ico_ts_right.png) no-repeat center right 8px / 6px auto; background-color: #fff } 
+
+/* 미리보기 */
+#preview { background:#fff; position:fixed; top:70px; left:20px; border:3px #333 solid; overflow:hidden; z-index:1000; box-shadow:5px 5px 15px rgba(0,0,0,.4); width: 60vw; min-width:1530px; height:calc(100vh - 250px); border-radius:1rem; transform-origin: left center; } 
+#preview iframe { width: 100%; height: 100% } 
+
+/* 검색 */
+#searchInput { height: 40px; padding: 0 20px; border-radius: 27px; border: none; background: #fff; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); } 
+#searchInput:focus { border: 1px solid #c8c8c8; padding: 0 19px; } 
+#noResultsMsg { padding: 150px 0 200px; text-align: center; font-size: 18px; font-weight: 600; } 
+
+/* Media Query */
+@media screen and (max-width: 980px){
+ .content .tabContentWrap table .remark { display: none } 
+ .content .tabContentWrap table .depth4 { display: none } 
+ .content .tabContentWrap table .depth5 { display: none } 
+ }

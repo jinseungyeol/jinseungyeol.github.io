@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>fin_acct_021 / fin_acct_022 / fin_acct_024</title>
+    <link rel="stylesheet" href="../../css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../../css/mobiscroll.jquery.min.css">
+    <link rel="stylesheet" href="../../css/semoR_base.css">
+    <link rel="stylesheet" href="../../css/semoR_common.css">
+    <link rel="stylesheet" href="../../css/semoR_style.css">
+    <link rel="stylesheet" href="../../css/semoR_rept.css">
+  <script src="../../js/jquery-3.5.1.min.js"></script>
+    <script src="../../js/jquery-ui.min.js"></script>
+    <script src="../../js/swiper-bundle.min.js"></script>
+    <script src="../../js/mobiscroll.jquery.min.js"></script>
+    <script src="../../js/semoR_ui.js"></script>
+</head>
+
+<body>
+    <!-- wrapper -->
+    <div class="wrapper">
+        <!-- header -->
+        <div class="header">
+            <h1 class="subTit">거래내역 내보내기</h1>
+            <ul class="topMenu">
+                <li class="left">
+                    <a class="btnBack" href="javascript:;" role="button"><span class="blind">뒤로가기</span></a>
+                </li>
+            </ul>
+        </div>
+        <!-- //header -->
+
+        <!-- container -->
+        <div class="container">
+            <div class="areaTabMenu">
+                <div class="calendarWrap">
+                    <div class="fieldGroup">
+                        <div class="stList col date">
+                            <a href="javascript:;" title="날짜 선택" role="button">
+                                <input type="text" placeholder="2022.02.01" readonly="readonly">
+                            </a>
+                        </div>
+                        <span class="divider">-</span>
+                        <div class="stList col date">
+                            <a href="javascript:;" title="날짜 선택" role="button">
+                                <input type="text" placeholder="2022.02.01" readonly="readonly">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <ul class="tabMenuList">
+
+                    <!-- 활성화시 active -->
+                    <li class="active">
+                        <a href="javascript:;" class="btnTab" role="button">1개월</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="btnTab" role="button">3개월</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="btnTab" role="button">6개월</a>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="btnTab" role="button">12개월</a>
+                    </li>
+                </ul>
+            </div>
+            <ul class="busiDataList">
+                <li>
+                    <dl>
+                        <dt>거래종류</dt>
+                        <dd>
+                            <div class="infoArea">
+                                <div class="rCont">
+                                    <a href="javascript:;" class="moveLink">
+                                        <span class="state pointColor02">선택</span>
+                                        <div class="rCont">
+                                            <img class="tsRight" src="../../img/ico_ts_right.png" alt="오른쪽화살표">
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </dd>
+                    </dl>
+                </li>
+            </ul>
+            <ul class="listTypeInput">
+                <li>
+                    <div class="formHolder">
+                        <div class="inputList">
+                            <input type="email" placeholder="이메일 주소 입력" value="hg6852@maplestory.com" class="inputed">
+                            <button type="button" class="btnReset">
+                                <img src="../../img/ico_close_gray.png" alt="입력초기화">
+                            </button>
+                        </div>
+                    </div>
+                    <div class="areaInfo">
+                        <span class="infoTxt02 pointColor02">· 입력하신 주소로 엑셀 형태로 내역을 보내드립니다.</span>
+                    </div>
+                </li>
+            </ul>
+            <div class="areaBtmFixed">
+                <div class="formWrap selectAll">
+                    <div class="total">
+                        <div class="formHolder">
+                            <input type="checkbox" id="typeAll01" class="inputed">
+                            <label class="check" for="typeAll01">개인정보 수집 및 이용 동의</label>
+                        </div>
+                        <div class="rCont">
+                            <button class="btnDetail">자세히</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="areaBodyBtn">
+                    <button type="button" class="btnPointBg pointBgColor">내보내기</button>
+                </div>
+            </div>
+        </div>
+        <!-- //container -->
+    </div>
+    <!-- //wrapper -->
+</body>
+</html>

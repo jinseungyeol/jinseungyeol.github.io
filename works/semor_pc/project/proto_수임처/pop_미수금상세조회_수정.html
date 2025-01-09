@@ -1,0 +1,199 @@
+﻿<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<title>세무대리인 for 경리나라</title>
+<link rel="stylesheet" href="../css/reset_taxp.css">
+<link rel="stylesheet" href="../css/content_taxp.css"><!-- [D] 세무대리인용 -->
+
+<!-- custom scrollbar plugin css -->
+<link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+<script src="https://publ.roumit.com/js/firebase_include.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+<!-- custom scrollbar plugin -->
+<script src="../js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../js/jquery.placeholder.min.js"></script>
+<script>
+$(function(){
+	// Invoke the plugin
+	$('input, textarea').placeholder({customClass:'my-placeholder'});
+});
+</script>
+
+</head>
+
+<body>
+<div class="layer_pop_wrap" style="width:450px;">
+	<!-- <div class="ly_btn"><a href="#none" class="btn_closex"><img src="../img/txof/btn/btn_layerpopup_close.gif" alt=""></a></div> -->
+	<div class="layer_cont">
+		<!-- 상단타이틀 -->
+		<div class="title_wrap h1type">
+			<div class="left">
+				<h1>2022년 5월 미수금 상세조회</h1>
+			</div>
+		</div>
+		<!-- //상단타이틀 -->
+
+		<!-- 서브타이틀 -->
+		<div class="stitle_wrap bd_none">
+			<div class="left">
+				<h2 class="bul_2">거래처 정보</h2>
+			</div>
+		</div>
+		<!-- //서브타이틀 -->
+
+		<!-- 테이블 -->
+		<div class="tbl_info mgb20">
+			<table>
+				<colgroup>
+					<col style="width: 35%;">
+					<col style="width: 65%;">
+				</colgroup>
+				<tbody>
+					<tr>
+						<th><div>거래처명</div></th>
+						<td><div class="fwb">(주)해바라기</div></td>
+					</tr>
+					<tr>
+						<th><div>사업자 번호</div></th>
+						<td><div class="fwb">251-86-35214</div></td>
+					</tr>
+					<tr>
+						<th><div>거래처 담당자</div></th>
+						<td><div class="fwb">한철수 (010-7654-4848)</div></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<!-- //테이블 -->
+
+		<!-- 서브타이틀 -->
+		<div class="stitle_wrap bd_none">
+			<div class="left">
+				<h2 class="bul_2">미수금 정보</h2>
+			</div>
+		</div>
+		<!-- //서브타이틀 -->
+
+		<!-- 테이블 -->
+		<div class="tbl_info mgb20">
+			<table>
+				<colgroup>
+					<col style="width: 35%;">
+					<col style="width: 65%;">
+				</colgroup>
+				<tbody>
+					<tr>
+						<th><div>전월 미수금</div></th>
+						<td><div class="fwb">0원</div></td>
+					</tr>
+					<tr>
+						<th><div>당월 미수금</div></th>
+						<td><div class="fwb">110,000원</div></td>
+					</tr>
+					<tr>
+						<th><div>총 미수금</div></th>
+						<td><div class="fwb">110,000원</div></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<!-- //테이블 -->
+
+		<!-- 서브타이틀 -->
+		<div class="stitle_wrap">
+			<div class="left">
+				<h2 class="bul_2">수기입금</h2>
+			</div>
+			<div class="right">
+				<div class="cntalign"><a href="#none" class="txt_b txt_cnt">[부분수납]</a></div>
+			</div>
+		</div>
+		<!-- //서브타이틀 -->
+
+		<!-- 테이블 -->
+		<div class="tbl_input">
+			<table>
+				<colgroup>
+					<col style="width: 35%;">
+					<col style="width: 65%;">
+				</colgroup>
+				<tbody>
+					<tr>
+						<th><div>수금일자</div></th>
+						<td class="ipt"><!-- 입력 창 활성화 시 ipt클래스 추가 -->
+							<div>
+								<input type="text" value="2022-06-07" style="width: 72px;" class="tal">
+								<a href="#none"><img src="../img/txof/ico/ico_calendar.png" alt="달력"></a>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<th><div>수금방법</div></th>
+						<td class="ipt"><!-- 입력 창 활성화 시 ipt클래스 추가 -->
+							<div class="select_area">
+								<a href="#none" class="sel_tit">계좌입금</a>
+								<!-- 레이어 -->
+								<div class="ly_select_list" style="display:none;">
+									<ul>
+										<li><a href="#none">계좌입금</a></li>
+										<li><a href="#none">카드입금</a></li>
+										<li><a href="#none">기타입금</a></li><!-- 2022-08-19 -->
+									</ul>
+								</div>
+								<!-- //레이어 -->
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<th><div>수금방법</div></th>
+						<td class="ipt"><!-- 입력 창 활성화 시 ipt클래스 추가 -->
+							<div class="select_area">
+								<a href="#none" class="sel_tit on">계좌입금</a>
+								<!-- 레이어 -->
+								<div class="ly_select_list" style="display:;">
+									<ul>
+										<li><a href="#none">계좌입금</a></li>
+										<li><a href="#none">카드입금</a></li>
+										<li><a href="#none">기타입금</a></li><!-- 2022-08-19 -->
+									</ul>
+								</div>
+								<!-- //레이어 -->
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<th><div>수금액</div></th>
+						<td class="ipt"><!-- 입력 창 활성화 시 ipt클래스 추가 -->
+							<div class="txt_iptbx">
+								<span class="txt"><input type="text" value="110,000" class="tar fwb"></span>
+								<div class="btn"><a href="#none" class="btn_del"><span class="blind">삭제</span></a></div>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<th><div>비고</div></th>
+						<td class="ipt"><!-- 입력 창 활성화 시 ipt클래스 추가 -->
+							<div class="txt_iptbx">
+								<span class="txt"><input type="text" placeholder="(내용을 입력하세요.)" value="" class="tal"></span>
+								<div class="btn"><a href="#none" class="btn_del"><span class="blind">삭제</span></a></div>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<!-- 테이블 -->
+
+		<!-- 하단버튼 -->
+		<div class="tac mgt15">
+			<a href="#none" class="btn_style1_b"><span>저장</span></a>
+			<a href="#none" class="btn_style1"><span>닫기</span></a>
+		</div>
+		<!-- //하단버튼 -->
+	</div>
+</div>
+</body>
+</html>

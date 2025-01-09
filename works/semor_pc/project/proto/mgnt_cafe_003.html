@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<title>세모리포트</title>
+<link rel="stylesheet" href="../css/reset_taxp.css">
+<link rel="stylesheet" href="../css/app_header.css"><!-- [D] 세무대리인용 header -->
+<link rel="stylesheet" href="../css/content_taxp.css"><!-- [D] 세무대리인용 -->
+
+<!-- custom scrollbar plugin css -->
+<link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+<script src="https://publ.roumit.com/js/firebase_include.js"></script>
+  <script src="../js/lib/jquery/jquery-1.12.4.min.js"></script>
+<script src="../js/lib/jquery/jquery-ui-1.10.4.min.js"></script>
+<!-- custom scrollbar plugin -->
+<script src="../js/design/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../js/design/jquery.placeholder.min.js"></script>
+<script src="../js/lib/plugin/smart.popup.js"></script>
+<script src="../js/comm/common.js"></script>
+<script>
+$(function(){
+  // Invoke the plugin
+  $('input, textarea').placeholder({customClass:'my-placeholder'});
+  
+  
+  
+  // 보기설정 보기
+    $('#btn_showhide').on("click", function(event){
+    	if($(this).hasClass("down")){
+    		$("#tbl_area").show();
+    		$(this).removeClass("down");
+    	}else{
+    		$("#tbl_area").hide();
+    		$(this).addClass("down");
+    	}
+    });
+    
+});
+</script>
+
+</head>
+
+
+<body style="width:800px;">
+
+<div class="pop_wrap" style="width:800px;">
+
+  <!-- 팝업 헤더 -->
+  <div class="pop_header">
+    <h1>세무정보 카페 글 등록</h1>
+    <a href="#" onClick="close_smartPop();" class="btn_popclose"><img src="../img/txof/btn/btn_popclose_white.gif" alt="팝업닫기"></a>
+  </div>
+  <!-- //팝업 헤더 -->
+
+  <div class="mCustomScrollbar" style="max-height:600px;overflow-y:auto;">
+	  <!-- 팝업 컨텐츠 -->
+	  <div class="pop_container">
+	
+			<!-- 글쓰기 -->
+			<div class="n_write_wrap" style="margin-bottom:0;">
+				<table class="tbl_write" summary="">
+					<caption></caption>
+					<colgroup>
+					<col style="width:94px;">
+					<col>
+					</colgroup>
+					<tbody>
+						<tr>
+							<th scope="row">선택</th>
+							<td>
+								<select>
+									<option>카테고리선택</option>
+									<option>종소세</option>
+									<option>부가세</option>
+									<option>원천세(4대보험)</option>
+								</select>&nbsp;&nbsp;
+								<input type="checkbox" name="chk_notice" id="chk_notice" /> <label for="chk_notice" >공지등록</label>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">제목</th>
+							<td>
+								<div class="textabx"><input type="text" style="width:95%;" value="" placeholder="제목을 입력하세요"><a href="#none" class="btn_del"></a></div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+	
+				<!-- edit -->
+				<div class="n_editbox">
+					편집영역<br>
+					편집영역<br>
+					편집영역<br>편집영역<br>편집영역<br>편집영역<br>편집영역<br>편집영역<br>편집영역<br>편집영역<br>편집영역<br>편집영역<br>편집영역<br>편집영역<br>편집영역<br>편집영역<br>편집영역<br>
+					max-height:650px;
+				</div>
+				<!-- //edit -->
+			</div>
+			<!-- //글쓰기 -->
+			<div class="btn_area" style="border:1px solid #dcdcdc;border-top:none;padding:9px 20px 10px 20px;">
+				<div>
+					<a href="#none" class="btn_style1_b"><span>등록</span></a>
+					<a href="#none" class="btn_style1"><span>취소</span></a>
+					<a href="#none" class="addfile_ly_wrap"><img src="../img/txof/btn/appicon_addfile_off.png" alt="첨부파일"><!-- layer --><span class="file_layer"><span class="file_layer_po"><em class="tail"></em><span class="txt">파일첨부</span></span></span><!-- //layer --></a>
+				</div>
+			</div>
+				
+	
+	  </div>
+	  <!-- //팝업 컨텐츠 -->
+  </div>
+</div>
+
+</body>
+</html>

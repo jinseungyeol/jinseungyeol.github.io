@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<title>세무대리인 for 경리나라</title>
+<link rel="stylesheet" href="../css/reset_taxp.css">
+<link rel="stylesheet" href="../css/app_header.css"><!-- [D] 세무대리인용 header -->
+<link rel="stylesheet" href="../css/content_taxp.css"><!-- [D] 세무대리인용 -->
+
+<!-- custom scrollbar plugin css -->
+<link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+<script src="https://publ.roumit.com/js/firebase_include.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+<!-- custom scrollbar plugin -->
+<script src="../js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../js/jquery.placeholder.min.js"></script>
+<script>
+	$(function(){
+		// Invoke the plugin
+		$('input, textarea').placeholder({customClass:'my-placeholder'});
+		// 상담문의
+		$( "#btn_notice" ).on( "click", function() {
+			$("#pop_notice").toggle();
+		});
+		// 담당자지정
+		$( "#btn_manager" ).on( "click", function() {
+			$("#pop_manager").toggle();
+		});
+		// 작업일시
+		$( "#btn_last_work" ).on( "click", function() {
+			$("#pop_last_work").toggle();
+		});
+	} );
+</script>
+
+</head>
+
+<body class="lnb_bg lnb_bg"><!-- [D] 메뉴영역(접기 : class="fold", 펼치기 : class="lnb_bg") -->
+<div class="pop_wrap" style="top:145px;left:25px;width:280px; display: none;" id="pop_manager">
+
+	<!-- 팝업 헤더 -->
+	<div class="pop_header">
+		<h1>담당자 지정</h1>
+		<a href="#none" onclick="document.getElementById('pop_manager').style.display='none'" class="btn_popclose"><img src="../img/txof/btn/btn_popclose.gif" alt="팝업닫기"></a>
+	</div>
+	<!-- //팝업 헤더 -->
+
+	<!-- 팝업 컨텐츠 -->
+	<div class="pop_container">
+		<div class="info_box6 mgb10">
+			<p><strong>경리 아웃소싱 담당직원을 지정하세요</strong></p>
+		</div>
+
+		<!-- 테이블(1) -->
+		<table class="tbl_input8" summary="">
+			<caption></caption>
+			<colgroup><col></colgroup>
+			<tbody>
+				<tr>
+					<td><div><label><input type="radio" checked> 김한나</label></div></td>
+				</tr>
+				<tr>
+					<td><div><label><input type="radio"> 박나영</label></div></td>
+				</tr>
+				<tr>
+					<td><div><label><input type="radio"> 장나라</label></div></td>
+				</tr>
+				<tr>
+					<td><div><label><input type="radio"> 한소미</label></div></td>
+				</tr>
+			</tbody>
+		</table>
+		<!-- //테이블(1) -->
+
+		<!-- 버튼영역 -->
+		<div class="tac t_line mgt15">
+			<!-- <a href="#none" class="btn_style1_b"><span>저장</span></a> -->
+			<a href="#none" class="btn_style1"><span>확인</span></a>
+		</div>
+		<!-- //버튼영역 -->
+
+	</div>
+	<!-- //팝업 컨텐츠 -->
+</div>
+
+<!-- 수임처 개선 -->
+<!-- header -->
+<div class="app_header">
+	<div class="app_header_inner">
+		<div class="ah_l">
+			<h1>수임처</h1>
+		</div>
+
+		<div class="ah_r">
+			<ul class="ah_menu">
+				<!-- <li><a href="https://www.serp.co.kr/evnt_0001_01.act?prod_gb=SERP&biz_no=5680601206&biz_nm=%EB%B0%95%EA%B8%B0%EC%A0%95%EC%84%B8%EB%AC%B4%EC%82%AC%EC%82%AC%EB%AC%B4%EC%8B%A4" target="_blank" style="margin-top:-7px;"><img src="../img/txof/app_header/btn_recommend.gif" alt="경리나라 추천하기"></a></li>
+				<li><a href="#none" class="ic_new" id="btn_notice"><img src="../img/txof/app_header/ic_top01.png" alt="">상담문의</a></li> -->
+				<!-- 수임처 개선 -->
+				<li style="position:relative;">
+					<a href="#none"><img src="../img/txof/app_header/ic_top03.png" alt="">관리자</a>
+					<!-- 관리자 레이어 -->
+					<div class="ly_bx_wrap" style="top:20px;right:0;display:none;">
+						<div class="inner">
+							<p>이영미 010-2313-4353</p>
+							<p>신정호 010-6774-8811</p>
+							<p>최기종 010-3303-5711</p>
+							<p>최기종 010-3303-5711</p>
+							<p>최기종 010-3303-5711</p>
+							<p>최기종 010-3303-5711</p>
+						</div>
+					</div>
+					<!-- //관리자 레이어 -->
+				</li>
+				<!-- //수임처 개선 -->
+				<li><a href="#none"><img src="../img/txof/app_header/ic_top02.png" alt="">로그아웃</a></li>
+			</ul>
+			<!-- (layer)알림 -->
+			<div class="ly_app_header" style="top:45px;right:14px;width:365px;display: none;" id="pop_notice">
+				<div class="ly_notibx_tit">
+					<h3>알림</h3>
+				</div>
+				<div class="ly_notibx_cont">
+					<!-- 스크롤 영역 -->
+					<div class="ly_notibx_scroll">
+						<ul>
+							<li>
+								<img src="../img/txof/app_header/bg_alarm_noti.png" alt="" class="ic_alarm">
+								<div class="tit"><strong>웹케시네트웍스(주)</strong>의 관리자님이 상담 신청하였습니다.</div>
+								<div><span><img src="../img/txof/app_header/ic_tel02.png" alt="">&nbsp;010-9276-8033</span></div>
+								<div class="date">2018년 9월 11일 (화요일)</div>
+							</li>
+							<li>
+								<img src="../img/txof/app_header/bg_alarm_noti.png" alt="" class="ic_alarm">
+								<div class="tit"><strong>웹케시벡터</strong>의 최기종님이 상담 신청하였습니다.</div>
+								<div><span><img src="../img/txof/app_header/ic_tel02.png" alt="">&nbsp;010-3303-5711</span></div>
+								<div class="date">2018년 9월 6일 (목요일)</div>
+							</li>
+							<li></li>
+						</ul>
+					</div>
+					<!-- //스크롤 영역 -->
+				</div>
+			</div>
+			<!-- //(layer)알림 -->
+		</div>
+	</div>
+</div>
+<!-- //header -->
+<!-- //수임처 개선 -->
+
+<div class="wrap">
+	<!-- Container -->
+	<div class="container">
+		<!-- lnb box -->
+		<div class="lnb_box">
+		</div>
+		<!-- //lnb box -->
+		<!-- content wrap -->
+		<div class="content">
+
+			<div class="content_wrap">
+
+				<!-- 상단타이틀 -->
+				<div class="title_wrap h1type">
+					<div class="left">
+						<h1>거래처 추가</h1>
+					</div>
+				</div>
+				<!-- //상단타이틀 -->
+
+				<div>
+					<!-- 기업검색 -->
+					<div class="cm_search_wrap mgt10" style="display:none;"><!-- 수임처 개선 padding 삭제 -->
+						<div class="cm_search_box">
+							<div class="cm_search">
+								<strong>기업검색</strong>&nbsp;&nbsp;&nbsp;&nbsp;<span class="input_style1"><em><input type="text" placeholder="기업명 또는 사업자번호 입력" id="searchWord"></em></span><a href="#none" class="vtop" id="searchPopBtn1" style="margin-left:-6px;"><img src="../img/txof/btn/btn_iptsearch.png" alt="검색"></a>&nbsp;&nbsp;<a href="#none" class="btn_icon_help"><img src="../img/txof/ico/icon_help.png" alt="도움말"></a>
+								<!-- 도움말풍선 -->
+								<div class="help_poong_wrap" style="left:517px;top:32px;display: block;">
+									<div class="help_poong_box color_b">
+										<div class="help_poong">
+											<em class="tail_top"></em><em class="bg_tl"></em><em class="bg_tr"></em><em class="bg_bl"></em><em class="bg_br"></em>
+											<p>경리나라에 등록되어 있는<br>거래처를 검색합니다.</p>
+										</div>
+									</div>
+								</div>
+								<!-- //도움말풍선 -->
+							</div>
+						</div>
+					</div>
+					<!-- //기업검색 -->
+
+					<!-- 기업정보 -->
+					<!-- 입력테이블 -->
+					<!-- 2021-10-14 -->
+					<div class="input_table_wrap mgt10" style=""><!-- 수임처 개선 margin 삭제 -->
+						<table>
+							<tr>
+								<td>
+									<table class="input_table" style="z-index:100;">
+										<colgroup>
+										<col style="width:150px;">
+										<col>
+										</colgroup>
+										<tr class="first">
+											<th scope="row"><div class="line point">거래처명</div></th>
+											<td><div class="line">
+												<span class="input_style1" style="width:288px;"><em><input type="text" id="" placeholder="거래처명을 입력하세요."></em></span>
+											</div></td>
+										</tr>
+
+										<tr>
+											<th scope="row"><div class="line point">사업자번호</div></th>
+											<td><div class="line">
+												<span class="input_style1" style="width:288px;"><em><input type="text" id="" placeholder="사업자번호를 입력하세요."></em></span>
+												<!--<a href="#none" class="txt_b mgl20 fwb t_hover">+종사업자번호</a>--> <!-- (delete)20220718 -->
+											</div></td>
+										</tr>
+
+										<!-- 20220718 -->
+										<!--<tr>
+											<th scope="row"><div class="line point">사업자번호</div></th>
+											<td><div class="line">
+												<span class="input_style1" style="width:288px;"><em><input type="text" id="" placeholder="사업자번호를 입력하세요."></em></span>
+												<span class="input_style1" style="width:158px;"><em><input type="text" id="" placeholder="종사업자번호"></em></span>
+												<a href="#none" class="txt_b mgl20 fwb t_hover" style="display:none">+종사업자번호</a>
+											</div></td>
+										</tr>-->
+										<!-- //20220718 -->
+
+										<tr>
+											<th scope="row"><div class="line">대표자명</div></th>
+											<td><div class="line">
+												<span class="input_style1" style="width:288px;"><em><input type="text" id="" placeholder="대표자명을 입력하세요."></em></span>
+											</div></td>
+										</tr>
+
+										<tr>
+											<th scope="row"><div class="line">대표연락처/FAX</div></th>
+											<td><div class="line">
+												<span class="select_style3" style="width:70px; display:none;" id="TRCO_RPRS_TLPH1">
+													<a href="#none" class="txt3">선택</a>
+													<a href="#none" class="btn"></a>
+													<ul style="display: none;">
+														<li>02</li>
+														<li>051</li>
+														<li>053</li>
+														<li>032</li>
+														<li>062</li>
+														<li>042</li>
+														<li>052</li>
+														<li>044</li>
+														<li>031</li>
+														<li>033</li>
+														<li>043</li>
+														<li>041</li>
+														<li>063</li>
+														<li>061</li>
+														<li>054</li>
+														<li>055</li>
+														<li>064</li>
+														<li>010</li>
+														<li>011</li>
+														<li>016</li>
+														<li>017</li>
+														<li>018</li>
+														<li>019</li>
+														<li>070</li>
+													</ul>
+												</span>
+												<span class="input_style1" style="width:135px;"><em><input type="text" id="" placeholder="대표연락처"></em></span> /
+												<span class="input_style1" style="width:135px;"><em><input type="text" id="" placeholder="FAX"></em></span>
+											</div></td>
+										</tr>
+
+										<tr style="display:none;">
+											<th scope="row"><div class="line">FAX번호</div></th>
+											<td><div class="line">
+												<!-- 2021-05-11 -->
+												<!-- <span class="select_style3" style="width:70px;" id="TRCO_FXNO1">
+													<a href="#none" class="txt3">선택</a>
+													<a href="#none" class="btn"></a>
+													<ul style="display: none;">
+														<li>02</li>
+														<li>051</li>
+														<li>053</li>
+														<li>032</li>
+														<li>062</li>
+														<li>042</li>
+														<li>052</li>
+														<li>044</li>
+														<li>031</li>
+														<li>033</li>
+														<li>043</li>
+														<li>041</li>
+														<li>063</li>
+														<li>061</li>
+														<li>054</li>
+														<li>055</li>
+														<li>064</li>
+														<li>010</li>
+														<li>011</li>
+														<li>016</li>
+														<li>017</li>
+														<li>018</li>
+														<li>019</li>
+														<li>070</li>
+													</ul>
+												</span> -->
+												<span class="input_style1" style="width:73px;"><em><input type="text" id=""></em></span>
+												<!-- //2021-05-11 -->
+												<span class="input_style1" style="width:100px;"><em><input type="text" id=""></em></span>
+												<span class="input_style1" style="width:100px;"><em><input type="text" id=""></em></span>
+											</div></td>
+										</tr>
+										
+										<!-- (delete)20220718 -->
+										<!--<tr>
+											<th scope="row"><div class="line">업태/종목</div></th>
+											<td><div class="line">
+												<span class="input_style1" style="width:135px;"><em><input type="text" id="" placeholder="업태"></em></span> /
+												<span class="input_style1" style="width:135px;"><em><input type="text" id="" placeholder="종목"></em></span>
+											</div></td>
+										</tr>-->
+
+										<!-- 2021-11-08 -->
+										<!--<tr>
+											<th scope="row"><div class="line">과세유형</div></th>
+											<td>
+												<div class="line ipt_block">
+													<label><input type="radio" checked="">&nbsp; 과세</label>
+													<label><input type="radio" checked="">&nbsp; 면세</label>
+													<label><input type="radio" checked="">&nbsp; 영세</label>
+												</div>
+											</td>
+										</tr>-->
+										<!-- //2021-11-08 -->
+										<!-- //(delete)20220718 -->
+
+										<!-- <tr>
+											<th scope="row"><div class="line">구분</div></th>
+											<td>
+												<div class="line ipt_block">
+													<label><input type="radio" checked="">&nbsp; 기장법인</label>
+													<label><input type="radio" checked="">&nbsp; 기장개인</label>
+													<label><input type="radio" checked="">&nbsp; 신고법인</label>
+													<label><input type="radio" checked="">&nbsp; 신고개인</label>
+												</div>
+											</td>
+										</tr>
+										
+										<tr>
+											<th scope="row"><div class="line">과세유형</div></th>
+											<td>
+												<div class="line ipt_block">
+													<label><input type="radio" checked="">&nbsp; 과세</label>
+													<label><input type="radio" checked="">&nbsp; 면세</label>
+													<label><input type="radio" checked="">&nbsp; 영세</label>
+												</div>
+											</td>
+										</tr> -->
+
+										<tr>
+											<th scope="row"><div class="line">계약상태</div></th>
+											<td>
+												<div class="line ipt_block">
+													<label><input type="radio" checked="">&nbsp; 기장법인</label>
+													<label><input type="radio" checked="">&nbsp; 신고법인</label>
+													<label><input type="radio" checked="">&nbsp; 신고개인</label>
+													<label><input type="radio" checked="">&nbsp; 아웃소싱</label>
+													<label><input type="radio" checked="">&nbsp; 자문계약</label>
+													<label><input type="radio" checked="">&nbsp; 조세불북</label>
+												</div>
+											</td>
+										</tr>
+
+										<tr>
+											<th scope="row"><div class="line">가입경로</div></th>
+											<td>
+												<div class="line ipt_block">
+													<label><input type="radio" checked="">&nbsp; 자체확장</label>
+													<label><input type="radio" checked="">&nbsp; 거래처소개</label>
+													<label><input type="radio" checked="">&nbsp; 지인소개</label>
+													<label><input type="radio" checked="">&nbsp; 직원소개</label>
+													<label style="width:264px;">
+														<input type="radio" checked="">&nbsp; 기타 
+														<span class="input_style1" style="width:204px;margin-top:-7px;vertical-align:top;"><em><input type="text" placeholder="기타를 입력하세요." id=""></em></span>
+													</label>
+												</div>
+											</td>
+										</tr>
+
+										<tr>
+											<th scope="row"><div class="line">수임 기준일</div></th>
+											<td><div class="line">
+												<span class="input_style1" style="width:110px;"><em><input type="text" id="" placeholder="YYYY-MM-DD"></em></span><!-- 2021-10-18 -->
+												<a href="#none"><img src="../img/txof/ico/ico_calendar.png" alt=""></a>
+											</div></td>
+										</tr>
+
+										<tr>
+											<th scope="row"><div class="line">월 기장료</div></th>
+											<td><div class="line">
+												<span class="input_style1" style="width:288px;"><em><input type="text" id="" placeholder="월 기장료를 입력하세요."></em></span>
+											</div></td>
+										</tr>
+
+										<tr>
+											<th scope="row"><div class="line">전년조정료</div></th>
+											<td><div class="line">
+												<span class="input_style1" style="width:288px;"><em><input type="text" id="" placeholder="전년조정료를 입력하세요."></em></span>
+											</div></td>
+										</tr>
+
+										<tr>
+											<th scope="row"><div class="line">개업일</div></th>
+											<td><div class="line">
+												<span class="input_style1" style="width:110px;"><em><input type="text" id="" placeholder="YYYY-MM-DD"></em></span><!-- 2021-10-18 -->
+												<a href="#none"><img src="../img/txof/ico/ico_calendar.png" alt=""></a>
+											</div></td>
+										</tr>
+
+										<tr>
+											<th scope="row"><div class="line">법인번호</div></th>
+											<td><div class="line">
+												<span class="input_style1" style="width:288px;"><em><input type="text" id="" placeholder="법인번호를 입력하세요."></em></span>
+											</div></td>
+										</tr>
+
+										<tr>
+											<th scope="row"><div class="line">기장료 출금시작일</div></th>
+											<td><div class="line">
+												<span class="input_style1" style="width:110px;"><em><input type="text" id="" placeholder="YYYY-MM-DD"></em></span><!-- 2021-10-18 -->
+												<a href="#none"><img src="../img/txof/ico/ico_calendar.png" alt=""></a>
+											</div></td>
+										</tr>
+
+										<!-- (add)20220718 -->
+										<tr>
+											<th scope="row"><div class="line">CMS 회원번호</div></th>
+											<td><div class="line">
+												<span class="input_style1" style="width:110px;"><em><input type="text" id="" placeholder="회원번호를 입력"></em></span>
+											</div></td>
+										</tr>
+
+										<tr>
+											<th scope="row"><div class="line">CMS 수납구분</div></th>
+											<td>
+												<div class="line ipt_block">
+													<label><input type="radio" checked="">&nbsp; 계좌(CMS)</label>
+													<label><input type="radio" checked="">&nbsp; 카드(CMS)</label>
+												</div>
+											</td>
+										</tr>
+										<!-- //(add)20220718 -->
+
+										<tr>
+											<th scope="row"><div class="line">기장료 출금 계좌</div></th>
+											<td><div class="line">
+												<span class="select_style3" style="width:70px;">
+													<a href="#none" class="txt3">은행</a>
+													<a href="#none" class="btn"></a>
+													<div class="ly_blist_wrap" style="display:none;">
+														<ul class="sel_bank_list mCustomScrollbar" style="display:;">
+															<li><a href="#none" class="ic_bbl001">IBK기업</a></li>
+															<li><a href="#none" class="ic_bbl002">KB국민</a></li>
+															<li><a href="#none" class="ic_bbl003">NH농협</a></li>
+															<li><a href="#none" class="ic_bbl004">하나</a></li>
+															<li><a href="#none" class="ic_bbl005">신한</a></li>
+															<li><a href="#none" class="ic_bbl006">우리</a></li>
+															<li><a href="#none" class="ic_bbl007">부산</a></li>
+															<li><a href="#none" class="ic_bbl008">대구</a></li>
+															<li><a href="#none" class="ic_bbl007">경남</a></li>
+															<li><a href="#none" class="ic_bbl009">SC제일</a></li>
+															<li><a href="#none" class="ic_bbl010">우체국</a></li>
+															<li><a href="#none" class="ic_bbl011">광주</a></li>
+															<li><a href="#none" class="ic_bbl012">새마을</a></li>
+															<li><a href="#none" class="ic_bbl013">씨티</a></li>
+															<li><a href="#none" class="ic_bbl014">신협</a></li>
+															<li><a href="#none" class="ic_bbl015">수협</a></li>
+															<li><a href="#none" class="ic_bbl011">전북</a></li>
+															<li><a href="#none" class="ic_bbl016">KDB산업</a></li>
+															<li><a href="#none" class="ic_bbl005">제주</a></li>
+															<li><a href="#none" class="ic_bbl017">케이</a></li>
+															<li><a href="#none" class="ic_bbl018">카카오</a></li>
+														</ul>
+													</div>
+												</span>
+												<span class="input_style1" style="width:208px;"><em><input type="text" id="" placeholder="계좌번호를 입력하세요."></em></span>
+											</div></td>
+										</tr>
+										
+										<tr>
+											<th scope="row"><div class="line">성실신고대상</div></th>
+											<td>
+												<div class="line ipt_block">
+													<label><input type="radio" checked="">&nbsp; 여</label>
+													<label><input type="radio" checked="">&nbsp; 부</label>
+												</div>
+											</td>
+										</tr>
+
+										<tr>
+											<th scope="row"><div class="line">회계프로그램코드</div></th>
+											<td><div class="line">
+												<span class="input_style1" style="width:288px;"><em><input type="text" id="" placeholder="회계프로그램코드를 입력하세요."></em></span>
+											</div></td>
+										</tr>
+
+										<tr>
+											<th scope="row"><div class="line">포스업체 연락처</div></th>
+											<td><div class="line">
+												<span class="input_style1" style="width:288px;"><em><input type="text" id="" placeholder="포스업체 연락처를 입력하세요."></em></span>
+											</div></td>
+										</tr>
+
+										<!-- 2021-11-08 -->
+										<tr>
+											<th scope="row"><div class="line">지점</div></th>
+											<td><div class="line">
+												<span class="select_style3" style="width:120px;">
+													<a href="#none" class="txt3">지점 선택</a>
+													<a href="#none" class="btn"></a>
+													<div class="ly_blist_wrap" style="display:;">
+														<ul class="no_bg" style="width:113px;">
+															<li><a href="#none">지점1</a></li>
+															<li><a href="#none">지점2</a></li>
+															<li><a href="#none">지점3</a></li>
+															<li><a href="#none">지점1</a></li>
+															<li><a href="#none">지점2</a></li>
+															<li><a href="#none">지점3</a></li>
+															<li><a href="#none">지점1</a></li>
+															<li><a href="#none">지점2</a></li>
+															<li><a href="#none">지점3</a></li>
+															<li><a href="#none">지점1</a></li>
+															<li><a href="#none">지점2</a></li>
+															<li><a href="#none">지점3</a></li>
+														</ul>
+													</div>
+												</span>
+											</div></td>
+										</tr>
+										<tr>
+											<th scope="row"><div class="line">업무량</div></th>
+											<td>
+												<div class="line ipt_block">
+													<label><input type="radio" checked="">&nbsp; 상</label>
+													<label><input type="radio" checked="">&nbsp; 중</label>
+													<label><input type="radio" checked="">&nbsp; 하</label>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row"><div class="line">난이도</div></th>
+											<td>
+												<div class="line ipt_block">
+													<label><input type="radio" checked="">&nbsp; 상</label>
+													<label><input type="radio" checked="">&nbsp; 중</label>
+													<label><input type="radio" checked="">&nbsp; 하</label>
+												</div>
+											</td>
+										</tr>
+										<!-- 2022-09-20 -->
+										<tr>
+											<th scope="row"><div class="line">급여지급기준</div></th>
+											<td>
+												<div class="line ipt_block">
+													<label><input type="radio" checked="">&nbsp; 당월</label>
+													<label><input type="radio" checked="">&nbsp; 익월</label>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row"><div class="line">급여일</div></th>
+											<td><div class="line">
+												<span class="input_style1" style="width:110px;"><em><input type="text" id="" placeholder="YYYY-MM-DD"></em></span>
+												<a href="#none"><img src="../img/txof/ico/ico_calendar.png" alt=""></a>
+											</div></td>
+										</tr>
+										<tr>
+											<th scope="row"><div class="line">급여대상</div></th>
+											<td>
+												<div class="line ipt_block">
+													<label><input type="checkbox" checked="">&nbsp; 일반</label>
+													<label><input type="checkbox" >&nbsp; 일용</label>
+													<label><input type="checkbox" >&nbsp; 사업</label>
+													<label><input type="checkbox" >&nbsp; 기타</label>
+												</div>
+											</td>
+										</tr>
+										<!-- //2022-09-20 -->
+										<tr>
+											<th scope="row"><div class="line">폐업일</div></th>
+											<td><div class="line">
+												<span class="input_style1" style="width:110px;"><em><input type="text" id="" placeholder="YYYY-MM-DD"></em></span>
+												<a href="#none"><img src="../img/txof/ico/ico_calendar.png" alt=""></a>&nbsp; / 
+												<span class="input_style1" style="width:110px;"><em><input type="text" id="" placeholder="폐업사유"></em></span>
+											</div></td>
+										</tr>
+										<!-- //2021-11-08 -->
+
+										<tr>
+											<th scope="row"><div class="line">주소</div></th>
+											<td><div class="line">
+												<span class="input_style1" style="width:584px;"><em><input type="text" placeholder="주소를 입력하세요." id=""></em></span>
+											</div></td>
+										</tr>
+
+										<tr>
+											<th scope="row"><div class="line">적요</div></th><!-- (modify)20220718 -->
+											<td><div class="line">
+												<span class="input_style1" style="width:584px;"><em><input type="text" id="" placeholder="적요를 입력하세요.(200자 이내)"></em></span><!-- (modify)20220718 -->
+												<a href="#none" class="btn_icon_help"><img src="../img/txof/ico/icon_help.png" alt="도움말"></a>
+												<!-- 도움말풍선 -->
+												<div class="help_poong_wrap" style="display:;top:-13px;left:630px;width:166px;">
+													<div class="help_poong_box color_b">
+														<div class="help_poong">
+															<em class="tail" style="top:29px;"></em><em class="bg_tl"></em><em class="bg_tr"></em><em class="bg_bl"></em><em class="bg_br"></em>
+															<p>거래처에 대한 간단한 메모를<br>등록할 수 있습니다.</p>
+														</div>
+													</div>
+												</div>
+												<!-- //도움말풍선 -->
+											</div></td>
+										</tr>
+
+										<tr>
+											<th scope="row"><div class="line">거래처연락처</div></th>
+											<td><div class="line">
+												<div class="tb_cust_scroll">
+													<table class="list_table">
+														<colgroup>
+															<col style="width: 120px;">
+															<col style="width: 120px;">
+															<col style="width: 120px;">
+															<col style="">
+															<col style="width: 95px;">
+															<col style="width: 70px;">
+														</colgroup>
+														<thead>
+														<tr class="ipt_block">
+															<th scope="col" class="first">이름</th>
+															<th scope="col">직급</th>
+															<th scope="col">연락처</th>
+															<th scope="col">메일</th>
+															<th scope="col" class="tac">SMS 수신거부</th>
+															<th scope="col"></th>
+														</tr>
+														</thead>
+														<tbody>
+														<tr class="ipt_block"><!-- 편집 -->
+															<td><input type="text" style="width: 90%;" value=""></td>
+															<td><input type="text" style="width: 90%;" value=""></td>
+															<td><input type="text" style="width: 90%;" value=""></td>
+															<td><input type="text" style="width: 98%;" value=""></td>
+															<td class="tac"><input type="checkbox"></td>
+															<td><a class="btn_minus ipt_block"><span class="blind">삭제</span></a>&nbsp;<a class="btn_plus ipt_block"><span class="blind">추가</span></a></td>
+														</tr><!-- //편집 -->
+														</tbody>
+													</table>
+												</div>
+											</div></td>
+										</tr>
+
+										<!-- 2020-07-17 -->
+
+										<tr>
+											<th scope="row"><div class="line">수임료</div></th>
+											<td>
+												<div class="line ipt_block">
+													<span class="input_style1" style="width:288px;"><em><input type="text" id="" class="tar" value="" placeholder="금액을 입력하세요" style="padding-right:10px;"></em></span>
+												</div>
+											</td>
+										</tr>
+										<!-- //2020-07-17 -->
+
+									</table>
+								</td>
+							</tr>
+						</table>
+						<!--<div class="mgt10 mgl10"><a href="#none" class="txt_b fwb t_hover">+상세정보</a></div>--> <!-- (delete)20220718 -->
+					</div>
+					<!-- //2021-10-14 -->
+					<!-- //입력테이블 -->
+					<!-- //기업정보 -->
+
+
+
+					<!-- 하단버튼 -->
+					<div class="t_center">
+						<a class="btn_style1_b" href="#none"><span>&nbsp;저장&nbsp;</span></a>
+						<a class="btn_style1" href="#none"><span>&nbsp;취소&nbsp;</span></a>
+					</div>
+					<!-- //하단버튼 -->
+				</div>
+
+			</div>
+		</div>
+		<!-- //content wrap -->
+	</div>
+	<!-- //Container -->
+</div>
+<!-- //wrap -->
+
+
+</body>
+</html>

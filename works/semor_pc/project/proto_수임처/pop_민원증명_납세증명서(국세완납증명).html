@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<title>세무대리인 for 경리나라</title>
+<link rel="stylesheet" href="../css/reset_taxp.css">
+<link rel="stylesheet" href="../css/app_header.css"><!-- [D] 세무대리인용 header -->
+<link rel="stylesheet" href="../css/content_taxp.css"><!-- [D] 세무대리인용 -->
+
+</head>
+
+<body>
+
+	<div class="layer_popup_wrap" style="width:640px;">
+		<div class="layer_popup_box2">
+			<div class="layer_title_nb">
+				<h1>민원증명 > 납세증명서(국세완납증명)</h1>
+			</div>
+			<div class="layer_cont min_w">
+				<!-- 테이블 영역 -->
+				<div class="mgt20">
+					<table class="tbl_input8" summary="">
+						<caption></caption>
+						<colgroup><col style="width:174px;"><col></colgroup>
+						<tbody>
+							<tr>
+								<th class="vat"><div><span class="point"></span> 의뢰인</div></th>
+								<td><div>
+									<div class="combo_postbx" style="padding: 0 0 0 0 !important;width:230px;display:inline-block;">
+										<div class="combo_post_bg no_pd"><!-- 비활성화클래스 dis -->
+											<input type="text" placeholder="사업자 번호" style="width:97%;" value="358-12-58455">
+											<div class="btn">
+												<a class="del"><span class="blind">삭제</span></a>
+											</div>
+										</div>
+									</div><label class="txt_opt"><input type="checkbox"> 의뢰인 정보 저장</label>
+								</div></td>
+							</tr>
+							<tr>
+								<th class="vat"><div><span class="point"></span> 주민등록번호 공개여부</div></th>
+								<td>
+									<div class="label_list">
+										<label><input type="radio"> 공개</label>
+										<label><input type="radio" checked=""> 비공개</label>
+									</div>
+									<p class="txt_b">※(비공개시 출력 예 : 891111-*******)</p>
+								</td>
+							</tr>
+							<tr>
+								<th class="vat"><div><span class="point"></span> 사용목적</div></th>
+								<td>
+									<div class="label_list">
+										<label><input type="radio"> 대금수령</label>
+										<label><input type="radio" checked=""> 기타</label>
+										<label><input type="radio"> 해외이주</label>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th class="vat"><div><span class="point"></span> 제출처</div></th>
+								<td><div>
+									<div class="card_combo" style="padding:0;width:230px;"><!-- 입력전에만 no_line 클래스 추가 -->
+										<!-- 입력 전 -->
+										<span class="card_combo_in" style="display:none;">
+											<span class="bg">
+											</span>
+											<div class="btn"><a class="edit"><span class="blind">수정</span></a></div>
+										</span>
+										<!-- //입력 전 -->
+										<!-- 입력 후 -->
+										<span class="card_combo_in">
+											<span class="bg">
+												<input type="text" value="금융기관" placeholder="">
+												<!-- <a class="btn_del"><span class="blind">삭제</span></a> -->
+											</span>
+											<a class="btn_open"><span class="blind">열기</span></a>
+										</span>
+										<!-- //입력 후 -->
+										<!-- 콤보박스 -->
+										<div class="card_combo_layer" style="max-height:110px;overflow-x:hidden;overflow-y:auto;z-index:1;display:;">
+											<ul class="bg_color">
+												<li class="combo_li1"><a href="#none" title="">금융기관</a></li>
+												<li class="combo_li1"><a href="#none" title="">외교부/재외공관</a></li>
+												<li class="combo_li1"><a href="#none" title="">관공서</a></li>
+												<li class="combo_li1"><a href="#none" title="">조합/협회</a></li>
+												<li class="combo_li1"><a href="#none" title="">거래처</a></li>
+												<li class="combo_li1"><a href="#none" title="">학교</a></li>
+												<li class="combo_li1"><a href="#none" title="">기타</a></li>
+											</ul>
+										</div>
+										<!-- //콤보박스 -->
+									</div>
+									<p class="txt_b mgt5">※금융기관제출용은 기본 2매(변경가능)</p>
+								</div></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- //테이블 영역 -->
+				<div class="btnarea">
+					<a href="#none" class="btn_style1_b"><span>확인</span></a>
+					<a href="#none" class="btn_style1"><span>취소</span></a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</body>
+</html>

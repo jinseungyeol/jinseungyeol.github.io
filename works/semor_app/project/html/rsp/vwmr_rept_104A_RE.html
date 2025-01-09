@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>vwmr_rept_104A(사업분석 상권)</title>
+    <link rel="stylesheet" href="../../css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../../css/semoR_base.css">
+    <link rel="stylesheet" href="../../css/semoR_common.css">
+    <link rel="stylesheet" href="../../css/semoR_style.css">
+    <link rel="stylesheet" href="../../css/semoR_rept.css">
+  <script src="../../js/jquery-3.5.1.min.js"></script>
+    <script src="../../js/jquery-ui.min.js"></script>
+    <script src="../../js/swiper-bundle.min.js"></script>
+    <script src="../../js/chart-3.5.1.min.js"></script>
+    <script src="../../js/semoR_ui.js"></script>
+</head>
+
+<body>
+    <!-- wrapper -->
+    <div class="wrapper">
+        <!-- header -->
+        <div class="header">
+            <ul class="topMenu">
+                <li class="left">
+                    <a class="btnBack" href="javascript:;" role="button"><span class="blind">뒤로가기</span></a>
+                </li>
+                <li class="right">
+                    <a class="btnChat" href="javascript:;" role="button"><span class="blind">채팅</span></a>
+                    <a class="btnShare" href="javascript:;" role="button"><span class="blind">공유</span></a>
+                </li>
+            </ul>
+        </div>
+        <!-- //header -->
+
+        <!-- container -->
+        <div class="container">
+            <div class="busiReptWrap">
+                <div class="titArea">
+                    <div class="areaReptLogo">
+                        <img src="../../img/ico_smartTax_v2.png" width="170px">
+                    </div>
+                </div>
+    
+                <!-- 보고서 상단 공통 -->
+                <div class="reptMsgWrap">
+                    <h2 class="defTit">23년 03월 사업분석 보고서</h2>
+                    <ul class="reportMsgList">
+                        <li class="pdt0">
+                            <div class="busiInfoWrap">
+                                <ul class="listDot type03 mgb0">
+                                    <li>
+                                        <p class="tit">사업장명</p>
+                                        <div class="areaData">
+                                            <span class="data">이로운 세모가게</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <p class="tit">과세유형</p>
+                                        <div class="areaData">
+                                            <span class="data">일반과세자</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <p class="tit">귀속 기간</p>
+                                        <div class="areaData">
+                                            <span class="data">22.12.01 ~ 22.12.31</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <p class="defTxt">
+                                김세모 사장님, 안녕하세요.<br>
+                                23년 02월 사업분석 보고서를 보내드립니다.<br>
+                                보고서 관련 또는 기타 문의사항이 있을 땐<br>
+                                언제든지 채팅으로 문의해주세요.
+                            </p>
+                        </li>
+                        <li>
+                            <div class="infoArea">
+                                <div class="rCont">
+                                    <a href="javascript:;" class="moveLink chat">
+                                        <span class="pointColor06">채팅 문의하기</span>
+                                        <div class="rCont">
+                                            <img class="tsRight" src="../../img/ico_ts_right_gray.png" alt="오른쪽화살표">
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- //보고서 상단 공통 -->
+    
+                <div class="areaReptTab">
+                    <ul class="tabMenuList type03">
+                    
+                        <!-- 활성화시 active -->
+                        <li>
+                            <a href="javascript:;" class="btnTab" role="button">손익</a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" class="btnTab" role="button">세금</a>
+                        </li>
+                        <li class="active">
+                            <a href="javascript:;" class="btnTab" role="button">상권</a>
+                        </li>
+                    </ul>
+                </div>
+    
+                <div class="busiReptCont"> 
+                    <!-- 매출분석 -->
+                        <div class="titArea">
+                            <h1 class="defTit">
+                                <p class="subTitGray">우리동네상권 매출분석</p>
+                                02월 우리동네 사장님들의 평균매출은 <span class="fwBold">2,810만원</span>이에요
+                            </h1>
+                            <h3 class="defTit pointColor06 fwNormal">서울특별시 평균은 약 1,241만원이네요</h3>
+                        </div>
+                        <div class="busiDistrictWrap">
+                            <div class="rsp_wrap type_01">
+                                <div class="left">
+                                    <div class="busiDistrictWrap">
+                                        <a href="javascript:;" class="moveIdsySearch">
+                                            <div class="roundBoxWrap">
+                                                <div class="roundBox">
+                                                    <div class="tit">
+                                                        <img src="../../img/ico_map.png" width="15px">
+                                                        <span class="pointColor02">반포2동 · 분식</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <!-- 매출차트 -->
+                                        <div class="areaChart">
+                                            <canvas id="barChart01"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="right">
+                                    <div class="roundBoxWrap">
+                                        <div class="roundBox">
+                                            <div class="top">
+                                                <div class="titArea mgt0">
+                                                    <h2 class="defTit mgt0">반포2동 매출</h2>
+                                                    <div class="rCont">
+                                                        <span class="compareTxt">작년보다 +39%</span>
+                                                    </div>
+                                                </div>
+                                                <ul class="busiDataList">
+                                                    <li>
+                                                        <dl>
+                                                            <dt>평균</dt>
+                                                            <dd>2,810만원</dd>
+                                                        </dl>
+                                                    </li>
+                                                    <li>
+                                                        <dl>
+                                                            <dt class="pointColor03">최대</dt>
+                                                            <dd>12,560만원</dd>
+                                                        </dl>
+                                                    </li>
+                                                    <li>
+                                                        <dl>
+                                                            <dt class="pointColor04">최소</dt>
+                                                            <dd>569만원</dd>
+                                                        </dl>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="bottom">
+                                                <ul class="busiDataList">
+                                                    <li class="pdt0">
+                                                        <dl>
+                                                            <dt>
+                                                                <h2 class="defTit">내 매출</h2>
+                                                            </dt>
+                                                            <dd>2,650만원</dd>
+                                                        </dl>
+                                                    </li>
+                                                </ul>
+                                                <div class="averageBox">
+                                                    <label for="check01">
+                                                        <input type="checkbox" class="circle" id="check01"> 
+                                                        <span>우리동네 평균 매출의 <em>92%</em> 수준</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="roundBoxWrap">
+                                <div class="graphWrap">
+                                    <div class="roundBoxWrap type02">
+                                        <div class="rsp_wrap type_02">
+                                            <div class="roundBox">
+                                                <div class="titArea mgt0">
+                                                    <h2 class="defTit mgt0">
+                                                        <p class="sectors ellipsis">한식 분식 치킨 카페 식당 한식 분식 치킨 카페 식당</p>
+                                                        업장수
+                                                    </h2>
+                                                </div>
+                                                <div class="areaData">
+                                                    <div class="left">
+                                                        <strong class="val">193개</strong>
+                                                        <span class="compareTxt">작년 이맘때보다 +39%</span>
+                                                    </div>
+                                                    <div class="right">
+                                                        <canvas id="doughnut01"></canvas>
+                                                    </div>
+                                                </div>
+                                                <div class="areaLabel">
+                                                    <div class="label">
+                                                        <p></p>
+                                                        <span>서초구 954개</span>
+                                                    </div>
+                                                    <div class="label">
+                                                        <p></p>
+                                                        <span>서울특별시 20,543개</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="roundBox popularDay">
+                                                <div class="titArea mgt0">
+                                                    <h2 class="defTit mgt0">유동인구 많은 날</h2>
+                                                    <strong class="val">토요일</strong>
+                                                </div>
+                                                <div class="areaData">
+                                                    <div class="left">
+                                                        <canvas id="pie01"></canvas>
+                                                    </div>
+                                                    <div class="right">
+                                                        <div class="weekWrap">
+            
+                                                            <!-- 활성화 시 active 클래스 추가 -->
+                                                            <div class="week active">
+                                                                <span class="day">월요일</span>
+                                                                <span class="per">15%</span>
+                                                            </div>
+                                                            <div class="week">
+                                                                <span class="day">화요일</span>
+                                                                <span class="per">8%</span>
+                                                            </div>
+                                                            <div class="week">
+                                                                <span class="day">수요일</span>
+                                                                <span class="per">8%</span>
+                                                            </div>
+                                                            <div class="week">
+                                                                <span class="day">목요일</span>
+                                                                <span class="per">8%</span>
+                                                            </div>
+                                                            <div class="week">
+                                                                <span class="day">금요일</span>
+                                                                <span class="per">21%</span>
+                                                            </div>
+                                                            <div class="week">
+                                                                <span class="day">토요일</span>
+                                                                <span class="per">35%</span>
+                                                            </div>
+                                                            <div class="week">
+                                                                <span class="day">일요일</span>
+                                                                <span class="per">25%</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="areaLabel">
+                                                    <div class="label">
+                                                        <p></p>
+                                                        <span>주말 39%</span>
+                                                    </div>
+                                                    <div class="label">
+                                                        <p></p>
+                                                        <span>주중 61%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="roundBox popularTime">
+                                                <div class="titArea mgt0">
+                                                    <h2 class="defTit mgt0">유동인구 많은 시간대</h2>
+                                                    <strong class="val">12-15시</strong>
+                                                </div>
+                                                <div class="areaData">
+                                                    <canvas id="barChart02"></canvas>
+                                                </div>
+                                            </div>
+                                        </div>
+    
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    <!-- //매출분석 -->
+    
+                    <!-- 배달주문 분석 -->
+                    <div class="titArea">
+                        <h1 class="defTit type02">
+                            • 우리동네 배달주문 분석
+                            <img src="../../img/ico_bike.png" width="30px">
+                        </h1>
+                    </div>
+                    <div class="busiDistrictWrap">
+                        <!-- 차트 -->
+
+                        <!-- //차트 -->
+                        <div class="roundBoxWrap">
+
+                            <div class="graphWrap">
+                                <div class="roundBoxWrap type02">
+                                    <div class="rsp_wrap type_03">
+                                        <div class="roundBox">
+                                            <div class="titArea mgt0">
+                                                <h2 class="defTit mgt0">동네 배달 현황</h2>
+                                            </div>
+                                            <canvas id="barChart03"></canvas>
+                                        </div>
+                                        <div class="roundBox">
+                                            <div class="titArea mgt0">
+                                                <h2 class="defTit mgt0">배달 주문 수</h2>
+                                            </div>
+                                            <div class="areaData">
+                                                <div class="left">
+                                                    <strong class="val">178건</strong>
+                                                    <span class="compareTxt">작년 이맘때보다 +39%</span>
+                                                </div>
+                                                <div class="right">
+                                                    <canvas id="doughnut02"></canvas>
+                                                </div>
+                                            </div>
+                                            <div class="areaLabel">
+                                                <div class="label">
+                                                    <p></p>
+                                                    <span>서초구 155건</span>
+                                                </div>
+                                                <div class="label">
+                                                    <p></p>
+                                                    <span>서울특별시 162건</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="roundBox popularDay">
+                                            <div class="titArea mgt0">
+                                                <h2 class="defTit mgt0">배달 주문 많은 날</h2>
+                                                <strong class="val">토요일</strong>
+                                            </div>
+                                            <div class="areaData">
+                                                <div class="left">
+                                                    <canvas id="pie02"></canvas>
+                                                </div>
+                                                <div class="right">
+                                                    <div class="weekWrap">
+        
+                                                        <!-- 활성화 시 active 클래스 추가 -->
+                                                        <div class="week active">
+                                                            <span class="day">월요일</span>
+                                                            <span class="per">15%</span>
+                                                        </div>
+                                                        <div class="week">
+                                                            <span class="day">화요일</span>
+                                                            <span class="per">8%</span>
+                                                        </div>
+                                                        <div class="week">
+                                                            <span class="day">수요일</span>
+                                                            <span class="per">8%</span>
+                                                        </div>
+                                                        <div class="week">
+                                                            <span class="day">목요일</span>
+                                                            <span class="per">8%</span>
+                                                        </div>
+                                                        <div class="week">
+                                                            <span class="day">금요일</span>
+                                                            <span class="per">21%</span>
+                                                        </div>
+                                                        <div class="week">
+                                                            <span class="day">토요일</span>
+                                                            <span class="per">35%</span>
+                                                        </div>
+                                                        <div class="week">
+                                                            <span class="day">일요일</span>
+                                                            <span class="per">25%</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="areaLabel">
+                                                <div class="label">
+                                                    <p></p>
+                                                    <span>주말 39%</span>
+                                                </div>
+                                                <div class="label">
+                                                    <p></p>
+                                                    <span>주중 61%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="roundBox popular">
+                                            <div class="titArea mgt0">
+                                                <h2 class="defTit mgt0">배달 주문 많은 시간대</h2>
+                                                <strong class="val">12-15시</strong>
+                                            </div>
+                                            <div class="areaData">
+                                                <canvas id="barChart04"></canvas>
+                                            </div>
+                                        </div>
+                                        <div class="roundBox popular">
+                                            <div class="titArea mgt0">
+                                                <h2 class="defTit mgt0">배달 주문 많은 연령대</h2>
+                                                <strong class="val">20대</strong>
+                                            </div>
+                                            <div class="areaData">
+                                                <canvas id="barChart05"></canvas>
+                                            </div>
+                                        </div>
+                                        <div class="roundBox gender">
+                                            <div class="titArea mgt0">
+                                                <h2 class="defTit mgt0">배달 주문 많은 성별</h2>
+                                                <strong class="val">여성</strong>
+                                            </div>
+                                            <div class="areaData">
+                                                <div class="genderChartWrap">
+                                                    <div class="genderChart male active">
+                                                        <p class="val">73%</p>
+                                                    </div>
+                                                    <div class="genderChart female">
+                                                        <p class="val">27%</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //배달주문 분석 -->
+    
+                    <div class="fixSpendingWrap">
+                        <div class="titArea">
+                            <h2 class="defTit type02">• 주변동네 매출 TOP5</h2>
+                        </div>
+                        <table class="tblChartData">
+                            <colgroup>
+                                <col>
+                                <col style="width: 27%;">
+                                <col style="width: 27%;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>
+                                        매출<br>
+                                        (만원)
+                                    </th>
+                                    <th>
+                                        업소수<br>
+                                        (개)
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="orderWrap">
+                                            <span class="num">1.</span>
+                                            <span class="name ellipsis">서초구 압구정동</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="price">7,359</span>
+                                    </td>
+                                    <td>
+                                        <span class="count">218</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="orderWrap">
+                                            <span class="num">2.</span>
+                                            <span class="name ellipsis">강남구 도곡1동</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="price">5,766</span>
+                                    </td>
+                                    <td>
+                                        <span class="count">196</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="orderWrap">
+                                            <span class="num">3.</span>
+                                            <span class="name ellipsis">강남구 청담동</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="price">4,941</span>
+                                    </td>
+                                    <td>
+                                        <span class="count">60</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="orderWrap">
+                                            <span class="num">4.</span>
+                                            <span class="name ellipsis">강남구 도곡2동</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="price">4,941</span>
+                                    </td>
+                                    <td>
+                                        <span class="count">60</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="orderWrap">
+                                            <span class="num">5.</span>
+                                            <span class="name ellipsis">강남구 자곡동</span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="price">4,941</span>
+                                    </td>
+                                    <td>
+                                        <span class="count">60</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+    
+                <!-- 보고서 공통 footer -->
+                <footer class="includeFooter">
+                    <!-- 응원 -->
+                    <div class="cheeringWrap">
+                        <div class="roundBoxWrap type02">
+                            <div class="roundBox">
+                                <strong class="tit">진도준 사장님</strong>
+                                <p class="defTxt02">
+                                    좋은 하루 되세요!<br>
+                                    작은 응원은 힘이 됩니다 ^^
+                                </p>
+                                <div class="cheerBox">
+                                    <ul class="cheerList">
+                                        <li>
+                                            <a href="javascript:;">
+                                                <img src="../../img/ico_cheer01.png">
+                                                <p class="defTxt02">훌륭해요</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <img src="../../img/ico_cheer02.png">
+                                                <p class="defTxt02">감사해요</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <img src="../../img/ico_cheer03.png">
+                                                <p class="defTxt02">좋아요</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <img src="../../img/ico_cheer04.png">
+                                                <p class="defTxt02">아쉬워요</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <img src="../../img/ico_cheer05.png">
+                                                <p class="defTxt02">별로에요</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <div class="areaLike">
+                                        <span class="defTxt02">999+명이 좋아해요</span>
+                                        <div class="areaBodyBtn">
+                                            <button type="button" class="btnPointBd">
+                                                <img src="../../img/ico_cheer01.png" alt="">
+                                                <span>좋아요</span>
+                                            </button>
+                                            <button type="button" class="btnBdGray">의견 보내기</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //응원 -->
+                
+                    <ul class="reportMsgList">
+                        <li>
+                            <div class="areaStateMsg">
+                                <span class="defTxt02">읽음 : 22.09.06 13:55</span>
+                            </div>
+                        </li>
+                    </ul>
+                
+                    <hr class="grayLine02 mgt15">
+                    <div class="infoRept">
+                        <h4 class="defTit">안내사항</h4>
+                        <p class="defTxt02">
+                            상권분석은 소상공인시장진흥공단과 세모리포트에서 제공하는 데이터로
+                            실제의 매출과 차이가 발생할 수 있습니다. 사장님의 사업분석을 위한 참고 자료로
+                            활용해 주세요.
+                        </p>
+                    </div>
+    
+                    <!-- 하단 플로팅버튼 -->
+                    <div class="areaFloatingBtn btnTop">
+                        <a href="javascript:;" role="button">
+                            <img src="../../img/ico_ts_up.png" width="9px">
+                            <p>TOP</p>
+                        </a>
+                    </div>
+                    <!-- //하단 플로팅버튼 -->
+                </footer>
+                <!-- //보고서 공통 footer -->
+            </div>
+        </div>
+        <!-- //container -->
+    </div>
+    <!-- //wrapper -->
+
+    <script>
+        $(function() {
+            // 상단 탑버튼 함수
+            funcGoToTop();
+
+            var alwaysShowTooltip = {
+                id: 'alwaysShowTooltip',
+                afterDraw(chart, args, options) {
+                    var { ctx } = chart;
+                    ctx.save();
+
+                    // console.log(chart)
+                    chart.data.datasets.forEach((dataset, i) => {
+                        chart.getDatasetMeta(i).data.forEach((datapoint, index) => {
+                            var { x, y } = datapoint.tooltipPosition();
+                            var text = chart.data.labels[index];
+                            // console.log(datapoint.tooltipPosition());
+                            // console.log(chart.data.datasets[0].data[index]);
+
+                            //text
+                            if (index == chart.data.labels.length - 1) {
+                                ctx.fillStyle = chart.data.datasets[0].backgroundColor[index];
+                            } else {
+                                ctx.fillStyle = '#8a8a8b';
+                            }
+
+                            ctx.font = '600 0.8rem Pretendard';
+                            ctx.textAlign = "center";
+                            ctx.fillText(chart.data.datasets[0].data[index] + '만원', x, y - 10);
+                            ctx.restore();
+                        })
+                    })
+                }
+            }
+
+            // 평균 매출 차트
+            var bar1 = {
+                data: {
+                    datasets: [
+                        {
+                            type: 'bar',
+                            data: [400, 500, 700],
+                            backgroundColor: ['#DDDFE1', '#DDDFE1', '#12997a'],
+                            borderRadius: 5,
+                        }
+                    ],
+                    labels: ['서울특별시', '강남구', '반포2동']
+                },
+                options: {
+                    maxBarThickness: 44,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            enabled: false
+                        }
+                    },
+                    scales: {
+                        x: {
+                            grid: {
+                                display: false,
+                                drawBorder: false,
+                                beginAtZero: true,
+                            },
+                            ticks: {
+                                color: "#111",
+                                font: {
+                                    size: 12,
+                                    family: "Pretendard",
+                                }
+                            },
+                        },
+                        y: {
+                            grid: {
+                                drawBorder: false,
+                                color: (context) => {
+                                    if (context.tick.value === 0) {
+                                        return "#e3e3e3"
+                                    }
+                                }
+                            },
+                            ticks: { display: false }
+                        }
+                    }
+                },
+                plugins: [alwaysShowTooltip]
+            }
+
+            // 유동인구 시간대 차트
+            var bar2 = {
+                data: {
+                    datasets: [
+                        {
+                            type: 'bar',
+                            data: [0, 4, 5, 35, 25, 100],
+                            backgroundColor: ['#DDDFE1', '#DDDFE1', '#17bf98', '#DDDFE1', '#DDDFE1', '#DDDFE1'],
+                            borderRadius: 5,
+                            minBarLength: 20,
+                        }
+                    ],
+                    labels: [['00', '~06'], ['04', '~07'], ['08', '~11'], ['12', '~15'], ['16', '~19'], ['20', '~23']]
+                },
+                options: {
+                    maxBarThickness: 30,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                title: function (context) {
+                                    return context[0].label.replace(',', '');
+
+                                },
+                                label: function (context) {
+                                    return context.formattedValue + '%';
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            grid: {
+                                display: false,
+                                drawBorder: false,
+                                beginAtZero: true,
+                            },
+                            ticks: {
+                                color: "#A9ADB5",
+                                font: {
+                                    size: 12,
+                                    family: "Pretendard",
+                                }
+                            },
+                        },
+                        y: {
+                            grid: {
+                                drawBorder: false,
+                                color: (context) => {
+                                    if (context.tick.value === 0) {
+                                        return "#e3e3e3"
+                                    }
+                                }
+                            },
+                            ticks: { display: false }
+                        }
+                    }
+                }
+            }
+
+            // 배달주문 분석 차트
+            var bar3 = {
+                data: {
+                    datasets: [
+                        {
+                            type: 'bar',
+                            data: ['400', 500, 700],
+                            backgroundColor: ['#DDDFE1', '#DDDFE1', '#12997a'],
+                            borderRadius: 5,
+                        }
+                    ],
+                    labels: ['서울특별시', '강남구', '반포2동']
+                },
+                options: {
+                    maxBarThickness: 44,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        x: {
+                            grid: {
+                                display: false,
+                                drawBorder: false,
+                                beginAtZero: true,
+                            },
+                            ticks: {
+                                color: "#111",
+                                font: {
+                                    size: 12,
+                                    family: "Pretendard",
+                                }
+                            },
+                        },
+                        y: {
+                            grid: {
+                                drawBorder: false,
+                                color: (context) => {
+                                    if (context.tick.value === 0) {
+                                        return "#e3e3e3"
+                                    }
+                                }
+                            },
+                            ticks: { display: false }
+                        }
+                    }
+                }
+            }
+
+            // 배달 주문 많은 시간대
+            var bar4 = {
+                data: {
+                    datasets: [
+                        {
+                            type: 'bar',
+                            data: [0, 4, 5, 35, 25, 100],
+                            backgroundColor: ['#DDDFE1', '#DDDFE1', '#17bf98', '#DDDFE1', '#DDDFE1', '#DDDFE1'],
+                            borderRadius: 5,
+                            minBarLength: 20,
+                        }
+                    ],
+                    labels: [['00', '~06'], ['04', '~07'], ['08', '~11'], ['12', '~15'], ['16', '~19'], ['20', '~23']]
+                },
+                options: {
+                    maxBarThickness: 30,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                title: function (context) {
+                                    return context[0].label.replace(',', '');
+                                    //콤마제거
+                                },
+                                label: function (context) {
+                                    return context.formattedValue + '%';
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            grid: {
+                                display: false,
+                                drawBorder: false,
+                                beginAtZero: true,
+                            },
+                            ticks: {
+                                color: "#A9ADB5",
+                                font: {
+                                    size: 12,
+                                    family: "Pretendard",
+                                }
+                            },
+                        },
+                        y: {
+                            grid: {
+                                drawBorder: false,
+                                color: (context) => {
+                                    if (context.tick.value === 0) {
+                                        return "#e3e3e3"
+                                    }
+                                }
+                            },
+                            ticks: { display: false }
+                        }
+                    }
+                }
+            }
+
+            // 배달 주문 많은 연령대
+            var bar5 = {
+                data: {
+                    datasets: [
+                        {
+                            type: 'bar',
+                            data: [0, 4, 5, 35, 25, 100],
+                            backgroundColor: ['#DDDFE1', '#DDDFE1', '#17bf98', '#DDDFE1', '#DDDFE1', '#DDDFE1'],
+                            borderRadius: 5,
+                            minBarLength: 20,
+                        }
+                    ],
+                    labels: ['10대', '20대', '30대', '40대', '50대', ['60대', '이상']]
+                },
+                options: {
+                    maxBarThickness: 30,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function (context) {
+                                    return context.formattedValue + '%';
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            grid: {
+                                display: false,
+                                drawBorder: false,
+                                beginAtZero: true,
+                            },
+                            ticks: {
+                                color: "#A9ADB5",
+                                font: {
+                                    size: 11,
+                                    family: "Pretendard",
+                                }
+                            },
+                        },
+                        y: {
+                            grid: {
+                                drawBorder: false,
+                                color: (context) => {
+                                    if (context.tick.value === 0) {
+                                        return "#e3e3e3"
+                                    }
+                                }
+                            },
+                            ticks: { display: false }
+                        }
+                    }
+                }
+            }
+
+            // 업장수 차트
+            var doughnut1 = {
+                type: 'doughnut',
+                data: {
+                    labels: ['서울특별시', '서초구'],
+                    datasets: [{
+                        data: [20543, 954],
+                        backgroundColor: ['#D4D4D4', '#17BF98'],
+                        hoverBackgroundColor: ['#D4D4D4', '#17BF98'],
+                        cutout: 45,
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            enabled: false
+                        }
+                    },
+                    scales: {
+                        x: {
+                            display: false
+                        },
+                        y: {
+                            display: false,
+                        }
+                    },
+                },
+                plugins: [{
+                    id: 'text',
+                    beforeDraw: function (chart, a, b) {
+                        var width = chart.width,
+                            height = chart.height,
+                            ctx = chart.ctx;
+
+                        ctx.restore();
+                        ctx.font = "1.133rem pretendard"
+                        ctx.fillStyle = '#8A8A8B'
+                        ctx.textBaseline = "middle";
+
+                        var text = `반포 2동`;
+                        textX = ((width / 2)),
+                            textY = height / 2;
+
+                        ctx.textAlign = "center";
+                        ctx.fillText(text, textX, textY);
+                        ctx.save();
+                    }
+                }]
+            }
+
+            // 배달주문수 차트
+            var doughnut2 = {
+                type: 'doughnut',
+                data: {
+                    labels: ['서울특별시', '서초구'],
+                    datasets: [{
+                        data: [20543, 954],
+                        backgroundColor: ['#D4D4D4', '#17BF98'],
+                        hoverBackgroundColor: ['#D4D4D4', '#17BF98'],
+                        cutout: 45,
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            enabled: false
+                        }
+                    },
+                    scales: {
+                        x: {
+                            display: false
+                        },
+                        y: {
+                            display: false,
+                        }
+                    },
+                },
+                plugins: [{
+                    id: 'text',
+                    beforeDraw: function (chart, a, b) {
+                        var width = chart.width,
+                            height = chart.height,
+                            ctx = chart.ctx;
+
+                        ctx.restore();
+                        ctx.font = "1.133rem pretendard"
+                        ctx.fillStyle = '#8A8A8B'
+                        ctx.textBaseline = "middle";
+
+                        var text = `반포 2동`;
+                        textX = ((width / 2)),
+                            textY = height / 2;
+
+                        ctx.textAlign = "center";
+                        ctx.fillText(text, textX, textY);
+                        ctx.save();
+                    }
+                }]
+            }
+
+            // 유동인구 많은 날 차트
+            var pie1 = {
+                type: 'pie',
+                data: {
+                    labels: ['주말', '주중'],
+                    datasets: [{
+                        data: [61, 39],
+                        backgroundColor: ['#17BF98', '#D4D4D4'],
+                        hoverBackgroundColor: ['#17BF98', '#D4D4D4'],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            enabled: false
+                        }
+                    },
+                    scales: {
+                        x: {
+                            display: false
+                        },
+                        y: {
+                            display: false,
+                        },
+                    },
+                }
+            }
+
+            // 배달주문 많은날 차트
+            var pie2 = {
+                type: 'pie',
+                data: {
+                    labels: ['주말', '주중'],
+                    datasets: [{
+                        data: [61, 39],
+                        backgroundColor: ['#17BF98', '#D4D4D4'],
+                        hoverBackgroundColor: ['#17BF98', '#D4D4D4'],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            enabled: false
+                        }
+                    },
+                    scales: {
+                        x: {
+                            display: false
+                        },
+                        y: {
+                            display: false,
+                        },
+                    },
+                }
+            }
+
+            var barCtx1 = document.getElementById('barChart01').getContext('2d');
+            var barChart1 = new Chart(barCtx1, bar1);
+
+            var barCtx2 = document.getElementById('barChart02').getContext('2d');
+            var barChart2 = new Chart(barCtx2, bar2);
+
+            var barCtx3 = document.getElementById('barChart03').getContext('2d');
+            var barChart3 = new Chart(barCtx3, bar3);
+
+            var barCtx4 = document.getElementById('barChart04').getContext('2d');
+            var barChart4 = new Chart(barCtx4, bar4);
+
+            var barCtx5 = document.getElementById('barChart05').getContext('2d');
+            var barChart5 = new Chart(barCtx5, bar5);
+
+            var doughnuCtx1 = document.getElementById('doughnut01').getContext('2d');
+            var doughnuChart1 = new Chart(doughnuCtx1, doughnut1);
+
+            var doughnuCtx2 = document.getElementById('doughnut02').getContext('2d');
+            var doughnuChart2 = new Chart(doughnuCtx2, doughnut2);
+
+            var pieCtx1 = document.getElementById('pie01').getContext('2d');
+            var pieChart1 = new Chart(pieCtx1, pie1);
+
+            var pieCtx2 = document.getElementById('pie02').getContext('2d');
+            var pieChart2 = new Chart(pieCtx2, pie2);
+
+
+            // 응원버튼
+            $(".cheeringWrap .cheerList > li").on('click', function () {
+                var imgSrc = $(this).find('img').attr('src');
+                var cheerTxt = $(this).find('.defTxt02').text();
+                var btn = $(".cheeringWrap .areaLike .btnPointBd");
+
+                btn.addClass('pointBgColor');
+                btn.find('img').attr('src', imgSrc);
+                btn.find('span').text(cheerTxt);
+            });
+            $(".cheeringWrap .areaLike .btnPointBd").on('click', function () {
+                $('.cheeringWrap .cheerList').css('display', 'flex');
+            });
+
+            // 손익, 세금, 상권탭 클릭시 스크롤 포커스
+            $(".tabMenuList.type03 li .btnTab").on('click', function () {
+                var headerH = $(".header").height();
+                var fixTopH = $(".areaTopFixed").height();
+
+                if (fixTopH == undefined) {
+                    fixTopH = 0;
+                }
+
+                if (document.querySelector(".tabMenuList.type03").classList.contains("fixed") == true) {
+                    window.scrollTo({
+                        top: $(".busiReptCont").offset().top - (headerH + fixTopH + 60),
+                        behavior: 'smooth'
+                    });
+                } else {
+                    window.scrollTo({
+                        top: $(this).offset().top - (headerH + fixTopH + 30),
+                        behavior: 'smooth'
+                    });
+                }
+            })
+
+            //보고서 탭 좌표값
+            var tabPosY = window.pageYOffset + document.querySelector(".tabMenuList.type03").getBoundingClientRect().top;
+
+            // 영역 도달시 탭메뉴 고정
+            window.addEventListener('scroll', function () {
+                var nowScroll = window.pageYOffset; //현재 스크롤 위치
+
+                if (nowScroll >= tabPosY) {
+                    document.querySelector(".tabMenuList.type03").classList.add("fixed");
+                } else if (nowScroll <= tabPosY) {
+                    document.querySelector(".tabMenuList.type03").classList.remove("fixed");
+                }
+            })
+        })
+
+    </script>
+</body>
+</html>

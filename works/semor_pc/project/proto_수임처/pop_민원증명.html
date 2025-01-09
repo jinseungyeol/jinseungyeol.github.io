@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<title>세무대리인 for 경리나라</title>
+<link rel="stylesheet" href="../css/reset_taxp.css">
+<link rel="stylesheet" href="../css/app_header.css"><!-- [D] 세무대리인용 header -->
+<link rel="stylesheet" href="../css/content_taxp.css"><!-- [D] 세무대리인용 -->
+<!-- custom scrollbar plugin css -->
+<link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+<script src="https://publ.roumit.com/js/firebase_include.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+<!-- custom scrollbar plugin -->
+<script src="../js/jquery.mCustomScrollbar.concat.min.js"></script>
+
+</head>
+
+<body>
+
+	<div class="layer_popup_wrap" style="width:640px;">
+		<div class="layer_popup_box2">
+			<a href="#none" class="layer_close"><img src="../img/txof/btn/btn_layerpopup_close.gif" alt="닫기"></a>
+			<a href="#none" class="layer_setting"><img src="../img/txof/ico/icon_btnset_g.png" alt="설정"></a><!-- 2022-02-25 -->
+			<div class="layer_title_nb">
+				<h1>민원증명 <span class="fwn">- ㈜지엠아이인터내셔날</span></h1><!-- 2022-02-25 -->
+				<div class="title_wrap">
+					<div class="left">
+						<div class="cntalign"><p class="txt_acnt" style="margin-left:0;">홈택스에 있는 민원증명을 신청하여 수임처에게 전달하는 서비스입니다</p></div>
+					</div>
+					<div class="right">
+						<div class="cntalign"><a href="#none" class="btn_style1" style="margin-left:0;"><span><em class="ico_hisiq"></em>이력조회</span></a></div>
+						<div class="cntalign">
+							<a href="#none" class="btn_style1" style="margin-left:0;"><span><em class="ico_comset"></em>불러오기</span></a><!-- 2022-02-25 -->
+							<div class="ly_mwset" style="display:none;">
+								<div class="inner mCustomScrollbar">
+									<div class="set_group">
+										<div class="g_tit">대출 서류 <a href="#none" class="mw_del">삭제</a></div>
+										<ul>
+											<li>사업자등록증명</li>
+											<li>납세증명서(국세완납증명)</li>
+											<li>부가세 과표증명 : <span class="txt_b">D-2년 ~ D-1년</span></li>
+										</ul>
+									</div>
+									<div class="set_group">
+										<div class="g_tit">은행 제출 서류1 <a href="#none" class="mw_del">삭제</a></div>
+										<ul>
+											<li>사업자등록증명</li>
+											<li>납세증명서(국세완납증명)</li>
+											<li>납부내역증명(납세사실증명) : <span class="txt_b">전년도 1월 ~ 당월</span></li>
+											<li>부가세 과표증명 : <span class="txt_b">전전년도 1분기 ~ 전분기</span></li>
+											<li>면세사업자 수입금액증명 : <span class="txt_b">전전년도 ~ 당해년</span></li>
+											<li>표준재무제표 증명 : <span class="txt_b">전전년도 ~ 전년도</span></li>
+										</ul>
+									</div>
+									<div class="set_group">
+										<div class="g_tit">은행 제출 서류2 <a href="#none" class="mw_del">삭제</a></div>
+										<ul>
+											<li>사업자등록증명</li>
+											<li>납세증명서(국세완납증명)</li>
+											<li>납부내역증명(납세사실증명) : <span class="txt_b">전년도 1월 ~ 당월</span></li>
+											<li>부가세 과표증명 : <span class="txt_b">전전년도 1분기 ~ 전분기</span></li>
+											<li>면세사업자 수입금액증명 : <span class="txt_b">전전년도 ~ 당해년</span></li>
+											<li>표준재무제표 증명 : <span class="txt_b">전전년도 ~ 전년도</span></li>
+										</ul>
+									</div>
+								</div>
+								<a href="#none" class="set_add">업무설정 추가하기</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="layer_cont min_w">
+				<ul class="mw_list setw cboth">
+					<li>
+						<div class="ico title">사업자등록증명</div>
+						<div class="ck_date"></div>
+						<div><a href="#none" class="btn_onoff off"><span class="blind">ON</span></a></div>
+					</li>
+					<li>
+						<div class="ico title">납세증명서(국세완납증명)</div>
+						<div class="ck_date"></div>
+						<div>
+							<a href="#none" class="btn_onoff on"><span class="blind">ON</span></a>
+							<a href="#none"><img src="../img/txof/ico/icon_btnset_off.png" alt=""></a>
+						</div>
+					</li>
+					<li>
+						<div class="ico title">납부내역증명(납세사실증명)</div>
+						<div class="ck_date">기간 2020년 1월 ~ 2021년 10월</div>
+						<div>
+							<a href="#none" class="btn_onoff on"><span class="blind">ON</span></a>
+							<a href="#none"><img src="../img/txof/ico/icon_btnset_off.png" alt=""></a>
+						</div>
+					</li>
+					<li>
+						<div class="ico title">소득금액증명</div>
+						<div class="ck_date">기간 2020년 ~ 2021년</div>
+						<div>
+							<a href="#none" class="btn_onoff on"><span class="blind">ON</span></a>
+							<a href="#none"><img src="../img/txof/ico/icon_btnset_off.png" alt=""></a>
+						</div>
+					</li>
+					<li>
+						<div class="ico title">부가세 과표증명</div>
+						<div class="ck_date">기간 2020년 1기 ~ 2021년 1기</div>
+						<div>
+							<a href="#none" class="btn_onoff on"><span class="blind">ON</span></a>
+							<a href="#none"><img src="../img/txof/ico/icon_btnset_off.png" alt=""></a>
+						</div>
+					</li>
+					<li>
+						<div class="ico title">면세사업자 수입금액증명</div>
+						<div class="ck_date">기간 2020년 ~ 2021년</div>
+						<div>
+							<a href="#none" class="btn_onoff on"><span class="blind">ON</span></a>
+							<a href="#none"><img src="../img/txof/ico/icon_btnset_off.png" alt=""></a>
+						</div>
+					</li>
+					<li>
+						<div class="ico title">표준재무제표 증명</div>
+						<div class="ck_date">기간 2020년 ~ 2021년</div>
+						<div>
+							<a href="#none" class="btn_onoff on"><span class="blind">ON</span></a>
+							<a href="#none"><img src="../img/txof/ico/icon_btnset_off.png" alt=""></a>
+						</div>
+					</li>
+					<!-- 2021-12-06 -->
+					<li>
+						<div class="ico title">사업자등록증 재발급</div>
+						<div class="ck_date"></div>
+						<div>
+							<a href="#none" class="btn_onoff on"><span class="blind">ON</span></a>
+							<a href="#none"><img src="../img/txof/ico/icon_btnset_off.png" alt=""></a>
+						</div>
+					</li>
+					<!-- //2021-12-06 -->
+				</ul>
+				<div class="btnarea">
+					<a href="#none" class="btn_style1_b"><span>민원증명 신청</span></a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</body>
+</html>

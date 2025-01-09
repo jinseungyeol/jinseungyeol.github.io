@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<title>세무대리인 for 경리나라</title>
+<link rel="stylesheet" href="../css/reset_taxp.css">
+<link rel="stylesheet" href="../css/app_header.css"><!-- [D] 세무대리인용 header -->
+<link rel="stylesheet" href="../css/content_taxp.css"><!-- [D] 세무대리인용 -->
+
+</head>
+
+<body>
+
+	<div class="layer_popup_wrap" style="width:450px;height:550px;">
+		<div class="layer_popup_box">
+			<a href="#none" class="layer_close"><img src="../img/txof/btn/btn_layerpopup_close.gif" alt="닫기"></a>
+			<div class="layer_title"><h1>수임처 정보 업데이트</h1></div>
+			<div class="layer_cont" style="text-align: center;">
+				<div class="layer_titbx" style="margin-top: 30px; margin-right: 0px; margin-bottom: 15px; margin-left: 0px;">
+					<h2>
+						수임처 홈택스 정보<br />
+						업데이트
+					</h2>
+					<p>기본정보 및 사업용 신고 계좌등</p>
+					<p>홈택스에 등록된 홈택스 정보를 업데이트 합니다.</p>
+					<p class="txt_r">업데이트 실행 시 홈택스 인증서가 필요합니다.</p>
+					<p class="mgt25"><img src="../img/txof/bg/bg_ifupdate.png" alt="홈택스업데이트"></p>
+				</div>
+				<!-- 수임처 개선 -->
+				<div class="layer_iptbx mgt25">
+					<div class="inner">
+						<p>
+							<span class="tit">관리번호</span>
+							<span class="ipt"><input type="text"></span>
+						</p>
+						<p>
+							<span class="tit">비밀번호</span>
+							<span class="ipt"><input type="password"></span>
+						</p>
+					</div>
+				</div>
+				<!-- //수임처 개선 -->
+				<div class="btn_center">
+					<a id="eseroScrapingBtn" onclick="fnRegHomeTaxCustomerInquery();" href="#none" class="btn_hometax"><span>홈택스 업데이트</span></a>
+					<!-- <img class="loading_gif" id="eseroLoading" style="display: none;" alt="로딩중" src="../img/txof/btn/loading_btn_hometax.gif"/> -->
+					<!-- <span>※ 최근 1개월 동안 홈텍스에 등록된 자료를 등록합니다.</span> -->
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</body>
+</html>

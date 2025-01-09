@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<title>세무대리인 for 경리나라</title>
+<link rel="stylesheet" href="../css/reset_taxp.css">
+<link rel="stylesheet" href="../css/app_header.css"><!-- [D] 세무대리인용 header -->
+<link rel="stylesheet" href="../css/content_taxp.css"><!-- [D] 세무대리인용 -->
+
+<!-- custom scrollbar plugin css -->
+<link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+<script src="https://publ.roumit.com/js/firebase_include.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+<!-- custom scrollbar plugin -->
+<script src="../js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../js/jquery.placeholder.min.js"></script>
+<script>
+	$(function(){
+		// Invoke the plugin
+		$('input, textarea').placeholder({customClass:'my-placeholder'});
+		// 상담문의
+		$( "#btn_notice" ).on( "click", function() {
+			$("#pop_notice").toggle();
+		});
+		// 담당자지정
+		$( "#btn_manager" ).on( "click", function() {
+			$("#pop_manager").toggle();
+		});
+		// 작업일시
+		$( "#btn_last_work" ).on( "click", function() {
+			$("#pop_last_work").toggle();
+		});
+	} );
+</script>
+
+</head>
+
+<body>
+
+<!-- header -->
+<div class="app_header">
+	<div class="app_header_inner">
+		<div class="ah_l">
+			<h1>수임처</h1>
+		</div>
+
+		<div class="ah_r"></div>
+	</div>
+</div>
+<!-- //header -->
+
+<div class="wrap">
+	<!-- Container -->
+	<div class="container">
+		<!-- content wrap -->
+		<div class="content">
+
+			<div class="content_wrap">
+
+				<!-- 거래처조회 > 상세(회사정보) -->
+				<div class="cust_dv_wrap nobd"><!-- [D] 편집기능 눌렀을때 class="edit_on" 추가 -->
+
+					<div class="top_cust_tit">
+						<div class="left">
+							<div class="cntalign"><h1 class="ipt_none">미소야</h1></div>
+							<div class="cntalign">
+								<!-- 사업자번호/대표자/전화번호/팩스번호 -->
+								<ul class="top_list">
+									<li class="col1"><span class="ipt_none">311-88-00892</span>&nbsp;<span class="ipt_none" style="display: none;"></span></li>
+									<li class="col2"><strong><span class="ipt_none">신영훈</span>&nbsp;대표</strong></li>
+									<li class="col3"><img src="../img/txof/ico/ico_tel.png" alt="Tel"><strong class="ipt_none">02-3779-0001</strong></li>
+									<li class="col4">
+										<img src="../img/txof/ico/ico_fax.png" alt="Fax">
+										<div class="lyinvm ipt_none"><strong>02-3779-0002</strong></div>
+									</li>
+								</ul>
+								<!-- //사업자번호/대표자/전화번호/팩스번호 -->
+							</div>
+						</div>
+						<div class="right">
+							<div class="cntalign">
+								<a class="btn_ico_back" href="#none"><span class="blind">뒤로가기</span></a>
+							</div>
+						</div>
+					</div>
+
+					<!-- 탭영역/버튼 -->
+					<div class="tabType02">
+						<ul>
+							<li><a href="#none">회사정보조회</a></li>
+							<li><a href="#none">거래증빙</a></li>
+							<li class="on"><a href="#none">ID / PW 관리</a></li>
+							<li><a href="#none">서류함</a></li>
+							<li><a href="#none">직원급여정보</a></li>
+							<li><a href="#none">활동이력</a></li>
+							<li><a href="#none">미수금관리</a></li> <!-- 2022-07-13 -->
+						</ul>
+						<div class="right">
+							<div class="cntalign">
+								<a href="#none" class="btn_wnotbd"><span>소통게시판</span></a>
+							</div>
+							<div class="cntalign">
+								<a href="#none" class="btn_webkr"><span class="blind">경리나라</span></a><!-- 2022-07-06 -->
+							</div>
+							<div class="cntalign">
+								<a href="#none" class="btn_wflow"><span>플로우</span></a>
+							</div>
+						</div>
+					</div>
+					<!-- //탭영역/버튼 -->
+
+					<div class="posiw" style="display:;">
+						<div class="title_wrap">
+							<div class="left"></div>
+							<div class="right">
+								<div class="cntalign"><a href="#none" class="btn_style1 excel2"><span>ID/PW 일괄 등록</span></a></div>
+								<div class="cntalign"><a href="#none" class="btn_style1_b"><span>ID/PW등록</span></a></div>
+							</div>
+						</div>
+						<!-- (modify)20220804) -->
+						<table class="tbl_result3" summary="">
+							<caption></caption>
+							<colgroup>
+								<col style="width: 150px;">
+								<col style="width: 160px;">
+								<col style="width: 180px;">
+								<col style="width: 180px;">
+								<col>
+								<col style="width: 200px;">
+								<col style="width: 100px;">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col"><div>구분</div></th>
+									<th scope="col"><div>사이트명</div></th>
+									<th scope="col"><div>주소</div></th>
+									<th scope="col"><div>ID</div></th>
+									<th scope="col"><div>최종수정</div></th>
+									<th scope="col"><div></div></th>
+									<th scope="col"><div></div></th>
+								</tr>
+							</thead>
+							<tfoot style="display:none;">
+								<tr>
+									<td colspan="7" class="tac" style="height:300px;"><div>등록된 계정이 없습니다. <br />계정추가를 클릭하시면 계정을 추가 할 수 있습니다.</div></td>
+								</tr>
+							</tfoot>
+							<tbody>
+								<tr>
+									<td rowspan="3" class="bdLine"><div>기본</div></td><!-- 맨 처음 라인에 bdLine 추가 -->
+									<td><div>경리나라</div></td>
+									<td><div>www.serp.co.kr</div></td>
+									<td><div>wemembers@global.com</div></td>
+									<td><div>2021-03-05 19:21 | 관리자</div></td>
+									<td><div class="ico_w">
+										<div class="ico retouch"><a href="#none" title="수정"></a></div>
+										<div class="ico del"><a href="#none" title="삭제"></a></div>
+										<div class="ico pwhak"><a href="#none" title="비밀번호 확인"></a></div>
+										<div class="ico siten"><a href="https://www.hometax.go.kr" target="_blank" title="사이트 바로가기"></a></div>
+									</div></td>
+									<td><div class="tac txt_g">매출바로확인</div></td>
+								</tr>
+								<tr>
+									<td><div>여신금융협회</div></td>
+									<td><div>www.cardsales.or.kr</div></td>
+									<td><div>wemembers@global.com</div></td>
+									<td><div>2021-02-07 19:21 | 관리자</div></td>
+									<td><div class="ico_w">
+										<div class="ico retouch on"><a href="#none" title="수정"></a></div>
+										<div class="ico del on"><a href="#none" title="삭제"></a></div>
+										<div class="ico pwhak on">
+											<a href="#none" title="비밀번호 확인"></a>
+											<!-- 레이어 -->
+											<div class="ly_pw_noti" style="display:;">
+												<span class="tail"></span>
+												<div class="inner">
+													<dl>
+														<dt><strong>비밀번호 확인</strong></dt>
+														<dd class="txt_b mgt5">Loremipsumdolorsit</dd>
+													</dl>
+												</div>
+											</div>
+											<!-- //레이어 -->
+										</div>
+										<div class="ico siten on"><a href="https://www.cardsales.or.kr" target="_blank" title="사이트 바로가기"></a></div>
+									</div></td>
+									<td><div class="tac txt_g">매출바로확인</div></td>
+								</tr>
+								<tr class="bdLine"><!-- 마지막 라인에 tr = bdLine 추가 -->
+									<td><div class="txt_gn">홈텍스</div></td><!-- 20220804 클래스 txt_gn 추가 -->
+									<td><div class="txt_gn">www.hometax.go.kr</div></td>
+									<td><div class="txt_gn">gongdan123</div></td>
+									<td><div class="txt_gn">2022-07-28 09:20 | 관리자</div></td>
+									<td><div class="ico_w">
+										<div class="ico retouch"><a href="#none" title="수정"></a></div>
+										<div class="ico del"><a href="#none" title="삭제"></a></div>
+										<div class="ico pwhak"><a href="#none" title="비밀번호 확인"></a></div>
+										<div class="ico siten"><a href="https://www.serp.co.kr" target="_blank" title="사이트 바로가기"></a></div>
+									</div></td>
+									<td><div class="tac txt_g">매출바로확인</div></td>
+								</tr>
+
+								<tr>
+									<td rowspan="5" class="bdLine"><div>배달앱</div></td><!-- 맨 처음 라인에 bdLine 추가 -->
+									<td><div>배달의민족</div></td>
+									<td><div>www.baemin.com</div></td>
+									<td><div>wemembers@global.com</div></td>
+									<td><div>2021-03-05 19:21 | 관리자</div></td>
+									<td><div class="ico_w">
+										<div class="ico retouch"><a href="#none" title="수정"></a></div>
+										<div class="ico del"><a href="#none" title="삭제"></a></div>
+										<div class="ico pwhak"><a href="#none" title="비밀번호 확인"></a></div>
+										<div class="ico siten"><a href="https://www.hometax.go.kr" target="_blank" title="사이트 바로가기"></a></div>
+									</div></td>
+									<td><div class="tac"><a href="#none" class="t_hover txt_b">매출바로확인</a></div></td>
+								</tr>
+								<tr>
+									<td><div>쿠팡이츠</div></td>
+									<td><div>www.coupangeats.com</div></td>
+									<td><div>wemembers@global.com</div></td>
+									<td><div>2021-03-05 19:21 | 관리자</div></td>
+									<td><div class="ico_w">
+										<div class="ico retouch"><a href="#none" title="수정"></a></div>
+										<div class="ico del"><a href="#none" title="삭제"></a></div>
+										<div class="ico pwhak"><a href="#none" title="비밀번호 확인"></a></div>
+										<div class="ico siten"><a href="https://www.hometax.go.kr" target="_blank" title="사이트 바로가기"></a></div>
+									</div></td>
+									<td><div class="tac"><a href="#none" class="t_hover txt_b">매출바로확인</a></div></td>
+								</tr>
+								<tr>
+									<td><div>요기요</div></td>
+									<td><div>www.yogiyo.co.kr</div></td>
+									<td><div>wemembers@global.com</div></td>
+									<td><div>2021-03-05 19:21 | 관리자</div></td>
+									<td><div class="ico_w">
+										<div class="ico retouch"><a href="#none" title="수정"></a></div>
+										<div class="ico del"><a href="#none" title="삭제"></a></div>
+										<div class="ico pwhak"><a href="#none" title="비밀번호 확인"></a></div>
+										<div class="ico siten"><a href="https://www.hometax.go.kr" target="_blank" title="사이트 바로가기"></a></div>
+									</div></td>
+									<td><div class="tac"><a href="#none" class="t_hover txt_b">매출바로확인</a></div></td>
+								</tr>
+								<tr>
+									<td><div>배고파</div></td>
+									<td><div>www.baegofa.net</div></td>
+									<td><div>wemembers@global.com</div></td>
+									<td><div>2021-03-05 19:21 | 관리자</div></td>
+									<td><div class="ico_w">
+										<div class="ico retouch"><a href="#none" title="수정"></a></div>
+										<div class="ico del"><a href="#none" title="삭제"></a></div>
+										<div class="ico pwhak"><a href="#none" title="비밀번호 확인"></a></div>
+										<div class="ico siten"><a href="https://www.hometax.go.kr" target="_blank" title="사이트 바로가기"></a></div>
+									</div></td>
+									<td><div class="tac txt_g">매출바로확인</div></td>
+								</tr>
+								<tr class="bdLine"><!-- 마지막 라인에 tr = bdLine 추가 -->
+									<td><div>배달통</div></td>
+									<td><div>www.bdtong.co.kr</div></td>
+									<td><div>wemembers@global.com</div></td>
+									<td><div>2021-03-05 19:21 | 관리자</div></td>
+									<td><div class="ico_w">
+										<div class="ico retouch"><a href="#none" title="수정"></a></div>
+										<div class="ico del"><a href="#none" title="삭제"></a></div>
+										<div class="ico pwhak"><a href="#none" title="비밀번호 확인"></a></div>
+										<div class="ico siten"><a href="https://www.hometax.go.kr" target="_blank" title="사이트 바로가기"></a></div>
+									</div></td>
+									<td><div class="tac txt_g">매출바로확인</div></td>
+								</tr>
+
+								<tr>
+									<td rowspan="15" class="bdLine"><div>쇼핑몰</div></td><!-- 맨 처음 라인에 bdLine 추가 -->
+									<td><div>도매꾹</div></td>
+									<td><div>domeggook.com</div></td>
+									<td><div>wemembers@global.com</div></td>
+									<td><div>2021-03-05 19:21 | 관리자</div></td>
+									<td><div class="ico_w">
+										<div class="ico retouch"><a href="#none" title="수정"></a></div>
+										<div class="ico del"><a href="#none" title="삭제"></a></div>
+										<div class="ico pwhak"><a href="#none" title="비밀번호 확인"></a></div>
+										<div class="ico siten"><a href="https://www.hometax.go.kr" target="_blank" title="사이트 바로가기"></a></div>
+									</div></td>
+									<td><div class="tac txt_g">매출바로확인</div></td>
+								</tr>
+								<tr>
+									<td><div>11번가</div></td>
+									<td><div>www.11st.co.kr</div></td>
+									<td><div>wemembers@global.com</div></td>
+									<td><div>2021-03-05 19:21 | 관리자</div></td>
+									<td><div class="ico_w">
+										<div class="ico retouch"><a href="#none" title="수정"></a></div>
+										<div class="ico del"><a href="#none" title="삭제"></a></div>
+										<div class="ico pwhak"><a href="#none" title="비밀번호 확인"></a></div>
+										<div class="ico siten"><a href="https://www.hometax.go.kr" target="_blank" title="사이트 바로가기"></a></div>
+									</div></td>
+									<td><div class="tac txt_g">매출바로확인</div></td>
+								</tr>
+								<tr>
+									<td><div>CJ Mail</div></td>
+									<td><div>display.cjmail.com</div></td>
+									<td><div>wemembers@global.com</div></td>
+									<td><div>2021-03-05 19:21 | 관리자</div></td>
+									<td><div class="ico_w">
+										<div class="ico retouch"><a href="#none" title="수정"></a></div>
+										<div class="ico del"><a href="#none" title="삭제"></a></div>
+										<div class="ico pwhak"><a href="#none" title="비밀번호 확인"></a></div>
+										<div class="ico siten"><a href="https://www.hometax.go.kr" target="_blank" title="사이트 바로가기"></a></div>
+									</div></td>
+									<td><div class="tac txt_g">매출바로확인</div></td>
+								</tr>
+								<tr>
+									<td><div>G마켓</div></td>
+									<td><div>www.gmarket.co.kr</div></td>
+									<td><div>wemembers@global.com</div></td>
+									<td><div>2021-03-05 19:21 | 관리자</div></td>
+									<td><div class="ico_w">
+										<div class="ico retouch"><a href="#none" title="수정"></a></div>
+										<div class="ico del"><a href="#none" title="삭제"></a></div>
+										<div class="ico pwhak"><a href="#none" title="비밀번호 확인"></a></div>
+										<div class="ico siten"><a href="https://www.hometax.go.kr" target="_blank" title="사이트 바로가기"></a></div>
+									</div></td>
+									<td><div class="tac txt_g">매출바로확인</div></td>
+								</tr>
+								<tr>
+									<td><div>롯데ON</div></td>
+									<td><div>lotteon.com</div></td>
+									<td><div>wemembers@global.com</div></td>
+									<td><div>2021-03-05 19:21 | 관리자</div></td>
+									<td><div class="ico_w">
+										<div class="ico retouch"><a href="#none" title="수정"></a></div>
+										<div class="ico del"><a href="#none" title="삭제"></a></div>
+										<div class="ico pwhak"><a href="#none" title="비밀번호 확인"></a></div>
+										<div class="ico siten"><a href="https://www.hometax.go.kr" target="_blank" title="사이트 바로가기"></a></div>
+									</div></td>
+									<td><div class="tac txt_g">매출바로확인</div></td>
+								</tr>
+								<tr>
+									<td><div>롯데닷컴</div></td>
+									<td><div>lotteon.com</div></td>
+									<td><div>wemembers@global.com</div></td>
+									<td><div>2021-03-05 19:21 | 관리자</div></td>
+									<td><div class="ico_w">
+										<div class="ico retouch"><a href="#none" title="수정"></a></div>
+										<div class="ico del"><a href="#none" title="삭제"></a></div>
+										<div class="ico pwhak"><a href="#none" title="비밀번호 확인"></a></div>
+										<div class="ico siten"><a href="https://www.hometax.go.kr" target="_blank" title="사이트 바로가기"></a></div>
+									</div></td>
+									<td><div class="tac txt_g">매출바로확인</div></td>
+								</tr>
+								<tr>
+									<td><div>스마트스토어</div></td>
+									<td><div>sell.smartstore.naver.com</div></td>
+									<td><div>wemembers@global.com</div></td>
+									<td><div>2021-03-05 19:21 | 관리자</div></td>
+									<td><div class="ico_w">
+										<div class="ico retouch"><a href="#none" title="수정"></a></div>
+										<div class="ico del"><a href="#none" title="삭제"></a></div>
+										<div class="ico pwhak"><a href="#none" title="비밀번호 확인"></a></div>
+										<div class="ico siten"><a href="https://www.hometax.go.kr" target="_blank" title="사이트 바로가기"></a></div>
+									</div></td>
+									<td><div class="tac txt_g">매출바로확인</div></td>
+								</tr>
+								<tr>
+									<td><div>신세계물</div></td>
+									<td><div>shinsegaemall.ssg.com</div></td>
+									<td><div>wemembers@global.com</div></td>
+									<td><div>2021-03-05 19:21 | 관리자</div></td>
+									<td><div class="ico_w">
+										<div class="ico retouch"><a href="#none" title="수정"></a></div>
+										<div class="ico del"><a href="#none" title="삭제"></a></div>
+										<div class="ico pwhak"><a href="#none" title="비밀번호 확인"></a></div>
+										<div class="ico siten"><a href="https://www.hometax.go.kr" target="_blank" title="사이트 바로가기"></a></div>
+									</div></td>
+									<td><div class="tac txt_g">매출바로확인</div></td>
+								</tr>
+								<tr>
+									<td><div>옥션</div></td>
+									<td><div>www.auction.co.kr</div></td>
+									<td><div>wemembers@global.com</div></td>
+									<td><div>2021-03-05 19:21 | 관리자</div></td>
+									<td><div class="ico_w">
+										<div class="ico retouch"><a href="#none" title="수정"></a></div>
+										<div class="ico del"><a href="#none" title="삭제"></a></div>
+										<div class="ico pwhak"><a href="#none" title="비밀번호 확인"></a></div>
+										<div class="ico siten"><a href="https://www.hometax.go.kr" target="_blank" title="사이트 바로가기"></a></div>
+									</div></td>
+									<td><div class="tac txt_g">매출바로확인</div></td>
+								</tr>
+								<tr>
+									<td><div>위메프</div></td>
+									<td><div>front.wemakeprice.com</div></td>
+									<td><div>wemembers@global.com</div></td>
+									<td><div>2021-03-05 19:21 | 관리자</div></td>
+									<td><div class="ico_w">
+										<div class="ico retouch"><a href="#none" title="수정"></a></div>
+										<div class="ico del"><a href="#none" title="삭제"></a></div>
+										<div class="ico pwhak"><a href="#none" title="비밀번호 확인"></a></div>
+										<div class="ico siten"><a href="https://www.hometax.go.kr" target="_blank" title="사이트 바로가기"></a></div>
+									</div></td>
+									<td><div class="tac txt_g">매출바로확인</div></td>
+								</tr>
+								<tr>
+									<td><div>인터파크</div></td>
+									<td><div>www.interpark.com</div></td>
+									<td><div>wemembers@global.com</div></td>
+									<td><div>2021-03-05 19:21 | 관리자</div></td>
+									<td><div class="ico_w">
+										<div class="ico retouch"><a href="#none" title="수정"></a></div>
+										<div class="ico del"><a href="#none" title="삭제"></a></div>
+										<div class="ico pwhak"><a href="#none" title="비밀번호 확인"></a></div>
+										<div class="ico siten"><a href="https://www.hometax.go.kr" target="_blank" title="사이트 바로가기"></a></div>
+									</div></td>
+									<td><div class="tac txt_g">매출바로확인</div></td>
+								</tr>
+								<tr>
+									<td><div>카카오톡스토어</div></td>
+									<td><div>store-sell.kakao.com</div></td>
+									<td><div>wemembers@global.com</div></td>
+									<td><div>2021-03-05 19:21 | 관리자</div></td>
+									<td><div class="ico_w">
+										<div class="ico retouch"><a href="#none" title="수정"></a></div>
+										<div class="ico del"><a href="#none" title="삭제"></a></div>
+										<div class="ico pwhak"><a href="#none" title="비밀번호 확인"></a></div>
+										<div class="ico siten"><a href="https://www.hometax.go.kr" target="_blank" title="사이트 바로가기"></a></div>
+									</div></td>
+									<td><div class="tac txt_g">매출바로확인</div></td>
+								</tr>
+								<tr>
+									<td><div>쿠팡</div></td>
+									<td><div>www.coupang.com</div></td>
+									<td><div>wemembers@global.com</div></td>
+									<td><div>2021-03-05 19:21 | 관리자</div></td>
+									<td><div class="ico_w">
+										<div class="ico retouch"><a href="#none" title="수정"></a></div>
+										<div class="ico del"><a href="#none" title="삭제"></a></div>
+										<div class="ico pwhak"><a href="#none" title="비밀번호 확인"></a></div>
+										<div class="ico siten"><a href="https://www.hometax.go.kr" target="_blank" title="사이트 바로가기"></a></div>
+									</div></td>
+									<td><div class="tac txt_g">매출바로확인</div></td>
+								</tr>
+								<tr>
+									<td><div>티몬</div></td>
+									<td><div>www.tmon.co.kr</div></td>
+									<td><div>wemembers@global.com</div></td>
+									<td><div>2021-03-05 19:21 | 관리자</div></td>
+									<td><div class="ico_w">
+										<div class="ico retouch"><a href="#none" title="수정"></a></div>
+										<div class="ico del"><a href="#none" title="삭제"></a></div>
+										<div class="ico pwhak"><a href="#none" title="비밀번호 확인"></a></div>
+										<div class="ico siten"><a href="https://www.hometax.go.kr" target="_blank" title="사이트 바로가기"></a></div>
+									</div></td>
+									<td><div class="tac txt_g">매출바로확인</div></td>
+								</tr>
+								<tr class="bdLine"><!-- 마지막 라인에 tr = bdLine 추가 -->
+									<td><div>화해</div></td>
+									<td><div>www.hawhae.co.kr</div></td>
+									<td><div>wemembers@global.com</div></td>
+									<td><div>2021-03-05 19:21 | 관리자</div></td>
+									<td><div class="ico_w">
+										<div class="ico retouch"><a href="#none" title="수정"></a></div>
+										<div class="ico del"><a href="#none" title="삭제"></a></div>
+										<div class="ico pwhak"><a href="#none" title="비밀번호 확인"></a></div>
+										<div class="ico siten"><a href="https://www.hometax.go.kr" target="_blank" title="사이트 바로가기"></a></div>
+									</div></td>
+									<td><div class="tac txt_g">매출바로확인</div></td>
+								</tr>
+
+								<tr>
+									<td rowspan="3" class="bdLine"><div>숙박앱</div></td><!-- 맨 처음 라인에 bdLine 추가 -->
+									<td><div>데일리호텔</div></td>
+									<td><div>www.dailyhotel.com</div></td>
+									<td><div>wemembers@global.com</div></td>
+									<td><div>2021-03-05 19:21 | 관리자</div></td>
+									<td><div class="ico_w">
+										<div class="ico retouch"><a href="#none" title="수정"></a></div>
+										<div class="ico del"><a href="#none" title="삭제"></a></div>
+										<div class="ico pwhak"><a href="#none" title="비밀번호 확인"></a></div>
+										<div class="ico siten"><a href="https://www.hometax.go.kr" target="_blank" title="사이트 바로가기"></a></div>
+									</div></td>
+									<td><div class="tac"><a href="#none" class="t_hover txt_b">매출바로확인</a></div></td>
+								</tr>
+								<tr>
+									<td><div>야놀자</div></td>
+									<td><div>www.janolja.com</div></td>
+									<td><div>wemembers@global.com</div></td>
+									<td><div>2021-03-05 19:21 | 관리자</div></td>
+									<td><div class="ico_w">
+										<div class="ico retouch"><a href="#none" title="수정"></a></div>
+										<div class="ico del"><a href="#none" title="삭제"></a></div>
+										<div class="ico pwhak"><a href="#none" title="비밀번호 확인"></a></div>
+										<div class="ico siten"><a href="https://www.hometax.go.kr" target="_blank" title="사이트 바로가기"></a></div>
+									</div></td>
+									<td><div class="tac"><a href="#none" class="t_hover txt_b">매출바로확인</a></div></td>
+								</tr>
+								<tr class="bdLine"><!-- 마지막 라인에 tr = bdLine 추가 -->
+									<td><div>여기어때</div></td>
+									<td><div>www.goodchoice.kr</div></td>
+									<td><div>wemembers@global.com</div></td>
+									<td><div>2021-03-05 19:21 | 관리자</div></td>
+									<td><div class="ico_w">
+										<div class="ico retouch"><a href="#none" title="수정"></a></div>
+										<div class="ico del"><a href="#none" title="삭제"></a></div>
+										<div class="ico pwhak"><a href="#none" title="비밀번호 확인"></a></div>
+										<div class="ico siten"><a href="https://www.hometax.go.kr" target="_blank" title="사이트 바로가기"></a></div>
+									</div></td>
+									<td><div class="tac"><a href="#none" class="t_hover txt_b">매출바로확인</a></div></td>
+								</tr>
+
+								<tr>
+									<td rowspan="3" class="bdLine"><div>여행문화</div></td><!-- 맨 처음 라인에 bdLine 추가 -->
+									<td><div>위메프(여행)</div></td>
+									<td><div>tour.wd.wemakeprice.com</div></td>
+									<td><div>wemembers@global.com</div></td>
+									<td><div>2021-03-05 19:21 | 관리자</div></td>
+									<td><div class="ico_w">
+										<div class="ico retouch"><a href="#none" title="수정"></a></div>
+										<div class="ico del"><a href="#none" title="삭제"></a></div>
+										<div class="ico pwhak"><a href="#none" title="비밀번호 확인"></a></div>
+										<div class="ico siten"><a href="https://www.hometax.go.kr" target="_blank" title="사이트 바로가기"></a></div>
+									</div></td>
+									<td><div class="tac"><a href="#none" class="t_hover txt_b">매출바로확인</a></div></td>
+								</tr>
+								<tr>
+									<td><div>쿠팡(여행)</div></td>
+									<td><div>trip.coupang.com</div></td>
+									<td><div>wemembers@global.com</div></td>
+									<td><div>2021-03-05 19:21 | 관리자</div></td>
+									<td><div class="ico_w">
+										<div class="ico retouch"><a href="#none" title="수정"></a></div>
+										<div class="ico del"><a href="#none" title="삭제"></a></div>
+										<div class="ico pwhak"><a href="#none" title="비밀번호 확인"></a></div>
+										<div class="ico siten"><a href="https://www.hometax.go.kr" target="_blank" title="사이트 바로가기"></a></div>
+									</div></td>
+									<td><div class="tac"><a href="#none" class="t_hover txt_b">매출바로확인</a></div></td>
+								</tr>
+								<tr class="bdLine"><!-- 마지막 라인에 tr = bdLine 추가 -->
+									<td><div>티몬(여행)</div></td>
+									<td><div>tour.tmon.co.kr</div></td>
+									<td><div>wemembers@global.com</div></td>
+									<td><div>2021-03-05 19:21 | 관리자</div></td>
+									<td><div class="ico_w">
+										<div class="ico retouch"><a href="#none" title="수정"></a></div>
+										<div class="ico del"><a href="#none" title="삭제"></a></div>
+										<div class="ico pwhak"><a href="#none" title="비밀번호 확인"></a></div>
+										<div class="ico siten"><a href="https://www.hometax.go.kr" target="_blank" title="사이트 바로가기"></a></div>
+									</div></td>
+									<td><div class="tac"><a href="#none" class="t_hover txt_b">매출바로확인</a></div></td>
+								</tr>
+
+								<tr>
+									<td rowspan="5" class="bdLine"><div>PG매출</div></td><!-- 맨 처음 라인에 bdLine 추가 -->
+									<td><div>KG모빌리언스</div></td>
+									<td><div>www.mobilians.co.kr</div></td>
+									<td><div>wemembers@global.com</div></td>
+									<td><div>2021-03-05 19:21 | 관리자</div></td>
+									<td><div class="ico_w">
+										<div class="ico retouch"><a href="#none" title="수정"></a></div>
+										<div class="ico del"><a href="#none" title="삭제"></a></div>
+										<div class="ico pwhak"><a href="#none" title="비밀번호 확인"></a></div>
+										<div class="ico siten"><a href="https://www.hometax.go.kr" target="_blank" title="사이트 바로가기"></a></div>
+									</div></td>
+									<td><div class="tac"><a href="#none" class="t_hover txt_b">매출바로확인</a></div></td>
+								</tr>
+								<tr>
+									<td><div>KG이니시스</div></td>
+									<td><div>www.inicis.com</div></td>
+									<td><div>wemembers@global.com</div></td>
+									<td><div>2021-03-05 19:21 | 관리자</div></td>
+									<td><div class="ico_w">
+										<div class="ico retouch"><a href="#none" title="수정"></a></div>
+										<div class="ico del"><a href="#none" title="삭제"></a></div>
+										<div class="ico pwhak"><a href="#none" title="비밀번호 확인"></a></div>
+										<div class="ico siten"><a href="https://www.hometax.go.kr" target="_blank" title="사이트 바로가기"></a></div>
+									</div></td>
+									<td><div class="tac"><a href="#none" class="t_hover txt_b">매출바로확인</a></div></td>
+								</tr>
+								<tr>
+									<td><div>PAYCO</div></td>
+									<td><div>www.payco.com</div></td>
+									<td><div>wemembers@global.com</div></td>
+									<td><div>2021-03-05 19:21 | 관리자</div></td>
+									<td><div class="ico_w">
+										<div class="ico retouch"><a href="#none" title="수정"></a></div>
+										<div class="ico del"><a href="#none" title="삭제"></a></div>
+										<div class="ico pwhak"><a href="#none" title="비밀번호 확인"></a></div>
+										<div class="ico siten"><a href="https://www.hometax.go.kr" target="_blank" title="사이트 바로가기"></a></div>
+									</div></td>
+									<td><div class="tac"><a href="#none" class="t_hover txt_b">매출바로확인</a></div></td>
+								</tr>
+								<tr>
+									<td><div>네이버페이</div></td>
+									<td><div>pay.naver.com</div></td>
+									<td><div>wemembers@global.com</div></td>
+									<td><div>2021-03-05 19:21 | 관리자</div></td>
+									<td><div class="ico_w">
+										<div class="ico retouch"><a href="#none" title="수정"></a></div>
+										<div class="ico del"><a href="#none" title="삭제"></a></div>
+										<div class="ico pwhak"><a href="#none" title="비밀번호 확인"></a></div>
+										<div class="ico siten"><a href="https://www.hometax.go.kr" target="_blank" title="사이트 바로가기"></a></div>
+									</div></td>
+									<td><div class="tac"><a href="#none" class="t_hover txt_b">매출바로확인</a></div></td>
+								</tr>
+								<tr class="bdLine"><!-- 마지막 라인에 tr = bdLine 추가 -->
+									<td><div>페이앱</div></td>
+									<td><div>www.payapp.kr</div></td>
+									<td><div>wemembers@global.com</div></td>
+									<td><div>2021-03-05 19:21 | 관리자</div></td>
+									<td><div class="ico_w">
+										<div class="ico retouch"><a href="#none" title="수정"></a></div>
+										<div class="ico del"><a href="#none" title="삭제"></a></div>
+										<div class="ico pwhak"><a href="#none" title="비밀번호 확인"></a></div>
+										<div class="ico siten"><a href="https://www.hometax.go.kr" target="_blank" title="사이트 바로가기"></a></div>
+									</div></td>
+									<td><div class="tac"><a href="#none" class="t_hover txt_b">매출바로확인</a></div></td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- //(modify)20220804 -->
+					</div>
+					<div class="mgt10">&middot; 계정관리에 필요한 파일을 첨부합니다. <label><a href="#none" class="txt_b txt_unline">첨부</a></label></div><!-- 파일선택 전 -->
+					<div class="mgt10">&middot; 계정관리에 필요한 파일을 첨부합니다. <label><a href="#none" class="txt_b txt_unline">미소야계정.xlsx</a>&nbsp;<a href="#none"><img src="../img/txof/btn/btn_upload_del.png" alt="삭제"></a></label></div> <!-- 파일선택 후 -->
+				</div>
+				<div class="mgt10 mgl10"><a href="#none" class="txt_b fwb t_hover">+ 더 보기</a></div>
+				<div class="mgt10 mgl10 tac"><a href="#none" class="txt_b fwb t_hover">- 접기</a></div>
+				<!-- //거래처조회 > 상세(회사정보) -->
+
+			</div>
+		</div>
+		<!-- //content wrap -->
+	</div>
+	<!-- //Container -->
+</div>
+<!-- //wrap -->
+
+
+</body>
+</html>
+

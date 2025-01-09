@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<title>매출장 보고서</title>
+<link rel="stylesheet" href="../css/w2ui_2.0.css">
+<link rel="stylesheet" href="../css/swiper-bundle.min.css">
+<link rel="stylesheet" href="../css/reset_taxp.css">
+<link rel="stylesheet" href="../css/app_header.css">
+<link rel="stylesheet" href="../css/content_taxp.css">
+<link rel="stylesheet" href="../css/semo_rept.css">
+<link rel="stylesheet" href="../css/w2ui-2.0.css">
+
+<!-- custom scrollbar plugin css -->
+<link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+<script src="https://publ.roumit.com/js/firebase_include.js"></script>
+  <script src="../js/lib/jquery/jquery-1.12.4.min.js"></script>
+<script src="../js/lib/jquery/jquery-ui-1.10.4.min.js"></script>
+<script src="../js/lib/swiper/swiper-bundle.min.js"></script>
+<!-- custom scrollbar plugin -->
+<script src="../js/lib/plugin/w2ui.js"></script>            
+<script src="../js/design/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../js/design/jquery.placeholder.min.js"></script>
+<script src="../js/lib/plugin/smart.popup.js"></script>
+<script src="../js/comm/common.js"></script>
+<script>
+
+	$(function(){
+			// 상단 .user_name 핸들링
+		   $('.container_inner').scroll(function(){
+			   if($('.container_inner').scrollTop() > 30) {
+				   $('.rpt_smry_wrap').addClass('active');
+			   }
+			   else {
+				   $('.rpt_smry_wrap').removeClass('active');
+			   }   
+		   })
+
+		   $('.pop_wrap .info_title .left .title_btn').click(function () {
+                $('.rprt-radio_pop').show();
+            });  
+		   $('.rprt-radio_pop .btn_style1_b').click(function () {
+                $('.rprt-radio_pop ').hide();
+            });  
+			$('.rprt_tbl input[type="text"]').click(function () {
+                $(this).parents('tr').addClass("focused");
+            });  
+			
+		 })
+
+</script>
+</head>
+  
+<body style="">
+    <div class="window_open">
+        <div class="pop_wrap confirmRept h_auto" >
+
+            <!-- 팝업 컨텐츠 -->
+            <div class="pop_container pd0 rept_pop" style="display: flex;">
+                <div class="leftTab">
+                    <div class="src_box">
+                        <div class="inner">
+                            <img src="../img/txof/ico/search_14x14.svg" alt="" class="src_icon">
+                            <input type="text" placeholder="검색" id="sch_word">
+                        </div>
+                    </div>	
+                    <div class="reportListWrap">
+                        <div class="areaTit">
+                            <p class="count">거래처 35</p>
+                            <div class="rCont">
+                                <label><input type="checkbox"> 검토완료 제외</label>
+                            </div>
+                        </div>
+                        <ul class="reportList">
+                            <!-- 확인완료시 complete 클래스 추가 -->
+                            <li class="">
+                                <a href="javascript:;">
+                                    <div class="titArea">
+                                        <strong class="tit">로움아이티로움아이티</strong>
+                                        <span class="badge">검토완료</span>
+                                    </div>
+                                    <div class="cntArea">
+                                        <div class="infoStaff">
+                                            <span>123-45-67890</span>
+                                            <span>|</span>
+                                            <span>김세모</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <!-- 활성화시 active 클래스 추가 -->
+                            <li class="active">
+                                <a href="javascript:;">
+                                    <div class="titArea">
+                                        <strong class="tit">로움아이티</strong>
+                                        <span class="badge  color02">검토완료</span>
+                                    </div>
+                                    <div class="cntArea">
+                                        <div class="infoStaff">
+                                            <span>123-45-67890</span>
+                                            <span>|</span>
+                                            <span>김세모</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <div class="titArea">
+                                        <strong class="tit">로움아이티</strong>
+                                        <span class="badge  color02">검토완료</span>								
+                                    </div>
+                                    <div class="cntArea">
+                                        <div class="infoStaff">
+                                            <span>123-45-67890</span>
+                                            <span>|</span>
+                                            <span>김세모</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <div class="titArea">
+                                        <strong class="tit">로움아이티</strong>
+                                        <span class="badge  color02">검토완료</span>								
+                                    </div>
+                                    <div class="cntArea">
+                                        <div class="infoStaff">
+                                            <span>123-45-67890</span>
+                                            <span>|</span>
+                                            <span>김세모</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <div class="titArea">
+                                        <strong class="tit">로움아이티</strong>
+                                        <span class="badge  color02">검토완료</span>								
+                                    </div>
+                                    <div class="cntArea">
+                                        <div class="infoStaff">
+                                            <span>123-45-67890</span>
+                                            <span>|</span>
+                                            <span>김세모</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <div class="titArea">
+                                        <strong class="tit">로움아이티</strong>
+                                        <span class="badge  color02">검토완료</span>								
+                                    </div>
+                                    <div class="cntArea">
+                                        <div class="infoStaff">
+                                            <span>123-45-67890</span>
+                                            <span>|</span>
+                                            <span>김세모</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <div class="titArea">
+                                        <strong class="tit">로움아이티</strong>
+                                        <span class="badge  color02">검토완료</span>								
+                                    </div>
+                                    <div class="cntArea">
+                                        <div class="infoStaff">
+                                            <span>123-45-67890</span>
+                                            <span>|</span>
+                                            <span>김세모</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <div class="titArea">
+                                        <strong class="tit">로움아이티</strong>
+                                        <span class="badge  color02">검토완료</span>								
+                                    </div>
+                                    <div class="cntArea">
+                                        <div class="infoStaff">
+                                            <span>123-45-67890</span>
+                                            <span>|</span>
+                                            <span>김세모</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <div class="titArea">
+                                        <strong class="tit">로움아이티</strong>
+                                        <span class="badge  color02">검토완료</span>								
+                                    </div>
+                                    <div class="cntArea">
+                                        <div class="infoStaff">
+                                            <span>123-45-67890</span>
+                                            <span>|</span>
+                                            <span>김세모</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">
+                                    <div class="titArea">
+                                        <strong class="tit">로움아이티</strong>
+                                        <span class="badge  color02">검토완료</span>								
+                                    </div>
+                                    <div class="cntArea">
+                                        <div class="infoStaff">
+                                            <span>123-45-67890</span>
+                                            <span>|</span>
+                                            <span>김세모</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="paging">
+                            <a href="#none" class="btn_pag_cntr first" style="margin-right: -5px"><span class="blind">first</span></a>
+                            <a href="#none" class="btn_pag_cntr prev"><span class="blind">previous</span></a>
+                            <span class="pag_num">
+                                <a href="#none" class="on">1</a>
+                                <a href="#none">2</a>
+                                <a href="#none">3</a>
+                                <a href="#none">4</a>
+                                <a href="#none">5</a>
+                            </span>
+                            <a href="#none" class="btn_pag_cntr next on"><span class="blind">next</span></a><a href="#none"
+                                class="btn_pag_cntr last on"><span class="blind">last</span></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="container_inner">
+                    
+                    <!-- 타이틀 -->
+                    <section class="user_info_wrap">
+                        <article class="user-info">
+                            <div class="user_name">
+                                <h1>이로운가게 영등포구청점</h1>
+                                <!-- 개인 indiv / 법인 gener -->
+                                <span class="badge indiv">개인사업자</span>
+                            </div>
+                            <div class="user-info_table">
+                                <table>
+                                    <colgroup>
+                                        <col style="width: 80px;">
+                                        <col style="width: 140px;">
+                                        <col style="width: 80px;">
+                                        <col style="width: 100px;">
+                                        <col style="width: 80px;">
+                                        <col style="width: 250px;">
+                                    </colgroup>
+                                    <thead></thead>
+                                    <tbody>
+                                        <tr>
+                                            <th>사업자번호</th>
+                                            <td>123-45-67890</td>
+                                            <th>대표자명</th>
+                                            <td>홍길동</td>
+                                            <th>업종코드</th>
+                                            <td>552101</td>
+                                        </tr>
+                                        <tr>
+                                            <th>사업자유형</th>
+                                            <td>일반</td>
+                                            <th>계약상태</th>
+                                            <td>기장개인</td>
+                                            <th>업종</th>
+                                            <td>숙박 및 음식점업</td>
+                                        </tr>
+                                    </tbody>
+                                </table> 
+                            </div>
+                        </article>
+                    </section>
+                    <!-- 보고서 요약 -->
+                    <section class="rpt_smry_wrap">
+                        <article class="info_wrap">
+                            <div class="info_title">
+                                <div class="left">
+                                    <button type="button" class="title_btn">
+                                        <h2>24년 1분기 거래처 매출장</h2>
+                                        <img src="../img/txof/btn/arr_down_16.svg" alt="">
+                                    </button>
+                                    <div class="rprt-radio_pop" style="display: ;">
+                                        <div class="radio_title">
+                                            <h2>보고서 월 선택</h2>
+                                        </div>
+                                        <ul class="list_wrap">
+                                            <li>
+                                                <label for="rprtradi_01">
+                                                    <input type="radio" id="rprtradi_01" name="rprtradi">
+                                                    <span>24년 1분기 거래처 매출장</span>
+                                                </label>	
+                                            </li>
+                                            <li>
+                                                <label for="rprtradi_02">
+                                                    <input type="radio" id="rprtradi_02" name="rprtradi">
+                                                    <span>23년 하반기 거래처 매출장</span>
+                                                </label>	
+                                            </li>
+                                            <li>
+                                                <label for="rprtradi_03">
+                                                    <input type="radio" id="rprtradi_03" name="rprtradi">
+                                                    <span>23년 4분기 거래처 매출장</span>
+                                                </label>	
+                                            </li>
+                                            <li>
+                                                <label for="rprtradi_04">
+                                                    <input type="radio" id="rprtradi_04" name="rprtradi">
+                                                    <span>23년 3분기 거래처 매출장</span>
+                                                </label>	
+                                            </li>
+                                            <li>
+                                                <label for="rprtradi_05">
+                                                    <input type="radio" id="rprtradi_05" name="rprtradi">
+                                                    <span>23년 2분기 거래처 매출장</span>
+                                                </label>	
+                                            </li>
+                                            <li>
+                                                <label for="rprtradi_06">
+                                                    <input type="radio" id="rprtradi_06" name="rprtradi">
+                                                    <span>23년 1분기 거래처 매출장</span>
+                                                </label>	
+                                            </li>
+                                            <li>
+                                                <label for="rprtradi_07">
+                                                    <input type="radio" id="rprtradi_07" name="rprtradi">
+                                                    <span>22년 하반기 거래처 매출장</span>
+                                                </label>	
+                                            </li>
+                                            <li>
+                                                <label for="rprtradi_08">
+                                                    <input type="radio" id="rprtradi_08" name="rprtradi">
+                                                    <span>22년 4분기 거래처 매출장</span>
+                                                </label>	
+                                            </li>
+                                            <li>
+                                                <label for="rprtradi_09">
+                                                    <input type="radio" id="rprtradi_09" name="rprtradi">
+                                                    <span>22년 3분기 매출장</span>
+                                                </label>	
+                                            </li>
+                                            <li>
+                                                <label for="rprtradi_07">
+                                                    <input type="radio" id="rprtradi_07" name="rprtradi">
+                                                    <span>22년 하반기 거래처 매출장서</span>
+                                                </label>	
+                                            </li>
+                                            <li>
+                                                <label for="rprtradi_08">
+                                                    <input type="radio" id="rprtradi_08" name="rprtradi">
+                                                    <span>22년 4분기 거래처 매출장</span>
+                                                </label>	
+                                            </li>
+                                            <li>
+                                                <label for="rprtradi_09">
+                                                    <input type="radio" id="rprtradi_09" name="rprtradi">
+                                                    <span>22년 3분기 거래처 매출장</span>
+                                                </label>	
+                                            </li>
+                                            <li>
+                                                <label for="rprtradi_07">
+                                                    <input type="radio" id="rprtradi_07" name="rprtradi">
+                                                    <span>22년 하반기 거래처 매출장</span>
+                                                </label>	
+                                            </li>
+                                            <li>
+                                                <label for="rprtradi_08">
+                                                    <input type="radio" id="rprtradi_08" name="rprtradi">
+                                                    <span>22년 4분기 거래처 매출장</span>
+                                                </label>	
+                                            </li>
+                                            <li>
+                                                <label for="rprtradi_09">
+                                                    <input type="radio" id="rprtradi_09" name="rprtradi">
+                                                    <span>22년 3분기 거래처 매출장</span>
+                                                </label>	
+                                            </li>
+                                        </ul>
+                                        <div class="bottom_btn">
+                                            <button type="button" class="btn_style1_b"><span>조회</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="right">
+                                    <div class="button_wrap">
+                                        <button type="button" class="btn_style2_g"><span>미리보기</span></button>
+                                        <button type="button" class="btn_cancel"><span>취소</span></button>
+                                        <button type="button" class="btn_style1_b"><span>수정하기</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="info_banner">
+                                <p class="desc_01">· 보고서 데이터는 홈택스 전자(세금)계산서 기준으로 반영되며, 거래처의 거래내역은 조회용으로 데이터 수정이 불가합니다.</p>
+                                <p class="desc_01">· 인사말 수정을 원할 경우 <strong>[수정하기]</strong>  버튼 클릭 후, 추가 전달 내용이나 코멘트를 인사말 작성에 입력하시기 바랍니다.</p>
+                            </div>
+                            
+                        </article>
+                        <article class="rpt_smry">
+                            <div class="write_wrap">
+                                <div class="title">
+                                    <div class="left">
+                                        <h2>인사말 작성</h2>
+                                        <div class="tooltipWrap btc">
+                                            <span class="qm">
+                                                <img src="../img/txof/ico/ico_que_green.png" alt="">
+                                                <div class="tooltip yellow">
+                                                    <p class="tit">원하는 거래처별 인사말 수정은<br><a href="#none">보고서 생성 메뉴</a>에서 가능합니다.
+                                                </div>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="right">
+                                        <p>72/2000자</p>
+                                    </div>
+                                </div>
+                                <textarea id="" style=""></textarea>
+                            </div>
+                            <div class="smry_wrap">
+                                <div class="title">
+                                    <h2>요약<span>(01 ~ 03월)</span></h2>
+                                    <p>분석기간 : 2023-10-01 ~ 2023 -10-31</p>
+                                </div>
+                                <div class="smry_table">
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <th><div>24년 01월</div></th>
+                                                <td><div>1,097,600원</div></td>
+                                            </tr>
+                                            <tr>
+                                                <th><div>24년 02월</div></th>
+                                                <td><div>102,000원</div></td>
+                                            </tr>
+                                            <tr>
+                                                <th><div>24년 03월</div></th>
+                                                <td><div>-</div></td>
+                                            </tr>
+                                            <tr class="sum">
+                                                <th><div>24년 1분기 합계</div></th>
+                                                <td><div>1,199,600원</div></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="areaRudSemor">
+                                <!-- 비활성화시 off클래스 추가 -->
+                                <a href="#none" class="btn_rud_semor"><span>검토완료</span></a>
+                                <span class="mgl4">최종검토 일자 : 2023-01-01 13:15</span>
+                            </div>
+                        </article>
+                    </section>
+                    <!-- 테이블 -->
+                    <section class="table_box_wrap">
+                        <!-- 거래처 목록 -->
+                        <article class="table_box">
+                            <div class="info_title">
+                                <div class="left">
+                                    <h2>거래처목록</h2>
+                                </div>
+                                <div class="right"></div>
+                            </div>
+                            <div class="info_banner">
+                                <p class="desc_01">· 홈택스 전자(세금)계산서 기준으로 반영되며, 분기마다 업데이트 됩니다.</p>
+                            </div>
+                            <div class="tblScrollX pd0" style="overflow: hidden; ">
+                                <table class="rprt_tbl modify" summary="">
+                                    <caption></caption>
+                                    <colgroup>
+                                        <col style="width: 170px;">
+                                        <col style="width: 130px;">
+                                        <col style="width: 130px;">
+                                        <col style="width: 130px;">
+                                        <col style="width: 130px;">
+                                    </colgroup>
+                                    <thead>
+                                        <tr class="trd">
+                                            <th scope="col" class="tit tal"><div>거래처명</div></th>
+                                            <th scope="col" class=""><div>2024년 1분기(A)<br>(01 ~ 03월)</div></th>
+                                            <th scope="col" class=""><div>2023년 4분기(B)<br>(10 ~ 12월)</div></th>
+                                            <th scope="col" class=""><div>총 합계<br>(A) + (B)</div></th>
+                                            <th scope="col" class=""><div>직전기 대비 차액<br>(A) - (B)</div></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody style="display: table-tbody;">
+                                        <tr>
+                                            <td class="tit"> <div class="tal">한국공인노무사회</div></td>
+                                            <td><div class="tar"><p class="val">1,199,600</p></div></td>
+                                            <td><div class="tar"><p class="val">297,200</p></div></td>
+                                            <td><div class="tar"><p class="val">1,496,800</p></div></td>
+                                            <td><div class="tar"><p class="val">902,400</p></div></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tit"> <div class="tal">한국공인노무사회</div></td>
+                                            <td><div class="tar"><p class="val">1,199,600</p></div></td>
+                                            <td><div class="tar"><p class="val">297,200</p></div></td>
+                                            <td><div class="tar"><p class="val">1,496,800</p></div></td>
+                                            <td><div class="tar"><p class="val">902,400</p></div></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tit"> <div class="tal">한국공인노무사회</div></td>
+                                            <td><div class="tar"><p class="val">1,199,600</p></div></td>
+                                            <td><div class="tar"><p class="val">297,200</p></div></td>
+                                            <td><div class="tar"><p class="val">1,496,800</p></div></td>
+                                            <td><div class="tar"><p class="val">902,400</p></div></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tit"> <div class="tal">한국공인노무사회</div></td>
+                                            <td><div class="tar"><p class="val">1,199,600</p></div></td>
+                                            <td><div class="tar"><p class="val">297,200</p></div></td>
+                                            <td><div class="tar"><p class="val">1,496,800</p></div></td>
+                                            <td><div class="tar"><p class="val">902,400</p></div></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="tit"> <div class="tal">한국공인노무사회</div></td>
+                                            <td><div class="tar"><p class="val">1,199,600</p></div></td>
+                                            <td><div class="tar"><p class="val">297,200</p></div></td>
+                                            <td><div class="tar"><p class="val">1,496,800</p></div></td>
+                                            <td><div class="tar"><p class="val">902,400</p></div></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </article>
+                    </section>
+                </div>
+            </div>
+            <!-- //팝업 컨텐츠 -->
+        </div>
+    </div>
+	
+
+</body>
+</html>

@@ -1,0 +1,1983 @@
+<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<title>세무대리인 for 경리나라</title>
+<link rel="stylesheet" href="../css/reset_taxp.css">
+<link rel="stylesheet" href="../css/app_header.css"><!-- [D] 세무대리인용 header -->
+<link rel="stylesheet" href="../css/content_taxp.css"><!-- [D] 세무대리인용 -->
+
+<!-- custom scrollbar plugin css -->
+<link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+<script src="https://publ.roumit.com/js/firebase_include.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+<!-- custom scrollbar plugin -->
+<script src="../js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../js/jquery.placeholder.min.js"></script>
+<script>
+	$(function(){
+		// Invoke the plugin
+		$('input, textarea').placeholder({customClass:'my-placeholder'});
+		// 상담문의
+		$( "#btn_notice" ).on( "click", function() {
+			$("#pop_notice").toggle();
+		});
+		// 담당자지정
+		$( "#btn_manager" ).on( "click", function() {
+			$("#pop_manager").toggle();
+		});
+		// 작업일시
+		$( "#btn_last_work" ).on( "click", function() {
+			$("#pop_last_work").toggle();
+		});
+		// 그룹지정 /* 수임처 개선 */
+		$( "#btn_group" ).on( "click", function() {
+			$("#pop_group").toggle();
+		});
+	} );
+</script>
+
+</head>
+
+<body class="lnb_bg lnb_bg"><!-- [D] 메뉴영역(접기 : class="fold", 펼치기 : class="lnb_bg") -->
+
+<!-- 수임처 개선 -->
+<!-- header -->
+<div class="app_header">
+	<div class="app_header_inner">
+		<div class="ah_l">
+			<h1>수임처</h1>
+		</div>
+
+		<div class="ah_r">
+			<ul class="ah_menu">
+				<li style="position:absolute;top:-16px;left:-47px;"><a href="#none" class="btn_alarm on" title="알림"><em class="alarm_num" style="display: none;"></em></a></li>
+				<li><a href="#none"><img src="../img/txof/app_header/ic_top04.png" alt="">SMS</a></li>
+				<li style="position:relative;">
+					<a href="#none"><img src="../img/txof/app_header/ic_top03.png" alt="">관리자</a>
+					<!-- 관리자 레이어 -->
+					<div class="ly_bx_wrap" style="top:20px;right:0;display:none;">
+						<div class="inner">
+							<p>이영미 010-2313-4353</p>
+							<p>신정호 010-6774-8811</p>
+							<p>최기종 010-3303-5711</p>
+							<p>최기종 010-3303-5711</p>
+							<p>최기종 010-3303-5711</p>
+							<p>최기종 010-3303-5711</p>
+						</div>
+					</div>
+					<!-- //관리자 레이어 -->
+				</li>
+				<!-- //수임처 개선 -->
+				<li><a href="#none"><img src="../img/txof/app_header/ic_top02.png" alt="">로그아웃</a></li>
+			</ul>
+			<div class="ly_app_header alarm" style="top:48px;right:10px;width:365px;display:none;">
+				<div class="ly_notibx">
+					<span class="arr" style="left:auto;right:75px;"></span>
+					<div class="ly_notibx_tit">
+						<h3>알 림</h3>
+					</div>
+					<div class="ly_notibx_cont">
+						<div class="ly_notibx_scroll" style="height: 330px;">
+							<ul>
+								<li style="min-height:51px;">
+									<img src="../img/txof/app_header/bg_alarm_noti.png" alt="" class="ic_alarm">
+									<span class="date">2020-01-09</span>
+									<p class="ntit"><strong>정성훈</strong>의 새로운 메시지 <span class="ico_tnew">new</span></p>
+									<p class="ntxt">통장사본 서류가 신규로 등록되었습니다.</p>
+								</li>
+								<li style="min-height:51px;">
+									<img src="../img/txof/app_header/bg_alarm_noti.png" alt="" class="ic_alarm">
+									<span class="date">2020-01-09</span>
+									<p class="ntit"><strong>김지혜</strong>의 새로운 메시지 </p>
+									<p class="ntxt">통장사본 서류가 신규로 등록되었습니다.</p>
+								</li>
+								<li style="min-height:51px;">
+									<img src="../img/txof/app_header/bg_alarm_noti.png" alt="" class="ic_alarm">
+									<span class="date">2020-01-09</span>
+									<p class="ntit"><strong>박은정</strong>의 새로운 메시지 </p>
+									<p class="ntxt">통장사본 서류가 신규로 등록되었습니다.</p>
+								</li>
+								<li style="min-height:51px;">
+									<img src="../img/txof/app_header/bg_alarm_noti.png" alt="" class="ic_alarm">
+									<span class="date">2020-01-09</span>
+									<p class="ntit"><strong>정성훈</strong>의 새로운 메시지 </p>
+									<p class="ntxt">통장사본 서류가 신규로 등록되었습니다.</p>
+								</li>
+								<li style="min-height:51px;">
+									<img src="../img/txof/app_header/bg_alarm_noti.png" alt="" class="ic_alarm">
+									<span class="date">2020-01-09</span>
+									<p class="ntit"><strong>정성훈</strong>의 새로운 메시지 </p>
+									<p class="ntxt">통장사본 서류가 신규로 등록되었습니다.</p>
+								</li>
+								<li style="min-height:51px;">
+									<img src="../img/txof/app_header/bg_alarm_noti.png" alt="" class="ic_alarm">
+									<span class="date">2020-01-09</span>
+									<p class="ntit"><strong>정성훈</strong>의 새로운 메시지 </p>
+									<p class="ntxt">통장사본 서류가 신규로 등록되었습니다.</p>
+								</li>
+								<li style="min-height:51px;">
+									<img src="../img/txof/app_header/bg_alarm_noti.png" alt="" class="ic_alarm">
+									<span class="date">2020-01-09</span>
+									<p class="ntit"><strong>정성훈</strong>의 새로운 메시지 </p>
+									<p class="ntxt">통장사본 서류가 신규로 등록되었습니다.</p>
+								</li>
+							</ul>
+						</div>
+
+						<div class="alarm_drag" style="position: static;">
+							<div style="float: right;width:15px;">
+								<img src="../img/txof/app_header/bg_alarm_drag.gif" alt="" class="ui-draggable" style="position: absolute; right: 0px; top: 331px;">
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- //header -->
+<!-- //수임처 개선 -->
+
+<div class="wrap">
+	<!-- Container -->
+	<div class="container">
+		<!-- lnb box -->
+		<div class="lnb_box">
+		</div>
+		<!-- //lnb box -->
+		<!-- content wrap -->
+		<div class="content">
+
+			<div class="content_wrap">
+
+				<!-- 상단타이틀 -->
+				<div class="title_wrap h1type" style="margin-bottom:0;">
+					<div class="left">
+						<h1>거래처 조회</h1>
+					</div>
+
+					<div class="right">
+						<!-- 검색 -->
+						<div class="cntalign">
+							<div class="input_box">
+								<input type="text" value="" placeholder="검색어를 입력하세요" style="width:180px;"><a href="#none"><img src="../img/txof/btn/btn_topsearch.gif" alt="조회"></a>
+							</div>
+						</div><!-- //검색 -->
+						<div class="cntalign">
+							<a href="#none" class="icon" title="보기설정"><img src="../img/txof/btn/btn_list.gif" alt="보기설정"></a>
+							<!-- layer -->
+							<div class="ly2_pop_wrap" style="display:; z-index:9998;">
+								<!-- 팝업 컨텐츠 -->
+								<div class="ly2_pop_container">
+									<!-- title -->
+									<div class="ly2_pop_title_wrap">
+										<div class="left"><h2 class="bul_2">보기설정</h2></div>
+										<div class="right">
+											<a href="#none"><img src="../img/txof/btn/btn_go_last.gif" alt=""></a> <a href="#none"><img src="../img/txof/btn/btn_go_next.gif" alt=""></a> <a href="#none"><img src="../img/txof/btn/btn_go_prev.gif" alt=""></a> <a href="#none"><img src="../img/txof/btn/btn_go_first.gif" alt=""></a>
+										</div>
+									</div>
+									<!-- //title -->
+									<!-- 보기항목 -->
+									<div class="view_setting_lst mgt5">
+										<ul>
+											<li><label for=""><input type="checkbox" id="" checked="checked">거래처명</label></li>
+											<li><label for=""><input type="checkbox" id="" checked="checked">사업자번호</label></li><!-- [D] 선택 -->
+											<li><label for=""><input type="checkbox" id="">법인번호</label></li>
+											<li><label for=""><input type="checkbox" id="">종사업자번호</label></li>
+											<li><label for=""><input type="checkbox" id="">구분</label></li>
+											<li><label for=""><input type="checkbox" id="">과세유형</label></li>
+											<li><label for=""><input type="checkbox" id="" checked="checked">대표자명</label></li><!-- [D] 선택 + 비활성, <li> 안에 class="dis" 추가 -->
+											<li><label for=""><input type="checkbox" id="" checked="checked">대표연락처</label></li>
+											<li><label for=""><input type="checkbox" id="" checked="checked">FAX번호</label></li>
+											<li><label for=""><input type="checkbox" id="">업태</label></li>
+											<li><label for=""><input type="checkbox" id="">종목</label></li>
+											<li><label for=""><input type="checkbox" id="">주소</label></li>
+											<li><label for=""><input type="checkbox" id="">거래처 연락처</label></li>
+											<li><label for=""><input type="checkbox" id="">개업일</label></li>
+											<li><label for=""><input type="checkbox" id="">폐업일</label></li>
+											<li><label for=""><input type="checkbox" id="">수임기준일</label></li>
+											<li><label for=""><input type="checkbox" id="">월 기장료</label></li>
+											<li><label for=""><input type="checkbox" id="">연 기장료</label></li>
+											<li><label for=""><input type="checkbox" id="">전년조정료</label></li>
+											<li><label for=""><input type="checkbox" id="">총 수익금액</label></li>
+											<li><label for=""><input type="checkbox" id="">계약상태</label></li>
+											<li><label for=""><input type="checkbox" id="">가입경로</label></li>
+											<li><label for=""><input type="checkbox" id="">기장료 출금시작일</label></li>
+											<li><label for=""><input type="checkbox" id="">기장료 출금계좌</label></li>
+											<li><label for=""><input type="checkbox" id="">홈택스 계정</label></li>
+											<li><label for=""><input type="checkbox" id="">여신금융협회 계정</label></li>
+											<li><label for=""><input type="checkbox" id="">SNS매출 계정</label></li>
+											<li><label for=""><input type="checkbox" id="" checked="checked">담당자</label></li>
+											<li><label for=""><input type="checkbox" id="">지점</label></li>
+											<li><label for=""><input type="checkbox" id="">업무량</label></li>
+											<li><label for=""><input type="checkbox" id="">난이도</label></li>
+											<li><label for=""><input type="checkbox" id="">성실신고대상</label></li>
+											<li><label for=""><input type="checkbox" id="">원천세신고유형</label></li>
+											<li><label for=""><input type="checkbox" id="">관할세무서</label></li>
+											<li><label for=""><input type="checkbox" id="">세무서 담당</label></li>
+											<li><label for=""><input type="checkbox" id="">사업용계좌</label></li>
+											<li><label for=""><input type="checkbox" id="">주업종코드</label></li>
+											<li><label for=""><input type="checkbox" id="">홈택스 수임동의</label></li>
+											<li><label for=""><input type="checkbox" id="">회계프로그램코드</label></li>
+											<li><label for=""><input type="checkbox" id="">포스업체연락처</label></li>
+											<li><label for=""><input type="checkbox" id="">웹경리나라</label></li>
+											<li><label for=""><input type="checkbox" id="">민원증명</label></li>
+											<li><label for=""><input type="checkbox" id="">4대보험</label></li>
+											<li><label for=""><input type="checkbox" id="">소통게시판</label></li>
+											<li><label for=""><input type="checkbox" id="">총괄납부 주사업장</label></li>
+											<li><label for=""><input type="checkbox" id="">경리나라 수임동의</label></li>
+											<li><label for=""><input type="checkbox" id="">세모장부 수임동의</label></li>
+											<li><label for=""><input type="checkbox" id="">최종조회일시</label></li>
+										</ul>
+									</div>
+									<!-- //보기항목 -->
+									<!-- 하단버튼 -->
+									<div class="cboth">
+										<div class="f_left">
+											<a href="#none" class="btn_style1"><span>초기화</span></a>
+										</div>
+										<div class="f_right">
+											<a href="#none" class="btn_style1_b"><span>저장</span></a>
+											<a href="#none" class="btn_style1"><span>취소</span></a>
+										</div>
+									</div>
+									<!-- //하단버튼 -->
+								</div>
+								<!-- //팝업 컨텐츠 -->
+							</div>
+							<!-- //layer -->
+						</div>
+						<div class="cntalign"><a href="#none" class="icon" title="엑셀"><img src="../img/txof/btn/btn_excel.gif" alt="엑셀"></a></div>
+					</div>
+				</div>
+				<!-- //상단타이틀 -->
+
+				<!-- 버튼영역 -->
+				<div class="title_wrap mgt10">
+					<!-- left -->
+					<div class="left">
+						<div class="cntalign">
+							<div class="list3nd_tab">
+								<ul>
+									<li><a href="#none" class="bsc on">기본</a></li>
+									<li><a href="#none" class="rev">국세청</a></li>
+									<li><a href="#none" class="inm">내부관리</a></li>
+									<li><a href="#none" class="rec">미수금</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="cntalign btnbx_wrap">
+							<!-- 정렬 -->
+							<div class="ly_filter type7">
+								<!-- <a href="#none" class="" id="btn_last_work"><span class="ic_filter"></span>담당자</a> -->
+								<a href="#none" class="ft_on" id="btn_last_work"><span class="ic_filter"></span>김경리외 1명</a> <!-- 1개라도 체크박스가 빠졌을 경우 -->
+								<!-- 담당자 layer -->
+								<ul class="ly_filter_inner type2" style="display:none;" id="pop_last_work">
+									<li class="ly_title">
+										<div><strong>담당자</strong></div>
+									</li>
+									<li class="list">
+										<div style="max-height:100px;overflow:hidden;overflow-y:auto;">
+											<label><input type="checkbox" checked="">전체</label>
+											<label><input type="checkbox" checked="">김경리</label>
+											<label><input type="checkbox" checked="">곽상혁</label>
+											<label><input type="checkbox" checked="">정성훈</label>
+											<label><input type="checkbox" checked="">김지혜</label>
+											<label><input type="checkbox" checked="">미지정</label>
+											<label><input type="checkbox" checked="">미지정</label>
+										</div>
+									</li>
+									<li class="tac"><a href="#none" class="btn_style_lys"><span>저장</span></a></li>
+								</ul>
+								<!-- //담당자 layer -->
+							</div>
+							<!-- //정렬 -->
+						</div>
+					</div><!-- //left -->
+
+					<!-- right -->
+					<div class="right">
+						<div class="cntalign"><a href="#none" class="btn_style1 up" style="margin-left:0;"><span>상세 조회</span></a></div>
+						<div class="cntalign">
+							<a class="btn_style1_b gadd" href="#none"><span id="">거래처 등록</span></a>
+						</div>
+					</div><!-- //right -->
+				</div>
+				<!-- //버튼영역 -->
+
+				<!-- 상세검색테이블 -->
+				<div class="table_wrap" style="display:;">
+					<div class="tbl_srch">
+						<!-- 조회後 > 조회조건 다시선택 -->
+						<!-- <a href="#none" class="reSrchChoose" style="display:none;"><span>조회조건 다시선택</span></a> 2022-06-13 삭제 -->
+						<!-- //조회後 > 조회조건 다시선택 -->
+						<table class="" style="display:;">
+							<caption></caption>
+							<colgroup>
+							<col style="width:110px;">
+							<col style="width:255px;">
+							<col style="width:93px;">
+							<col style="width:265px;">
+							<col>
+							</colgroup>
+							<tbody>
+								<tr class="dis">
+									<th scope="row"><div class="ly_filter type4">
+										<a href="#none">수임기준일</a>
+										<ul class="ly_filter_inner" style="display:none;">
+											<li><a href="#none">수임기준일</a></li>
+											<li><a href="#none">개업일</a></li>
+										</ul>
+									</div></th>
+									<td colspan="4">
+										<div>
+											<div class="input_box"><input type="text" class="tac" style="width:90px;margin:0 0 0 5px;" value="1990-01-01"></div> <span class="tx_swungDash">~</span>
+											<div class="input_box"><input type="text" class="tac" style="width:90px;margin:0 0 0 5px;" value="2021-10-14"></div>
+											<label style="height:24px;margin-left:20px;"><input type="checkbox" checked=""> 전체</label>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row"><div class="ly_filter type4">
+										<a href="#none" class="on">월 기장료</a>
+										<ul class="ly_filter_inner" style="display:;">
+											<li><a href="#none">월 기장료</a></li>
+											<li><a href="#none">연 기장료</a></li>
+											<li><a href="#none">전년 조정료</a></li>
+											<li><a href="#none">총 수익금액</a></li>
+										</ul>
+									</div></th>
+									<td colspan="4">
+										<!-- 2022-06-15 클래스 iptrp 추가-->
+										<div>
+											<div class="input_box"><input type="text" class="tar iptrp" style="width:90px;margin:0 0 0 5px;" value="0"></div> <span class="tx_swungDash">~</span>
+											<div class="input_box"><input type="text" class="tar iptrp" style="width:90px;margin:0 0 0 5px;" value="999,999,999"></div>
+											<label style="height:24px;margin-left:20px;"><input type="checkbox"> 전체</label>
+										</div>
+										<!-- //2022-06-15 클래스 iptrp 추가-->
+									</td>
+								</tr>
+								<tr>
+									<th scope="row"><div>성실신고대상</div></th>
+									<td colspan="4">
+										<div class="checklist">
+											<label style="height:24px;"><input type="checkbox"> 여</label>
+											<label style="margin-left:5px;height:24px;"><input type="checkbox"> 부</label>
+											<label style="margin-left:5px;height:24px;"><input type="checkbox"> 미지정</label>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row"><div>구분</div></th>
+									<td colspan="4">
+										<div class="checklist">
+											<label style="height:24px;"><input type="checkbox"> 개인</label>
+											<label style="margin-left:5px;height:24px;"><input type="checkbox"> 법인</label>
+											<label style="margin-left:5px;height:24px;"><input type="checkbox"> 미지정</label>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row"><div>과세유형</div></th>
+									<td colspan="4">
+										<div class="checklist">
+											<label style="height:24px;"><input type="checkbox"> 과세</label>
+											<label style="margin-left:5px;height:24px;"><input type="checkbox"> 면세</label>
+											<label style="margin-left:5px;height:24px;"><input type="checkbox"> 영세</label>
+											<label style="margin-left:5px;height:24px;"><input type="checkbox"> 미지정</label>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row"><div>계약상태</div></th>
+									<td colspan="4">
+										<div class="checklist">
+											<label style="height:24px;"><input type="checkbox"> 기장법인</label>
+											<label style="margin-left:5px;height:24px;"><input type="checkbox"> 신고법인</label>
+											<label style="margin-left:5px;height:24px;"><input type="checkbox"> 기장개인</label>
+											<label style="margin-left:5px;height:24px;"><input type="checkbox"> 신고개인</label>
+											<label style="margin-left:5px;height:24px;"><input type="checkbox"> 아웃소싱</label>
+											<label style="margin-left:5px;height:24px;"><input type="checkbox"> 자문계약</label>
+											<label style="margin-left:5px;height:24px;"><input type="checkbox"> 조세불복</label>
+											<label style="margin-left:5px;height:24px;"><input type="checkbox"> 미지정</label>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row"><div>가입경로</div></th>
+									<td colspan="4">
+										<div class="checklist">
+											<label style="height:24px;"><input type="checkbox"> 자체확장</label>
+											<label style="margin-left:5px;height:24px;"><input type="checkbox"> 거래처소개</label>
+											<label style="margin-left:5px;height:24px;"><input type="checkbox"> 지인소개</label>
+											<label style="margin-left:5px;height:24px;"><input type="checkbox"> 직원소개</label>
+											<label style="margin-left:5px;height:24px;"><input type="checkbox"> 기타</label>
+											<label style="margin-left:5px;height:24px;"><input type="checkbox"> 미지정</label>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row"><div>기타 검색</div></th>
+									<td colspan="4">
+										<div>
+											<div class="input_box nobg"><input type="text" class="" style="width:500px;margin:0 0 0 5px;" placeholder="(거래처명, 사업자번호, 대표자명, 업태, 종목, 회계프로그램코드, 포스 연락처, 주소, 메모)" value=""></div>
+										</div>
+									</td>
+								</tr>
+								<tr><td style="height:10px;"></td></tr>
+								<tr>
+									<td colspan="5" class="v_middle">
+										<div class="posiw tac">
+											<div class="left" style="position:absolute;"><a href="#none" class="txt_b t_hover">검색 조건 초기화</a></div>
+											<a href="#none" class="btn_search_tb tal" style="line-height:12px;"><span>조회</span></a>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<a href="#none" class="btn_close"><img src="../img/txof/btn/btn_popclose_r.png" alt=""></a>
+				</div>
+				<!-- //상세검색테이블 -->
+
+				<!-- 리스트 테이블 -->
+				<!-- 리스트 테이블 상단 -->
+				<div class="list_scroll_top" style="overflow:hidden;"><!-- [D] 하단테이블 세로스크롤 발생시 pdr 클래스 추가 -->
+					<table class="tbl_result" summary="">
+						<caption></caption>
+						<colgroup>
+						<col style="width:25px;">
+						<col style="width:150px;">
+						<col style="width:100px;">
+						<col style="width:100px;">
+						<col style="width:120px;">
+						<col style="width:140px;">
+						<col style="width:120px;">
+						<col style="width:100px;">
+						<col style="width:150px;">
+						<col style="width:100px;">
+						<col style="width:120px;">
+						<col style="width:100px;">
+						<col style="width:110px;">
+						<col style="width:180px;">
+						<col style="width:260px;">
+						<col style="width:360px;">
+						<col style="width:120px;">
+						<col style="width:200px;">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col"><div class="tac"><input type="checkbox"></div></th>
+								<th scope="col"><div>거래처명</div></th> <!-- 기본컬럼 -->
+								<th scope="col"><div>사업자번호</div></th> <!-- 기본컬럼 -->
+								<th scope="col"><div>대표자명</div></th> <!-- 기본컬럼 -->
+								<th scope="col"><div class="tac">홈택스 계정
+									<a href="#none"><img src="../img/txof/ico/icon_qw.png" alt="알림" style="vertical-align:-4px;"></a>
+								</div></th>
+								<th scope="col"><div class="tac">여신금융협회 계정
+									<a href="#none"><img src="../img/txof/ico/icon_qw.png" alt="알림" style="vertical-align:-4px;"></a>
+								</div></th>
+								<th scope="col"><div class="tac">SNS매출 계정
+									<a href="#none"><img src="../img/txof/ico/icon_qw.png" alt="알림" style="vertical-align:-4px;"></a>
+								</div></th>
+								<th scope="col"><div>연락처</div></th>
+								<th scope="col"><div>최종 조회일시</div></th>
+								<th scope="col"><div>경리나라 수임</div></th>
+								<th scope="col"><div>경리나라 서비스</div></th>
+								<th scope="col"><div>세모장부 수임</div></th>
+								<th scope="col"><div>담당자</div></th> <!-- 기본컬럼 -->
+								<th scope="col"><div>주소</div></th>
+								<th scope="col"><div>거래처 연락처</div></th>
+								<th scope="col"><div>홈택스 수임동의</div></th>
+								<th scope="col"><div></div></th>
+							</tr>
+						</thead>
+					</table>
+				</div>
+				<!-- //리스트 테이블 상단 -->
+				<!-- 홈택스 계정 , 여신금융협회 계정, SNS매출 계정 툴팁 -->
+				<div class="data_veiw" style="position:absolute;top:396px;left:500px;">
+					<span class="img_err">
+						<!-- 레이어 -->
+						<div class="ly_ico_notibx" style="display:;">
+							<span class="tail"></span>
+							<div class="inner">
+								<p style="font-weight:normal;">
+									홈택스 사이트에서<br> 로그인 시 사용하는 <br>계정을 관리합니다.
+								</p>
+							</div>
+						</div>
+						<!-- //레이어 -->
+					</span>
+				</div>
+				<div class="data_veiw" style="position:absolute;top:396px;left:647px;">
+					<span class="img_err" style="">
+						<!-- 레이어 -->
+						<div class="ly_ico_notibx" style="display:;">
+							<span class="tail"></span>
+							<div class="inner">
+								<p style="font-weight:normal;">
+									여신금융협회 사이트에서 <br>로그인 시 사용하는 <br>계정을 관리합니다.
+								</p>
+							</div>
+						</div>
+						<!-- //레이어 -->
+					</span>
+				</div>
+				<div class="data_veiw" style="position:absolute;top:396px;left:766px;">
+					<span class="img_err" style="">
+						<!-- 레이어 -->
+						<div class="ly_ico_notibx" style="display:;">
+							<span class="tail"></span>
+							<div class="inner">
+								<p style="font-weight:normal;">
+									쇼핑몰, 배달앱 등 쇼핑몰 <br>사이트에서 로그인 시 <br>사용하는 계정을 관리합니다.
+								</p>
+							</div>
+						</div>
+						<!-- //레이어 -->
+					</span>
+				</div>
+				<!-- //홈택스 계정 , 여신금융협회 계정, SNS매출 계정 툴팁 -->
+
+				<div class="list_scroll" style="">
+					<table class="tbl_result" summary="">
+						<caption></caption>
+						<colgroup>
+						<col style="width:25px;">
+						<col style="width:150px;">
+						<col style="width:100px;">
+						<col style="width:100px;">
+						<col style="width:120px;">
+						<col style="width:140px;">
+						<col style="width:120px;">
+						<col style="width:100px;">
+						<col style="width:150px;">
+						<col style="width:100px;">
+						<col style="width:120px;">
+						<col style="width:100px;">
+						<col style="width:110px;">
+						<col style="width:180px;">
+						<col style="width:260px;">
+						<col style="width:360px;">
+						<col style="width:120px;">
+						<col style="width:200px;">
+						</colgroup>
+						<tfoot style="display:none;"><!-- [D] style="display: none / table-tfoot;" -->
+							<tr class="no_hover">
+								<td colspan="18" class="no_info"><div>등록된 거래처가 없습니다.<br>'거래처추가'를 클릭하여 거래처를 추가하세요.</div></td>
+							</tr>
+						</tfoot>
+						<tbody style="display: table-tbody;"><!-- [D] style="display: none / table-tbody;" -->
+							<tr class="bg_on"><!-- [D] new 일때 class="bg_on" -->
+								<td><div class="tac"><input type="checkbox"></div></td>
+								<td><div style="position:relative;"><!-- [D] 말줄임 처리 class= tx_ellipsis_max3 -->
+									<a href="#none" class="t_hover tx_ellipsis_max3" title="(주)하나인더스트리">(주)하나인더스트리</a>
+									<img src="../img/txof/ico/ico_new.png" alt="">
+									<!-- 레이어 -->
+									<div class="layertype1 icon" style="top:27px;left:10px;z-index:1;">
+										<ul>
+											<li><a href="#none" class="scloud">serp</a></li>
+											<li><a href="#none" class="serp">경리나라</a></li>
+											<li><a href="#none" class="semo">세모장부</a></li>
+										</ul>
+									</div>
+									<!-- //레이어 -->
+								</div></td>
+								<td class="bsc"><div><a href="#none" class="t_hover">311-88-00892</a></div></td> <!-- 탭 색에 따른 배경 변경 - 기본 : bsc, 국세청 : rev, 내부관리 : inm, 미수금 : rec -->
+								<td class="bsc"><div><a href="#none" class="t_hover">신영훈</a></div></td>
+								<td class="bsc"><div class="tac">O</div></td>
+								<td class="bsc"><div class="tac">O</div></td>
+								<td class="bsc"><div class="tac"><span class="s_bg_gary">3</span></div></td>
+								<td class="bsc"><div>051-879-7188</div></td>
+								<td class="bsc"><div>2018-11-11 09:22 <a href="#none" style="margin-left:5px;"><img src="../img/txof/ico/icon_err.png" alt=""></a></div></td>
+								<td class="bsc"><div><a href="#none">미동의</a></div></td>
+								<td class="bsc"><div class="tx_ellipsis_max">기장대행</div></td>
+								<td class="bsc"><div><a href="#none">미동의</a></div></td>
+								<td class="bsc"><div style="position:relative;">
+									황찬연 외 1명
+									<!-- 레이어 -->
+									<div class="layertype1" style="padding:0;top:27px;right:0;z-index:1;">
+										<div class="ly_inner">
+											<p>황찬연 / 1팀</p>
+											<p>정성훈 / 2팀</p>
+											<p>정성훈 / 2팀</p>
+											<p>정성훈 / 2팀</p>
+											<p>정성훈 / 2팀</p>
+											<p>정성훈 / 2팀</p>
+										</div>
+									</div>
+									<!-- //레이어 -->
+								</div></td>
+								<td><div  style="position:relative;">
+									<a href="#none" class="t_hover tx_ellipsis_max3" title="서울특별시 영등포구 영신로 220 13층">서울특별시 영등포구 영신로 220 13층</a>
+									<!-- 레이어 -->
+									<div class="layertype1" style="padding:0;top:27px;left:0;z-index:2;display:none;">
+										<div class="toptail_layer">
+											<span class="tail top"></span>
+											<div class="ly_inner">
+												서울특별시 영등포구 영신로 220 13층
+											</div>
+										</div>
+									</div>
+									<!-- //레이어 -->
+								</div></td>
+								<td>
+									<div class=""> <!-- hoverw 복수 선택시 클래스 추가 -->
+										<div class="h_txt"><a href="#none" class="t_hover empinfo"><span class="tx_ellipsis_name">곽한나곽한나</span><span class="tx_ellipsis_rank">부장</span><span>010-9854-7845</span> </a></div>
+										<!-- 레이어 -->
+										<div class="layertype1" style="padding:0;top:27px;left:0;z-index:2;display:none;">
+											<div class="scroll_layer">
+												<div class="ly_inner type3 mCustomScrollbar"><!-- mCustomScrollbar 스크롤 추가 -->
+													<table class="ly_table">
+														<caption></caption>
+														<colgroup>
+														<col style="width:80px;">
+														<col style="width:70px;">
+														<col style="width:80px;">
+														</colgroup>
+														<tbody>
+															<tr>
+																<td><div class="max_name"><span title="곽한나">곽한나</span></div></td>
+																<td><div class="max_empinfo"><span title="부장">부장</span></div></td>
+																<td><div class="max_phnum"><span>010-9854-7845</span></div></td>
+															</tr>
+															<tr>
+																<td><div class="max_name"><span title="김영은">김영은</span></div></td>
+																<td><div class="max_empinfo"><span title="과장">과장</span></div></td>
+																<td><div class="max_phnum"><span>010-7757-6345</span></div></td>
+															</tr>
+															<tr>
+																<td><div class="max_name"><span title="김현우김현우">김현우김현우</span></div></td>
+																<td><div class="max_empinfo"><span></span></div></td>
+																<td><div class="max_phnum"><span>010-7555-6322</span></div></td>
+															</tr>
+															<tr>
+																<td><div class="max_name"><span title="남궁지혜">남궁지혜</span></div></td>
+																<td><div class="max_empinfo"><span>주임</span></div></td>
+																<td><div class="max_phnum"><span>010-6344-8934</span></div></td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+											</div>
+										</div>
+										<!-- //레이어 -->
+									</div>
+								</td>
+								<td>
+									<div class="posiw">
+										<a href="#none" class="btn_rud_b"><span>웹경리나라</span></a>
+										<a href="#none" class="btn_rud_b"><span>민원증명</span></a>
+										<a href="#none" class="btn_rud_b"><span>4대보험</span></a>
+										<a href="#none" class="btn_rud_b"><span>소통게시판</span></a>
+										<a href="#none" class="btn_rud_b"><span>신고자료</span></a>
+										<!-- 레이어 -->
+										<div class="layertype1" style="padding:0;top:32px;left:0px;z-index:2;display:;">
+											<div class="toptail_layer">
+												<span class="tail top"></span>
+												<div class="ly_inner type2">
+													민원증명을 클릭하시면 홈택스<br /> 민원증명 서비스를 이용할 수 있습니다. 
+												</div>
+											</div>
+										</div>
+										<!-- //레이어 -->
+								</div></td>
+								<td><div>수임요청중</div></td>
+								<td>
+									<div class="ico_w tar">
+										<div class="ico_bt"><div class="btn_divide"><a href="#none"><img src="../img/txof/ico/ico_pencil_on.png" alt=""></a></div></div>
+										<div style="position:relative;z-index:1;">
+											<div class="ico_ly_wrap"><a class="ico_memo color_red" href="#none" data="memoN"><span class="blind">메모</span></a></div>
+										</div>
+										<div class="ico_bt">
+											<div class="btn_divide"><a href="#none"><img src="../img/txof/ico/ico_serp2_on.png" alt=""></a></div>
+											<div class="btn_divide"><a href="#none"><img src="../img/txof/ico/ico_scloud2_on.png" alt=""></a></div>
+											<div class="btn_divide"><a href="#none"><img src="../img/txof/ico/ico_semo3_on.png" alt=""></a></div>
+											<div class="btn_divide"><a href="#none"><img src="../img/txof/ico/ico_flow_on.png" alt=""></a></div>
+										</div>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td><div class="tac"><input type="checkbox"></div></td>
+								<td><div style="position:relative;"><!-- [D] 말줄임 처리 class= tx_ellipsis_max3 -->
+									<a href="#none" class="t_hover tx_ellipsis_max3" title="(주)하나인더스트리">(주)하나인더스트리</a>
+								</div></td>
+								<td class="bsc"><div><a href="#none" class="t_hover">311-88-00892</a></div></td>
+								<td class="bsc"><div><a href="#none" class="t_hover">신영훈</a></div></td>
+								<td class="bsc"><div class="tac">O</div></td>
+								<td class="bsc"><div class="tac">O</div></td>
+								<td class="bsc"><div class="tac"><span class="s_bg_gary">7</span></div></td>
+								<td class="bsc"><div>051-879-7188</div></td>
+								<td class="bsc"><div>2018-11-11 09:22</div></td>
+								<td class="bsc"><div>미동의</div></td>
+								<td class="bsc"><div class="tx_ellipsis_max"></div></td>
+								<td class="bsc"><div>미동의</div></td>
+								<td class="bsc"><div>이과장</div></td>
+								<td><div  style="position:relative;">
+									<a href="#none" class="t_hover tx_ellipsis_max3" title="서울특별시 영등포구 영신로 220 13층">서울특별시 영등포구 영신로 220 13층</a>
+									<!-- 레이어 -->
+									<div class="layertype1" style="padding:0;top:27px;left:0;z-index:2;display:none;">
+										<div class="toptail_layer">
+											<span class="tail top"></span>
+											<div class="ly_inner">
+												서울특별시 영등포구 영신로 220 13층
+											</div>
+										</div>
+									</div>
+									<!-- //레이어 -->
+								</div></td>
+								<td>
+									<div class="hoverw">
+										<!-- 2022-06-21 -->
+										<div class="h_txt">
+											<a href="#none" class="t_hover empinfo">
+												<span class="tx_ellipsis_name">곽한나곽한나</span><span class="tx_ellipsis_rank">부장</span><span>010-9854-7845</span> 외 3명
+											</a><a class="btn_harr"><span class="blind">거래연락처 목록</span></a>
+										</div>
+										<!-- //2022-06-21 -->
+										<!-- 레이어 -->
+										<div class="layertype1" style="padding:0;top:27px;left:0;z-index:2;display:;">
+											<div class="scroll_layer">
+												<div class="ly_inner type3 mCustomScrollbar"><!-- mCustomScrollbar 스크롤 추가 -->
+													<table class="ly_table">
+														<caption></caption>
+														<colgroup>
+														<col style="width:80px;">
+														<col style="width:70px;">
+														<col style="width:80px;">
+														</colgroup>
+														<tbody>
+															<tr>
+																<td><div class="max_name"><span title="곽한나">곽한나</span></div></td>
+																<td><div class="max_empinfo"><span title="부장">부장</span></div></td>
+																<td><div class="max_phnum"><span>010-9854-7845</span></div></td>
+															</tr>
+															<tr>
+																<td><div class="max_name"><span title="김영은">김영은</span></div></td>
+																<td><div class="max_empinfo"><span title="과장">과장</span></div></td>
+																<td><div class="max_phnum"><span>010-7757-6345</span></div></td>
+															</tr>
+															<tr>
+																<td><div class="max_name"><span title="김현우김현우">김현우김현우</span></div></td>
+																<td><div class="max_empinfo"><span></span></div></td>
+																<td><div class="max_phnum"><span>010-7555-6322</span></div></td>
+															</tr>
+															<tr>
+																<td><div class="max_name"><span title="남궁지혜">남궁지혜</span></div></td>
+																<td><div class="max_empinfo"><span>주임</span></div></td>
+																<td><div class="max_phnum"><span>010-6344-8934</span></div></td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+											</div>
+										</div>
+										<!-- //레이어 -->
+									</div>
+								</td>
+								<td>
+									<div class="posiw">
+										<a href="#none" class="btn_rud_b on"><span>웹경리나라</span></a>
+										<a href="#none" class="btn_rud_b on"><span>민원증명</span></a>
+										<a href="#none" class="btn_rud_b on"><span>4대보험</span></a>
+										<a href="#none" class="btn_rud_b on"><span>소통게시판</span></a>
+										<a href="#none" class="btn_rud_b on"><span>신고자료</span></a>
+										<!-- 레이어 -->
+										<div class="layertype1" style="padding:0;top:32px;left:0px;z-index:2;display:none;">
+											<div class="toptail_layer">
+												<span class="tail top"></span>
+												<div class="ly_inner type2">
+													민원증명을 클릭하시면 홈택스<br /> 민원증명 서비스를 이용할 수 있습니다. 
+												</div>
+											</div>
+										</div>
+										<!-- //레이어 -->
+								</div></td>
+								<td><div>수임요청중</div></td>
+								<td>
+									<div class="ico_w tar">
+										<div class="ico_bt"><div class="btn_divide"><a href="#none"><img src="../img/txof/ico/ico_pencil.png" alt=""></a></div></div>
+										<div style="position:relative;z-index:1;">
+											<div class="ico_ly_wrap"><a class="ico_memo color_white" href="#none" data="memoN"><span class="blind">메모</span></a></div>
+										</div>
+										<div class="ico_bt">
+											<div class="btn_divide"><a href="#none"><img src="../img/txof/ico/ico_serp2_on.png" alt=""></a></div>
+											<div class="btn_divide"><a href="#none"><img src="../img/txof/ico/ico_scloud2_off.png" alt=""></a></div>
+											<div class="btn_divide"><a href="#none"><img src="../img/txof/ico/ico_semo3_on.png" alt=""></a></div>
+											<div class="btn_divide flow_on" style="position:relative;">
+												<a href="#none"><img src="../img/txof/ico/ico_flow_on_n.png" alt=""></a>
+												<!-- 레이어 -->
+												<div class="layertype1" style="padding:0;top:27px;right:-5px;z-index:2;display:;">
+													<div class="toptail_layer">
+														<span class="tail top"style="right:5px;"></span>
+														<div class="ly_inner type2">
+															수임처와 소통하는 소통 게시판입니다.
+														</div>
+													</div>
+												</div>
+												<!-- //레이어 -->
+											</div>
+										</div>
+									</div>
+								</td>
+							</tr>
+							<tr class="bg_off"><!-- [D] 경리나라 가입고객 아닌경우 class="bg_off" -->
+								<td><div class="tac"><input type="checkbox"></div></td>
+								<td><div style="position:relative;"><!-- [D] 말줄임 처리 class= tx_ellipsis_max3 -->
+									<a href="#none" class="t_hover tx_ellipsis_max3" title="(주)하나인더스트리">(주)하나인더스트리</a>
+								</div></td>
+								<td class="bsc"><div><a href="#none" class="t_hover">311-88-00892</a></div></td>
+								<td class="bsc"><div><a href="#none" class="t_hover">신영훈</a></div></td>
+								<td class="bsc"><div class="tac">O</div></td>
+								<td class="bsc"><div class="tac"></div></td>
+								<td class="bsc"><div class="tac"><span class="s_bg_gary">0</span></div></td>
+								<td class="bsc"><div>051-879-7188</div></td>
+								<td class="bsc"><div>2018-11-11 09:22</div></td>
+								<td class="bsc"><div>동의</div></td>
+								<td class="bsc"><div></div></td>
+								<td class="bsc"><div>동의요청</div></td>
+								<td class="bsc"><div>김사장</div></td>
+								<td><div  style="position:relative;">
+									<a href="#none" class="t_hover tx_ellipsis_max3" title="서울특별시 영등포구 영신로 220 13층">서울특별시 영등포구 영신로 220 13층</a>
+									<!-- 레이어 -->
+									<div class="layertype1" style="padding:0;top:27px;left:0;z-index:2;display:none;">
+										<div class="toptail_layer">
+											<span class="tail top"></span>
+											<div class="ly_inner">
+												서울특별시 영등포구 영신로 220 13층
+											</div>
+										</div>
+									</div>
+									<!-- //레이어 -->
+								</div></td>
+								<td>
+									<div class=""> <!-- hoverw 복수 선택시 클래스 추가 -->
+										<div class="h_txt"><a href="#none" class="t_hover empinfo"><span class="tx_ellipsis_name">곽한나곽한나</span><span class="tx_ellipsis_rank">부장</span><span>010-9854-7845</span> </a></div>
+										<!-- 레이어 -->
+										<div class="layertype1" style="padding:0;top:27px;left:0;z-index:2;display:none;">
+											<div class="scroll_layer">
+												<div class="ly_inner type3 mCustomScrollbar"><!-- mCustomScrollbar 스크롤 추가 -->
+													<table class="ly_table">
+														<caption></caption>
+														<colgroup>
+														<col style="width:80px;">
+														<col style="width:70px;">
+														<col style="width:80px;">
+														</colgroup>
+														<tbody>
+															<tr>
+																<td><div class="max_name"><span title="곽한나">곽한나</span></div></td>
+																<td><div class="max_empinfo"><span title="부장">부장</span></div></td>
+																<td><div class="max_phnum"><span>010-9854-7845</span></div></td>
+															</tr>
+															<tr>
+																<td><div class="max_name"><span title="김영은">김영은</span></div></td>
+																<td><div class="max_empinfo"><span title="과장">과장</span></div></td>
+																<td><div class="max_phnum"><span>010-7757-6345</span></div></td>
+															</tr>
+															<tr>
+																<td><div class="max_name"><span title="김현우김현우">김현우김현우</span></div></td>
+																<td><div class="max_empinfo"><span></span></div></td>
+																<td><div class="max_phnum"><span>010-7555-6322</span></div></td>
+															</tr>
+															<tr>
+																<td><div class="max_name"><span title="남궁지혜">남궁지혜</span></div></td>
+																<td><div class="max_empinfo"><span>주임</span></div></td>
+																<td><div class="max_phnum"><span>010-6344-8934</span></div></td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+											</div>
+										</div>
+										<!-- //레이어 -->
+									</div>
+								</td>
+								<td>
+									<div class="posiw">
+										<a href="#none" class="btn_rud_b on"><span>웹경리나라</span></a>
+										<a href="#none" class="btn_rud_b on"><span>민원증명</span></a>
+										<a href="#none" class="btn_rud_b on"><span>4대보험</span></a>
+										<a href="#none" class="btn_rud_b off"><span>소통게시판</span></a>
+										<a href="#none" class="btn_rud_b off"><span>신고자료</span></a>
+										<!-- 레이어 -->
+										<div class="layertype1" style="padding:0;top:27px;left:0px;z-index:2;display:none;">
+											<div class="toptail_layer">
+												<span class="tail top"></span>
+												<div class="ly_inner type2">
+													웹경리나라를 클릭하면<br />경리나라를 이용할 수 있습니다.
+												</div>
+											</div>
+										</div>
+										<!-- //레이어 -->
+										<!-- 레이어 -->
+										<div class="layertype1" style="padding:0;top:32px;left:0px;z-index:2;display:none;">
+											<div class="toptail_layer">
+												<span class="tail top"></span>
+												<div class="ly_inner type2">
+													민원증명을 클릭하시면 홈택스<br /> 민원증명 서비스를 이용할 수 있습니다. 
+												</div>
+											</div>
+										</div>
+										<!-- //레이어 -->
+								</div></td>
+								<td><div></div></td>
+								<td>
+									<!-- 아이콘 수정 -->
+									<div class="ico_w tar" style="position:relative;">
+										<div class="ico_bt"><div class="btn_divide"><a href="#none"><img src="../img/txof/ico/ico_pencil.png" alt=""></a></div></div>
+										<div style="position:relative;z-index:1;">
+											<div class="ico_ly_wrap"><a class="ico_memo color_white" href="#none" data="memoN"><span class="blind">메모</span></a></div>
+										</div>
+										<div class="ico_bt">
+											<div class="btn_divide"><a href="#none"><img src="../img/txof/ico/ico_serp2_off.png" alt=""></a></div>
+											<div class="btn_divide"><a href="#none"><img src="../img/txof/ico/ico_scloud2_off.png" alt=""></a></div>
+											<div class="btn_divide"><a href="#none"><img src="../img/txof/ico/ico_semo2_off.png" alt=""></a></div>
+											<div class="btn_divide"><a href="#none"><img src="../img/txof/ico/ico_flow.png" alt=""></a></div>
+										</div>
+										<!-- layer (경리나라 tip) -->
+										<div class="layertype1" style="display:none;top:-2px;left:-270px;width:auto;z-index:2;padding:0;*padding:0;">
+											<div class="toptail_layer" style="padding:0;*padding:0;">
+												<span class="tail rgt" style="right:-7px;top:9px;"></span>
+												<div style="padding:10px;line-height:17px;">
+													<span class="ico_tip">경리나라를 사용중인 업체는 파란색으로<br> 표시됩니다.</span>
+												</div>
+											</div>
+										</div>
+										<!-- //layer (경리나라 tip) -->
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td><div class="tac"><input type="checkbox"></div></td>
+								<td><div style="position:relative;"><!-- [D] 말줄임 처리 class= tx_ellipsis_max3 -->
+									<a href="#none" class="t_hover tx_ellipsis_max3" title="(주)하나인더스트리">(주)하나인더스트리</a>
+								</div></td>
+								<td class="bsc"><div><a href="#none" class="t_hover">311-88-00892</a></div></td>
+								<td class="bsc"><div><a href="#none" class="t_hover">신영훈</a></div></td>
+								<td class="bsc"><div></div></td>
+								<td class="bsc"><div></div></td>
+								<td class="bsc"><div class="tac"><span class="s_bg_gary">0</span></div></td>
+								<td class="bsc"><div>051-879-7188</div></td>
+								<td class="bsc"><div>2018-11-11 09:22</div></td>
+								<td class="bsc"><div>미동의</div></td>
+								<td class="bsc"><div class="tx_ellipsis_max"></div></td>
+								<td class="bsc"><div><a href="#none">미동의</a></div></td>
+								<td class="bsc"><div>이과장</div></td>
+								<td><div  style="position:relative;">
+									<a href="#none" class="t_hover tx_ellipsis_max3" title="서울특별시 영등포구 영신로 220 13층">서울특별시 영등포구 영신로 220 13층</a>
+									<!-- 레이어 -->
+									<div class="layertype1" style="padding:0;top:27px;left:0;z-index:2;display:none;">
+										<div class="toptail_layer">
+											<span class="tail top"></span>
+											<div class="ly_inner">
+												서울특별시 영등포구 영신로 220 13층
+											</div>
+										</div>
+									</div>
+									<!-- //레이어 -->
+								</div></td>
+								<td>
+									<div class=""> <!-- hoverw 복수 선택시 클래스 추가 -->
+										<div class="h_txt"><a href="#none" class="t_hover empinfo"><span class="tx_ellipsis_name">곽한나곽한나</span><span class="tx_ellipsis_rank">부장</span><span>010-9854-7845</span> </a></div>
+										<!-- 레이어 -->
+										<div class="layertype1" style="padding:0;top:27px;left:0;z-index:2;display:none;">
+											<div class="scroll_layer">
+												<div class="ly_inner type3 mCustomScrollbar"><!-- mCustomScrollbar 스크롤 추가 -->
+													<table class="ly_table">
+														<caption></caption>
+														<colgroup>
+														<col style="width:80px;">
+														<col style="width:70px;">
+														<col style="width:80px;">
+														</colgroup>
+														<tbody>
+															<tr>
+																<td><div class="max_name"><span title="곽한나">곽한나</span></div></td>
+																<td><div class="max_empinfo"><span title="부장">부장</span></div></td>
+																<td><div class="max_phnum"><span>010-9854-7845</span></div></td>
+															</tr>
+															<tr>
+																<td><div class="max_name"><span title="김영은">김영은</span></div></td>
+																<td><div class="max_empinfo"><span title="과장">과장</span></div></td>
+																<td><div class="max_phnum"><span>010-7757-6345</span></div></td>
+															</tr>
+															<tr>
+																<td><div class="max_name"><span title="김현우김현우">김현우김현우</span></div></td>
+																<td><div class="max_empinfo"><span></span></div></td>
+																<td><div class="max_phnum"><span>010-7555-6322</span></div></td>
+															</tr>
+															<tr>
+																<td><div class="max_name"><span title="남궁지혜">남궁지혜</span></div></td>
+																<td><div class="max_empinfo"><span>주임</span></div></td>
+																<td><div class="max_phnum"><span>010-6344-8934</span></div></td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+											</div>
+										</div>
+										<!-- //레이어 -->
+									</div>
+								</td>
+								<td>
+									<div class="posiw">
+										<a href="#none" class="btn_rud_b on"><span>웹경리나라</span></a>
+										<a href="#none" class="btn_rud_b on"><span>민원증명</span></a>
+										<a href="#none" class="btn_rud_b on"><span>4대보험</span></a>
+										<a href="#none" class="btn_rud_b on"><span>소통게시판</span></a>
+										<a href="#none" class="btn_rud_b on"><span>신고자료</span></a>
+										<!-- 레이어 -->
+										<div class="layertype1" style="padding:0;top:32px;left:0px;z-index:2;display:none;">
+											<div class="toptail_layer">
+												<span class="tail top"></span>
+												<div class="ly_inner type2">
+													민원증명을 클릭하시면 홈택스<br /> 민원증명 서비스를 이용할 수 있습니다. 
+												</div>
+											</div>
+										</div>
+										<!-- //레이어 -->
+								</div></td>
+								<td><div></div></td>
+								<td>
+									<div class="ico_w tar">
+										<div class="ico_bt"><div class="btn_divide"><a href="#none"><img src="../img/txof/ico/ico_pencil.png" alt=""></a></div></div>
+										<div style="position:relative;z-index:1;">
+											<div class="ico_ly_wrap"><a class="ico_memo color_white" href="#none" data="memoN"><span class="blind">메모</span></a></div>
+										</div>
+										<div class="ico_bt">
+											<div class="btn_divide"><a href="#none"><img src="../img/txof/ico/ico_serp2_on.png" alt=""></a></div>
+											<div class="btn_divide"><a href="#none"><img src="../img/txof/ico/ico_scloud2_off.png" alt=""></a></div>
+											<div class="btn_divide"><a href="#none"><img src="../img/txof/ico/ico_semo2_off.png" alt=""></a></div>
+											<div class="btn_divide"><a href="#none"><img src="../img/txof/ico/ico_flow.png" alt=""></a></div>
+										</div>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td><div class="tac"><input type="checkbox"></div></td>
+								<td><div style="position:relative;"><!-- [D] 말줄임 처리 class= tx_ellipsis_max3 -->
+									<a href="#none" class="t_hover tx_ellipsis_max3" title="(주)하나인더스트리">(주)하나인더스트리</a>
+								</div></td>
+								<td class="bsc"><div><a href="#none" class="t_hover">311-88-00892</a></div></td>
+								<td class="bsc"><div><a href="#none" class="t_hover">신영훈</a></div></td>
+								<td class="bsc"><div class="tac">O</div></td>
+								<td class="bsc"><div class="tac">O</div></td>
+								<td class="bsc"><div class="tac"><span class="s_bg_gary">0</span></div></td>
+								<td class="bsc"><div>051-879-7188</div></td>
+								<td class="bsc"><div>2018-11-11 09:22</div></td>
+								<td class="bsc"><div>미동의</div></td>
+								<td class="bsc"><div class="tx_ellipsis_max"></div></td>
+								<td class="bsc"><div style="position:relative;"><a href="#none">미동의</a></div></td>
+								<td class="bsc"><div>이과장</div></td>
+								<td><div  style="position:relative;">
+									<a href="#none" class="t_hover tx_ellipsis_max3" title="서울특별시 영등포구 영신로 220 13층">서울특별시 영등포구 영신로 220 13층</a>
+									<!-- 레이어 -->
+									<div class="layertype1" style="padding:0;top:27px;left:0;z-index:2;display:none;">
+										<div class="toptail_layer">
+											<span class="tail top"></span>
+											<div class="ly_inner">
+												서울특별시 영등포구 영신로 220 13층
+											</div>
+										</div>
+									</div>
+									<!-- //레이어 -->
+								</div></td>
+								<td>
+									<div class=""> <!-- hoverw 복수 선택시 클래스 추가 -->
+										<div class="h_txt"><a href="#none" class="t_hover empinfo"><span class="tx_ellipsis_name">곽한나곽한나</span><span class="tx_ellipsis_rank">부장</span><span>010-9854-7845</span> </a></div>
+										<!-- 레이어 -->
+										<div class="layertype1" style="padding:0;top:27px;left:0;z-index:2;display:none;">
+											<div class="scroll_layer">
+												<div class="ly_inner type3 mCustomScrollbar"><!-- mCustomScrollbar 스크롤 추가 -->
+													<table class="ly_table">
+														<caption></caption>
+														<colgroup>
+														<col style="width:80px;">
+														<col style="width:70px;">
+														<col style="width:80px;">
+														</colgroup>
+														<tbody>
+															<tr>
+																<td><div class="max_name"><span title="곽한나">곽한나</span></div></td>
+																<td><div class="max_empinfo"><span title="부장">부장</span></div></td>
+																<td><div class="max_phnum"><span>010-9854-7845</span></div></td>
+															</tr>
+															<tr>
+																<td><div class="max_name"><span title="김영은">김영은</span></div></td>
+																<td><div class="max_empinfo"><span title="과장">과장</span></div></td>
+																<td><div class="max_phnum"><span>010-7757-6345</span></div></td>
+															</tr>
+															<tr>
+																<td><div class="max_name"><span title="김현우김현우">김현우김현우</span></div></td>
+																<td><div class="max_empinfo"><span></span></div></td>
+																<td><div class="max_phnum"><span>010-7555-6322</span></div></td>
+															</tr>
+															<tr>
+																<td><div class="max_name"><span title="남궁지혜">남궁지혜</span></div></td>
+																<td><div class="max_empinfo"><span>주임</span></div></td>
+																<td><div class="max_phnum"><span>010-6344-8934</span></div></td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+											</div>
+										</div>
+										<!-- //레이어 -->
+									</div>
+								</td>
+								<td>
+									<div class="posiw">
+										<a href="#none" class="btn_rud_b on"><span>웹경리나라</span></a>
+										<a href="#none" class="btn_rud_b on"><span>민원증명</span></a>
+										<a href="#none" class="btn_rud_b on"><span>4대보험</span></a>
+										<a href="#none" class="btn_rud_b on"><span>소통게시판</span></a>
+										<a href="#none" class="btn_rud_b on"><span>신고자료</span></a>
+										<!-- 레이어 -->
+										<div class="layertype1" style="padding:0;top:32px;left:0px;z-index:2;display:none;">
+											<div class="toptail_layer">
+												<span class="tail top"></span>
+												<div class="ly_inner type2">
+													민원증명을 클릭하시면 홈택스<br /> 민원증명 서비스를 이용할 수 있습니다. 
+												</div>
+											</div>
+										</div>
+										<!-- //레이어 -->
+								</div></td>
+								<td><div></div></td>
+								<td>
+									<div class="ico_w tar">
+										<div class="ico_bt"><div class="btn_divide"><a href="#none"><img src="../img/txof/ico/ico_pencil.png" alt=""></a></div></div>
+										<div style="position:relative;z-index:1;">
+											<div class="ico_ly_wrap"><a class="ico_memo color_white" href="#none" data="memoN"><span class="blind">메모</span></a></div>
+										</div>
+										<div class="ico_bt">
+											<div class="btn_divide"><a href="#none"><img src="../img/txof/ico/ico_serp2_on.png" alt=""></a></div>
+											<div class="btn_divide"><a href="#none"><img src="../img/txof/ico/ico_scloud2_off.png" alt=""></a></div>
+											<div class="btn_divide"><a href="#none"><img src="../img/txof/ico/ico_semo2_off.png" alt=""></a></div>
+											<div class="btn_divide"><a href="#none"><img src="../img/txof/ico/ico_flow.png" alt=""></a></div>
+										</div>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td><div class="tac"><input type="checkbox"></div></td>
+								<td><div style="position:relative;"><!-- [D] 말줄임 처리 class= tx_ellipsis_max3 -->
+									<a href="#none" class="t_hover tx_ellipsis_max3" title="(주)하나인더스트리">(주)하나인더스트리</a>
+								</div></td>
+								<td class="bsc"><div><a href="#none" class="t_hover">311-88-00892</a></div></td>
+								<td class="bsc"><div><a href="#none" class="t_hover">신영훈</a></div></td>
+								<td class="bsc"><div class="tac">O</div></td>
+								<td class="bsc"><div class="tac">O</div></td>
+								<td class="bsc"><div class="tac"><span class="s_bg_gary">0</span></div></td>
+								<td class="bsc"><div>051-879-7188</div></td>
+								<td class="bsc"><div>2018-11-11 09:22</div></td>
+								<td class="bsc"><div>미동의</div></td>
+								<td class="bsc"><div class="tx_ellipsis_max"></div></td>
+								<td class="bsc"><div><a href="#none">동의요청</a></div></td>
+								<td class="bsc"><div>이과장</div></td>
+								<td><div  style="position:relative;">
+									<a href="#none" class="t_hover tx_ellipsis_max3" title="서울특별시 영등포구 영신로 220 13층">서울특별시 영등포구 영신로 220 13층</a>
+									<!-- 레이어 -->
+									<div class="layertype1" style="padding:0;top:27px;left:0;z-index:2;display:none;">
+										<div class="toptail_layer">
+											<span class="tail top"></span>
+											<div class="ly_inner">
+												서울특별시 영등포구 영신로 220 13층
+											</div>
+										</div>
+									</div>
+									<!-- //레이어 -->
+								</div></td>
+								<td>
+									<div class=""> <!-- hoverw 복수 선택시 클래스 추가 -->
+										<div class="h_txt"><a href="#none" class="t_hover empinfo"><span class="tx_ellipsis_name">곽한나곽한나</span><span class="tx_ellipsis_rank">부장</span><span>010-9854-7845</span> </a></div>
+										<!-- 레이어 -->
+										<div class="layertype1" style="padding:0;top:27px;left:0;z-index:2;display:none;">
+											<div class="scroll_layer">
+												<div class="ly_inner type3 mCustomScrollbar"><!-- mCustomScrollbar 스크롤 추가 -->
+													<table class="ly_table">
+														<caption></caption>
+														<colgroup>
+														<col style="width:80px;">
+														<col style="width:70px;">
+														<col style="width:80px;">
+														</colgroup>
+														<tbody>
+															<tr>
+																<td><div class="max_name"><span title="곽한나">곽한나</span></div></td>
+																<td><div class="max_empinfo"><span title="부장">부장</span></div></td>
+																<td><div class="max_phnum"><span>010-9854-7845</span></div></td>
+															</tr>
+															<tr>
+																<td><div class="max_name"><span title="김영은">김영은</span></div></td>
+																<td><div class="max_empinfo"><span title="과장">과장</span></div></td>
+																<td><div class="max_phnum"><span>010-7757-6345</span></div></td>
+															</tr>
+															<tr>
+																<td><div class="max_name"><span title="김현우김현우">김현우김현우</span></div></td>
+																<td><div class="max_empinfo"><span></span></div></td>
+																<td><div class="max_phnum"><span>010-7555-6322</span></div></td>
+															</tr>
+															<tr>
+																<td><div class="max_name"><span title="남궁지혜">남궁지혜</span></div></td>
+																<td><div class="max_empinfo"><span>주임</span></div></td>
+																<td><div class="max_phnum"><span>010-6344-8934</span></div></td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+											</div>
+										</div>
+										<!-- //레이어 -->
+									</div>
+								</td>
+								<!-- //2022-06-13 -->
+								<td>
+									<div class="posiw">
+										<a href="#none" class="btn_rud_b on"><span>웹경리나라</span></a>
+										<a href="#none" class="btn_rud_b on"><span>민원증명</span></a>
+										<a href="#none" class="btn_rud_b on"><span>4대보험</span></a>
+										<a href="#none" class="btn_rud_b on"><span>소통게시판</span></a>
+										<a href="#none" class="btn_rud_b on"><span>신고자료</span></a>
+										<!-- 레이어 -->
+										<div class="layertype1" style="padding:0;top:32px;left:0px;z-index:2;display:none;">
+											<div class="toptail_layer">
+												<span class="tail top"></span>
+												<div class="ly_inner type2">
+													민원증명을 클릭하시면 홈택스<br /> 민원증명 서비스를 이용할 수 있습니다. 
+												</div>
+											</div>
+										</div>
+										<!-- //레이어 -->
+								</div></td>
+								<td><div></div></td>
+								<td>
+									<div class="ico_w tar">
+										<div class="ico_bt"><div class="btn_divide"><a href="#none"><img src="../img/txof/ico/ico_pencil.png" alt=""></a></div></div>
+										<div style="position:relative;z-index:1;">
+											<div class="ico_ly_wrap"><a class="ico_memo color_white" href="#none" data="memoN"><span class="blind">메모</span></a></div>
+										</div>
+										<div class="ico_bt">
+											<div class="btn_divide"><a href="#none"><img src="../img/txof/ico/ico_serp2_on.png" alt=""></a></div>
+											<div class="btn_divide"><a href="#none"><img src="../img/txof/ico/ico_scloud_off.png" alt=""></a></div>
+											<div class="btn_divide"><a href="#none"><img src="../img/txof/ico/ico_semo2_off.png" alt=""></a></div>
+											<div class="btn_divide"><a href="#none"><img src="../img/txof/ico/ico_flow_on.png" alt=""></a></div>
+										</div>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td><div class="tac"><input type="checkbox"></div></td>
+								<td><div style="position:relative;"><!-- [D] 말줄임 처리 class= tx_ellipsis_max3 -->
+									<a href="#none" class="t_hover tx_ellipsis_max3" title="(주)하나인더스트리">(주)하나인더스트리</a>
+								</div></td>
+								<td class="bsc"><div><a href="#none" class="t_hover">311-88-00892</a></div></td>
+								<td class="bsc"><div><a href="#none" class="t_hover">신영훈</a></div></td>
+								<td class="bsc"><div class="tac">O</div></td>
+								<td class="bsc"><div class="tac">O</div></td>
+								<td class="bsc"><div class="tac"><span class="s_bg_gary">0</span></div></td>
+								<td class="bsc"><div>051-879-7188</div></td>
+								<td class="bsc"><div>2018-11-11 09:22</div></td>
+								<td class="bsc"><div>미동의</div></td>
+								<td class="bsc"><div class="tx_ellipsis_max"></div></td>
+								<td class="bsc"><div><a href="#none">미동의</a></div></td>
+								<td class="bsc"><div>이과장</div></td>
+								<td><div  style="position:relative;">
+									<a href="#none" class="t_hover tx_ellipsis_max3" title="서울특별시 영등포구 영신로 220 13층">서울특별시 영등포구 영신로 220 13층</a>
+									<!-- 레이어 -->
+									<div class="layertype1" style="padding:0;top:27px;left:0;z-index:2;display:none;">
+										<div class="toptail_layer">
+											<span class="tail top"></span>
+											<div class="ly_inner">
+												서울특별시 영등포구 영신로 220 13층
+											</div>
+										</div>
+									</div>
+									<!-- //레이어 -->
+								</div></td>
+								<td>
+									<div class=""> <!-- hoverw 복수 선택시 클래스 추가 -->
+										<div class="h_txt"><a href="#none" class="t_hover empinfo"><span class="tx_ellipsis_name">곽한나곽한나</span><span class="tx_ellipsis_rank">부장</span><span>010-9854-7845</span> </a></div>
+										<!-- 레이어 -->
+										<div class="layertype1" style="padding:0;top:27px;left:0;z-index:2;display:none;">
+											<div class="scroll_layer">
+												<div class="ly_inner type3 mCustomScrollbar"><!-- mCustomScrollbar 스크롤 추가 -->
+													<table class="ly_table">
+														<caption></caption>
+														<colgroup>
+														<col style="width:80px;">
+														<col style="width:70px;">
+														<col style="width:80px;">
+														</colgroup>
+														<tbody>
+															<tr>
+																<td><div class="max_name"><span title="곽한나">곽한나</span></div></td>
+																<td><div class="max_empinfo"><span title="부장">부장</span></div></td>
+																<td><div class="max_phnum"><span>010-9854-7845</span></div></td>
+															</tr>
+															<tr>
+																<td><div class="max_name"><span title="김영은">김영은</span></div></td>
+																<td><div class="max_empinfo"><span title="과장">과장</span></div></td>
+																<td><div class="max_phnum"><span>010-7757-6345</span></div></td>
+															</tr>
+															<tr>
+																<td><div class="max_name"><span title="김현우김현우">김현우김현우</span></div></td>
+																<td><div class="max_empinfo"><span></span></div></td>
+																<td><div class="max_phnum"><span>010-7555-6322</span></div></td>
+															</tr>
+															<tr>
+																<td><div class="max_name"><span title="남궁지혜">남궁지혜</span></div></td>
+																<td><div class="max_empinfo"><span>주임</span></div></td>
+																<td><div class="max_phnum"><span>010-6344-8934</span></div></td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+											</div>
+										</div>
+										<!-- //레이어 -->
+									</div>
+								</td>
+								<td>
+									<div class="posiw">
+										<a href="#none" class="btn_rud_b off"><span>웹경리나라</span></a>
+										<a href="#none" class="btn_rud_b off"><span>민원증명</span></a>
+										<a href="#none" class="btn_rud_b off"><span>4대보험</span></a>
+										<a href="#none" class="btn_rud_b off"><span>소통게시판</span></a>
+										<a href="#none" class="btn_rud_b off"><span>신고자료</span></a>
+								</div></td>
+								<td><div>수임요청</div></td>
+								<td>
+									<div class="ico_w tar">
+										<div class="ico_bt"><div class="btn_divide"><a href="#none"><img src="../img/txof/ico/ico_pencil.png" alt=""></a></div></div>
+										<div style="position:relative;z-index:1;">
+											<div class="ico_ly_wrap"><a class="ico_memo color_white" href="#none" data="memoN"><span class="blind">메모</span></a></div>
+										</div>
+										<div class="ico_bt">
+											<div class="btn_divide"><a href="#none"><img src="../img/txof/ico/ico_serp2_on.png" alt=""></a></div>
+											<div class="btn_divide"><a href="#none"><img src="../img/txof/ico/ico_scloud_off.png" alt=""></a></div>
+											<div class="btn_divide"><a href="#none"><img src="../img/txof/ico/ico_semo2_off.png" alt=""></a></div>
+											<div class="btn_divide"><a href="#none"><img src="../img/txof/ico/ico_flow_on.png" alt=""></a></div>
+										</div>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td><div class="tac"><input type="checkbox"></div></td>
+								<td><div style="position:relative;"><!-- [D] 말줄임 처리 class= tx_ellipsis_max3 -->
+									<a href="#none" class="t_hover tx_ellipsis_max3" title="(주)하나인더스트리">(주)하나인더스트리</a>
+								</div></td>
+								<td class="bsc"><div><a href="#none" class="t_hover">311-88-00892</a></div></td>
+								<td class="bsc"><div><a href="#none" class="t_hover">신영훈</a></div></td>
+								<td class="bsc"><div class="tac">O</div></td>
+								<td class="bsc"><div class="tac">O</div></td>
+								<td class="bsc"><div class="tac"><span class="s_bg_gary">2</span></div></td>
+								<td class="bsc"><div>051-879-7188</div></td>
+								<td class="bsc"><div>2018-11-11 09:22</div></td>
+								<td class="bsc"><div>미동의</div></td>
+								<td class="bsc"><div class="tx_ellipsis_max"></div></td>
+								<td class="bsc"><div><a href="#none">미동의</a></div></td>
+								<td class="bsc"><div>이과장</div></td>
+								<td><div  style="position:relative;">
+									<a href="#none" class="t_hover tx_ellipsis_max3" title="서울특별시 영등포구 영신로 220 13층">서울특별시 영등포구 영신로 220 13층</a>
+									<!-- 레이어 -->
+									<div class="layertype1" style="padding:0;top:27px;left:0;z-index:2;display:none;">
+										<div class="toptail_layer">
+											<span class="tail top"></span>
+											<div class="ly_inner">
+												서울특별시 영등포구 영신로 220 13층
+											</div>
+										</div>
+									</div>
+									<!-- //레이어 -->
+								</div></td>
+								<td>
+									<div class="hoverw">
+										<div class="h_txt">
+											<a href="#none" class="t_hover empinfo">
+												<span class="tx_ellipsis_name">곽한나곽한나</span><span class="tx_ellipsis_rank">부장</span><span>010-9854-7845</span> 외 2명
+											</a><a class="btn_harr"><span class="blind">거래연락처 목록</span></a>
+										</div>
+										<!-- 레이어 -->
+										<div class="layertype1" style="padding:0;top:27px;left:0;z-index:2;display:;">
+											<div class="scroll_layer">
+												<div class="ly_inner type3 mCustomScrollbar"><!-- mCustomScrollbar 스크롤 추가 -->
+													<table class="ly_table">
+														<caption></caption>
+														<colgroup>
+														<col style="width:80px;">
+														<col style="width:70px;">
+														<col style="width:80px;">
+														</colgroup>
+														<tbody>
+															<tr>
+																<td><div class="max_name"><span title="곽한나">곽한나</span></div></td>
+																<td><div class="max_empinfo"><span title="부장">부장</span></div></td>
+																<td><div class="max_phnum"><span>010-9854-7845</span></div></td>
+															</tr>
+															<tr>
+																<td><div class="max_name"><span title="곽한나">곽한나</span></div></td>
+																<td><div class="max_empinfo"><span title="부장">부장부장부장부장부장</span></div></td>
+																<td><div class="max_phnum"><span>010-9854-7845</span></div></td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+											</div>
+										</div>
+										<!-- //레이어 -->
+									</div>
+								</td>
+								<td>
+									<div class="posiw">
+										<a href="#none" class="btn_rud_b off"><span>웹경리나라</span></a>
+										<a href="#none" class="btn_rud_b off"><span>민원증명</span></a>
+										<a href="#none" class="btn_rud_b off"><span>4대보험</span></a>
+										<a href="#none" class="btn_rud_b off"><span>소통게시판</span></a>
+										<a href="#none" class="btn_rud_b off"><span>신고자료</span></a>
+								</div></td>
+								<td><div></div></td>
+								<td>
+									<div class="ico_w tar">
+										<div class="ico_bt"><div class="btn_divide"><a href="#none"><img src="../img/txof/ico/ico_pencil.png" alt=""></a></div></div>
+										<div style="position:relative;z-index:1;">
+											<div class="ico_ly_wrap"><a class="ico_memo color_white" href="#none" data="memoN"><span class="blind">메모</span></a></div>
+										</div>
+										<div class="ico_bt">
+											<div class="btn_divide"><a href="#none"><img src="../img/txof/ico/ico_serp2_on.png" alt=""></a></div>
+											<div class="btn_divide"><a href="#none"><img src="../img/txof/ico/ico_scloud_off.png" alt=""></a></div>
+											<div class="btn_divide"><a href="#none"><img src="../img/txof/ico/ico_semo2_off.png" alt=""></a></div>
+											<div class="btn_divide"><a href="#none"><img src="../img/txof/ico/ico_flow_on.png" alt=""></a></div>
+										</div>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td><div class="tac"><input type="checkbox"></div></td>
+								<td><div style="position:relative;"><!-- [D] 말줄임 처리 class= tx_ellipsis_max3 -->
+									<a href="#none" class="t_hover tx_ellipsis_max3" title="(주)하나인더스트리">(주)하나인더스트리</a>
+								</div></td>
+								<td class="bsc"><div><a href="#none" class="t_hover">311-88-00892</a></div></td>
+								<td class="bsc"><div><a href="#none" class="t_hover">신영훈</a></div></td>
+								<td class="bsc"><div class="tac">O</div></td>
+								<td class="bsc"><div class="tac">O</div></td>
+								<td class="bsc"><div class="tac"><span class="s_bg_gary">21</span></div></td>
+								<td class="bsc"><div>051-879-7188</div></td>
+								<td class="bsc"><div>2018-11-11 09:22</div></td>
+								<td class="bsc"><div>미동의</div></td>
+								<td class="bsc"><div class="tx_ellipsis_max"></div></td>
+								<td class="bsc"><div><a href="#none">미동의</a></div></td>
+								<td class="bsc"><div>이과장</div></td>
+								<td><div  style="position:relative;">
+									<a href="#none" class="t_hover tx_ellipsis_max3" title="서울특별시 영등포구 영신로 220 13층">서울특별시 영등포구 영신로 220 13층</a>
+									<!-- 레이어 -->
+									<div class="layertype1" style="padding:0;top:27px;left:0;z-index:2;display:none;">
+										<div class="toptail_layer">
+											<span class="tail top"></span>
+											<div class="ly_inner">
+												서울특별시 영등포구 영신로 220 13층
+											</div>
+										</div>
+									</div>
+									<!-- //레이어 -->
+								</div></td>
+								<td><div style="position:relative;">
+									<a href="#none" class="t_hover empinfo"><span class="tx_ellipsis_name">곽한나</span><span class="tx_ellipsis_rank">부장</span><span>010-9854-7845</span></a>
+									<!-- 레이어 -->
+									<div class="layertype1" style="padding:0;top:27px;left:0;z-index:2;display:none;">
+										<div class="toptail_layer">
+											<span class="tail top"></span>
+											<div class="ly_inner type2">
+												<table class="ly_table">
+													<caption></caption>
+													<colgroup>
+													<col style="width:70px;">
+													<col>
+													<col style="width:80px;">
+													</colgroup>
+													<tbody>
+														<tr>
+															<td><div class="max_name"><span title="곽한나">곽한나</span></div></td>
+															<td><div class="max_empinfo"><span title="부장님일이삼사오육칠팔">부장님일이삼사오육칠팔</span></div></td>
+															<td><div class="max_phnum"><span>010-9854-7845</span></div></td>
+														</tr>
+														<tr>
+															<td><div class="max_name"><span title="김영은">김영은</span></div></td>
+															<td><div class="max_empinfo"><span title="과장">과장</span></div></td>
+															<td><div class="max_phnum"><span>010-7757-6345</span></div></td>
+														</tr>
+														<tr>
+															<td><div class="max_name"><span title="김현우김현우">김현우김현우</span></div></td>
+															<td><div class="max_empinfo"><span></span></div></td>
+															<td><div class="max_phnum"><span>010-7555-6322</span></div></td>
+														</tr>
+														<tr>
+															<td><div class="max_name"><span title="남궁지혜">남궁지혜</span></div></td>
+															<td><div class="max_empinfo"><span>주임</span></div></td>
+															<td><div class="max_phnum"><span>010-6344-8934</span></div></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+									</div>
+									<!-- //레이어 -->
+								</div></td>
+								<td>
+									<div class="posiw">
+										<a href="#none" class="btn_rud_b off"><span>웹경리나라</span></a>
+										<a href="#none" class="btn_rud_b off"><span>민원증명</span></a>
+										<a href="#none" class="btn_rud_b off"><span>4대보험</span></a>
+										<a href="#none" class="btn_rud_b off"><span>소통게시판</span></a>
+										<a href="#none" class="btn_rud_b off"><span>신고자료</span></a>
+								</div></td>
+								<td><div></div></td>
+								<td>
+									<div class="ico_w tar">
+										<div class="ico_bt"><div class="btn_divide"><a href="#none"><img src="../img/txof/ico/ico_pencil.png" alt=""></a></div></div>
+										<div style="position:relative;z-index:1;">
+											<div class="ico_ly_wrap"><a class="ico_memo color_white" href="#none" data="memoN"><span class="blind">메모</span></a></div>
+										</div>
+										<div class="ico_bt">
+											<div class="btn_divide"><a href="#none"><img src="../img/txof/ico/ico_serp2_on.png" alt=""></a></div>
+											<div class="btn_divide"><a href="#none"><img src="../img/txof/ico/ico_scloud_off.png" alt=""></a></div>
+											<div class="btn_divide"><a href="#none"><img src="../img/txof/ico/ico_semo2_off.png" alt=""></a></div>
+											<div class="btn_divide"><a href="#none"><img src="../img/txof/ico/ico_flow_on.png" alt=""></a></div>
+										</div>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td><div class="tac"><input type="checkbox"></div></td>
+								<td><div style="position:relative;"><!-- [D] 말줄임 처리 class= tx_ellipsis_max3 -->
+									<a href="#none" class="t_hover tx_ellipsis_max3" title="(주)하나인더스트리">(주)하나인더스트리</a>
+								</div></td>
+								<td class="bsc"><div><a href="#none" class="t_hover">311-88-00892</a></div></td>
+								<td class="bsc"><div><a href="#none" class="t_hover">신영훈</a></div></td>
+								<td class="bsc"><div class="tac">O</div></td>
+								<td class="bsc"><div class="tac"></div></td>
+								<td class="bsc"><div class="tac"><span class="s_bg_gary">7</span></div></td>
+								<td class="bsc"><div>051-879-7188</div></td>
+								<td class="bsc"><div>2018-11-11 09:22</div></td>
+								<td class="bsc"><div>미동의</div></td>
+								<td class="bsc"><div class="tx_ellipsis_max"></div></td>
+								<td class="bsc"><div><a href="#none">미동의</a></div></td>
+								<td class="bsc"><div>이과장</div></td>
+								<td><div  style="position:relative;">
+									<a href="#none" class="t_hover tx_ellipsis_max3" title="서울특별시 영등포구 영신로 220 13층">서울특별시 영등포구 영신로 220 13층</a>
+									<!-- 레이어 -->
+									<div class="layertype1" style="padding:0;top:27px;left:0;z-index:2;display:none;">
+										<div class="toptail_layer">
+											<span class="tail top"></span>
+											<div class="ly_inner">
+												서울특별시 영등포구 영신로 220 13층
+											</div>
+										</div>
+									</div>
+									<!-- //레이어 -->
+								</div></td>
+								<td><div style="position:relative;">
+									<a href="#none" class="t_hover empinfo"><span class="tx_ellipsis_name">곽한나</span><span class="tx_ellipsis_rank">부장</span><span>010-9854-7845</span></a>
+									<!-- 레이어 -->
+									<div class="layertype1" style="padding:0;top:27px;left:0;z-index:2;display:none;">
+										<div class="toptail_layer">
+											<span class="tail top"></span>
+											<div class="ly_inner type2">
+												<table class="ly_table">
+													<caption></caption>
+													<colgroup>
+													<col style="width:70px;">
+													<col>
+													<col style="width:80px;">
+													</colgroup>
+													<tbody>
+														<tr>
+															<td><div class="max_name"><span title="곽한나">곽한나</span></div></td>
+															<td><div class="max_empinfo"><span title="부장님일이삼사오육칠팔">부장님일이삼사오육칠팔</span></div></td>
+															<td><div class="max_phnum"><span>010-9854-7845</span></div></td>
+														</tr>
+														<tr>
+															<td><div class="max_name"><span title="김영은">김영은</span></div></td>
+															<td><div class="max_empinfo"><span title="과장">과장</span></div></td>
+															<td><div class="max_phnum"><span>010-7757-6345</span></div></td>
+														</tr>
+														<tr>
+															<td><div class="max_name"><span title="김현우김현우">김현우김현우</span></div></td>
+															<td><div class="max_empinfo"><span></span></div></td>
+															<td><div class="max_phnum"><span>010-7555-6322</span></div></td>
+														</tr>
+														<tr>
+															<td><div class="max_name"><span title="남궁지혜">남궁지혜</span></div></td>
+															<td><div class="max_empinfo"><span>주임</span></div></td>
+															<td><div class="max_phnum"><span>010-6344-8934</span></div></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+									</div>
+									<!-- //레이어 -->
+								</div></td>
+								<td>
+									<div class="posiw">
+										<a href="#none" class="btn_rud_b off"><span>웹경리나라</span></a>
+										<a href="#none" class="btn_rud_b off"><span>민원증명</span></a>
+										<a href="#none" class="btn_rud_b off"><span>4대보험</span></a>
+										<a href="#none" class="btn_rud_b off"><span>소통게시판</span></a>
+										<a href="#none" class="btn_rud_b off"><span>신고자료</span></a>
+								</div></td>
+								<td><div></div></td>
+								<td>
+									<div class="ico_w tar">
+										<div class="ico_bt"><div class="btn_divide"><a href="#none"><img src="../img/txof/ico/ico_pencil.png" alt=""></a></div></div>
+										<div style="position:relative;z-index:1;">
+											<div class="ico_ly_wrap"><a class="ico_memo color_white" href="#none" data="memoN"><span class="blind">메모</span></a></div>
+										</div>
+										<div class="ico_bt">
+											<div class="btn_divide"><a href="#none"><img src="../img/txof/ico/ico_serp2_on.png" alt=""></a></div>
+											<div class="btn_divide"><a href="#none"><img src="../img/txof/ico/ico_scloud_off.png" alt=""></a></div>
+											<div class="btn_divide"><a href="#none"><img src="../img/txof/ico/ico_semo2_off.png" alt=""></a></div>
+											<div class="btn_divide"><a href="#none"><img src="../img/txof/ico/ico_flow_on.png" alt=""></a></div>
+										</div>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td><div class="tac"><input type="checkbox"></div></td>
+								<td><div style="position:relative;"><!-- [D] 말줄임 처리 class= tx_ellipsis_max3 -->
+									<a href="#none" class="t_hover tx_ellipsis_max3" title="(주)하나인더스트리">(주)하나인더스트리</a>
+								</div></td>
+								<td class="bsc"><div><a href="#none" class="t_hover">311-88-00892</a></div></td>
+								<td class="bsc"><div><a href="#none" class="t_hover">신영훈</a></div></td>
+								<td class="bsc"><div class="tac">O</div></td>
+								<td class="bsc"><div class="tac">O</div></td>
+								<td class="bsc"><div class="tac"><span class="s_bg_gary">8</span></div></td>
+								<td class="bsc"><div>051-879-7188</div></td>
+								<td class="bsc"><div>2018-11-11 09:22</div></td>
+								<td class="bsc"><div>미동의</div></td>
+								<td class="bsc"><div class="tx_ellipsis_max"></div></td>
+								<td class="bsc"><div><a href="#none">미동의</a></div></td>
+								<td class="bsc"><div>이과장</div></td>
+								<td><div  style="position:relative;">
+									<a href="#none" class="t_hover tx_ellipsis_max3" title="서울특별시 영등포구 영신로 220 13층">서울특별시 영등포구 영신로 220 13층</a>
+									<!-- 레이어 -->
+									<div class="layertype1" style="padding:0;top:27px;left:0;z-index:2;display:none;">
+										<div class="toptail_layer">
+											<span class="tail top"></span>
+											<div class="ly_inner">
+												서울특별시 영등포구 영신로 220 13층
+											</div>
+										</div>
+									</div>
+									<!-- //레이어 -->
+								</div></td>
+								<td><div style="position:relative;">
+									<a href="#none" class="t_hover empinfo"><span class="tx_ellipsis_name">곽한나</span><span class="tx_ellipsis_rank">부장</span><span>010-9854-7845</span></a>
+									<!-- 레이어 -->
+									<div class="layertype1" style="padding:0;top:27px;left:0;z-index:2;display:none;">
+										<div class="toptail_layer">
+											<span class="tail top"></span>
+											<div class="ly_inner type2">
+												<table class="ly_table">
+													<caption></caption>
+													<colgroup>
+													<col style="width:70px;">
+													<col>
+													<col style="width:80px;">
+													</colgroup>
+													<tbody>
+														<tr>
+															<td><div class="max_name"><span title="곽한나">곽한나</span></div></td>
+															<td><div class="max_empinfo"><span title="부장님일이삼사오육칠팔">부장님일이삼사오육칠팔</span></div></td>
+															<td><div class="max_phnum"><span>010-9854-7845</span></div></td>
+														</tr>
+														<tr>
+															<td><div class="max_name"><span title="김영은">김영은</span></div></td>
+															<td><div class="max_empinfo"><span title="과장">과장</span></div></td>
+															<td><div class="max_phnum"><span>010-7757-6345</span></div></td>
+														</tr>
+														<tr>
+															<td><div class="max_name"><span title="김현우김현우">김현우김현우</span></div></td>
+															<td><div class="max_empinfo"><span></span></div></td>
+															<td><div class="max_phnum"><span>010-7555-6322</span></div></td>
+														</tr>
+														<tr>
+															<td><div class="max_name"><span title="남궁지혜">남궁지혜</span></div></td>
+															<td><div class="max_empinfo"><span>주임</span></div></td>
+															<td><div class="max_phnum"><span>010-6344-8934</span></div></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+									</div>
+									<!-- //레이어 -->
+								</div></td>
+								<td>
+									<div class="posiw">
+										<a href="#none" class="btn_rud_b off"><span>웹경리나라</span></a>
+										<a href="#none" class="btn_rud_b off"><span>민원증명</span></a>
+										<a href="#none" class="btn_rud_b off"><span>4대보험</span></a>
+										<a href="#none" class="btn_rud_b off"><span>소통게시판</span></a>
+										<a href="#none" class="btn_rud_b off"><span>신고자료</span></a>
+								</div></td>
+								<td><div></div></td>
+								<td>
+									<div class="ico_w tar">
+										<div class="ico_bt"><div class="btn_divide"><a href="#none"><img src="../img/txof/ico/ico_pencil.png" alt=""></a></div></div>
+										<div style="position:relative;z-index:1;">
+											<div class="ico_ly_wrap"><a class="ico_memo color_white" href="#none" data="memoN"><span class="blind">메모</span></a></div>
+										</div>
+										<div class="ico_bt">
+											<div class="btn_divide"><a href="#none"><img src="../img/txof/ico/ico_serp2_off.png" alt=""></a></div>
+											<div class="btn_divide"><a href="#none"><img src="../img/txof/ico/ico_scloud_off.png" alt=""></a></div>
+											<div class="btn_divide"><a href="#none"><img src="../img/txof/ico/ico_semo2_off.png" alt=""></a></div>
+											<div class="btn_divide"><a href="#none"><img src="../img/txof/ico/ico_flow_on.png" alt=""></a></div>
+										</div>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td><div class="tac"><input type="checkbox"></div></td>
+								<td><div style="position:relative;"><!-- [D] 말줄임 처리 class= tx_ellipsis_max3 -->
+									<a href="#none" class="t_hover tx_ellipsis_max3" title="(주)하나인더스트리">(주)하나인더스트리</a>
+									<!-- 레이어 -->
+									<div class="layertype1 icon" style="bottom:27px;left:10px;z-index:1;">
+										<ul>
+											<li><a href="#none" class="scloud">serp</a></li>
+											<li><a href="#none" class="serp">경리나라</a></li>
+											<li><a href="#none" class="semo">세모장부</a></li>
+										</ul>
+									</div>
+								</div></td>
+								<td class="bsc"><div><a href="#none" class="t_hover">311-88-00892</a></div></td>
+								<td class="bsc"><div><a href="#none" class="t_hover">신영훈</a></div></td>
+								<td class="bsc"><div class="tac">O</div></td>
+								<td class="bsc"><div class="tac">O</div></td>
+								<td class="bsc"><div class="tac"><span class="s_bg_gary">6</span></div></td>
+								<td class="bsc"><div>051-879-7188</div></td>
+								<td class="bsc"><div>2018-11-11 09:22</div></td>
+								<td class="bsc"><div>미동의</div></td>
+								<td class="bsc"><div class="tx_ellipsis_max"></div></td>
+								<td class="bsc"><div><a href="#none">미동의</a></div></td>
+								<td class="bsc"><div style="position:relative;">
+									황찬연 외 1명
+									<!-- 레이어 -->
+									<div class="layertype1" style="padding:0;bottom:27px;right:0;z-index:1;">
+										<div class="ly_inner">
+											<p>황찬연 / 1팀</p>
+											<p>정성훈 / 2팀</p>
+										</div>
+									</div>
+									<!-- //레이어 -->
+								</div></td>
+								<td><div  style="position:relative;">
+									<a href="#none" class="t_hover tx_ellipsis_max3" title="서울특별시 영등포구 영신로 220 13층">서울특별시 영등포구 영신로 220 13층</a>
+									<!-- 레이어 -->
+									<div class="layertype1" style="padding:0;top:27px;left:0;z-index:2;display:none;">
+										<div class="toptail_layer">
+											<span class="tail top"></span>
+											<div class="ly_inner">
+												서울특별시 영등포구 영신로 220 13층
+											</div>
+										</div>
+									</div>
+									<!-- //레이어 -->
+								</div></td>
+								<td><div style="position:relative;">
+									<a href="#none" class="t_hover empinfo"><span class="tx_ellipsis_name">곽한나</span><span class="tx_ellipsis_rank">부장</span><span>010-9854-7845</span></a>
+									<!-- 레이어 -->
+									<div class="layertype1" style="padding:0;top:27px;left:0;z-index:2;display:none;">
+										<div class="toptail_layer">
+											<span class="tail top"></span>
+											<div class="ly_inner type2">
+												<table class="ly_table">
+													<caption></caption>
+													<colgroup>
+													<col style="width:70px;">
+													<col>
+													<col style="width:80px;">
+													</colgroup>
+													<tbody>
+														<tr>
+															<td><div class="max_name"><span title="곽한나">곽한나</span></div></td>
+															<td><div class="max_empinfo"><span title="부장님일이삼사오육칠팔">부장님일이삼사오육칠팔</span></div></td>
+															<td><div class="max_phnum"><span>010-9854-7845</span></div></td>
+														</tr>
+														<tr>
+															<td><div class="max_name"><span title="김영은">김영은</span></div></td>
+															<td><div class="max_empinfo"><span title="과장">과장</span></div></td>
+															<td><div class="max_phnum"><span>010-7757-6345</span></div></td>
+														</tr>
+														<tr>
+															<td><div class="max_name"><span title="김현우김현우">김현우김현우</span></div></td>
+															<td><div class="max_empinfo"><span></span></div></td>
+															<td><div class="max_phnum"><span>010-7555-6322</span></div></td>
+														</tr>
+														<tr>
+															<td><div class="max_name"><span title="남궁지혜">남궁지혜</span></div></td>
+															<td><div class="max_empinfo"><span>주임</span></div></td>
+															<td><div class="max_phnum"><span>010-6344-8934</span></div></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+									</div>
+									<!-- //레이어 -->
+								</div></td>
+								<td>
+									<div class="posiw">
+										<a href="#none" class="btn_rud_b off"><span>웹경리나라</span></a>
+										<a href="#none" class="btn_rud_b off"><span>민원증명</span></a>
+										<a href="#none" class="btn_rud_b off"><span>4대보험</span></a>
+										<a href="#none" class="btn_rud_b off"><span>소통게시판</span></a>
+										<a href="#none" class="btn_rud_b off"><span>신고자료</span></a>
+								</div></td>
+								<td><div></div></td>
+								<td>
+									<div class="ico_w tar">
+										<div class="ico_bt"><div class="btn_divide"><a href="#none"><img src="../img/txof/ico/ico_pencil.png" alt=""></a></div></div>
+										<div style="position:relative;z-index:1;">
+											<div class="ico_ly_wrap"><a class="ico_memo color_white" href="#none" data="memoN"><span class="blind">메모</span></a></div>
+										</div>
+										<div class="ico_bt">
+											<div class="btn_divide"><a href="#none"><img src="../img/txof/ico/ico_serp2_off.png" alt=""></a></div>
+											<div class="btn_divide"><a href="#none"><img src="../img/txof/ico/ico_scloud_off.png" alt=""></a></div>
+											<div class="btn_divide"><a href="#none"><img src="../img/txof/ico/ico_semo2_off.png" alt=""></a></div>
+											<div class="btn_divide"><a href="#none"><img src="../img/txof/ico/ico_flow_on.png" alt=""></a></div>
+										</div>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- //리스트 테이블 -->
+
+				<!-- Paging wrap -->
+				<div class="paging_wrap">
+					<!-- combo -->
+					<div class="combo_wrap">
+						<div class="combo_style">
+							<a href="#none" class="btn_style btn_combo_down"><span>12</span></a>
+							<ul class="up" style="display: none;">
+								<li><a href="#none">200</a></li>
+								<li><a href="#none">150</a></li>
+								<li><a href="#none">100</a></li>
+								<li><a href="#none">50</a></li>
+								<li><a href="#none">12</a></li>
+							</ul>
+						</div>
+					</div>
+					<!-- //combo -->
+					<!-- pagination -->
+					<div class="paging"><!-- [D] 비활성상태는 on class 제거 -->
+						<a href="#none" class="btn_pag_cntr first"><span class="blind">first</span></a><a href="#none" class="btn_pag_cntr prev"><span class="blind">previous</span></a>
+						<span class="pag_num">
+							<a href="#none" class="on">1</a>
+						</span>
+						<a href="#none" class="btn_pag_cntr next on"><span class="blind">next</span></a><a href="#none" class="btn_pag_cntr last on"><span class="blind">last</span></a>
+					</div>
+					<!-- //pagination -->
+				</div>
+				<!-- //Paging wrap -->
+
+			</div>
+		</div>
+		<!-- //content wrap -->
+	</div>
+	<!-- //Container -->
+</div>
+<!-- //wrap -->
+
+<!-- right memu -->
+<div class="side_wrap">
+	<div class="side_title">
+		<!-- 2022-08-18 -->
+		<h1 class="side_tit">메모</h1>
+		<a href="#none" class="btn_side_close"><span class="blind">창닫기<span></a>
+		<h2 class="bul"><span class="max_tit" title="㈜사아상사가나다라마바사사아상사가나다라마바사">㈜사아상사가나다라마바사사아상사가나다라마바사</span></h2><!-- 2022-08-18 메모 타이틀 상단이동 -->
+		<!-- //2022-08-18 -->
+		<div class="right">
+			<div class="mcolor">
+				<a href="#none" class="color_white"><span class="blind">흰색</span></a>
+				<a href="#none" class="color_blue"><span class="blind">파랑</span></a>
+				<a href="#none" class="color_green"><span class="blind">초록</span></a>
+				<a href="#none" class="color_yellow on"><span class="blind">노랑</span></a>
+				<a href="#none" class="color_orange"><span class="blind">주황</span></a>
+				<a href="#none" class="color_red"><span class="blind">빨강</span></a>
+			</div>
+			<a href="#none" class="mwrite"><span class="blind">메모작성</span></a>
+			<!-- <a href="#none" class="mclose"><span class="blind">창닫기</span></a> --><!-- 2022-08-18 창닫기 상단이동 -->
+		</div>
+	</div>
+	<div class="memo_cont mCustomScrollbar"><!--  메모등록시  calss = "write" 추가 -->
+		<div class="inner">
+			<div class="memo bdt0" style="display:none;">등록된 메모가 없습니다.</div>
+			<div class="memo bdt0 modi" style="display:none;">
+				<div class="mcont"><div class="txt_ipt"><textarea style="width:100%;">사장님께서 매우 까칠 하셔서 신고기간 가까이 자료 요청 하면 매우 위험함, 미리미리 자료 요청을 해야함.</textarea></div></div>
+				<div class="mw_btn mgt15">
+					<a href="#none" class="btn_style_v2"><span>저장</span></a>
+					<a href="#none" class="btn_style_v3"><span>취소</span></a>
+				</div>
+			</div>
+			<div class="memo bdt0">
+				<div class="mcont">사장님께서 매우 까칠 하셔서 신고기간 가까이 자료 요청 하면 매우 위험함, 미리미리 자료 요청을 해야함.</div>
+				<div class="mw_btn">
+					<span class="mw_name">신선분</span>
+					<span class="mw_time">2021-11-16 11:21</span>
+					<a href="#none" class="mw_modify"><span class="blind">수정</span></a>
+					<a href="#none" class="mw_delete"><span class="blind">삭제</span></a>
+				</div>
+			</div>
+			<div class="memo">
+				<div class="mcont">사모님이 경리업무를 보는데, 잘 모름. 그러나 실수해도 잘 우김.</div>
+				<div class="mw_btn">
+					<span class="mw_name">신선분</span>
+					<span class="mw_time">2021-11-16 11:21</span>
+					<a href="#none" class="mw_modify"><span class="blind">수정</span></a>
+					<a href="#none" class="mw_delete"><span class="blind">삭제</span></a>
+				</div>
+			</div>
+			<div class="memo">
+				<div class="mcont">texSSt 사장님께서 매우 까칠 하셔서 시녹기간 가까이 자료 요청 하면 매우 위험함, 미리미리 자료 요청을 해야함.사장님께서 매우 까칠 하셔서 시녹기간 가까이 자료 요청 하면 매우 위험함, 미리미리 자료 요청을 해야함.사장님께서 매우 까칠 하셔서 시녹기간 가까이 자료 요청 하면 매우 위험함, 미리미리 자료 요청을 해야함.사장님께서 매우 까칠 하셔서 시녹기간 가까이 자료 요청 하면 매우 위험함, 미리미리 자료 요청을 해야함.사장님께서 매우 까칠 하셔서 시녹기간 가까이 자료 요청 하면 매우 위험함, 미리미리 자료 요청을 해야함.사장님께서 매우 까칠 하셔서 시녹기간 가까이 자료 요청 하면 매우 위험함, 미리미리 자료 요청을 해야함.사장님께서 매우 까칠 하셔서 시녹기간 가까이 자료 요청 하면 매우 위험함, 미리미리 자료 요청을 해야함.사장님께서 매우 까칠 하셔서 시녹기간 가까이 자료 요청 하면 매우 위험함, 미리미리 자료 요청을 해야함.사장님께서 매우 까칠 하셔서 시녹기간 가까이 자료 요청 하면 매우 위험함, 미리미리 자료 요청을 해야함.사장님께서 매우 까칠 하셔서 시녹기간 가까이 자료 요청 하면 매우 위험함, 미리미리 자료 요청을 해야함.사장님께서 매우 까칠 하셔서 시녹기간 가까이 자료 요청 하면 매우 위험함, 미리미리 자료 요청을 해야함.사장님께서 매우 까칠 하셔서 시녹기간 가까이 자료 요청 하면 매우 위험함, 미리미리 자료 요청을 해야함.사장님께서 매우 까칠 하셔서 시녹기간 가까이 자료 요청 하면 매우 위험함, 미리미리 자료 요청을 해야함.사장님께서 매우 까칠 하셔서 시녹기간 가까이 자료 요청 하면 매우 위험함, 미리미리 자료 요청을 해야함.</div>
+				<div class="mw_btn">
+					<span class="mw_name">신선분</span>
+					<span class="mw_time">2021-11-16 11:21</span>
+					<a href="#none" class="mw_modify"><span class="blind">수정</span></a>
+					<a href="#none" class="mw_delete"><span class="blind">삭제</span></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="memo_write">
+		<div class="wipt_tit">
+			<span>메모 입력</span>
+			<a href="#none" class="mclose"><span class="blind">창닫기</span></a>
+		</div>
+		<div class="txt_ipt mgt10">
+			<textarea style="width:100%;"></textarea>
+		</div>
+		<div class="btnarea mgt15">
+			<a href="#none" class="btn_style_v2"><span>등록</span></a>
+			<a href="#none" class="btn_style_v3"><span>취소</span></a>
+		</div>
+	</div>
+
+	<div class="tooltip save" style="display:none;bottom:230px;left:30px;">
+		<p class="icon_save">저장되었습니다.</p>
+	</div>
+</div>
+<!-- //right memu -->
+
+</body>
+</html>
+

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<title>세모리포트</title>
+<link rel="stylesheet" href="../css/reset_taxp.css">
+<link rel="stylesheet" href="../css/app_header.css"><!-- [D] 세무대리인용 header -->
+<link rel="stylesheet" href="../css/content_taxp.css"><!-- [D] 세무대리인용 -->
+
+<!-- custom scrollbar plugin css -->
+<link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+<script src="https://publ.roumit.com/js/firebase_include.js"></script>
+  <script src="../js/lib/jquery/jquery-1.12.4.min.js"></script>
+<script src="../js/lib/jquery/jquery-ui-1.10.4.min.js"></script>
+<!-- custom scrollbar plugin -->
+<script src="../js/design/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../js/design/jquery.placeholder.min.js"></script>
+<script src="../js/lib/plugin/smart.popup.js"></script>
+<script src="../js/comm/common.js"></script>
+<script>
+$(function(){
+	// Invoke the plugin
+	$('input, textarea').placeholder({customClass:'my-placeholder'});
+});
+
+
+</script>
+
+</head>
+<body class="lnb_bg"><!-- [D] 메뉴영역(접기 : class="fold", 펼치기 : class="lnb_bg") -->
+
+<!-- 수임처 개선 -->
+<!-- header -->
+<div class="app_header">
+	<div class="app_header_inner">
+		<div class="ah_l">
+			<h1>세모리포트</h1>
+		</div>
+
+		<div class="ah_r">
+			<ul class="ah_menu">
+				<!-- 
+				<li style="position:absolute;top:-16px;left:-47px;"><a href="#none" class="btn_alarm" title="알림"><em class="alarm_num" style="display: none;"></em></a></li>
+				<li><a href="#none"><img src="../img/txof/app_header/ic_top04.png" alt="">SMS</a></li>
+				<li style="position:relative;">
+					<a href="https://academyserp.notion.site/4ee92f23a9184afda550d61faf10a5e3" target="_blink"><img src="../img/txof/app_header/ic_top05.png" alt="">메뉴얼</a>
+				</li>
+				<li><a href="#none"><img src="../img/txof/app_header/ic_top02.png" alt="">로그아웃</a></li>
+				-->
+			</ul>
+		</div>
+	</div>
+</div>
+<!-- //header -->
+<!-- //수임처 개선 -->
+
+<div class="wrap"><!-- [D] 상세검색일 경우(class="mh") -->
+	<!-- Container -->
+	<div class="container">
+		
+		<!-- lnb box -->
+		<div class="lnb_box">
+
+			<!-- (modify)20220804 lnb_boxInn, mCustomScrollbar 추가 / 레이어 위치 이동 -->
+			<!-- lnb_boxInn -->
+			<div class="lnb_boxInn mCustomScrollbar">
+				<!-- lnb top 추가 -->
+				<div class="lnb_top">
+					<!-- user view -->
+					<div class="user_view">
+						<div class="user_r_side">
+							<p class="icon_user"><strong>홍길동</strong> 님</p>
+							<a class="btn_set" title="환경설정"></a><!-- 2019-09-27 -->
+						</div>
+					</div>
+					<!-- //user view -->
+				</div>
+				<!-- //lnb top 추가 -->
+
+				<div class="alarm_wrap">
+					<dl id="" style="margin-bottom:0;"><!-- (modify)20220810 스타일 추가 -->
+						<dd class="on">
+							<div class="line first">가입고객 관리</div>
+						</dd>
+					</dl>
+
+					<!-- (add)20220804 -->
+					<div class="mygroupLst">
+						<ul>
+							<!-- 담당자 -->
+							<li class="off"><!-- 활성화클래스 on -->
+								<a href="#none" class="">담당자</a>
+								<div class="mygroupCont">
+									<!-- 20180906 수정 -->
+									<dl class="mygroup" id="" style="display:;">
+										<!--<dt class="on"><a class="txt">그룹</a></dt>-->
+										<!-- 비활성 -->
+										<dd class="off"><span class="bg"></span>
+											<a href="#none"><div class="line"><span class="icon mygroup_icon12_1"></span> 강윤아<span class="badge2"><strong id="">0</strong></span></div></a>
+										</dd>
+										<dd class="off"><span class="bg"></span>
+											<a href="#none"><div class="line"><span class="icon mygroup_icon12_1"></span> 강윤아<span class="badge2"><strong id="">0</strong></span></div></a>
+										</dd>
+									</dl>
+								</div>
+							</li>
+							<!-- //담당자 -->
+
+							<!-- 그룹 -->
+							<li class="on"><!-- 활성화클래스 on -->
+								<a href="#none" class="">어드민 관리</a>
+								<div class="mygroupCont">
+									<!-- 20180906 수정 -->
+									<dl class="mygroup" id="" style="display:;">
+										<!--<dt class="on"><a class="txt">그룹</a></dt>-->
+										<!-- 비활성 -->
+										<dd class="off"><span class="bg"></span>
+												<a href="#none"><div class="line"> 리포트 설정</div></a>
+										</dd>
+										<dd class="off"><span class="bg"></span>
+												<a href="#none"><div class="line"> 세무지식 관리</div></a>
+										</dd>
+										<dd class="off"><span class="bg"></span>
+												<a href="#none"><div class="line"> 웰컴팝업 관리</div></a>
+										</dd>
+										<dd class="off"><span class="bg"></span>
+												<a href="#none"><div class="line"> 결제정보 관리</div></a>
+										</dd>
+									</dl>
+									<!-- //20180906 수정 -->
+								</div>
+							</li>
+							<!-- //그룹 -->
+
+						</ul>
+					</div>
+					<!-- //(add)20220804 -->
+				</div>
+			</div>
+			<!-- //lnb_boxInn -->
+
+		</div>
+		<!-- //lnb box -->		
+
+
+		<!-- content -->
+		<div class="content">
+
+			
+			<div class="content_wrap">
+				
+				<!-- 상단타이틀 -->
+				<div class="title_wrap h1type">
+					<div class="left">
+						<h1>리포트 조회&nbsp;<span>리포트 목록을 조회합니다.</span></h1>
+					</div>
+
+					<div class="right">
+					</div>
+				</div>
+				<!-- //상단타이틀 -->
+
+				<div class="cust_dv_wrap nobd"><!-- [D] 편집기능 눌렀을때 class="edit_on" 추가 -->
+
+					<div class="list_scroll_nomin">
+						<!-- 리스트 테이블 -->
+						<table class="tbl_result" summary="">
+							<caption></caption>
+							<colgroup>
+								<col style="width: 10%;">
+								<col style="width: 10%;">
+								<col style="width: *;">
+								<col style="width: 10%;">
+								<col style="width: 10%;">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col"><div>발송APP</div></th>
+									<th scope="col"><div>리포트명</div></th>
+									<th scope="col"><div>내용</div></th>
+									<th scope="col"><div>사용여부</div></th>
+									<th scope="col"><div>발송형태</div></th>
+								</tr>
+							</thead>
+							<!--
+							<tfoot>
+								<tr>
+									<td colspan="5" class="tac"><div><a href="#none">ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ&nbsp;&nbsp;<img src="../img/txof/ico/ico_view.png" alt=""></a></div></td>
+								</tr>
+							</tfoot>
+							-->
+							<tbody>
+								<tr>
+									<td><div>세모R 보고서</div></td>
+									<td><div>부가세 예상세액</div></td>
+									<td><div class="tx_ellipsis_max">분기별 부가세 예상 보고서를 발송합니다.</div></td>
+									<td><div><a href="#none" class="btn_onoff on"><span class="blind">ON</span></a></div></td>   <!-- OFF 설정은 <a href="#none" class="btn_onoff off"><span class="blind">OFF</span></a> -->
+									<!-- 
+									<td><div><a href="#none" class="btn_onoff off"><span class="blind">OFF</span></a></a></div></td>
+									<td><div><a href="#none" class="btn_onoff dis"><span class="blind">OFF</span></a></a></div></td>
+									 -->
+									<td><div>수동</div></td>
+								</tr>
+								<tr>
+									<td><div>세모R 보고서</div></td>
+									<td><div>부가세 예상세액</div></td>
+									<td><div class="tx_ellipsis_max">분기별 부가세 예상 보고서를 발송합니다.</div></td>
+									<td><div><a href="#none" class="btn_onoff on"><span class="blind">ON</span></a></div></td>   <!-- OFF 설정은 <a href="#none" class="btn_onoff off"><span class="blind">OFF</span></a> -->
+									<!-- 
+									<td><div><a href="#none" class="btn_onoff off"><span class="blind">OFF</span></a></a></div></td>
+									<td><div><a href="#none" class="btn_onoff dis"><span class="blind">OFF</span></a></a></div></td>
+									 -->
+									<td><div>수동</div></td>
+								</tr>
+								<tr>
+									<td><div>세모R 보고서</div></td>
+									<td><div>부가세 예상세액</div></td>
+									<td><div class="tx_ellipsis_max">분기별 부가세 예상 보고서를 발송합니다.</div></td>
+									<td><div><a href="#none" class="btn_onoff on"><span class="blind">ON</span></a></div></td>   <!-- OFF 설정은 <a href="#none" class="btn_onoff off"><span class="blind">OFF</span></a> -->
+									<!-- 
+									<td><div><a href="#none" class="btn_onoff off"><span class="blind">OFF</span></a></a></div></td>
+									<td><div><a href="#none" class="btn_onoff dis"><span class="blind">OFF</span></a></a></div></td>
+									 -->
+									<td><div>수동</div></td>
+								</tr>
+								<tr>
+									<td><div>세모R 보고서</div></td>
+									<td><div>부가세 예상세액</div></td>
+									<td><div class="tx_ellipsis_max">분기별 부가세 예상 보고서를 발송합니다.</div></td>
+									<td><div><a href="#none" class="btn_onoff on"><span class="blind">ON</span></a></div></td>   <!-- OFF 설정은 <a href="#none" class="btn_onoff off"><span class="blind">OFF</span></a> -->
+									<!-- 
+									<td><div><a href="#none" class="btn_onoff off"><span class="blind">OFF</span></a></a></div></td>
+									<td><div><a href="#none" class="btn_onoff dis"><span class="blind">OFF</span></a></a></div></td>
+									 -->
+									<td><div>수동</div></td>
+								</tr>
+								<tr>
+									<td><div>세모R 보고서</div></td>
+									<td><div>부가세 예상세액</div></td>
+									<td><div class="tx_ellipsis_max">분기별 부가세 예상 보고서를 발송합니다.</div></td>
+									<td><div><a href="#none" class="btn_onoff on"><span class="blind">ON</span></a></div></td>   <!-- OFF 설정은 <a href="#none" class="btn_onoff off"><span class="blind">OFF</span></a> -->
+									<!-- 
+									<td><div><a href="#none" class="btn_onoff off"><span class="blind">OFF</span></a></a></div></td>
+									<td><div><a href="#none" class="btn_onoff dis"><span class="blind">OFF</span></a></a></div></td>
+									 -->
+									<td><div>수동</div></td>
+								</tr>
+							</tbody>
+						</table>
+						<!-- //리스트 테이블 -->
+					</div>
+					<!-- //2021-04-22 -->
+					<div class="right"  style="position: absolute; right: 0px;padding:10px 0 10px 0;">
+						<a href="#none" class="t_hover_b">[전체ON]</a>&nbsp;&nbsp;<a href="#none" class="t_hover_b">[ON/OFF 초기화]</a>
+					</div>
+					
+				</div>
+				
+				
+			</div>
+		   <!-- //content_wrap -->
+			
+		</div>
+		<!-- //content -->
+		
+		
+		
+		
+
+	</div>
+	<!-- //Container -->
+
+
+
+
+	<!-- footer 추가 : 20180828 -->
+	<div class="footer">
+		<!-- Copy right -->
+		<div class="copyright_wrap">
+			<div class="copyright_box">
+				<p>Copyright(c) <strong>Webcash.</strong> All rights reserved.</p>
+			</div>
+			<div class="ft_menu"></div>
+		</div>
+		<!-- //Copy right -->
+	</div>
+	<!-- //footer -->
+</div>
+<!-- //wrap -->
+
+
+</body>
+</html>
+

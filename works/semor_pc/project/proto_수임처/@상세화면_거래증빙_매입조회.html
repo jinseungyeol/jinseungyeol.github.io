@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<title>세무대리인 for 경리나라</title>
+<link rel="stylesheet" href="../css/reset_taxp.css">
+<link rel="stylesheet" href="../css/app_header.css"><!-- [D] 세무대리인용 header -->
+<link rel="stylesheet" href="../css/content_taxp.css"><!-- [D] 세무대리인용 -->
+
+<!-- custom scrollbar plugin css -->
+<link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+<script src="https://publ.roumit.com/js/firebase_include.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+<!-- custom scrollbar plugin -->
+<script src="../js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../js/jquery.placeholder.min.js"></script>
+<script>
+	$(function(){
+		// Invoke the plugin
+		$('input, textarea').placeholder({customClass:'my-placeholder'});
+		// 상담문의
+		$( "#btn_notice" ).on( "click", function() {
+			$("#pop_notice").toggle();
+		});
+		// 담당자지정
+		$( "#btn_manager" ).on( "click", function() {
+			$("#pop_manager").toggle();
+		});
+		// 작업일시
+		$( "#btn_last_work" ).on( "click", function() {
+			$("#pop_last_work").toggle();
+		});
+	} );
+</script>
+
+</head>
+
+<body>
+
+<!-- header -->
+<div class="app_header">
+	<div class="app_header_inner">
+		<div class="ah_l">
+			<h1>수임처</h1>
+		</div>
+
+		<div class="ah_r"></div>
+	</div>
+</div>
+<!-- //header -->
+
+<div class="wrap">
+	<!-- Container -->
+	<div class="container">
+		<!-- content wrap -->
+		<div class="content">
+
+			<div class="content_wrap">
+
+				<!-- 거래처조회 > 상세(회사정보) -->
+				<div class="cust_dv_wrap nobd"><!-- [D] 편집기능 눌렀을때 class="edit_on" 추가 -->
+
+					<div class="top_cust_tit">
+						<div class="left">
+							<div class="cntalign"><h1 class="ipt_none">미소야</h1></div>
+							<div class="cntalign">
+								<!-- 사업자번호/대표자/전화번호/팩스번호 -->
+								<ul class="top_list">
+									<li class="col1"><span class="ipt_none">311-88-00892</span>&nbsp;<span class="ipt_none" style="display: none;"></span></li>
+									<li class="col2"><strong><span class="ipt_none">신영훈</span>&nbsp;대표</strong></li>
+									<li class="col3"><img src="../img/txof/ico/ico_tel.png" alt="Tel"><strong class="ipt_none">02-3779-0001</strong></li>
+									<li class="col4">
+										<img src="../img/txof/ico/ico_fax.png" alt="Fax">
+										<div class="lyinvm ipt_none"><strong>02-3779-0002</strong></div>
+									</li>
+								</ul>
+								<!-- //사업자번호/대표자/전화번호/팩스번호 -->
+							</div>
+						</div>
+						<div class="right">
+							<div class="cntalign">
+								<a class="btn_ico_back" href="#none"><span class="blind">뒤로가기</span></a>
+							</div>
+						</div>
+					</div>
+
+					<!-- 탭영역/버튼 -->
+					<div class="tabType02">
+						<ul>
+							<li><a href="#none">회사정보조회</a></li>
+							<li class="on"><a href="#none">거래증빙</a></li>
+							<li><a href="#none">ID / PW 관리</a></li>
+							<li><a href="#none">서류함</a></li>
+							<li><a href="#none">직원급여정보</a></li>
+							<li><a href="#none">활동이력</a></li>
+							<li><a href="#none">미수금관리</a></li> <!-- 2022-07-13 -->
+						</ul>
+						<div class="right">
+							<div class="cntalign">
+								<a href="#none" class="btn_wnotbd"><span>소통게시판</span></a>
+							</div>
+							<div class="cntalign">
+								<a href="#none" class="btn_webkr"><span class="blind">경리나라</span></a><!-- 2022-07-06 -->
+							</div>
+							<div class="cntalign">
+								<a href="#none" class="btn_wflow"><span>플로우</span></a>
+							</div>
+						</div>
+					</div>
+					<!-- //탭영역/버튼 -->
+
+					<!-- 탭영역/버튼 -->
+					<div class="tabType01 mgt20 mgb10">
+						<!-- 2021-03-25 -->
+						<ul>
+							<li><a href="#none">매출조회</a></li>
+							<li><a href="#none">SNS매출조회</a></li>
+							<li class="on"><a href="#none">매입조회</a></li>
+							<li><a href="#none">입출내역조회</a></li>
+							<!-- <li><a href="#none">증빙서류</a></li>
+							<li><a href="#none">직원정보</a></li> -->
+							<li><a href="#none">더존/세무사랑연동</a></li><!-- 세무연동자료 > 더존/세무사랑연동 명칭 변경 -->
+							<!-- <li><a href="#none">활동이력</a></li> --><!-- 2021-03-16 -->
+							<!-- <li><a href="#none">세무사 보고서</a></li> --><!-- 2021-05-06 -->
+						</ul>
+						<!-- //2021-03-25 -->
+						<div class="right">
+							<div class="cntalign">
+								<!-- 2021-04-21 -->
+								<!-- <div class="txt_b" style="margin-top:7px;">
+									웹경리나라를 이용하시면 웹경리나라에서 업데이트된 항목이 수임처에 자동 반영됩니다
+								</div> -->
+								<a href="#none" class="txt_b txt_uline" style="display:inline-block;margin-top:7px;">회계 거래처 및 계정과목을 관리 합니다</a>
+								<!-- //2021-04-21 -->
+							</div>
+						</div>
+					</div>
+					<!-- //탭영역/버튼 -->
+					<!-- 검색조건 -->
+					<div class="title_wrap">
+						<div class="left">
+							<div class="cntalign">
+								<div class="title">
+									<h2 class="tx_title">기간</h2>
+								</div>
+							</div>
+							<div class="cntalign">
+								<!-- 년도선택 -->
+								<div class="ly_filter type4">
+									<a href="#none" class="">2019년</a>
+									<ul class="ly_filter_inner" style="display:none;min-width:100px !important;width:100px !important;">
+										<li><a href="#none" class="on">2019년</a></li>
+										<li><a href="#none">2018년</a></li>
+										<li><a href="#none">2017년</a></li>
+										<li><a href="#none">2016년</a></li>
+									</ul>
+								</div>
+								<!-- //년도선택 -->
+							</div>
+							<div class="cntalign">
+								<!-- 분기별/월별선택 -->
+								<div class="ly_filter type4">
+									<a href="#none" class="">분기별</a>
+									<ul class="ly_filter_inner" style="display:;min-width:100px !important;width:100px !important;">
+										<li><a href="#none">월별</a></li>
+										<li><a href="#none">분기별</a></li>
+										<li><a href="#none">반기별</a></li>
+										<li><a href="#none">기간별</a></li><!-- 2022-01-10 -->
+									</ul>
+								</div>
+								<!-- //분기별/월별선택 -->
+							</div>
+							<div class="cntalign" style="display:none;">
+								<!-- 분기별/월별선택 -->
+								<div class="ly_filter type4">
+									<a href="#none" class="">1분기</a>
+									<ul class="ly_filter_inner" style="display:none;min-width:100px !important;width:100px !important;">
+										<li><a href="#none" class="on">1분기</a></li>
+										<li><a href="#none">2분기</a></li>
+										<li><a href="#none">3분기</a></li>
+										<li><a href="#none">4분기</a></li>
+									</ul>
+								</div>
+								<!-- //분기별/월별선택 -->
+							</div>
+							<div class="cntalign">
+								<!-- 반기별 선택 -->
+								<div class="ly_filter type4">
+									<a href="#none" class="">상반기</a>
+									<ul class="ly_filter_inner" style="display:none;min-width:100px !important;width:100px !important;">
+										<li><a href="#none" class="on">상반기</a></li>
+										<li><a href="#none">하반기</a></li>
+									</ul>
+								</div>
+								<!-- //반기별 선택 -->
+							</div>
+							<div class="cntalign" style="margin-left:30px;">
+								<div class="title">
+									<h2 class="tx_title">구분</h2>
+								</div>
+							</div>
+							<div class="cntalign" style="margin-left:10px;line-height:25px;">
+								<div class="checklist">
+									<label style=""><input type="checkbox" checked=""> 세금계산서</label>
+									<label style="margin-left:5px;"><input type="checkbox" checked=""> 카드</label>
+									<label style="margin-left:5px;"><input type="checkbox" checked=""> 현금영수증</label>
+									<label style="margin-left:5px;"><input type="checkbox" checked=""> 기타</label>
+								</div>
+							</div>
+						</div>
+						<div class="right">
+							<div class="cntalign">
+								<a href="#none" class="btn_search_tb"><span>조회</span></a>
+							</div>
+							<div class="cntalign"><a href="#none" class="icon" title="엑셀"><img src="../img/txof/btn/btn_excel.gif" alt="엑셀"></a></div>
+							<div class="cntalign"><a href="#none" class="icon" title="증빙 이미지 다운로드는 한 달 단위로 가능합니다."><img src="../img/txof/btn/btn_dnimg.gif" alt="이미지 다운로드"></a></div><!-- 2021-09-02 -->
+							<!-- 2021-04-22 -->
+							<!-- <div class="cntalign"><a href="#none" class="icon" title="업데이트"><img src="../img/txof/btn/btn_refresh.gif" alt="업데이트"></a></div> -->
+							<div class="cntalign">
+								<a href="#none" class="icon" title="보기설정"><img src="../img/txof/btn/btn_list.gif" alt="보기설정"></a>
+								<!-- 보기설정 -->
+								<div class="ly2_pop_wrap" style="display:none;position:absolute;top:28px;right:0;width:238px;z-index:9998;">
+									<!-- 팝업 컨텐츠 -->
+									<div class="ly2_pop_container">
+										<!-- title -->
+										<div class="ly2_pop_title_wrap">
+											<div class="left"><h2 class="bul_2">보기설정</h2></div>
+											<div class="right">
+												<a href="#none"><img src="../img/txof/btn/btn_go_last.gif" alt=""></a> <a href="#none"><img src="../img/txof/btn/btn_go_next.gif" alt=""></a> <a href="#none"><img src="../img/txof/btn/btn_go_prev.gif" alt=""></a> <a href="#none"><img src="../img/txof/btn/btn_go_first.gif" alt=""></a>
+											</div>
+										</div>
+										<!-- //title -->
+										<!-- 보기항목 -->
+										<div class="view_setting_lst mgt5">
+											<ul>
+												<li><label for=""><input type="checkbox" id="" checked="checked">구분</label></li><!-- [D] 선택 -->
+												<li><label for=""><input type="checkbox" id="" checked="checked">일자</label></li><!-- [D] 선택 -->
+												<li><label for=""><input type="checkbox" id="" checked="checked">거래처명</label></li><!-- [D] 선택 + 비활성, <li> 안에 class="dis" 추가 -->
+												<li><label for=""><input type="checkbox" id="" checked="checked">사업자번호</label></li>
+												<li><label for=""><input type="checkbox" id="" checked="checked">공급가</label></li>
+												<li><label for=""><input type="checkbox" id="" checked="checked">부가세</label></li>
+												<li><label for=""><input type="checkbox" id="" checked="checked">합계</label></li>
+												<li><label for=""><input type="checkbox" id="" checked="checked">용도</label></li>
+												<li><label for=""><input type="checkbox" id="">프로젝트/현장</label></li>
+												<li><label for=""><input type="checkbox" id="" checked="checked">계정코드</label></li>
+												<li><label for=""><input type="checkbox" id="" checked="checked">계정과목</label></li>
+												<li><label for=""><input type="checkbox" id="">현장코드</label></li>
+												<li><label for=""><input type="checkbox" id="">현장명</label></li>
+												<li><label for=""><input type="checkbox" id="" checked="checked">내용</label></li>
+												<li><label for=""><input type="checkbox" id="">매입잔액</label></li>
+												<li><label for=""><input type="checkbox" id="">사용자</label></li>
+												<li><label for=""><input type="checkbox" id="">결의번호</label></li>
+												<li><label for=""><input type="checkbox" id="">결의제목</label></li>
+											</ul>
+										</div>
+										<!-- //보기항목 -->
+										<!-- 하단버튼 -->
+										<div class="cboth">
+											<div class="f_left">
+												<a href="#none" class="btn_style1"><span>초기화</span></a>
+											</div>
+											<div class="f_right">
+												<a href="#none" class="btn_style1_b"><span>저장</span></a>
+												<a href="#none" class="btn_style1"><span>취소</span></a>
+											</div>
+										</div>
+										<!-- //하단버튼 -->
+									</div>
+									<!-- //팝업 컨텐츠 -->
+								</div>
+								<!-- //보기설정 -->
+							</div>
+							<!-- //2021-04-22 -->
+						</div>
+					</div>
+					<!-- //검색조건 -->
+					<!-- 2021-04-22 -->
+					<div class="list_scroll_nomin">
+						<!-- 리스트 테이블 -->
+						<table class="tbl_result" summary="">
+							<caption></caption>
+							<colgroup>
+								<col style="width: 80px;">
+								<!-- <col style="width: 55px;"> 주석삭제 -->
+								<col style="width: 100px;">
+								<col style="width: 120px;">
+								<col style="width: 100px;">
+								<col style="width: 100px;">
+								<col style="width: 100px;">
+								<col style="width: 100px;">
+								<!-- <col style="width: 80px;"> 주석삭제 --><!-- 2020-10-15 추가 -->
+								<col style="width: 150px;">
+								<col style="width: 80px;">
+								<col style="width: 100px;">
+								<col style="width: 80px;">
+								<col style="width: 80px;">
+								<col style="width: 100px;">
+								<col style="width: 100px;">
+								<col style="width: 100px;">
+								<col style="width: 100px;">
+								<col style="width: 100px;">
+								<col style="width: 45px;">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col"><div>구분</div></th>
+									<!-- <th scope="col"><div>증빙</div></th> 주석삭제 -->
+									<th scope="col"><div>일자</div></th>
+									<th scope="col"><div>거래처명</div></th>
+									<th scope="col"><div>사업자번호</div></th>
+									<th scope="col"><div class="tar">공급가</div></th>
+									<th scope="col"><div class="tar">부가세</div></th>
+									<th scope="col"><div class="tar">합계</div></th>
+									<!-- <th scope="col"><div>공제 여부</div></th> 주석삭제 --><!-- 2020-10-15 추가 -->
+									<th scope="col"><div>용도</div></th>
+									<th scope="col"><div>계정코드</div></th>
+									<th scope="col"><div>계정과목</div></th>
+									<th scope="col"><div>현장코드</div></th>
+									<th scope="col"><div>현장명</div></th>
+									<th scope="col"><div>내용</div></th>
+									<th scope="col"><div class="tar">매입잔액</div></th>
+									<th scope="col"><div>사용자</div></th>
+									<th scope="col"><div>결의번호</div></th>
+									<th scope="col"><div>결의제목</div></th>
+									<th scope="col"><div></div></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><div>매출</div></td>
+									<!-- <td><div>세계</div></td> 주석삭제 -->
+									<td><div>2019-01-31</div></td>
+									<td><div class="tx_ellipsis_max">(주)미래상사</div></td>
+									<td><div>1078527739</div></td>
+									<td><div class="tar">1,899,000</div></td>
+									<td><div class="tar">211,000</div></td>
+									<td><div class="tar">2,110,000</div></td>
+									<!-- <td><div>공제</div></td> 주석삭제 --><!-- 2020-10-15 추가 -->
+									<td><div class="tx_ellipsis_max">상품매출</div></td>
+									<td class="bg_g"><div>0401</div></td>
+									<td class="bg_g"><div class="tx_ellipsis_max" title="상품매출">상품매출</div></td>
+									<td class="bg_g"><div>50001</div></td>
+									<td class="bg_g"><div class="tx_ellipsis_max" title="AA현장">AA현장</div></td>
+									<td><div class="tx_ellipsis_max">10월 아이브 수익금</div></td>
+									<td><div class="tar">550,000</div></td>
+									<td><div class="tx_ellipsis_max" title="홍길동">홍길동</div></td>
+									<td><div class="tx_ellipsis_max" title="결의서_202104_45">결의서_202104_45</div></td>
+									<td><div class="tx_ellipsis_max" title="지출결의서(카드/제로페이) 12건">지출결의서(카드/제로페이) 12건</div></td>
+									<!-- 2021-08-30 -->
+									<td>
+										<div style="position:relative;" class="tar">
+											<a href="#none"><img src="../img/txof/ico/ico_file_n.png" alt=""></a>
+											<!-- 레이어 -->
+											<div class="layertype1" style="top:-2px;left:-145px;width:auto;z-index:2;padding:0;display:none;">
+												<div class="toptail_layer" style="padding:0;">
+													<span class="tail rgt" style="right:-7px;top:9px;"></span>
+													<div style="padding:8px 10px 6px;line-height:17px;">
+														세무사랑 프로그램으로<br>
+														증빙이 전송 되었습니다.
+													</div>
+												</div>
+											</div>
+											<!-- //레이어 -->
+										</div>
+									</td>
+									<!-- //2021-08-30 -->
+								</tr>
+								<tr>
+									<td><div>매출</div></td>
+									<!-- <td><div>세계</div></td> 주석삭제 -->
+									<td><div>2019-01-31</div></td>
+									<td><div class="tx_ellipsis_max">(주)미래상사</div></td>
+									<td><div>1078527739</div></td>
+									<td><div class="tar">1,899,000</div></td>
+									<td><div class="tar">211,000</div></td>
+									<td><div class="tar">2,110,000</div></td>
+									<!-- <td><div>불공제</div></td> 주석삭제 --><!-- 2020-10-15 추가 -->
+									<td><div class="tx_ellipsis_max">상품매출</div></td>
+									<td class="bg_g"><div>0401</div></td>
+									<td class="bg_g"><div class="tx_ellipsis_max" title="상품매출">상품매출</div></td>
+									<td class="bg_g"><div>50001</div></td>
+									<td class="bg_g"><div class="tx_ellipsis_max" title="AA현장">AA현장</div></td>
+									<td><div class="tx_ellipsis_max">10월 아이브 수익금</div></td>
+									<td><div class="tar">550,000</div></td>
+									<td><div class="tx_ellipsis_max" title="홍길동">홍길동</div></td>
+									<td><div class="tx_ellipsis_max" title="결의서_202104_45">결의서_202104_45</div></td>
+									<td><div class="tx_ellipsis_max" title="지출결의서(카드/제로페이) 12건">지출결의서(카드/제로페이) 12건</div></td>
+									<!-- 2021-08-30 -->
+									<td>
+										<div style="position:relative;" class="tar">
+											<a href="#none"><img src="../img/txof/ico/ico_file_n.png" alt=""></a>
+											<!-- 레이어 -->
+											<div class="layertype1" style="top:-2px;left:-145px;width:auto;z-index:2;padding:0;display:none;">
+												<div class="toptail_layer" style="padding:0;">
+													<span class="tail rgt" style="right:-7px;top:9px;"></span>
+													<div style="padding:8px 10px 6px;line-height:17px;">
+														세무사랑 프로그램으로<br>
+														증빙이 전송 되었습니다.
+													</div>
+												</div>
+											</div>
+											<!-- //레이어 -->
+										</div>
+									</td>
+									<!-- //2021-08-30 -->
+								</tr>
+								<tr>
+									<td><div>매출</div></td>
+									<!-- <td><div>세계</div></td> 주석삭제 -->
+									<td><div>2019-01-31</div></td>
+									<td><div class="tx_ellipsis_max">(주)미래상사</div></td>
+									<td><div>1078527739</div></td>
+									<td><div class="tar">1,899,000</div></td>
+									<td><div class="tar">211,000</div></td>
+									<td><div class="tar">2,110,000</div></td>
+									<!-- <td><div>공제</div></td> 주석삭제 --><!-- 2020-10-15 추가 -->
+									<td><div>
+										<div class="card_combo no_line" style="padding:0;"><!-- 입력전에만 no_line 클래스 추가 -->
+											<!-- 입력 전 -->
+											<span class="card_combo_in" style="display:none;">
+												<span class="bg">
+												</span>
+												<div class="btn"><a class="edit"><span class="blind">수정</span></a></div>
+											</span>
+											<!-- //입력 전 -->
+											<!-- 입력 후 -->
+											<span class="card_combo_in">
+												<span class="bg">
+													<input type="text" value="" placeholder="입력">
+													<a class="btn_del"><span class="blind">삭제</span></a>
+												</span>
+												<a class="btn_open"><span class="blind">열기</span></a>
+											</span>
+											<!-- //입력 후 -->
+											<!-- 콤보박스 -->
+											<div class="card_combo_layer" style="max-height:225px;overflow-x:hidden;overflow-y:auto;z-index:1;display:none;">
+												<dl>
+													<dt>최근</dt>
+													<dd>
+														<a href="#none" title="">여비교통비</a>
+														<a href="#none" title="">접대비</a>
+														<a href="#none" title="">지급수수료</a>
+													</dd>
+												</dl>
+												<ul>
+													<li class="combo_li1"><a href="#none" title="">복리후생비</a></li>
+													<li class="combo_li1"><a href="#none" title="">여비교통비</a></li>
+													<li class="combo_li1"><a href="#none" title="">접대비</a></li>
+													<li class="combo_li1"><a href="#none" title="">지급수수료</a></li>
+													<li class="combo_li1"><a href="#none" title="">회의비</a></li>
+													<li class="combo_li1"><a href="#none" title="">운반비</a></li>
+													<li class="combo_li1"><a href="#none" title="">소모품비</a></li>
+													<li class="combo_li1"><a href="#none" title="">차량유지비</a></li>
+													<li class="combo_li1"><a href="#none" title="">교육훈련비</a></li>
+													<li class="combo_li1"><a href="#none" title="">도서인쇄비</a></li>
+													<li class="combo_li1"><a href="#none" title="">행사비</a></li>
+													<li class="combo_li1"><a href="#none" title="">수선비</a></li>
+													<li class="combo_li1"><a href="#none" title="">통신비</a></li>
+												</ul>
+											</div>
+											<!-- //콤보박스 -->
+										</div>
+									</div></td>
+									<td class="bg_g"><div>0401</div></td>
+									<td class="bg_g"><div class="tx_ellipsis_max" title="상품매출">상품매출</div></td>
+									<td class="bg_g"><div>50001</div></td>
+									<td class="bg_g"><div class="tx_ellipsis_max" title="AA현장">AA현장</div></td>
+									<td>
+										<div class="combo_postbx">
+											<div class="combo_post_bg"><!-- 비활성화클래스 dis -->
+												<input type="text" style="width:100%;" value="병원매출">
+												<div class="btn">
+													<a class="del"><span class="blind">삭제</span></a>
+												</div>
+											</div>
+										</div>
+									</td>
+									<td><div class="tar">550,000</div></td>
+									<td><div class="tx_ellipsis_max" title="홍길동">홍길동</div></td>
+									<td><div class="tx_ellipsis_max" title="결의서_202104_45">결의서_202104_45</div></td>
+									<td><div class="tx_ellipsis_max" title="지출결의서(카드/제로페이) 12건">지출결의서(카드/제로페이) 12건</div></td>
+									<!-- 2021-08-30 -->
+									<td>
+										<div style="position:relative;" class="tar">
+											<a href="#none"><img src="../img/txof/ico/ico_file_n.png" alt=""></a>
+										</div>
+									</td>
+									<!-- //2021-08-30 -->
+								</tr>
+								<!-- 2021-08-30 -->
+								<tr class="semo">
+									<td><div>수기증빙</div></td>
+									<td><div>2019-01-31</div></td>
+									<td><div class="tx_ellipsis_max">(주)미래상사</div></td>
+									<td><div>1078527739</div></td>
+									<td><div class="tar">1,899,000</div></td>
+									<td><div class="tar">211,000</div></td>
+									<td><div class="tar">2,110,000</div></td>
+									<td><div class="tx_ellipsis_max">상품매출</div></td>
+									<td class="bg_g"><div>0401</div></td>
+									<td class="bg_g"><div class="tx_ellipsis_max" title="상품매출">상품매출</div></td>
+									<td class="bg_g"><div>50001</div></td>
+									<td class="bg_g"><div class="tx_ellipsis_max" title="AA현장">AA현장</div></td>
+									<td><div class="tx_ellipsis_max">10월 아이브 수익금</div></td>
+									<td><div class="tar">550,000</div></td>
+									<td><div class="tx_ellipsis_max" title="홍길동">홍길동</div></td>
+									<td><div class="tx_ellipsis_max" title="결의서_202104_45">결의서_202104_45</div></td>
+									<td><div class="tx_ellipsis_max" title="지출결의서(카드/제로페이) 12건">지출결의서(카드/제로페이) 12건</div></td>
+									<td>
+										<div style="position:relative;" class="tar">
+											<a href="#none"><img src="../img/txof/ico/ico_file_n.png" alt=""></a>
+											<!-- 레이어 -->
+											<div class="layertype1" style="top:-2px;left:-145px;width:auto;z-index:2;padding:0;display:none;">
+												<div class="toptail_layer" style="padding:0;">
+													<span class="tail rgt" style="right:-7px;top:9px;"></span>
+													<div style="padding:8px 10px 6px;line-height:17px;">
+														세무사랑 프로그램으로<br>
+														증빙이 전송 되었습니다.
+													</div>
+												</div>
+											</div>
+											<!-- //레이어 -->
+										</div>
+									</td>
+								</tr>
+								<!-- //2021-08-30 -->
+							</tbody>
+						</table>
+						<!-- //리스트 테이블 -->
+					</div>
+					<!-- //2021-04-22 -->
+					<!-- Paging wrap -->
+					<div class="paging_wrap">
+						<!-- combo -->
+						<div class="combo_wrap">
+							<div class="combo_style">
+								<a href="#none" class="btn_style btn_combo_down"><span>12</span></a>
+								<ul class="up" style="display: none;">
+									<li><a href="#none">200</a></li>
+									<li><a href="#none">150</a></li>
+									<li><a href="#none">100</a></li>
+									<li><a href="#none">50</a></li>
+									<li><a href="#none">12</a></li>
+								</ul>
+							</div>
+						</div>
+						<!-- //combo -->
+						<!-- pagination -->
+						<div class="paging"><!-- [D] 비활성상태는 on class 제거 -->
+							<a href="#none" class="btn_pag_cntr first"><span class="blind">first</span></a><a href="#none" class="btn_pag_cntr prev"><span class="blind">previous</span></a>
+							<span class="pag_num">
+								<a href="#none" class="on">1</a><a href="#none">2</a><a href="#none">3</a><a href="#none">4</a><a href="#none">5</a><a href="#none">6</a><a href="#none">7</a><a href="#none">8</a><a href="#none">9</a><a href="#none">10</a>
+							</span>
+							<a href="#none" class="btn_pag_cntr next on"><span class="blind">next</span></a><a href="#none" class="btn_pag_cntr last on"><span class="blind">last</span></a>
+						</div>
+						<!-- //pagination -->
+					</div>
+					<!-- //Paging wrap -->
+				</div>
+				<!-- //거래처조회 > 상세(회사정보) -->
+
+			</div>
+		</div>
+		<!-- //content wrap -->
+	</div>
+	<!-- //Container -->
+</div>
+<!-- //wrap -->
+
+
+</body>
+</html>
+

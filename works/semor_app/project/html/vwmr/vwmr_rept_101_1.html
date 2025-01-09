@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>vwmr_rept_101_1</title>
+    <link rel="stylesheet" href="../../css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../../css/mobiscroll.jquery.min.css">
+    <link rel="stylesheet" href="../../css/semoR_base.css">
+    <link rel="stylesheet" href="../../css/semoR_common.css">
+    <link rel="stylesheet" href="../../css/semoR_style.css">
+    <link rel="stylesheet" href="../../css/semoR_rept.css">
+  <script src="../../js/jquery-3.5.1.min.js"></script>
+    <script src="../../js/jquery-ui.min.js"></script>
+    <script src="../../js/swiper-bundle.min.js"></script>
+    <script src="../../js/mobiscroll.jquery.min.js"></script>
+    <script src="../../js/semoR_ui.js"></script>
+</head>
+
+<script>
+    $(document).ready(function () {
+        slidePop(this);
+    });
+</script>
+
+<body>
+    <!-- wrapper -->
+    <div class="wrapper">
+        <!-- header -->
+        <div class="header">
+            <h1 class="subTit">슬라이드팝업(slidePop)</h1>
+            <ul class="topMenu">
+                <li class="left">
+                    <a class="btnBack" href="javascript:;" role="button"><span class="blind">뒤로가기</span></a>
+                </li>
+            </ul>
+        </div>
+        <!-- //header -->
+    </div>
+    <!-- //wrapper -->
+
+    <div class="popWrap slidePop wide">
+        <div class="dim" onclick="popdimClose(this);return false;">클릭시 팝업 닫힘</div>
+        <div class="popInner">
+            <div class="popTit">
+                <a href="javascript:;" class="btnPopClose" onclick="popClose(this);return false;" title="팝업닫기"
+                    role="button"></a>
+                <h1>사업분석 보고서 계산기준</h1>
+            </div>
+            <div class="popCont">
+                <ul class="listDot type04">
+                    <li class="info">
+                        <p class="tit">사업분석 보고서는 아래와 같은 기준으로 만들어요.</p>
+                        <div class="tblCalcRept">
+                            <table>
+                                <colgroup>
+                                    <col style="width: 23%">
+                                </colgroup>
+                                <tr>
+                                    <th colspan="2">종류</th>
+                                    <th class="pointColor02">매출</th>
+                                    <th class="pointColor07">매입</th>
+                                    <th colspan="2">기준</th>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <p class="defTxt02">카드•제로페이</p>
+                                    </td>
+                                    <td><span class="salesDot"></span></td>
+                                    <td><span class="purchaseDot"></span></td>
+                                    <td colspan="2" rowspan="6" class="desc"> 
+                                        <p class="defTxt">홈택스에서 확정된 『부가세 신고서』 기준</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <p class="defTxt02">현금영수증</p>
+                                    </td>
+                                    <td><span class="salesDot"></span></td>
+                                    <td><span class="purchaseDot"></span></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <p class="defTxt02">세금계산서</p>
+                                    </td>
+                                    <td><span class="salesDot"></span></td>
+                                    <td><span class="purchaseDot"></span></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <p class="defTxt02">계산서</p>
+                                    </td>
+                                    <td><span class="salesDot"></span></td>
+                                    <td><span class="purchaseDot"></span></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <p class="defTxt02">PG•배달•쇼핑</p>
+                                    </td>
+                                    <td><span class="salesDot"></span></td>
+                                    <td><span class="defTxt02">-</span></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <p class="defTxt02">종이(세금)계산서</p>
+                                    </td>
+                                    <td><span class="salesDot"></span></td>
+                                    <td><span class="purchaseDot"></span></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <p class="defTxt02">인건비</p>
+                                    </td>
+                                    <td><span class="defTxt02">-</span></td>
+                                    <td><span class="purchaseDot"></span></td>
+                                    <td colspan="2" class="desc">
+                                        <p class="defTxt">홈택스에서 신고된 『원천 징수이행 상황 신고서』 기준</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <p class="defTxt02">수출실적명세서</p>
+                                    </td>
+                                    <td><span class="defTxt02">-</span></td>
+                                    <td><span class="purchaseDot"></span></td>
+                                    <td colspan="2" class="desc">
+                                        <p class="defTxt">홈택스에서 신고된 『수출실적명세서』 기준</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" rowspan="2">
+                                        <p class="defTxt02">기타</p>
+                                    </td>
+                                    <td rowspan="2"><span class="salesDot"></span></td>
+                                    <td rowspan="2"><span class="purchaseDot"></span></td>
+                                    <td colspan="2"  class="desc">
+                                        <p class="defTxt">매출: 증빙 미발급 매출</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="desc bdLeft">
+                                        <p class="defTxt">매입: 세모리포트에 등록한 『간이영수증』 중 완료건</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <p class="defTxt02">* 원천세 반기납 신고 사업자는 상•하반기 2회만 업데이트</p>
+                    </li>
+                    <li>
+                        <p class="tit">누적 손익 계산</p>
+                        <div class="txtArea">
+                            <p>누적 매출 금액 - 누적 매입 금액 - 누적 인건비</p>
+                            <p class="defTxt02">* 누적: 1월부터 현재까지의 총 합계 금액</p>
+                        </div>
+                    </li>
+                    <li>
+                        <p class="tit">올해 예상 금액</p>
+                        <div class="txtArea">
+                            <p>현재까지의 평균 금액 x 12개월</p>
+                            <p class="defTxt02">* 평균 금액 = 올해 1월부터 현재까지 총 금액 ÷ 개월 수</p>
+                        </div>
+                    </li>
+                    <li>
+                        <p class="tit">손익분석 결과</p>
+                        <div class="txtArea">
+                            <p>손익 증감률 = (이번달 손익 ÷ 지난달 손익) x 100</p>
+                            <p>이익률 = (이번달 손익 ÷ 이번달 매출) x 100</p>
+                        </div>
+                    </li>
+                </ul>
+                <div class="areaReptCalcInfo">
+                    <span class="infoTxt05">
+                        보고서는 홈택스 수집 정보에 따라 향후 신고금액과 차이가
+                        발생할 수 있어 사업관리를 위한 참고 자료로 활용해 주세요.
+                    </span>
+                </div>
+            </div>
+            <div class="popBtnWrap">
+                <button type="button" onclick="popClose(this); return false;" class="btnPointBg pointBgColor">확인</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,718 @@
+@charset "utf-8"; /* Base */
+.chartLabel { display: inline-block; margin-right: 3px; width: 18px; height: 18px; border-radius: 4px } 
+.chartLabel.otherSales { background: #E3E3E3 } /* 기타 */
+.salesWrap .chartLabel.cardZero { background: #184B40 } /* 매출 - 카드 · 제로페이 */
+.salesWrap .chartLabel.receipt { background: #12997A } /* 매출 - 현금영수증 */
+.salesWrap .chartLabel.taxBill { background: #17BF98 } /* 매출 - 세금계산서 */
+.salesWrap .chartLabel.bill { background: #91F1CC } /* 매출 - 계산서 */
+.salesWrap .chartLabel.PGOpen { background: #BAF9E1 } /* 매출 - pc · 오픈마켓 */
+.salesWrap .chartLabel.zero_ex { background: #55E024 } /* 영세율수출실적명세서 */
+.salesWrap .chartLabel.zero_tax { background: #34C800 } /* 영세율세금계산서 */
+.salesWrap .chartLabel.zero_etc { background: #297D0C } /* 영세율기타 */
+
+.chartLabel.paTaxBill { background: #949494 } /* 매출 - 종이세금계산서 */
+.chartLabel.paBill { background: #C7C7C7 } /* 매출 - 종이계산서 */
+.purchaseWrap .chartLabel.card { background: #F9DCBA } /* 매입 - 카드 */
+.purchaseWrap .chartLabel.receipt { background: #FFBF6D } /* 매입 - 현금영수증 */
+.purchaseWrap .chartLabel.taxBill { background: #FF9831 } /* 매입 - 세금계산서 */
+.purchaseWrap .chartLabel.bill { background: #FF7E44 } /* 매입 - 계산서 */
+.purchaseWrap .chartLabel.zeropay { background: #C55500 } /* 매입 - 제로페이 */ */
+
+/* 올해, 작년 평균 라벨 */
+.busiReptWrap .averageLabelWrap { margin-bottom: 20px; text-align: right } 
+.busiReptWrap .averageLabelWrap .averageLabel span { display: inline-block; width: 12px; height: 1px; border: 1px dashed; margin-right: 4px; vertical-align: middle } 
+.busiReptWrap .averageLabelWrap .averageLabel .prevBadge { border-color: #b1b1b1 } 
+.busiReptWrap .averageLabelWrap .averageLabel .currentBadge { border-color: #17bf98 } 
+.busiReptWrap .averageLabelWrap .averageLabel .val { color: #85888d; font-size: 0.866rem } 
+
+/* 올해, 작년 평균 분기처리 */
+.busiReptWrap .purchaseWrap .averageLabelWrap .averageLabel .prevBadge { border-color: #b1b1b1 } 
+.busiReptWrap .purchaseWrap .averageLabelWrap .averageLabel .currentBadge { border-color: #ffb623 } 
+
+/* 스와이프 문구 */
+.busiReptWrap .areaInfo { margin: 25px 0 100px; text-align: right } 
+.busiReptWrap .areaInfo .infoTxt02 { font-size: 0.937rem; color: #8a8a8b } 
+
+
+.calcTxt { color: #bababa; font-size: 0.933rem } 
+
+.moveLink.chat { padding-left: 25px; background: url(../img/ico_message_gray.png) no-repeat left center / 18px } 
+
+.infoArea.busi .ico i.full { background: url(../img/ico_fWorker.png) no-repeat center / cover; border: none } 
+.infoArea.busi .ico i.day { background: url(../img/ico_dWorker.png) no-repeat center / cover; border: none } 
+.infoArea.busi .ico i.busi { background: url(../img/ico_bWorker.png) no-repeat center / cover; border: none } 
+.infoArea.busi .ico i.etc { background: url(../img/ico_eWorker.png) no-repeat center / cover; border: none } 
+
+.infoRept { margin-bottom: 80px } 
+
+.reptMsgWrap h2.defTit { font-size: 1.5333rem } 
+.reptMsgWrap .reportMsgList .listDot > li .tit { font-size: 1rem } 
+.reptMsgWrap .reportMsgList .listDot.type03 > li .areaData .data { line-height: 3.1rem; font-size: 1rem } 
+.reptMsgWrap .reportMsgList .areaBtnPop { margin: 58px 0 20px } 
+.btnPopOpen { display: block; border-radius: 6px; padding: 14px 0; border: 1px solid #adb0b7; background: url(../img/ico_ts_down_gray.png) no-repeat center right 14px / 11px } 
+.btnPopOpen span { padding-left: 33px; font-size: 1rem; color: #adb0b7; background: url(../img/ico_info_gray.png) no-repeat center left 10px / 15px; } 
+
+.includeFooter .bannerWrap { margin-bottom: 40px } 
+
+/* 샘플 */
+.busiReptWrap .areaTopFixed .areaReptLogo::after { content: '이 보고서는 샘플로 실제 데이터와 다릅니다.'; display: block; margin: 15px -20px 0; padding: 14px 0; color: #12997a; background: #dcf6f0; text-align: center } 
+.areaReptLogo img { height: 40px } 
+
+/* vwmr_rept_001 보고서 */
+.reptWrap { padding-top: 11px } 
+.reptWrap .listWrap > li { border-top: 1px solid #e1e1e1 } 
+.reptWrap .listWrap > li:last-child { border-bottom: 1px solid #e1e1e1 } 
+.reptWrap .listWrap .moveLink { padding: 18px } 
+.reptWrap .listWrap .moveLink .tit { margin-right: 4px; font-size: 1.133rem } 
+.reptWrap .listWrap .moveLink > div .bottom { margin-top: 4px } 
+.reptWrap .listWrap .moveLink > div .bottom .date.time + .date.time { margin-left: 15px; } 
+.reptWrap .listWrap .moveLink .imgNew { width: 18px } 
+
+/* vwmr_rept_001AA 보고서비활성화 */
+.reptWrap .listWrap .moveLink.disabled { background: none !important } 
+.reptWrap .listWrap .moveLink.disabled .date.time { color: #c7c7c7 } 
+
+.areaAppInstall { margin-top: 25px; text-align: right } 
+.btnAppInstall { padding: 11px 8px; border: 1px solid #333; border-radius: 5px } 
+.btnAppInstall span { padding-left: 26px; background: url(../img/ico_appInstall.png) no-repeat left center / 22px; font-size: 1rem; font-weight: 600 } 
+
+/* vwmr_rept_201 매출·매입 보고서 */
+.tblWrapType02 { display: flex; margin-right: -20px; border: 1px solid #b9b9b9; border-right: none; border-radius: 12px 0 0 12px } 
+.tblWrapType02 .left { position: relative; flex: 0 0 58%; border-radius: 10px 0 0 10px; z-index: 2 } 
+.tblWrapType02 table th { padding: 10px; text-align: center } 
+.tblWrapType02 table tbody tr:last-child { background-color: #f9f9f9 } 
+.tblWrapType02 table td .price, .tblWrapType02 table td .count { font-size: 0.933rem } 
+.tblWrapType02 table td .price.total { display: block; text-decoration: underline } 
+.tblWrapType02 table td .defTxt02 { font-size: 0.933rem } 
+.tblWrapType02 .left table td:first-child { padding: 0.333rem; word-break: keep-all; text-align: center; font-size: 1rem } 
+.tblWrapType02 .left table td:nth-child(2) { padding: 0.75rem 0.533rem; text-align: right } 
+.tblWrapType02 .left table td.bzaqNm { text-align: left; } 
+.tblWrapType02 .left table th:last-child { background-color: #000; color: #fff; border-radius: 10px 10px 0 0; text-align: center } 
+.tblWrapType02 .left table tr td { height: 70px; border-right: 1px solid #c1c1c1 } 
+.tblWrapType02 .left table tr td .per { color: #8a8a8b } 
+.tblWrapType02 .left table tr td .btnQmGray { position: static; display: block; margin: -4px auto 0; transform: initial } 
+.tblWrapType02 .left table tr:not(:last-child) td { border-top: 1px solid #c1c1c1 } 
+.tblWrapType02 .left::before { content: ''; position: absolute; top: 0; bottom: -1px; right: 0; left: -1px; border: 1px solid #000; border-radius: 10px; box-shadow: 8px 0 5px rgba(0,0,0,0.1); pointer-events: none } 
+.tblWrapType02 .right { overflow: hidden; flex-grow: 1; } 
+.tblWrapType02 .right table:not(:last-child) th { border-right: 1px solid #c1c1c1 } 
+.tblWrapType02 .right table:not(:last-child) td { border-right: 1px solid #c1c1c1 } 
+.tblWrapType02 .right table td { height: 70px; padding: 0.75rem 0.533rem; text-align: right; color: #000 } 
+.tblWrapType02 .right table td .price { color: #8a8a8b } 
+.tblWrapType02 .right table td .price.total { color: #111 } 
+.tblWrapType02 .right table tr:not(:last-child) td { border-top: 1px solid #c1c1c1 } 
+.tblWrapType02 .right table td.minus { background: #FFF1F1; } 
+.tblWrapType02 .right table td.minus .price { color: #FF5353; } 
+.tblWrapType02 .right .tblSwipe { height: 100% } 
+.tblWrapType02 .right .swiper-slide:first-child { border-left: 1px solid #c1c1c1 } 
+.tblWrapType02 .right .swiper-slide:last-child { border-right: 1px solid #c1c1c1 } 
+
+.scrollTabWrap.type02 { margin: 0 0 40px } 
+.scrollTabWrap.type02 .scrollTabList { padding: 0 } 
+.scrollTabWrap.type02 .scrollTabList > li { position: relative; -webkit-box-flex: 1; flex-basis: 100%; text-align: center } 
+.scrollTabWrap.type02 .scrollTabList > li:first-of-type > a { margin-left: 0 } 
+.scrollTabWrap.type02 .scrollTabList > li > a { padding: 0 } 
+.scrollTabWrap.type02 .scrollTabList > li > a span { position: static } 
+.scrollTabWrap.type02 .scrollTabList > li > a span::before { width: initial; left: 20px; right: 20px; transform: translateX(0); } 
+
+.salesWrap .tblWrapType02 .left table tr:not(:last-child) td { height: 5.4667rem } 
+.salesWrap .tblWrapType02 .right table tr:not(:last-child) td { height: 5.4667rem } 
+
+.orderWrap { position: relative } 
+.orderWrap .num { position: absolute; left: 0; top: 0 } 
+.orderWrap .num ~ .name { padding-left: 1rem } 
+.orderWrap .name.ellipsis { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; white-space: inherit; text-align: left } 
+.orderList li { font-size: 1.133rem; list-style: desc; word-break: keep-all; } 
+
+.areaChart { margin: 45px 0 } 
+.areaChart #sampleBar { width: 60%; margin: 0 auto } 
+.areaChart .titArea { text-align: right } 
+.doughnutWrap { display: flex; justify-content: space-between; overflow: hidden } 
+.doughnutWrap .left, .doughnutWrap .right { position: relative; width: 48% } 
+
+.tblChartData .chartLabel { margin-bottom: -4px } 
+.tblChartData th { font-size: 1.133rem; padding-bottom: 18px; border-bottom: 1px solid #111 } 
+.tblChartData tr + tr { border-top: 1px solid #C1C1C1 } 
+.tblChartData tr td { font-size: 1.133rem } 
+.tblChartData tr td:not(:first-child) { text-align: center; font-weight: 600 } 
+.tblChartData tr td:last-child { color: #b4b4b4 } 
+.tblChartData tr:first-child td { padding-top: 18px } 
+.tblChartData tr td { padding: 20px 0 } 
+
+.compareLabelWrap { display: flex; justify-content: flex-end; margin-bottom: 13px } 
+.compaerLabel + .compaerLabel { margin-left: 15px } 
+.compaerLabel .chartLabel { width: 8px; height: 8px; margin-bottom: 1px; border-radius: 50%; vertical-align: middle } 
+
+/* 매출 */
+.chartLabel.prev { background: #b1b1b1 } 
+.chartLabel.current { background: #12997A } 
+
+/* 매입 */
+.purchaseWrap .compaerLabel .chartLabel.current { background: #FF7E44 } 
+
+/* 20240102 손익 케이스 추가 */
+.busiReptCont.pfls .compareLabelWrap .chartLabel.current { background: #08f } 
+.busiReptWrap .busiReptCont.pfls .averageLabelWrap .averageLabel .currentBadge { border-color: #08f } 
+
+/* 거래처 top5 */
+.clientWrap .tabMenuList.type02 { flex: 1 } 
+.clientWrap .tblWrapType02 table tbody tr:last-child { background: #fff } 
+.clientWrap .tblWrapType02 .left table tr:nth-child(n+10) .orderWrap .name.ellipsis { padding-left: 1.5rem } 
+.clientWrap .tblWrapType02 .left table tr td { height: 70px; border-top: 1px solid #c1c1c1 } 
+.clientWrap .tblWrapType02 .right table tr td { border-top: 1px solid #c1c1c1 } 
+
+/* 고정지출 */
+.fixSpendingWrap .tblChartData { margin-top: 30px } 
+.fixSpendingWrap .tblChartData th:first-child { text-align: left; vertical-align: top } 
+.fixSpendingWrap .tblChartData th:last-child { text-align: right } 
+.fixSpendingWrap .tblChartData th .price { display: block; margin-bottom: -5px } 
+.fixSpendingWrap .tblChartData th .defTxt01 { font-weight: 500 } 
+.fixSpendingWrap .tblChartData tr td { vertical-align: top } 
+.fixSpendingWrap .tblChartData tr td:last-child { text-align: right } 
+.fixSpendingWrap .tblChartData tr td .price { font-size: 1.133rem; color: #111; font-weight: 600 } 
+.fixSpendingWrap .tblChartData .orderWrap .num { font-size: 1.133rem } 
+.fixSpendingWrap .tblChartData .orderWrap .name { padding-left: 2rem; font-size: 1.133rem } 
+.fixSpendingWrap .confirmMsg { padding-top: 50px } 
+
+/* 응원 */
+.cheeringWrap { margin-top: 75px } 
+.cheeringWrap .roundBox { text-align: center; border: 1px solid #e2e2e2 } 
+.cheeringWrap .roundBox .tit { font-size: 1.4rem; font-weight: 600 } 
+.cheeringWrap .roundBox > .defTxt02 { margin: 12px 0 33px; font-size: 1.133rem } 
+
+.cheeringWrap .cheerList { display: none; justify-content: space-between; padding: 15px; background: #fff; border-radius: 12px; box-shadow: 0 10px 10px rgba(0,0,0,0.1) } 
+.cheeringWrap .cheerList > li { width: 45px; } 
+.cheeringWrap .cheerList > li img { width: 45px; margin-bottom: 10px } 
+.cheeringWrap .areaLike { margin-top: 14px; text-align: left } 
+.cheeringWrap .areaLike .btnPointBd { font-size: 1rem } 
+.cheeringWrap .areaLike .btnPointBd img { display: none; width: 2rem; margin-bottom: 0.2667rem; vertical-align: middle } 
+.cheeringWrap .areaLike .btnPointBd.pointBgColor { color: #fff; border: none } 
+.cheeringWrap .areaLike .btnPointBd.pointBgColor img { display: inline-block } 
+.cheeringWrap .areaLike .btnBdGray { padding: 0; color: #8a8a8b; border-color: #d2d2d2 } 
+
+/* vwmr_rept_202_5 */
+.listDot.type04 { margin-bottom: 36px } 
+.listDot.type04 > li .tit { margin: 40px 0 6px; font-size: 17px; padding: 0; padding-left: 10px } 
+.listDot.type04 > li .tit::before { content: '•'; top: unset } 
+.listDot.type04 > li .txtArea { margin-bottom: 18px; padding-left: 10px } 
+.listDot.type04 > li .txtArea p { color: #8a8a8b; font-size: 1rem } 
+.listDot.type04 > li .txtArea .defTxt02 { font-size: 0.866rem } 
+.listDot.type04 > li.info .tit { margin-top: 0; color: #8a8a8b; font-size: 14px } 
+.listDot.type04 > li .defTxt01 { font-size: 16px } 
+
+.tblCalcRept { margin-bottom: 32px; border-radius: 10px; border: 1px solid #c1c1c1; overflow: hidden } 
+.tblCalcRept tr + tr { border-top: 1px solid #c1c1c1 } 
+.tblCalcRept tr th { padding: 14px 0; text-align: center; font-size: 1rem; color: #85888d; background: #f9f9f9; border-bottom: 1px solid #c1c1c1 } 
+.tblCalcRept tr th + th { border-left: 1px solid #c1c1c1 } 
+.tblCalcRept tr td { padding: 14px 8px } 
+.tblCalcRept tr td + td { border-left: 1px solid #c1c1c1 } 
+.tblCalcRept tr td.desc { background: #f1fbf2 } 
+.tblCalcRept tr td .defTxt02 { font-size: 0.933rem } 
+.tblCalcRept tr td:nth-child(n+2):nth-child(-n+3) { text-align: center } 
+.tblCalcRept tr td :is(.salesDot, .purchaseDot) { display: inline-block; width: 7px; height: 7px; border-radius: 50% } 
+.tblCalcRept tr td .salesDot { background: #12997a } 
+.tblCalcRept tr td .purchaseDot { background: #ff7e44 } 
+
+.areaReptCalcInfo { padding-top: 40px; border-top: 1px solid #c7c7c7 } 
+.tblCalcRept .bdLeft { border-left: 1px solid #c1c1c1 } 
+
+/* vwmr_rept_102A 사업분석 보고서 */
+/* common */
+.areaReptTab { position: relative; height: 49px; margin: 10px -20px 0 } 
+.tabMenuList.type03 { justify-content: start; padding: 0px 20px 0; border-bottom: 1px solid #e1e1e1; background: #fff; z-index: 1 } 
+.tabMenuList.type03 li { flex: 0 0 5.8667rem; border-color: #e2e2e2; border-bottom: none; color: #777; background: #f9f9f9; border-radius: 7px 7px 0 0 } 
+.tabMenuList.type03 li + li { margin-left: 7px } 
+.tabMenuList.type03 li.active { background: #111; border: none } 
+.tabMenuList.type03 li.active .btnTab { color: #fff } 
+.tabMenuList.type03.fixed { position: fixed; top: 0; left: 0; right: 0 } /* 헤더가 없을때 분기처리 */
+.header ~ .container .tabMenuList.type03.fixed { top: 60px } 
+
+.busiReptWrap h1.defTit .vatDate { font-size: inherit } 
+.busiReptWrap .defTit .subTitGray { font-weight: 500; font-size: 1rem; color: #8a8a8b } 
+
+.busiReptWrap .barList { margin-bottom: 60px } 
+.busiReptWrap .barList li { display: flex; margin-top: 60px } 
+.busiReptWrap .barList li .left { width: 20% } 
+.busiReptWrap .barList li .left .defTit { margin: 28px 0 0 } 
+.busiReptWrap .barList li .right { flex: 1; position: relative; padding-bottom: 24px } 
+.busiReptWrap .barList li .right .areaTxt { display: flex; justify-content: space-between; padding: 0 0 4px 8px } 
+.busiReptWrap .barList li .right .incomeGraph { position: relative; height: 39px; background: #f4f5f6; border-radius: 0 5px 5px 0 } 
+.busiReptWrap .barList li .right .incomeGraph .bar { position: absolute; overflow: hidden; width: 0; top: 0; bottom: 0; background: red; border-radius: 0 5px 5px 0 } 
+.busiReptWrap .barList li .right .incomeGraph .bar .percent { margin-left: 12px; line-height: 39px; color: #fff; font-size: 1.266rem } 
+.busiReptWrap .barList li .right .expectWrap { margin-top: 15px } 
+.busiReptWrap .barList li .right .expectWrap .incomeGraph { background: transparent } 
+.busiReptWrap .barList li .right .expectWrap .incomeGraph .bar { width: 100%; margin-left: -1px; background: none } 
+.busiReptWrap .barList li .right .tooltip { opacity: 0; visibility: hidden; position: absolute; bottom: 100%; left: 43%; transform: translateX(-50%); padding: 5px; background: #111; color: #fff; border-radius: 10px; font-size: 0.8rem; z-index: 1; white-space: nowrap; transition: 0.35s } 
+.busiReptWrap .barList li .right .tooltip::before { content: ''; position: absolute; left: 50%; bottom: -17px; width: 20px; height: 20px; background: #111; transform: rotate(45deg) translateX(-50%); z-index: -1 } 
+.busiReptWrap .barList li .right .tooltip.active { opacity: 1; visibility: visible } 
+.busiReptWrap .barList li.sales .left .defTit { color: #12997a } 
+.busiReptWrap .barList li.sales .right { border-left: 2px solid #12997a } 
+.busiReptWrap .barList li.sales .right .currentWrap .incomeGraph .bar { background: #12997a; border-color: #12997a } 
+.busiReptWrap .barList li.sales .right .expectWrap .incomeGraph .bar { border: 1px dashed #12997a } 
+.busiReptWrap .barList li.sales .right .expectWrap .incomeGraph .bar .percent { color: #12997a } 
+.busiReptWrap .barList li.purchase .left .defTit { color: #FFB623 } 
+.busiReptWrap .barList li.purchase .right { border-left: 2px solid #FFB623 } 
+.busiReptWrap .barList li.purchase .right .currentWrap .incomeGraph .bar { background: #FFB623; border-color: #FFB623 } 
+.busiReptWrap .barList li.purchase .right .expectWrap .incomeGraph .bar { border: 1px dashed #FFB623 } 
+.busiReptWrap .barList li.purchase .right .expectWrap .incomeGraph .bar .percent { color: #FFB623 } 
+.busiReptWrap .barList li.psep .left .defTit { color: #DC99F3 } 
+.busiReptWrap .barList li.psep .right { border-left: 2px solid #DC99F3 } 
+.busiReptWrap .barList li.psep .right .currentWrap .incomeGraph .bar { background: #DC99F3; border-color: #DC99F3 } 
+.busiReptWrap .barList li.psep .right .expectWrap .incomeGraph .bar { border: 1px dashed #DC99F3 } 
+.busiReptWrap .barList li.psep .right .expectWrap .incomeGraph .bar .percent { color: #DC99F3 } 
+.busiReptWrap .barList li.pal .left .defTit { color: #0088FF } 
+.busiReptWrap .barList li.pal .right { border-left: 2px solid #0088FF } 
+.busiReptWrap .barList li.pal .right .currentWrap .incomeGraph .bar { background: #0088FF; border-color: #0088FF } 
+.busiReptWrap .barList li.pal .right .expectWrap .incomeGraph .bar { border: 1px dashed #0088FF } 
+.busiReptWrap .barList li.pal .right .expectWrap .incomeGraph .bar .percent { color: #0088FF } 
+
+.busiReptWrap .barList li.dpc .left .defTit { color: #FF8866; } 
+.busiReptWrap .barList li.dpc .right { border-left: 2px solid #FF8866; } 
+.busiReptWrap .barList li.dpc .right .currentWrap .incomeGraph .bar { background: #FF8866; border-color: #FF8866; } 
+.busiReptWrap .barList li.dpc .right .expectWrap .incomeGraph .bar { border: 1px dashed #FF8866; } 
+.busiReptWrap .barList li.dpc .right .expectWrap .incomeGraph .bar .percent { color: #FF8866; } 
+
+.busiReptWrap .calcPal p + p { margin-top: 5px } 
+.busiReptWrap .confirmMsg { padding: 35px 0 } 
+
+.busiReptWrap .areaCalc.bgGrayCnt { padding: 48px 20px } 
+.busiReptWrap .areaCalc .roundBox { padding: 0; overflow: hidden } 
+.busiReptWrap .areaCalc .roundBox .areaTit { display: flex; justify-content: space-between; padding: 16px; border-radius: 0 0 10px 10px } 
+.busiReptWrap .areaCalc .roundBox .areaTit .left { flex: 0 0 auto } 
+.busiReptWrap .areaCalc .roundBox .areaTit .left h2.defTit { font-size: 1.5333rem } 
+.busiReptWrap .areaCalc .roundBox .areaTit .right { text-align: right } 
+.busiReptWrap .areaCalc .roundBox .areaTit .right .price { display: block; font-size: 1.5333rem; font-weight: 600 } 
+.busiReptWrap .areaCalc .roundBox .areaTit .right .defTxt01 { font-size: 0.9333rem; word-break: keep-all } 
+.busiReptWrap .areaCalc .roundBox .areaArr { width: 100%; height: 30px; background: url(../img/ico_ts_down.png) no-repeat center / 11px auto } 
+.busiReptWrap .areaCalc .roundBox .areaVal { display: none; padding: 28px 16px 16px } 
+/* .areaCalc .roundBox .areaTit.active + .areaVal { display: block } */
+.busiReptWrap .areaCalc .roundBox .areaTit.active ~ .areaArr { transform: rotate(180deg) } 
+.busiReptWrap .areaCalc .roundBox .areaVal .areaBtn { display: flex; align-items: center; margin: 0 0 16px -6px; line-height: 1 } 
+.busiReptWrap .areaCalc .roundBox .areaVal .areaBtn strong { margin: 0 14px; font-size: 1.4rem; font-weight: 600; } 
+.busiReptWrap .areaCalc .roundBox .areaVal .areaBtn a { display: block; width: 25px; height: 25px } 
+.busiReptWrap .areaCalc .roundBox .areaVal .areaBtn a.prev { background: url(../img/ico_ts_left_gray.png) no-repeat center / 11px } 
+.busiReptWrap .areaCalc .roundBox .areaVal .areaBtn a.next { background: url(../img/ico_ts_right_gray.png) no-repeat center / 11px } 
+.busiReptWrap .areaCalc .roundBox .areaVal .payDataList dl dt,
+.busiReptWrap .areaCalc .roundBox .areaVal .payDataList dl dd { font-size: 1rem } 
+.busiReptWrap .areaCalc .roundBox .areaVal .totalBox { margin: 0 -6px; padding: 15px 20px; margin-bottom: 23px; border-radius: 6px } 
+.busiReptWrap .areaCalc .roundBox .areaVal .totalBox .payDataList dl dt { font-size: 1.133rem } 
+.busiReptWrap .areaCalc .roundBox .areaVal .totalBox .payDataList dl dd { color: #8A8A8B; font-size: 1.133rem } 
+.busiReptWrap .areaCalc .roundBox .areaVal .roundBox .payDataList dl dd { color: #8a8a8b } 
+.busiReptWrap .areaCalc .roundBox .accordionToggle { height: 30px } 
+.busiReptWrap .areaCalc .roundBox .accordionToggle::after { width: 100%; height: inherit; left: 0; background-size: 11px } 
+.busiReptWrap .areaCalc .roundBox.sales { border: 1px solid #12997a } 
+.busiReptWrap .areaCalc .roundBox.sales .areaTit.active { background: #12997a } 
+.busiReptWrap .areaCalc .roundBox.sales .areaTit.active .left .defTit,
+.busiReptWrap .areaCalc .roundBox.sales .areaTit.active .right .price,
+.busiReptWrap .areaCalc .roundBox.sales .areaTit.active .right .defTxt01 { color: #fff } 
+.busiReptWrap .areaCalc .roundBox.sales .left .defTit { margin: 0; color: #12997a } 
+.busiReptWrap .areaCalc .roundBox.sales .areaVal .totalBox { background: #F3FFF4 } 
+.busiReptWrap .areaCalc .roundBox.purchase { border: 1px solid #FFB623 } 
+.busiReptWrap .areaCalc .roundBox.purchase .areaTit.active { background: #FFB623 } 
+.busiReptWrap .areaCalc .roundBox.purchase .areaTit.active .left .defTit,
+.busiReptWrap .areaCalc .roundBox.purchase .areaTit.active .right .price,
+.busiReptWrap .areaCalc .roundBox.purchase .areaTit.active .right .defTxt01 { color: #fff } 
+.busiReptWrap .areaCalc .roundBox.purchase .left .defTit { margin: 0; color: #FFB623 } 
+.busiReptWrap .areaCalc .roundBox.purchase .areaVal .totalBox { background: #FFFCF3 } 
+.busiReptWrap .areaCalc .roundBox.psep { border: 1px solid #BF78EE } 
+.busiReptWrap .areaCalc .roundBox.psep .areaTit.active { background: #BF78EE } 
+.busiReptWrap .areaCalc .roundBox.psep .areaTit.active .left .defTit,
+.busiReptWrap .areaCalc .roundBox.psep .areaTit.active .right .price,
+.busiReptWrap .areaCalc .roundBox.psep .areaTit.active .right .defTxt01 { color: #fff } 
+.busiReptWrap .areaCalc .roundBox.psep .left .defTit { margin: 0; color: #BF78EE } 
+.busiReptWrap .areaCalc .roundBox.psep .areaVal .totalBox { background: #FFF9FF } 
+
+.busiReptWrap .areaCalc .roundBox.dpc { border: 1px solid #FF8866; } 
+.busiReptWrap .areaCalc .roundBox.dpc .areaTit.active { background: #FF8866; } 
+.busiReptWrap .areaCalc .roundBox.dpc .areaTit.active .left .defTit,
+.busiReptWrap .areaCalc .roundBox.dpc .areaTit.active .right .price,
+.busiReptWrap .areaCalc .roundBox.dpc .areaTit.active .right .defTxt01 { color: #fff; } 
+.busiReptWrap .areaCalc .roundBox.dpc .left .defTit { margin: 0; color: #FF8866; } 
+.busiReptWrap .areaCalc .roundBox.dpc .areaVal .totalBox { background: #FBE3E3; } 
+
+.busiReptWrap .areaCalc .roundBox.pal { border: 1px solid #0088FF } 
+.busiReptWrap .areaCalc .roundBox.pal .areaTit.active { background: #0088FF } 
+.busiReptWrap .areaCalc .roundBox.pal .areaTit.active .left .defTit,
+.busiReptWrap .areaCalc .roundBox.pal .areaTit.active .right .price,
+.busiReptWrap .areaCalc .roundBox.pal .areaTit.active .right .defTxt01 { color: #fff } 
+.busiReptWrap .areaCalc .roundBox.pal .left .defTit { margin: 0; color: #0088FF } 
+.busiReptWrap .areaCalc .roundBox.pal .areaVal .totalBox { background: #F9FAFF } 
+.busiReptWrap .areaCalc .calc { margin: 18px 0; text-align: center } 
+.busiReptWrap .areaCalc .calc.equal { margin-top: 26px; padding-top: 23px; background: url(../img/bg_border_dashed.png) no-repeat top center / auto 1px } 
+.busiReptWrap .areaCalc .calc img { width: 32px } 
+
+.palResult { margin-top: 110px } 
+.palResult .roundBox { box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.08) } 
+.palResult .roundBox .titArea { padding: 15px 2px 0 } 
+.palResult .roundBox .titArea .tit { font-size: 1.2667rem } 
+.palResult .roundBox .tit { font-size: 1.2667rem } 
+.palResult .roundBox .tit img { width: 24px; margin: 4px 6px 0 0 } 
+.palResult .roundBox .tit .focus { font-weight: 600 } 
+.palResult .roundBox .listDot { margin: 0 13px } 
+.palResult .roundBox .listDot > li .tit { font-size: 1.133rem; word-break: keep-all } 
+.palResult .roundBox .areaResult { margin: 32px 0 40px; text-align: center } 
+.palResult .roundBox .areaResult .areaImg { width: 80px; height: 80px; margin: 0 auto } 
+.palResult .roundBox .areaResult h1.defTit { margin-top: 12px; font-size: 2rem } 
+
+/* vwmr_rept_402 부가세 보고서 */
+.calcTax .busiDataWrap { margin-bottom: 15px; border-top: 3px solid #12997A; border-bottom: 3px solid #12997A } 
+.calcTax .busiDataWrap .busiDataList { margin-bottom: 0 } 
+.calcTax .busiDataList > li { padding: 0 } 
+.calcTax .busiDataList .tit { border-bottom: 2px solid #12997A } 
+.calcTax .busiDataList .tit dl { padding: 0 } 
+.calcTax .busiDataList .tit dl dt,
+.calcTax .busiDataList .tit dl dd { text-align: center; font-size: 1.133rem; font-weight: 600 } 
+.calcTax .busiDataList dl { padding: 0 10px } 
+.calcTax .busiDataList dl dt { width: 50%; padding: 7px 0; color: #111; border-right: 3px solid #12997a } 
+.calcTax .busiDataList dl dd { width: 50%; padding: 7px 0; color: #111 } 
+.calcTax .busiDataList .total { background: #F3FFF4; border-top: 1px solid #C1C1C1 } 
+.calcTax .busiDataList .total.eaon { background: #FFF9EE; } 
+.calcTax .busiDataList .total.aotp { background: #F9F9F9 } 
+.calcTax .busiDataList .total.aotp .imsub { font-size: 1rem; color: #8a8a8b } 
+.calcTax .busiDataList .total.aotp dd { vertical-align: middle; font-size: 1.4rem } 
+.calcTax .busiDataList:first-of-type .total { border-top: none } 
+
+.calcTax .refoundBox .roundBox { background: #FFF9EF; border: 1px solid #FF7E44 } 
+.calcTax .refoundBox .roundBox img { width: 30px; vertical-align: middle } 
+.calcTax .refoundBox .roundBox span { font-size: 1rem } 
+
+.areaGraph .titArea { margin-top: 110px }  
+.areaGraph .titArea .defTit + .defTit { font-weight: 500 } 
+.areaGraph .titArea .defTit .defTxt02 { display: block; margin-top: 8px; color: #FF9191 } 
+.areaGraph .roundBox { display: flex; padding: 28px } 
+.areaGraph .roundBox .left { width: 50% } 
+.areaGraph .roundBox .right { width: 50% } 
+.areaGraph .roundBox .left .defTit { margin-top: 0 } 
+.areaGraph .roundBox .left strong { font-size: 2.2rem } 
+.areaGraph .tax .roundBox { display: block; padding: 15px 28px; border: 1px solid #FF5353 } 
+.areaGraph .tax .chartLabel.pay { background: #12997a } 
+.areaGraph .tax .chartLabel.refund { background: #FF7E44 } 
+
+
+/* vwmr_rept_103A 사업분석 보고서 - 세금 */
+.infoArea.acc .ico i.tax { background: url(../img/ico_tax.png) no-repeat center / contain } 
+.taxList .infoArea .rCont .moveLink + .badge { margin-top: 4px } 
+.taxList > li .infoArea .cont .info .name.ellipsis { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; white-space: inherit } 
+
+.paySchedule .roundBox { display: flex; align-items: center } 
+.paySchedule .roundBox .left { flex: 0 0 auto } 
+.paySchedule .roundBox .left .date { font-size: 1.2rem; font-weight: 600 } 
+.paySchedule .roundBox .bar { display: block; width: 1px; height: 55px; margin: 0 16px; background:#D2D2D2 } 
+.paySchedule .roundBox .right .defTxt02.ellipsis { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; white-space: inherit; font-size: 1.133rem } 
+
+.compaerLabel .chartLabel.vat { background: #ff7e44 } 
+
+.busiReptWrap .sumWrap { margin-left: 14px } 
+.busiReptWrap .sumWrap .defTxt, .busiReptWrap .sumWrap .defTxt02 { font-size: 1.133rem } 
+
+/* vwmr_rept_101C 사업분석 보고서 - 상권샘플 */
+.busiReptWrap .bgGrayCnt { padding: 0 20px 46px } 
+.busiReptWrap .bgGrayCnt .titArea:first-child .defTit { padding: 25px 0 10px; margin: 0 } 
+
+.busiDistrictWrap.sample { position: relative } 
+.busiDistrictWrap.sample::before { content: '예시화면'; position: absolute; top: 5px; right: 5px; padding: 4px 12px; background: #ffecde; color: #FE7979; border-radius: 6px } 
+
+/* vwmr_rept_104A 사업분석 보고서 - 상권 */
+.busiDistrictWrap { margin-top: 26px } 
+.busiDistrictWrap .roundBox { border: 1px solid #C1C1C1; overflow: hidden } 
+.busiDistrictWrap .roundBox .tit .pointColor02 { margin-left: 7px; vertical-align: middle; font-size: 1.133rem; } 
+.busiDistrictWrap .roundBox .tit p { margin-top: 6px; font-size: 1.133rem } 
+
+.busiDistrictWrap .moveIdsySearch .roundBox { border-color: #12997a } 
+.busiDistrictWrap .moveIdsySearch .roundBox .tit .pointColor02 { text-decoration: underline } 
+
+.busiDistrictWrap .defTxt02 { margin-top: 10px } 
+.busiDistrictWrap .areaBodyBtn { margin-top: 30px } 
+.busiDistrictWrap .areaBodyBtn button { height: 60px; line-height: 60px } 
+
+.busiDistrictWrap .compareTxt { font-size: 1rem; color: #8a8a8b } 
+.busiDistrictWrap .busiDataList > li dl dt,
+.busiDistrictWrap .busiDataList > li dl dd { font-size: 1.2667rem; color: #111 } 
+.busiDistrictWrap .busiDataList > li dl dd { font-weight: 600 } 
+.busiDistrictWrap .top { position: relative; padding-bottom: 18px; border-bottom: 1px solid #e1e1e1 } 
+.busiDistrictWrap .top .caption { position: absolute; left: -16px; top: -16px; right: -16px; bottom: 0; background: rgba(0,0,0,0.7); border-radius: 8px; text-align: center } 
+.busiDistrictWrap .top .caption .inner { display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100% } 
+.busiDistrictWrap .top .caption .inner p { margin-top: 10px; color: #fff; font-size: 1rem } 
+.busiDistrictWrap .top .caption .inner .tsRight { position: absolute; right: 15px; top: 50%; transform: translateY(-50%); width: 11px } 
+.busiDistrictWrap .averageBox { padding: 14px; background: #f9f9f9; border-radius: 8px } 
+.busiDistrictWrap .averageBox input[type='checkbox'] { margin-right: 4px } 
+
+.busiDistrictWrap .graphWrap .roundBox { margin-top: 20px; border: none } 
+.busiDistrictWrap .graphWrap .roundBox .sectors { color: #8a8a8b; font-size: 1.4rem } 
+.busiDistrictWrap .graphWrap .roundBox .areaData { display: flex; justify-content: space-between; align-items: center } 
+.busiDistrictWrap .graphWrap .roundBox .areaData .right { width: 40% } 
+.busiDistrictWrap .graphWrap .roundBox .val { display: block; font-size: 2.2rem } 
+.busiDistrictWrap .graphWrap .roundBox .areaLabel { margin-top: 20px } 
+.busiDistrictWrap .graphWrap .roundBox .areaLabel .label + .label { margin-top: 10px } 
+.busiDistrictWrap .graphWrap .roundBox .areaLabel .label p { display: inline-block; margin-bottom: -4px; width: 18px; height: 18px; border-radius: 4px } 
+.busiDistrictWrap .graphWrap .roundBox .areaLabel .label span { font-size: 1.133rem } 
+.busiDistrictWrap .graphWrap .roundBox .areaLabel .label:first-child p { background: #17bf98 } 
+.busiDistrictWrap .graphWrap .roundBox .areaLabel .label:last-child p { background: #D4D4D4 } 
+
+.busiDistrictWrap .graphWrap .roundBox.popularDay .areaData .left { width: 50% } 
+.busiDistrictWrap .graphWrap .roundBox.popularDay .areaData .right { width: initial } 
+.busiDistrictWrap .graphWrap .roundBox.popularDay .areaData .right .week .day,
+.busiDistrictWrap .graphWrap .roundBox.popularDay .areaData .right .week .per { font-size: 1.133rem; color: #8a8a8b } 
+.busiDistrictWrap .graphWrap .roundBox.popularDay .areaData .right .week .per { display: inline-block; width: 38px; margin-left: 10px; text-align: right } 
+.busiDistrictWrap .graphWrap .roundBox.popularDay .areaData .right .week.active .day,
+.busiDistrictWrap .graphWrap .roundBox.popularDay .areaData .right .week.active .per { color: #17bf98; font-weight: bold } 
+
+.busiDistrictWrap .graphWrap .roundBox.popular .areaData { margin-top: 10px } 
+
+.busiDistrictWrap .graphWrap .roundBox.gender .areaData { margin-top: -26px } 
+.busiDistrictWrap .graphWrap .genderChartWrap { flex: 1; display: flex; justify-content: flex-end } 
+.busiDistrictWrap .graphWrap .genderChartWrap .genderChart { padding: 0 20px 109px } 
+.busiDistrictWrap .graphWrap .genderChartWrap .genderChart .val { font-size: 1.4rem; font-weight: 600; color: #8A8A8B } 
+.busiDistrictWrap .graphWrap .genderChartWrap .genderChart.male { background: url(../img/ico_male.png) no-repeat bottom center / 50px } 
+.busiDistrictWrap .graphWrap .genderChartWrap .genderChart.female { background: url(../img/ico_female.png) no-repeat bottom center / 50px } 
+.busiDistrictWrap .graphWrap .genderChartWrap .genderChart.active .val { color: #12997a } 
+.busiDistrictWrap .graphWrap .genderChartWrap .genderChart.male.active { background-image: url(../img/ico_male_on.png) } 
+.busiDistrictWrap .graphWrap .genderChartWrap .genderChart.female.active { background-image: url(../img/ico_female_on.png) } 
+
+.fixSpendingWrap .tblChartData tr td .count { color: #b4b4b4 } 
+
+/* vwmr_rept_104B 사업분석보고서 - 상권 샘플 */
+.sampleGraph .barWrap { position: relative; margin: 10px 20px 0; height: 200px; overflow: hidden; } 
+.sampleGraph .barWrap .sampleBar { position: absolute; bottom: 0; width: 5rem; height: 170px; background: #DDDFE1; border-radius: 15px 15px 0 0; transition: 0.75s } 
+.sampleGraph .barWrap .sampleBar.one { left: 0; transform: translate3d(0, 80px, 0) } 
+.sampleGraph .barWrap .sampleBar.two { left: 50%; transform: translate3d(-50%, 100px, 0) } 
+.sampleGraph .barWrap .sampleBar.three { right: 0; transform: translate3d(0, 40px, 0) } 
+.sampleGraph .barWrap .sampleBar.active { transform: translate3d(0, 0, 0) } 
+.sampleGraph .barWrap .sampleBar.two.active { transform: translate3d(-50%, 0, 0) } 
+.sampleGraph .barWrap .sampleBar.three.active { background: #12997a } 
+.sampleGraph .barWrap .sampleBar.three.active .price { color: #12997a } 
+.sampleGraph .barWrap .sampleBar .price { position: absolute; top: -25px; left: 0; right: 0; text-align: center; font-size: 0.8rem; color: #8a8a8b } 
+.sampleGraph .sampleBarTxt { position: relative; margin: 0 20px 0; height: 20px } 
+.sampleGraph .sampleBarTxt p { position: absolute; width: 5rem; margin-top: 5px; font-size: 0.8rem; text-align: center } 
+.sampleGraph .sampleBarTxt p.one { left: 0 } 
+.sampleGraph .sampleBarTxt p.two { left: 50%; transform: translateX(-50%) } 
+.sampleGraph .sampleBarTxt p.three { right: 0 } 
+
+.salesLoadingWrap { width:150px; margin: 30px auto 0 } 
+
+/* vwmr_rept_302 - 인건비 보고서 */
+.currentStaff .roundBoxWrap { margin-bottom: 0 } 
+.currentStaff .top { display: flex; justify-content: space-between; align-items: center } 
+.currentStaff .top strong { font-size: 1.133rem; font-weight: 600 } 
+.currentStaff .top .infoTxt { text-decoration: underline } 
+.currentStaff .bottom { display: flex; align-items: center; margin-top: 34px } 
+.currentStaff .bottom > div { flex: 1; display: flex; align-items: center; width: 50% } 
+.currentStaff .bottom > div .tit { font-size: 1.133rem; color: #8a8a8b } 
+.currentStaff .bottom > div .val { margin-left: auto; font-size: 1.5333rem } 
+.currentStaff .bottom .bar { width: 1px; height: 1.5rem; margin: 0 20px; background: #BABABA } 
+
+.currentStaff .checkIn { display: flex; gap: 13px } 
+.currentStaff .checkIn .roundBoxWrap { flex: 1 } 
+
+.tblPayWrap .areaFilter { margin-bottom: 37px } 
+.tblPayWrap .tblChartData th .tit { display: block; font-size: 1.133rem; font-weight: 600 } 
+.tblPayWrap .tblChartData th .tit + .tit {margin-top: 5px;}
+.tblPayWrap .tblChartData th .defTxt01 { font-size: 1.133rem; font-weight: 500 } 
+.tblPayWrap .tblChartData th:first-child { padding-top: 4px; text-align: left } 
+.tblPayWrap .tblChartData th:last-child { text-align: right } 
+
+.tblPayWrap .tblChartData .payWrap { display: flex; justify-content: flex-end } 
+.tblPayWrap .tblChartData .payWrap .pay { color: #111; font-weight: 600; font-size: 1rem} 
+.tblPayWrap .tblChartData .payWrap .pay + .pay {margin-top: 0.2rem;}
+.tblPayWrap .tblChartData .payWrap .afterTax { margin-top: 0.2rem; font-size: 0.866rem } 
+.tblPayWrap .tblChartData .payWrap .left { margin-right: 10px } 
+.tblPayWrap .tblChartData .payWrap .right { text-align: right } 
+
+/* vwmr_rept_311_1 상시근로자 팝업 */
+.tblLsaWrap .defTxt { margin-bottom: 20px } 
+.tblLsaWrap table { margin-bottom: 26px; border-top: 2px solid #12997a; border-bottom: 2px solid #12997a } 
+.tblLsaWrap thead th { padding: 13px } 
+.tblLsaWrap thead th:last-child { border-left: 2px solid #12997a } 
+.tblLsaWrap tr { border-top: 1px solid #C1C1C1 } 
+.tblLsaWrap tr:first-child { border-color: #111 } 
+.tblLsaWrap tr td { padding: 13px; vertical-align: top; text-align: center; word-break: keep-all } 
+.tblLsaWrap tr td + td { border-left: 1px solid #c1c1c1 } 
+.tblLsaWrap tr td:last-child { border-left: 2px solid #12997a } 
+
+/* vwmr_rept_105C 업종 검색 */
+.resultList > li a { display: block; padding: 16px 0; border-bottom: 1px solid #e1e1e1 } 
+.resultList > li a .resultTxt { font-size: 1rem } 
+
+/* vwmr_rept_003A 세금신고 및 납부 일정 */
+.areaBtnTaxReturn .btnListChange { margin: 0 auto } 
+
+/* vwmr_rept_101AA 알림톡 */
+.notiTalkBox .roundBox { display: flex; justify-content: space-between; align-items: center; padding: 0 16px } 
+.notiTalkBox .roundBoxWrap.type02 .roundBox { background: #f9f9f9 } 
+.notiTalkBox .roundBox .left { display: flex; align-items: center; margin-left: -7px; font-size: 2.3333rem; font-weight: 600 } 
+.notiTalkBox .roundBox .left .areaTxt { margin: 0 37px 0 -10px } 
+.notiTalkBox .roundBox .left .areaTxt span { font-size: 1rem; color: #8a8a8b } 
+.notiTalkBox .roundBox .left .areaTxt p { font-size: 1.2em; font-weight: 600 } 
+.notiTalkBox .roundBox .rCont { display: flex; align-items: center } 
+.notiTalkBox .roundBox .rCont img { width: 7px } 
+
+/* vwmr_rept_701 부가세 신고분석 보고서 */
+.calcTax .vatDetails { display: flex; margin-right: -20px; overflow: hidden; border-bottom: 2px solid #111 } 
+.calcTax .vatDetails .busiDataWrap { margin-bottom: 0; border: none } 
+.calcTax .vatDetails .left { position: relative; flex: 0 0 50%; border-right: 2px solid #111; border-top: 2px solid #111; z-index: 2; box-shadow: 5px 0 10px rgba(0,0,0,0.2) } 
+.calcTax .vatDetails .right { position: relative; flex: 0 0 50%; overflow: hidden; border-top: 2px solid #111; z-index: 1 } 
+.calcTax .vatDetails .right .busiDataList { border-right: 1px solid #c1c1c1 } 
+.calcTax .vatDetails .busiDataList > li { height: 43px } 
+.calcTax .vatDetails .busiDataList > li.category dl dt,
+.calcTax .vatDetails .busiDataList > li.category dl dd { font-size: 1rem; font-weight: 600 } 
+.calcTax .vatDetails .busiDataList > li.category .alpa { color: #a1a1a1 } 
+.calcTax .vatDetails .busiDataList > li.vatSalesTotal { background: #fff3f3; border-top: 2px solid #ffb7b7 } 
+.calcTax .vatDetails .busiDataList > li.vatSalesTotal + li.vatSales { border-top: 2px solid #ffb7b7 } 
+.calcTax .vatDetails .busiDataList > li.vatSales { border-top: 1px solid #ffb7b7 } 
+.calcTax .vatDetails .busiDataList > li.vatPurTotal { background: #f3f5ff; border-top: 2px solid #b7caff } 
+.calcTax .vatDetails .busiDataList > li.vatPur { border-top: 1px solid #c1c1c1 } 
+.calcTax .vatDetails .busiDataList > li.vatPurTotal + li.vatPur { border-top: 2px solid #b7caff } 
+.calcTax .vatDetails .busiDataList > li.benefitTotal { background: #f3fff3; border-top: 2px solid #b9dfcb } 
+.calcTax .vatDetails .busiDataList > li.taxAmount { background: #ffffee; border-top: 2px solid #dbd17a } 
+.calcTax .vatDetails .busiDataList > li.taxAmount + li.taxAmount { border-top: 1px solid #dbd17a } 
+.calcTax .vatDetails .busiDataList > li.addTaxAmount { background: #fff3e1; border-top: 2px solid #ffc171 } 
+.calcTax .vatDetails .busiDataList > li.finalTax { height: 80px; border-top: 1px solid #111 } 
+.calcTax .vatDetails .busiDataList > li.finalTax .imsub { color: #8a8a8b; font-size: 0.866rem } 
+.calcTax .vatDetails .busiDataList > li.finalTax dl dd { font-size: 1.133rem } 
+.calcTax .vatDetails .busiDataList > li.changeRate { height: 47px; margin-bottom: 20px; background: #f9f9f9 } 
+.calcTax .vatDetails .busiDataList > li.changeRate .perNone { color: #8a8a8b } 
+.calcTax .vatDetails .busiDataList li.tit { border: none } 
+.calcTax .vatDetails .busiDataList li.tit dl dt { font-size: 1.133rem } 
+.calcTax .vatDetails .busiDataList li.tit dl dd { font-size: 1.133rem } 
+.calcTax .vatDetails .busiDataList dl { height: 100% } 
+.calcTax .vatDetails .busiDataList dl dt { border-right: none; vertical-align: middle; font-size: 0.933rem } 
+.calcTax .vatDetails .busiDataList dl dd { vertical-align: middle } 
+.calcTax .vatDetails .busiDataList:first-of-type .total { border-top: 1px solid #C1C1C1 } 
+.calcTax .vatDetails .busiDataList .total.aotp { height: 80px } 
+.calcTax .vatDetails .busiDataList .total.aotp dd { height: 100%; vertical-align: middle; font-size: 1rem } 
+.calcTax .vatDetails .busiDataList .total.aotp dt { height: 100%; vertical-align: middle; font-size: 1rem } 
+.calcTax .vatDetails .busiDataList .total.aotp .imsub { font-size: 0.866rem; font-weight: 500 } 
+
+.transData .compaerLabel .chartLabel.pay { background: #12997a } 
+.transData .compaerLabel .chartLabel.refund { background: #ffa467 } 
+.transData .compaerLabel .chartLabel.transPer { width: 14px; height: 3px; border-radius: 0; background: #ff7e44 } 
+.areaGraph .transData .roundBox .vatPerData { flex: 1; display: flex; justify-content: space-between; align-items: center } 
+.areaGraph .transData .roundBox .vatPerData h3.defTit { margin: 0 } 
+.areaGraph .transData .roundBox .vatPerData .areaData { text-align: right } 
+.areaGraph .transData .roundBox .vatPerData .areaData strong { font-size: 2.2rem } 
+
+/* vwmr_rept_702 부가세 신고분석 보고서 */
+.busiReptWrap .pdfViewer { margin-top: 50px } 
+.busiReptWrap .pdfViewer .btnPDFViewer { width: 100%; padding: 14px; border: 1px solid #adb0b7; text-align: left; border-radius: 6px; font-size: 1rem; background: url(../img/ico_attach_gray.png) no-repeat center right 14px / auto 25px } 
+.busiReptWrap .pdfViewer .btnPDFViewer + .btnPDFViewer { margin-top: 11px } 
+.busiReptWrap .pdfViewer .areaPay { margin-top: 23px; text-align: right } 
+.btnTaxPay { padding-right: 12px; font-size: 1rem; background: url(../img/ico_ts_right_green.png) no-repeat center right / 7px auto } 
+.btnTaxPay span { padding-left: 22px; background: url(../img/ico_pay_green.png) no-repeat center left / 18px } 
+
+.collectMsgBox { margin: 10px 0 20px; padding: 16px 12px; background: #F1FBF9; border-radius: 8px; border: 1px solid #12997a } 
+.collectMsgBox p { color: #12997a; font-size: 0.8rem; word-break: keep-all; } 
+
+/* vwmr_rept_703 거래처 매입, 매출장 보고서 */
+.clientWrap.account .tblWrapType02 table th { height: 65px; } 
+.clientWrap.account .tblWrapType02 .left { flex: 0 0 148px; } 
+.clientWrap.account .tblWrapType02 .left table tr:nth-child(n+10) .orderWrap .name.ellipsis {padding-left: 0}
+.clientWrap.account .areaInfo { margin: 25px 0 100px; text-align: right } 
+.clientWrap.account .areaInfo .infoTxt02 { font-size: 0.937rem; color: #8a8a8b } 
+
+/* 20240116 최종수집일시 추가 */
+.timestamp {padding: 12px; margin: 20px 0 37px; background: rgba(18, 153, 137, 0.04); border: 1px solid rgba(18, 153, 122, 0.2); border-radius: 12px}
+.timestamp .accordionToggle .defTit {padding-left: 24px; font-size: 0.8rem; background: url(../img/ico_clock_green.svg) no-repeat center left / 16px}
+.timestamp .accordionToggleWrap {padding: 13px 0 0 20px}
+.timestamp .accordionToggleWrap .confirmTxt {font-size: 0.8rem}
+.timestamp .accordionToggleWrap .listDot > li .tit {padding: 0 0 0 10px; font-size: 0.8rem; font-weight: 500}
+.timestamp .accordionToggleWrap .listDot > li .tit::before {top: 0}
+.timestamp .accordionToggleWrap .listDot + .confirmTxt {margin-top: 20px}
+
+@media screen and (max-width: 360px){
+ .tblWrapType02 table td .price.total { font-size: 0.866rem } /* 230420 매출매입 보고서 총매출 폰트크기 분기처리 */ } 
+
+/* 보고서 모바일 반응형 */
+.wrapper { max-width: 1000px; margin: 0 auto; } 
+.wrapper .header { max-width: 1000px; left: 50%; transform: translateX(-50%); } 
+.areaBtmFixed { max-width: 1000px; left: 50%; transform: translateX(-50%); } 
+.popWrap { max-width: 1000px; left: 50%; transform: translateX(-50%); } 
+
+/* #################### 공통 #################### */
+.tblWrapType02 .right table { cursor: pointer; } 
+.tblPayWrap .tblChartData .payWrap .afterTax { font-size: 1rem; } 
+.busiReptWrap .areaCalc .roundBox .areaArr { cursor: pointer; } 
+.tabMenuList.type03.fixed { width: inherit; max-width: 1000px; } 
+
+@media screen and ( min-width: 501px){
+ .container { box-shadow: 1px 6px 12px 0px rgba(0, 0, 0, 0.10); } 
+ .busiReptWrap .barList li .left { width: 15%; } 
+ .tblWrapType02 .left { max-width: 260px; } 
+ .clientWrap .tblWrapType02 .left { max-width: 300px; } 
+ .wrapper .areaTopFixed .areaReptLogo img { margin-left: 50%; transform: translate(-50%); } 
+ .calcTax .vatDetails .left { max-width: 300px; } 
+ .calcTax .vatDetails { margin-right: 0; } 
+ .calcTax .vatDetails .right { flex: auto; cursor: pointer; } 
+ }
+
+/* #################### 750px #################### */
+@media screen and ( min-width: 750px){
+ .rsp_wrap.type_08 { display: flex; gap: 40px; } 
+ .rsp_wrap.type_08 .productWrap { width: calc(50% - 20px); } 
+ .rsp_wrap.type_08 .titArea { height: 150px; } 
+ .rsp_wrap.type_08 .areaChart { height: 330px; display: flex; flex-direction: column; justify-content: flex-end; } 
+ .tblWrapType02 { margin-right: 0; } 
+ .includeFooter .bannerWrap .bannerList > li img { max-width: 500px; } 
+ .busiDistrictWrap .rsp_wrap.type_03 { display: flex; flex-wrap:wrap; justify-content: space-between; } 
+ .busiDistrictWrap .rsp_wrap.type_03 > div { width: calc(50% - 10px); } 
+ .areaGraph .rsp_wrap.type_04 { display: flex; justify-content: space-between; gap: 40px; } 
+ .areaGraph .rsp_wrap.type_04 .titArea { height: 120px; margin-top: 60px; } 
+ .areaGraph .rsp_wrap.type_04 > div { width: calc(50% - 20px); } 
+ .areaGraph .rsp_wrap.type_04 .taxPer .roundBoxWrap.type02 { display: flex; flex-direction: column; justify-content: flex-end; height: 300px; } 
+ .rsp_wrap.type_05 { display: flex; gap: 40px; margin-top: 60px; } 
+ .rsp_wrap.type_05 > div { width: calc(50% - 20px); } 
+ .rsp_wrap.type_05 .defTit.type02 { margin-top: 0; } 
+
+ .rsp_wrap.type_06 { display: flex; gap: 40px; } 
+ .rsp_wrap.type_06 .titArea { height: 150px; } 
+ .rsp_wrap.type_06 .areaChart { display: flex; flex-direction: column; justify-content: flex-end; height: 330px; } 
+ .rsp_wrap.type_06 .defTit.type02 { margin-top: 60px; } 
+ .rsp_wrap.type_06 > div { width: calc(50% - 20px); } 
+ .rsp_wrap.type_07 { display: flex; align-items: center; gap: 40px; } 
+ .rsp_wrap.type_07 > div { width: calc(50% - 20px); } 
+ .rsp_wrap.type_07 > div .titArea { height: 150px; } 
+ .rsp_wrap.type_07 > div .areaChart { height: 330px; display: flex; flex-direction: column; justify-content: flex-end; } 
+ .rsp_wrap.type_07 .defTit.type02 { margin-top: 60px; } 
+ .currentStaff .staff_wrap { display: flex; gap: 10px; } 
+ .currentStaff .staff_wrap > div { width: calc(50% - 5px); } 
+ .currentStaff .staff_wrap .checkIn { gap: 10px; } 
+ .busiReptWrap .pdfViewer { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; } 
+ .busiReptWrap .pdfViewer .btnPDFViewer { width: calc(50% - 5px); } 
+ .busiReptWrap .pdfViewer .btnPDFViewer + .btnPDFViewer { margin-top: 0; } 
+ .busiReptWrap .pdfViewer .areaPay { flex: 1 0 100%; } 
+ }
+
+/* #################### 1000px #################### */
+@media screen and ( min-width: 1000px){
+ .busiReptCont .rsp_wrap.type_02 { display: flex; justify-content: space-between; } 
+ .busiReptCont .rsp_wrap.type_02 .roundBox { width: calc(33.3333% - 10px); } 
+ .busiDistrictWrap .rsp_wrap.type_03 > div { width: calc(33.3333% - 10px); } 
+ .busiReptWrap .barList { display: flex; flex-wrap: wrap; gap: 10px 30px; } 
+ .busiReptWrap .barList li { width: calc(50% - 20px); } 
+ .busiReptWrap .areaCalc.bgGrayCnt .roundBoxWrap .rsp_wrap { display: flex; } 
+ .busiReptWrap .areaCalc .rsp_wrap.type_01 .calc { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0 5px; width: 40px; } 
+ .busiReptWrap .areaCalc .calc.equal { width: 100%; background-size: 1000px 1px; } 
+ .busiReptWrap .areaCalc .rsp_wrap.type_01 .roundBox { width: 30%; height: 100%; } 
+ .busiReptWrap .areaCalc.bgGrayCnt { padding: 30px 10px; } 
+ .busiReptWrap .areaCalc .rsp_wrap.type_01 .calc img { } 
+ .busiReptWrap .areaCalc .rsp_wrap.type_01 .roundBox .areaTit { display: block; } 
+ .busiReptWrap .areaCalc .rsp_wrap.type_01 .roundBox .areaVal .areaBtn strong { margin: 0 5px; font-size: 1rem; } 
+ .busiReptWrap .areaCalc .rsp_wrap.type_01 .roundBox .areaTit .right { margin-top: 5px; text-align: left; } 
+ .busiReptWrap .areaCalc .rsp_wrap.type_01 .roundBox .areaVal .totalBox { padding: 15px; } 
+ .busiReptWrap .areaCalc .rsp_wrap.type_01 .roundBox .areaVal .totalBox .payDataList dl dt { font-size: 14px; } 
+ .busiReptWrap .areaCalc .rsp_wrap.type_01 .roundBox .areaVal .totalBox .payDataList dl dd { font-size: 14px; } 
+ .busiReptWrap .areaCalc .rsp_wrap.type_01 .roundBox .areaVal .payDataList dl dt, .busiReptWrap .areaCalc .roundBox .areaVal .payDataList dl dd { font-size: 13px; } 
+ .busiReptWrap .rsp_wrap.type_01 .areaCalc .roundBox.pal { width: 100%; } 
+ .busiReptWrap .areaCalc .roundBox.pal .areaVal .payDataList dl dd { font-size: 1rem; } 
+ .busiReptWrap .areaCalc .roundBox .areaVal .areaBtn { justify-content: center; } 
+ .areaGraph .rsp_wrap { display: flex; flex-wrap: wrap; gap: 20px 40px; } 
+ .areaGraph .rsp_wrap .transData { width: calc( 50% - 20px); } 
+ .areaGraph .rsp_wrap .transData .titArea { margin-top: 50px; } 
+ .tabMenuList.type03.fixed { width: 1000px; left: 50%; transform: translateX(-50%); } 
+ .busiReptWrap .areaCalc .roundBox.dpc { width: 100%; } 
+ .busiReptWrap .areaCalc .roundBox.sales .areaVal,
+ .busiReptWrap .areaCalc .roundBox.purchase .areaVal,
+ .busiReptWrap .areaCalc .roundBox.psep .areaVal
+ {
+ height: 600px; } 
+ .busiReptWrap .pdfViewer .btnPDFViewer { width: calc(33% - 5px); } 
+ }
+ /* 주석 */

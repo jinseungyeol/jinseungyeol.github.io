@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<title>세무대리인 for 경리나라</title>
+<link rel="stylesheet" href="../css/reset_taxp.css">
+<link rel="stylesheet" href="../css/content_taxp.css"><!-- [D] 세무대리인용 -->
+
+<!-- custom scrollbar plugin css -->
+<link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+<script src="https://publ.roumit.com/js/firebase_include.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+<!-- custom scrollbar plugin -->
+<script src="../js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../js/jquery.placeholder.min.js"></script>
+<script>
+$(function(){
+	// Invoke the plugin
+	$('input, textarea').placeholder({customClass:'my-placeholder'});
+});
+</script>
+
+</head>
+
+<body>
+
+<!-- 아이콘변경layer_popup -->
+<div class="layer_popup_wrap" style="width:500px;">
+	<div class="layer_popup_box">
+		<a href="#none" class="layer_close"><img src="../img/txof/btn/btn_layerpopup_close.gif" alt="닫기"></a>
+		<div class="layer_title">
+			<h1>홈택스 공동인증서 등록</h1>
+		</div>
+		<div class="layer_cont">
+
+			<!-- 타이틀 영역 -->
+			<div class="stitle_wrap bno">
+				<div class="left">
+					<h2 class="bul_2">홈택스에서 사용하는 인증서를 선택하세요.</h2>
+				</div>
+			</div>
+			<!-- //타이틀 영역 -->
+
+			<!-- 공인인증서 -->
+			<div class="tbl_certi_ipt">
+				<!-- 공인인증서 header -->
+				<div class="tbl_head pdr"><!-- 하단테이블 세로스크롤 발생시 pdr 클래스 추가 -->
+					<table>
+						<colgroup>
+							<col >
+							<col style="width:100px;">
+							<col style="width:100px;">
+						</colgroup>
+						<thead>
+							<tr>
+								<th class="nbLeft">인증서명</th>
+								<th>인증서종류</th>
+								<th>만료일자</th>
+							</tr>
+						</thead>
+					</table>
+				</div>
+				<!-- //공인인증서 header -->
+
+				<!-- 공인인증서 선택하기 내용 -->
+				<div class="tbl_cont">
+					<table>
+						<colgroup>
+							<col >
+							<col style="width:100px;">
+							<col style="width:100px;">
+						</colgroup>
+						<tbody>
+							<tr class="on"><!-- 인증서 선택시 on -->
+								<td><div title="글로벌_IBK_서1(14667)0003013164798416413121231">글로벌_IBK_서1(14667)0003013164798416413121231</div></td>
+								<td><div title="금융결제원">금융결제원</div></td>
+								<td><div>2020-01-01</div></td>
+							</tr>
+							<tr class="">
+								<td><div title="글로벌_IBK_서1(14667)0003013164798416413121231">글로벌_IBK_서1(14667)0003013164798416413121231</div></td>
+								<td><div title="금융결제원">금융결제원</div></td>
+								<td><div>2020-01-01</div></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- //공인인증서 선택하기 내용 -->
+			</div>
+			<!-- //공인인증서 -->
+
+			<!-- 타이틀 영역 -->
+			<div class="stitle_wrap bno">
+				<div class="left">
+					<h2 class="bul_2">인증서 비밀번호</h2>
+				</div>
+			</div>
+			<!-- //타이틀 영역 -->
+
+			<!-- 인증서 비밀번호 -->
+			<div class="ipt_certi_pw">
+				<!-- 활성화시 active클래스 -->
+				<div class="inner active">
+					<input type="password" value="1234560" placeholder="암호는 대소문자를 구분합니다.">
+					<!-- 레이어 -->
+					<div class="layertype1" style="padding:0;top:-35px;right:0;z-index:2;">
+						<div class="toptail_layer">
+							<span class="tail btm" style="left:90px;"></span>
+							<div class="ly_inner">
+								&lt;Caps Lock&gt;이 켜져 있습니다.
+							</div>
+						</div>
+					</div>
+					<!-- //레이어 -->
+				</div>
+			</div>
+			<!-- //인증서 비밀번호 -->
+
+			<!-- 버튼 영역 -->
+			<div class="btn_center">
+				<a class="btn_style1_b"><span>확인</span></a>
+				<a class="btn_style1"><span>취소</span></a>
+			</div>
+			<!-- //버튼 영역 -->
+		</div>
+	</div>
+</div>
+<!-- //아이콘변경layer_popup -->
+
+</body>
+</html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <title>요금제 정보</title>
+    <link rel="stylesheet" href="../css/w2ui_2.0.css">
+    <link rel="stylesheet" href="../css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../css/reset_taxp.css">
+    <link rel="stylesheet" href="../css/app_header.css">
+    <link rel="stylesheet" href="../css/content_taxp.css">
+    <link rel="stylesheet" href="../css/semo_rept.css">
+    <link rel="stylesheet" href="../css/w2ui-2.0.css">
+
+    <!-- custom scrollbar plugin css -->
+    <link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+    <script src="https://publ.roumit.com/js/firebase_include.js"></script>
+    <script src="../js/lib/jquery/jquery-1.12.4.min.js"></script>
+    <script src="../js/lib/jquery/jquery-ui-1.10.4.min.js"></script>
+    <script src="../js/lib/swiper/swiper-bundle.min.js"></script>
+    <!-- custom scrollbar plugin -->
+    <script src="../js/lib/plugin/w2ui.js"></script>
+    <script src="../js/design/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="../js/design/jquery.placeholder.min.js"></script>
+    <script src="../js/lib/plugin/smart.popup.js"></script>
+    <script src="../js/comm/common.js"></script>
+    <script>
+
+        $(function () {
+            // 상단 .user_name 핸들링
+
+            $('.calcu_btn').click(function () {
+                $('.charge-calcu_pop').show();
+            });
+            $('.charge-calcu_pop .close_btn').click(function () {
+                $('.charge-calcu_pop ').hide();
+            });
+
+        })
+    </script>
+</head>
+
+<body style="">
+    <div class="window_open">
+        <div class="pop_wrap h_auto">
+            <!-- 팝업 컨텐츠 -->
+            <div class="pop_container rept_pop pd0" style="display:;">
+                <div class="charge-info_pop">
+                    <div class="inner">
+                        <section class="charge_card basic">
+                            <article class="top">
+                                <div class="tag">
+                                    <p></p>
+                                </div>
+                                <div class="main_title">
+                                    <h3>기본 요금제</h3>
+                                </div>
+                                <div class="sub_title">
+                                    <p>
+                                        등록한 수임처개수만큼<br>
+                                        발생하는 표준요금제
+                                    </p>
+                                </div>
+                                <div class="calcu_btn">
+                                    <a href="#none">
+                                        <img src="../img/txof/ico/ico_money_32a.svg" alt="">
+                                        <span>요금 계산기</span>
+                                    </a>
+                                    
+                                </div>
+                            </article>
+                            <article class="middle">
+                                <div class="charge_info">
+                                    <div class="charge_item">
+                                        <div class="badge">
+                                            <p>0~30개</p>
+                                        </div>
+                                        <div class="charge">
+                                            <p>5만원</p>
+                                        </div>
+                                    </div>
+                                    <div class="sub_info">
+                                        <span>( 30개 초과시 수임처당 3,000원 )</span>
+                                    </div>
+                                </div>
+                                <div class="desc_wrap">
+                                    <ul>
+                                        <li class="desc_item">
+                                            <p>고객요약/상세분석</p>
+                                        </li>
+                                        <li class="desc_item">
+                                            <p>고객 매입 매출장 </p>
+                                        </li>
+                                        <li class="desc_item">
+                                            <p>세무사무소 전용 채팅</p>
+                                        </li>
+                                        <li class="desc_item">
+                                            <p>수기증빙 간편 수취 </p>
+                                        </li>
+                                        <li class="desc_item">
+                                            <p>사업용 계좌 입출내역/<br>카드내역 수취 </p>
+                                        </li>
+                                        <li class="desc_item">
+                                            <p>사업용 계좌 / 카드 등록현황 알림</p>
+                                        </li>
+                                        <li class="desc_item">
+                                            <p>배달매출관리<br>(배달의 민족, 요기요, 쿠팡이츠)</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </article>
+                            <article class="bottom">
+                                <button type="button">
+                                    <span>변경하기</span>
+                                    <img src="../img/txof/btn/arr_w_16.svg" alt="">
+                                </button>
+                            </article>
+
+                        </section>
+                        <section class="charge_card section">
+                            <article class="top">
+                                <div class="tag">
+                                    <p></p>
+                                </div>
+                                <div class="main_title">
+                                    <h3>구간 요금제</h3>
+                                </div>
+                                <div class="sub_title">
+                                    <p>
+                                        등록한 수임처 개수 구간에 따라<br>
+                                        자동적용되는 할인 요금제
+                                    </p>
+                                </div>
+
+                            </article>
+                            <article class="middle">
+                                <div class="charge_info">
+                                    <div class="charge_item">
+                                        <div class="badge">
+                                            <p>0~100개</p>
+                                        </div>
+                                        <div class="charge">
+                                            <p>10만원</p>
+                                        </div>
+                                    </div>
+                                    <div class="charge_item">
+                                        <div class="badge">
+                                            <p>101~200개</p>
+                                        </div>
+                                        <div class="charge">
+                                            <p>20만원</p>
+                                        </div>
+                                    </div>
+                                    <div class="charge_item">
+                                        <div class="badge">
+                                            <p>201~300개</p>
+                                        </div>
+                                        <div class="charge">
+                                            <p>30만원</p>
+                                        </div>
+                                    </div>
+                                    <div class="charge_item">
+                                        <div class="badge">
+                                            <p>401~800개</p>
+                                        </div>
+                                        <div class="charge">
+                                            <p>50만원</p>
+                                        </div>
+                                    </div>
+                                    <div class="charge_item">
+                                        <div class="badge">
+                                            <p>무제한</p>
+                                        </div>
+                                        <div class="charge">
+                                            <p>80만원</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="desc_wrap">
+                                    <ul>
+                                        <li class="desc_item">
+                                            <p>기본요금제 모든 기능 사용</p>
+                                        </li>
+                                        <li class="desc_item">
+                                            <p>
+                                                <strong>세모.CRM 제공</strong></p>
+                                        </li>
+                                        <li class="desc_item">
+                                            <p><strong>마케팅 디자인 자료 제공</strong></p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </article>
+                            <article class="bottom">
+                                <button type="button">
+                                    <span>변경하기</span>
+                                    <img src="../img/txof/btn/arr_w_16.svg" alt="">
+                                </button>
+                            </article>
+
+                        </section>
+                        <section class="charge_card special">
+                            <article class="top">
+                                <div class="tag">
+                                    <p></p>
+                                </div>
+                                <div class="main_title">
+                                    <h3>스페셜 요금제</h3>
+                                </div>
+                                <div class="sub_title">
+                                    <p>
+                                        사업 초기 세무사 지원을 위한<br>
+                                        특별 요금제
+                                    </p>
+                                </div>
+                                
+                            </article>
+                            <article class="middle">
+                                <div class="charge_info">
+                                    <div class="charge_item">
+                                        <div class="badge">
+                                            <p>신규세무사</p>
+                                        </div>
+                                        <div class="charge">
+                                            <p>별도문의</p>
+                                        </div>
+                                    </div>
+                                    <div class="sub_info">
+                                        <span>(22년 이후 신규 개업 세무사무소)</span>
+                                    </div>
+                                </div>
+                                <div class="desc_wrap">
+                                    <ul>
+                                        <li class="desc_item">
+                                            <p>기본요금제 모든 기능 사익용</p>
+                                        </li>
+                                        <li class="desc_item">
+                                            <p>
+                                                <strong>세모.CRM 제공</strong></p>
+                                        </li>
+                                        <li class="desc_item">
+                                            <p><strong>마케팅 디자인 자료 제공</strong></p>
+                                        </li>
+                                        <li class="desc_item">
+                                            <p>
+                                                <strong>
+                                                    가입 시점으로부터 1년간 제공<br>
+                                                    (신규 세무법인의 경우 6개월 적용)
+                                                </strong>
+                                            
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </article>
+                            <article class="bottom">
+                                <button type="button">
+                                    <span>요금제 문의</span>
+                                    <img src="../img/txof/btn/arr_w_16.svg" alt="">
+                                </button>
+                            </article>
+                            <div class="vat">
+                                <p>* VAT 별도</p>
+                            </div>
+                        </section>
+                    </div>
+
+                    
+                    <div class="charge-calcu_pop basic" style="display: none;">
+                        <div class="inner">
+                            <div class="top">
+                                <div class="title">
+                                    <h2>요금 계산기</h2>
+                                    <span class="sub_txt">*기본 요금제 기준</span>
+                                </div>
+                                <div class="btn_wrap">
+                                    <button type="button" class="close_btn">
+                                        <img src="../img/txof/btn/close_b_20.svg" alt="">
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="charge-calcu_cont">
+                                <ul>
+                                    <li class="item_01">
+                                        <p>사용할 거래처 수</p>
+                                        <div class="input_wrap">
+                                            <input type="number">
+                                            <span>개</span>
+                                        </div>
+                                    </li>
+                                    <li class="item_02">
+                                        <span class="sub_txt">
+                                            요금 계산은 기본요금제로 측정되며, 사용 거래처 수 30개 초과 시,<br>거래처당 3,000원 추가로 발생 합니다.
+                                        </span>
+                                    </li>
+                                    <li class="item_03">
+                                        <p>추가 금액</p>
+                                        <p>0 <span>원</span></p>
+                                    </li>
+                                    <li class="item_04">
+                                        <p>예상 청구금액</p>
+                                        <p>50,000원 / 월(VAT 별도)</p>
+                                    </li>
+                                </ul>
+                                
+                            </div>
+                            <div class="bottom_btn">
+                                <button type="button">
+                                    <span>추천 요금제</span>
+                                    <span>기본 요금제</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                
+            </div>
+            <!-- //팝업 컨텐츠 -->
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>fin_acct_001_2 / popup_slideMockup15</title>
+    <link rel="stylesheet" href="../../../css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../../../css/mobiscroll.jquery.min.css">
+    <link rel="stylesheet" href="../../../css/semoR_base.css">
+    <link rel="stylesheet" href="../../../css/semoR_common.css">
+    <link rel="stylesheet" href="../../../css/semoR_style.css">
+    <link rel="stylesheet" href="../../../css/semoR_rept.css">
+  <script src="../../../js/jquery-3.5.1.min.js"></script>
+    <script src="../../../js/jquery-ui.min.js"></script>
+    <script src="../../../js/swiper-bundle.min.js"></script>
+    <script src="../../../js/mobiscroll.jquery.min.js"></script>
+    <script src="../../../js/semoR_ui.js"></script>
+</head>
+
+<script>
+    $(document).ready(function () {
+        slidePop(this);
+    });
+</script>
+
+<body>
+    <!-- wrapper -->
+    <div class="wrapper">
+        <!-- header -->
+        <div class="header">
+            <h1 class="subTit">슬라이드팝업(slidePop)</h1>
+            <ul class="topMenu">
+                <li class="left">
+                    <a class="btnBack" href="javascript:;" role="button"><span class="blind">뒤로가기</span></a>
+                </li>
+            </ul>
+        </div>
+        <!-- //header -->
+    </div>
+    <!-- //wrapper -->
+
+    <div class="popWrap slidePop">
+        <div class="dim" onclick="popdimClose(this);return false;">클릭시 팝업 닫힘</div>
+        <div class="popInner">
+            <div class="popTit">
+                <a href="javascript:;" class="btnPopClose" onclick="popClose(this);return false;" title="팝업닫기"
+                    role="button"></a>
+                <h1>인증서 연결이 왜 필요할까?</h1>
+            </div>
+            <div class="popCont">
+                <ul class="dotListMsg">
+                    <li>최초 1회 은행과 카드사에 등록되어있는 공동인증서를 세모리포트 서비스에 연결해주세요.</li>
+                    <li>매일 아침 거래내역과 사용 용도가 자동으로 업데이트됩니다.</li>
+                    <li>사업현황을 한 눈에 파악할 수 있고, 세무사무소와 소통이 편리해져요.</li>
+                </ul>
+            </div>
+            <div class="popBtnWrap">
+                <a href="javascript:;" class="moveLink bgGray">
+                    <span class="pointColor06">사장님SOS팀 도움이 필요해요</span>
+                    <div class="rCont">
+                        <img class="tsRight" src="../../../img/ico_ts_right_gray.png" alt="오른쪽화살표">
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<title>세무대리인 for 경리나라</title>
+<link rel="stylesheet" href="../css/reset_taxp.css">
+<link rel="stylesheet" href="../css/app_header.css"><!-- [D] 세무대리인용 header -->
+<link rel="stylesheet" href="../css/content_taxp.css"><!-- [D] 세무대리인용 -->
+
+<!-- custom scrollbar plugin css -->
+<link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+<script src="https://publ.roumit.com/js/firebase_include.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+<!-- custom scrollbar plugin -->
+<script src="../js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../js/jquery.placeholder.min.js"></script>
+<script>
+	$(function(){
+		// Invoke the plugin
+		$('input, textarea').placeholder({customClass:'my-placeholder'});
+		// 상담문의
+		$( "#btn_notice" ).on( "click", function() {
+			$("#pop_notice").toggle();
+		});
+		// 담당자지정
+		$( "#btn_manager" ).on( "click", function() {
+			$("#pop_manager").toggle();
+		});
+		// 작업일시
+		$( "#btn_last_work" ).on( "click", function() {
+			$("#pop_last_work").toggle();
+		});
+	} );
+</script>
+
+</head>
+
+<body>
+<div class="pop_wrap" style="top:145px;left:25px;width:280px; display: none;" id="pop_manager">
+
+	<!-- 팝업 헤더 -->
+	<div class="pop_header">
+		<h1>담당자 지정</h1>
+		<a href="#none" onclick="document.getElementById('pop_manager').style.display='none'" class="btn_popclose"><img src="../img/txof/btn/btn_popclose.gif" alt="팝업닫기"></a>
+	</div>
+	<!-- //팝업 헤더 -->
+
+	<!-- 팝업 컨텐츠 -->
+	<div class="pop_container">
+		<div class="info_box6 mgb10">
+			<p><strong>경리 아웃소싱 담당직원을 지정하세요</strong></p>
+		</div>
+
+		<!-- 테이블(1) -->
+		<table class="tbl_input8" summary="">
+			<caption></caption>
+			<colgroup><col></colgroup>
+			<tbody>
+				<tr>
+					<td><div><label><input type="radio" checked> 김한나</label></div></td>
+				</tr>
+				<tr>
+					<td><div><label><input type="radio"> 박나영</label></div></td>
+				</tr>
+				<tr>
+					<td><div><label><input type="radio"> 장나라</label></div></td>
+				</tr>
+				<tr>
+					<td><div><label><input type="radio"> 한소미</label></div></td>
+				</tr>
+			</tbody>
+		</table>
+		<!-- //테이블(1) -->
+
+		<!-- 버튼영역 -->
+		<div class="tac t_line mgt15">
+			<!-- <a href="#none" class="btn_style1_b"><span>저장</span></a> -->
+			<a href="#none" class="btn_style1"><span>확인</span></a>
+		</div>
+		<!-- //버튼영역 -->
+
+	</div>
+	<!-- //팝업 컨텐츠 -->
+</div>
+
+<!-- 수임처 개선 -->
+<!-- header -->
+<div class="app_header">
+	<div class="app_header_inner">
+		<div class="ah_l">
+			<h1>수임처</h1>
+		</div>
+
+		<div class="ah_r">
+			<ul class="ah_menu">
+				<!-- <li><a href="https://www.serp.co.kr/evnt_0001_01.act?prod_gb=SERP&biz_no=5680601206&biz_nm=%EB%B0%95%EA%B8%B0%EC%A0%95%EC%84%B8%EB%AC%B4%EC%82%AC%EC%82%AC%EB%AC%B4%EC%8B%A4" target="_blank" style="margin-top:-7px;"><img src="../img/txof/app_header/btn_recommend.gif" alt="경리나라 추천하기"></a></li>
+				<li><a href="#none" class="ic_new" id="btn_notice"><img src="../img/txof/app_header/ic_top01.png" alt="">상담문의</a></li> -->
+				<!-- 수임처 개선 -->
+				<li style="position:relative;">
+					<a href="#none"><img src="../img/txof/app_header/ic_top03.png" alt="">관리자</a>
+					<!-- 관리자 레이어 -->
+					<div class="ly_bx_wrap" style="top:20px;right:0;display:none">
+						<div class="inner">
+							<p>이영미 010-2313-4353</p>
+							<p>신정호 010-6774-8811</p>
+							<p>최기종 010-3303-5711</p>
+							<p>최기종 010-3303-5711</p>
+							<p>최기종 010-3303-5711</p>
+							<p>최기종 010-3303-5711</p>
+						</div>
+					</div>
+					<!-- //관리자 레이어 -->
+				</li>
+				<!-- //수임처 개선 -->
+				<li><a href="#none"><img src="../img/txof/app_header/ic_top02.png" alt="">로그아웃</a></li>
+			</ul>
+			<!-- (layer)알림 -->
+			<div class="ly_app_header" style="top:45px;right:14px;width:365px;display: none;" id="pop_notice">
+				<div class="ly_notibx_tit">
+					<h3>알림</h3>
+				</div>
+				<div class="ly_notibx_cont">
+					<!-- 스크롤 영역 -->
+					<div class="ly_notibx_scroll">
+						<ul>
+							<li>
+								<img src="../img/txof/app_header/bg_alarm_noti.png" alt="" class="ic_alarm">
+								<div class="tit"><strong>웹케시네트웍스(주)</strong>의 관리자님이 상담 신청하였습니다.</div>
+								<div><span><img src="../img/txof/app_header/ic_tel02.png" alt="">&nbsp;010-9276-8033</span></div>
+								<div class="date">2018년 9월 11일 (화요일)</div>
+							</li>
+							<li>
+								<img src="../img/txof/app_header/bg_alarm_noti.png" alt="" class="ic_alarm">
+								<div class="tit"><strong>웹케시벡터</strong>의 최기종님이 상담 신청하였습니다.</div>
+								<div><span><img src="../img/txof/app_header/ic_tel02.png" alt="">&nbsp;010-3303-5711</span></div>
+								<div class="date">2018년 9월 6일 (목요일)</div>
+							</li>
+							<li></li>
+						</ul>
+					</div>
+					<!-- //스크롤 영역 -->
+				</div>
+			</div>
+			<!-- //(layer)알림 -->
+		</div>
+	</div>
+</div>
+<!-- //header -->
+<!-- //수임처 개선 -->
+
+<div class="wrap">
+	<!-- Container -->
+	<div class="container">
+		<!-- content wrap -->
+		<div class="content">
+
+			<div class="content_wrap">
+
+				<!-- 거래처조회 > 증빙조회 -->
+				<div class="cust_dv_wrap nobd"><!-- [D] 편집기능 눌렀을때 class="edit_on" 추가 -->
+
+					<div class="top_cust_tit">
+						<div class="left">
+							<div class="cntalign"><h1 class="ipt_none">미소야</h1></div>
+							<div class="cntalign">
+								<!-- 사업자번호/대표자/전화번호/팩스번호 -->
+								<ul class="top_list">
+									<li class="col1"><span class="ipt_none">311-88-00892</span>&nbsp;<span class="ipt_none" style="display: none;"></span></li>
+									<li class="col2"><strong><span class="ipt_none">신영훈</span>&nbsp;대표</strong></li>
+									<li class="col3"><img src="../img/txof/ico/ico_tel.png" alt="Tel"><strong class="ipt_none">02-3779-0001</strong></li>
+									<li class="col4">
+										<img src="../img/txof/ico/ico_fax.png" alt="Fax">
+										<div class="lyinvm ipt_none"><strong>02-3779-0002</strong></div>
+									</li>
+								</ul>
+								<!-- //사업자번호/대표자/전화번호/팩스번호 -->
+							</div>
+						</div>
+						<div class="right">
+							<!-- 2021-04-22 -->
+							<div class="cntalign">
+								<div class="ly_filter type9">
+									<a href="#none" class="barr">신고프로그램</a>&nbsp; <img src="../img/txof/ico/ico_newzen.png" alt="">
+									<div class="ly_filter_inner" style="display:none;min-width:180px !important;">
+										<p><label><input type="radio" checked=""> 세무사랑</label> <span><img src="../img/txof/ico/ico_newzen.png" alt=""></span></p>
+										<p><label><input type="radio"> 더존</label> <span><img src="../img/txof/ico/ico_douzone.png" alt=""></span></p>
+									</div>
+								</div>
+							</div>
+							<!-- //2021-04-22 -->
+							<div class="cntalign">
+								<span class="cn_txt"><a href="#none"><span class="ico1"></span>경리나라</a></span>
+								<!-- 레이어 -->
+								<div class="ly_cbx" style="display:none;">
+									<div class="inner">
+										<ul>
+											<li>경리나라 소개 (<a href="#none">SMS</a> | <a href="#none">MAIL</a>)</li>
+											<li>경리나라 소개서<a href="#none" class="ico_pdf"></a></li>
+										</ul>
+									</div>
+								</div>
+								<!-- //레이어 -->
+							</div>
+							<div class="cntalign">
+								<span class="cn_txt" style="color:#000;"><span class="ico2"></span>세모장부<a class="btn_set"></a></span>
+								<!-- 레이어 -->
+								<div class="ly_cbx" style="display:none;">
+									<div class="inner">
+										<span class="tail"></span>
+										<p>납부방법을 선택합니다.</p>
+										<ul>
+											<li><label><input type="radio"> 수임처가 요금을 납부합니다.</label></li>
+											<li><label><input type="radio"> 세무사가 요금을 대납 합니다.</label></li>
+										</ul>
+									</div>
+								</div>
+								<!-- //레이어 -->
+								<!-- 설정 레이어 -->
+								<div class="ly_cbx" style="display:none;top:31px;">
+									<div class="inner">
+										<span class="tail"></span>
+										<div class="setw">
+											세무사가 요금을 대납 합니다. <a href="#none" class="btn_onoff off"><span class="blind">ON</span></a>
+										</div>
+									</div>
+								</div>
+								<!-- //설정 레이어 -->
+							</div>
+							<div class="cntalign">
+								<a class="btn_ico_back" href="#none"><span class="blind">뒤로가기</span></a>
+							</div>
+						</div>
+					</div>
+
+					<!-- 탭영역/버튼 -->
+					<div class="tabType02">
+						<!-- 2021-10-15 -->
+						<ul>
+							<li><a href="#none">회사정보조회</a></li>
+							<!-- <li><a href="#none">수임처 계정관리</a></li> -->
+							<li><a href="#none">거래증빙</a></li>
+							<!-- <li><a href="#none">증빙서류</a></li> -->
+							<li><a href="#none">직원급여정보</a></li>
+							<li><a href="#none">세무사보고서</a></li>
+							<li class="on"><a href="#none">활동이력</a></li>
+						</ul>
+						<!-- //2021-10-15 -->
+						<div class="right">
+							<div class="cntalign">
+								<a href="#none" class="btn_webkr"><span>웹경리나라</span></a>
+							</div>
+							<div class="cntalign">
+								<a href="#none" class="btn_wflow"><span>플로우 소통게시판</span></a>
+							</div>
+						</div>
+					</div>
+					<!-- //탭영역/버튼 -->
+
+					<!-- 글쓰기 -->
+					<div class="n_write_wrap" style="margin-bottom:0;">
+						<table class="tbl_write" summary="">
+							<caption></caption>
+							<colgroup>
+							<col style="width:94px;">
+							<col>
+							</colgroup>
+							<tbody>
+								<tr>
+									<th scope="row">제목</th>
+									<td>
+										<div class="textabx"><input type="text" style="width:95%;" value="" placeholder="제목을 입력하세요"><a href="#none" class="btn_del"></a></div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+
+						<!-- edit -->
+						<div class="n_editbox">
+							편집영역<br>
+							편집영역<br>
+							편집영역<br>편집영역<br>편집영역<br>편집영역<br>편집영역<br>편집영역<br>편집영역<br>편집영역<br>편집영역<br>편집영역<br>편집영역<br>편집영역<br>편집영역<br>편집영역<br>편집영역<br>
+							max-height:650px;
+						</div>
+						<!-- //edit -->
+					</div>
+					<!-- //글쓰기 -->
+					<div class="btn_area" style="border:1px solid #dcdcdc;border-top:none;padding:9px 20px 10px 20px;">
+						<div>
+							<a href="#none" class="btn_style1_b"><span>등록</span></a>
+							<a href="#none" class="btn_style1"><span>취소</span></a>
+							<a href="#none" class="addfile_ly_wrap"><img src="../img/txof/btn/appicon_addfile_off.png" alt="첨부파일"><!-- layer --><span class="file_layer"><span class="file_layer_po"><em class="tail"></em><span class="txt">파일첨부</span></span></span><!-- //layer --></a>
+						</div>
+					</div>
+
+				</div>
+				<!-- //거래처조회 > 증빙조회 -->
+
+			</div>
+		</div>
+		<!-- //content wrap -->
+	</div>
+	<!-- //Container -->
+</div>
+<!-- //wrap -->
+
+
+</body>
+</html>
+

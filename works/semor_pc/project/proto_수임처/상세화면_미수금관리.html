@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<title>세무대리인 for 경리나라</title>
+<link rel="stylesheet" href="../css/reset_taxp.css">
+<link rel="stylesheet" href="../css/app_header.css"><!-- [D] 세무대리인용 header -->
+<link rel="stylesheet" href="../css/content_taxp.css"><!-- [D] 세무대리인용 -->
+
+<!-- custom scrollbar plugin css -->
+<link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+<script src="https://publ.roumit.com/js/firebase_include.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+<!-- custom scrollbar plugin -->
+<script src="../js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../js/jquery.placeholder.min.js"></script>
+<script>
+	$(function(){
+		// Invoke the plugin
+		$('input, textarea').placeholder({customClass:'my-placeholder'});
+		// 상담문의
+		$( "#btn_notice" ).on( "click", function() {
+			$("#pop_notice").toggle();
+		});
+		// 담당자지정
+		$( "#btn_manager" ).on( "click", function() {
+			$("#pop_manager").toggle();
+		});
+		// 작업일시
+		$( "#btn_last_work" ).on( "click", function() {
+			$("#pop_last_work").toggle();
+		});
+	} );
+</script>
+
+</head>
+
+<body>
+
+<!-- header -->
+<div class="app_header">
+	<div class="app_header_inner">
+		<div class="ah_l">
+			<h1>수임처</h1>
+		</div>
+
+		<div class="ah_r"></div>
+	</div>
+</div>
+<!-- //header -->
+
+<div class="wrap">
+	<!-- Container -->
+	<div class="container">
+		<!-- content wrap -->
+		<div class="content">
+
+			<div class="content_wrap">
+
+				<!-- 거래처조회 > 상세(회사정보) -->
+				<div class="cust_dv_wrap nobd"><!-- [D] 편집기능 눌렀을때 class="edit_on" 추가 -->
+
+					<div class="top_cust_tit">
+						<div class="left">
+							<div class="cntalign"><h1 class="ipt_none">미소야</h1></div>
+							<div class="cntalign">
+								<!-- 사업자번호/대표자/전화번호/팩스번호 -->
+								<ul class="top_list">
+									<li class="col1"><span class="ipt_none">311-88-00892</span>&nbsp;<span class="ipt_none" style="display: none;"></span></li>
+									<li class="col2"><strong><span class="ipt_none">신영훈</span>&nbsp;대표</strong></li>
+									<li class="col3"><img src="../img/txof/ico/ico_tel.png" alt="Tel"><strong class="ipt_none">02-3779-0001</strong></li>
+									<li class="col4">
+										<img src="../img/txof/ico/ico_fax.png" alt="Fax">
+										<div class="lyinvm ipt_none"><strong>02-3779-0002</strong></div>
+									</li>
+								</ul>
+								<!-- //사업자번호/대표자/전화번호/팩스번호 -->
+							</div>
+						</div>
+						<div class="right">
+							<div class="cntalign">
+								<div class="ly_filter type9 nobg">
+									<a href="#none" class="barr">신고프로그램</a>&nbsp; <img src="../img/txof/ico/ico_douzone.png" alt="">
+									<div class="ly_filter_inner" style="display:none;min-width:180px !important;">
+										<p><label><input type="radio" checked=""> 세무사랑</label> <span><img src="../img/txof/ico/ico_newzen.png" alt=""></span></p>
+										<p><label><input type="radio"> 더존</label> <span><img src="../img/txof/ico/ico_douzone.png" alt=""></span></p>
+									</div>
+								</div>
+							</div>
+							<div class="cntalign"><a class="btn_ico_back" href="#none"><span class="blind">뒤로가기</span></a></div>
+						</div>
+					</div>
+
+					<!-- 탭영역/버튼 -->
+					<div class="tabType02">
+						<!-- 2022-08-18 -->
+						<ul>
+							<li><a href="#none">회사정보조회</a></li>
+							<li><a href="#none">ID / PW 관리</a></li>
+							<li><a href="#none">서류함</a></li>
+							<li class="on"><a href="#none">미수금관리</a></li>
+							<li><a href="#none">활동이력</a></li>
+							<li><a href="#none">거래증빙</a></li>
+							<li><a href="#none">직원급여정보</a></li>
+							<li><a href="#none">세무사 보고서</a></li>
+						</ul>
+						<!-- //2022-08-18 -->
+						<div class="right">
+							<div class="cntalign">
+								<a href="#none" class="btn_wnotbd"><span>소통게시판</span></a>
+							</div>
+							<div class="cntalign">
+								<a href="#none" class="btn_webkr"><span class="blind">경리나라</span></a>
+							</div>
+							<div class="cntalign">
+								<a href="#none" class="btn_wflow"><span>플로우</span></a>
+							</div>
+						</div>
+					</div>
+					<!-- //탭영역/버튼 -->
+
+					<!-- 미납액 합계액 -->
+					<div class="title_wrap">
+						<div class="left">
+							<div class="cntalign txt_acnt">총미수금 : <span class="txt_numr txt_b">650,000</span>원</div>
+						</div>
+						<div class="right">
+							<div class="cntalign txt_acnt"><a href="#none" class="fwb txt_b t_hover">[미수금 청구서 발송]</a></div>
+						</div>
+					</div>
+					<!-- //미납액 합계액 -->
+
+					<!-- 리스트 테이블 상단 -->
+					<div class="list_scroll_top" style="overflow:hidden;"><!-- [D] 하단테이블 세로스크롤 발생시 pdr 클래스 추가 -->
+						<table class="tbl_result" summary="">
+							<caption></caption>
+							<colgroup>
+								<col style="width: 100px;">
+								<col style="width: 150px;">
+								<col style="width: 150px;">
+								<col style="width: 150px;">
+								<col style="width: 200px;">
+								<col style="width: 290px;">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col"><div>청구월</div></th>
+									<th scope="col"><div class="tar">청구금액</div></th>
+									<th scope="col"><div class="tar">입금액</div></th>
+									<th scope="col"><div class="tar">미납액</div></th>
+									<th scope="col"><div>증빙</div></th>
+									<th scope="col"><div>비고</div></th>
+								</tr>
+							</thead>
+						</table>
+					</div>
+					<!-- //리스트 테이블 상단 -->
+
+					<div class="list_scroll" style="height:408px;overflow:hidden;">
+						<!-- 리스트 테이블 -->
+						<table class="tbl_result" summary="">
+							<caption></caption>
+							<colgroup>
+								<col style="width: 100px;">
+								<col style="width: 150px;">
+								<col style="width: 150px;">
+								<col style="width: 150px;">
+								<col style="width: 200px;">
+								<col style="width: 290px;">
+							</colgroup>
+							<tfoot style="display:none;"><!-- [D] style="display: none / table-tfoot;" -->
+								<tr class="no_hover">
+									<td colspan="6" class="no_info" style="height:408px;"><div>조회된 내역이 없습니다.</div></td>
+								</tr>
+							</tfoot>
+							<tbody><!-- [D] style="display: none / table-tbody;" -->
+								<tr>
+									<td><div>이월 미수금</div></td>
+									<td><div class="tar"></div></td>
+									<td><div class="tar"></div></td>
+									<td><div class="tar">200,000</div></td>
+									<td><div>초기이월 2022-02-05</div></td>
+									<td><div class="tx_ellipsis_max" title=""></div></td>
+								</tr>
+								<tr>
+									<td><div>2022년 4월</div></td>
+									<td><div class="tar"><a href="#none" class="fwb txt_b t_hover">100,000</a></div></td>
+									<td><div class="tar"><a href="#none" class="fwb txt_b t_hover">100,000</a></div></td>
+									<td><div class="tar">0</div></td>
+									<td><div><a href="#none" class="fwb txt_b t_hover">세계(2022-03-25)</a></div></td>
+									<td><div></div></td>
+								</tr>
+								<tr>
+									<td><div>2022년 4월</div></td>
+									<td><div class="tar"><a href="#none" class="fwb txt_b t_hover">100,000</a></div></td>
+									<td><div class="tar"><a href="#none" class="fwb txt_b t_hover">100,000</a></div></td>
+									<td><div class="tar">0</div></td>
+									<td>
+										<!-- 2022-08-18 -->
+										<div class="hoverw"><!-- hoverw 복수 선택시 클래스 추가 -->
+											<div class="h_txt"><a href="#none" class="t_hover empinfo"><span class="tx_ellipsis_name2" title="세계(2022-08-25)">세계(2022-08-25)</span> 외 2건</a></div>
+											<!-- 레이어 -->
+											<div class="layertype1" style="padding:0;top:27px;left:0;z-index:2;display:;">
+												<div class="scroll_layer">
+													<div class="ly_inner type3 mCustomScrollbar"><!-- mCustomScrollbar 3개 이상 스크롤 추가 -->
+														<table class="ly_table">
+															<caption></caption>
+															<colgroup>
+															<col style="width:100px;">
+															</colgroup>
+															<tbody>
+																<tr>
+																	<td><div class="max_empinfo"><span title="세계(2022-07-30)">세계(2022-07-30)</span></div></td>
+																</tr>
+																<tr>
+																	<td><div class="max_empinfo"><span title="카드(2022-07-29)">카드(2022-07-29)</span></div></td>
+																</tr>
+																<tr>
+																	<td><div class="max_empinfo"><span title="기타(2022-07-29)">기타(2022-07-29)</span></div></td>
+																</tr>
+															</tbody>
+														</table>
+													</div>
+												</div>
+											</div>
+											<!-- //레이어 -->
+										</div>
+										<!-- //2022-08-18 -->
+									</td>
+									<!-- 2022-08-18 -->
+									<td><div style="position:relative;">
+										<a href="#none" class="t_hover tx_ellipsis_max">6월 미수금 현금요 수납함, 7월분은 카드로 수납 처리, 8월분은 바우처로 결제 처리</a>
+										<!-- 레이어 -->
+										<div class="layertype1" style="padding:0;top:27px;left:0px;z-index:2;display:;">
+											<div class="toptail_layer">
+												<span class="tail top"></span>
+												<div class="ly_inner type2">
+													6월 미수금 현금으로 수납함 7월분은 카드로 수납 처리,<br />
+													8월분은 바우처로 결제 처리
+												</div>
+											</div>
+										</div>
+										<!-- //레이어 -->
+									</div></td>
+									<!-- //2022-08-18 -->
+								</tr>
+							</tbody>
+						</table>
+						<!-- //리스트 테이블 -->
+					</div>
+					<!-- Paging wrap -->
+					<div class="paging_wrap">
+						<!-- combo -->
+						<div class="combo_wrap">
+							<div class="combo_style">
+								<a href="#none" class="btn_style btn_combo_down"><span>12</span></a>
+								<ul class="up" style="display: none;">
+									<li><a href="#none">200</a></li>
+									<li><a href="#none">150</a></li>
+									<li><a href="#none">100</a></li>
+									<li><a href="#none">50</a></li>
+									<li><a href="#none">12</a></li>
+								</ul>
+							</div>
+						</div>
+						<!-- //combo -->
+						<!-- pagination -->
+						<div class="paging"><!-- [D] 비활성상태는 on class 제거 -->
+							<a href="#none" class="btn_pag_cntr first"><span class="blind">first</span></a><a href="#none" class="btn_pag_cntr prev"><span class="blind">previous</span></a>
+							<span class="pag_num">
+								<a href="#none" class="on">1</a><a href="#none">2</a><a href="#none">3</a><a href="#none">4</a><a href="#none">5</a><a href="#none">6</a><a href="#none">7</a><a href="#none">8</a><a href="#none">9</a><a href="#none">10</a>
+							</span>
+							<a href="#none" class="btn_pag_cntr next on"><span class="blind">next</span></a><a href="#none" class="btn_pag_cntr last on"><span class="blind">last</span></a>
+						</div>
+						<!-- //pagination -->
+					</div>
+					<!-- //Paging wrap -->
+				</div>
+				<!-- //거래처조회 > 상세(회사정보) -->
+
+			</div>
+		</div>
+		<!-- //content wrap -->
+	</div>
+	<!-- //Container -->
+</div>
+<!-- //wrap -->
+
+
+</body>
+</html>
+

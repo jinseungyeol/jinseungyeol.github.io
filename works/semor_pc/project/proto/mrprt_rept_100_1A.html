@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+	<title>mrprt_rept_100_1A</title>
+	<link rel="stylesheet" href="../css/reset_taxp.css">
+	<link rel="stylesheet" href="../css/app_header.css"><!-- [D] 세무대리인용 header -->
+	<link rel="stylesheet" href="../css/content_taxp.css"><!-- [D] 세무대리인용 -->
+	<link rel="stylesheet" href="../css/swiper-bundle.min.css"><!-- [D] 세무대리인용 -->
+	<link rel="stylesheet" href="../css/w2ui_2.0.css">
+
+	<!-- custom scrollbar plugin css -->
+	<link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+	<link rel="stylesheet" href="../css/jquery-ui-1.8.16.custom.css">
+	<script src="https://publ.roumit.com/js/firebase_include.js"></script>
+  <script src="../js/lib/jquery/jquery-1.12.4.min.js"></script>
+	<script src="../js/lib/jquery/jquery-ui-1.10.4.min.js"></script>
+	<script src="../js/lib/swiper/swiper-bundle.min.js"></script>
+	<!-- custom scrollbar plugin -->
+	<script src="../js/lib/plugin/w2ui.js"></script>
+	<script src="../js/design/jquery.mCustomScrollbar.concat.min.js"></script>
+	<script src="../js/design/jquery.placeholder.min.js"></script>
+	<script src="../js/lib/plugin/smart.popup.js"></script>
+	<script src="../js/comm/common.js"></script>
+	<script src="../js/lib/jquery/jquery-ui-1.10.4.min.js"></script>
+</head>
+
+<body class="lnb_bg">
+	<div class="wrap preview">
+		<!-- [D] 상세검색일 경우(class="mh") -->
+		<!-- Container -->
+		<div class="container">
+			<!-- lnb_box -->
+			<div class="lnb_box">
+				<ul class="mygroupLst_type02">
+					<li>
+						<div class="w_box_radius">
+							<div class="tit_area">
+								<p class="menu_tit set">보기 설정</p>
+							</div>
+							<div class="action_area">
+								<div class="st_device">
+									<button type="button" class="btn_style1_gray_bd active" data-device="desktop"><span>PC</span></button>
+									<button type="button" class="btn_style1_gray_bd" data-device="tablet"><span>테블릿</span></button>
+									<button type="button" class="btn_style1_gray_bd" data-device="mobile"><span>모바일</span></button>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="st_device">
+							<button class="btn_link_copy" title="링크 복사하기"><span>링크 복사</span></button>
+							<button class="btn_pdf_down" title="PDF 다운로드하기"><span>PDF 저장</span></button>
+						</div>
+					</li>
+					<li>
+						<div class="w_box_radius">
+							<div class="tit_area">
+								<p class="menu_tit send">보고서 발송</p>
+							</div>
+							<div class="action_area">
+								<div class="send_wrap">
+									<span class="to">나에게</span>
+									<div class="send_input_wrap">
+										<div class="send_input">
+											<input type="tel" maxlength="3" value="010">
+											<span class="divide">-</span>
+											<input type="tel" maxlength="4" value="1234">
+											<span class="divide">-</span>
+											<input type="tel" maxlength="4" value="5678">
+										</div>
+										<button type="button" class="btn_style1_b"><span>발송</span></button>
+									</div>
+								</div>
+								<div class="send_wrap">
+									<span class="to">고객에게</span>
+									<div class="areaSend_wrap">
+										<div class="info">
+											<div class="icon">
+												<img src="../img/txof/ico/ico_noti_red.svg" alt="">
+											</div>
+											<div class="desc">
+												<p>
+													수임처 앱 내, 등록된 거래처의 연락처가 없어 보고서를 발송할 수 없어요.
+												</p>
+											</div>
+										</div>
+										<a href="javascript:;" class="grid_info_link" target="_blank">
+											<img src="../img/txof/ico/ico_que_green.png" alt="그리드 도움말">
+											<span>연락처 등록방법 알아보기</span>
+										</a>
+										<button type="button" class="btn_style1_b"><span>연락처 등록하기</span></button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<!-- //lnb_box -->
+			<!-- content -->
+			<div class="content">
+				<!-- content_wrap -->
+				<div class="content_wrap">
+					<div class="frame_area">
+						<div class="mockup" data-device="desktop">
+							<iframe src="https://publ.smjb.co.kr/SEMO2_0/SEMOR_MOB/html/vwmr/vwmr_rept_402A.html"
+								frameborder="0"></iframe>
+						</div>
+					</div>
+				</div>
+				<!-- //content_wrap -->
+			</div>
+			<!-- //content -->
+		</div>
+		<!-- //Container -->
+		<div class="footer">
+			<!-- Copy right -->
+			<div class="copyright_wrap">
+				<div class="copyright_box">
+					<p>· 본 이미지의 저작권은 로움아이티(주)에 있습니다.</p>
+				</div>
+				<div class="ft_menu"></div>
+			</div>
+			<!-- //Copy right -->
+		</div>
+	</div>
+	<!-- //wrap -->
+
+	<script>
+		$(function() {
+			$(".btn_style1_gray").click(function() {
+				var device = $(this).data('device');
+
+				$(this).addClass('active').siblings().removeClass('active');
+				$('.mockup').attr('data-device', device);
+			});
+	});
+	</script>
+</body>
+
+</html>

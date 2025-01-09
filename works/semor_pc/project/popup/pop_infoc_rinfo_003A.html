@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <title>infoc_rinfo_003A</title>
+    <link rel="stylesheet" href="../css/reset_taxp.css">
+    <link rel="stylesheet" href="../css/app_header.css"><!-- [D] 세무대리인용 header -->
+    <link rel="stylesheet" href="../css/content_taxp.css"><!-- [D] 세무대리인용 -->
+    <link rel="stylesheet" href="../css/semo_rept.css"><!-- [D] 세무대리인용 -->
+
+    <!-- custom scrollbar plugin css -->
+    <link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+    <script src="https://publ.roumit.com/js/firebase_include.js"></script>
+  <script src="../js/lib/jquery/jquery-1.12.4.min.js"></script>
+    <script src="../js/lib/jquery/jquery-ui-1.10.4.min.js"></script>
+    <!-- custom scrollbar plugin -->
+    <script src="../js/design/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="../js/design/jquery.placeholder.min.js"></script>
+    <script src="../js/lib/plugin/smart.popup.js"></script>
+    <script src="../js/comm/common.js"></script>
+    <script>
+        $(function () {
+            // Invoke the plugin
+            $('input, textarea').placeholder({ customClass: 'my-placeholder' });
+
+            // 보기설정 보기
+            $('#btn_showhide').on("click", function (event) {
+                if ($(this).hasClass("down")) {
+                    $("#tbl_area").show();
+                    $(this).removeClass("down");
+                } else {
+                    $("#tbl_area").hide();
+                    $(this).addClass("down");
+                }
+            });
+
+            // 보기설정 보기
+            $('.descPop .tit').on("click", function (event) {
+                $(this).parents(".descPop").toggleClass("active");
+            });
+
+
+
+        });
+    </script>
+
+</head>
+
+
+<body style="">
+    <div class="window_open">
+         <!-- pop_header 삭제 -->
+        <div class="pop_wrap h_auto" style="width:1000px;">
+            <!-- 팝업 컨텐츠 -->
+            <div class="pop_container">
+                <!-- 2024-01-15 min-height / height 수정 -->
+                <div style="" >
+                    <div class="infoc_guide">
+                        <div class="inner">
+                            <div class="top">
+                                <h3>
+                                    <span>미나리마켓(주) 포함 101건</span><br>
+                                    홈택스 수임정보를 실시간으로 수집합니다.
+                                </h3>
+                            </div>
+                            <div class="guide_cont" style="display: none;">
+                                <div class="qna_box">
+                                    <ul>
+                                        <li class="type_A">
+                                            <div class="qna_txt">
+                                                <p class="txt_Q">Q.</p>
+                                                <p>병의원 데이터는 어떻게 활용할 수 있나요?</p>
+
+                                            </div>
+    
+                                        </li>
+                                        <li class="type_B">
+                                            <div class="qna_txt">
+                                                <p class="txt_A">A.</p>
+                                                <p>
+                                                    홈택스에서 확정된 부가세 신고서를 기준으로<br>
+                                                    지난 신고 대비 부가율 추이 및 저축 금액을파악<br>
+                                                    할 수 있어요
+                                                </p>
+
+                                            </div>
+
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="guide_cover">
+                                <img src="../img/txof/bg/hometax_infoc.svg" alt="">
+                            </div>
+                      
+                        </div>
+                      
+                    </div>
+                    <div class="infoc_btn_wrap">
+                        <button type="button" class="active">거래처 계정으로 수집하기</button>
+                    </div>
+                    <div class="grayBox" style="display: ;">
+                        <div class="inner">
+                            <div class="title_wrap">
+                                <div class="left">
+                                    <h2 class="no_bg">■ 실시간정보수집 서비스 유의사항</h2>
+                                </div>
+                                <div class="right">
+                                    <img src="../img/txof/bg/bg_emojiBox.png" alt="">
+                                </div>
+                            </div>
+                            <div class="txtArea">
+                                <div class="serviceNoti">
+                                    <!-- emoji01, emoji02, emoji03으로 이미지 분기처리 -->
+                                    <span class="emoji02">다소지연</span>
+                                    <ul class="listDot">
+                                        <li>홈택스 법인세 신고 기간 : ~ 3월 31일</li>
+                                        <li>홈택스 사이트에 이용자가 집중되는 기간에는 이용자 증가로 인해 서비스가 다소 지연될 수 있으니 참고하시기 바랍니다.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //팝업 컨텐츠 -->
+        </div>
+    </div>
+</body>
+</html>

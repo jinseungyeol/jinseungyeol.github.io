@@ -1,0 +1,1548 @@
+<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+	<title>실시간정보수집 / 계정설정</title>
+	<link rel="stylesheet" href="../css/w2ui_2.0.css">
+	<link rel="stylesheet" href="../css/swiper-bundle.min.css">
+	<link rel="stylesheet" href="../css/reset_taxp.css">
+	<link rel="stylesheet" href="../css/app_header.css">
+	<link rel="stylesheet" href="../css/content_taxp.css">
+	<link rel="stylesheet" href="../css/semo_rept.css">
+	<link rel="stylesheet" href="../css/w2ui-2.0.css">
+
+	<!-- custom scrollbar plugin css -->
+	<link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+	<script src="https://publ.roumit.com/js/firebase_include.js"></script>
+	<script src="../js/lib/jquery/jquery-1.12.4.min.js"></script>
+	<script src="../js/lib/jquery/jquery-ui-1.10.4.min.js"></script>
+	<script src="../js/lib/swiper/swiper-bundle.min.js"></script>
+	<!-- custom scrollbar plugin -->
+	<script src="../js/lib/plugin/w2ui.js"></script>
+	<script src="../js/design/jquery.mCustomScrollbar.concat.min.js"></script>
+	<script src="../js/design/jquery.placeholder.min.js"></script>
+	<script src="../js/lib/plugin/smart.popup.js"></script>
+	<script src="../js/lib/chart/chart-3.5.1.min.js"></script>
+	<script src="../js/comm/common.js"></script>
+</head>
+
+<body class="lnb_bg lnb_bg">
+
+
+	<!-- popup -->
+	<!-- 직접 등록하기 -->
+	<div class="overlay" style="display:  ;">
+		<div class="pop_wrap bd_round" style="width:972px;">
+			<!-- 팝업 헤더 -->
+			<div class="pop_header">
+				<h1>직접 등록하기</h1>
+				<a href="javascript:;" id="btn_topX" class="btn_popclose">
+					<img src="../img/txof/btn/btn_popClose_white.gif" alt="팝업닫기">
+				</a>
+			</div>
+			<!-- 팝업 컨텐츠 -->
+			<div class="pop_container">
+				<section class="group_wrap mgb0">
+					<article class="top_srch">
+						<div class="left">
+							<h2>등록할 거래처 : <span id="bzaq_list_info"> 세모리포트</span></h2>
+						</div>
+					</article>
+					<div class="pop_tab">
+						<ul>
+							<li class="active"><button type="button">전체</button></li>
+							<li><button type="button">기본</button></li>
+							<li><button type="button">배달</button></li>
+							<li><button type="button">쇼핑몰</button></li>
+							<li><button type="button">PG</button></li>
+							<li><button type="button">숙박업</button></li>
+							<li><button type="button">여행문화</button></li>
+						</ul>
+					</div>
+					<!-- 리스트 -->
+					<div class="evdc_wrap">
+						<div class="info_banner">
+							<div class="title">
+								<img src="../img/txof/ico/ico_certi.svg" alt="">
+								<h2>계정 수집가능 기관 안내 : <span> 홈택스, 배달앱(배달의민족, 요기요, 쿠팡이츠)</span>
+								</h2>
+							</div>
+							<p class="desc_01">· 홈택스 ID/PW 등록 시, 수임이전 신고내역 (원천세, 부가세) 데이터 수집이 가능합니다. </p>
+							<p class="desc_01">· 매월 실시간으로 수집된 배달앱 매출 정보는 사업분석, 매출, 예상부가세 보고서에 반영 후, 분기마다 홈택스 세무대리 데이터로 업데이트 됩니다.</p>
+							<p class="desc_01">· 병의원 인증서 등록 시 요양기관정보마당(요양급여 · 의료급여) 데이터를 가져올 수 있습니다.</p>
+							<p class="desc_01">· 배달앱 3사 외 나머지 PG 및 온라인 매출은 실시간 정보수집이 불가하여 ID/PW 등록만 가능합니다.
+
+							</p>
+							<p class="desc_01" id="rprt_save_info" style="display: none;">· 보고서 데이터 저장을 원할 경우 [저장하기] 버튼을 클릭 해야지만 수정된 항목이 저장됩니다.</p>
+						</div>
+						<!-- 기본 -->
+						<div class="item">
+							<div class="tit_area">
+								<strong class="tit">· 기본</strong>
+							</div>
+							<ul class="evdc_list">
+								<li class="EVDC_10">
+									<div class="box">
+										<p class="name">홈택스</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+									<div class="badge">
+										<img src="../img/txof/ico/ico_certi.svg" alt="">
+									</div>
+								</li>
+								<li class="EVDC_30 active"> <!-- active 클래스 추가시 포커스 -->
+									<div class="box">
+										<p class="name">여신금융협회</p>
+										<div class="id">
+											<span>ID : </span>
+											<em>semo2024semo2024semo2024</em>
+										</div>
+									</div>
+									<div class="badge">
+										<img src="../img/txof/ico/ico_certi.svg" alt="">
+									</div>
+								</li>
+								<li class="EVDC_99 error"> <!-- 유효성 검사 실패시 error 클래스 -->
+									<div class="box">
+										<p class="name">경리나라</p>
+										<button class="btn_style2_g"><span>연결오류</span></button>
+									</div>
+									<div class="badge">
+										<img src="../img/txof/ico/ico_certi.svg" alt="">
+									</div>
+								</li>
+							</ul>
+						</div>
+						<!-- //기본 -->
+						<!-- 배달 -->
+						<div class="item">
+							<div class="evdc_empty_box"></div>
+							<div class="tit_area">
+								<strong class="tit">· 배달</strong>
+							</div>
+							<ul class="evdc_list">
+								<li class="EVDC_40000021">
+									<div class="box">
+										<p class="name">배달의민족</p>
+										<button class="btn_style2_g"><span>가나다라마바사</span></button>
+									</div>
+								</li>
+								<li class="EVDC_40000022">
+									<div class="box">
+										<p class="name">요기요</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_40000026">
+									<div class="box">
+										<p class="name">쿠팡이츠</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_40000027">
+									<div class="box">
+										<p class="name">땡겨요</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_40000028">
+									<div class="box">
+										<p class="name">위메프오</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_40000029">
+									<div class="box">
+										<p class="name">배달특급</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_40000030">
+									<div class="box">
+										<p class="name">셔틀 딜리버리</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<!-- //배달 -->
+						<!-- 쇼핑몰 -->
+						<div class="item">
+							<div class="tit_area">
+								<strong class="tit">· 쇼핑몰</strong>
+							</div>
+							<ul class="evdc_list">
+								<li class="EVDC_40000001">
+									<div class="box">
+										<p class="name">11번가</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_40000009">
+									<div class="box">
+										<p class="name">스마트스토어</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_40000008">
+									<div class="box">
+										<p class="name">옥션</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_40000007">
+									<div class="box">
+										<p class="name">G마켓</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_40000010">
+									<div class="box">
+										<p class="name">쿠팡윙</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_C0000014">
+									<div class="box">
+										<p class="name">쿠팡(로켓배송)</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_40000005">
+									<div class="box">
+										<p class="name">인터파크</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_40000011">
+									<div class="box">
+										<p class="name">위메프</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_40000013">
+									<div class="box">
+										<p class="name">카카오스토어</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_40000012">
+									<div class="box">
+										<p class="name">티몬</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_40000016">
+									<div class="box">
+										<p class="name">CJ몰</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_40000015">
+									<div class="box">
+										<p class="name">롯데닷컴</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_40000020">
+									<div class="box">
+										<p class="name">신세계몰</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_40000083">
+									<div class="box">
+										<p class="name">도매꾹</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_40000084">
+									<div class="box">
+										<p class="name">화해</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_40000085">
+									<div class="box">
+										<p class="name">롯데온</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_C0000009">
+									<div class="box">
+										<p class="name">스마트콘</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_C0000013">
+									<div class="box">
+										<p class="name">즐거운</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_C0000010">
+									<div class="box">
+										<p class="name">에이블리</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_C0000011">
+									<div class="box">
+										<p class="name">오늘의집</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_C0000002">
+									<div class="box">
+										<p class="name">GS SHOP</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_C0000001">
+									<div class="box">
+										<p class="name">AK몰</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_C0000003">
+									<div class="box">
+										<p class="name">K쇼핑</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_C0000004">
+									<div class="box">
+										<p class="name">NS홈쇼핑</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_C0000005">
+									<div class="box">
+										<p class="name">공영쇼핑</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_C0000006">
+									<div class="box">
+										<p class="name">다이소몰</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_C0000007">
+									<div class="box">
+										<p class="name">동원몰</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_C0000008">
+									<div class="box">
+										<p class="name">멸치쇼핑</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_C0000012">
+									<div class="box">
+										<p class="name">현대이지웰</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_C0000015">
+									<div class="box">
+										<p class="name">HIMART</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_C0000016">
+									<div class="box">
+										<p class="name">현대Hmall</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_C0000017">
+									<div class="box">
+										<p class="name">홈&쇼핑</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<!-- //쇼핑몰 -->
+						<!-- PG -->
+						<div class="item">
+							<div class="tit_area">
+								<strong class="tit">· PG</strong>
+							</div>
+							<ul class="evdc_list">
+								<li class="EVDC_42000061">
+									<div class="box">
+										<p class="name">네이버페이</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_42000062">
+									<div class="box">
+										<p class="name">KCP</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_42000063">
+									<div class="box">
+										<p class="name">페이코</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_42000065">
+									<div class="box">
+										<p class="name">페이앱</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_42000066">
+									<div class="box">
+										<p class="name">KG모빌리언스</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_C0000018">
+									<div class="box">
+										<p class="name">KG이니시스</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_C0000027">
+									<div class="box">
+										<p class="name">토스페이먼츠</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_C0000019">
+									<div class="box">
+										<p class="name">나이스페이</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_C0000026">
+									<div class="box">
+										<p class="name">카카오페이</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_C0000022" title="헥토파이낸셜(세틀뱅크)">
+									<div class="box">
+										<p class="name">헥토파이낸셜(세틀뱅크)</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_C0000023">
+									<div class="box">
+										<p class="name">웰컴페이먼츠</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_C0000020">
+									<div class="box">
+										<p class="name">다날</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_C0000024">
+									<div class="box">
+										<p class="name">이지페이</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_C0000029" title="페이조아(키움페이)">
+									<div class="box">
+										<p class="name">페이조아(키움페이)</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_C0000021" title="다우데이타(키움페이)">
+									<div class="box">
+										<p class="name">다우데이타(키움페이)</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_C0000030">
+									<div class="box">
+										<p class="name">페이투페이</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_C0000028">
+									<div class="box">
+										<p class="name">페이누리</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_C0000025">
+									<div class="box">
+										<p class="name">제로페이</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<!-- //PG -->
+						<!-- 숙박업 -->
+						<div class="item">
+							<div class="tit_area">
+								<strong class="tit">· 숙박업</strong>
+							</div>
+							<ul class="evdc_list">
+								<li class="EVDC_40000042">
+									<div class="box">
+										<p class="name">여기어때</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_40000043">
+									<div class="box">
+										<p class="name">야놀자</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_40000055">
+									<div class="box">
+										<p class="name">데일리호텔</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<!-- //숙박업 -->
+						<!-- 여행문화 -->
+						<div class="item">
+							<div class="tit_area">
+								<strong class="tit">· 숙박업</strong>
+							</div>
+							<ul class="evdc_list">
+								<li class="EVDC_41000010">
+									<div class="box">
+										<p class="name">쿠팡여행</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_41000081">
+									<div class="box">
+										<p class="name">티몬여행</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_41000082">
+									<div class="box">
+										<p class="name">위메프</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<!-- //여행문화 -->
+					</div>
+					<!-- 리스트 -->
+					<div class="pop_dv_wrap" style="display: none;">
+						<div class="idpw_wrap">
+							<div class="idpw_box">
+								<div class="idpw">
+									<label>아이디</label>
+									<div class="src_box">
+										<div class="inner">
+											<input type="text" placeholder="아이디를 입력해주세요.">
+											<div class="dtl_box">
+												<button class="dtl_btn" type="button">
+													<img src="../img/txof/ico/close_g_20x20.png" alt="초기화버튼">
+												</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="idpw">
+									<label>비밀번호</label>
+									<div class="src_box">
+										<div class="inner">
+											<input type="password" placeholder="비밀번호를 입력해주세요.">
+											<div class="dtl_box">
+												<button class="dtl_btn" type="button">
+													<img src="../img/txof/ico/close_g_20x20.png" alt="초기화버튼">
+												</button>
+											</div>
+										</div>
+									</div>
+									<button class="btn_toggle_pw"></button> <!-- active 클래스로 활성화 -->
+								</div>
+							</div>
+							<div class="pop_db_btn">
+								<button type="button">저장</button>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+			<!-- //팝업 컨텐츠 -->
+		</div>
+	</div>
+	<!-- //ID/PW로 등록하기 -->
+	<!-- 사장님께 등록 요청하기 -->
+	<div class="overlay" style="display: none  ;">
+		<div class="pop_wrap bd_round" style="width:972px;">
+			<!-- 팝업 헤더 -->
+			<div class="pop_header">
+				<h1>사장님께 등록 요청하기</h1>
+				<a href="javascript:;" id="btn_topX" class="btn_popclose">
+					<img src="../img/txof/btn/btn_popClose_white.gif" alt="팝업닫기">
+				</a>
+			</div>
+			<!-- 팝업 컨텐츠 -->
+			<div class="pop_container">
+				<section class="group_wrap mgb0">
+					<article class="top_srch">
+						<div class="left">
+							<h2>사장님에게 계정을 요청할 서비스를 모두 선택해주세요.</h2>
+						</div>
+						<div class="right">
+							<div class="button_wrap" id="btn_conn_mon">
+								<a href="#none" class="btn_style2_g"><span>전체선택</span></a>
+							</div>
+						</div>
+					</article>
+					<!-- 탭메뉴 -->
+					<div class="pop_tab">
+						<ul>
+							<li class="active"><button type="button">전체</button></li>
+							<li><button type="button">기본</button></li>
+							<li><button type="button">배달</button></li>
+							<li><button type="button">쇼핑몰</button></li>
+							<li><button type="button">PG</button></li>
+							<li><button type="button">숙박업</button></li>
+							<li><button type="button">여행문화</button></li>
+							<li><button type="button">병의원</button></li>
+						</ul>
+					</div>
+					<!-- //탭메뉴 -->
+					<!-- 리스트 -->
+					<div class="evdc_wrap" style="display: ;">
+						<!-- 기본 -->
+						<div class="item">
+							<div class="tit_area">
+								<strong class="tit">· 기본</strong>
+							</div>
+							<ul class="evdc_list">
+								<li class="EVDC_10">
+									<div class="box">
+										<p class="name">홈택스</p>
+									</div>
+								</li>
+								<li class="EVDC_30 active"> <!-- active 클래스 추가시 포커스 -->
+									<div class="box">
+										<p class="name">여신금융협회</p>
+									</div>
+								</li>
+								<li class="EVDC_99">
+									<div class="box">
+										<p class="name">경리나라</p>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<!-- //기본 -->
+						<!-- 배달 -->
+						<div class="item">
+							<div class="tit_area">
+								<strong class="tit">· 배달</strong>
+							</div>
+							<ul class="evdc_list">
+								<li class="EVDC_40000021">
+									<div class="box">
+										<p class="name">배달의민족</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_40000022">
+									<div class="box">
+										<p class="name">요기요</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_40000026">
+									<div class="box">
+										<p class="name">쿠팡이츠</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_40000027">
+									<div class="box">
+										<p class="name">땡겨요</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_40000028">
+									<div class="box">
+										<p class="name">위메프오</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_40000029">
+									<div class="box">
+										<p class="name">배달특급</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_40000030">
+									<div class="box">
+										<p class="name">셔틀 딜리버리</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_C000003">
+									<div class="box">
+										<p class="name">대구로</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<!-- //배달 -->
+						<!-- 쇼핑몰 -->
+						<div class="item">
+							<div class="tit_area">
+								<strong class="tit">· 쇼핑몰</strong>
+							</div>
+							<ul class="evdc_list">
+								<li class="EVDC_40000001">
+									<div class="box">
+										<p class="name">11번가</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_40000009">
+									<div class="box">
+										<p class="name">스마트스토어</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_40000008">
+									<div class="box">
+										<p class="name">옥션</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_40000007">
+									<div class="box">
+										<p class="name">G마켓</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_40000010">
+									<div class="box">
+										<p class="name">쿠팡윙</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_C0000014">
+									<div class="box">
+										<p class="name">쿠팡(로켓배송)</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_40000005">
+									<div class="box">
+										<p class="name">인터파크</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_40000011">
+									<div class="box">
+										<p class="name">위메프</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_40000013">
+									<div class="box">
+										<p class="name">카카오스토어</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_40000012">
+									<div class="box">
+										<p class="name">티몬</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_40000016">
+									<div class="box">
+										<p class="name">CJ몰</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_40000015">
+									<div class="box">
+										<p class="name">롯데닷컴</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_40000020">
+									<div class="box">
+										<p class="name">신세계몰</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_40000083">
+									<div class="box">
+										<p class="name">도매꾹</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_40000084">
+									<div class="box">
+										<p class="name">화해</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_40000085">
+									<div class="box">
+										<p class="name">롯데온</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_C0000009">
+									<div class="box">
+										<p class="name">스마트콘</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_C0000013">
+									<div class="box">
+										<p class="name">즐거운</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_C0000010">
+									<div class="box">
+										<p class="name">에이블리</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_C0000011">
+									<div class="box">
+										<p class="name">오늘의집</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_C0000002">
+									<div class="box">
+										<p class="name">GS SHOP</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_C0000001">
+									<div class="box">
+										<p class="name">AK몰</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_C0000003">
+									<div class="box">
+										<p class="name">K쇼핑</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_C0000004">
+									<div class="box">
+										<p class="name">NS홈쇼핑</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_C0000005">
+									<div class="box">
+										<p class="name">공영쇼핑</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_C0000006">
+									<div class="box">
+										<p class="name">다이소몰</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_C0000007">
+									<div class="box">
+										<p class="name">동원몰</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_C0000008">
+									<div class="box">
+										<p class="name">멸치쇼핑</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_C0000012">
+									<div class="box">
+										<p class="name">현대이지웰</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_C0000015">
+									<div class="box">
+										<p class="name">HIMART</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_C0000016">
+									<div class="box">
+										<p class="name">현대Hmall</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_C0000017">
+									<div class="box">
+										<p class="name">홈&쇼핑</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<!-- //쇼핑몰 -->
+						<!-- PG -->
+						<div class="item">
+							<div class="tit_area">
+								<strong class="tit">· PG</strong>
+							</div>
+							<ul class="evdc_list">
+								<li class="EVDC_42000061">
+									<div class="box">
+										<p class="name">네이버페이</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_42000062">
+									<div class="box">
+										<p class="name">KCP</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_42000063">
+									<div class="box">
+										<p class="name">페이코</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_42000065">
+									<div class="box">
+										<p class="name">페이앱</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_42000066">
+									<div class="box">
+										<p class="name">KG모빌리언스</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_C0000018">
+									<div class="box">
+										<p class="name">KG이니시스</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_C0000027">
+									<div class="box">
+										<p class="name">토스페이먼츠</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_C0000019">
+									<div class="box">
+										<p class="name">나이스페이</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_C0000026">
+									<div class="box">
+										<p class="name">카카오페이</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_C0000022" title="헥토파이낸셜(세틀뱅크)">
+									<div class="box">
+										<p class="name">헥토파이낸셜(세틀뱅크)</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_C0000023">
+									<div class="box">
+										<p class="name">웰컴페이먼츠</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_C0000020">
+									<div class="box">
+										<p class="name">다날</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_C0000024">
+									<div class="box">
+										<p class="name">이지페이</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_C0000029" title="페이조아(키움페이)">
+									<div class="box">
+										<p class="name">페이조아(키움페이)</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_C0000021" title="다우데이타(키움페이)">
+									<div class="box">
+										<p class="name">다우데이타(키움페이)</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_C0000030">
+									<div class="box">
+										<p class="name">페이투페이</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_C0000028">
+									<div class="box">
+										<p class="name">페이누리</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_C0000025">
+									<div class="box">
+										<p class="name">제로페이</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<!-- //PG -->
+						<!-- 숙박업 -->
+						<div class="item">
+							<div class="tit_area">
+								<strong class="tit">· 숙박업</strong>
+							</div>
+							<ul class="evdc_list">
+								<li class="EVDC_40000042">
+									<div class="box">
+										<p class="name">여기어때</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_40000043">
+									<div class="box">
+										<p class="name">야놀자</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_40000055">
+									<div class="box">
+										<p class="name">데일리호텔</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<!-- //숙박업 -->
+						<!-- 여행문화 -->
+						<div class="item">
+							<div class="tit_area">
+								<strong class="tit">· 숙박업</strong>
+							</div>
+							<ul class="evdc_list">
+								<li class="EVDC_41000010">
+									<div class="box">
+										<p class="name">쿠팡여행</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_41000081">
+									<div class="box">
+										<p class="name">티몬여행</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+								<li class="EVDC_41000082">
+									<div class="box">
+										<p class="name">위메프</p>
+										<button class="btn_style2_g"><span>등록하기</span></button>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<!-- 병의원 -->
+						<div class="item" >
+							
+						</div>
+						<!-- //여행문화 -->
+					</div>
+					<!-- 병의원 계정 등록 안내 -->
+					 
+					<article class="customer_info-box" style="display:  none;">
+						<div class="info-box">
+							<div class="cover">
+								<img src="../img/txof/bg/rocket.svg" alt="">
+							</div>
+							<div class="title">
+								<h2>병의원 부가서비스 가입이 필요합니다.</h2>
+							</div>
+							<div class="desc">
+								<p>지금 <span class="txt_sig">병의원(요양급여 · 의료급여)</span> 서비스를 가입하고 이용해보세요.</p>
+							</div>
+							<div class="tac">
+								<a href="#none" class="btn_style_big">
+									<span>병의원 서비스 가입하기</span>
+								</a>
+							</div>
+						</div>
+					</article>
+					<article class="customer_info-box" style="display: none ;">
+						<div class="info-box">
+							<div class="cover">
+								<img src="../img/txof/bg/no_certi.svg" alt="">
+							</div>
+							<div class="title">
+								<h2>등록된 공동인증서가 없습니다.</h2>
+							</div>
+							<div class="desc">
+								<p>지금 거래처의 공동인증서를 등록하고 <span class="txt_sig">병의원(요양급여·의료급여)</span> 데이터를 수집하세요.</p>
+								<p><span class="txt_sig">진료수입 분석표</span>를 만들어서 제공해 드립니다.</p>
+							</div>
+							<div class="tac">
+								<a href="#none" class="btn_style_big">
+									<span>병의원 인증서 등록하기</span>
+								</a>
+							</div>
+						</div>
+					</article>
+					<article class="info_box7 gray" id="" style="display:none ;">
+						<div class="area_tit">
+							<h3 class="tit">요양기관정보마당 실시간 정보수집 인증서 설정</h3> 
+						</div>
+						<div class="submit_wrap">
+							<div class="left">
+								<h2>요양기관정보마당 인증서</h2>
+							</div>
+							<div class="right">
+								<button type="button" class="btn_style2_g" id="btn_del_cert"><span>삭제</span></button>
+								<button type="button" class="btn_style1_b" id="btn_del_upd"><span>변경</span></button>
+							</div>
+						</div>
+						<div class="kakao_ch_infobox mgt10">
+							<div class="tit">[인증서 정보]</div>
+							<ul>
+								<li>
+									<div class="name">▪ 인증서명</div>
+									<div class="info">: &nbsp;cn=마크세무회계(29754)0003681201706291348515,ou=29754,ou=IBK,ou=xUse4Esero,o=yessign,c=kr</div>
+								</li>
+								<!-- 만기일 D-30 class error  -->
+								<li class="error">
+									<div class="name">▪ 만기일</div>
+									<div class="info">: &nbsp;2024-07-05(만기)</div>
+								</li>
+								<li>
+									<div class="name">▪ 관리번호</div>
+									<div class="info">: &nbsp;010-9618-0998</div>
+								</li>
+								<li>
+									<div class="name">▪ 등록일</div>
+									<div class="info">: &nbsp;2023-12-26 10:20:58 / 김학주 (mark.kim)</div>
+								</li>
+							</ul>
+						</div>
+					</article>
+
+					<!-- 리스트 -->
+					<div class="pop_db_btn mgt15 flex_cce">
+						<button type="button">요청</button>
+					</div>
+					<!-- //팝업 컨텐츠 -->
+				</section>
+			</div>
+		</div>
+	</div>
+	<!-- //사장님께 등록 요청하기-->
+	<!-- 계정 등록방법 -->
+	<div class="overlay" style="display: none ;">
+		<div class="pop_wrap bd_round" style="width:500px;">
+			<!-- 팝업 헤더 -->
+			<div class="pop_header">
+				<h1>계정 등록방법</h1>
+				<a href="javascript:;" id="btn_topX" class="btn_popclose">
+					<img src="../img/txof/btn/btn_popClose_white.gif" alt="팝업닫기">
+				</a>
+			</div>
+			<!-- 팝업 컨텐츠 -->
+			<div class="pop_container">
+				<ul class="regipop">
+					<li class="ico1">
+						<h2>ID/PW(또는 병의원 공동인증서) 등록하기</h2>
+						<p>ID/PW로 등록하면 유효한 계정인지 바로 파악이 가능합니다.</p>
+					</li>
+
+					<li class="ico2" id="addMoreTrcoBtn">
+						<h2>사장님께 등록 요청하기</h2>
+						<p>사장님에게 계정등록을 카카오톡으로 요청할 수 있습니다.</p>
+					</li>
+
+					<!-- 2021-10-14 -->
+					<li class="ico3" id="eseroBtn">
+						<h2>거래처 전체 엑셀로 일괄 등록하기</h2>
+						<p>엑셀 파일로 업로드하면 원하는 계정들을 일괄로 등록할 수 있습니다.</p>
+					</li>
+					<!-- //2021-10-14 -->
+				</ul>
+				<!-- //팝업 컨텐츠 -->
+			</div>
+		</div>
+	</div>
+	<!-- //계정 등록방법 -->
+	<!-- 엑셀로 일괄 등록하기 : 등록된 파일이 없습니다. -->
+	<div class="overlay" style="display: none;">
+		<div class="pop_wrap bd_round" style="width:1000px;">
+			<!-- 팝업 헤더 -->
+			<div class="pop_header">
+				<h1>계정 일괄 등록</h1>
+				<a href="#none" onclick="self.close()" class="btn_popclose"><img src="../img/txof/btn/btn_popClose_white.gif"
+						alt="팝업닫기"></a>
+			</div>
+			<!-- //팝업 헤더 -->
+			<!-- 팝업 컨텐츠 -->
+			<div class="pop_container">
+				<section class="group_wrap">
+					<article class="top_srch">
+						<div class="left">
+							<h2>엑셀로 일괄 등록하기</h2>
+						</div>
+						<div class="right">
+							<div class="button_wrap" id="btn_conn_mon">
+								<a href="#none" class="btn_style2_g"><span>엑셀 양식 다운로드</span></a>
+								<a href="#none" class="btn_style1_b"><span>파일 불러오기</span></a>
+							</div>
+						</div>
+					</article>
+					<div class="tblScrollX pd0" style="overflow-x: hidden; width: ">
+						<table class="rprt_tbl" summary="">
+							<caption></caption>
+							<colgroup>
+								<col style="width: 200px;">
+								<col style="width: 120px;">
+								<col style="width: 120px;">
+								<col style="width: 120px;">
+								<col>
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col" class="t_center tit">
+										<div>사업자</div>
+									</th>
+									<th scope="col" class="t_center">
+										<div>등록요청계정</div>
+									</th>
+									<th scope="col" class="t_center">
+										<div>성공</div>
+									</th>
+									<th scope="col" class="t_center">
+										<div>실패</div>
+									</th>
+									<th scope="col" class="t_center">
+										<div>비고</div>
+									</th>
+								</tr>
+							</thead>
+						</table>
+						<!-- 등록된 계정이 없습니다. -->
+						<div class="customer_info-box">
+							<div class="info-box">
+								<div class="cover">
+									<img src="../img/txof/bg/no_customer.svg" alt="">
+								</div>
+								<div class="title">
+									<h2>등록된 파일이 없습니다.</h2>
+								</div>
+							</div>
+						</div>
+						<!-- //등록된 계정이 없습니다. -->
+					</div>
+					<!-- 하단버튼 -->
+					<div class="pop_db_btn mgt15 flex_cce">
+						<button type="button">등록</button>
+					</div>
+				</section>
+				<!-- //하단버튼 -->
+				</div>
+			</div>
+			<!-- //팝업 컨텐츠 -->
+	</div>
+	<!-- //엑셀로 일괄 등록하기 : 등록된 파일이 없습니다. -->
+	<!-- 엑셀로 일괄 등록하기 : 등록요청 계정 -->
+	<div class="overlay" style="display: none;">
+		<div class="pop_wrap bd_round" style="width:1000px;">
+			<!-- 팝업 헤더 -->
+			<div class="pop_header">
+				<h1>엑셀로 일괄 등록하기</h1>
+				<a href="#none" onclick="self.close()" class="btn_popclose"><img src="../img/txof/btn/btn_popClose_white.gif"
+						alt="팝업닫기"></a>
+			</div>
+			<!-- //팝업 헤더 -->
+			<!-- 팝업 컨텐츠 -->
+			<div class="pop_container">
+				<section class="group_wrap">
+					<article class="top_srch">
+						<div class="left">
+							<h2>등록요청 계정</h2>
+						</div>
+						<div class="right">
+							<div class="button_wrap" id="btn_conn_mon">
+								<a href="#none" class="btn_style2_g"><span>엑셀 양식 다운로드</span></a>
+								<a href="#none" class="btn_style1_b"><span>파일 불러오기</span></a>
+							</div>
+						</div>
+					</article>
+					<div class="tblScrollX pd0" style="overflow-x: hidden; width: ">
+						<table class="rprt_tbl" summary="">
+							<caption></caption>
+							<colgroup>
+								<col style="width: 300px;">
+								<col style="width: 130px;">
+								<col style="width: 130px;">
+								<col style="width: 130px;">
+								<col>
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col" class="t_center tit">
+										<div>사업자</div>
+									</th>
+									<th scope="col" class="t_center">
+										<div>등록요청계정</div>
+									</th>
+									<th scope="col" class="t_center">
+										<div>성공</div>
+									</th>
+									<th scope="col" class="t_center">
+										<div>실패</div>
+									</th>
+									<th scope="col" class="t_center">
+										<div>비고</div>
+									</th>
+								</tr>
+							</thead>
+							<tbody style="display: table-tbody;">
+								<tr>
+									<td class="tit"><p class="val">Bazzi standard.</p></td>
+									<td><div class="tar"><p class="val">300건</p></div></td>
+									<td><div class="tar"><p class="val">300건</p></div></td>
+									<td><div class="tar"><p class="val txt_r">300건</p></div></td>
+									<td><div class=""><a href="javascript:;" class="move_link_arr">실패계정확인하기</a></div></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<!-- 하단버튼 -->
+					<div class="pop_db_btn mgt15 flex_cce">
+						<button type="button" class="active">등록</button>
+					</div>
+					<!-- //하단버튼 -->
+				</section>
+				</div>
+			</div>
+			<!-- //팝업 컨텐츠 -->
+	</div>
+	<!-- //엑셀로 일괄 등록하기 : 등록요청 계정 -->
+	<!-- 엑셀로 일괄 등록하기 : 실패계정 목록 -->
+	<div class="overlay" style="display: none;">
+		<div class="pop_wrap bd_round" style="width:1000px;">
+			<!-- 팝업 헤더 -->
+			<div class="pop_header">
+				<h1>엑셀로 일괄 등록하기</h1>
+				<a href="#none" onclick="self.close()" class="btn_popclose"><img src="../img/txof/btn/btn_popClose_white.gif"
+						alt="팝업닫기"></a>
+			</div>
+			<!-- //팝업 헤더 -->
+			<!-- 팝업 컨텐츠 -->
+			<div class="pop_container">
+				<section class="group_wrap">
+					<article class="top_srch">
+						<div class="left">
+							<h2>실패계정 목록</h2>
+						</div>
+						<div class="right">
+							<div class="button_wrap" id="btn_conn_mon">
+								<a href="#none" class="btn_style2_g"><span>실패목록 다운로드</span></a>
+							</div>
+						</div>
+					</article>
+					<div class="tblScrollX pd0" style="overflow-x: hidden; width: ">
+						<table class="rprt_tbl" summary="">
+							<caption></caption>
+							<colgroup>
+								<col style="width: 300px;">
+								<col style="width: 80px;">
+								<col>
+								<col style="width: 200px;">
+								<col style="width: 200px;">
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col" class="t_center tit">
+										<div>사업자</div>
+									</th>
+									<th scope="col" class="t_center">
+										<div>구분</div>
+									</th>
+									<th scope="col" class="t_center">
+										<div>서비스명</div>
+									</th>
+									<th scope="col" class="t_center">
+										<div>ID</div>
+									</th>
+									<th scope="col" class="t_center">
+										<div>PW</div>
+									</th>
+								</tr>
+							</thead>
+							<tbody style="display: table-tbody;">
+								<tr>
+									<td class="tit">
+										<p class="val">Bazzi standard.</p>
+									</td>
+									<td>
+										<div class="">
+											<p class="val">배달앱</p>
+										</div>
+									</td>
+									<td>
+										<div class="">
+											<p class="val">배달의 민족</p>
+										</div>
+									</td>
+									<td>
+										<div class="">
+											<p class="val">배민101</p>
+										</div>
+									</td>
+									<td>
+										<div class="">
+											<p class="val">123QWER!@</p>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<!-- 하단버튼 -->
+					<div class="pop_db_btn mgt15 flex_cce">
+						<button type="button" class="active">확인</button>
+					</div>
+					<!-- //하단버튼 -->
+				</section>
+			</div>
+		</div>
+		<!-- //팝업 컨텐츠 -->
+	</div>
+	<!-- //엑셀로 일괄 등록하기 : 실패계정 목록 -->
+	<!-- 계정 등록을 요청 할까요? -->
+	<div class="overlay" style="display:none;">
+		<div class="pop_wrap round_16">
+			<div class="pop_inner">
+				<div class="info_type02">
+					<!-- 2024-03-08 top 삭제 -->
+					<div class="top" id="top_area">
+
+						<div class="right">
+							<div class="desc_wrap">
+								<ul>
+									<li class="list01">
+										<span id="req_biz_cnt"><strong>로움레몬</strong> 포함 2개 거래처<br></span>
+										<p class="txt_01">대상으로<b> 계정 등록 요청을 할까요?</b></p>
+										<p class="mgt10 txt_sig">※ 메시지 내용은 사장님의 정보에 맞춰서 발송됩니다.</p>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="msg_preview">
+						<div class="previewBox mgb20">
+							<div class="tit">
+								<h1>안내메시지 미리보기</h1>
+							</div>
+							<div class="info_text">
+								#{호윤식당앤딜리버리} 사장님,
+								#{로움 세무회계서울영등포 당산점}의<br>
+								서비스에 가입해주셔서 감사합니다.<br>
+							</div>
+							<div class="info_text">
+								◼ 사업장명 : #{호윤식당앤딜리버리}<br>
+								◼ 나의 고객번호 : #{3295}
+							</div>
+							<div class="info_text">
+								아래 버튼을 눌러 자세히 확인해보세요!
+							</div>
+	
+						</div>
+					</div>
+					<div class="bottom">
+						<div class="info_text tac">
+								<span class="biz_blue1">예상 차감 : 18 Biz포인트</span>
+						</div>
+						<div class="pop_db_btn">
+							<button type="button">
+								다음에 하기
+							</button>
+							<button type="button" class="active">
+								발송하기
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //계정 등록을 요청 할까요? -->
+	<!-- 계정정보 수정 -->
+	<div class="overlay" style="display:  none;">
+		<div class="pop_wrap bd_round" style="width: 360px">
+			<div class="pop_header">
+				<h1>계정정보 수정</h1>
+				<a href="#none" onclick="self.close()" class="btn_popclose"><img src="../img/txof/btn/btn_popClose_white.gif" alt="팝업닫기"></a>
+			</div>
+			<div class="pop_container">
+				<div>
+					<p style="font-size:15px;letter-spacing:-1px;"><strong>쿠팡이츠 계정 정보</strong></p>
+					<div class="tbl_inqbx mgt15">
+						<div class="info_inner">
+							<p>
+								<span class="tit">아이디</span>
+								<span class="ipt"><input type="text" placeholder="아이디를 입력하세요" value="taxcard"></span>
+							</p>
+							<p>
+								<span class="tit">비밀번호</span>
+								<span class="ipt"><input type="password" placeholder="비밀번호를 입력하게요" value="Loremipsumdolorsit"></span>
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- 하단버튼 -->
+				<div class="pop_db_btn mgt20">
+					<button type="button">취소</button>
+					<button type="button" class="active">저장</button>
+				</div>
+				<!-- //하단버튼 -->
+
+			</div>
+		</div>
+	</div>
+	<!-- //계정정보 수정 -->
+	<!-- //popup -->
+
+
+</body>
+
+</html>

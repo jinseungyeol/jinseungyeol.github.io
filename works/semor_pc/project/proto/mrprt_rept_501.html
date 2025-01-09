@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<title>부가세 분석 보고서(요약)</title>
+<link rel="stylesheet" href="../css/reset_taxp.css">
+<link rel="stylesheet" href="../css/app_header.css"><!-- [D] 세무대리인용 header -->
+<link rel="stylesheet" href="../css/content_taxp.css"><!-- [D] 세무대리인용 -->
+
+<!-- custom scrollbar plugin css -->
+<link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+<script src="https://publ.roumit.com/js/firebase_include.js"></script>
+  <script src="../js/lib/jquery/jquery-1.12.4.min.js"></script>
+<script src="../js/lib/jquery/jquery-ui-1.10.4.min.js"></script>
+<!-- custom scrollbar plugin -->
+<script src="../js/design/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../js/design/jquery.placeholder.min.js"></script>
+<script src="../js/lib/plugin/smart.popup.js"></script>
+<script src="../js/comm/common.js"></script>
+<script>
+$(function(){
+	// Invoke the plugin
+	$('input, textarea').placeholder({customClass:'my-placeholder'});
+});
+
+
+</script>
+
+</head>
+<body class="lnb_bg"><!-- [D] 메뉴영역(접기 : class="fold", 펼치기 : class="lnb_bg") -->
+
+<!-- 수임처 개선 -->
+<!-- header -->
+<div class="app_header">
+	<div class="app_header_inner">
+		<div class="ah_l">
+			<h1>user_info 현행화 화면</h1>
+		</div>
+
+		<div class="ah_r">
+			<ul class="ah_menu mgt10">
+				<li>
+					<!-- 알림 있을때 new 클래스 -->
+					<span class="weTalk newAlarm">
+						<a href="#none">We Talk
+							<span class="talk_conting_num" style="display: none;">N</span>
+						</a>
+					</span>
+				</li>
+				<li>
+					<span class="updateInfo">
+						<a href="#none">업데이트 안내
+							<span class="talk_conting_num" style="display: none;">N</span>
+						</a>
+					</span>
+				</li>
+                <li>
+                    <a class="hd_alarm" href="#none">
+						<img src="../img/txof/ico/bell_icon_18x18.png" alt="">
+						<span>알림</span>
+					
+					
+					
+						<div class="count">999+</div>
+					</a>
+                </li>
+				<li class="txtMenu">
+					<a href="https://qe398.channel.io/support-bots/50502" target="_blink">채팅상담</a>
+					<a href="https://semojangbu.notion.site/semojangbu/1fb5342cd4324ec99d471048fb437e92" target="_blink">도움말</a>
+					<a href="http://report.semojangbu.com" target="_blink">공지사항</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<!-- //header -->
+<!-- //수임처 개선 -->
+
+<div class="wrap"><!-- [D] 상세검색일 경우(class="mh") -->
+	<!-- Container -->
+	<div class="container">
+		<div class="lnb_box">
+		
+			<!-- lnb_boxInn -->
+			<div class="lnb_boxInn">
+
+				<!-- lnb top 추가 -->
+				<div class="lnb_top">
+					<!-- user view -->
+					<div class="user_view">
+						<div class="user_r_side">
+							<p class="icon_user"><strong>홍길동</strong> 님</p>
+							<a class="btn_set" title="환경설정"></a><!-- 2019-09-27 -->
+						</div>
+						<div class="select_wrap">
+							<div class="area_select">
+								<span>담당자</span>
+								<a class="entire" href="javascript:;">전체</a>
+
+								<!-- 활성화 시 on 클래스 추가 -->
+								<ul class="select_box" style="z-index: 302;">
+									<li>
+										<a href="javascript:;">
+											<p>담당자 전체</p>
+											<span class="num">599</span>
+										</a>
+									</li>
+									<!-- 활성화 시 on 클래스 추가 -->
+									<li class="user_list on">
+										<a href="javascript:;">
+											<p>박담당</p>
+											<span class="num">55</span>
+										</a>
+									</li>
+									<li class="user_list">
+										<a href="javascript:;">
+											<p>이담당</p>
+											<span class="num">55</span>
+										</a>
+									</li>
+									<li class="user_list">
+										<a href="javascript:;">
+											<p>김담당</p>
+											<span class="num">55</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="select_wrap">
+							<div class="area_select">
+								<span>사업자</span>
+								<div class="tabType01">
+									<ul class="cboth">
+										<!-- 활성화시 on 클래스 -->
+										<li class="on">
+											<a href="#none">전체</a>
+										</li>
+										<li>
+											<a href="#none">개인</a>
+										</li>
+										<li>
+											<a href="#none">기업</a>
+										</li>
+									</ul>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- //lnb top 추가 -->
+				<div class="alarm_wrap">
+					<div class="mygroupLst">
+						<ul>
+							<!-- 그룹 -->
+							<!-- 2323-03-24 btn 이벤트 및 툴팁 이벤트 수정 newgroup 레이아웃 수정  -->
+							<li class="on"><!-- 활성화클래스 on -->
+								<div class="mygroupLst_tit">
+									<a href="#none" class="">
+										<img src="../../html/img/txof/ico/ico_reptGroupManage.png" class="mCS_img_loaded">
+										그룹관리
+									</a>
+									<div class="mygroup_btn">
+										<i class="btn"></i>
+									</div>
+								</div>									
+								<div class="mygroupCont">
+									<!-- 20180906 수정 -->
+									<dl class="mygroup" id="" style="display:;">
+										<!-- 비활성 -->
+										<dd class="off">
+											<a href="#none">
+												<div class="line tooltipWrap rt">
+													<div class="left">
+														<span class="txt">
+															ㅁㄴㅇㄹㄴㅁㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹㄴㅇㄹ
+														</span>
+														<div class="tooltip">
+															<p class="tit">세모R<p>
+														</div>
+														<button type="button" class="btnEdit">
+														</button>
+													</div>
+													<div class="right">
+														<span class="groupCount">5</span>
+														<button type="button" class="btnEdit">
+														</button>
+													</div>
+												</div>	
+											</a>
+										</dd>
+										<dd class="off">
+											<a href="#none" style="display: none;">
+												<div class="line tooltipWrap rt">
+													<div class="left grp_left_div">
+														<span class="txt" name="GRP_NM">ㄴㅇㄴㅁㅇㄴㅇ</span>
+														<div class="tooltip"><p class="tit" name="GRP_FULL_NM">ㄴㅇㄴㅁㅇㄴㅇ</p><p></p></div>
+														<button type="button" class="btnEdit"><img src="/img/txof/btn/btn_edit_w3.png" width="14px"></button>
+													</div>
+													<div class="right">
+														<span class="groupCount" name="GRP_CNT">0</span>
+														<button type="button" class="btnEdit grp_edit_btn">
+															<img src="/img/txof/btn/btn_edit_w3.png" width="14px">
+														</button>
+														<div class="tooltip grp_tooltip"><!-- acitve시 활성화 -->
+															<ul class="hoverList">
+																<li>
+																	<button type="button" class="grp_nm_mod">그룹명 변경</button>
+																</li>
+																<li>
+																	<button type="button" class="grp_clear">그룹 비우기</button>
+																</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+												</a>
+											<div class="new_group" style="">
+												<input type="text" id=""><a href="#none" id="save_group"><img src="../img/txof/btn/btn_new_group_ok.gif" alt="확인" id="" class="mCS_img_loaded"></a>
+												<a href="#none" id="canc_group"><img src="../img/txof/btn/btn_new_group_cnl.gif" alt="취소" id="" class="mCS_img_loaded"></a>
+											</div>
+										</dd>
+
+										<dd class="off">
+											<a href="#none">
+												<div class="line">
+													경리나라
+													<div class="right">
+														<p class="groupCount">5</p>
+													</div>
+												</div>
+											</a>
+										</dd>
+										<dd class="on">
+											<a href="#none">
+												<div class="line tooltipWrap rt">
+													<div class="left">
+														<span class="txt">
+															추가그룹명
+														</span>
+														<div class="tooltip">
+															<p class="tit">추가 그룹명<p>
+														</div>
+														<button type="button" class="btnEdit">
+														</button>
+													</div>
+													<div class="right">
+														<span class="groupCount">5</span>
+														<button type="button" class="btnEdit">
+														</button>
+														<div class="tooltip">
+															<ul class="hoverList">
+																<li>
+																	<button type="button">그룹명 변경</button>
+																</li>
+																<li>
+																	<button type="button">그룹 비우기</button>
+																</li>
+															</ul>
+														</div>
+														<div class="tooltip">
+															<ul class="hoverList">
+																<li>
+																	<button type="button">그룹명 변경</button>
+																</li>
+																<li>
+																	<button type="button">그룹 비우기</button>
+																</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+												<div class="new_group" style="">
+													<input type="text" id=""><a href="#none" id="save_group"><img src="../img/txof/btn/btn_new_group_ok.gif" alt="확인" id="" class="mCS_img_loaded"></a>
+													<a href="#none" id="canc_group"><img src="../img/txof/btn/btn_new_group_cnl.gif" alt="취소" id="" class="mCS_img_loaded"></a>
+												</div>
+											</a>
+										</dd>
+									</dl>
+									<!-- //20180906 수정 -->
+								</div>
+							</li>
+							<!-- //그룹 -->
+					
+						</ul>
+					</div>
+				</div>
+				<div class="alarm_wrap">
+					
+					<!-- (add)20220804 -->
+					<div class="mygroupLst">
+						<dl id=""><!-- (modify)20220810 스타일 추가 -->
+							<dd class="on">
+								<div class="line first">
+									<a href="#none">
+										<span>
+											<img src="../../html/img/txof/ico/ico_userManage.png"
+												class="mCS_img_loaded">
+											고객관리
+										</span>
+										<span class="badge2"><strong id="GRP">126</strong></span>
+									</a>
+								</div>
+							</dd>
+						</dl>
+						<ul>
+							<!-- 그룹 -->
+							<li class=""><!-- 활성화클래스 on -->
+								<div class="mygroupLst_tit">
+									<a href="#none">
+										<img src="../../html/img/txof/ico/ico_reptManage.png"
+											class="mCS_img_loaded">
+										리포트관리
+									</a>
+									<div class="mygroup_btn">
+										<i class="btn"></i>
+									</div>
+								</div>
+								<div class="mygroupCont">
+									<!-- 20180906 수정 -->
+									<dl class="mygroup">
+										<!-- 비활성 -->
+										<dd class="off">
+											<a href="#none">
+												<div class="line">리포트 발송</div>
+											</a>
+										</dd>
+										<dd class="off">
+											<a href="#none">
+												<div class="line">리포트 이력</div>
+											</a>
+										</dd>
+									</dl>
+									<!-- //20180906 수정 -->
+								</div>
+							</li>
+							<!-- //그룹 -->
+
+						</ul>
+					</div>
+					<div class="mygroupLst">
+						<dl id="">
+							<dt class="menu">
+								<img src="../../html/img/txof/ico/ico_taxCafe.png" class="mCS_img_loaded">
+								세무지식
+							</dt>
+							<dd>
+								<div class="line first">세무지식 관리</div>
+							</dd>
+						</dl>
+					</div>
+					<div class="mygroupLst">
+						<ul>
+							<!-- 그룹 -->
+							<li class="on"><!-- 활성화클래스 on -->
+								<a href="#none">
+									<img src="../../html/img/txof/ico/ico_set.png" class="mCS_img_loaded">
+									환경 설정
+								</a>
+								<div class="mygroupCont">
+									<!-- 20180906 수정 -->
+									<dl class="mygroup">
+										<!-- 비활성 -->
+										<dd class="off">
+											<a href="#none">
+												<div class="line">웰컴팝업 설정</div>
+											</a>
+										</dd>
+										<dd class="off">
+											<a href="#none">
+											</a>
+												<div class="tooltipWrap">
+													<p class="txt line" name="MENU_NM" style="color: rgb(196, 196, 196);">리포트 설정</p>
+													<div class="tooltip">
+														<p class="tit" name="TOOLTIP_TEXT">해당 메뉴는 관리자만 이용 가능합니다.</p><p>
+													</p></div>
+												</div>
+										</dd>
+										<dd class="off">
+											<a href="#none">
+												<div class="line">사용자필드 설정</div>
+											</a>
+												<div class="tooltipWrap">
+													<p class="txt line" name="MENU_NM" style="color: rgb(196, 196, 196);">수집정보설정</p>
+													<div class="tooltip">
+														<p class="tit" name="TOOLTIP_TEXT">해당 메뉴는 관리자만 이용 가능합니다.</p><p>
+													</p></div>
+												</div>
+										</dd>
+									</dl>
+									<!-- //20180906 수정 -->
+								</div>
+							</li>
+							<!-- //그룹 -->
+
+						</ul>
+					</div>
+					<div class="mygroupLst">
+						<ul>
+							<!-- 그룹 -->
+							<li class="on"><!-- 활성화클래스 on -->
+								<a href="#none">
+									<img src="../../html/img/txof/ico/ico_set.png" class="mCS_img_loaded">
+									환경 설정
+								</a>
+								<div class="mygroupCont">
+									<!-- 20180906 수정 -->
+									<dl class="mygroup">
+										<!-- 비활성 -->
+										<dd class="off">
+											<a href="#none">
+												<div class="line">웰컴팝업 설정</div>
+											</a>
+										</dd>
+										<dd class="off">
+											<a href="#none">
+											</a>
+												<div class="tooltipWrap">
+													<p class="txt line" name="MENU_NM" style="color: rgb(196, 196, 196);">리포트 설정</p>
+													<div class="tooltip">
+														<p class="tit" name="TOOLTIP_TEXT">해당 메뉴는 관리자만 이용 가능합니다.</p><p>
+													</p></div>
+												</div>
+										</dd>
+										<dd class="off">
+											<a href="#none">
+												<div class="line">사용자필드 설정</div>
+											</a>
+												<div class="tooltipWrap">
+													<p class="txt line" name="MENU_NM" style="color: rgb(196, 196, 196);">수집정보설정</p>
+													<div class="tooltip">
+														<p class="tit" name="TOOLTIP_TEXT">해당 메뉴는 관리자만 이용 가능합니다.</p><p>
+													</p></div>
+												</div>
+										</dd>
+									</dl>
+									<!-- //20180906 수정 -->
+								</div>
+							</li>
+							<!-- //그룹 -->
+
+						</ul>
+					</div>
+					<div class="mygroupLst">
+						<ul>
+							<!-- 그룹 -->
+							<li class="on"><!-- 활성화클래스 on -->
+								<a href="#none">
+									<img src="../../html/img/txof/ico/ico_set.png" class="mCS_img_loaded">
+									환경 설정
+								</a>
+								<div class="mygroupCont">
+									<!-- 20180906 수정 -->
+									<dl class="mygroup">
+										<!-- 비활성 -->
+										<dd class="off">
+											<a href="#none">
+												<div class="line">웰컴팝업 설정</div>
+											</a>
+										</dd>
+										<dd class="off">
+											<a href="#none">
+											</a>
+												<div class="tooltipWrap">
+													<p class="txt line" name="MENU_NM" style="color: rgb(196, 196, 196);">리포트 설정</p>
+													<div class="tooltip">
+														<p class="tit" name="TOOLTIP_TEXT">해당 메뉴는 관리자만 이용 가능합니다.</p><p>
+													</p></div>
+												</div>
+										</dd>
+										<dd class="off">
+											<a href="#none">
+												<div class="line">사용자필드 설정</div>
+											</a>
+												<div class="tooltipWrap">
+													<p class="txt line" name="MENU_NM" style="color: rgb(196, 196, 196);">수집정보설정</p>
+													<div class="tooltip">
+														<p class="tit" name="TOOLTIP_TEXT">해당 메뉴는 관리자만 이용 가능합니다.</p><p>
+													</p></div>
+												</div>
+										</dd>
+									</dl>
+									<!-- //20180906 수정 -->
+								</div>
+							</li>
+							<!-- //그룹 -->
+
+						</ul>
+					</div>
+					<div class="mygroupLst">
+						<ul>
+							<!-- 그룹 -->
+							<li class="on"><!-- 활성화클래스 on -->
+								<a href="#none">
+									<img src="../../html/img/txof/ico/ico_set.png" class="mCS_img_loaded">
+									환경 설정
+								</a>
+								<div class="mygroupCont">
+									<!-- 20180906 수정 -->
+									<dl class="mygroup">
+										<!-- 비활성 -->
+										<dd class="off">
+											<a href="#none">
+												<div class="line">웰컴팝업 설정</div>
+											</a>
+										</dd>
+										<dd class="off">
+											<a href="#none">
+											</a>
+												<div class="tooltipWrap">
+													<p class="txt line" name="MENU_NM" style="color: rgb(196, 196, 196);">리포트 설정</p>
+													<div class="tooltip">
+														<p class="tit" name="TOOLTIP_TEXT">해당 메뉴는 관리자만 이용 가능합니다.</p><p>
+													</p></div>
+												</div>
+										</dd>
+										<dd class="off">
+											<a href="#none">
+												<div class="line">사용자필드 설정</div>
+											</a>
+												<div class="tooltipWrap">
+													<p class="txt line" name="MENU_NM" style="color: rgb(196, 196, 196);">수집정보설정</p>
+													<div class="tooltip">
+														<p class="tit" name="TOOLTIP_TEXT">해당 메뉴는 관리자만 이용 가능합니다.</p><p>
+													</p></div>
+												</div>
+										</dd>
+									</dl>
+									<!-- //20180906 수정 -->
+								</div>
+							</li>
+							<!-- //그룹 -->
+
+						</ul>
+					</div>
+
+				</div>
+							
+					
+			</div>
+			<!-- //lnb_boxInn -->
+		
+		</div>
+		<!-- content -->
+		<div class="content">
+			<div class="content_wrap">
+				<div class="cust_dv_wrap nobd"><!-- [D] 편집기능 눌렀을때 class="edit_on" 추가 -->
+					<div class="title_wrap">
+						<div class="left">
+							<h1>23년 1월 예상 부가세 보고서</h1>
+						</div>
+						<div class="right">
+							<div class="cntalign">
+								<a class="btn_ico_back" href="#none"><span class="blind">뒤로가기</span></a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="cust_dv_wrap nobd"><!-- [D] 편집기능 눌렀을때 class="edit_on" 추가 -->
+					<div class="title_wrap h1type">
+						<div class="left">
+							<div class="cntalign yth_swp">
+								<a href="#none" class="swp_prev"><img src="../img/txof/btn/btn_prevarr_b.png" alt=""></a>
+								<h1>2023년 1월</h1>
+								<a href="#none" class="swp_next"><img src="../img/txof/btn/btn_nextarr_b.png" alt=""></a>
+							</div>
+						</div>
+						<div class="right">
+							<!-- 검색 -->		
+							<div class="cntalign">
+								<div class="input_box">
+									<input type="text" value="" placeholder="검색어를 입력하세요" style="width:180px;"><a href="#none"><img
+											src="../img/txof/btn/btn_topsearch.gif" alt="조회"></a>
+								</div>
+							</div><!-- //검색 -->
+							<div class="cntalign"><a href="#none" class="btn_style1 down" style="margin-left:0;"><span>상세</span></a>
+							</div>
+							<div class="cntalign"><a href="#none" class="icon" title="엑셀"><img src="../img/txof/btn/btn_excel.gif" alt="엑셀"></a>
+							</div>			
+						</div>
+					</div>
+
+					<div class="tabType01 mgt20 mgb10">
+						<ul>
+							<li class="on"><a href="#none">요약</a></li>
+							<li ><a href="#none">상세</a></li>
+						</ul>
+						<div class="cntalign">
+							<div class="list3nd_tab rept">
+								<ul>
+									<!-- active시 on 클래스 -->
+									<li style="margin-left: 30px;"><a href="#none" class="target on">전체 <span class="txt_green">45</span></a></li>
+									<li><a href="#none" class="err">오류 <span class="txt_r">1</span></a></li>
+									<li><a href="#none" class="wait">발송대기 <span class="txt_b">45</span></a></li>
+									<li><a href="#none" class="complete">발송완료 <span>4</span></a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="right">
+							<div class="cntalign" id="realt_info_coll"><a href="#none" class="btn_style1"><span class="fwn">실시간 정보수집</span></a></div>
+							<!-- 	<div class="cntalign" id="rvew_y"><a href="#none" class="btn_style1"><span class="fwn">검토 완료</span></a></div> -->
+							<div class="cntalign" id="rsvt_send_btn"><a href="#none" class="btn_style1"><span class="fwn">예약 발송</span></a></div>
+							<div class="cntalign" id="imdt_send_btn"><a href="#none" class="btn_style1_b"><span>즉시 발송</span></a></div>
+						</div>
+					</div>
+
+					<!-- 상세검색테이블 -->
+					<div class="table_wrap detail" style="display: flex;">
+						<div class="tbl_srch">
+							<table>
+								<tbody>
+									<tr>
+										<th scope="row">
+											<div>검토여부</div>
+										</th>
+										<td colspan="3">
+											<div class="checklist">
+												<label style="height:24px;"><input type="radio" name="radio01"> 전체</label>
+												<label style="margin-left:5px;height:24px;"><input type="radio" name="radio01"> 완료</label>
+												<label style="margin-left:5px;height:24px;"><input type="radio" name="radio01"> 미완료</label>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row">
+											<div>고객확인여부</div>
+										</th>
+										<td colspan="3">
+											<div class="checklist">
+												<label style="height:24px;"><input type="radio" name="radio02"> 전체</label>
+												<label style="margin-left:5px;height:24px;"><input type="radio" name="radio02"> 확인</label>
+												<label style="margin-left:5px;height:24px;"><input type="radio" name="radio02"> 미확인</label>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row">
+											<div>기타 검색</div>
+										</th>
+										<td colspan="3">
+											<div>
+												<div class="input_box nobg"><input type="text" class="" style=""
+														placeholder="거래처, 사업자번호, 담당자" value=""></div>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td style="height:10px;"></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="tbl_srch">
+							<!-- 조회後 > 조회조건 다시선택 -->
+							<!-- <a href="#none" class="reSrchChoose" style="display:none;"><span>조회조건 다시선택</span></a> 2022-06-13 삭제 -->
+							<!-- //조회後 > 조회조건 다시선택 -->
+							<table class="" style="">
+								<caption></caption>
+								<colgroup>
+									<col style="width:110px;">
+									<col style="width:255px;">
+									<col style="width:93px;">
+									<col style="width:265px;">
+									<col>
+								</colgroup>
+								<tbody>
+									<tr>
+										<th scope="row">
+											<div>계약상태</div>
+										</th>
+										<td colspan="3">
+											<div class="checklist">
+												<label style="height:24px;"><input type="checkbox"> 신고개인</label>
+												<label style="height:24px;"><input type="checkbox"> 기장법인</label>
+												<label style="height:24px;"><input type="checkbox"> 신고법인</label>
+												<label style="height:24px;"><input type="checkbox"> 아웃소싱</label>
+												<label style="height:24px;"><input type="checkbox"> 자문계약</label>
+												<label style="height:24px;"><input type="checkbox"> 조세불복</label>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row">
+											<div>과세유형</div>
+										</th>
+										<td colspan="4">
+											<div class="checklist">
+												<label style="height:24px;"><input type="checkbox"> 일반</label>
+												<label style="height:24px;"><input type="checkbox"> 간이</label>
+												<label style="height:24px;"><input type="checkbox"> 면세</label>
+												<label style="height:24px;"><input type="checkbox"> 비영리</label>
+												<label style="height:24px;"><input type="checkbox"> 휴업</label>
+												<label style="height:24px;"><input type="checkbox"> 폐업</label>
+												<label style="height:24px;"><input type="checkbox"> 미등록</label>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row"></th>
+										<td colspan="4" class="tar">
+											<a href="#none" class="btn_search_tb tal"><span>조회</span></a>
+										</td>
+									</tr>
+									<tr>
+										<td style="height:10px;"></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<a href="#none" class="btn_close"><img src="../img/txof/btn/btn_popclose_r.png" alt=""></a>
+					</div>
+					<!-- //상세검색테이블 -->
+					<div class="tblScrollX" id="smry_tmp" style="display: block;">
+                        <!--================  요약 시작 ========================== -->
+                        <div class="list_scroll_top" style=""><!-- [D] 하단테이블 세로스크롤 발생시 pdr 클래스 추가 -->
+                           
+                           <!-- 헤더 부가세 보고서 시작  -->
+                           <table class="tbl_result" id="smry_mrprt_vat" summary="" style="display: table;">
+                               <caption></caption>
+                               <colgroup>
+                                   <col style="width:25px"> <!-- 체크박스 -->
+                                   <col style="width: 200px"> <!-- 거래처명  -->
+                                   <col style="width: 120px"> <!-- 사업자번호  -->
+                                   <col style="width: 70px"> <!-- 유형 -->
+                                   <col style="width: 80px"> <!-- 계약상태 -->
+                                   <col style="width: 80px"> <!-- 상태 -->
+                                   <col style="width: 70px"> <!-- 미리보기 -->
+                                   <col style="width: 70px"> <!-- 보고서 -->
+                                   <col style="width: 70px"> <!-- 검토 -->
+                                   <col style="width: 70px"> <!-- 첨부파일 -->
+                                   <col style="width: 150px"> <!-- 확정 납부(환급)세액 -->
+                                   <col style="width: 100px"> <!-- 매출세액 -->
+                                   <col style="width: 100px"> <!-- 매입세액 -->
+                                   <col style="width: 150px"> <!-- 공제 세액(세금혜택) -->
+                                   <col style="width: 150px"> <!-- 예정신고미환급세액 -->
+                                   <col style="width: 100px"> <!-- 예정고지세액 -->
+                                   <col style="width: 100px"> <!-- 납부한 세액 -->
+                                   <col style="width: 100px"> <!-- 가산세액 -->
+                                   <col style="width: 100px"> <!-- 발송일시 -->
+                                   <col style="width: 100px"> <!-- 고객확인일시 -->
+
+                               </colgroup>
+                               <thead>
+                                   <tr>
+                                       <th scope="col" class="tal"><div><input type="checkbox" name="chk_all" style="margin-bottom: 1px"></div></th>
+                                       <th scope="col" class="tal"><div>거래처명</div></th>
+                                       <th scope="col"><div>사업자번호</div></th>
+                                       <th scope="col"><div>유형</div></th>
+                                       <th scope="col"><div>계약상태</div></th>
+                                       <th scope="col"><div>상태</div></th>
+                                       <th scope="col"><div>미리보기</div></th>
+                                       <th scope="col"><div>보고서</div></th>
+                                       <th scope="col" class="t_center"><div>검토</div></th>
+                                       <th scope="col" class="t_center"><div>첨부파일</div></th>
+                                       <th scope="col" class="tar"><div>확정 납부(환급)세액</div></th>
+                                       <th scope="col" class="tar"><div>매출세액</div></th>
+                                       <th scope="col" class="tar"><div>매입세액</div></th>
+                                       <th scope="col" class="tar"><div>공제 세액(세금혜택)</div></th>
+                                       <th scope="col" class="tar"><div>예정신고미환급세액</div></th>
+                                       <th scope="col" class="tar"><div>예정고지세액</div></th>
+                                       <th scope="col" class="tar"><div>납부한 세액</div></th>
+                                       <th scope="col" class="tar"><div>가산세액</div></th>
+                                       <th scope="col" class="tal"><div>발송일시</div></th>
+                                       <th scope="col" class="tal"><div>고객확인일시</div></th>
+
+                                   </tr>
+                               </thead>
+                           </table>
+                           <!-- 헤더 부가세 보고서 끝  -->
+                       </div>
+                       
+                       <!-- 요약 부가세 내용 시작  -->
+                       <div style="min-height:350px;">
+                           <table class="tbl_result" id="RPRT04_SMRY_CONTEXT" summary="" style="display: table;">
+                               <caption></caption>
+                               <colgroup>
+                                <col style="width:25px"> <!-- 체크박스 -->
+                                <col style="width: 200px"> <!-- 거래처명  -->
+                                <col style="width: 120px"> <!-- 사업자번호  -->
+                                <col style="width: 70px"> <!-- 유형 -->
+                                <col style="width: 80px"> <!-- 계약상태 -->
+                                <col style="width: 80px"> <!-- 상태 -->
+                                <col style="width: 70px"> <!-- 미리보기 -->
+                                <col style="width: 70px"> <!-- 보고서 -->
+                                <col style="width: 70px"> <!-- 검토 -->
+                                <col style="width: 70px"> <!-- 첨부파일 -->
+                                <col style="width: 150px"> <!-- 확정 납부(환급)세액 -->
+                                <col style="width: 100px"> <!-- 매출세액 -->
+                                <col style="width: 100px"> <!-- 매입세액 -->
+                                <col style="width: 150px"> <!-- 공제 세액(세금혜택) -->
+                                <col style="width: 150px"> <!-- 예정신고미환급세액 -->
+                                <col style="width: 100px"> <!-- 예정고지세액 -->
+                                <col style="width: 100px"> <!-- 납부한 세액 -->
+                                <col style="width: 100px"> <!-- 가산세액 -->
+                                <col style="width: 100px"> <!-- 발송일시 -->
+                                <col style="width: 100px"> <!-- 고객확인일시 -->
+                               </colgroup>
+                               <tfoot style="display:none;">
+                                   <tr class="no_hover">
+                                       <td colspan="18" class="no_info"><div>일치하는 검색결과가 없습니다.</div></td>
+                                   </tr>
+                               </tfoot>
+                               <tbody style="display: table-tbody;">
+                                <tr >
+                                   <td><div><input type="checkbox" style="margin-bottom: 1px"></div></td>
+                                   <td><div style="position:relative;" class="t_hover tx_ellipsis_max3">레몬</div></td>
+                                   <td><div class="t_center t_hover">103-99-00751</div></td> 
+                                   <td><div class="t_center">미등록</div></td>
+                                   <td><div class="t_center">-</div></td>
+                                   <td><div class="t_center tooltipWrap btc">
+                                       <!-- span class 상태 폰트색상 / 발송완료 txt_black / 발송대기 txt_b / 보류 txt_r -->
+                                       <span class="data_veiw mgl0 txt txt_black">
+                                           <span name="PROC_STTS">발송완료</span>
+                                       </span>
+                                       <!-- <div class="tooltip"><p class="tit" name="errMsg"><p></div> -->
+                                       </div>
+                                   </td>
+								    <!-- a태그 활성화 class t_hover_blue / 비활성화 disabled -->
+                                   <td><div class="t_center"><a href="javascript:;" class="t_hover_blue">보기</a></div></td>
+                                   <td><div class="t_center"><a href="javascript:;" class="t_hover_blue">수정</a></div></td>
+                                   <td>
+                                       <div class="t_center tooltipWrap btc">
+                                           <span class="txt"><a href="#none" class="t_hover_blue"><span>검토대기</span></a></span>
+                                           <!-- <div class="tooltip"><p class="tit" name="confrmMsg"><p></div> -->
+                                       </div>
+                                   </td>
+								   <td class="add_file"><div class="t_center"><a href="#none"><img src="../img/txof/ico/ico_pdf_red.png" alt=""></a></div></td> <!-- 첨부파일 -->
+                                   <td ><div class="tar">1,000,000</div></td> <!-- 확정 납부(환급)세액 -->
+                                   <td><div class="tar">1,000,000</div></td> <!-- 매출세액 -->
+                                   <td><div class="tar">6,000,000</div></td> <!-- 매입세액 -->
+                                   <td><div class="tar">0</div></td> <!-- 공제 세액(세금혜택) -->
+                                   <td><div class="tar">3,000,000</div></td> <!-- 예정신고미환급세액 -->
+                                   <td><div class="tar">3,000,000</div></td> <!-- 예정고지세액 -->
+                                   <td><div class="tar">3,000,000</div></td> <!-- 납부한 세액 -->
+                                   <td><div class="tar">3,000,000</div></td> <!-- 가산세액 -->
+                                   <td><div>-</div></td> <!-- 발송일시 -->
+                                   <td><div>-</div></td> <!-- 고객확인일시 -->
+                               </tr>
+                                <tr >
+                                   <td><div><input type="checkbox" style="margin-bottom: 1px"></div></td>
+                                   <td><div style="position:relative;" class="t_hover tx_ellipsis_max3">레몬</div></td>
+                                   <td><div class="t_center t_hover">103-99-00751</div></td> 
+                                   <td><div class="t_center">미등록</div></td>
+                                   <td><div class="t_center">-</div></td>
+                                   <td><div class="t_center tooltipWrap btc">
+                                   <!-- span class 상태 폰트색상 / 발송완료 txt_black / 발송대기 txt_b / 보류 txt_r -->
+                                       <span class="data_veiw mgl0 txt txt_r">
+                                           <span>보류</span>
+                                       </span>
+                                       <!-- <div class="tooltip"><p class="tit" name="errMsg"><p></div> -->
+                                       </div>
+                                   </td>
+                                   <!-- a태그 활성화 class t_hover_blue / 비활성화 disabled -->
+                                   <td><div class="t_center"><a href="javascript:;" class="t_hover_blue">보기</a></div></td>
+                                   <td><div class="t_center"><a href="javascript:;" class="t_hover_blue">수정</a></div></td>
+                                   <td>
+                                       <div class="t_center tooltipWrap btc">
+                                           <span class="txt"><a href="#none" class="t_hover_blue"><span>검토대기</span></a></span>
+                                           <!-- <div class="tooltip"><p class="tit" name="confrmMsg"><p></div> -->
+                                       </div>
+                                   </td>
+								   <td class="add_file"><div class="t_center"><a href="#none"><img src="../img/txof/ico/ico_pdf_red.png" alt=""></a></div></td> <!-- 첨부파일 -->
+
+                                   <td ><div class="tar">1,000,000</div></td> <!-- 확정 납부(환급)세액 -->
+                                   <td><div class="tar">1,000,000</div></td> <!-- 매출세액 -->
+                                   <td><div class="tar">6,000,000</div></td> <!-- 매입세액 -->
+                                   <td><div class="tar">0</div></td> <!-- 공제 세액(세금혜택) -->
+                                   <td><div class="tar">3,000,000</div></td> <!-- 예정신고미환급세액 -->
+                                   <td><div class="tar">3,000,000</div></td> <!-- 예정고지세액 -->
+                                   <td><div class="tar">3,000,000</div></td> <!-- 납부한 세액 -->
+                                   <td><div class="tar">3,000,000</div></td> <!-- 가산세액 -->
+                                   <td><div>-</div></td> <!-- 발송일시 -->
+                                   <td><div>-</div></td> <!-- 고객확인일시 -->
+                               </tr>
+                                <tr >
+                                   <td><div><input type="checkbox" style="margin-bottom: 1px"></div></td>
+                                   <td><div style="position:relative;" class="t_hover tx_ellipsis_max3">레몬</div></td>
+                                   <td><div class="t_center t_hover">103-99-00751</div></td> 
+                                   <td><div class="t_center">미등록</div></td>
+                                   <td><div class="t_center">-</div></td>
+                                   <td><div class="t_center tooltipWrap btc">
+                                       <!-- span class 상태 폰트색상 / 발송완료 txt_black / 발송대기 txt_b / 보류 txt_r -->
+                                       <span class="data_veiw mgl0 txt txt_b">
+                                           <span>발송완료</span>
+                                       </span>
+                                       <!-- <div class="tooltip"><p class="tit" name="errMsg"><p></div> -->
+                                       </div>
+                                   </td>
+                                   <td><div class="t_center"><a href="javascript:;" class="disabled">보기</a></div></td>
+                                   <td><div class="t_center"><a href="javascript:;" class="disabled">수정</a></div></td>
+                                   <td>
+                                       <div class="t_center tooltipWrap btc">
+                                           <span class="txt"><a href="#none" class="t_hover_blue"><span>검토대기</span></a></span>
+                                           <!-- <div class="tooltip"><p class="tit" name="confrmMsg"><p></div> -->
+                                       </div>
+                                   </td>
+								   <td class="add_file"><div class="t_center"><a href="#none"><img src="../img/txof/ico/ico_pdf_red.png" alt=""></a></div></td> <!-- 첨부파일 -->
+                                   <td ><div class="tar">1,000,000</div></td> <!-- 확정 납부(환급)세액 -->
+                                   <td><div class="tar">1,000,000</div></td> <!-- 매출세액 -->
+                                   <td><div class="tar">6,000,000</div></td> <!-- 매입세액 -->
+                                   <td><div class="tar">0</div></td> <!-- 공제 세액(세금혜택) -->
+                                   <td><div class="tar">3,000,000</div></td> <!-- 예정신고미환급세액 -->
+                                   <td><div class="tar">3,000,000</div></td> <!-- 예정고지세액 -->
+                                   <td><div class="tar">3,000,000</div></td> <!-- 납부한 세액 -->
+                                   <td><div class="tar">3,000,000</div></td> <!-- 가산세액 -->
+                                   <td><div>-</div></td> <!-- 발송일시 -->
+                                   <td><div>-</div></td> <!-- 고객확인일시 -->
+                               </tr>
+                            </tbody>
+                               
+                           </table>
+                       </div>
+                       </div>
+					<!-- //2021-04-22 -->
+					<!-- Paging wrap -->
+					<div class="paging_wrap">
+						<!-- combo -->
+						<div class="combo_wrap">
+							<div class="combo_style">
+								<a href="#none" class="btn_style btn_combo_down"><span>12</span></a>
+								<ul class="up" style="display: none;">
+									<li><a href="#none">200</a></li>
+									<li><a href="#none">150</a></li>
+									<li><a href="#none">100</a></li>
+									<li><a href="#none">50</a></li>
+									<li><a href="#none">12</a></li>
+								</ul>
+							</div>
+						</div>
+						<!-- //combo -->
+						<!-- pagination -->
+						<div class="paging"><!-- [D] 비활성상태는 on class 제거 -->
+							<a href="#none" class="btn_pag_cntr first"><span class="blind">first</span></a><a href="#none" class="btn_pag_cntr prev"><span class="blind">previous</span></a>
+							<span class="pag_num">
+								<a href="#none" class="on">1</a><a href="#none">2</a><a href="#none">3</a><a href="#none">4</a><a href="#none">5</a><a href="#none">6</a><a href="#none">7</a><a href="#none">8</a><a href="#none">9</a><a href="#none">10</a>
+							</span>
+							<a href="#none" class="btn_pag_cntr next on"><span class="blind">next</span></a><a href="#none" class="btn_pag_cntr last on"><span class="blind">last</span></a>
+						</div>
+						<!-- //pagination -->
+					</div>
+					<!-- //Paging wrap -->
+					
+					
+					
+				</div>
+				
+				
+				
+				
+				
+			</div>
+		   <!-- //content_wrap -->
+			
+		</div>
+		<!-- //content -->
+		
+		
+		
+		
+
+	</div>
+	<!-- //Container -->
+
+
+
+
+	<!-- footer 추가 : 20180828 -->
+	<div class="footer">
+		<!-- Copy right -->
+		<div class="copyright_wrap">
+			<div class="copyright_box">
+				<p>Copyright(c) <strong>Webcash.</strong> All rights reserved.</p>
+			</div>
+			<div class="ft_menu"></div>
+		</div>
+		<!-- //Copy right -->
+	</div>
+	<!-- //footer -->
+</div>
+<!-- //wrap -->
+
+
+</body>
+</html>
+

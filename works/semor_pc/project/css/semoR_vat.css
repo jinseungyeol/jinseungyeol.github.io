@@ -1,0 +1,368 @@
+@charset "utf-8";
+
+/* RESET */
+* {box-sizing: border-box;}
+img {max-width: 100%;}
+input {font-family: 'Pretendard';}
+input::placeholder {font-size: 24px;}
+
+.ellipsis {display: block; word-wrap: initial; text-overflow: ellipsis; overflow: hidden;}
+
+/* COMMON */
+#vatHeader ~ .container {padding-top: 80px;}
+.inner {position: relative; max-width: 1440px; padding: 0 20px; margin: 0 auto;}
+.defTit {font-weight: bold; font-size: 60px;}
+
+/* HEADER */
+#vatHeader {position: fixed; top: 0; left: 0; right: 0; border-bottom: 1px solid #F0F0F0; background: #fff; z-index: 10;}
+#vatHeader .inner {display: flex; align-items: center; justify-content: space-between; height: 80px; }
+#vatHeader .inner .logoWrap .textLogo {display: none; font-size: 24px; color: #0057ff;}
+#vatHeader .inner .logoWrap .imgLogo {display: none; justify-content: center; align-items: center; height: 60px;}
+#vatHeader .inner .logoWrap .imgLogo img {height: inherit;}
+#vatHeader .inner nav {margin-right: -20px;}
+#vatHeader .inner nav > ul {display: flex; align-items: center;}
+#vatHeader .inner nav > ul > li > a {display: block; padding: 0 20px; height: 80px; line-height: 80px; font-size: 18px;}
+
+/* vatHeader : ACTIVE */
+#vatHeader .inner .logoWrap .textLogo.active {display: block;}
+#vatHeader .inner .logoWrap .imgLogo.active {display: flex;}
+
+/* DOTLIST */
+.dotList li {position: relative; padding-left: 14px; color: #8e8e8e; font-size: 20px;} 
+.dotList li + li {margin-top: 20px;} 
+.dotList li::before {content: '·'; position: absolute; top: 0; left: 0; color: #8e8e8e;} 
+.dotList li .moveLink {position: relative; color: #111}
+.dotList li .moveLink::before {content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: #111}
+
+/* BTNWRAP */
+.btnWrap {display: flex; align-items: center; gap: 16px; margin-top: 42px;}
+.btnWrap button {all: unset; text-align: center; cursor: pointer; flex-grow:1; width: 35%; height: 80px; border-radius: 60px; font-size: 24px; transition: .35s;}
+.btnWrap button + button {width: 65%;}
+.btnWrap button.btnBorder {border: 1px solid #333; color: #333;}
+.btnWrap button.btnBgBlack {background: #373737; color: #fff;}
+.btnWrap button.btnBgBlue {background: #0075FF; color: #fff;}
+.btnWrap button.btnBgGray {background: #F0F0F0; color: #969696;}
+.btnWrap button.btnBgBlue02 {background: #334982; color: #001855;}
+.btnWrap button.btnBgBlue02.active {background: #33ED94;}
+
+/* BTNWRAP : HOVER */
+.btnWrap button:hover {opacity: 0.8;}
+
+/* FLOATING */
+.floating {position: fixed; bottom: 50px; left: 50%; transform: translateX(-50%); width: calc(100% - 40px); z-index: 1;}
+
+/* 셀렉트박스 */
+.selectBox {position: relative}
+.selectBox .selectItem {position: relative; display: flex; align-items: center; justify-content: space-between; width: 147px; height: 60px; padding: 0 20px; border: 1px solid #ced4da; border-radius: 10px; font-size: 20px; font-weight: 500; color: #d8d8d8; z-index: 2; background: #fff;}
+.selectBox .selectItem input {width: 100%; padding: 0; color: #111; border: none;}
+.selectBox .selectItem input:read-only {cursor: pointer}
+.selectBox .selectItem input:read-only::placeholder {color: #d8d8d8}
+.selectBox .selectItem img {width: 48px; margin-right: -14px}
+.selectBox .selectList {display: none; position: absolute; left: 4px;  right: 4px; top: 57px; border: 1px solid #ced4da; border-radius: 0 0 10px 10px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);  overflow: hidden; z-index: 1}
+.selectBox .selectList li + li {border-top: 1px solid #ced4da}
+.selectBox .selectList li a {display: block; height: 60px; padding-left: 24px; font-size: 20px; line-height: 60px; background: #fff}
+
+/* 셀렉트박스 active */
+.selectBox.active .selectList {display: block}
+
+/* ########## VAT_SAVINGS.HTML ########## */
+.savingWrap {display: flex; align-items: center; min-height: 100vh; padding: 50px 0; background: #001855;}
+.savingWrap .inner {max-width: 900px;}
+.savingWrap .areaTit {margin-bottom: 47px; text-align: center;}
+.savingWrap .areaTit .defTit {margin-bottom: 20px; color: #fff;}
+.savingWrap .areaTit p {color: #85c4ff; font-size: 20px;}
+
+/* CERTIFORM */
+#certiForm input {width: 100%; height: 60px; padding: 0 20px; border-radius: 10px; font-size: 24px; box-sizing: border-box;}
+#certiForm input:-webkit-autofill { -webkit-box-shadow: 0 0 0 30px #fff inset; -webkit-text-fill-color: #000; }
+#certiForm .busiNum {display: flex; align-items: center;}
+#certiForm .busiNum > div {display: flex; align-items: center;}
+#certiForm .busiNum .formTit {margin-right: 20px; color: #fff; font-size: 20px; word-break: keep-all;}
+#certiForm .busiNum button {border: none; cursor: pointer; text-align: center; height: 64px; padding: 0 60px; margin-left: 14px; background: #334982; color: #001855; font-size: 24px; border-radius: 10px; transition: .35s;}
+#certiForm .busiNum button:hover {opacity: 0.8;}
+#certiForm .simpleCerti {display: none; max-width: 600px; padding: 0 20px; margin: 27px auto 0;}
+#certiForm .simpleCerti .btnWrap {display: block;}
+#certiForm .simpleCerti .btnWrap :is(.btnKakao, .btnPass, .btnPoint) {text-align: center; width: 100%; height: 64px; border-radius: 60px; background: #334982; color: #001855; font-weight: 600; font-size: 24px; transition: .35s;}
+#certiForm .simpleCerti .btnWrap button + button {margin-top: 16px;}
+#certiForm .agree .formTit {margin-bottom: 14px; color: #fff; font-size: 24px;}
+#certiForm .agree .checkList > li + li {margin-top: 12px;}
+#certiForm .agree .checkList > li > div {display: flex; align-items: center; justify-content: space-between;}
+#certiForm .agree .checkList > li > div > label {display: flex; align-items: center; cursor: pointer;}
+#certiForm .agree .checkList > li > div > label input[type='checkbox'] {border: none; width: 30px; height: 30px; margin-right: 16px; background: url(../img/homepage/ico_check.png) no-repeat center / contain; cursor: pointer; appearance: none; -webkit-appearance: none;}
+#certiForm .agree .checkList > li > div > label input[type='checkbox']:checked {background-image: url(../img/homepage/ico_check_on.png);}
+#certiForm .agree .checkList > li > div > label span {color: #fff; font-size: 20px;}
+#certiForm .agree .checkList > li > div a {display: flex; justify-content: center; align-items: center; width: 40px; height: 40px; margin-right: -15px;}
+#certiForm .inputWrap {margin-top: 30px;}
+#certiForm .inputWrap > p {margin-bottom: 22px; text-align: center; color: #61C6FF; font-size: 18px;}
+#certiForm .inputWrap .inputBox {margin-top: 12px;}
+#certiForm .inputWrap .inputBox.resident {display: flex; align-items: center; padding: 0 20px; background: #fff; border-radius: 10px;}
+#certiForm .inputWrap .inputBox.resident input {padding: 0; background: none; border: none;}
+#certiForm .inputWrap .inputBox.resident input:nth-of-type(1) {flex: 0 0 145px}
+#certiForm .inputWrap .inputBox.resident input:nth-of-type(2) {flex: 0 0 20px}
+#certiForm .inputWrap .inputBox.resident .divide {height: 100%; margin: 0 10px;}
+#certiForm .inputWrap .inputBox.resident .backNum {font-size: 20px;}
+#certiForm .inputWrap .btnKakao:hover {opacity: 0.8;}
+#certiForm .inputWrap .telBox {display: flex; align-items: center; gap: 16px; margin-top: 12px;}
+#certiForm .inputWrap .telBox .inputBox {flex: 1; margin-top: 0;}
+#certiForm .inputWrap .telBox .selectBox .selectItem input {padding: 0; background: none;}
+#certiForm .pcOnly {display: none; margin-top: 80px; text-align: center;}
+#certiForm .pcOnly p {font-size: 18px; line-height: 1.5; color: #fff;}
+#certiForm .pcOnly .pointTxt {color: #f8ab37;}
+#certiForm .pcOnly p span {display: block;}
+
+/* CERTIFORM : ACTIVE */
+#certiForm .busiNum.active + .simpleCerti {display: block;}
+#certiForm .busiNum button.active {background: #33ED94; color: #001855;}
+#certiForm .simpleCerti .btnKakao.active {background: #fae100; color: #381e1f;}
+#certiForm .simpleCerti .btnPass.active {background: #FF3447; color: #fff;}
+
+/* CERTIFORM mobile */
+#certiForm .busiNum.mobile ~ .simpleCerti {display: none;}
+#certiForm .busiNum.mobile ~ .pcOnly {display: block;}
+
+
+/* ########## KAKAO_CERT.HTML ########## */
+.kakaoCert {padding: 80px 0 40px;}
+.kakaoCert .inner {max-width: 720px;}
+.kakaoCert .areaTit {text-align: center;}
+.kakaoCert .areaTit .defTit {margin-bottom: 10px; font-size: 32px; color: #111;}
+.kakaoCert .areaTit p {font-size: 20px; color: #474747;}
+.kakaoCert .stepBox {width: fit-content; margin: 30px auto 48px}
+.kakaoCert .stepBox .step {position: relative; display: flex; align-items: center; gap: 30px}
+.kakaoCert .stepBox .step:not(:last-child) {padding-bottom: 58px}
+.kakaoCert .stepBox .step:not(:last-child)::before {content: '▼'; position: absolute; left: 0; right: calc(100% - 250px); text-align: center; bottom: 8px; font-size: 28px; color: #111;}
+.kakaoCert .stepBox .step .areaImg .passStep01 {display: none;}
+.kakaoCert .stepBox .step .areaTxt strong {font-size: 23px; font-weight: 600; color: #111;}
+.kakaoCert .stepBox .step .areaTxt p {margin-top: 4px; font-size: 18px; color: #111;}
+.kakaoCert .infoBox {margin-top: 48px; padding: 30px 35px; background: #fbfbfb; border-radius: 10px;}
+
+/* pass인증 분기처리 */
+.kakaoCert .stepBox.pass .areaImg .kakaoStep01 {display: none;}
+.kakaoCert .stepBox.pass .areaImg .passStep01 {display: block;}
+
+
+/* ########## RESULT.HTML ########## */
+/* COMMON */
+.vatSavings .btnWrap {width: 500px; margin: 46px auto 0;}
+
+/* RESULT */
+.vatSavings .result {min-height: calc(100vh - 80px); padding: 50px 0;}
+.vatSavings .result .inner {display: flex; flex-direction: column; justify-content: center;}
+.vatSavings .result .defTit {margin-top: 5px; color: #111;}
+.vatSavings .result .inner {max-width: 700px;}
+.vatSavings .result .inner .visualImg {margin: 0 auto; aspect-ratio: 5/4; height: 31vh; margin-bottom: 46px;}
+.vatSavings .result .inner .textBox {text-align: center; line-height: 1.5;}
+.vatSavings .result .inner .textBox > p {font-size: 36px; color: #111;}
+.vatSavings .result .inner .textBox > p span {display: block;}
+.vatSavings .result .inner .textBox .infoTxt {display: block; margin-top: 79px; font-size: 26px; color: #555; font-style: normal; background-image: none; padding: 0;}
+.vatSavings .result .inner .textBox .infoTxt span strong {color: #111;}
+.vatSavings .result .inner .textBox .infoTxt .txtBlue {color: #0075ff; font-style: normal;}
+
+/* TXSV_Y */
+#TXSV_Y .result .inner .visualImg {background: url(../img/homepage/result.png) no-repeat center / contain;}
+
+/* TXSV_N */
+#TXSV_N .result .inner .visualImg {background: url(../img/homepage/result02.png) no-repeat center / contain;}
+
+/* TXSV_Y_ESTX */
+#TXSV_Y_ESTX .result .inner .visualImg {background: url(../img/homepage/result02.png) no-repeat center / contain;}
+#TXSV_Y_ESTX .rprtVideo {padding-bottom: 150px;}
+
+/* EXPERIENCE */
+.vatSavings .experience {padding: 100px 0 200px; background: #002D84;}
+.vatSavings .experience .inner {max-width: 700px;}
+.vatSavings .experience .inner .defTit {margin-bottom: 65px; text-align: center;}
+.vatSavings .experience .inner > p {margin-top: 70px; text-align: center; color: #00f0ff; font-size: 26px;}
+.vatSavings .experience .consultList > li {margin-top: 40px; padding: 27px 40px; background: #00266F; border-radius: 10px;}
+.vatSavings .experience .consultList > li > div {display: flex; align-items: center;}
+.vatSavings .experience .consultList > li > div img {width: 30px; margin-right: 40px;}
+.vatSavings .experience .consultList > li > div p {color: #fff; font-size: 30px;}
+
+/* RPRTVIDEO */
+.vatSavings .rprtVideo {padding: 100px 0 200px;}
+.vatSavings .rprtVideo .inner {max-width: 1280px;}
+.vatSavings .rprtVideo .inner .defTit {text-align: center; margin-bottom: 46px; color: #111;}
+.vatSavings .rprtVideo .inner .areaVideo {border: 1px solid #e1e1e1; border-radius: 20px; overflow: hidden;}
+.vatSavings .rprtVideo .inner .areaVideo video {max-width: 100%;}
+
+/* W2UI CUSTOM */
+.w2ui-popup {width: calc(100% - 40px) !important; left: 50% !important; transform: translateX(-50%); max-width: 448px;}
+
+/* TOAST */
+.toast-message { position:fixed; bottom:41px; left:50%; width:320px; height:60px; line-height:60px; background-color:rgba(117,120, 130, 0.9); color:#fff; font-size:14px; border-radius:10px; padding-left:20px; margin-left:-160px; animation:fade-in 700ms; z-index: 2000; transition: 0.35s; opacity: 1; visibility: visible; } 
+.toast-message.type02 {height: auto; padding: 20px; margin-left: 0; line-height: 1.5; transform: translateX(-50%);}
+.toast-message.hide {opacity: 0; visibility: hidden; bottom: 0;} 
+
+/* loading */
+body .loading_bxw { position:fixed; top:0; left:0; right:0; bottom:0; z-index:900001; } 
+body .loading_bxw .bg { z-index:1; position:fixed; top:0; left:0; right:0; bottom:0; background-color:rgba(0, 0, 0, 0.5); } 
+body .loading_bxw .loading_cn { text-align:center; position:absolute; top:50%; left:0; margin-top:-75px; width:100%; z-index:1; } 
+body .loading_bxw .loading_cn .loading_txt { display:block; margin-top:20px; font-size:23px; font-weight:bold; color:#fff; } 
+body .loading_bxw .loading_cn .loading_txt2 { display:block; margin-top:10px; font-size:14px; font-weight:bold; color:#fff; } 
+body .loading_bxw .progress { width: 500px; background:#efefef; margin:0 auto; margin-top:20px; border-radius:4px; } 
+body .loading_bxw .progress .progressbar { width:5%; height:30px; line-height:30px; background:#3598db; color:#fff; text-align: center; border-radius:4px; } 
+body .loading_bxw .loading_cn .loading_img2 { display:block; height:54px; background:url(../img/txof/loading/ico_loading_semor.gif) no-repeat 50% 50%; background-size: 54px; } 
+
+/* 보고서 미리보기 */
+.btn_link_copy { width: 100%; padding-left: 8px; border: none; background: #fff; cursor: pointer; border-radius: 8px; height: 36px; text-align: left; } 
+.btn_link_copy span { padding-left: 24px; background: url(../img/txof/ico/link_16.svg) no-repeat center left / 16px; } 
+.btn_style1_b { cursor:pointer; height: 27px; line-height: 24px; background-color: #17bf98; border: 1px solid #17bf98; box-sizing: border-box; font-size: 12px; border-radius: 4px; min-width: 60px; background-image: none; padding: 0;} 
+.btn_style1_b span { color: #fff; padding: 0 9px; background-image: none;} 
+.btn_style1_b:hover { opacity: 0.9; } 
+
+.lnb_box { position: fixed; top:45px; bottom:0; left:0; width:215px; overflow-x: visible; background-color:#EDF2F1; padding-bottom: 80px; z-index: 100; transition: .15s; } 
+body.lnb_bg .content { left:215px; } 
+.content { position:absolute; top:0; right:0; bottom:0; left:0; } 
+.content_wrap { position:relative; padding:23px 25px 40px 25px; }
+
+.wrap.preview .lnb_box { box-sizing: border-box; top: 0; padding: 20px 8px; overflow-y: auto; } 
+.wrap.preview .lnb_box::-webkit-scrollbar { background: transparent; width: 5px; height: 12px; } 
+.wrap.preview .lnb_box::-webkit-scrollbar-thumb { background-color: #d7d7d7; border-radius: 4px; } 
+.wrap.preview .content_wrap { height: 100vh; box-sizing: border-box; } 
+.frame_area { height: 100%; display: flex; align-items: center; justify-content: center; } 
+.frame_area .mockup { position: relative; width: 100%; height: 100%; box-sizing: border-box; border: 12px solid #F4F5F7; border-radius: 24px; box-shadow: 0 0 24px 1px rgba(0,0,0,0.16); } 
+.frame_area .mockup[data-device='desktop'] { position: absolute; inset: 0 0 30px 0; border: none; box-shadow: none; } 
+.frame_area .mockup[data-device='mobile'] { min-width: 384px; max-width: 430px; max-height: 713px; } 
+.frame_area .mockup[data-device='tablet'] { min-width: 384px; max-width: 1047px; max-height: 768px; } 
+.frame_area .mockup iframe { position: absolute; width: 100%; height: 100%; } 
+
+.mygroupLst_type02 { margin-bottom: 20px; } 
+.mygroupLst_type02 button { min-width: auto; } 
+.mygroupLst_type02 > li + li { margin-top: 12px; } 
+.mygroupLst_type02 .w_box_radius { padding: 10px 8px; background: #fff; border-radius: 8px; } 
+.mygroupLst_type02 .tit_area {display: flex; align-items: center; justify-content: space-between;}
+.mygroupLst_type02 .tit_area .cate_filter .btn_filter {border: none; background: none; cursor: pointer;}
+.mygroupLst_type02 .tit_area .cate_filter .btn_filter ~ .pop_filter {display: none;}
+.mygroupLst_type02 .menu_tit { padding-left: 20px; color: #171717; font-size: 13px; font-weight: 600; background: no-repeat center left / 16px; } 
+.mygroupLst_type02 .menu_tit.set { background-image: url(../img/txof/ico/setting_16.svg); } 
+.mygroupLst_type02 .menu_tit.send { background-image: url(../img/txof/ico/ico_rocket_14.svg); } 
+.mygroupLst_type02 .menu_tit.select { background-image: url(../img/txof/ico/ico_report_16.svg); } 
+.mygroupLst_type02 .action_area { margin-top: 18px; } 
+.mygroupLst_type02 .st_device { display: flex; align-items: center; gap: 5px; } 
+.mygroupLst_type02 .st_device button { flex: 1; } 
+.mygroupLst_type02 .st_device .btn_style1_gray_bd.active { background: #17bf98; border: none; } 
+.mygroupLst_type02 .st_device .btn_style1_gray_bd.active span { color: #fff; } 
+.mygroupLst_type02 .send_wrap + .send_wrap { margin-top: 24px; } 
+.mygroupLst_type02 .send_wrap .to { display: block; margin-bottom: 12px; } 
+.mygroupLst_type02 .send_input_wrap { display: flex; gap: 8px; } 
+.mygroupLst_type02 .send_input_wrap .send_input { display: flex; align-items: center; border: 1px solid #E1E1E1; border-radius: 4px; } 
+.mygroupLst_type02 .send_input_wrap .send_input input { width: 100%; border: none; text-align: center; } 
+.mygroupLst_type02 .send_input_wrap .send_input input:first-child { width: 32px; } 
+.mygroupLst_type02 .send_input_wrap .send_input .divide { margin: 0 2px; } 
+.mygroupLst_type02 .send_input_wrap .send_input.readonly { border: none; } 
+.mygroupLst_type02 .send_input_wrap .btn_style1_b { flex: 0 0 auto; } 
+.mygroupLst_type02 .areaSend_wrap { height: auto; } 
+.mygroupLst_type02 .areaSend_wrap .info { width: auto; padding: 10px 8px; border: 1px solid #FF5353; border-radius: 8px; } 
+.mygroupLst_type02 .areaSend_wrap .grid_info_link { display: block; height: auto; line-height: initial; margin: 8px 0; padding: 8px; border: 1px solid #E1E1E1; border-radius: 8px; } 
+.mygroupLst_type02 .areaSend_wrap .btn_style1_b { width: 100%; height: 32px; } 
+.mygroupLst_type02 > li.item_rept_st .st_device { display: flex; justify-content: space-between; gap: 12px;} 
+.mygroupLst_type02 > li.item_rept_st .st_device + .st_device {margin-top: 12px;}
+.mygroupLst_type02 > li.item_rept_st .st_device .txt_info_g {font-size: 13px;}
+.mygroupLst_type02 > li.item_rept_st .st_device button { display: block; width: 100%; height: 32px; } 
+.mygroupLst_type02 > li.item_rept_st .st_device button + button { margin-top: 8px; } 
+.mygroupLst_type02 > li.item_rept_st .st_device.disabled .btn_style1_gray_bd { background: #d8d8d8; border: none; cursor: initial; } 
+.mygroupLst_type02 > li.item_rept_st .st_device.disabled .btn_style1_gray_bd span {color: #8a8a8b;}
+.mygroupLst_type02 > li.item_rept_st .st_device.disabled input {background: #d8d8d8; border: none; cursor: initial;}
+
+.btn_style1_gray_bd { cursor: pointer; height: 27px; line-height: 27px; background: #fff; border: 1px solid #EBEBEB; box-sizing: border-box; font-size: 13px; border-radius: 4px; min-width: 60px; } 
+.btn_style1_gray_bd span { color: #8A8A8B; } 
+
+.footer { width:100%; position:fixed; left:0; right:0; bottom:0; z-index: 800; } 
+.footer .copyright_wrap { padding-left: 15px; background: #fff; color: #000; font-weight: 400; height: 30px; line-height: 30px; } 
+
+.cipt input::placeholder {font-size: 12px;}
+
+.tb_scroll td {font-size: 14px;}
+
+/* ANIMATION */
+@keyframes fade-in { 
+  from { opacity: 0; bottom:0; } 
+  to { opacity: 1; bottom:41px; } 
+}
+
+/* MEDIA QUERY */
+@media screen and (max-width : 767px) {
+  /* COMMON */
+  #vatHeader ~ .container {padding-top: 60px;}
+  .defTit {font-size: 32px;}
+
+  /* HEADER */
+  #vatHeader .inner {height: 60px;}
+  #vatHeader .inner .logoWrap .textLogo {font-size: 18px;}
+  #vatHeader .inner .logoWrap .imgLogo {height: 45px;}
+  #vatHeader .inner nav {margin-right: -10px;}
+  #vatHeader .inner nav > ul > li > a {height: 60px; line-height: 60px; padding: 0 10px; font-size: 16px;}
+
+  /* DOTLIST */
+  .dotList li {font-size: 16px;}
+
+  /* BTNWRAP */
+  .btnWrap {flex-direction: column-reverse; gap: 10px;}
+  .btnWrap button {width: 100%; height: 60px; font-size: 20px;}
+  .btnWrap button + button {width: 100%; margin-top: 20px;}
+
+  /* FLOATING */
+  .floating {bottom: 20px;}
+
+  /* 셀렉트박스 */
+  .selectBox .selectItem {width: 107px; padding: 0 10px;}
+  .selectBox .selectList li a {height: 50px; line-height: 50px; font-size: 18px;}
+  .selectBox .selectItem img {width: 30px; margin-right: -8px;}
+
+  /* ########## VAT_SAVINGS.HTML ########## */
+  .savingWrap .areaTit {margin-bottom: 40px;}
+  .savingWrap .areaTit p {font-size: 18px;}
+  .savingWrap .areaTit p span {display: block;}
+
+  /* CERTIFORM */
+  #certiForm input {padding: 0 10px; font-size: 18px;}
+  #certiForm .busiNum {display: block;}
+  #certiForm .busiNum .formTit {margin-right: 16px;}
+  #certiForm .busiNum button {width: 100%; margin: 40px 0 0 0; font-size: 20px;}
+  #certiForm .simpleCerti {margin-top: 48px; padding: 0;}
+  #certiForm .agree .formTit {font-size: 21px;}
+  #certiForm .agree .checkList > li > div > label span {font-size: 18px;}
+  #certiForm .inputWrap > p strong {display: block;}
+  #certiForm .inputWrap .inputBox.resident .backNum {font-size: 16px;}
+  #certiForm .inputWrap .telBox {gap: 8px;}
+
+
+  /* ########## KAKAO_CERT.HTML ########## */
+  .kakaoCert {padding-top: 60px;}
+  .kakaoCert .areaTit p span {display: block;}
+  .kakaoCert .stepBox .step {display: block}
+  .kakaoCert .stepBox .step:not(:last-child) {padding-bottom: 40px}
+  .kakaoCert .stepBox .step:not(:last-child)::before {right: 0; bottom: 7px; font-size: 16px}
+  .kakaoCert .stepBox .step .areaImg img {display: block; margin: 0 auto;}
+  .kakaoCert .stepBox .step .areaTxt {margin-top: 14px}
+  .kakaoCert .stepBox .step .areaTxt strong {display: block; text-align: center; font-size: 22px}
+  .kakaoCert .stepBox .step .areaTxt p {text-align: center; font-size: 18px}
+
+  /* ########## RESULT.HTML ########## */
+  /* COMMON */
+  .vatSavings .btnWrap {width: 100%;}
+
+  /* RESULT */
+  .vatSavings .result {padding-top: 20px; min-height: calc(100vh - 60px);}
+  .vatSavings .result .defTit {font-size: 30px;}
+  .vatSavings .result .inner .visualImg {margin-bottom: 20px; width: 100%; max-width: 200px; height: auto;}
+  .vatSavings .result .inner .textBox > p {font-size: 22px;}
+  .vatSavings .result .inner .textBox .infoTxt {display: inline-block; margin-top: 40px; font-size: 20px;}
+  .vatSavings .result .inner .textBox .infoTxt span {display: block;}
+
+  /* EXPERIENCE */
+  .vatSavings .experience .inner > p {margin-top: 40px; font-size: 20px;}
+  .vatSavings .experience .inner > p span {display: block;}
+  .vatSavings .experience .consultList > li {display: flex; align-items: center; padding: 24px 20px; margin-top: 20px;}
+  .vatSavings .experience .consultList > li > div img {margin-right: 20px;}
+  .vatSavings .experience .consultList > li > div p {font-size: 22px;}
+
+  /* RPRTVIDEO */
+  .vatSavings .rprtVideo {padding-bottom: 150px;}
+  .vatSavings .rprtVideo .inner .areaVideo {margin: 0 -20px; border-radius: 0; border: none;}
+}
+
+@media (min-width : 768px) and (max-width : 1023px) {
+  /* COMMON */
+  .defTit {font-size: 42px;}
+}

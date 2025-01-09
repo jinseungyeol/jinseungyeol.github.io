@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
+    <defs>
+        <radialGradient id="lajnhgvy5a" cx="-.003" cy=".992" r="1.19" gradientTransform="matrix(.793 0 0 1 -.035 0)" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#bad7f1"/>
+            <stop offset=".198" stop-color="#a7c7e9"/>
+            <stop offset=".295" stop-color="#8bacd6"/>
+            <stop offset=".523" stop-color="#4f74af"/>
+            <stop offset=".717" stop-color="#244b92"/>
+            <stop offset=".867" stop-color="#093280"/>
+            <stop offset=".956" stop-color="#00297a"/>
+        </radialGradient>
+        <radialGradient id="j1spab44bb" cx="1.028" cy=".574" fx=".839" fy=".981" r=".79" gradientTransform="matrix(1.264 0 0 1 -.227 0)" gradientUnits="objectBoundingBox">
+            <stop offset=".055" stop-color="#bad7f1"/>
+            <stop offset=".33" stop-color="#98c2e4"/>
+            <stop offset=".439" stop-color="#81abd4"/>
+            <stop offset=".666" stop-color="#4872ac"/>
+            <stop offset=".929" stop-color="#00297a"/>
+        </radialGradient>
+    </defs>
+    <circle data-name="타원 71" cx="50" cy="50" r="50" style="fill:#013580"/>
+    <g data-name="그룹 470">
+        <g data-name="그룹 472">
+            <g data-name="그룹 468">
+                <path data-name="패스 937" d="M218.978 2256.359c2.177 3.684 0 6.029 0 6.029s-10.866 17.351-12.755 20.048a6.194 6.194 0 0 1-4.944 2.594h-17.5s7.426-11.012 13.672-20.726c1.438-2.235 1.94-3.326 1.94-6.782z" transform="translate(-132.446 -2216.317)" style="fill:url(#lajnhgvy5a)"/>
+                <path data-name="패스 938" d="M183.781 2221.825h17.5a6.194 6.194 0 0 1 4.944 2.593c1.888 2.7 12.755 20.049 12.755 20.049s2.177 2.345 0 6.03-10.83 17.026-10.83 17.026 1.322-5.466-2.677-12.324-21.692-33.374-21.692-33.374z" transform="translate(-132.446 -2204.332)" style="fill:url(#j1spab44bb)"/>
+            </g>
+            <g data-name="그룹 471">
+                <path data-name="패스 937" d="M35.2 0c2.177 3.684 0 6.03 0 6.03S24.331 23.38 22.443 26.078a6.2 6.2 0 0 1-4.943 2.594H0S7.426 17.66 13.672 7.946c1.438-2.235 1.94-3.326 1.94-6.782z" transform="rotate(180 25.14 29.285)" style="fill:url(#lajnhgvy5a)"/>
+                <path data-name="패스 938" d="M0 0h17.5a6.192 6.192 0 0 1 4.944 2.593C24.331 5.291 35.2 22.642 35.2 22.642s2.177 2.346 0 6.03S24.368 45.7 24.368 45.7s1.322-5.466-2.677-12.324S0 0 0 0z" transform="rotate(180 25.14 40.56)" style="fill:url(#j1spab44bb)"/>
+            </g>
+        </g>
+    </g>
+</svg>

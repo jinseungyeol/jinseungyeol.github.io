@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<title>세무대리인 for 경리나라</title>
+<link rel="stylesheet" href="../css/reset_taxp.css">
+<link rel="stylesheet" href="../css/app_header.css"><!-- [D] 세무대리인용 header -->
+<link rel="stylesheet" href="../css/content_taxp.css"><!-- [D] 세무대리인용 -->
+
+<!-- custom scrollbar plugin css -->
+<link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+<script src="https://publ.roumit.com/js/firebase_include.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+<!-- custom scrollbar plugin -->
+<script src="../js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../js/jquery.placeholder.min.js"></script>
+<script>
+	$(function(){
+		// Invoke the plugin
+		$('input, textarea').placeholder({customClass:'my-placeholder'});
+		// 상담문의
+		$( "#btn_notice" ).on( "click", function() {
+			$("#pop_notice").toggle();
+		});
+		// 담당자지정
+		$( "#btn_manager" ).on( "click", function() {
+			$("#pop_manager").toggle();
+		});
+		// 작업일시
+		$( "#btn_last_work" ).on( "click", function() {
+			$("#pop_last_work").toggle();
+		});
+	} );
+</script>
+
+</head>
+
+<body>
+
+<!-- header -->
+<div class="app_header">
+	<div class="app_header_inner">
+		<div class="ah_l">
+			<h1>수임처</h1>
+		</div>
+
+		<div class="ah_r"></div>
+	</div>
+</div>
+<!-- //header -->
+
+<div class="wrap">
+	<!-- Container -->
+	<div class="container">
+		<!-- content wrap -->
+		<div class="content">
+
+			<div class="content_wrap">
+
+				<!-- 거래처조회 > 상세(회사정보) -->
+				<div class="cust_dv_wrap edit_on nobd"><!-- [D] 편집기능 눌렀을때 class="edit_on" 추가 -->
+
+					<div class="top_cust_tit">
+						<div class="left">
+							<div class="cntalign"><h1><input type="text" class="ipt_block" style="width:200px;" value="미소야"></h1></div>
+							<div class="cntalign">
+								<ul class="top_list">
+									<li class="col1"><strong style="display:inline-block;vertical-align:middle;padding-top:2px;">311-88-00892</strong>&nbsp;&nbsp;<input type="text" value="" style="width:60px; display: none;" class="ipt_block"></li>
+									<li class="col2"><strong><input type="text" value="신영훈" style="width: 70px;" class="ipt_block">&nbsp;대표</strong></li>
+									<li class="col3"><img src="../img/txof/ico/ico_tel.png" alt="Tel"><input type="text" value="02-3779-0001" style="width: 85px;" class="ipt_block"></li>
+									<li class="col4"><img src="../img/txof/ico/ico_fax.png" alt="Fax"><input type="text" value="02-3779-0002" style="width: 85px;" class="ipt_block"></li>
+								</ul>
+							</div>
+						</div>
+						<div class="right">
+							<div class="cntalign">
+								<a class="btn_ico_back" href="#none"><span class="blind">뒤로가기</span></a>
+							</div>
+						</div>
+					</div>
+
+					<!-- 탭영역/버튼 -->
+					<div class="tabType02">
+						<!-- (modify)20220718 순서 변경 -->
+						<ul>
+							<li class="on"><a href="#none">회사정보조회</a></li>
+							<li><a href="#none">ID / PW 관리</a></li>
+							<li><a href="#none">서류함</a></li>
+							<li><a href="#none">소통게시판</a></li>
+							<li><a href="#none">거래증빙</a></li>
+							<li><a href="#none">직원급여정보</a></li>
+							<li><a href="#none">세무사 보고서</a></li>
+							<!--<li><a href="#none">미수금관리</a></li>--> <!-- 2022-MM-DD 주석 -->
+						</ul>
+						<!-- //(modify)20220718 순서 변경 -->
+						<div class="right">
+							<div class="cntalign">
+								<a href="#none" class="btn_wnotbd"><span>소통게시판</span></a>
+							</div>
+							<div class="cntalign">
+								<a href="#none" class="btn_webkr"><span class="blind">경리나라</span></a><!-- 2022-07-06 -->
+							</div>
+							<div class="cntalign">
+								<a href="#none" class="btn_wflow"><span>플로우</span></a>
+							</div>
+						</div>
+					</div>
+					<!-- //탭영역/버튼 -->
+
+					<div class="cust_wrap cboth">
+						<div class="cust_dv_bx" style="display:;">
+							<h3 class="tit_bul"> 관리정보</h3>
+							<p class="info_edit">※ 계약정보를 입력하시면 수임처 계약정보및 관리를 체계적으로 관리 할 수 있습니다. <a href="#none" class="btn_edit"><span>수정</span></a></p><!-- 2022-08-29 -->
+
+							<!-- 주소/업태종목/메모/계좌정보 -->
+							<div class="tb_cust_dv cboth">
+								<table>
+									<colgroup>
+									<col width="160px">
+									<col>
+									</colgroup>
+									<tr>
+										<th scope="row"><div>수임기준일</div></th>
+										<td>
+											<div class="ipt_block">
+												<input type="text" value="20210101" style="width: 120px;"> &nbsp;<a href="#none"><img src="../img/txof/ico/ico_calendar.png" alt=""></a>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row"><div>계약상태</div></th>
+										<td>
+											<div class="ipt_block">
+												<label><input type="radio" checked="">&nbsp; 기장법인</label>
+												<label><input type="radio" checked="">&nbsp; 신고법인</label>
+												<label><input type="radio" checked="">&nbsp; 기장개인</label>
+												<label><input type="radio" checked="">&nbsp; 신고개인</label>
+												<label><input type="radio" checked="">&nbsp; 아웃소싱</label>
+												<label><input type="radio" checked="">&nbsp; 자문계약</label>
+												<label ><input type="radio" checked="">&nbsp; 조세불북</label>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row"><div>가입경로</div></th>
+										<td>
+											<div class="ipt_block">
+												<label><input type="radio" checked="">&nbsp; 자체확장</label>
+												<label><input type="radio" checked="">&nbsp; 거래처소개</label>
+												<label><input type="radio" checked="">&nbsp; 지인소개</label>
+												<label><input type="radio" checked="">&nbsp; 직원소개</label>
+												<label style="width:264px;"><input type="radio" checked="">&nbsp; 기타 <input type="text" value="" style="width: 120px;margin-top:-4px;vertical-align:top;"></label>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row"><div>월 기장료</div></th>
+										<td>
+											<div class="ipt_block"><input type="text" class="tar" value="10,000,000" placeholder="" style="width: 120px;"></div>
+										</td>
+									</tr>
+									<!-- 2022-06-30 -->
+									<tr>
+										<th scope="row"><div>현 미수금</div></th>
+										<td>
+											<div class="ipt_block"><input type="text" class="tar" value="10,000,000" placeholder="" style="width: 120px;"></div>
+										</td>
+									</tr>
+									<!-- //2022-06-30 -->
+									<tr>
+										<th scope="row"><div>전년 조정료</div></th>
+										<td>
+											<div class="ipt_block"><input type="text" class="tar" value="10,000,000" placeholder="" style="width: 120px;"></div>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row"><div>담당자</div></th><!-- (modify)20220718 -->
+										<td><div class="ipt_none"></div></td>
+									</tr>
+									<tr>
+										<th scope="row"><div>지점</div></th>
+										<td>
+											<div class="ipt_block card_combo no_line" style="padding:0;"><!-- 입력전에만 no_line 클래스 추가 -->
+												<!-- 입력 전 -->
+												<span class="card_combo_in" style="display:none;">
+													<span class="bg">
+													</span>
+													<div class="btn"><a class="edit"><span class="blind">수정</span></a></div>
+												</span>
+												<!-- //입력 전 -->
+												<!-- 입력 후 -->
+												<span class="card_combo_in">
+													<span class="bg">
+														<input type="text" value="이병학세무사" placeholder="입력">
+														<!-- <a class="btn_del"><span class="blind">삭제</span></a> -->
+													</span>
+													<a class="btn_open"><span class="blind">열기</span></a>
+												</span>
+												<!-- //입력 후 -->
+												<!-- 콤보박스 -->
+												<div class="layertype1 mCustomScrollbar" style="display:none;min-width:175px;max-height:75px;top:22px;left:0;z-index:100007;">
+													<ul class="bg_no ">
+														<li><a href="#none">최경환세무사</a></li>
+														<li><a href="#none">최경환세무사</a></li>
+														<li><a href="#none">최경환세무사</a></li>
+														<li><a href="#none">최경환세무사</a></li>
+														<li><a href="#none">최경환세무사</a></li>
+														<li><a href="#none">최경환세무사</a></li>
+														<li><a href="#none">최경환세무사</a></li>
+														<li><a href="#none">최경환세무사</a></li>
+														<li><a href="#none">최경환세무사</a></li>
+														<li><a href="#none">최경환세무사</a></li>
+													</ul>
+												</div>
+												<!-- //콤보박스 -->
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row"><div>업무량</div></th>
+										<td>
+											<div class="ipt_block">
+												<label><input type="radio">&nbsp; 상</label>
+												<label><input type="radio" checked="">&nbsp; 중</label>
+												<label><input type="radio">&nbsp; 하</label>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row"><div>난이도</div></th>
+										<td>
+											<div class="ipt_block">
+												<label><input type="radio">&nbsp; 상</label>
+												<label><input type="radio" checked="">&nbsp; 중</label>
+												<label><input type="radio">&nbsp; 하</label>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row"><div>주소</div></th>
+										<td>
+											<div class="ipt_block"><input type="text" value="서울특별시 마포구 만리재로 14  (공덕동, 한국사회복지회관 르네상스타워) 2201호" style="width: 500px;"></div>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row"><div>개업일</div></th>
+										<td>
+											<div class="ipt_block">
+												<input type="text" value="20210101" style="width: 120px;"> &nbsp;<a href="#none"><img src="../img/txof/ico/ico_calendar.png" alt=""></a>
+											</div>
+										</td>
+									</tr>
+									<!-- (add)20220718 -->
+									<tr>
+										<th scope="row"><div>법인번호</div></th>
+										<td><div class="ipt_block"><input type="text" value="" style="width: 120px;"></div></td>
+									</tr>
+									<!-- //(add)20220718 -->
+									<tr>
+										<th scope="row"><div>기장료 출금시작일</div></th>
+										<td>
+											<div class="ipt_block">
+												<input type="text" value="20210101" style="width: 120px;"> &nbsp;<a href="#none"><img src="../img/txof/ico/ico_calendar.png" alt=""></a>
+											</div>
+										</td>
+									</tr>
+									<!-- 2022-06-30 -->
+									<tr>
+										<th scope="row"><div>CMS 회원번호</div></th><!-- (modify)20220718 -->
+										<td><div class="ipt_block"><input type="text" placeholder="회원번호를 입력" value="M0000672" style="width: 120px;"></div></td>
+									</tr>
+									<tr>
+										<th scope="row"><div>CMS 수납구분</div></th>
+										<td>
+											<div class="ipt_block">
+												<label style="width:150px;"><input type="radio">&nbsp; 계좌(CMS)</label>
+												<label style="width:150px;"><input type="radio" checked="">&nbsp; 카드(CMS)</label>
+											</div>
+										</td>
+									</tr>
+									<!-- //2022-06-30 -->
+									<tr>
+										<th scope="row"><div>기장료 출금계좌</div></th>
+										<td>
+											<div class="ipt_block card_combo no_line">
+												<span class="card_combo_in">
+													<span class="bg">
+														<input type="text" value="CMS" placeholder="선택" style="width:75px;">
+													</span>
+													<a class="btn_open"><span class="blind">열기</span></a>
+												</span>
+												<div class="dselect_layer" style="width:98%;height:auto;display:none;">
+													<ul>
+														<li>선택</li>
+														<li>CMS</li>
+														<li>기타</li>
+													</ul>
+												</div>
+											</div>
+											<div class="ipt_block card_combo no_line">
+												<span class="card_combo_in">
+													<span class="bg">
+														<input type="text" value="국민" placeholder="입력" style="width:75px;">
+														<!-- <a class="btn_del"><span class="blind">삭제</span></a> -->
+													</span>
+													<a class="btn_open"><span class="blind">열기</span></a>
+												</span>
+												<div class="dselect_layer mCustomScrollbar" style="display:none;">
+													<ul>
+														<li><img src="../img/txof/sb_img20x20/KB증권.png" alt="">국민은행</li>
+														<li><img src="../img/txof/sb_img20x20/기업은행.png" alt="">기업은행</li>
+														<li><img src="../img/txof/sb_img20x20/농협은행.png" alt="">농협은행</li>
+														<li><img src="../img/txof/sb_img20x20/simbol_hana.png" alt="">하나은행</li>
+														<li><img src="../img/txof/sb_img20x20/신한금융투자.png" alt="">신한은행</li>
+														<li><img src="../img/txof/sb_img20x20/우리은행.png" alt="">우리은행</li>
+														<li><img src="../img/txof/sb_img20x20/뱅크오브아메리카.png" alt="">뱅크오프아메리카</li>
+													</ul>
+												</div>
+											</div>
+											<div class="ipt_block"><input type="text" value="547747-01-00101-11" style="width:238px;"></div>
+										</td>
+									</tr>
+									<!-- 기타샘플 -->
+									<tr>
+										<th scope="row"><div>기장료 출금계좌(샘플)</div></th>
+										<td>
+											<div class="ipt_block card_combo no_line">
+												<span class="card_combo_in">
+													<span class="bg">
+														<input type="text" value="기타" placeholder="선택" style="width:75px;">
+													</span>
+													<a class="btn_open"><span class="blind">열기</span></a>
+												</span>
+												<div class="dselect_layer" style="width:98%;height:auto;display:none;">
+													<ul>
+														<li>선택</li>
+														<li>CMS</li>
+														<li>기타</li>
+													</ul>
+												</div>
+											</div>
+											<div class="ipt_block card_combo no_line" style="display:none;">
+												<span class="card_combo_in">
+													<span class="bg">
+														<input type="text" value="국민" placeholder="입력" style="width:75px;">
+														<!-- <a class="btn_del"><span class="blind">삭제</span></a> -->
+													</span>
+													<a class="btn_open"><span class="blind">열기</span></a>
+												</span>
+												<div class="dselect_layer mCustomScrollbar" style="display:none;">
+													<ul>
+														<li><img src="../img/txof/sb_img20x20/KB증권.png" alt="">국민은행</li>
+														<li><img src="../img/txof/sb_img20x20/기업은행.png" alt="">기업은행</li>
+														<li><img src="../img/txof/sb_img20x20/농협은행.png" alt="">농협은행</li>
+														<li><img src="../img/txof/sb_img20x20/simbol_hana.png" alt="">하나은행</li>
+														<li><img src="../img/txof/sb_img20x20/신한금융투자.png" alt="">신한은행</li>
+														<li><img src="../img/txof/sb_img20x20/우리은행.png" alt="">우리은행</li>
+														<li><img src="../img/txof/sb_img20x20/뱅크오브아메리카.png" alt="">뱅크오프아메리카</li>
+													</ul>
+												</div>
+											</div>
+											<div class="ipt_block"><input type="text" value="547747-01-00101-11" style="width:368px;"></div>
+										</td>
+									</tr>
+									<!-- //기타샘플 -->
+									<!-- (add)20220718 -->
+									<tr>
+										<th scope="row"><div>성실신고대상</div></th>
+										<td>
+											<div class="ipt_block">
+												<label style="width:150px;"><input type="radio">&nbsp; 여</label>
+												<label style="width:150px;"><input type="radio">&nbsp; 부</label>
+											</div>
+										</td>
+									</tr>
+									<!-- //(add)20220718 -->
+									<tr>
+										<th scope="row"><div>회계프로그램 코드</div></th>
+										<td>
+											<div class="ipt_block">
+												<input type="text" value="" style="width: 120px;">
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row"><div>포스업체 연락처</div></th>
+										<td>
+											<div class="ipt_block">
+												<input type="text" value="" style="width: 120px;">
+											</div>
+										</td>
+									</tr>
+									<!-- 2022-09-20 -->
+									<tr>
+										<th scope="row"><div>급여지급기준</div></th>
+										<td>
+											<div class="ipt_block">
+												<label style="width:150px;"><input type="radio">&nbsp; 당월</label>
+												<label style="width:150px;"><input type="radio">&nbsp; 익월</label>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row"><div>급여일</div></th>
+										<td>
+											<div class="ipt_block" style="position:relative;">
+												<input type="text" value="" style="width: 120px;" placeholder="급여일 선택"> &nbsp;<a href="#none"><img src="../img/txof/ico/ico_calendar.png" alt=""></a>
+												<!-- 레이어(급여 지급일) -->
+												<div class="ly_month" style="display:;top:25px;left:135px;width:317px;z-index:111;">
+													<div class="lytop tal">
+														<span class="bul2_b">급여 지급일</span>
+													</div>
+													<div class="lymcont day7">
+														<ol>
+															<li><a href="#none">1</a></li>
+															<li><a href="#none">2</a></li>
+															<li><a href="#none">3</a></li>
+															<li><a href="#none">4</a></li>
+															<li><a href="#none">5</a></li>
+															<li><a href="#none">6</a></li>
+															<li><a href="#none">7</a></li>
+															<li><a href="#none">8</a></li>
+															<li><a href="#none">9</a></li>
+															<li><a href="#none" class="on">10</a></li>
+															<li><a href="#none">11</a></li>
+															<li><a href="#none">12</a></li>
+															<li><a href="#none">13</a></li>
+															<li><a href="#none">14</a></li>
+															<li><a href="#none">15</a></li>
+															<li><a href="#none">16</a></li>
+															<li><a href="#none">17</a></li>
+															<li><a href="#none">18</a></li>
+															<li><a href="#none">19</a></li>
+															<li><a href="#none">20</a></li>
+															<li><a href="#none">21</a></li>
+															<li><a href="#none">22</a></li>
+															<li><a href="#none">23</a></li>
+															<li><a href="#none">24</a></li>
+															<li><a href="#none">25</a></li>
+															<li><a href="#none">26</a></li>
+															<li><a href="#none">27</a></li>
+															<li><a href="#none">28</a></li>
+															<li><a href="#none">29</a></li>
+															<li><a href="#none">30</a></li>
+															<li><a href="#none">31</a></li>
+															<li><a href="#none">말일</a></li>
+															<li><a href="#none" class="dis">&nbsp;</a></li>
+															<li><a href="#none" class="dis">&nbsp;</a></li>
+															<li><a href="#none" class="dis">&nbsp;</a></li>
+														</ol>
+													</div>
+													<div class="lybtm cboth tac mgt10">
+														<a href="#none" class="btn_style3_b"><span>저장</span></a>
+														<a href="#none" class="btn_style3"><span>닫기</span></a>
+													</div>
+												</div>
+												<!-- //레이어(급여 지급일) -->
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row"><div>급여대상</div></th>
+										<td>
+											<div class="ipt_block">
+												<label><input type="checkbox">&nbsp; 일반</label>
+												<label><input type="checkbox">&nbsp; 일용</label>
+												<label><input type="checkbox">&nbsp; 사업</label>
+												<label><input type="checkbox">&nbsp; 기타</label>
+											</div>
+										</td>
+									</tr>
+									<!-- //2022-09-20 -->
+									<tr>
+										<th scope="row"><div>폐업일</div></th>
+										<td>
+											<div class="ipt_block">
+												<input type="text" value="" style="width: 120px;"> &nbsp;<a href="#none"><img src="../img/txof/ico/ico_calendar.png" alt=""></a> / <input type="text" value="" style="width: 330px;">
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row"><div>적요</div></th><!-- (modify)20220718 -->
+										<td class="noht">
+											<div class="ipt_block">
+												<div class="tbl_memoarea">
+													<textarea name="" id="" cols rows></textarea>
+													<!-- 메모칼라선택 -->
+													<div class="memocolor_layer">
+														<ul class="select_edit"><!-- [D] 메모선택창 오픈 - textarea활성시 -->
+															<li class="color_blue select"><span class="bg"></span><a href="#none" title="Blue"></a></li><!-- [D] 선택클래스 select -->
+															<li class="color_green "><span class="bg"></span><a href="#none" title="Green"></a></li>
+															<li class="color_yellow "><span class="bg"></span><a href="#none" title="Yellow"></a></li>
+															<li class="color_orange "><span class="bg"></span><a href="#none" title="Orange"></a></li>
+															<li class="color_red "><span class="bg"></span><a href="#none" title="Red"></a></li>
+														</ul>
+													</div>
+													<!-- //메모칼라선택 -->
+												</div>
+											</div>
+										</td>
+									</tr>
+								</table>
+							</div><!-- //주소/업태종목/메모/계좌정보 -->
+							<!-- 직원정보 -->
+							<div class="tb_cust_dv2" style="padding-left:160px;">
+								<strong class="title data_veiw">거래처 연락처</strong>
+								<div class="tb_cust_scroll">
+									<table class="list_table">
+										<colgroup>
+											<col style="width: 90px;">
+											<col style="width: 75px;">
+											<col style="width: 115px;">
+											<col style="">
+											<col style="width: 85px;"><!-- 2022-08-18 -->
+											<col style="width: 105px;">
+											<col style="width: 140px;">
+										</colgroup>
+										<thead>
+										<tr class="ipt_block">
+											<th scope="col" class="first">이름</th>
+											<th scope="col">직급</th>
+											<th scope="col">연락처</th>
+											<th scope="col">메일</th>
+											<th scope="col" class="tac">계산서담당자</th><!-- 2022-08-18 문구수정 -->
+											<th scope="col" class="tac">SMS 수신거부</th>
+											<th scope="col"></th>
+										</tr>
+										</thead>
+										<tbody>
+										<tr class="ipt_block"><!-- 편집 -->
+											<td class="first"><input type="text" style="width: 60px;" value="신영훈"></td>
+											<td><input type="text" style="width: 60px;" value="대표"></td>
+											<td><input type="text" style="width: 100px;" value="010-2865-7895"></td>
+											<td><input type="text" style="width: 220px;" value="master@webcash.co.kr"></td>
+											<td class="tac"><input type="checkbox"></td>
+											<td class="tac"><input type="checkbox"></td>
+											<td>
+												<a href="#none" class="btn_list_up ipt_block"><span class="blind">위로</span></a>&nbsp;<a href="#none" class="btn_list_do ipt_block"><span class="blind">아래로</span></a>&nbsp;<a href="#none" class="btn_minus ipt_block"><span class="blind">삭제</span></a>&nbsp;<a href="#none" class="btn_plus ipt_block"><span class="blind">추가</span></a>
+											</td>
+										</tr><!-- //편집 -->
+										<tr class="ipt_block"><!-- 편집 -->
+											<td class="first"><input type="text" style="width: 60px;" value="김한나"></td>
+											<td><input type="text" style="width: 60px;" value="대리"></td>
+											<td><input type="text" style="width: 100px;" value="010-2580-1000"></td>
+											<td><input type="text" style="width: 220px;" value="sales@webcash.co.kr"></td>
+											<td class="tac"><input type="checkbox"></td>
+											<td class="tac"><input type="checkbox"></td>
+											<td>
+												<a href="#none" class="btn_list_up ipt_block"><span class="blind">위로</span></a>&nbsp;<a href="#none" class="btn_list_do ipt_block"><span class="blind">아래로</span></a>&nbsp;<a href="#none" class="btn_minus ipt_block"><span class="blind">삭제</span></a>&nbsp;<a href="#none" class="btn_plus ipt_block"><span class="blind">추가</span></a>
+											</td>
+										</tr><!-- //편집 -->
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<!-- //직원정보 -->
+						</div>
+						<div class="cust_dv_bx rht">
+							<h3 class="tit_bul"> 홈택스 기본정보</h3>
+							<p class="info_edit">※ 홈택스 업데이트 버튼을 클릭 하면 정보를 업데이트 합니다. </p>
+							<div class="upbx bg_g">
+								<h4>홈택스 수임동의가 되어 있지 않습니다.</h4>
+								<p>홈택스 수임동의가 되어 있지 않으면 아래와 같은 <span class="txt_r">서비스에 이용이 제한</span>됩니다.</p>
+								<ul class="uplist">
+									<ol>
+										<li> 1. 홈택스 기본정보를 조회 할 수 없습니다.</li>
+										<li> 2. 민원증명 서식을 조회 할 수 없습니다.</li>
+										<li> 3. 부가세 자료를 조회 할 수 없습니다.</li>
+										<li> 4. 사업용 신고계좌를 조회 할 수 업습니다.</li>
+										<li> 5. 법인세 신고안내문을 조회 할 수 없습니다.</li>
+										<li> 6. 종합소득세 신고안내문을 조회 할 수 없습니다.</li>
+										<li> 7. 부가세 신고안내문을 조회 할 수 없습니다.</li>
+										<li> 8. 그외 위멤버스에서 제공하는 다양한 서비스에 제한이 있습니다.</li>
+									</ol>
+								</ul>
+								<div class="tac"><a href="#none" class="btn_style_big"><span>홈택스 수임동의요청</span></a></div>
+							</div>
+						</div>
+					</div>
+					<!-- 버튼 -->
+					<div class="t_center ipt_block">
+						<a class="btn_style1_b" href="#none"><span>저장</span></a>&nbsp;<a class="btn_style1" href="#none"><span>취소</span></a>
+					</div>
+					<!-- //버튼 -->
+				</div>
+				<!-- //거래처조회 > 상세(회사정보) -->
+
+			</div>
+		</div>
+		<!-- //content wrap -->
+	</div>
+	<!-- //Container -->
+</div>
+<!-- //wrap -->
+
+
+</body>
+</html>
+

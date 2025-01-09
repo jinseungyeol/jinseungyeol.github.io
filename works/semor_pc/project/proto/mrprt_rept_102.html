@@ -1,0 +1,1382 @@
+<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+		<title>보고서 요약/상세</title>
+		<link rel="stylesheet" href="../css/w2ui_2.0.css">
+		<link rel="stylesheet" href="../css/swiper-bundle.min.css">
+		<link rel="stylesheet" href="../css/reset_taxp.css">
+		<link rel="stylesheet" href="../css/app_header.css">
+		<link rel="stylesheet" href="../css/content_taxp.css">
+		<link rel="stylesheet" href="../css/semo_rept.css">
+		<link rel="stylesheet" href="../css/w2ui-2.0.css">
+	
+		<!-- custom scrollbar plugin css -->
+		<link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+		<script src="https://publ.roumit.com/js/firebase_include.js"></script>
+		  <script src="../js/lib/jquery/jquery-1.12.4.min.js"></script>
+		<script src="../js/lib/jquery/jquery-ui-1.10.4.min.js"></script>
+		<script src="../js/lib/swiper/swiper-bundle.min.js"></script>
+		<!-- custom scrollbar plugin -->
+		<script src="../js/lib/plugin/w2ui.js"></script>
+		<script src="../js/design/jquery.mCustomScrollbar.concat.min.js"></script>
+		<script src="../js/design/jquery.placeholder.min.js"></script>
+		<script src="../js/lib/plugin/smart.popup.js"></script>
+		<script src="../js/lib/chart/chart-3.5.1.min.js"></script>
+		<script src="../js/comm/common.js"></script>
+
+		<style>
+
+		</style>
+	</head>
+<div class="band_banner">
+	<div class="banner_wrap">
+		<div class="swiper topban_swiper swiper-fade swiper-initialized swiper-vertical swiper-pointer-events">
+			<div class="swiper-wrapper" id="swiper-wrapper-dd5632bd110cc1f86" aria-live="off" style="transition-duration: 0ms;">
+					<div class="cont_box">
+						<div class="info_wrap">
+							<span class="txt_01">요금 및 청구내역 메뉴 신규 오픈! 이용 내역 조회 바로가기</span>
+							<div class="ico_arr">
+								<img src="../img/txof/ico/ico_arr_24x24.svg" alt="">
+							</div>
+						</div>
+						<div class="button_wrap">
+							<button type="button" class="close_btn">
+								<span>오늘하루 보지 않기</span>
+								<img src="../img/txof/btn/brn_bnnerpop_close3.png" alt="">
+							</button>
+						</div>
+					</div>
+				<div class="cont_box type_02">
+					<div class="info_wrap">
+						<span class="txt_01">
+							시스템 점검 안내: 5월 16일(목) 21시부터 자정까지 서비스가 일시 중단됩니다.
+						</span>
+					</div>
+					<div class="button_wrap">
+						<button type="button" class="close_btn">
+							<span>오늘하루 보지 않기</span>
+							<img src="../img/txof/btn/brn_bnnerpop_close3.png" alt="">
+						</button>
+					</div>
+				</div>
+			</div>
+		<span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+		
+		
+	</div>	
+</div>
+<body class="lnb_bg"><!-- [D] 메뉴영역(접기 : class="fold", 펼치기 : class="lnb_bg") -->
+
+<!-- 수임처 개선 -->
+<!-- header -->
+<div class="app_header rept">
+	<div class="app_header_inner">
+		<div class="ah_l" onclick="location.href='/intro.act'" style="cursor: pointer;">
+			<h1>세모리포트 <span>X</span>로움세무회계</h1>
+		</div>	
+		<div class="ah_c">
+			<div class="warning_txt02">
+				<p>세모리포트 테스트 환경입니다.</p>
+			</div>
+		</div>
+		<div class="ah_r">
+			<ul class="ah_menu">
+				<li style="position:relative;">
+					<a href="#none" class="hd_tag weTalk disabled_flt" onclick="kakaoCheck('CHAT_LIST','')">
+						<img src="../img/txof/ico/ico_talk.svg" alt="">
+						<span>We Talk</span>
+						<span class="talk_conting_num" id="chat_bage" style="display: none;">N</span>
+					</a>
+				</li>
+				<li id="update_gud">
+					<a href="https://url.smjb.co.kr/9QdmGB.url" target="_blink" class="hd_tag updateInfo">
+						<img src="../img/txof/ico/ico_speaker.svg" alt="">
+						<span>업데이트</span>
+						<span class="talk_conting_num" style="display:none;">N</span>
+					</a>
+				</li>
+                <li>
+                    <a class="hd_tag hd_alarm" href="#none">
+						<img src="../img/txof/ico/ico_noti.svg" alt="">
+						<span>알림</span>
+						<div class="count" id="_noti_push_cnt" style="">83</div>
+					</a>
+                </li>
+                <li class="customer" id="popup_cs">
+                	<button type="button" class="ct_btn" id="btn_cs_center">
+                		<i></i>
+                		<span>고객센터</span>
+                	</button>	
+                	<div class="gnb_pop" id="popup_cs_center">
+						<div class="gnb_pop_inner">
+							<div class="top">
+								<span>궁금한 사항을 한 눈에 !</span>
+								<button type="button" class="close_btn" id="btn_close_cs" onclick="getPopCookie('popup_cs');">
+									<img src="../img/txof/btn/close_w_20.svg" alt="">
+								</button>
+							</div>
+							<div class="info_wrap">
+								<ul>
+									<li class="tit">
+										<span>이용가이드</span>
+									</li>
+									<li class="list">
+										<a href="https://semo-edu.liveklass.com/" target="_blank">
+											<img src="../img/txof/app_header/gnb_info_01.svg" alt="">
+											<span>온라인 강의실</span>
+										</a>
+									</li>
+									<li class="list">
+										<a href="https://url.smjb.co.kr/MRdmGB.url" target="_blank">
+											<img src="../img/txof/app_header/gnb_info_02.svg" alt="">
+											<span>세모리포트가 처음이라면?</span>
+										</a>
+									</li>
+								</ul>
+								<ul>
+									<li class="tit">
+										<span>고객센터</span>
+									</li>
+									<li class="list">
+										<a href="https://url.smjb.co.kr/3QdmGB.url" target="_blank">
+											<img src="../img/txof/app_header/gnb_info_03.svg" alt="">
+											<span>세모리포트 도움말</span>
+										</a>
+									</li>
+									<li class="list">
+										<a href="https://help.semoreport.com/guide/manual" target="_blank">
+											<img src="../img/txof/app_header/ico_gnb_info_btn3_new.svg" alt="">
+											<span>세모리포트 매뉴얼</span>
+										</a>
+									</li>
+									<li class="list">
+										<a href="https://url.smjb.co.kr/3XdmGB.url" target="_blank">
+											<img src="../img/txof/app_header/ico_gnb_info_btn3_new.svg" alt="">
+											<span>고객 요약 분석 활용가이드</span>
+										</a>
+									</li>
+									<li class="list">
+										<a href="https://url.smjb.co.kr/ORdmGB.url" target="_blank">
+											<img src="../img/txof/app_header/gnb_info_04.svg" alt="">
+											<span>자주하는 질문</span>
+										</a>
+									</li>
+									<li class="list">
+										<a href="https://url.smjb.co.kr/8QdmGB.url" target="_blank">
+											<img src="../img/txof/app_header/gnb_info_08.svg" alt="">
+											<span>공지사항</span>
+										</a>
+									</li>
+									<li class="list">
+										<a href="javascript:openChannelBot();">
+											<img src="../img/txof/app_header/gnb_info_07.svg" alt="">
+											<span>채팅 상담</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</li>
+                <!--
+				<li class="txtMenu">
+					<a href="javascript:openChannelBot();" >채팅상담</a>
+					<a href="https://url.smjb.co.kr/3QdmGB.url" target="_blink">도움말</a>
+					<a href="https://url.smjb.co.kr/8QdmGB.url" target="_blink">공지사항</a>
+				</li>
+				-->
+				<!-- 
+				<li style="position:absolute;top:-16px;left:-47px;"><a href="#none" class="btn_alarm" title="알림"><em class="alarm_num" style="display: none;"></em></a></li>
+				<li><a href="#none"><img src="../img/txof/app_header/ic_top04.png" alt="">SMS</a></li>
+				<li style="position:relative;">
+					<a href="https://academyserp.notion.site/4ee92f23a9184afda550d61faf10a5e3" target="_blink"><img src="../img/txof/app_header/ic_top05.png" alt="">메뉴얼</a>
+				</li>
+				<li><a href="#none"><img src="../img/txof/app_header/ic_top02.png" alt="">로그아웃</a></li>
+				-->
+			</ul>
+		</div>
+	</div>
+	
+	<div class="header-side_bg" style="display: none;">
+        <div class="header-side_box">
+            <div class="hds_inner">
+                <div class="hds_top">
+                    <div class="hds_title">
+                        <h1>알림</h1>
+                        <div class="btn">
+                            <button class="hd_close" type="button">
+                                <div class="icon"></div>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="hds_tab">
+                        <div class="left">
+                            <ul>
+                                <li>
+									<button class="active" type="button" id="_hd_noti_new">안읽음</button>
+                                </li>
+                                <li>
+                                    <button type="button" id="_hd_noti_all">전체</button>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="right">
+                            <div class="state">
+                                <button type="button" id="_hd_noti_cnfm_all">모두읽음</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hds_search">
+                        <div class="input_wrap">
+							<div class="left">
+								<button class="srch_btn" type="button" id="_hd_noti_srch_btn">
+								</button>
+								<input type="text" value="" id="_hd_noti_word" placeholder="검색어를 입력하세요" style="width: 250px;">
+							</div>
+							<div class="right">
+								<button class="clo_btn" type="button"></button>
+
+							</div>
+
+
+                        </div>
+                    </div>
+					<div class="hds_option">
+						<ul>
+							<li class="hds_opt_01">
+								<span>검색옵션</span>
+							</li>
+							<li class="hds_opt_02">
+								<button class="active" type="button" id="_hd_noti_opt_01">
+									<span>거래처명</span>
+								</button>
+								<button class="active" type="button" id="_hd_noti_opt_02">
+									<span>내용</span>
+								</button>
+							</li>
+						
+						</ul>
+					</div>
+                </div>
+                <div class="hds_content">
+
+                    <div class="list_wrap">
+
+						<!-- 알림 list -->
+                        <ul class="list" id="_hd_noti_list" style="cursor:pointer;">
+                        </ul>
+
+						<!-- 알람없을시 show  -->
+						<div class="no-alarm" id="_hd_noti_no" style="display:none;">
+							<div class="icon">
+								<img src="/img/txof/ico/page_43x50.png" alt="">
+							</div>
+							<div class="desc">
+								<span>아직 도착한 업무 알림이 없어요</span>
+							</div>
+						</div>
+
+                    </div>
+					
+					<!-- 검색창 체크시 show -->
+					<div class="src_option" id="_hd_noti_srch_res" style="display:none;">
+						<div class="scr_opt_tit" id="_hd_noti_srch_gd">
+							<span>
+								<strong name="_hd_noti_srch_word"></strong>
+								검색어가 포함된 거래처명을 검색합니다.
+							</span>
+						</div>
+						<ul class="src_list" id="_hd_noti_biz_list">
+						</ul>
+						<div class="no-src" id="_hd_noti_no_srch" style="display:none;">
+							<div class="icon">
+								<img src="/img/txof/ico/excla_g_40x40.png" alt="">
+							</div>
+							<div class="desc">
+								<div class="info">
+									<p><strong name="_hd_noti_srch_word"></strong>에 대한<br>
+										검색결과가 없습니다.
+									</p>
+								</div>
+								<div class="link" id="_hd_noti_show_all">
+									<a href="#none">
+										<span>전체목록 보기</span>
+										<img src="/img/txof/ico/arrow_b_5x9.png" alt="">
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+                </div>
+            </div>
+
+			<!-- 상세보기 -->
+			<div class="hds_detail" id="_hd_noti_detail" style="display:none">
+
+				<div class="detail_top">
+					<div class="detail_main-tit">
+						<div class="left">
+							<h1 id="_hd_noti_biz_nm"></h1>
+							<img src="/img/txof/ico/search_gr_16x16.png" alt="">
+						</div>
+						<div class="right">
+							<div class="btn">
+								<button class="hd_close" tyle="button">
+									<div class="icon"></div>
+								</button>
+							</div>
+						</div>
+					</div>	
+					<div class="detail_sub-tit">
+						<div class="info_01">
+							<p id="_hd_noti_biz_no"></p>
+						</div>
+						<div class="info_02">
+							<div class="left">
+								<p id="_hd_noti_rppr_nm"></p>
+								<button type="button" id="_hd_noti_go_biz">
+									<span>바로가기</span>
+									<img src="/img/txof/ico/arr_g_6x8.png" alt="">
+								</button>
+							</div>
+							<div class="right disabled_flt" id="_hd_noti_go_chat">
+								<button type="button">
+									<img src="/img/txof/ico/ico_wetalk18x18_on.png" alt="">
+								</button>
+							</div>
+						</div>
+						<div class="info_01">
+							<p id="_hd_noti_reg_dtm"></p>
+						</div>
+					</div>
+				</div>
+
+				<div class="detail_mid">
+					<ul>
+						<li class="list_01">
+							<h2 id="_hd_noti_dtl_title"></h2>
+						</li>
+
+						<li class="list_02" id="_hd_noti_dtl_ctt">
+						</li>
+						
+						<li class="list_05" id="_hd_noti_dtl_btn" style="display:none;">
+							<button class="linkBtn_green" type="button" id="_btn_show_dtls">
+								<span>자세히보기</span>
+								<img src="../img/txof/ico/arr_w_6x8.png" alt="">
+							</button>
+						</li>
+					</ul>
+				</div>
+
+				<div class="detail_bot">
+					<div class="read_time">
+						<p id="_hd_noti_cnfm_dtm"></p>
+					</div>
+					<!-- 첨부파일 있을시 노출 -->
+					<div class="file_list" id="_hd_noti_show_file">
+						<div class="dtb_title">
+							<p id="_hd_noti_atth_cnt"></p><span class="file_size" id="_hd_noti_atth_size"></span>
+						</div>
+						<ul id="_hd_noti_atth_list">
+						</ul>
+					</div>
+				</div>
+			</div>
+        </div>
+    </div>
+	
+</div>
+<!-- //header -->
+<!-- //수임처 개선 -->
+
+<div class="wrap"><!-- [D] 상세검색일 경우(class="mh") -->
+	<!-- Container -->
+	<div class="container">
+		<div class="lnb_box">	
+			<!-- lnb_boxInn -->
+			<div class="lnb_boxInn">
+				<!-- lnb top 추가 -->
+				<div class="lnb_top">
+					<!-- user view -->
+					<div class="user_view">
+						<div class="user_r_side">
+							<p class="icon_user"><strong>홍길동</strong> 님</p>
+						</div>
+						<div class="select_wrap">
+							<div class="area_select">
+								<span>담당자</span>
+								<a class="entire" href="javascript:;">전체</a>
+								<!-- 활성화 시 on 클래스 추가 -->
+								<ul class="select_box" style="z-index: 302;">
+									<li>
+										<a href="javascript:;">
+											<p>담당자 전체</p>
+											<span class="num">599</span>
+										</a>
+									</li>
+									<!-- 활성화 시 on 클래스 추가 -->
+									<li class="user_list on">
+										<a href="javascript:;">
+											<p>박담당</p>
+											<span class="num">55</span>
+										</a>
+									</li>
+									<li class="user_list">
+										<a href="javascript:;">
+											<p>이담당</p>
+											<span class="num">55</span>
+										</a>
+									</li>
+									<li class="user_list">
+										<a href="javascript:;">
+											<p>김담당</p>
+											<span class="num">55</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="alarm_wrap">
+					<!-- 무료체험 사용중 -->
+					<div class="mygroupLst">
+						<div class="free_trial">
+							<div class="tit">
+								무료체험 사용중
+							</div>
+							<div class="count">
+								<span>2/3</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- //lnb top 추가 -->
+				<div class="alarm_wrap">
+					<div class="mygroupLst">
+						<dl id="">
+							<dd class="on">
+								<div class="line first">
+									<a href="#none">
+										<span>
+											<img src="../img/txof/ico/ico_userManage.png" class="mCS_img_loaded">
+											고객관리
+										</span>
+										<span class="badge2"><strong id="GRP">126</strong></span>
+									</a>
+								</div>
+							</dd>
+						</dl>
+						<ul>
+							<li class="on"><!-- 활성화클래스 on -->
+								<div class="mygroupLst_tit">
+									<a href="#none" class="">
+										<img src="../img/txof/ico/ico_reptGroupManage.png" class="mCS_img_loaded">
+										그룹관리
+									</a>
+									<div class="mygroup_btn">
+										<i class="btn"></i>
+									</div>
+								</div>									
+								<div class="mygroupCont">
+									<dl class="mygroup" id="" style="display:;">
+										<!-- 비활성 -->
+										<dd class="off">
+											<a href="#none">
+												<div class="line tooltipWrap rt">
+													<div class="left grp_left_div">
+														<span class="txt" name="GRP_NM">121212</span>
+														<div class="tooltip"><p class="tit" name="GRP_FULL_NM">121212</p><p></p></div>
+														<button type="button" class="btnEdit"><img src="/img/txof/btn/btn_edit_b.png" width="14px"></button>
+													</div>
+													<div class="right">
+														<span class="groupCount" name="GRP_CNT">0</span>
+														<button type="button" class="btnEdit grp_edit_btn" name="BTN_GRP_EDIT" grp_code="0000000004" grp_code_nm="121212">
+															<img src="../img/txof/btn/btn_edit_b.png" width="14px">
+														</button>
+	
+													</div>
+												</div>
+											</a>
+										</dd>
+									</dl>
+									<span class="btn_group_plus" id="">그룹추가</span>
+								</div>
+							</li>					
+						</ul>
+					</div>
+				</div>
+				<div class="alarm_wrap">	
+					
+					<!-- 보고서 관리 -->
+					<div class="mygroupLst">
+					   <ul>
+						   <li class="on" id="grp_wrap_rprt"><!-- 활성화클래스 on -->
+							   <div class="mygroupLst_tit">
+								   <a href="#none" class="" name="btn_left_menu">
+									   <img src="../img/txof/ico/ico_reptManage.png" class="mCS_img_loaded">보고서 관리
+								   </a>
+								   <div class="mygroup_btn">
+									   <i class="btn"></i>
+								   </div>
+							   </div>
+							   <div class="mygroupCont">
+								   <dl class="mygroup">
+									   <dd class="off" id="mrprt_stts" data-nm="보고서 발송" data-url="mrprt_stts_001.act">
+										   <a href="#none">
+											   <div class="line">보고서 발송</div>
+										   </a>
+										
+									   </dd>
+									   <dd class="off" id="mrprt_send" data-nm="보고서 현황" data-url="mrprt_send_001.act">
+										   <a href="#none">
+											   <div class="line">보고서 생성</div>
+										   </a>
+										   <!-- <div class="line">
+											   보고서 발송 <span class="badge2"><strong ></strong></span>
+										   </div> -->
+									   </dd>
+									   <dd class="off" id="mrprt_hist" data-nm="리포트 이력" data-url="mrprt_hist_001.act">
+										   <a href="#none">
+											   <div class="line">보고서 이력</div>
+										   </a>
+
+									   </dd>
+								   </dl>
+							   </div>
+						   </li>
+					   </ul>
+				   </div>
+
+					<div class="mygroupLst">
+						<dl id="">
+							<dt class="menu">
+								<img src="../img/txof/ico/ico_taxCafe.png" class="mCS_img_loaded">
+								세무지식
+							</dt>
+							<dd>
+								<div class="line first">세무지식 관리</div>
+							</dd>
+						</dl>
+					</div>
+					
+					<!-- 환경 설정 -->
+					<div class="mygroupLst">
+						<ul>
+							<li class="off on" id="grp_wrap_main"><!-- 활성화클래스 on -->
+								<div class="mygroupLst_tit">
+									<a href="#none" class="" name="btn_left_menu"><img src="../img/txof/ico/ico_set.png" class="mCS_img_loaded">환경 설정</a>
+									<div class="mygroup_btn">
+										<i class="btn"></i>
+									</div>
+								</div>
+								<div class="mygroupCont" style="display: none ;">
+									<dl class="mygroup">
+										<dd class="off" id="mgnt_wpop" data-nm="웰컴팝업 관리" data-url="mgnt_wpop_001.act">
+
+											<a href="#none">
+												<div class="line">웰컴팝업 관리</div>
+											</a>
+										</dd>
+
+										<dd class="off" id="mgnt_rept" data-nm="리포트 설정" data-url="mgnt_rept_001.act">
+											<a href="#none">
+												<div class="line">리포트 설정</div>
+											</a>
+										</dd>
+										<dd class="off" id="mgnt_sett" data-nm="세무사무소 설정" data-url="mgnt_sett_001.act">
+											<a href="#none">
+												<div class="line">세무사무소 설정 </div>
+											</a>
+										</dd>
+										<dd class="off" id="mgnt_feld" data-nm="사용자필드 설정" data-url="mgnt_feld_001.act">
+											<a href="#none">
+												<div class="line">사용자필드 설정 </div>
+											</a>
+										</dd>
+									</dl>
+								</div>
+							</li>
+						</ul>
+					</div>
+
+					<!-- 어드민 -->
+					<div class="mygroupLst">
+						<ul>
+							<li class="on"><!-- 활성화클래스 on -->
+								<div class="mygroupLst_tit">
+									<a href="#none" class="" name="btn_left_menu"><img src="../img/txof/ico/ico_set.png" class="mCS_img_loaded">어드민</a>
+									<div class="mygroup_btn">
+										<i class="btn"></i>
+									</div>
+								</div>
+								<div class="mygroupCont" style="display: block;">
+									<dl class="mygroup">
+										<dd class="off admin_menu" id="admn_intt" data-nm="세무사무소 관리" data-url="admn_intt_001.act">
+											<a href="#none">
+												<div class="line">세무사무소 관리</div>
+											</a>
+										</dd>
+										<dd class="off admin_menu" id="admn_bzaq" data-nm="수임거래처 관리" data-url="admn_bzaq_001.act">
+											<a href="#none">
+												<div class="line">수임거래처 관리</div>
+											</a>
+										</dd>
+										<dd class="off admin_menu" id="admn_actv" data-nm="세무사무소 이용현황" data-url="admn_actv_001.act">
+											<a href="#none">
+												<div class="line">세무사무소 이용현황</div>
+											</a>
+										</dd>
+										<dd class="off admin_menu" id="admn_cafe" data-nm="세모카페 어드민" data-url="mgnt_cafe_001.act" data-param="{&quot;blbd_id&quot;:&quot;MGNT_CAFE&quot;,&quot;blbd_nm&quot;:&quot;세모카페 어드민&quot;}">
+											<a href="#none">
+												<div class="line">세모카페 어드민</div>
+											</a>
+											<!-- <div class="line">
+												세모카페 어드민 <span class="badge2"><strong></strong></span>
+											</div> -->
+										</dd>
+										<dd class="off admin_menu" id="admn_noti" data-nm="공지사항 관리" data-url="admn_noti_001.act">
+											<!-- <div class="line">
+												공지사항 관리 <span class="badge2"><strong></strong></span>
+											</div> -->
+											<a href="#none">
+												<div class="line">공지사항 관리</div>
+											</a>
+										</dd>
+										<dd class="off admin_menu" id="admn_scrp" data-nm="클라이언트 스크래핑 조회" data-url="admn_scrp_001.act">
+											<!-- <span class=""></span> -->
+											<!-- <div class="line">
+												클라이언트 스크래핑 조회 <span class="badge2"><strong></strong></span>
+											</div> -->
+											<a href="#none">
+												<div class="line">클라이언트 스크래핑 조회</div>
+											</a>
+										</dd>
+									</dl>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="lnb-swiper">
+					<ul class="swiper-wrapper">
+						<li class="swiper-slide">
+							<a href="https://docs.google.com/forms/d/e/1FAIpQLScditNCBwg6JgkuYrhAzfnT3wEVHGL-3lrI5_IywMBY07dFzw/viewform" target="_blank">
+								<img src="../img/txof/bg/test_img_04.png" alt="">
+							</a>
+						</li>
+
+					</ul>
+					<div class="swiper-pagination swiper-pagination-fraction swiper-pagination-vertical swiper-pagination-lock"><span class="swiper-pagination-current">18</span> / <span class="swiper-pagination-total">0</span></div>
+			</div>
+			<!-- //lnb_boxInn -->
+		</div>
+		<!-- content -->
+		<div class="content">
+			<div class="content_wrap">
+				<div class="title_wrap">
+					<div class="left">
+						<h1>23년 1월 사업분석 보고서</h1>
+					</div>
+					<div class="right">
+						<div class="cntalign">
+							<a class="btn_ico_back" href="#none"><span class="blind">뒤로가기</span></a>
+						</div>
+					</div>
+				</div>
+				<div class="title_wrap h1type">
+					<div class="left">
+						<div class="cntalign yth_swp">
+							<a href="#none" class="swp_prev" id="decl_term_prev"><img src="../img/txof/btn/arrow_l_on.png" alt=""></a>
+							<h1 id="mrprt_date">2024년 04월 </h1>
+							<a href="#none" class="swp_next disabled" id="decl_term_next"><img src="../img/txof/btn/arrow_r_on.png" alt=""></a>
+						</div>
+					</div>
+					<div class="right">
+						<div class="src_box">
+							<div class="inner">
+								<img src="../img/txof/ico/search_14x14.svg" alt="" class="src_icon">
+								<input type="text" placeholder="검색" id="sch_word">
+								<div class="dtl_box">
+									<img src="../img/txof/ico/line_7070.svg" alt="" class="line">
+									<!-- dtl_btn click시 active 클래스  -->
+									<button class="dtl_btn down" type="button" id="dtl_sch_btn">
+										<span>상세</span>
+									</button>
+								</div>
+							</div>
+							<div class="dtsch" style="display: ;" id="dtl_sch_area">
+								
+								<!-- 라디오 -->
+								<div class="dtsch_box">
+									<div class="list_box">
+										<ul class="dtsch_list">
+											<div class="dts_tit">
+												<span>검토여부</span>
+											</div>
+											<ul class="cont_list">
+												<li class="list_item">
+													<label><input type="radio" name="radio01" value="A" checked="">전체</label>
+												</li>
+												<li class="list_item">
+													<label><input type="radio" name="radio01" value="Y">완료</label>
+												</li>
+												<li class="list_item">
+													<label><input type="radio" name="radio01" value="N">미완료</label>
+												</li>
+											</ul>
+										</ul>
+									</div>
+									<div class="list_box">
+										<ul class="dtsch_list">
+											<div class="dts_tit">
+												<span>고객확인</span>
+											</div>
+											<ul class="cont_list">
+												<li class="list_item">
+													<label><input type="radio" name="radio02" value="A" checked="">전체</label>
+												</li>
+												<li class="list_item">
+													<label><input type="radio" name="radio02" value="Y">확인</label>
+												</li>
+												<li class="list_item">
+													<label><input type="radio" name="radio02" value="N">미확인</label>
+												</li>
+											</ul>
+										</ul>
+									</div>
+								</div>
+								
+								<!-- 공통 -->
+								<div class="dtsch_box">
+									<!-- 사업자 구분 -->
+									<div class="list_box">
+										<ul class="dtsch_list">
+											<div class="dts_tit">
+												<span>사업자 구분</span>
+											</div>
+											<ul class="cont_list">
+												<li class="list_item">
+													<label><input type="checkbox" name="BIZ_DV" value="11">개인</label>
+												</li>
+												<li class="list_item">
+													<label><input type="checkbox" name="BIZ_DV" value="22">법인</label>
+												</li>
+											</ul>
+										</ul>
+									</div>
+					
+									<!-- 계약상태 -->
+									<div class="list_box">
+										<ul class="dtsch_list">
+											<div class="dts_tit">
+												<span>계약상태</span>
+											</div>
+											<ul class="cont_list">
+												<li class="list_item">
+													<label><input type="checkbox" name="CTRT_GB" value="07">기장개인</label>
+												</li>
+												<li class="list_item">
+													<label><input type="checkbox" name="CTRT_GB" value="01">신고개인</label>
+												</li>
+												<li class="list_item">
+													<label><input type="checkbox" name="CTRT_GB" value="02">기장법인</label>
+												</li>
+												<li class="list_item">	
+													<label><input type="checkbox" name="CTRT_GB" value="03">신고법인</label>
+												</li>
+												<li class="list_item">
+													<label><input type="checkbox" name="CTRT_GB" value="04">아웃소싱</label>
+												</li>
+												<li class="list_item">
+													<label><input type="checkbox" name="CTRT_GB" value="05">자문계약</label>
+												</li>
+												<li class="list_item">
+													<label><input type="checkbox" name="CTRT_GB" value="06">조세불복</label>
+												</li>
+												<li class="list_item">
+													<label><input type="checkbox" name="CTRT_GB" value="00">미등록</label>
+												</li>
+											</ul>
+										</ul>
+									</div>
+					
+									<!-- 과세유형 -->
+									<div class="list_box" id="dtl_taxt_gb">
+										<ul class="dtsch_list">
+											<div class="dts_tit">
+												<span>과세유형</span>
+											</div>
+											<ul class="cont_list">
+												<li class="list_item">
+													<label><input type="checkbox" name="TAXT_GB" value="01">일반</label>
+												</li>
+												<li class="list_item">
+													<label><input type="checkbox" name="TAXT_GB" value="02">간이</label>
+												</li>
+												<li class="list_item">										
+													<label><input type="checkbox" name="TAXT_GB" value="04">면세</label>
+												</li>
+												<li class="list_item">
+													<label><input type="checkbox" name="TAXT_GB" value="05">비영리</label>
+												</li>
+												<li class="list_item">
+													<label><input type="checkbox" name="TAXT_GB" value="03">과세특례</label>
+												</li>
+											</ul>
+										</ul>
+									</div>
+					
+									<!-- 휴폐업 구분 -->
+									<div class="list_box" id="dtl_tax_stts">
+										<ul class="dtsch_list">
+											<div class="dts_tit">
+												<span>휴폐업 구분</span>
+											</div>
+											<ul class="cont_list">
+												<li class="list_item">
+													<label><input type="checkbox" name="TAX_STTS" value="01">정상</label>
+												</li>
+												<li class="list_item">
+													<label><input type="checkbox" name="TAX_STTS" value="02">휴업</label>
+												</li>
+												<li class="list_item">
+													<label><input type="checkbox" name="TAX_STTS" value="03">폐업</label>
+												</li>
+												<li class="list_item">
+													<label><input type="checkbox" name="TAX_STTS" value="00">미등록</label>
+												</li>
+											</ul>
+										</ul>
+									</div>
+									
+									<!-- 검색어 -->
+									<div class="list_box type_02">
+										<ul class="dtsch_list">
+											<div class="dts_tit">
+												<span>검색어</span>
+											</div>
+											<div class="src_box">
+												<div class="inner">
+													<input type="text" id="dtl_sch_word" placeholder="거래처명,대표자명,사업자번호,휴대폰번호">
+												</div>
+											
+											</div>
+										</ul>
+									</div>
+
+									<!-- 업종 -->
+									<div class="list_box type_02">
+										<ul class="dtsch_list">
+											<div class="dts_tit">
+												<span>업종</span>
+											</div>
+											<ul class="cont_list">
+												<li>
+													<div class="sel_checkBox">
+														<div class="box_title" id="">
+															<span>업종 전체</span>
+															<!-- ul 노출시 addClass up -->
+															<button type="button" class="up"></button>
+														</div>
+														<div class="checkList" id="indstryList" style="display: ;">
+															<ul>
+																<li class="list_title">
+																	<div class="left">
+																		<label for="INDSTRY_ALL"><input type="radio" value="" id="INDSTRY_ALL" name="SEL_INDSTRY_CD">업종 전체</label>
+																	</div>
+																	<div class="right">
+																	</div>
+																</li>
+																<li class="list_item">
+																	<div class="left">
+																		<label for="">
+																			<input type="radio" name="" id="" value="">
+																			<span name="" title="제조업">제조업</span>
+																		</label>
+																	</div>
+																	<div class="right">
+																		<span name="">(1개)</span>
+																	</div>
+																</li>
+																<li class="list_item">
+																	<div class="left">
+																		<label for="">
+																			<input type="radio" name="" id="" value="">
+																			<span name="" title="건설업">건설업</span>
+																		</label>
+																	</div>
+																	<div class="right">
+																		<span name="">(1개)</span>
+																	</div>
+																</li>
+																<li class="list_item">
+																	<div class="left">
+																		<label for="">
+																			<input type="radio" name="" id="" value="G">
+																			<span name="" title="도매 및 소매업">도매 및 소매업</span>
+																		</label>
+																	</div>
+																	<div class="right">
+																		<span name="">(1개)</span>
+																	</div>
+																</li>
+																<li class="list_item">
+																	<div class="left">
+																		<label for="">
+																			<input type="radio" name="" id="" value="G">
+																			<span name="" title="숙박 및 음식점업">숙박 및 음식점업</span>
+																		</label>
+																	</div>
+																	<div class="right">
+																		<span name="">(1개)</span>
+																	</div>
+																</li>
+																<li class="list_item">
+																	<div class="left">
+																		<label for="">
+																			<input type="radio" name="" id="" value="G">
+																			<span name="" title="부동산업">부동산업</span>
+																		</label>
+																	</div>
+																	<div class="right">
+																		<span name="">(1개)</span>
+																	</div>
+																</li>
+																<li class="list_item">
+																	<div class="left">
+																		<label for="">
+																			<input type="radio" name="" id="" value="G">
+																			<span name="" title="전문,과학 및 기술 서비스업">전문,과학 및 기술 서비스업</span>
+																		</label>
+																	</div>
+																	<div class="right">
+																		<span name="INDSTRY_TOT">(1개)</span>
+																	</div>
+																</li>
+																<li class="list_item">
+																	<div class="left">
+																		<label for="">
+																			<input type="radio" name="" id="" value="G">
+																			<span name="" title="보건업 및 사회복지 서비스업">보건업 및 사회복지 서비스업</span>
+																		</label>
+																	</div>
+																	<div class="right">
+																		<span name="INDSTRY_TOT">(1개)</span>
+																	</div>
+																</li>
+																
+																<li class="list_item">
+																	<div class="left">
+																		<label for="INDSTRY_G">
+																			<input type="radio" name="SEL_INDSTRY_CD" id="INDSTRY_G" value="G">
+																			<span name="STR_INDSTRY_NM" title="협회 및 단체, 수리 및 기타 개인 서비스업">협회 및 단체, 수리 및 기타 개인 서비스업</span>
+																	</label></div>
+																	<div class="right">
+																		<span name="INDSTRY_TOT">(999개)</span>
+																	</div>
+																</li>
+															</ul>
+														</div>
+													</div>
+												</li>
+											</ul>
+										</ul>
+									</div>
+									
+									<!-- 보고서 그룹 -->
+									<div class="list_box type_02" id="tr_rprt_grp">
+										<ul class="dtsch_list">
+											<div class="dts_tit">
+												<span>보고서 그룹</span>
+											</div>
+											<ul class="cont_list">
+												<li>
+													<div class="sel_checkBox">
+														<div class="box_title" id="rprt_grp_box">
+															<input type="text" readonly="" value="보고서 발송 그룹을 선택해주세요">
+															<!-- <span>보고서 발송 그룹을 선택해주세요</span> -->
+															<!-- ul 노출시 addClass up -->
+															<button type="button" class="down"></button>
+														</div>
+														<div class="checkList" id="rprtGrpDiv" style="display:none;">
+															<ul>
+																<li class="list_title">
+																	<div class="left">
+																		<label for="GRP_ALL"><input type="checkbox" name="SEL_RPRT_GRP_ALL" value="ALL" id="GRP_ALL">거래처 전체</label>
+																	</div>
+																	<div class="right">
+																	</div>
+																</li><!-- 
+																<li class="list_item">
+																	<div class="left">
+																		<label><input type="checkbox" name="SEL_RPRT_GRP" value=""><span name="" title="그룹 미설정 거래처"></span></label>
+																	</div>
+																	<div class="right">
+																		<span name="RPRT_GRP_TOT">13</span>
+																	</div>
+																</li> -->
+															<li class="list_item">
+							<div class="left">
+								<label for="GRP_00000090"><input type="checkbox" name="SEL_RPRT_GRP" id="GRP_00000090" value="00000090"><span name="STR_RPRT_GRP_NM" title=" OFF테스트"> OFF테스트</span><!-- 간이과세자 그룹 --></label>
+							</div>
+							<div class="right">
+								<span name="RPRT_GRP_TOT">0</span>
+							</div>
+						</li><li class="list_item">
+							<div class="left">
+								<label for="GRP_00000079"><input type="checkbox" name="SEL_RPRT_GRP" id="GRP_00000079" value="00000079"><span name="STR_RPRT_GRP_NM" title="20240416_그룹_수정_1st">20240416_그룹_수정_1st</span><!-- 간이과세자 그룹 --></label>
+							</div>
+							<div class="right">
+								<span name="RPRT_GRP_TOT">0</span>
+							</div>
+						</li><li class="list_item">
+							<div class="left">
+								<label for="GRP_00000080"><input type="checkbox" name="SEL_RPRT_GRP" id="GRP_00000080" value="00000080"><span name="STR_RPRT_GRP_NM" title="20240416_그룹_신규생성_2nd">20240416_그룹_신규생성_2nd</span><!-- 간이과세자 그룹 --></label>
+							</div>
+							<div class="right">
+								<span name="RPRT_GRP_TOT">52</span>
+							</div>
+						</li><li class="list_item">
+							<div class="left">
+								<label for="GRP_00000082"><input type="checkbox" name="SEL_RPRT_GRP" id="GRP_00000082" value="00000082"><span name="STR_RPRT_GRP_NM" title="20240418_그룹생성">20240418_그룹생성</span><!-- 간이과세자 그룹 --></label>
+							</div>
+							<div class="right">
+								<span name="RPRT_GRP_TOT">0</span>
+							</div>
+						</li><li class="list_item">
+							<div class="left">
+								<label for="GRP_00000086"><input type="checkbox" name="SEL_RPRT_GRP" id="GRP_00000086" value="00000086"><span name="STR_RPRT_GRP_NM" title="20240419_그룹신규생성">20240419_그룹신규생성</span><!-- 간이과세자 그룹 --></label>
+							</div>
+							<div class="right">
+								<span name="RPRT_GRP_TOT">0</span>
+							</div>
+						</li><li class="list_item">
+							<div class="left">
+								<label for="GRP_00000087"><input type="checkbox" name="SEL_RPRT_GRP" id="GRP_00000087" value="00000087"><span name="STR_RPRT_GRP_NM" title="A">A</span><!-- 간이과세자 그룹 --></label>
+							</div>
+							<div class="right">
+								<span name="RPRT_GRP_TOT">0</span>
+							</div>
+						</li><li class="list_item">
+							<div class="left">
+								<label for="GRP_00000093"><input type="checkbox" name="SEL_RPRT_GRP" id="GRP_00000093" value="00000093"><span name="STR_RPRT_GRP_NM" title="ㅁㅁ">ㅁㅁ</span><!-- 간이과세자 그룹 --></label>
+							</div>
+							<div class="right">
+								<span name="RPRT_GRP_TOT">0</span>
+							</div>
+						</li><li class="list_item">
+							<div class="left">
+								<label for="GRP_00000083"><input type="checkbox" name="SEL_RPRT_GRP" id="GRP_00000083" value="00000083"><span name="STR_RPRT_GRP_NM" title="그룹생성">그룹생성</span><!-- 간이과세자 그룹 --></label>
+							</div>
+							<div class="right">
+								<span name="RPRT_GRP_TOT">0</span>
+							</div>
+						</li><li class="list_item">
+							<div class="left">
+								<label for="GRP_00000110"><input type="checkbox" name="SEL_RPRT_GRP" id="GRP_00000110" value="00000110"><span name="STR_RPRT_GRP_NM" title="매출보고서">매출보고서</span><!-- 간이과세자 그룹 --></label>
+							</div>
+							<div class="right">
+								<span name="RPRT_GRP_TOT">3</span>
+							</div>
+						</li><li class="list_item">
+							<div class="left">
+								<label for="GRP_00000089"><input type="checkbox" name="SEL_RPRT_GRP" id="GRP_00000089" value="00000089"><span name="STR_RPRT_GRP_NM" title="배찌 그룹">배찌 그룹</span><!-- 간이과세자 그룹 --></label>
+							</div>
+							<div class="right">
+								<span name="RPRT_GRP_TOT">0</span>
+							</div>
+						</li><li class="list_item">
+							<div class="left">
+								<label for="GRP_00000109"><input type="checkbox" name="SEL_RPRT_GRP" id="GRP_00000109" value="00000109"><span name="STR_RPRT_GRP_NM" title="사업분석보고서">사업분석보고서</span><!-- 간이과세자 그룹 --></label>
+							</div>
+							<div class="right">
+								<span name="RPRT_GRP_TOT">0</span>
+							</div>
+						</li><li class="list_item">
+							<div class="left">
+								<label for="GRP_00000094"><input type="checkbox" name="SEL_RPRT_GRP" id="GRP_00000094" value="00000094"><span name="STR_RPRT_GRP_NM" title="테스트">테스트</span><!-- 간이과세자 그룹 --></label>
+							</div>
+							<div class="right">
+								<span name="RPRT_GRP_TOT">0</span>
+							</div>
+						</li><li class="list_item">
+							<div class="left">
+								<label for="GRP_00000095"><input type="checkbox" name="SEL_RPRT_GRP" id="GRP_00000095" value="00000095"><span name="STR_RPRT_GRP_NM" title="테스트1">테스트1</span><!-- 간이과세자 그룹 --></label>
+							</div>
+							<div class="right">
+								<span name="RPRT_GRP_TOT">0</span>
+							</div>
+						</li><li class="list_item">
+							<div class="left">
+								<label for="GRP_00000096"><input type="checkbox" name="SEL_RPRT_GRP" id="GRP_00000096" value="00000096"><span name="STR_RPRT_GRP_NM" title="테스트1">테스트1</span><!-- 간이과세자 그룹 --></label>
+							</div>
+							<div class="right">
+								<span name="RPRT_GRP_TOT">0</span>
+							</div>
+						</li><li class="list_item">
+							<div class="left">
+								<label for="GRP_00000085"><input type="checkbox" name="SEL_RPRT_GRP" id="GRP_00000085" value="00000085"><span name="STR_RPRT_GRP_NM" title="테스트11">테스트11</span><!-- 간이과세자 그룹 --></label>
+							</div>
+							<div class="right">
+								<span name="RPRT_GRP_TOT">0</span>
+							</div>
+						</li><li class="list_item">
+							<div class="left">
+								<label for="GRP_00000097"><input type="checkbox" name="SEL_RPRT_GRP" id="GRP_00000097" value="00000097"><span name="STR_RPRT_GRP_NM" title="테스트2">테스트2</span><!-- 간이과세자 그룹 --></label>
+							</div>
+							<div class="right">
+								<span name="RPRT_GRP_TOT">0</span>
+							</div>
+						</li><li class="list_item">
+							<div class="left">
+								<label for="GRP_00000098"><input type="checkbox" name="SEL_RPRT_GRP" id="GRP_00000098" value="00000098"><span name="STR_RPRT_GRP_NM" title="테스트3">테스트3</span><!-- 간이과세자 그룹 --></label>
+							</div>
+							<div class="right">
+								<span name="RPRT_GRP_TOT">0</span>
+							</div>
+						</li><li class="list_item">
+							<div class="left">
+								<label for="GRP_00000099"><input type="checkbox" name="SEL_RPRT_GRP" id="GRP_00000099" value="00000099"><span name="STR_RPRT_GRP_NM" title="테스트4">테스트4</span><!-- 간이과세자 그룹 --></label>
+							</div>
+							<div class="right">
+								<span name="RPRT_GRP_TOT">0</span>
+							</div>
+						</li><li class="list_item">
+							<div class="left">
+								<label for="GRP_00000101"><input type="checkbox" name="SEL_RPRT_GRP" id="GRP_00000101" value="00000101"><span name="STR_RPRT_GRP_NM" title="테스트5">테스트5</span><!-- 간이과세자 그룹 --></label>
+							</div>
+							<div class="right">
+								<span name="RPRT_GRP_TOT">0</span>
+							</div>
+						</li><li class="list_item">
+							<div class="left">
+								<label for="GRP_00000100"><input type="checkbox" name="SEL_RPRT_GRP" id="GRP_00000100" value="00000100"><span name="STR_RPRT_GRP_NM" title="테스트5">테스트5</span><!-- 간이과세자 그룹 --></label>
+							</div>
+							<div class="right">
+								<span name="RPRT_GRP_TOT">0</span>
+							</div>
+						</li><li class="list_item">
+							<div class="left">
+								<label for="GRP_00000102"><input type="checkbox" name="SEL_RPRT_GRP" id="GRP_00000102" value="00000102"><span name="STR_RPRT_GRP_NM" title="테스트5">테스트5</span><!-- 간이과세자 그룹 --></label>
+							</div>
+							<div class="right">
+								<span name="RPRT_GRP_TOT">0</span>
+							</div>
+						</li><li class="list_item">
+							<div class="left">
+								<label for="GRP_00000103"><input type="checkbox" name="SEL_RPRT_GRP" id="GRP_00000103" value="00000103"><span name="STR_RPRT_GRP_NM" title="테스트5">테스트5</span><!-- 간이과세자 그룹 --></label>
+							</div>
+							<div class="right">
+								<span name="RPRT_GRP_TOT">0</span>
+							</div>
+						</li><li class="list_item">
+							<div class="left">
+								<label for="GRP_00000104"><input type="checkbox" name="SEL_RPRT_GRP" id="GRP_00000104" value="00000104"><span name="STR_RPRT_GRP_NM" title="테스트5">테스트5</span><!-- 간이과세자 그룹 --></label>
+							</div>
+							<div class="right">
+								<span name="RPRT_GRP_TOT">0</span>
+							</div>
+						</li><li class="list_item">
+							<div class="left">
+								<label for="GRP_00000105"><input type="checkbox" name="SEL_RPRT_GRP" id="GRP_00000105" value="00000105"><span name="STR_RPRT_GRP_NM" title="테스트5">테스트5</span><!-- 간이과세자 그룹 --></label>
+							</div>
+							<div class="right">
+								<span name="RPRT_GRP_TOT">0</span>
+							</div>
+						</li><li class="list_item">
+							<div class="left">
+								<label for="GRP_00000106"><input type="checkbox" name="SEL_RPRT_GRP" id="GRP_00000106" value="00000106"><span name="STR_RPRT_GRP_NM" title="테스트5">테스트5</span><!-- 간이과세자 그룹 --></label>
+							</div>
+							<div class="right">
+								<span name="RPRT_GRP_TOT">0</span>
+							</div>
+						</li><li class="list_item">
+							<div class="left">
+								<label for="GRP_00000107"><input type="checkbox" name="SEL_RPRT_GRP" id="GRP_00000107" value="00000107"><span name="STR_RPRT_GRP_NM" title="테스트5">테스트5</span><!-- 간이과세자 그룹 --></label>
+							</div>
+							<div class="right">
+								<span name="RPRT_GRP_TOT">0</span>
+							</div>
+						</li><li class="list_item">
+							<div class="left">
+								<label for="GRP_00000108"><input type="checkbox" name="SEL_RPRT_GRP" id="GRP_00000108" value="00000108"><span name="STR_RPRT_GRP_NM" title="테스트5">테스트5</span><!-- 간이과세자 그룹 --></label>
+							</div>
+							<div class="right">
+								<span name="RPRT_GRP_TOT">0</span>
+							</div>
+						</li><li class="list_item">
+							<div class="left">
+								<label for="GRP_00000081"><input type="checkbox" name="SEL_RPRT_GRP" id="GRP_00000081" value="00000081"><span name="STR_RPRT_GRP_NM" title="테슽">테슽</span><!-- 간이과세자 그룹 --></label>
+							</div>
+							<div class="right">
+								<span name="RPRT_GRP_TOT">0</span>
+							</div>
+						</li><li class="list_item">
+							<div class="left">
+								<label for="GRP_00000091"><input type="checkbox" name="SEL_RPRT_GRP" id="GRP_00000091" value="00000091"><span name="STR_RPRT_GRP_NM" title="하이 테스트">하이 테스트</span><!-- 간이과세자 그룹 --></label>
+							</div>
+							<div class="right">
+								<span name="RPRT_GRP_TOT">0</span>
+							</div>
+						</li></ul>
+														</div>
+													</div>
+												</li>
+											</ul>
+										</ul>
+									</div>
+					
+									<!-- 버튼  -->
+									<div class="button_wrap">
+										<button type="button" class="btn_style2_g" id="btn_reset" style=""><span>초기화</span></button>
+										<button type="button" class="btn_style1_b" id="btn_dtl_sch"><span>조회</span></button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<article class="collectPop_wrap" id="vat_colt_pop" style="display:none;">
+					<div class="collectPop">
+						<div class="close_btn">
+							<label for="vat_tod_not_btn">
+								<input type="checkbox" id="vat_tod_not_btn">
+								오늘 하루 보지 않기
+							</label>
+
+							<button type="button" onclick="fn_vat_pop_close();">
+								<img src="../img/txof/btn/close_b_20.svg" alt="">
+							</button>
+						</div>
+						
+						<h1 id="vat_tit">
+						</h1>
+						
+						<div class="desc">
+						   <p>
+							 <strong id="vat_nm"></strong>부가세 신고분석 보고서를 받아보고 싶어해요!<br> 
+							   지금 수집하기 버튼을 눌러, 보고서 데이터를 만들어보세요.
+						   </p>
+						   
+						</div>
+						<div class="bottom_btn">
+							<button type="button" onclick="fn_vatDataColt();">
+								<span>지금 수집하기</span>
+							</button>
+						</div>
+		
+					</div>
+				</article>
+				<article class="mrprt_status">
+					<!-- 버튼영역 -->
+					<div class="mrprt_tab">
+						<div class="inner">
+							<!-- left -->
+							<div class="left">
+								<ul>
+									<li data-schgb="" class="active">요약</li>
+									<li data-schgb="">상세</li>
+								</ul>
+								<div class="list3nd_tab rept">
+									<ul>
+										<!-- active시 on 클래스 -->
+										<li style="margin-left: 30px;"><a href="#none" class="target on" data-schgb="1">전체 <span class="txt_green" id="tot_cnt">52</span></a></li>
+										<li><a href="#none" class="err" data-schgb="2">생성대기 <span class="txt_r" id="err_cnt">51</span></a></li>
+										<li><a href="#none" class="wait" data-schgb="3">생성완료 <span class="txt_b" id="wat_cnt">1</span></a></li>
+										<li><a href="#none" class="complete" data-schgb="4">발송완료 <span class="" id="suc_cnt">0</span></a></li>
+										<!-- <li><a href="#none" class="complete " data-schgb="5">읽음 <span class="" id="cfm_cnt"></span></a></li> -->
+									</ul>
+								</div>
+							</div>
+							<!-- //left -->
+							<!-- right --> 
+							<div class="right">
+
+								<div class="button_wrap">
+									<button type="button" class="btn_style2_g" id="" style="">실시간 정보수집</button>
+									<button type="button" class="btn_style1_b" id="" style=""><span>즉시발송</span></button>
+									<button type="button" class="btn_style1_b re" id="" style=""><span>즉시발송</span></button>
+								</div>
+							</div>
+							<!-- //right -->
+						</div>
+					</div>
+					<!-- //버튼영역 -->
+					
+					<div class="mrprt_cont">
+						<div class="grid_wrap mrprt_send_010">
+							<div id="grid_01" class="w2ui-grid"></div>
+						</div>
+						<div class="grid_foot_info" id="grid_foot_info2">	
+							(<span class="gr_text_blue">조회 데이터: 67건 / 전체 데이터: 67건</span>)
+						</div>
+					</div>
+				</article>
+			</div>
+		</div>
+	</div>
+</div>
+	<!-- //Container -->
+<!-- //wrap -->
+<script>
+	let grid_01 = new w2grid({
+		name: 'grid_01',
+		box: '#grid_01',
+		show: {
+			
+			selectColumn: true //체크박스 생성
+			
+		},
+		
+		columns: [
+			{ field: 'th_01', text: '그리드1', size: '150px',  sortable: true,  attr: 'align=left'},
+			
+		],
+		records: [
+			{ "recid": 1, "th_01": "그리드1"},
+			{ "recid": 1, "th_01": "그리드1"},
+			{ "recid": 1, "th_01": "그리드1"},
+			{ "recid": 1, "th_01": "그리드1"},
+			{ "recid": 1, "th_01": "그리드1"},
+			{ "recid": 1, "th_01": "그리드1"},
+			{ "recid": 1, "th_01": "그리드1"},
+			{ "recid": 1, "th_01": "그리드1"},
+			{ "recid": 1, "th_01": "그리드1"},
+			{ "recid": 1, "th_01": "그리드1"},
+			{ "recid": 1, "th_01": "그리드1"},
+			{ "recid": 1, "th_01": "그리드1"},
+			{ "recid": 1, "th_01": "그리드1"},
+			{ "recid": 1, "th_01": "그리드1"},
+			{ "recid": 1, "th_01": "그리드1"},
+			{ "recid": 1, "th_01": "그리드1"},
+			{ "recid": 1, "th_01": "그리드1"},
+			{ "recid": 1, "th_01": "그리드1"},
+			{ "recid": 1, "th_01": "그리드1"},
+			{ "recid": 1, "th_01": "그리드1"},
+			{ "recid": 1, "th_01": "그리드1"},
+			{ "recid": 1, "th_01": "그리드1"},
+			{ "recid": 1, "th_01": "그리드1"},
+			{ "recid": 1, "th_01": "그리드1"},
+			{ "recid": 1, "th_01": "그리드1"},
+			{ "recid": 1, "th_01": "그리드1"},
+			{ "recid": 1, "th_01": "그리드1"},
+			{ "recid": 1, "th_01": "그리드1"},
+			{ "recid": 1, "th_01": "그리드1"},
+			{ "recid": 1, "th_01": "그리드1"},
+			{ "recid": 1, "th_01": "그리드1"},
+			
+
+		]
+	}) 
+
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<title>실시간 정보수집</title>
+<link rel="stylesheet" href="../css/reset_taxp.css">
+<link rel="stylesheet" href="../css/app_header.css">
+<link rel="stylesheet" href="../css/content_taxp.css">
+<link rel="stylesheet" href="../css/swiper-bundle.min.css">
+<link rel="stylesheet" href="../css/w2ui_2.0.css">
+<link rel="stylesheet" href="../css/semo_rept.css">
+
+<!-- custom scrollbar plugin css -->
+<link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+<script src="https://publ.roumit.com/js/firebase_include.js"></script>
+  <script src="../js/lib/jquery/jquery-1.12.4.min.js"></script>
+<script src="../js/lib/jquery/jquery-ui-1.10.4.min.js"></script>
+<script src="../js/lib/swiper/swiper-bundle.min.js"></script>
+<!-- custom scrollbar plugin -->
+<script src="../js/lib/plugin/w2ui.js"></script>
+<script src="../js/design/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../js/design/jquery.placeholder.min.js"></script>
+<script src="../js/lib/plugin/smart.popup.js"></script>
+<script src="../js/comm/common.js"></script>
+<style>
+	/* 상단배너 있을 때 */
+    .band_banner ~ .wrap .mrprt_cont > .grid_wrap .w2ui-grid{
+        height: calc(100vh - 314px);
+    }
+	/* 상단배너 없을 때 */
+    .wrap .mrprt_cont > .grid_wrap .w2ui-grid{
+        height: calc(100vh - 269px);
+    }
+	/* 상단배너 있을 때 */
+	/* title_wrap history_menu 숨김 */
+    .band_banner ~ .wrap .mrprt_cont > .grid_wrap .w2ui-grid{
+        height: calc(100vh - 277px);
+    }
+	/* 상단배너 없을 때 */
+	/* title_wrap history_menu 숨김 */
+    .wrap .mrprt_cont > .grid_wrap .w2ui-grid{
+        height: calc(100vh - 232px);
+    }
+
+</style>
+</head>
+<body class=""><!-- [D] 메뉴영역(접기 : class="fold", 펼치기 : class="lnb_bg") -->
+	<div class="band_banner">
+		<div class="banner_wrap">
+			<div class="swiper topban_swiper">
+				<div class="swiper-wrapper">
+						<div class="cont_box">
+							<div class="info_wrap">
+								<span class="txt_01">요금 및 청구내역 메뉴 신규 오픈! 이용 내역 조회 바로가기</span>
+								<div class="ico_arr">
+									<img src="../img/txof/ico/ico_arr_24x24.svg" alt="">
+								</div>
+							</div>
+							<div class="button_wrap">
+								<button type="button" class="close_btn">
+									<span>오늘하루 보지 않기</span>
+									<img src="../img/txof/btn/brn_bnnerpop_close3.png" alt="">
+								</button>
+							</div>
+						</div>
+					<div class="cont_box type_02" >
+						<div class="info_wrap">
+							<span class="txt_01">
+								시스템 점검 안내: 5월 16일(목) 21시부터 자정까지 서비스가 일시 중단됩니다.
+							</span>
+						</div>
+						<div class="button_wrap">
+							<button type="button" class="close_btn">
+								<span>오늘하루 보지 않기</span>
+								<img src="../img/txof/btn/brn_bnnerpop_close3.png" alt="">
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			
+		</div>	
+	</div>
+	<div class="app_header">
+		<div class="app_header_inner">
+			<div class="ah_l" onclick="location.href='/intro.act'" style="cursor: pointer;">
+				<h1>세모리포트 <span>X</span>로움세무회계</h1>
+			</div>
+			
+			<div class="ah_c">
+				<div class="warning_txt02">
+					<p>세모리포트 테스트 환경입니다.</p>
+				</div>
+			</div>
+			<div class="ah_r">
+				<ul class="ah_menu">
+					<li style="position:relative;">
+						<a href="#none" class="hd_tag weTalk " onclick="kakaoCheck('CHAT_LIST','')" title="We Talk">
+							<img src="../img/txof/ico/ico_talk.svg" alt="">
+							<span>We Talk</span>
+							<span class="talk_conting_num" id="chat_bage" style="display: none;">N</span>
+						</a>
+					</li>
+					<li id="update_gud">
+						<a href="https://url.smjb.co.kr/9QdmGB.url" target="_blink" class="hd_tag updateInfo">
+							<img src="../img/txof/ico/ico_speaker.svg" alt="">
+							<span>업데이트</span>
+							<span class="talk_conting_num" style="display:none;">N</span>
+						</a>
+					</li>
+					<li>
+						<a class="hd_tag hd_alarm" href="#none">
+							<img src="../img/txof/ico/ico_noti.svg" alt="">
+							<span>알림</span>
+							<div class="count" id="_noti_push_cnt" style="">45</div>
+						</a>
+					</li>
+					<li class="customer" id="popup_cs">
+						<button type="button" class="ct_btn" id="btn_cs_center">
+							<i></i>
+							<span>고객센터</span>
+						</button>	
+						<div class="gnb_pop" id="popup_cs_center">
+							<div class="gnb_pop_inner">
+								<div class="top">
+									<span>궁금한 사항을 한 눈에 !</span>
+									<button type="button" class="close_btn" id="btn_close_cs" onclick="getPopCookie('popup_cs');">
+										<img src="../img/txof/btn/close_w_20.svg" alt="">
+									</button>
+								</div>
+								<div class="info_wrap">
+									<ul>
+										<li class="tit">
+											<span>이용가이드</span>
+										</li>
+										<li class="list">
+											<a href="https://semo-edu.liveklass.com/" target="_blank">
+												<img src="../img/txof/app_header/gnb_info_01.svg" alt="">
+												<span>온라인 강의실</span>
+											</a>
+										</li>
+										<li class="list">
+											<a href="https://url.smjb.co.kr/MRdmGB.url" target="_blank">
+												<img src="../img/txof/app_header/gnb_info_02.svg" alt="">
+												<span>세모리포트가 처음이라면?</span>
+											</a>
+										</li>
+									</ul>
+									<ul>
+										<li class="tit">
+											<span>고객센터</span>
+										</li>
+										<li class="list">
+											<a href="https://url.smjb.co.kr/3QdmGB.url" target="_blank">
+												<img src="../img/txof/app_header/gnb_info_03.svg" alt="">
+												<span>세모리포트 도움말</span>
+											</a>
+										</li>
+										<li class="list">
+											<a href="https://semo-report.gitbook.io/guide/manual" target="_blank">
+												<img src="../img/txof/app_header/ico_gnb_info_btn3_new.svg" alt="">
+												<span>세모리포트 매뉴얼</span>
+											</a>
+										</li>
+										<li class="list">
+											<a href="https://url.smjb.co.kr/3XdmGB.url" target="_blank">
+												<img src="../img/txof/app_header/ico_gnb_info_btn3_new.svg" alt="">
+												<span>고객 요약 분석 활용가이드</span>
+											</a>
+										</li>
+										<li class="list">
+											<a href="https://url.smjb.co.kr/ORdmGB.url" target="_blank">
+												<img src="../img/txof/app_header/gnb_info_04.svg" alt="">
+												<span>자주하는 질문</span>
+											</a>
+										</li>
+										<li class="list">
+											<a href="https://url.smjb.co.kr/8QdmGB.url" target="_blank">
+												<img src="../img/txof/app_header/gnb_info_08.svg" alt="">
+												<span>공지사항</span>
+											</a>
+										</li>
+										<li class="list">
+											<a href="javascript:openChannelBot();">
+												<img src="../img/txof/app_header/gnb_info_07.svg" alt="">
+												<span>채팅 상담</span>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		
+		<div class="header-side_bg" style="display: none;">
+			<div class="header-side_box">
+				<div class="hds_inner">
+					<div class="hds_top">
+						<div class="hds_title">
+							<h1>알림</h1>
+							<div class="btn">
+								<button class="hd_close" type="button">
+									<div class="icon"></div>
+								</button>
+							</div>
+						</div>
+						<div class="hds_tab">
+							<div class="left">
+								<ul>
+									<li>
+										<button class="active" type="button" id="_hd_noti_new">안읽음</button>
+									</li>
+									<li>
+										<button type="button" id="_hd_noti_all">전체</button>
+									</li>
+								</ul>
+							</div>
+							<div class="right">
+								<div class="state">
+									<button type="button" id="_hd_noti_cnfm_all">모두읽음</button>
+								</div>
+							</div>
+						</div>
+						<div class="hds_search">
+							<div class="input_wrap">
+								<div class="left">
+									<button class="srch_btn" type="button" id="_hd_noti_srch_btn">
+									</button>
+									<input type="text" value="" id="_hd_noti_word" placeholder="검색어를 입력하세요" style="width: 250px;">
+								</div>
+								<div class="right">
+									<button class="clo_btn" type="button"></button>
+	
+								</div>
+	
+	
+							</div>
+						</div>
+						<div class="hds_option">
+							<ul>
+								<li class="hds_opt_01">
+									<span>검색옵션</span>
+								</li>
+								<li class="hds_opt_02">
+									<button class="active" type="button" id="_hd_noti_opt_01">
+										<span>거래처명</span>
+									</button>
+									<button class="active" type="button" id="_hd_noti_opt_02">
+										<span>내용</span>
+									</button>
+								</li>
+							
+							</ul>
+						</div>
+					</div>
+					<div class="hds_content">
+	
+						<div class="list_wrap">
+	
+							<!-- 알림 list -->
+							<ul class="list" id="_hd_noti_list" style="cursor:pointer;">
+							</ul>
+	
+							<!-- 알람없을시 show  -->
+							<div class="no-alarm" id="_hd_noti_no" style="display:none;">
+								<div class="icon">
+									<img src="/img/txof/ico/page_43x50.png" alt="">
+								</div>
+								<div class="desc">
+									<span>아직 도착한 업무 알림이 없어요</span>
+								</div>
+							</div>
+	
+						</div>
+						
+						<!-- 검색창 체크시 show -->
+						<div class="src_option" id="_hd_noti_srch_res" style="display:none;">
+							<div class="scr_opt_tit" id="_hd_noti_srch_gd">
+								<span>
+									<strong name="_hd_noti_srch_word"></strong>
+									검색어가 포함된 거래처명을 검색합니다.
+								</span>
+							</div>
+							<ul class="src_list" id="_hd_noti_biz_list">
+							</ul>
+							<div class="no-src" id="_hd_noti_no_srch" style="display:none;">
+								<div class="icon">
+									<img src="/img/txof/ico/excla_g_40x40.png" alt="">
+								</div>
+								<div class="desc">
+									<div class="info">
+										<p><strong name="_hd_noti_srch_word"></strong>에 대한<br>
+											검색결과가 없습니다.
+										</p>
+									</div>
+									<div class="link" id="_hd_noti_show_all">
+										<a href="#none">
+											<span>전체목록 보기</span>
+											<img src="/img/txof/ico/arrow_b_5x9.png" alt="">
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+	
+				<!-- 상세보기 -->
+				<div class="hds_detail" id="_hd_noti_detail" style="display:none">
+	
+					<div class="detail_top">
+						<div class="detail_main-tit">
+							<div class="left">
+								<h1 id="_hd_noti_biz_nm"></h1>
+								<img src="/img/txof/ico/search_gr_16x16.png" alt="">
+							</div>
+							<div class="right">
+								<div class="btn">
+									<button class="hd_close" tyle="button">
+										<div class="icon"></div>
+									</button>
+								</div>
+							</div>
+						</div>	
+						<div class="detail_sub-tit">
+							<div class="info_01">
+								<p id="_hd_noti_biz_no"></p>
+							</div>
+							<div class="info_02">
+								<div class="left">
+									<p id="_hd_noti_rppr_nm"></p>
+									<button type="button" id="_hd_noti_go_biz">
+										<span>바로가기</span>
+										<img src="/img/txof/ico/arr_g_6x8.png" alt="">
+									</button>
+								</div>
+								<div class="right " id="_hd_noti_go_chat">
+									<button type="button">
+										<img src="/img/txof/ico/ico_wetalk18x18_on.png" alt="">
+									</button>
+								</div>
+							</div>
+							<div class="info_01">
+								<p id="_hd_noti_reg_dtm"></p>
+							</div>
+						</div>
+					</div>
+	
+					<div class="detail_mid">
+						<ul>
+							<li class="list_01">
+								<h2 id="_hd_noti_dtl_title"></h2>
+							</li>
+	
+							<li class="list_02" id="_hd_noti_dtl_ctt">
+							</li>
+							
+							<li class="list_05" id="_hd_noti_dtl_btn" style="display:none;">
+								<button class="linkBtn_green" type="button" id="_btn_show_dtls">
+									<span>자세히보기</span>
+									<img src="../img/txof/ico/arr_w_6x8.png" alt="">
+								</button>
+							</li>
+						</ul>
+					</div>
+	
+					<div class="detail_bot">
+						<div class="read_time">
+							<p id="_hd_noti_cnfm_dtm"></p>
+						</div>
+						<!-- 첨부파일 있을시 노출 -->
+						<div class="file_list" id="_hd_noti_show_file">
+							<div class="dtb_title">
+								<p id="_hd_noti_atth_cnt"></p><span class="file_size" id="_hd_noti_atth_size"></span>
+							</div>
+							<ul id="_hd_noti_atth_list">
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+<div class="wrap ">
+	<!-- Container -->
+	<div class="container">
+		<!-- content -->
+		<div class="content">	 
+			<div class="content_wrap">
+				<div class="title_wrap h1type">
+					<div class="left">
+						<h1><span class="company">마크마크</span> | <span class="businum">103-99-00336</span></h1>
+					</div>
+                    <div class="right">
+						<div class="cntalign">
+							<a class="btn_ico_back" href="#none" id="info_btn_back"><span class="blind">뒤로가기</span></a>
+						</div>
+					</div>
+				</div>
+                <div class="title_wrap h1type">
+					<div class="left">
+					<div class="tabType02">
+						<ul id="bzaq_tab_info_chk">
+							<li class="" data="S"><a href="#none" class="bzaq_tab_info_url_gb" id="scrp_status">실시간 정보수집 현황</a></li>
+							<li data="H" class="on"><a href="#none" class="bzaq_tab_info_url_gb" id="scrp_history">실시간 정보수집 내역</a></li>
+						</ul>
+					</div>
+					</div>
+					<div class="right history_menu" style="display: block;">
+						<!-- //검색 -->
+						<div class="cntalign">
+							   <div class="src_box">
+									<div class="inner">
+									    <img src="../img/txof/ico/search_14x14.svg" alt="조회" class="src_icon" id="btn_search">
+										<input type="text" id="det_sch_word" value="" placeholder="검색" style="width:180px;">
+									</div>
+							   </div>
+						</div>
+					</div>
+					
+					
+				</div>
+                <div class="title_wrap history_menu" style="display: ;">
+					<!-- left -->
+					<div class="left">
+						<div class="tb_cust_dv cboth mgl0">
+							<div class="setinner">
+							</div><!--ic_up뒤에 down 붙히면 아이콘 변경-->
+							<div class="setinner">
+								<div class="settxt">
+									<label for="det_search_type1"><input type="radio" name="det_search_type" id="det_search_type1" value="ALL" checked="checked">전체</label>
+									<label for="det_search_type2">&nbsp;&nbsp;<input type="radio" name="det_search_type" id="det_search_type2" value="DATE">수집실행기간</label>
+									<div class="select_date">
+										<div class="date_wrap">
+											<select id="det_start_year" disabled="disabled">
+												<option value="2022">2022</option>
+                                                <option value="2023">2023</option>
+                                                <option value="2024" selected="">2024</option>
+											</select>
+											<select id="det_start_month" disabled="disabled">
+												<option value="01">1</option>
+                                                <option value="02">2</option>
+                                                <option value="03">3</option>
+                                                <option value="04" selected="">4</option>
+                                                <option value="05">5</option>
+                                                <option value="06">6</option>
+                                                <option value="07">7</option>
+                                                <option value="08">8</option>
+                                                <option value="09">9</option>
+                                                <option value="10">10</option>
+                                                <option value="11">11</option>
+                                                <option value="12">12</option>
+											</select>
+										</div>
+										<span class="bar">~</span>
+										<div class="date_wrap">
+											<select id="det_end_year" disabled="disabled">
+												<option value="2022">2022</option>
+                                                <option value="2023">2023</option>
+                                                <option value="2024" selected="">2024</option>
+											</select>
+											<select id="det_end_month" disabled="disabled">
+												<option value="01">1</option>
+                                                <option value="02">2</option>
+                                                <option value="03">3</option>
+                                                <option value="04">4</option>
+                                                <option value="05">5</option>
+                                                <option value="06">6</option>
+                                                <option value="07" selected="">7</option>
+                                                <option value="08">8</option>
+                                                <option value="09">9</option>
+                                                <option value="10">10</option>
+                                                <option value="11">11</option>
+                                                <option value="12">12</option>
+											</select>
+										</div>
+									</div>
+									<label class="mgl25" for="det_chk_error"><input type="checkbox" name="det_chk_error" id="det_chk_error" value="Y">실패건 조회</label>
+								</div>
+							</div>
+						</div>
+					</div><!-- //left -->
+
+					<!-- right -->
+					<div class="right">
+					</div><!-- //right -->
+				</div>
+                <article class="mrprt_status">
+                    <div class="mrprt_cont">
+                        <div class="grid_wrap infoc_rinfo_007" style="display:;">
+                            <div id="grid_01" class="w2ui-grid" style=""></div>
+                        </div>
+                        <div class="grid_foot_info">
+                            <p>( <span class="gr_text_blue">선택 데이터 100건</span>  / 전체 데이터 : 10,000건)</p>
+                        </div>		
+                    </div>       
+                </article>
+			</div>
+		   <!-- //content_wrap -->		
+		</div>
+	</div>
+</div>
+<!-- //wrap -->
+<script type="module">
+    let grid_01 = new w2grid({
+		name: 'grid_01',
+		box: '#grid_01',
+		show: {
+			
+			selectColumn: true //체크박스 생성
+			
+		},
+		
+		columns: [
+			{ field: 'th_01', text: '거래처명', size: '150px',  sortable: true,  attr: 'align=center'  },
+			{ field: 'th_02', text: '사업자 번호', size: '120px', sortable: true,  attr: 'align=center' },
+			{ field: 'th_03', text: '상태', size: '100px',  sortable: true,  attr: 'align=center' },
+			{ field: 'th_04', text: '신용카드 매출', size: '150px', sortable: true,  attr: 'align=right' },
+			{ field: 'th_05', text: '신용카드 매입', size: '150px', sortable: true,   attr: 'align=right'  },
+			{ field: 'th_06', text: '온라인 매출', size: '150px',  sortable: true,  attr: 'align=right' },
+			{ field: 'th_07', text: '전자계산서 매출', size: '150px', sortable: true,  attr: 'align=right' },
+			{ field: 'th_08', text: '전자계산서 매입', size: '150px', sortable: true,  attr: 'align=right' },
+			{ field: 'th_09', text: '전자세금계산서 매출', size: '150px', sortable: true,  attr: 'align=right' },
+			{ field: 'th_10', text: '전자세금계산서 매입', size: '150px', sortable: true,  attr: 'align=right' },
+			{ field: 'th_11', text: '현금영수증 매출', size: '150px', sortable: true,  attr: 'align=right' },
+			{ field: 'th_12', text: '현금영수증 매입', size: '150px', sortable: true,  attr: 'align=right' },
+			{ field: 'th_13', text: '근로 · 일용소득', size: '150px', sortable: true,  attr: 'align=right' },
+			{ field: 'th_14', text: '사업소득', size: '150px', sortable: true,  attr: 'align=right' },
+			{ field: 'th_15', text: '기타소득', size: '150px', sortable: true,  attr: 'align=right' },
+			{ field: 'th_16', text: '최근 데이터 검증일자', size: '150px', sortable: true,  attr: 'align=center' },
+
+			
+
+		],
+		records: [
+			{ "recid": 1, "th_01": "거래처명 들어오는 자리", "th_02" : "123-45-67890", "th_03" : "검증 불일치", "th_04" : "5,078,136 (121건)", "th_05" : "2,403,684 (61건)", "th_06" : "0", "th_07" : "0", "th_08" : "0", "th_09" : "0", "th_10" : "0", "th_11" : "0", "th_12" : "0", "th_13" : "0", "th_14" : "0", "th_15" : "0", "th_16" : "2023-06-19 00:00"
+				, w2ui: { class:{ th_03: "gr_err", th_04:"gr_bg_red"}}},
+			{ "recid": 2, "th_01": "거래처명 들어오는 자리", "th_02" : "123-45-67890", "th_03" : "검증완료", "th_04" : "5,078,136 (121건)", "th_05" : "2,403,684 (61건)", "th_06" : "0", "th_07" : "0", "th_08" : "0", "th_09" : "0", "th_10" : "0", "th_11" : "0", "th_12" : "0", "th_13" : "0", "th_14" : "0", "th_15" : "0", "th_16" : "2023-06-19 00:00"
+				, w2ui: { class:{ th_03: ""}} },
+			{ "recid": 3, "th_01": "거래처명 들어오는 자리", "th_02" : "123-45-67890", "th_03" : "검증대기", "th_04" : "5,078,136 (121건)", "th_05" : "2,403,684 (61건)", "th_06" : "0", "th_07" : "0", "th_08" : "0", "th_09" : "0", "th_10" : "0", "th_11" : "0", "th_12" : "0", "th_13" : "0", "th_14" : "0", "th_15" : "0", "th_16" : "2023-06-19 00:00"
+				, w2ui: { class:{ th_03: "gr_await"}} },
+			{ "recid": 4, "th_01": "거래처명 들어오는 자리", "th_02" : "123-45-67890", "th_03" : "검증대기", "th_04" : "5,078,136 (121건)", "th_05" : "2,403,684 (61건)", "th_06" : "0", "th_07" : "0", "th_08" : "0", "th_09" : "0", "th_10" : "0", "th_11" : "0", "th_12" : "0", "th_13" : "0", "th_14" : "0", "th_15" : "0", "th_16" : "2023-06-19 00:00"
+				, w2ui: { class:{ th_03: "gr_await"}} },
+
+		]
+	})
+</script>
+<script>
+		$(document).ready(function (e) {
+		swiper1 = new Swiper('.topban_swiper', {
+			direction: "vertical",
+			effect: 'fade',
+			loop: true, 
+			speed: 1000,
+			autoplay: {
+					delay: 2000,
+					disableOnInteraction: true,
+			},
+	
+			pagination: {
+				el: '.swiper-pagination',
+				type: "fraction",
+				clickable: true,
+			},
+		});
+	});
+</script>
+</body>
+
+</html>
+

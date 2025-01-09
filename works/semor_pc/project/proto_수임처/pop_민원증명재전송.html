@@ -1,0 +1,186 @@
+﻿<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<title>세무대리인 for 경리나라</title>
+<link rel="stylesheet" href="../css/reset_taxp.css">
+<link rel="stylesheet" href="../css/app_header.css"><!-- [D] 세무대리인용 header -->
+<link rel="stylesheet" href="../css/content_taxp.css"><!-- [D] 세무대리인용 -->
+<!-- custom scrollbar plugin css -->
+<link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+<script src="https://publ.roumit.com/js/firebase_include.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+<!-- custom scrollbar plugin -->
+<script src="../js/jquery.mCustomScrollbar.concat.min.js"></script>
+
+</head>
+
+<body>
+
+	<div class="layer_popup_wrap" style="width:640px;">
+		<div class="layer_popup_box2">
+			<a href="#none" class="layer_close"><img src="../img/txof/btn/btn_layerpopup_close.gif" alt="닫기"></a>
+			<div class="layer_title_nb">
+				<h1>민원증명 재전송</h1>
+			</div>
+			<div class="layer_cont">
+				<!-- 리스트 테이블 -->
+				<div class="list_scroll_top pdr" style="overflow:hidden;">
+					<!-- <div class="list_scroll_top pdr" style="overflow:hidden;"> --><!-- 하단테이블 세로스크롤 발생시 pdr 클래스 추가 -->
+					<table class="tbl_result" summary="">
+						<caption></caption>
+						<colgroup>
+						<col style="width:120px;">
+						<col style="">
+						<col style="width:180px;">
+						<col style="width:110px;">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col"><div>시간</div></th>
+								<th scope="col"><div>회사명</div></th>
+								<th scope="col"><div>증빙서류</div></th>
+								<th scope="col"><div></div></th>
+							</tr>
+						</thead>
+					</table>
+				</div>
+				<div class="tbl_layout" style="border-bottom:1px solid #b4b4b4;height:272px;min-width:100%;overflow-y:auto;overflow-x:auto;">
+					<table class="tbl_result" summary="">
+						<caption></caption>
+						<colgroup>
+						<col style="width:120px;">
+						<col style="">
+						<col style="width:180px;">
+						<col style="width:110px;">
+						</colgroup>
+						<tfoot style="display:none;"><!-- display: none / table-tfoot -->
+							<tr class="no_hover">
+								<td colspan="4" class="no_info" style="height:271px;"><div>재전송 가능한 내역이 없습니다.</div></td>
+							</tr>
+						</tfoot>
+						<tbody>
+							<tr>
+								<td><div>2022-01-03 13:21</div></td>
+								<td><div class="tx_ellipsis_max" title="㈜가나상사">㈜가나상사</div></td>
+								<td><div>사업자등록증 외 3건</div></td>
+								<td><div class="btnw cboth">
+									<a href="#none"><img src="../img/txof/btn/btn_down.gif" alt=""></a>
+									<a href="#none"><img src="../img/txof/btn/btn_kakao.gif" alt=""></a>
+									<a href="#none"><img src="../img/txof/btn/btn_sms.gif" alt=""></a>
+								</div></td>
+							</tr>
+							<tr>
+								<td><div>2022-01-03 13:21</div></td>
+								<td><div class="tx_ellipsis_max" title="J-미디어">J-미디어</div></td>
+								<td><div>사업자등록증 재발급</div></td>
+								<td><div class="btnw cboth">
+									<a href="#none"><img src="../img/txof/btn/btn_down.gif" alt=""></a>
+									<a href="#none"><img src="../img/txof/btn/btn_kakao.gif" alt=""></a>
+									<a href="#none"><img src="../img/txof/btn/btn_sms.gif" alt=""></a>
+								</div></td>
+							</tr>
+							<tr>
+								<td><div>2022-01-03 13:21</div></td>
+								<td><div class="tx_ellipsis_max" title="케이푸드">케이푸드</div></td>
+								<td><div>과표준증명</div></td>
+								<td><div class="btnw cboth">
+									<a href="#none"><img src="../img/txof/btn/btn_down.gif" alt=""></a>
+									<a href="#none"><img src="../img/txof/btn/btn_kakao.gif" alt=""></a>
+									<a href="#none"><img src="../img/txof/btn/btn_sms.gif" alt=""></a>
+								</div></td>
+							</tr>
+							<tr>
+								<td><div>2022-01-03 13:21</div></td>
+								<td><div class="tx_ellipsis_max" title="㈜가나상사">㈜가나상사</div></td>
+								<td><div>과표준증명</div></td>
+								<td><div class="btnw cboth">
+									<a href="#none"><img src="../img/txof/btn/btn_down.gif" alt=""></a>
+									<a href="#none"><img src="../img/txof/btn/btn_kakao.gif" alt=""></a>
+									<a href="#none"><img src="../img/txof/btn/btn_sms.gif" alt=""></a>
+								</div></td>
+							</tr>
+							<tr>
+								<td><div>2022-01-03 13:21</div></td>
+								<td><div class="tx_ellipsis_max" title="㈜가나상사">㈜가나상사</div></td>
+								<td><div>과표준증명</div></td>
+								<td><div class="btnw cboth">
+									<a href="#none"><img src="../img/txof/btn/btn_down.gif" alt=""></a>
+									<a href="#none"><img src="../img/txof/btn/btn_kakao.gif" alt=""></a>
+									<a href="#none"><img src="../img/txof/btn/btn_sms.gif" alt=""></a>
+								</div></td>
+							</tr>
+							<tr>
+								<td><div>2022-01-03 13:21</div></td>
+								<td><div class="tx_ellipsis_max" title="㈜가나상사">㈜가나상사</div></td>
+								<td><div>과표준증명</div></td>
+								<td><div class="btnw cboth">
+									<a href="#none"><img src="../img/txof/btn/btn_down.gif" alt=""></a>
+									<a href="#none"><img src="../img/txof/btn/btn_kakao.gif" alt=""></a>
+									<a href="#none"><img src="../img/txof/btn/btn_sms.gif" alt=""></a>
+								</div></td>
+							</tr>
+							<tr>
+								<td><div>2022-01-03 13:21</div></td>
+								<td><div class="tx_ellipsis_max" title="㈜가나상사">㈜가나상사</div></td>
+								<td><div>과표준증명</div></td>
+								<td><div class="btnw cboth">
+									<a href="#none"><img src="../img/txof/btn/btn_down.gif" alt=""></a>
+									<a href="#none"><img src="../img/txof/btn/btn_kakao.gif" alt=""></a>
+									<a href="#none"><img src="../img/txof/btn/btn_sms.gif" alt=""></a>
+								</div></td>
+							</tr>
+							<tr>
+								<td><div>2022-01-03 13:21</div></td>
+								<td><div class="tx_ellipsis_max" title="㈜가나상사">㈜가나상사</div></td>
+								<td><div>과표준증명</div></td>
+								<td><div class="btnw cboth">
+									<a href="#none"><img src="../img/txof/btn/btn_down.gif" alt=""></a>
+									<a href="#none"><img src="../img/txof/btn/btn_kakao.gif" alt=""></a>
+									<a href="#none"><img src="../img/txof/btn/btn_sms.gif" alt=""></a>
+								</div></td>
+							</tr>
+							<tr>
+								<td><div>2022-01-03 13:21</div></td>
+								<td><div class="tx_ellipsis_max" title="㈜가나상사">㈜가나상사</div></td>
+								<td><div>과표준증명</div></td>
+								<td><div class="btnw cboth">
+									<a href="#none"><img src="../img/txof/btn/btn_down.gif" alt=""></a>
+									<a href="#none"><img src="../img/txof/btn/btn_kakao.gif" alt=""></a>
+									<a href="#none"><img src="../img/txof/btn/btn_sms.gif" alt=""></a>
+								</div></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- //리스트 테이블 -->
+
+				<p class="mgt10">※ 발행 목록은 최근 1개월 기간만 보관합니다.</p>
+
+				<!-- 레이어 -->
+				<div class="data_veiw" style="position:absolute;top:75px;left:408px;">
+					<span class="img_err" style="">
+						<!-- 레이어 -->
+						<div class="ly_ico_notibx" style="display:;">
+							<span class="tail" style="right:57px;"></span>
+							<div class="inner">
+								<p style="font-weight:normal;">
+									사업자등록증 재발급<br />
+									사업자등록증<br />
+									과세표준증명원
+								</p>
+							</div>
+						</div>
+						<!-- //레이어 -->
+					</span>
+				</div>
+				<!-- //레이어 -->
+			</div>
+		</div>
+	</div>
+
+
+</body>
+</html>

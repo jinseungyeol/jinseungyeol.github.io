@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<title>사업분석 보고서</title>
+<link rel="stylesheet" href="../css/w2ui_2.0.css">
+<link rel="stylesheet" href="../css/swiper-bundle.min.css">
+<link rel="stylesheet" href="../css/reset_taxp.css">
+<link rel="stylesheet" href="../css/app_header.css">
+<link rel="stylesheet" href="../css/content_taxp.css">
+<link rel="stylesheet" href="../css/semo_rept.css">
+<link rel="stylesheet" href="../css/w2ui-2.0.css">
+
+<!-- custom scrollbar plugin css -->
+<link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+<script src="https://publ.roumit.com/js/firebase_include.js"></script>
+<script src="../js/lib/jquery/jquery-1.12.4.min.js"></script>
+<script src="../js/lib/jquery/jquery-ui-1.10.4.min.js"></script>
+<script src="../js/lib/swiper/swiper-bundle.min.js"></script>
+<!-- custom scrollbar plugin -->
+<script src="../js/lib/plugin/w2ui.js"></script>
+<script src="../js/design/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../js/design/jquery.placeholder.min.js"></script>
+<script src="../js/lib/plugin/smart.popup.js"></script>
+<script src="../js/comm/common.js"></script>
+<script>
+	$(function(){
+			// 상단 .user_name 핸들링
+		   $('.container_inner').scroll(function(){
+			   if($('.container_inner').scrollTop() > 30) {
+				   $('.rpt_smry_wrap').addClass('active');
+			   }
+			   else {
+				   $('.rpt_smry_wrap').removeClass('active');
+			   }   
+		   })
+
+		   $('.pop_wrap .info_title .left .title_btn').click(function () {
+                $('.rprt-radio_pop').show();
+
+            });  
+		   $('.rprt-radio_pop .btn_style1_b').click(function () {
+                $('.rprt-radio_pop ').hide();
+            });  
+			$('.rprt_tbl input[type="text"]').click(function () {
+                $(this).parents('tr').addClass("focused");
+            });  
+			
+		 })
+
+</script>
+</head>
+  
+<body style="">
+	<div class="window_open">
+		<div class="pop_wrap confirmRept h_auto" >
+			<!-- 팝업 컨텐츠 -->
+			<div class="pop_container pd0 rept_pop" style="display: flex; ">
+				<div class="leftTab">
+					<div class="src_box">
+						<div class="inner">
+							<img src="../img/txof/ico/search_14x14.svg" alt="" class="src_icon">
+							<input type="text" placeholder="검색" id="sch_word">
+						</div>
+					</div>	
+					<div class="reportListWrap">
+						<div class="areaTit">
+							<p class="count">거래처 35</p>
+							<div class="rCont">
+								<label><input type="checkbox"> 검토완료 제외</label>
+							</div>
+						</div>
+						<ul class="reportList">
+							<!-- 확인완료시 complete 클래스 추가 -->
+							<li class="">
+								<a href="javascript:;">
+									<div class="titArea">
+										<strong class="tit">로움아이티로움아이티</strong>
+										<span class="badge">검토완료</span>
+									</div>
+									<div class="cntArea">
+										<div class="infoStaff">
+											<span>123-45-67890</span>
+											<span>|</span>
+											<span>김세모</span>
+										</div>
+									</div>
+								</a>
+							</li>
+							<!-- 활성화시 active 클래스 추가 -->
+							<li class="active">
+								<a href="javascript:;">
+									<div class="titArea">
+										<strong class="tit">로움아이티</strong>
+										<span class="badge  color02">검토완료</span>
+									</div>
+									<div class="cntArea">
+										<div class="infoStaff">
+											<span>123-45-67890</span>
+											<span>|</span>
+											<span>김세모</span>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<div class="titArea">
+										<strong class="tit">로움아이티</strong>
+										<span class="badge  color02">검토완료</span>								</div>
+									<div class="cntArea">
+										<div class="infoStaff">
+											<span>123-45-67890</span>
+											<span>|</span>
+											<span>김세모</span>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<div class="titArea">
+										<strong class="tit">로움아이티</strong>
+										<span class="badge  color02">검토완료</span>								</div>
+									<div class="cntArea">
+										<div class="infoStaff">
+											<span>123-45-67890</span>
+											<span>|</span>
+											<span>김세모</span>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<div class="titArea">
+										<strong class="tit">로움아이티</strong>
+										<span class="badge  color02">검토완료</span>								</div>
+									<div class="cntArea">
+										<div class="infoStaff">
+											<span>123-45-67890</span>
+											<span>|</span>
+											<span>김세모</span>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<div class="titArea">
+										<strong class="tit">로움아이티</strong>
+										<span class="badge  color02">검토완료</span>								</div>
+									<div class="cntArea">
+										<div class="infoStaff">
+											<span>123-45-67890</span>
+											<span>|</span>
+											<span>김세모</span>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<div class="titArea">
+										<strong class="tit">로움아이티</strong>
+										<span class="badge  color02">검토완료</span>								</div>
+									<div class="cntArea">
+										<div class="infoStaff">
+											<span>123-45-67890</span>
+											<span>|</span>
+											<span>김세모</span>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<div class="titArea">
+										<strong class="tit">로움아이티</strong>
+										<span class="badge  color02">검토완료</span>								</div>
+									<div class="cntArea">
+										<div class="infoStaff">
+											<span>123-45-67890</span>
+											<span>|</span>
+											<span>김세모</span>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<div class="titArea">
+										<strong class="tit">로움아이티</strong>
+										<span class="badge  color02">검토완료</span>								</div>
+									<div class="cntArea">
+										<div class="infoStaff">
+											<span>123-45-67890</span>
+											<span>|</span>
+											<span>김세모</span>
+										</div>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<div class="titArea">
+										<strong class="tit">로움아이티</strong>
+										<span class="badge  color02">검토완료</span>								</div>
+									<div class="cntArea">
+										<div class="infoStaff">
+											<span>123-45-67890</span>
+											<span>|</span>
+											<span>김세모</span>
+										</div>
+									</div>
+								</a>
+							</li>
+						</ul>
+						<div class="paging">
+							<a href="#none" class="btn_pag_cntr first" style="margin-right: -5px"><span class="blind">first</span></a>
+							<a href="#none" class="btn_pag_cntr prev"><span class="blind">previous</span></a>
+							<span class="pag_num">
+								<a href="#none" class="on">1</a>
+								<a href="#none">2</a>
+								<a href="#none">3</a>
+								<a href="#none">4</a>
+								<a href="#none">5</a>
+							</span>
+							<a href="#none" class="btn_pag_cntr next on"><span class="blind">next</span></a><a href="#none"
+								class="btn_pag_cntr last on"><span class="blind">last</span></a>
+						</div>
+					</div>
+				</div>
+				<div class="container_inner">
+					
+					<!-- 타이틀 -->
+					<section class="user_info_wrap">
+						<article class="user-info">
+							<div class="user_name">
+								<h1>이로운가게 영등포구청점</h1>
+								<!-- 개인 indiv / 법인 gener -->
+								<span class="badge indiv">개인사업자</span>
+								<span class="badge gener">법인사업자</span>
+							</div>
+							<div class="user-info_table">
+								<table>
+									<colgroup>
+										<col style="width: 80px;">
+										<col style="width: 140px;">
+										<col style="width: 80px;">
+										<col style="width: 100px;">
+										<col style="width: 80px;">
+										<col style="width: 250px;">
+									</colgroup>
+									<thead></thead>
+									<tbody>
+										<tr>
+											<th>사업자번호</th>
+											<td>123-45-67890</td>
+											<th>대표자명</th>
+											<td>홍길동</td>
+											<th>업종코드</th>
+											<td>552101</td>
+										</tr>
+										<tr>
+											<th>사업자유형</th>
+											<td>일반</td>
+											<th>계약상태</th>
+											<td>기장개인</td>
+											<th>업종</th>
+											<td>숙박 및 음식점업</td>
+										</tr>
+									</tbody>
+								</table> 
+							</div>
+						</article>
+					</section>
+					<!-- 보고서 요약 -->
+					<section class="rpt_smry_wrap">
+						<article class="info_wrap">
+							<div class="info_title">
+								<div class="left">
+									<button type="button" class="title_btn">
+										<h2>2023년 10월 사업분석</h2>
+										<img src="../img/txof/btn/arr_down_16.svg" alt="">
+									</button>
+									<div class="rprt-radio_pop" style="display: ;">
+										<div class="radio_title">
+											<h2>보고서 월 선택</h2>
+										</div>
+										<ul class="list_wrap">
+											<li>
+												<label for="rprtradi_01">
+													<input type="radio" id="rprtradi_01" name="rprtradi">
+													<span>2023년 10월 사업분석 보고서</span>
+												</label>	
+											</li>
+											<li>
+												<label for="rprtradi_02">
+													<input type="radio" id="rprtradi_02" name="rprtradi">
+													<span>2023년 09월 사업분석 보고서</span>
+												</label>	
+											</li>
+											<li>
+												<label for="rprtradi_03">
+													<input type="radio" id="rprtradi_03" name="rprtradi">
+													<span>2023년 08월 사업분석 보고서</span>
+												</label>	
+											</li>
+											<li>
+												<label for="rprtradi_04">
+													<input type="radio" id="rprtradi_04" name="rprtradi">
+													<span>2023년 07월 사업분석 보고서</span>
+												</label>	
+											</li>
+											<li>
+												<label for="rprtradi_05">
+													<input type="radio" id="rprtradi_05" name="rprtradi">
+													<span>2023년 06월 사업분석 보고서</span>
+												</label>	
+											</li>
+											<li>
+												<label for="rprtradi_06">
+													<input type="radio" id="rprtradi_06" name="rprtradi">
+													<span>2023년 05월 사업분석 보고서</span>
+												</label>	
+											</li>
+											<li>
+												<label for="rprtradi_07">
+													<input type="radio" id="rprtradi_07" name="rprtradi">
+													<span>2023년 04월 사업분석 보고서</span>
+												</label>	
+											</li>
+											<li>
+												<label for="rprtradi_08">
+													<input type="radio" id="rprtradi_08" name="rprtradi">
+													<span>2023년 03월 사업분석 보고서</span>
+												</label>	
+											</li>
+											<li>
+												<label for="rprtradi_09">
+													<input type="radio" id="rprtradi_09" name="rprtradi">
+													<span>2023년 02월 사업분석 보고서</span>
+												</label>	
+											</li>
+											<li>
+												<label for="rprtradi_10">
+													<input type="radio" id="rprtradi_10" name="rprtradi">
+													<span>2023년 01월 사업분석 보고서</span>
+												</label>	
+											</li>
+											<li>
+												<label for="rprtradi_11">
+													<input type="radio" id="rprtradi_11" name="rprtradi">
+													<span>2023년 01월 예상부가세 보고서</span>
+												</label>	
+											</li>
+	
+										</ul>
+										<div class="bottom_btn">
+											<button type="button" class="btn_style1_b"><span>조회</span></button>
+										</div>
+									</div>
+								</div>
+								<div class="right">
+									<div class="button_wrap">
+										<button type="button" class="btn_style2_g"><span>미리보기</span></button>
+										<button type="button" class="btn_style2_g"><span>변경이력</span></button>
+										<button type="button" class="btn_cancel"><span>취소</span></button>
+										<button type="button" class="btn_style1_b"><span>수정하기</span></button>
+									</div>
+								</div>
+							</div>
+							<div class="info_banner">
+								<p class="desc_01">· 보고서 데이터는 연동된 홈택스 세무대리 기준으로 자동 반영되며, 데이터 수정을 원할 경우 <strong>[수정하기]</strong> 버튼을 클릭하십시오.</p>
+								<p class="desc_01">· 홈택스에서 수집한 데이터를 수정한 경우 기존 데이터는 검정색, 변경된 데이터는 초록색으로 구분됩니다.</p>
+								<p class="desc_01">· 보고서 발송 전, 추가 전달이 필요한 내용이나 코멘트가 있다면 인사말 작성에 입력하시기 바랍니다.</p>
+							</div>
+							
+						</article>
+						<article class="rpt_smry">
+							<div class="write_wrap">
+								<div class="title">
+									<div class="left">
+										<h2>
+											인사말 작성
+										</h2>
+										<div class="tooltipWrap btc">
+											<span class="qm">
+												<img src="../img/txof/ico/ico_que_green.png" alt="">
+												<div class="tooltip yellow">
+													<p class="tit">원하는 거래처별 인사말 수정은<br><a href="#none">보고서 생성 메뉴</a>에서 가능합니다.
+												</div>
+											</span>
+										</div>
+									</div>
+									<div class="right">
+										<p>72/2000자</p>
+									</div>
+								</div>
+								<textarea id="" style=""></textarea>
+							</div>
+							<div class="smry_wrap">
+								<div class="title">
+									<h2>요약</h2>
+									<p>분석기간 : 2023-10-01 ~ 2023 -10-31</p>
+								</div>
+								<div class="smry_table">
+									<table>
+										<tbody>
+											<tr>
+												<th><div>매출 공급가액(A)</div></th>
+												<td><div>449,191,755원</div></td>
+											</tr>
+											<tr>
+												<th><div>매입 공급가액(B)</div></th>
+												<td><div>220,538,530원</div></td>
+											</tr>
+											<tr>
+												<th><div>인건비 지급액(C)</div></th>
+												<td><div>211,394,990원</div></td>
+											</tr>
+											<tr>
+												<th><div>감가상각비 (D)</div></th>
+												<td><div>0원</div></td>
+											</tr>
+											<tr class="sum">
+												<th><div>예상 손익(A-B-C-D)</div></th>
+												<td><div>449,191,755원</div></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<div class="areaRudSemor">
+								<!-- 비활성화시 off클래스 추가 -->
+								<a href="#none" class="btn_rud_semor"><span>검토완료</span></a>
+								<span class="mgl4">최종검토 일자 : 2023-01-01 13:15</span>
+							</div>
+						</article>
+					</section>
+					<!-- 테이블 -->
+					<section class="table_box_wrap">
+						<!-- 매출 -->
+						<article class="table_box">
+							<div class="info_title">
+								<div class="left">
+									<h2>매출</h2>
+								</div>
+								<div class="right">
+									<div class="data_state">
+										<ul>
+											<li class="type_A"><p class="icon"></p><span>홈택스 데이터</span></li>
+											<li class="type_B"><p class="icon"></p><span>수정한 데이터</span></li>
+											<li class="type_C"><img src="../img/txof/btn/ico_refresh.svg" alt=""><span>홈택스 데이터 반영</span>
+												<div class="tooltipWrap btr">
+												<span class="qm">
+													<img src="../img/txof/btn/question_24.svg" alt="">
+													<div class="tooltip yellow" style="max-width: 440px;">
+														<p class="tit">
+															홈택스 데이터 반영 가능한 증빙은 아래를 참고해주세요.
+														</p>
+														<div class="txt_wrap">
+															<p class="txt">· 매출 : 전자세금계산서 / 전자계산서 / 현금영수증 / 카드 · PG · 쇼핑 / 수출실적명세서</p>
+															<p class="txt">· 매입 : 전자세금계산서 / 전자계산서 / 현금영수증 / 카드</p>
+															<p class="txt"> · 원천세 : 근로소득 / 일용소득 / 사업소득 / 기타소득 / 퇴직소득</p>
+														</div>						
+													</div>
+												</span>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="info_banner">
+								<p class="desc_01">· PG 배달 쇼핑 매출 중 요기요, 배달의 민족, 쿠팡이츠는 매월 수집 후 분기마다 홈택스 세무대리 데이터로 업데이트 되며,</p>
+								<p class="desc_02">카드/온라인 매출 세액은 아래 계산식으로 반영합니다.</p>
+								<p class="desc_02">(공급가액 : 합계금액 x 100 ÷ 110, 세액 : 합계금액 x 10 ÷ 110)</p>
+								<p class="desc_01">· 영세율 수출실적명세서 매출은 홈택스에서 수집한 선적년월 기준으로 조회되며, 원화환산금액을 반영합니다.</p>
+							</div>
+							<div class="tblScrollX pd0" style="overflow: hidden; ">
+								<table class="rprt_tbl modify" summary="">
+									<caption></caption>
+									<colgroup>
+										<col style="width: 170px;">
+										<col style="width: 130px;">
+										<col style="width: 130px;">
+										<col style="width: 130px;">
+										<col style="width: 130px;">
+									</colgroup>
+									<thead>
+										<tr class="trd">
+											<th scope="col" class="tit tal"><div>구분 </div></th>
+											<th scope="col" class=""><div>건수</div></th>
+											<th scope="col" class=""><div>공급가액</div></th>
+											<th scope="col" class=""><div>세액</div></th>
+											<th scope="col" class=""><div>합계금액</div></th>
+										</tr>
+									</thead>
+									<tbody style="display: table-tbody;">
+										<tr>
+											<td class="tit"> 
+												<div class="tal">
+													전자세금계산서
+													<div class="button_wrap">
+														<button type="button"  class="refr_btn" ><img src="../img/txof/btn/ico_refresh.svg"alt=""></button>
+													</div>
+												</div>
+	
+											</td>
+											<td>
+												<div class="tar">
+													<p class="val">0</p>
+													<!-- input border 제거 class bdn / 색상변경 class modi -->
+													<input type="text" value="50" class="modi bdn error" readonly>											</div>
+											</td>
+											<td>
+												<div class="tar">
+													<p class="val">0</p>
+													<input type="text" value="100,000" class="modi bdn">
+												</div>
+											</td>
+											<td class="">
+												<div class="tar">
+													<p class="val">0</p>
+													<input type="text" value="100,000" class="modi bdn">
+												</div>
+												
+											</td>
+											<td>
+												<div class="tar">
+													<p class="val">0</p>
+													<input type="text" value="100,000" class="modi bdn">
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="tit">
+												<div class="tal">전자계산서</div>
+											</td>
+											<td>
+												<div class="tar">
+													<input type="text" placeholder="수기입력">
+												</div>
+											</td>
+											<td>
+												<div class="tar">
+													<input type="text" placeholder="수기입력">
+												</div>
+											</td>
+											<td class=""><div class="tar"><p class="val">-</p></div></td>
+											<td class=""><div class="tar"><p class="val">-</p></div></td>
+										</tr>
+										<!-- 종이세금계산서 -->
+										<tr>
+											<td class="tit"><div class="tit tal">종이세금계산서</div></td>
+											<td class="modified"><div class="tar"><input type="text" placeholder="수기입력" value="50" readonly></div></td>
+											<td class="modified">
+												<div class="tar">
+													<input type="text" placeholder="수기입력" value="50" class="modi">
+												</div>
+											</td>
+											<td><div class="tar"><p class="val gray">자동계산</p></div></td>
+											<td><div class="tar"><p class="val gray">자동계산</p></div></td>
+										</tr>
+										<!-- 종이세금계산서 -->
+										<tr>
+											<td class="tit"><div class="tit tal">종이계산서</div></td>
+											<td class=""><div class="tar"><input type="text" placeholder="수기입력"></div></td>
+											<td class="">
+												<div class="tar">
+													<p class="val">50</p>
+											</div>
+											</td>
+											<td><div class="tar"><p class="val">-</p></div></td>
+											<td><div class="tar"><p class="val">-</p></div></td>
+										</tr>
+										<!-- 현금영수증 -->
+										<tr>
+											<td class="tit">
+												<div class="tit tal">
+													현금영수증
+													<div class="button_wrap">
+														<button type="button"  class="refr_btn" ><img src="../img/txof/btn/ico_refresh.svg"alt=""></button>
+													</div>
+												</div>
+											</td>
+											<td class=""><div class="tar"><input type="text" placeholder="수기입력"></div></td>
+											<td class="">
+												<div class="tar">
+													<input type="text" placeholder="수기입력" >
+												</div>
+											</td>
+											<td><div class="tar"><p class="val">3,876,915</p></div></td>
+											<td><div class="tar"><p class="val">44,823,800</p></div></td>
+										</tr>
+										<!-- 카드 · 제로페이 -->
+										<tr>
+											<td class="tit"><div class="tit tal">카드 · 제로페이</div></td>
+											<td class=""><div class="tar"><input type="text" placeholder="수기입력"></div></td>
+											<td class="">
+												<div class="tar">
+													<input type="text" placeholder="수기입력" >
+												</div>
+											</td>
+											<td><div class="tar"><p class="val">3,876,915</p></div></td>
+											<td><div class="tar"><p class="val">44,823,800</p></div></td>
+										</tr>
+										<!-- PG · 배달 · 쇼핑 -->
+										<tr>
+											<td class="tit"><div class="tit tal">PG · 배달 · 쇼핑</div></td>
+											<td class=""><div class="tar"><input type="text" placeholder="수기입력"></div></td>
+											<td class="">
+												<div class="tar">
+													<input type="text" placeholder="수기입력" >
+												</div>
+											</td>
+											<td><div class="tar"><p class="val gray">자동계산</p></div></td>
+											<td><div class="tar"><p class="val gray">자동계산</p></div></td>
+										</tr>
+										<!-- 기타(정규영수증 외 매출분) -->
+										<tr>
+											<td class="tit"><div class="tit tal">기타(정규영수증 외 매출분)</div></td>
+											<td class=""><div class="tar"><input type="text" placeholder="수기입력"></div></td>
+											<td class="">
+												<div class="tar">
+													<input type="text" placeholder="수기입력" >
+												</div>
+											</td>
+											<td><div class="tar"><p class="val gray">자동계산</p></div></td>
+											<td><div class="tar"><p class="val gray">자동계산</p></div></td>
+										</tr>
+										<!-- 영세율 세금계산서 -->
+										<tr>
+											<td class="tit"><div class="tit tal">영세율 세금계산서</div></td>
+											<td class=""><div class="tar"><input type="text" placeholder="수기입력"></div></td>
+											<td class="">
+												<div class="tar">
+													<input type="text" placeholder="수기입력" >
+												</div>
+											</td>
+											<td class="unused"><div class="tar"></div></td>
+											<td class="unused"><div class="tar"></div></td>
+										</tr>
+										<!-- 영세율 수출실적명세서 -->
+										<tr>
+											<td class="tit"><div class="tit tal">영세율 수출실적명세서</div></td>
+											<td class=""><div class="tar"><input type="text" placeholder="수기입력"></div></td>
+											<td class="">
+												<div class="tar">
+													<input type="text" placeholder="수기입력" >
+												</div>
+											</td>
+											<td class="unused"><div class="tar"></div></td>
+											<td class="unused"><div class="tar"></div></td>
+										</tr>
+										<!-- 영세율 기타 -->
+										<tr>
+											<td class="tit"><div class="tit tal">영세율 기타</div></td>
+											<td class=""><div class="tar"><input type="text" placeholder="수기입력"></div></td>
+											<td class="">
+												<div class="tar">
+													<input type="text" placeholder="수기입력" >
+												</div>
+											</td>
+											<td class="unused"><div class="tar"></div></td>
+											<td class="unused"><div class="tar"></div></td>
+										</tr>
+										<tr class="sum">
+											<td class="tit">
+												<div class="tal">합계</div>
+											</td>
+											<td>
+												<div class="tar">
+													<p class="val">4,477</p>
+													<p class="val modi">4,477</p>
+												</div>
+											</td>
+											<td><div class="tar"><p class="val">449,191,755</p></div></td>
+											<td><div class="tar"><p class="val">44,701,402</p></div></td>
+											<td><div class="tar"><p class="val">493,893,157</p></div></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</article>
+	
+						<!-- 매입 -->
+						<article class="table_box">
+							<div class="info_title">
+								<div class="left">
+									<h2>매입</h2>
+								</div>
+							</div>
+							<div class="info_banner">
+								<p class="desc_01">· 매입 내역에서 제외해야 하는 부분이 있다면 매입차감(고정자산 매입 등) 항목에 입력하시기 바랍니다.</p>
+							</div>
+							<div class="tblScrollX pd0" style="overflow: hidden; ">
+								<table class="rprt_tbl modify" summary="">
+									<caption></caption>
+									<colgroup>
+										<col style="width: 170px;">
+										<col style="width: 130px;">
+										<col style="width: 130px;">
+										<col style="width: 130px;">
+										<col style="width: 130px;">
+									</colgroup>
+									<thead>
+										<tr class="trd">
+											<th scope="col" class="tit tal"><div>구분 </div></th>
+											<th scope="col" class=""><div>건수</div></th>
+											<th scope="col" class=""><div>공급가액</div></th>
+											<th scope="col" class=""><div>세액</div></th>
+											<th scope="col" class=""><div>합계금액</div></th>
+										</tr>
+									</thead>
+									<tbody style="display: table-tbody;">
+										<tr>
+											<td class="tit">
+												<div class="tal">전자세금계산서</div>
+											</td>
+											<td>
+												<div class="tar">
+													<input type="text" placeholder="수기입력">
+												</div>
+											</td>
+											<td>
+												<div class="tar">
+												<input type="text" value="265">
+											</div>
+											</td>
+											<td class=""><div class="tar">1,000,000</div></td>
+											<td><div class="tar">1,000,000</div></td>
+										</tr>
+										<tr>
+											<td class="tit">
+												<div class="tal">전자계산서</div>
+											</td>
+											<td>
+												<div class="tar">
+													<input type="text" placeholder="수기입력">
+												</div>
+											</td>
+											<td>
+												<div class="tar">
+												<input type="text" placeholder="수기입력">
+											</div>
+											</td>
+											<td class=""><div class="tar"><p class="val">-</p></div></td>
+											<td class=""><div class="tar"></div></td>
+										</tr>
+										<!-- 종이세금계산서 -->
+										<tr>
+											<td class="tit"><div class="tit tal">종이세금계산서</div></td>
+											<td class="modified"><div class="tar"><input type="text" placeholder="수기입력" value="50"></div></td>
+											<td class="modified">
+												<div class="tar">
+													<input type="text" placeholder="수기입력" value="50" class="modi">
+												</div>
+											</td>
+											<td><div class="tar"><p class="val gray">자동계산</p></div></td>
+											<td><div class="tar"><p class="val gray">자동계산</p></div></td>
+										</tr>
+										<!-- 종이세금계산서 -->
+										<tr>
+											<td class="tit"><div class="tit tal">종이계산서</div></td>
+											<td class=""><div class="tar"><input type="text" placeholder="수기입력"></div></td>
+											<td class="">
+												<div class="tar">
+													<p class="val">50</p>
+											</div>
+											</td>
+											<td><div class="tar"><p class="val">-</p></div></td>
+											<td><div class="tar"><p class="val">-</p></div></td>
+										</tr>
+										<!-- 현금영수증 -->
+										<tr>
+											<td class="tit"><div class="tit tal">현금영수증</div></td>
+											<td class=""><div class="tar"><input type="text" placeholder="수기입력"></div></td>
+											<td class="">
+												<div class="tar">
+													<input type="text" placeholder="수기입력" >
+												</div>
+											</td>
+											<td><div class="tar"><p class="val">3,876,915</p></div></td>
+											<td><div class="tar"><p class="val">44,823,800</p></div></td>
+										</tr>
+										<!-- 카드 -->
+										<tr>
+											<td class="tit"><div class="tit tal">카드</div></td>
+											<td class=""><div class="tar"><input type="text" placeholder="수기입력"></div></td>
+											<td class="">
+												<div class="tar">
+													<input type="text" placeholder="수기입력" >
+												</div>
+											</td>
+											<td><div class="tar"><p class="val">3,876,915</p></div></td>
+											<td><div class="tar"><p class="val">44,823,800</p></div></td>
+										</tr>
+										<!-- 기타(간이영수증) -->
+										<tr>
+											<td class="tit"><div class="tit tal">기타(간이영수증)</div></td>
+											<td class=""><div class="tar"><input type="text" placeholder="수기입력"></div></td>
+											<td class="">
+												<div class="tar">
+													<input type="text" placeholder="수기입력" >
+												</div>
+											</td>
+											<td><div class="tar"><p class="val gray">자동계산</p></div></td>
+											<td><div class="tar"><p class="val gray">자동계산</p></div></td>
+										</tr>
+										<!-- 매입차감(고정자산매입 등) -->
+										<tr>
+											<td class="tit"><div class="tit tal">매입차감(고정자산매입 등)</div></td>
+											<td class=""><div class="tar"><input type="text" placeholder="수기입력"></div></td>
+											<td class="">
+												<div class="tar">
+													<input type="text" placeholder="수기입력" >
+												</div>
+											</td>
+											<td><div class="tar"><p class="val gray">자동계산</p></div></td>
+											<td><div class="tar"><p class="val gray">자동계산</p></div></td>
+										</tr>
+										<tr class="sum">
+											<td class="tit"><div class="tal">합계</div></td>
+											<td><div class="tar"><p class="val">4,477</p></div></td>
+											<td><div class="tar"><p class="val">449,191,755</p></div></td>
+											<td><div class="tar"><p class="val">44,701,402</p></div></td>
+											<td><div class="tar"><p class="val">493,893,157</p></div></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</article>
+	
+						<!-- 인건비 -->
+						<article class="table_box">
+							<div class="info_title">
+								<div class="left">
+									<h2>인건비</h2>
+								</div>
+							</div>
+							<div class="info_banner">
+								<p class="desc_01">· 인건비 데이터는 원천징수이행상황신고서 기준으로 반영됩니다.</p>
+								<p class="desc_01">· 인건비 반기 신고 거래처는 월 예상 손익을 추정하기 위해 최근 6개월 평균 금액으로 자동 계산되어 채워집니다.</p>
+								<p class="desc_02">인원 : 상반기 6월, 하반기 12월 보고서에 총 인원 조회 가능</p>
+								<p class="desc_02">금액 : 원천징수 신고서 기준 6개월 평균 금액을 월 인건비에 반영</p>
+								<div class="tgl_wrap">
+									<div class="inner">
+										<span class="tit">· 전월 데이터 일괄 반영</span>
+										<input type="checkbox" class="onoff_tg" name="tgl_info" id="tgl_01" value="">
+										<div class="tgl_info" for="tgl_01" name="tgl_info">
+											설정 시, 최근 전월 데이터 기준으로 인원과 금액이 일괄 반영됩니다.<br>
+											불러올 전월 데이터가 없는 경우, 수기로 입력해두면 다음달 보고서부터 적용됩니다.<br>
+											<b>해당 설정은 원천세 반기납 신고 대상에 해당하는 경우에만 이용해주시기 바랍니다.</b><br>
+											설정 해제 시, 다음달 보고서부터 전월 데이터가 반영되지 않습니다.
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="tblScrollX pd0" style="overflow: hidden; ">
+								<table class="rprt_tbl modify" summary="">
+									<caption></caption>
+									<colgroup>
+										<col style="width: 170px;">
+										<col style="width: 260px;">
+										<col style="width: 260px;">
+									</colgroup>
+									<thead>
+										<tr class="trd">
+											<th scope="col" class="tit tal"><div>구분</div></th>
+											<th scope="col" class=""><div>인원</div></th>
+											<th scope="col" class=""><div>지급금액</div></th>
+										</tr>
+									</thead>
+									<tbody style="display: table-tbody;">
+										<!-- 근로소득 -->
+										<tr>
+											<td class="tit"><div class="tal">근로소득</div></td>
+											<td><div class="tar"><input type="text" placeholder="수기입력"></div></td>
+											<td><div class="tar"><input type="text" placeholder="수기입력"></div></td>
+										</tr>
+										<!-- 일용소득 -->
+										<tr>
+											<td class="tit"><div class="tal">일용소득</div></td>
+											<td><div class="tar"><input type="text" placeholder="수기입력"></div></td>
+											<td><div class="tar"><input type="text" placeholder="수기입력"></div></td>
+										</tr>
+										<!-- 사업소득 -->
+										<tr>
+											<td class="tit"><div class="tal">사업소득</div></td>
+											<td><div class="tar"><input type="text" placeholder="수기입력"></div></td>
+											<td><div class="tar"><input type="text" placeholder="수기입력"></div></td>
+										</tr>
+										<!-- 기타소득 -->
+										<tr>
+											<td class="tit"><div class="tal">기타소득</div></td>
+											<td><div class="tar"><input type="text" placeholder="수기입력"></div></td>
+											<td><div class="tar"><input type="text" placeholder="수기입력"></div></td>
+										</tr>
+										<!-- 퇴직소득 -->
+										<tr>
+											<td class="tit"><div class="tal">퇴직소득</div></td>
+											<td><div class="tar"><input type="text" placeholder="수기입력"></div></td>
+											<td><div class="tar"><input type="text" placeholder="수기입력"></div></td>
+										</tr>
+										<tr class="sum">
+											<td class="tit"><div class="tal">합계</div></td>
+											<td><div class="tar"><p class="val">4,477</p></div></td>
+											<td><div class="tar"><p class="val">449,191,755</p></div></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</article>
+						<!-- 감가상각비 -->
+						<article class="table_box">
+							<div class="info_title">
+								<div class="left">
+									<h2>감가상각비</h2>
+								</div>
+							</div>
+							<div class="info_banner">
+								<p class="desc_01">· 사업에 필요한 비품, 장비 등 다양한 자산에 대해 노후화가 되는 것을 미리 감가상각비 항목으로 비용처리하여 손익에서 차감합니다.</p>
+								<p class="desc_01">· 감가상각비 항목에 데이터를 입력하지 않은 경우 모바일 화면에 반영되지 않습니다.</p>
+							</div>
+							<div class="tblScrollX pd0" style="overflow: hidden; ">
+								<table class="rprt_tbl modify" summary="">
+									<caption></caption>
+									<colgroup>
+										<col style="width: 170px;">
+										<col style="width: 260px;">
+										<col style="width: 260px;">
+									</colgroup>
+									<thead>
+										<tr class="trd">
+											<th scope="col" class="tit tal"><div>구분</div></th>
+											<th scope="col" class=""><div>건수</div></th>
+											<th scope="col" class=""><div>합계금액</div></th>
+										</tr>
+									</thead>
+									<tbody style="display: table-tbody;">
+										<!-- 근로소득 -->
+										<tr>
+											<td class="tit"><div class="tal">감가상각</div></td>
+											<td><div class="tar"><input type="text" placeholder="수기입력"></div></td>
+											<td><div class="tar"><input type="text" placeholder="수기입력"></div></td>
+										</tr>
+										<tr class="sum">
+											<td class="tit"><div class="tal">합계</div></td>
+											<td><div class="tar"><p class="val">4,477</p></div></td>
+											<td><div class="tar"><p class="val">449,191,755</p></div></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</article>
+						
+						<!-- 변경이력 -->
+						<article class="table_box">
+							<div id="rprt_chg_hist_div" style="">
+								<table class="rprt_tbl" summary="">
+									<caption></caption>
+									<colgroup>
+										<col style="width:130px;">
+										<col style="width:75px;">
+										<col style="width:160px;">
+										<col style="width:75px;">
+										<col style="width:100px;">
+										<col style="width:100px;">
+										<col style="width:70px;">
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col"><div class="t_center">변경일시</div></th>
+											<th scope="col" class="t_center"><div>거래구분</div></th>
+											<th scope="col" class="t_center"><div>증빙구분</div></th>
+											<th scope="col" class="t_center"><div>항목명</div></th>
+											<th scope="col" class="t_center"><div>변경 전</div></th>
+											<th scope="col" class="t_center"><div>변경 후</div></th>
+											<th scope="col" class="t_center"><div>처리자</div></th>
+										</tr>
+									</thead>
+									<tfoot style="display:none;">
+										<tr class="no_hover">
+											<td colspan="7" class="no_info"><div>변경된 이력이 없습니다.</div></td>
+										</tr>
+									</tfoot>
+									<tbody style="display: table-tbody;">
+										<tr>
+											<td><div class="t_center" name="CHG_DTM">2024-02-16 17:00</div></td>
+											<td><div class="t_center" name="TRSC_DIV_NM">매입</div></td>
+											<td><div class="tal" name="EVDC_DIV_NM">기타(정규영수증 외 매출분)</div></td>
+											<td><div class="t_center" name="CHG_ITEM_NM">건수</div></td>
+											<td><div class="tar" name="BEFR_VAL">999,999,999</div></td>
+											<td><div class="tar" name="AFTR_VAL">999,999,999</div></td>
+											<td><div class="tac" name="CHRG_NM">정상균</div></td>
+										</tr>
+										<tr>
+											<td><div class="t_center" name="CHG_DTM">2024-02-16 17:00</div></td>
+											<td><div class="t_center" name="TRSC_DIV_NM">매입</div></td>
+											<td><div class="tal" name="EVDC_DIV_NM">매입차감(고정자산매입 등)</div></td>
+											<td><div class="t_center" name="CHG_ITEM_NM">건수</div></td>
+											<td><div class="tar" name="BEFR_VAL">1</div></td>
+											<td><div class="tar" name="AFTR_VAL">0</div></td>
+											<td><div class="tac" name="CHRG_NM">정상균</div></td>
+										</tr>
+										<tr>
+											<td><div class="t_center" name="CHG_DTM">2024-02-16 17:00</div></td>
+											<td><div class="t_center" name="TRSC_DIV_NM">인건비</div></td>
+											<td><div class="tal" name="EVDC_DIV_NM">근로소득</div></td>
+											<td><div class="t_center" name="CHG_ITEM_NM">인원</div></td>
+											<td><div class="tar" name="BEFR_VAL">0</div></td>
+											<td><div class="tar" name="AFTR_VAL">1</div></td>
+											<td><div class="tac" name="CHRG_NM">정상균</div></td>
+										</tr>
+										<tr>
+											<td><div class="t_center" name="CHG_DTM">2024-02-16 17:00</div></td>
+											<td><div class="t_center" name="TRSC_DIV_NM">인건비</div></td>
+											<td><div class="tal" name="EVDC_DIV_NM">근로소득</div></td>
+											<td><div class="t_center" name="CHG_ITEM_NM">인원</div></td>
+											<td><div class="tar" name="BEFR_VAL">1</div></td>
+											<td><div class="tar" name="AFTR_VAL">0</div></td>
+											<td><div class="tac" name="CHRG_NM">정상균</div></td>
+										</tr>
+										<tr>
+											<td><div class="t_center" name="CHG_DTM">2024-02-16 17:00</div></td>
+											<td><div class="t_center" name="TRSC_DIV_NM">인건비</div></td>
+											<td><div class="tal" name="EVDC_DIV_NM">근로소득</div></td>
+											<td><div class="t_center" name="CHG_ITEM_NM">지급금액</div></td>
+											<td><div class="tar" name="BEFR_VAL">0</div></td>
+											<td><div class="tar" name="AFTR_VAL">0</div></td>
+											<td><div class="tac" name="CHRG_NM">정상균</div></td>
+										</tr>
+									</tbody>
+								</table>
+								<!-- //리스트 테이블 -->
+								<div class="paging_wrap">
+									<!-- combo -->
+									<!-- <div class="combo_wrap">
+										<div class="combo_style">
+											<a href="#none" class="btn_style btn_combo_down" id="PAGE_SZ"><span>10</span></a>
+											<ul class="up" style="display: none;">
+												<li><a href="#none">20</a></li>
+												<li><a href="#none">10</a></li>
+											</ul>
+										</div>
+									</div> -->
+									<!-- //combo -->
+									<!-- pagination -->
+									<div class="paging" id="CREATE_PG_LINK2"><a id="paging_first" href="javascript:" class="btn_pag_cntr first"><span class="blind">first</span></a><a id="paging_pre" href="javascript:" class="btn_pag_cntr prev"><span class="blind">previous</span></a><span class="pag_num"><a class="on">1</a> </span><a id="paging_next" href="javascript:" class="btn_pag_cntr next"><span class="blind">next</span></a><a id="paging_last" href="javascript:" class="btn_pag_cntr last"><span class="blind">last</span></a></div>
+								</div>
+							</div>
+						</article>
+					</section>
+	
+				</div>
+			</div>
+			<!-- //팝업 컨텐츠 -->
+		</div>
+	</div>
+</body>
+</html>

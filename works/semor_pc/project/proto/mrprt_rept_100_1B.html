@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+	<title>mrprt_rept_100_1B</title>
+	<link rel="stylesheet" href="../css/reset_taxp.css">
+	<link rel="stylesheet" href="../css/app_header.css"><!-- [D] 세무대리인용 header -->
+	<link rel="stylesheet" href="../css/content_taxp.css"><!-- [D] 세무대리인용 -->
+	<link rel="stylesheet" href="../css/semo_rept.css">
+	<link rel="stylesheet" href="../css/swiper-bundle.min.css"><!-- [D] 세무대리인용 -->
+	<link rel="stylesheet" href="../css/w2ui_2.0.css">
+
+	<!-- custom scrollbar plugin css -->
+	<link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+	<link rel="stylesheet" href="../css/jquery-ui-1.8.16.custom.css">
+	<script src="https://publ.roumit.com/js/firebase_include.js"></script>
+  <script src="../js/lib/jquery/jquery-1.12.4.min.js"></script>
+	<script src="../js/lib/jquery/jquery-ui-1.10.4.min.js"></script>
+	<script src="../js/lib/swiper/swiper-bundle.min.js"></script>
+	<!-- custom scrollbar plugin -->
+	<script src="../js/lib/plugin/w2ui.js"></script>
+	<script src="../js/design/jquery.mCustomScrollbar.concat.min.js"></script>
+	<script src="../js/design/jquery.placeholder.min.js"></script>
+	<script src="../js/lib/plugin/smart.popup.js"></script>
+	<script src="../js/comm/common.js"></script>
+	<script src="../js/lib/jquery/jquery-ui-1.10.4.min.js"></script>
+	<style>
+		.mygroupLst_type02 { margin-bottom: 20px; } 
+		.mygroupLst_type02 button { min-width: auto; } 
+		.mygroupLst_type02 > li + li { margin-top: 12px; } 
+		.mygroupLst_type02 .w_box_radius { padding: 10px 8px; background: #fff; border-radius: 8px; } 
+		.mygroupLst_type02 .tit_area {display: flex; align-items: center; justify-content: space-between;}
+		.mygroupLst_type02 .tit_area .cate_filter .btn_filter {border: none; background: none; cursor: pointer;}
+		.mygroupLst_type02 .tit_area .cate_filter .btn_filter ~ .pop_filter {display: none;}
+		.mygroupLst_type02 .tit_area .cate_filter .btn_filter.active ~ .pop_filter {display: block;}
+		.mygroupLst_type02 .menu_tit { padding-left: 20px; color: #171717; font-size: 13px; font-weight: 600; background: no-repeat center left / 16px; } 
+		.mygroupLst_type02 .menu_tit.set { background-image: url(../img/txof/ico/setting_16.svg); } 
+		.mygroupLst_type02 .menu_tit.send { background-image: url(../img/txof/ico/ico_rocket_14.svg); } 
+		.mygroupLst_type02 .menu_tit.select { background-image: url(../img/txof/ico/ico_report_16.svg); } 
+		.mygroupLst_type02 .action_area { margin-top: 18px; } 
+		.mygroupLst_type02 .st_device { display: flex; align-items: center; gap: 5px; } 
+		.mygroupLst_type02 .st_device button { flex: 1; } 
+		.mygroupLst_type02 .st_device .btn_style1_gray_bd.active { background: #17bf98; border: none; } 
+		.mygroupLst_type02 .st_device .btn_style1_gray_bd.active span { color: #fff; } 
+		.mygroupLst_type02 .send_wrap + .send_wrap { margin-top: 24px; } 
+		.mygroupLst_type02 .send_wrap .to { display: block; margin-bottom: 12px; } 
+		.mygroupLst_type02 .send_input_wrap { display: flex; gap: 8px; } 
+		.mygroupLst_type02 .send_input_wrap .send_input { display: flex; align-items: center; border: 1px solid #E1E1E1; border-radius: 4px; } 
+		.mygroupLst_type02 .send_input_wrap .send_input input { width: 100%; border: none; text-align: center; } 
+		.mygroupLst_type02 .send_input_wrap .send_input input:first-child { width: 32px; } 
+		.mygroupLst_type02 .send_input_wrap .send_input .divide { margin: 0 2px; } 
+		.mygroupLst_type02 .send_input_wrap .send_input.readonly { border: none; } 
+		.mygroupLst_type02 .send_input_wrap .btn_style1_b { flex: 0 0 auto; } 
+		.mygroupLst_type02 .areaSend_wrap { height: auto; } 
+		.mygroupLst_type02 .areaSend_wrap .info { width: auto; padding: 10px 8px; border: 1px solid #FF5353; border-radius: 8px; } 
+		.mygroupLst_type02 .areaSend_wrap .grid_info_link { display: block; height: auto; line-height: initial; margin: 8px 0; padding: 8px; border: 1px solid #E1E1E1; border-radius: 8px; } 
+		.mygroupLst_type02 .areaSend_wrap .btn_style1_b { width: 100%; height: 32px; } 
+		.mygroupLst_type02 > li.item_rept_st .st_device { display: flex; justify-content: space-between; gap: 12px;} 
+		.mygroupLst_type02 > li.item_rept_st .st_device + .st_device {margin-top: 12px;}
+		.mygroupLst_type02 > li.item_rept_st .st_device .txt_info_g {font-size: 13px;}
+		.mygroupLst_type02 > li.item_rept_st .st_device button { display: block; width: 100%; height: 32px; } 
+		.mygroupLst_type02 > li.item_rept_st .st_device button + button { margin-top: 8px; } 
+		.mygroupLst_type02 > li.item_rept_st .st_device.disabled .btn_style1_gray_bd { background: #d8d8d8; border: none; cursor: initial; } 
+		.mygroupLst_type02 > li.item_rept_st .st_device.disabled .btn_style1_gray_bd span {color: #8a8a8b;}
+		.mygroupLst_type02 > li.item_rept_st .st_device.disabled input {background: #d8d8d8; border: none; cursor: initial;}
+	</style>
+</head>
+
+<body class="lnb_bg">
+	<div class="wrap preview">
+		<!-- [D] 상세검색일 경우(class="mh") -->
+		<!-- Container -->
+		<div class="container">
+			<!-- lnb_box -->
+			<div class="lnb_box">
+				<ul class="mygroupLst_type02">
+					<li class="item_set">
+						<div class="w_box_radius">
+							<div class="tit_area">
+								<p class="menu_tit set">보기 설정</p>
+							</div>
+							<div class="action_area">
+								<div class="st_device">
+									<button type="button" class="btn_style1_gray_bd active" data-device="desktop"><span>PC</span></button>
+									<button type="button" class="btn_style1_gray_bd" data-device="tablet"><span>테블릿</span></button>
+									<button type="button" class="btn_style1_gray_bd" data-device="mobile"><span>모바일</span></button>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="item_rept_st">
+						<div class="w_box_radius">
+							<div class="tit_area">
+								<p class="menu_tit select">보고서 선택</p>
+							</div>
+							<div class="action_area">
+								<div class="st_device disabled"> <!--disabled 클래스 추가 시 비활성화-->
+									<button type="button" class="btn_style1_gray_bd"><span>사업분석 보고서</span></button>
+								</div>
+								<div class="st_device disabled">
+									<button type="button" class="btn_style1_gray_bd"><span>매출 보고서</span></button>
+								</div>
+								<div class="st_device">
+									<button type="button" class="btn_style1_gray_bd"><span>매입 보고서</span></button>
+								</div>
+								<div class="st_device">
+									<button type="button" class="btn_style1_gray_bd"><span>예상 부가세 보고서</span></button>
+								</div>
+								<div class="st_device">
+									<button type="button" class="btn_style1_gray_bd"><span>인건비 보고서</span></button>
+								</div>
+								<div class="st_device">
+									<button type="button" class="btn_style1_gray_bd"><span>부가세 신고분석 보고서</span></button>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<button class="btn_link_copy"><span>링크 복사하기</span></button>
+					</li>
+				</ul>
+			</div>
+			<!-- //lnb_box -->
+			<!-- content -->
+			<div class="content">
+				<!-- content_wrap -->
+				<div class="content_wrap">
+					<div class="frame_area">
+						<div class="mockup" data-device="desktop">
+							<iframe src="https://publ.smjb.co.kr/SEMO2_0/SEMOR_MOB/html/vwmr/vwmr_rept_402A.html"
+								frameborder="0"></iframe>
+						</div>
+					</div>
+				</div>
+				<!-- //content_wrap -->
+			</div>
+			<!-- //content -->
+		</div>
+		<!-- //Container -->
+		<div class="footer">
+			<!-- Copy right -->
+			<div class="copyright_wrap">
+				<div class="copyright_box">
+					<p>· 본 이미지의 저작권은 로움아이티(주)에 있습니다.</p>
+				</div>
+				<div class="ft_menu"></div>
+			</div>
+			<!-- //Copy right -->
+		</div>
+	</div>
+	<!-- //wrap -->
+
+	<div class="tooltipWrap rt">
+		<div class="tooltip yellow">
+			<p class="tit"></p>
+		</div>
+	</div>
+
+	<script>
+		$(function() {
+			// 보기 설정 - PC, 태블릿, 모바일 분기처리
+			$(".item_set .btn_style1_gray_bd").click(function() {
+				var device = $(this).data('device');
+
+				$(this).addClass('active').siblings().removeClass('active');
+				$('.mockup').attr('data-device', device);
+			});
+
+			// 미리보기 화면 활성화
+			$(".item_rept_st .btn_style1_gray_bd").click(function() {
+				if($(this).parent().hasClass('disabled')) {
+					return;
+				}
+				$(this).addClass('active').parent().siblings().find('.btn_style1_gray_bd').removeClass('active');
+			});
+			
+			// 필터 팝업 좌표
+			$(".btn_filter").on('click', function() {
+				$(this).siblings('.pop_filter').css('top', $(this).parents('.item_rept_st').offset().top);
+				$(this).toggleClass('active');
+			})
+			$('.wrap.preview .lnb_box').scroll(function() {
+				$('.pop_filter').each(function(index) {
+					$(this).css('top', $(this).parents('li').offset().top);
+				})
+			})
+			
+			// 툴팁
+			showTooltip('.btn_filter', 'south', 
+				`
+					원하는 보고서 월을<br>
+					선택할 수 있어요
+				`
+			);
+			showTooltip('.st_device.disabled', 'east', '생성완료된 보고서만 미리보기 가능');
+		});
+		
+		// 툴팁 공통 함수
+		function showTooltip(target, direction, content, tooltipEl = 'new_tooltip') {
+			var targetElement = $(target);
+		
+			targetElement.on('mouseenter', function(event) {
+				var offset = $(this).offset();
+				var x = offset.left;
+				var y = offset.top;
+				var tooltip = $(`<div class="${tooltipEl} ${direction}"></div>`).html(content);
+
+				$('body').append(tooltip);
+
+				switch (direction) {
+					case 'north':
+						y -= tooltip.outerHeight() + 10;
+						x = (x + targetElement.outerWidth() / 2) - (tooltip.outerWidth() / 2);
+						break;
+					case 'east':
+						x += targetElement.outerWidth() + 10;
+						y += targetElement.outerHeight() / 2 - tooltip.outerHeight() / 2;
+						break;
+					case 'south':
+						y += targetElement.outerHeight() + 10;
+						x = (x + targetElement.outerWidth() / 2) - (tooltip.outerWidth() / 2);
+						break;
+					case 'west':
+						x -= tooltip.outerWidth() + 10;
+						y += targetElement.outerHeight() / 2 - tooltip.outerHeight() / 2;
+						break;
+				}
+
+
+				// 툴팁을 보이도록 하기 위해 opacity를 1로 설정
+				tooltip.css({
+					top: y + "px",
+					left: x + "px",
+					opacity: 1,
+				});
+			});
+
+			targetElement.on('mouseleave', function() {
+				// 툴팁을 숨기기 위해 opacity를 0으로 설정
+				$('.new_tooltip').remove();
+			});
+		}
+	</script>
+</body>
+
+</html>

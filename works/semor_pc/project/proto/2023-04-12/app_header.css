@@ -1,0 +1,280 @@
+@charset "utf-8";
+/* CSS Document */
+
+/**************************************************
+
+	z-index 정의
+
+	.tooltip : 501,
+	.app_header : 800,
+	.overlay : 1000,
+	.toast-message : 2000
+	#cboxOverlay : 1001부터 개발쪽에서 팝업끼리 z-index 비교하여 설정,
+	#colorbox : 1002부터 개발쪽에서 팝업끼리 z-index 비교하여 설정,
+	.loading_bxw : 900001
+
+**************************************************/
+
+/* (공통)header */
+.app_header{
+	position:fixed;/* 2022-06-30 absolute -> fixed 변경 */
+	top:0;left:0;right:0;
+	z-index: 1000;
+	min-height:45px;min-width:1200px;
+	/*border-bottom:1px solid #000; 20180829 삭제 */
+	background-color:#17bf98/* 20180829 수정 */
+}
+.app_header_inner{position:relative;height:45px;margin:0 auto;}
+
+/* 20180828 수정 */
+/* ㄴ(LEFT) */
+.app_header_inner .ah_l{position:absolute;top:0;left:0;bottom:0;}
+/* 20180829 수정 */
+.app_header_inner .ah_l h1{display:inline-block;font-size:20px;color:#fff;margin:7px 0 0 20px;}
+.app_header_inner .ah_l h1:before{
+	content:"";display:inline-block;vertical-align:middle;
+	margin-top: -1px; margin-right:10px;
+	width:34px;height:34px;
+	background-image:url(../img/txof/app_header/logoico_230215.png);
+}
+.app_header_inner .ah_l h2{display:inline-block;font-size:14px;color:#fff;margin:12px 0 0 10px;font-weight:normal;}
+/* ㄴ(RIGHT) */
+.app_header_inner .ah_r{position:absolute;top:0;right:0;bottom:0;}
+
+/* 2021-04-15 :: 4대보험 수임동의 현황 앱 */
+.app_header.bohum {background-color:#0557c8;}/* 2021-09-15 색상변경 */
+.app_header.bohum .app_header_inner .ah_l h1:before {background-image:url(../img/txof/app_header/logoico4de.png);background-size:34px 34px;}
+/* //2021-04-15 :: 4대보험 수임동의 현황 앱 */
+
+/* 2021-06-25 :: 급여대장 */
+.app_header.paym {background-color:#156ec8;}
+.app_header.paym .app_header_inner .ah_l h1:before {background-image:url(../img/txof/app_header/logoico_paym.png);background-size:34px 34px;}
+/* //2021-06-25 :: 급여대장 */
+
+/* 2021-07-07 :: 입퇴사자관리 */
+.app_header.epmt {background-color:#2741cc;}
+.app_header.epmt .app_header_inner .ah_l h1:before {background-image:url(../img/txof/app_header/logoico_epmt.png);background-size:34px 34px;}
+/* //2021-07-07 :: 입퇴사자관리 */
+
+/* 2022-12-28 실시간 정보수집 */
+.app_header.rinfo {background-color: #21408F;}
+.app_header.rinfo .app_header_inner .ah_l h1 {margin-top: 10px;}
+.app_header.rinfo .app_header_inner .ah_l h1:before {width: 34px; height: 34px; background: url(../img/txof/app_header/logoico_rinfo_230215.png) no-repeat center / 34px;}
+.app_header.rinfo .app_header_inner .ah_r .ah_menu {margin-top: 10px;}
+
+/* 230215 */
+.app_header.rept .app_header_inner .ah_l h1 {margin-top: 7px;}
+.app_header.rept .app_header_inner .ah_l h1:before {margin-top: -1px; background-image: url(../img/txof/app_header/logoico_230215.png);}
+
+.ah_menu{position:relative;margin-top:15px;margin-right:20px;min-height:17px;text-align:right;}
+.ah_menu li{display:inline-block;margin-left:12px;}
+.ah_menu li a{
+	position:relative;
+	display: inline-block;
+	height:17px;
+	font-size:12px;color:#fff;
+}
+.ah_menu li .weTalk a {height: auto; color: #5a5149;}
+.ah_menu li .updateInfo a {height: auto; color: #111;}
+.ah_menu li.txtMenu a + a {margin-left: 12px;}
+.ah_menu li.txtMenu a + a::before {content: ''; position: absolute; top: 1px; left: -9px; width: 1px; height: 12px; background: #fff;}
+/* //20180829 수정 */
+.ah_menu li a img{margin-top:-2px;vertical-align:middle;margin-right:4px;}
+.ah_menu li a.ic_new:before{
+	content:"";display:inline-block;
+	position:absolute;top:-2px;left:10px;
+	width:8px;height:8px;
+	background-image:url(../img/txof/app_header/ic_new.png);
+}
+.ah_menu li a:hover{text-decoration:underline;}
+/* //20180828 수정 */
+
+/* 2020-07-10 추가 */
+.ah_menu li a.btn_alarm{width:40px;height:44px;padding:0;background-image:url(../img/txof/app_header/btn_alarm.png);background-repeat:no-repeat;background-position:0 0;}
+.ah_menu li a.btn_alarm.on {background-position:0 -42px;}/* 2020-08-11  :hover 삭제 */
+.ah_menu li em.alarm_num{position:absolute;top:5px;left:20px;height:11px;padding:0 3px 1px;font-size:11px;color:#fff;font-style:normal;line-height:11px;-webkit-border-radius:6px;-moz-border-radius:6px;-o-border-radius:6px;-ms-border-radius:6px;border-radius:6px;background-color:#f46181;overflow:hidden;}
+/* //2020-07-10 추가 */
+
+
+
+.ah_menu li a.new:before {content:"";display:inline-block;position:absolute;top:-6px;right:-12px;width:13px;height:14px;background:url(../img/txof/app_header/alarm_new.png)no-repeat;}/* 2021-10-29 */
+
+/* (layer)공통 */
+.ly_app_header{
+	position:absolute;
+	text-align:left;
+	border:1px solid #3c434e;
+	background-color:#fff;
+}
+.ly_app_header:before{
+	content:"";display:inline-block;
+	width:16px;height:8px;
+	position:absolute;top:-8px;right:135px;
+	background-image:url(../img/txof/app_header/tail_toply.png);
+}
+.ly_notibx_tit{
+	position:relative;
+	height:37px;line-height:37px;
+	padding-left:15px;
+	border-bottom:1px solid #d2d2d2;
+}
+.ly_notibx_tit h3{font-size:12px;color:#555;}
+.ly_notibx_cont{position:relative;}
+.ly_notibx_scroll{position:relative;height:323px;overflow-y:auto;}
+.ly_notibx_scroll > ul{display:block;overflow:hidden;}
+.ly_notibx_scroll > ul li{
+	position:relative;
+	min-height:80px;
+	padding:0 10px 0 64px;
+	font-size:12px;color:#555;
+	border-top:1px solid #e7e7e7;
+}
+.ly_notibx_scroll > ul li:first-child{border-top:0;}
+.ly_notibx_scroll > ul li .ic_alarm{
+	position:absolute;top:12px;left:12px;
+}
+.ly_notibx_scroll > ul li .tit{padding-top:11px;margin-bottom:4px;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;}
+.ly_notibx_scroll > ul li .ic_tel02{margin-left:20px;}
+.ly_notibx_scroll > ul li .date{margin-top:14px;color:#bbbbbb;}
+
+/* 2020-07-10 상단 알림 추가 */
+/* ㄴ(channel) 알림 */
+.ly_app_header.alarm:before{right:229px;}/* 2020-08-11 */
+.ly_app_header .ly_notibx{text-align:left;}
+.ly_app_header .ly_notibx > .arr{display:inline-block;position:absolute;top:-11px;left:228px;width:25px;height:12px;font-size:0;line-height:0;background-image:url(../img/txof/app_header/bg_lycmd_arr.png);background-repeat:no-repeat;background-position:0 0;}
+.ly_app_header .ly_notibx > .ly_notibx_tit{position:relative;height:29px;padding:8px 0 0 12px;border-bottom:1px solid #e7e7e7;}
+.ly_app_header .ly_notibx > .ly_notibx_tit h3 {line-height:27px;}
+.ly_app_header .ly_notibx > .ly_notibx_cont{position:relative;}
+.ly_app_header .ly_notibx > .ly_notibx_cont .ly_notibx_scroll{position:relative;height:333px;padding:0;overflow:hidden;overflow-y:auto;}
+.ly_notibx_cont .ly_notibx_scroll > ul{display:block;overflow:hidden;}
+.ly_notibx_cont .ly_notibx_scroll > ul li{position:relative;padding:15px 6px 8px 64px;font-size:12px;line-height:19px;border-top:1px solid #e7e7e7;cursor: pointer;}
+.ly_notibx_cont .ly_notibx_scroll > ul li:first-child{border-top:none;}
+.ly_notibx_cont .ly_notibx_scroll > ul li:hover {background-color:#edf3ff;}
+.ly_notibx_cont .ly_notibx_scroll > ul li span.date,
+.ly_notibx_cont .ly_notibx_scroll ul li > a{font-size:12px;line-height:14px;margin-top:0;}
+.ly_notibx_cont .ly_notibx_scroll > ul li img.ic_alarm{position:absolute;top:15px;left:12px;}
+.ly_notibx_cont .ly_notibx_scroll > ul li .date{display:block;position:absolute;top:15px;right:15px;}
+.ly_notibx_cont .ly_notibx_scroll > ul li .ntit {width:205px;}
+.ly_notibx_cont .ly_notibx_scroll .ico_tnew {background:url(../img/txof/app_header/alarm_new.png) no-repeat 0 0;font-size:0;line-height:0;display:inline-block;vertical-align:top;width:14px;height:14px;}
+.ly_notibx_scroll .divider{position:relative;height:15px;margin:0;background:url(../img/txof/app_header/bg_divider.gif) repeat-x 0 9px;}
+.ly_notibx_scroll .divider > .d_date{display:block;position:absolute;top:0;left:50%;margin-left:-30px;padding:0 8px 0;color:#ccc;background-color:#fff;}
+.ly_notibx_cont > .alarm_drag{position:relative;height:15px;font-size:0;line-height:0;text-align:right;border-top:1px solid #e7e7e7;}
+.ly_notibx_cont > .alarm_drag img{cursor:nw-resize;}
+/* //2020-07-10 상단 알림 추가 */
+
+/* footer 추가 : 20180828 */
+.container{bottom:40px !important;}
+.container.pd20 {padding: 0 20px}
+.footer{width:100%;position:fixed;left:0;right:0;bottom:0;z-index:500;}
+/*.footer_wrap{width:100%;min-width:600px;height:90px;padding:8px 0 0;border-top:1px solid #ddd;background:#ededed;position:relative;clear:both;}*/
+.footer_wrap{position:relative;padding:0 0 5px 0;overflow:hidden;background:#ededed;}
+.footer_wrap > .left .cntalign{position:relative;float:left;margin-right:4px !important;}
+.footer_wrap > .right{position:absolute;top:50%;right:70px; transform: translateY(-50%);}
+.footer_wrap .footer_company_info {position: relative;}
+.footer_wrap .footer_company_info img {position: absolute; left: 80px; top: 50%; transform: translateY(-50%);}
+.footer_wrap .footer_company_info .footer_box {padding-left: 200px;}
+
+.footer_box{width:100%;color:#999;font-size:11px;text-align:left;padding:5px 0 5px 80px;}
+/* 20221228 */
+.footer .copyright_wrap {padding-left: 15px; background: #fff; font-weight: bold; height: 30px; line-height: 30px;}
+
+
+
+/* 수임처 개선 */
+.ly_bx_wrap {position:absolute;border:1px solid #3c434e;background-color:#fff;white-space:nowrap;z-index:1;} 
+.ly_bx_wrap .inner {overflow:hidden;overflow-y:auto;max-height:130px;} 
+.ly_bx_wrap .inner p {padding:4px 10px 3px;border-top:1px solid #e8e8e8;color:#555;line-height:18px;}
+.ly_bx_wrap .inner p:first-child {border:0;}
+
+@font-face {font-family: 'Pretendard'; font-weight: normal; src: url(../font/Pretendard-Medium.woff2) format('woff2');}
+@font-face {font-family: 'Pretendard'; font-weight: 600; src: url(../font/Pretendard-SemiBold.woff2) format('woff2');}
+@font-face {font-family: 'Pretendard'; font-weight: bold; src: url(../font/Pretendard-Bold.woff2) format('woff2');}
+
+.frameBody {font-size: 15px}
+.wrapper > * {font-family: 'Pretendard';}
+.wrapper {background: #fff}
+/*.wrapper .container {padding: 0px 20px 0; position: static;}*/
+.header {position: fixed; top: 0; left: 0; width: 100%; height: 60px; background: #fff; z-index: 1100}
+.header > .topMenu {position: absolute; top: 0; left: 0; bottom: 0; width: 100%; padding: 0 10px; box-sizing: border-box;}
+.header > .topMenu .left {float: left}
+.header > .topMenu .right {float: right}
+.header > .topMenu li a {display: inline-block; width: 45px; height: 60px; background: no-repeat center center / 25px}
+.header > .topMenu li .btnBack {background-image: url(../img/txof/app_header/ico_arr_left.png)}
+.header > .topMenu li .btnChat {background-image: url(../img/txof/app_header/ico_message.png)}
+.header > .topMenu li .btnShare {background-image: url(../img/txof/app_header/ico_share.png)}
+
+.blind {position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); border: 0; white-space: nowrap}
+
+.defTxt {font-size: 0.9rem; color: #111; word-break: keep-all}
+.defTxt02 {font-size: 0.866rem; color: #8a8a8b}
+.infoTxt, .infoTxtCheck, .infoTxtSend {display: inline-block; padding: 4px 0 4px 21px; font-size: 0.866rem; background:  no-repeat left center / 15px; color: #bababa; word-break: keep-all}
+.infoTxt {color: #bababa; background-image: url(../img/txof/app_header/ico_info_gray.png)} /* 회색 */
+
+.btnDownload {padding: 5px 0 5px 24px; color: #8a8a8b; text-decoration: underline; background: url(../img/txof/app_header/ico_fileDownload.png) no-repeat left center / 16px}
+.btnDownload.pdf {background-image: url(../img/txof/app_header/ico_pdf.png)}
+.btnDownload.excel {background-image: url(../img/txof/app_header/ico_excel.png)}
+.btnDownload.word {background-image: url(../img/txof/app_header/ico_word.png)}
+.btnDownload.ppt {background-image: url(../img/txof/app_header/ico_ppt.png)}
+
+.listWrap {margin-bottom: 15px}
+.listWrap > li {position: relative; padding: 13px 0}
+
+.infoArea {position: relative; display: flex; flex-wrap: wrap}
+.infoArea.middle {align-items: center}
+.infoArea.middle .ico {margin-top: 0}
+.infoArea .ico i {display: block; image-rendering: -webkit-optimize-contrast; /* 크롬 이미지 렌더링 */ background: no-repeat center center / contain}
+.infoArea .ico .icosemoR {width: 60px; height: 60px; background: url(../img/txof/app_header/ico_logo_semoReport.png) no-repeat center / 60px} /* 세모R 로고 */
+.infoArea .tit {width: 100%; font-size: 1rem}
+.infoArea .ico + .cont {padding-left: 12px}
+.infoArea .cont .info .name {font-size: 0.8rem; font-weight: 600}
+
+.reportMsgList > li {padding: 10px 0}
+.reportMsgList > li .defTxt {word-break: keep-all}
+.areaStateMsg {margin: 20px 0; text-align: right}
+
+.busiDataList > li {padding: 8px 0;}
+.busiDataList dl {display: table; width: 100%}
+.busiDataList dl dt, .busiDataList dl dd {display: table-cell}
+.busiDataList dl dt {color: #8a8a8b; font-size: 1rem}
+.busiDataList dl dd { text-align: right; font-size: 1rem}
+.busiDataList .name {display: block}
+
+
+/* 2022-11-11 */
+.weTalk {display:inline-block;width:98px;height:25px;box-sizing:border-box;background-color:#fbea96;border-radius:12.5px;vertical-align:-1px;margin-right:6px;}
+.weTalk > a {position:relative;display:block;font-family: 'Pretendard'; font-size:12px;color:#5a5149;font-weight:bold;padding:0 13px 0 38px;line-height:25px;*line-height:23px;background:url(../img/txof/app_header/ico_wetalk.png)no-repeat 13px 4px;letter-spacing: -0.15px;}
+.updateInfo {display:inline-block;width:105px;height:25px;box-sizing:border-box;background-color:#fff;border-radius:12.5px;vertical-align:-1px;margin-right:6px;}
+.updateInfo > a {position:relative;display:block;font-family: 'Pretendard'; font-size:12px;color:#5a5149;font-weight:bold;padding:0 13px 0 21px;line-height:25px;*line-height:23px;background:url(../img/txof/app_header/ico_speaker.png)no-repeat left 7px center / 14px;letter-spacing: -0.15px;}
+.talk_conting_num {position:absolute;right:-7px;top:-4px;text-align:center;display:inline-block;width:18px;height:18px;line-height:17px;font-size:11px; border-radius:20px;background-color:#f2631e;color:#fff;overflow:hidden;}
+/* //2022-11-11 */
+.newAlarm {position: relative;} 
+.newAlarm::before {content: 'N'; position: absolute; top: -5px; right: -5px; width: 15px; height: 15px; line-height: 15px; border-radius: 50%;  color: #fff; background-color: #ee4545; font-weight: 600; font-size: 8px; text-align: center;} 
+.new {position: relative; padding-right: 19px}
+.new::after {content: ''; position: absolute; top: 50%; transform: translateY(-50%); right: 0; width: 14px; height: 14px; background: url(../img/txof/ico/ico_new.png) no-repeat center / 14px;}
+
+/* 2023-04-13 알림 서비스 추가*/
+.hd_alarm{
+	background-color: #fff;
+	border-radius: 12px;;
+	display: flex !important;
+	align-items: center;
+	padding: 4px 8px;
+
+	
+}
+.hd_alarm span{
+	color: #545149;
+}
+.hd_alarm .count{
+	position: absolute;
+	background-color: #ee4545;
+	color: #fff;
+	border-radius: 8px;
+	top: -8px;
+	right: -4px;
+	width: 20px;
+	height: 13px;
+	line-height: 14px;
+	font-size: 8px;
+	text-align: center;
+}

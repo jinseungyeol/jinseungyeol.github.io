@@ -1,0 +1,1944 @@
+<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <title>실시간 정보수집</title>
+    <link rel="stylesheet" href="../css/reset_taxp.css">
+    <link rel="stylesheet" href="../css/app_header.css"><!-- [D] 세무대리인용 header -->
+    <link rel="stylesheet" href="../css/content_taxp.css"><!-- [D] 세무대리인용 -->
+    <link rel="stylesheet" href="../css/semo_rept.css"><!-- [D] 세무대리인용 -->
+
+    <!-- custom scrollbar plugin css -->
+    <link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+    <script src="https://publ.roumit.com/js/firebase_include.js"></script>
+  <script src="../js/lib/jquery/jquery-1.12.4.min.js"></script>
+    <script src="../js/lib/jquery/jquery-ui-1.10.4.min.js"></script>
+    <!-- custom scrollbar plugin -->
+    <script src="../js/design/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="../js/design/jquery.placeholder.min.js"></script>
+    <script src="../js/lib/plugin/smart.popup.js"></script>
+    <script src="../js/comm/common.js"></script>
+    <script>
+        $(function () {
+            // Invoke the plugin
+            $('input, textarea').placeholder({ customClass: 'my-placeholder' });
+
+
+
+            // 보기설정 보기
+            $('#btn_showhide').on("click", function (event) {
+                if ($(this).hasClass("down")) {
+                    $("#tbl_area").show();
+                    $(this).removeClass("down");
+                } else {
+                    $("#tbl_area").hide();
+                    $(this).addClass("down");
+                }
+            });
+
+            // 보기설정 보기
+            $('.descPop .tit').on("click", function (event) {
+                $(this).parents(".descPop").toggleClass("active");
+            });
+
+
+
+        });
+    </script>
+
+</head>
+
+
+<body style="">
+    <div class="window_open">
+        <!-- h_auto 높이 조절 자동 vh로 조절 -->
+         <!-- pop_header 삭제 -->
+        <div class="pop_wrap type_03" style="width:1000px;">
+            <!-- 팝업 컨텐츠 -->
+            <div class="pop_container">
+                <!-- 2024-01-15 min-height / height 수정 -->
+                <div style="">
+                    <!-- 2023-07-06 list_scroll 삭제 -->
+                    <div class="title_wrap h1type">
+                        <div class="left">
+                            <h1>나라백반</h1>
+                        </div>
+                        <div class="right">
+
+                        </div>
+                    </div>
+
+                    <!-- 2023-11-01 안내 문구 추가 -->
+                    <article class="infoc_descPop" style="display: none;">
+                        <div class="descPop_inner">
+                            <div class="descPop ">
+                                <div class="tit">
+                                    <div class="left">
+                                        <img src="../img/txof/ico/ico_speaker_28.svg" alt="">
+                                        <h2>자동으로 거래처별 맞춤 수집해 드립니다</h2>
+    
+                                    </div>
+                                    <div class="right">
+                                        <button type="button">
+                                            <span>상세</span>
+                                            <img src="../img/txof/ico/arr_down.svg" alt="">
+                                        </button>
+                                    </div>
+                                    
+                                </div>
+                                <div class="desc">
+                                    <ul class="info_list">
+                                        <li>
+                                            <span class="txt_01">
+                                                ▪ 최초정보 수집이 필요한 거래처는 전년도 1월부터 해당 월 기준까지 데이터를 수집합니다.
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span class="txt_01">
+                                                ▪ 최초 수집 이후에는 마지막 수집 년도, 월 기준으로 데이터를 수집합니다.
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span class="txt_01">
+                                                ▪ 매출/매입 수집 항목은 부서사용자 ID를 기준으로 수집합니다. 
+                                                <!-- <strong>(부서사용자 ID가 기준인 이유? 중복으로 로그인 후, 사용 할 수 있기 때문 !)</strong> -->
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span class="txt_01">
+                                                ▪ 인건비, 부가세 데이터는 세무사님 인증서로 수집 가능합니다.
+                                            </span>
+                                            <p class="txt_02">
+                                                1. 오류 시 자동 재수집’ 을 체크 하시면, 오류 걱정을 안하셔도 됩니다. 
+                                            </p>
+                                            <p class="txt_02">
+                                                2. 똑똑한 실시간 자동 수집이 몇분뒤 재 수집을 실행합니다.
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <span class="txt_01">
+                                                ▪ 현재 홈택스의 상태를 실시간으로 하단에 보여드려요 ! 홈택스 접속이 지연되면 수집도 지연됩니다.
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- 2024-07-18 tb_cust_dv 삭제 -->
+    
+                    <div class="title_wrap mgt10">
+                        <div class="left">
+                            <div class="cntalign">
+                                <div class="ly_filter_wrap" style="display: ;">
+                                    <div class="filter_name">
+                                        <h3>수집기간</h3>
+                                    </div>
+                                    <div class="ly_filter">
+                                        <a href="#none" id="send_cal_txt" class="" data-yyyymm="" data-bfyyyymm="">2023년 12월</a>
+                                        <div class="ly_year" style="display: none ;" id="send_cal_ly">
+                                            <div class="lytop">
+                                                <a href="#none" class="prev" id="send_a_prev"></a>
+                                                <span class="ytxt">2024년</span>
+                                                <a href="#none" class="next" id="send_a_next"></a>
+                                            </div>
+                                            <div class="lymcont">
+                                                <ol>
+                                                    <li data-mon="01"><a href="#none">01</a></li>
+                                                    <li data-mon="02"><a href="#none">02</a></li>
+                                                    <li data-mon="03"><a href="#none">03</a></li>
+                                                    <li data-mon="04"><a href="#none">04</a></li>
+                                                    <li data-mon="05"><a href="#none">05</a></li>
+                                                    <li data-mon="06"><a href="#none" class="on">06</a></li>
+                                                    <li data-mon="07"><a href="#none">07</a></li>
+                                                    <li data-mon="08"><a href="#none" class="dis">08</a></li>
+                                                    <li data-mon="09"><a href="#none" class="dis">09</a></li>
+                                                    <li data-mon="10"><a href="#none" class="dis">10</a></li>
+                                                    <li data-mon="11"><a href="#none" class="dis">11</a></li>
+                                                    <li data-mon="12"><a href="#none" class="dis">12</a></li>
+                                                </ol>
+                                            </div>
+                   
+                                        </div>
+                                    </div>
+                                    <span class="tx_swungDash">~</span>
+                                    <div class="ly_filter">
+                                        <a href="#none" id="send_cal_txt" class="" data-yyyymm="202407" data-bfyyyymm="202406">2024년 2월</a>
+                                        <div class="ly_year" style="display: none ;" id="send_cal_ly">
+                                            <div class="lytop">
+                                                <a href="#none" class="prev" id="send_a_prev"></a>
+                                                <span class="ytxt">2024년</span>
+                                                <a href="#none" class="next" id="send_a_next"></a>
+                                            </div>
+                                            <div class="lymcont">
+                                                <ol>
+                                                    <li data-mon="01"><a href="#none">01</a></li>
+                                                    <li data-mon="02"><a href="#none">02</a></li>
+                                                    <li data-mon="03"><a href="#none">03</a></li>
+                                                    <li data-mon="04"><a href="#none">04</a></li>
+                                                    <li data-mon="05"><a href="#none">05</a></li>
+                                                    <li data-mon="06"><a href="#none" class="on">06</a></li>
+                                                    <li data-mon="07"><a href="#none">07</a></li>
+                                                    <li data-mon="08"><a href="#none" class="dis">08</a></li>
+                                                    <li data-mon="09"><a href="#none" class="dis">09</a></li>
+                                                    <li data-mon="10"><a href="#none" class="dis">10</a></li>
+                                                    <li data-mon="11"><a href="#none" class="dis">11</a></li>
+                                                    <li data-mon="12"><a href="#none" class="dis">12</a></li>
+                                                </ol>
+                                            </div>
+                                            <div class="lybtm cboth">
+                                                <a href="#none" class="txt_b">이번달</a>
+                                                <a href="#none" class="right txt_b">전체</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+                        </div>
+                        <div class="right">
+                            <div class="cntalign" style="margin-left:10px;line-height:25px;">
+                                <label><input type="radio" name="collect_radio" value="All" >전체</label>
+								<label class="mgl10"><input type="radio" name="collect_radio" value="NotAll" disabled="">개별수집</label>
+							</div>
+                        </div>
+                    </div>
+                    <div class="list_scroll infoc"  >
+    
+                        <table class="rprt_tbl top_fixed " >
+                            <caption></caption>
+                            <colgroup>
+                                <col style="width: 10%">
+                                <col style="width: 12%">
+                                <col style="width: 15%">
+                                <col style="width: 15%">
+                                <col style="width: 25%">
+                                <col style="width: 6%">
+                            </colgroup>
+                            <thead>
+                                <tr >
+                                    <th scope="col" class="tit">
+                                        <div class="tac">분류</div>
+                                    </th>
+                                    <th>
+                                        <div class="tac">구분</div>
+                                    </th>
+                                    <th>
+                                        <div class="tal">정보</div>
+                                    </th>
+                                    <th>
+                                        <div class="tac">최근수집결과</div>
+                                    </th>
+                                    <th>
+                                        <div class="tac">수집기간</div>
+                                    </th>
+                                    <th>
+                                        <div class="tac">수집</div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody style="display: table-tbody;">
+                                <tr>
+                                    <td class="tit">
+                                        <div">기초정보</div>
+                                    </td>
+                                    <td>
+                                        <div class="tac">-</div>
+                                    </td>
+                                    <td>
+                                        <div>사업자정보</div>
+                                    </td>
+                                    <td>
+                                        <div class="tac">-</div>
+                                    </td>
+                                    <td>
+                                        <div class="select_date">
+                                            <div class="date_wrap">
+                                                <select disabled>
+                                                    <option>2022</option>
+                                                </select>
+                                                <select>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                    <option>6</option>
+                                                    <option>7</option>
+                                                    <option>8</option>
+                                                    <option>9</option>
+                                                    <option>10</option>
+                                                    <option>11</option>
+                                                    <option>12</option>
+                                                </select>
+                                            </div>
+                                            <span class="bar">~</span>
+                                            <div class="date_wrap">
+                                                <select disabled>
+                                                    <option>2022</option>
+                                                </select>
+                                                <select disabled="">
+                                                    <option>12</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="tac"><input type="checkbox"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tit">
+                                        <div>인건비</div>
+                                    </td>
+                                    <td>
+                                        <div class="tac">집계</div>
+                                    </td>
+                                    <td>
+                                        <div>원천징수이행상황신고서</div>
+                                    </td>
+                                    <td>
+                                        <div class="tac">-</div>
+                                    </td>
+                                    <td>
+                                        <div class="select_date">
+                                            <div class="date_wrap">
+                                                <select >
+                                                    <option>2022</option>
+                                                </select>
+                                                <select>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                    <option>6</option>
+                                                    <option>7</option>
+                                                    <option>8</option>
+                                                    <option>9</option>
+                                                    <option>10</option>
+                                                    <option>11</option>
+                                                    <option>12</option>
+                                                </select>
+                                            </div>
+                                            <span class="bar">~</span>
+                                            <div class="date_wrap">
+                                                <select >
+                                                    <option>2022</option>
+                                                </select>
+                                                <select disabled>
+                                                    <option>12</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="tac"><input type="checkbox"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tit">
+                                        <div>인건비</div>
+                                    </td>
+                                    <td>
+                                        <div class="tac">집계</div>
+                                    </td>
+                                    <td>
+                                        <div>원천징수이행상황신고서</div>
+                                    </td>
+                                    <td>
+                                        <div class="tac">-</div>
+                                    </td>
+                                    <td>
+                                        <div class="select_date">
+                                            <div class="date_wrap">
+                                                <select >
+                                                    <option>2022</option>
+                                                </select>
+                                                <select>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                    <option>6</option>
+                                                    <option>7</option>
+                                                    <option>8</option>
+                                                    <option>9</option>
+                                                    <option>10</option>
+                                                    <option>11</option>
+                                                    <option>12</option>
+                                                </select>
+                                            </div>
+                                            <span class="bar">~</span>
+                                            <div class="date_wrap">
+                                                <select >
+                                                    <option>2022</option>
+                                                </select>
+                                                <select disabled>
+                                                    <option>12</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="tac"><input type="checkbox"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tit">
+                                        <div>인건비</div>
+                                    </td>
+                                    <td>
+                                        <div class="tac">집계</div>
+                                    </td>
+                                    <td>
+                                        <div>원천징수이행상황신고서</div>
+                                    </td>
+                                    <td>
+                                        <div class="tac">-</div>
+                                    </td>
+                                    <td>
+                                        <div class="select_date">
+                                            <div class="date_wrap">
+                                                <select >
+                                                    <option>2022</option>
+                                                </select>
+                                                <select>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                    <option>6</option>
+                                                    <option>7</option>
+                                                    <option>8</option>
+                                                    <option>9</option>
+                                                    <option>10</option>
+                                                    <option>11</option>
+                                                    <option>12</option>
+                                                </select>
+                                            </div>
+                                            <span class="bar">~</span>
+                                            <div class="date_wrap">
+                                                <select >
+                                                    <option>2022</option>
+                                                </select>
+                                                <select disabled>
+                                                    <option>12</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="tac"><input type="checkbox"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tit">
+                                        <div>인건비</div>
+                                    </td>
+                                    <td>
+                                        <div class="tac">집계</div>
+                                    </td>
+                                    <td>
+                                        <div>원천징수이행상황신고서</div>
+                                    </td>
+                                    <td>
+                                        <div class="tac">-</div>
+                                    </td>
+                                    <td>
+                                        <div class="select_date">
+                                            <div class="date_wrap">
+                                                <select >
+                                                    <option>2022</option>
+                                                </select>
+                                                <select>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                    <option>6</option>
+                                                    <option>7</option>
+                                                    <option>8</option>
+                                                    <option>9</option>
+                                                    <option>10</option>
+                                                    <option>11</option>
+                                                    <option>12</option>
+                                                </select>
+                                            </div>
+                                            <span class="bar">~</span>
+                                            <div class="date_wrap">
+                                                <select >
+                                                    <option>2022</option>
+                                                </select>
+                                                <select disabled>
+                                                    <option>12</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="tac"><input type="checkbox"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tit">
+                                        <div>인건비</div>
+                                    </td>
+                                    <td>
+                                        <div class="tac">집계</div>
+                                    </td>
+                                    <td>
+                                        <div>원천징수이행상황신고서</div>
+                                    </td>
+                                    <td>
+                                        <div class="tac">-</div>
+                                    </td>
+                                    <td>
+                                        <div class="select_date">
+                                            <div class="date_wrap">
+                                                <select >
+                                                    <option>2022</option>
+                                                </select>
+                                                <select>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                    <option>6</option>
+                                                    <option>7</option>
+                                                    <option>8</option>
+                                                    <option>9</option>
+                                                    <option>10</option>
+                                                    <option>11</option>
+                                                    <option>12</option>
+                                                </select>
+                                            </div>
+                                            <span class="bar">~</span>
+                                            <div class="date_wrap">
+                                                <select >
+                                                    <option>2022</option>
+                                                </select>
+                                                <select disabled>
+                                                    <option>12</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="tac"><input type="checkbox"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tit">
+                                        <div>인건비</div>
+                                    </td>
+                                    <td>
+                                        <div class="tac">집계</div>
+                                    </td>
+                                    <td>
+                                        <div>원천징수이행상황신고서</div>
+                                    </td>
+                                    <td>
+                                        <div class="tac">-</div>
+                                    </td>
+                                    <td>
+                                        <div class="select_date">
+                                            <div class="date_wrap">
+                                                <select >
+                                                    <option>2022</option>
+                                                </select>
+                                                <select>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                    <option>6</option>
+                                                    <option>7</option>
+                                                    <option>8</option>
+                                                    <option>9</option>
+                                                    <option>10</option>
+                                                    <option>11</option>
+                                                    <option>12</option>
+                                                </select>
+                                            </div>
+                                            <span class="bar">~</span>
+                                            <div class="date_wrap">
+                                                <select >
+                                                    <option>2022</option>
+                                                </select>
+                                                <select disabled>
+                                                    <option>12</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="tac"><input type="checkbox"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tit">
+                                        <div>인건비</div>
+                                    </td>
+                                    <td>
+                                        <div class="tac">집계</div>
+                                    </td>
+                                    <td>
+                                        <div>원천징수이행상황신고서</div>
+                                    </td>
+                                    <td>
+                                        <div class="tac">-</div>
+                                    </td>
+                                    <td>
+                                        <div class="select_date">
+                                            <div class="date_wrap">
+                                                <select >
+                                                    <option>2022</option>
+                                                </select>
+                                                <select>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                    <option>6</option>
+                                                    <option>7</option>
+                                                    <option>8</option>
+                                                    <option>9</option>
+                                                    <option>10</option>
+                                                    <option>11</option>
+                                                    <option>12</option>
+                                                </select>
+                                            </div>
+                                            <span class="bar">~</span>
+                                            <div class="date_wrap">
+                                                <select >
+                                                    <option>2022</option>
+                                                </select>
+                                                <select disabled>
+                                                    <option>12</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="tac"><input type="checkbox"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tit">
+                                        <div>인건비</div>
+                                    </td>
+                                    <td>
+                                        <div class="tac">집계</div>
+                                    </td>
+                                    <td>
+                                        <div>원천징수이행상황신고서</div>
+                                    </td>
+                                    <td>
+                                        <div class="tac">-</div>
+                                    </td>
+                                    <td>
+                                        <div class="select_date">
+                                            <div class="date_wrap">
+                                                <select >
+                                                    <option>2022</option>
+                                                </select>
+                                                <select>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                    <option>6</option>
+                                                    <option>7</option>
+                                                    <option>8</option>
+                                                    <option>9</option>
+                                                    <option>10</option>
+                                                    <option>11</option>
+                                                    <option>12</option>
+                                                </select>
+                                            </div>
+                                            <span class="bar">~</span>
+                                            <div class="date_wrap">
+                                                <select >
+                                                    <option>2022</option>
+                                                </select>
+                                                <select disabled>
+                                                    <option>12</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="tac"><input type="checkbox"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tit">
+                                        <div>인건비</div>
+                                    </td>
+                                    <td>
+                                        <div class="tac">집계</div>
+                                    </td>
+                                    <td>
+                                        <div>원천징수이행상황신고서</div>
+                                    </td>
+                                    <td>
+                                        <div class="tac">-</div>
+                                    </td>
+                                    <td>
+                                        <div class="select_date">
+                                            <div class="date_wrap">
+                                                <select >
+                                                    <option>2022</option>
+                                                </select>
+                                                <select>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                    <option>6</option>
+                                                    <option>7</option>
+                                                    <option>8</option>
+                                                    <option>9</option>
+                                                    <option>10</option>
+                                                    <option>11</option>
+                                                    <option>12</option>
+                                                </select>
+                                            </div>
+                                            <span class="bar">~</span>
+                                            <div class="date_wrap">
+                                                <select >
+                                                    <option>2022</option>
+                                                </select>
+                                                <select disabled>
+                                                    <option>12</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="tac"><input type="checkbox"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tit">
+                                        <div>인건비</div>
+                                    </td>
+                                    <td>
+                                        <div class="tac">집계</div>
+                                    </td>
+                                    <td>
+                                        <div>원천징수이행상황신고서</div>
+                                    </td>
+                                    <td>
+                                        <div class="tac">-</div>
+                                    </td>
+                                    <td>
+                                        <div class="select_date">
+                                            <div class="date_wrap">
+                                                <select >
+                                                    <option>2022</option>
+                                                </select>
+                                                <select>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                    <option>6</option>
+                                                    <option>7</option>
+                                                    <option>8</option>
+                                                    <option>9</option>
+                                                    <option>10</option>
+                                                    <option>11</option>
+                                                    <option>12</option>
+                                                </select>
+                                            </div>
+                                            <span class="bar">~</span>
+                                            <div class="date_wrap">
+                                                <select >
+                                                    <option>2022</option>
+                                                </select>
+                                                <select disabled>
+                                                    <option>12</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="tac"><input type="checkbox"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tit">
+                                        <div>인건비</div>
+                                    </td>
+                                    <td>
+                                        <div class="tac">집계</div>
+                                    </td>
+                                    <td>
+                                        <div>원천징수이행상황신고서</div>
+                                    </td>
+                                    <td>
+                                        <div class="tac">-</div>
+                                    </td>
+                                    <td>
+                                        <div class="select_date">
+                                            <div class="date_wrap">
+                                                <select >
+                                                    <option>2022</option>
+                                                </select>
+                                                <select>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                    <option>6</option>
+                                                    <option>7</option>
+                                                    <option>8</option>
+                                                    <option>9</option>
+                                                    <option>10</option>
+                                                    <option>11</option>
+                                                    <option>12</option>
+                                                </select>
+                                            </div>
+                                            <span class="bar">~</span>
+                                            <div class="date_wrap">
+                                                <select >
+                                                    <option>2022</option>
+                                                </select>
+                                                <select disabled>
+                                                    <option>12</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="tac"><input type="checkbox"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tit">
+                                        <div>인건비</div>
+                                    </td>
+                                    <td>
+                                        <div class="tac">집계</div>
+                                    </td>
+                                    <td>
+                                        <div>원천징수이행상황신고서</div>
+                                    </td>
+                                    <td>
+                                        <div class="tac">-</div>
+                                    </td>
+                                    <td>
+                                        <div class="select_date">
+                                            <div class="date_wrap">
+                                                <select >
+                                                    <option>2022</option>
+                                                </select>
+                                                <select>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                    <option>6</option>
+                                                    <option>7</option>
+                                                    <option>8</option>
+                                                    <option>9</option>
+                                                    <option>10</option>
+                                                    <option>11</option>
+                                                    <option>12</option>
+                                                </select>
+                                            </div>
+                                            <span class="bar">~</span>
+                                            <div class="date_wrap">
+                                                <select >
+                                                    <option>2022</option>
+                                                </select>
+                                                <select disabled>
+                                                    <option>12</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="tac"><input type="checkbox"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tit">
+                                        <div>인건비</div>
+                                    </td>
+                                    <td>
+                                        <div class="tac">집계</div>
+                                    </td>
+                                    <td>
+                                        <div>원천징수이행상황신고서</div>
+                                    </td>
+                                    <td>
+                                        <div class="tac">-</div>
+                                    </td>
+                                    <td>
+                                        <div class="select_date">
+                                            <div class="date_wrap">
+                                                <select >
+                                                    <option>2022</option>
+                                                </select>
+                                                <select>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                    <option>6</option>
+                                                    <option>7</option>
+                                                    <option>8</option>
+                                                    <option>9</option>
+                                                    <option>10</option>
+                                                    <option>11</option>
+                                                    <option>12</option>
+                                                </select>
+                                            </div>
+                                            <span class="bar">~</span>
+                                            <div class="date_wrap">
+                                                <select >
+                                                    <option>2022</option>
+                                                </select>
+                                                <select disabled>
+                                                    <option>12</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="tac"><input type="checkbox"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tit">
+                                        <div>인건비</div>
+                                    </td>
+                                    <td>
+                                        <div class="tac">집계</div>
+                                    </td>
+                                    <td>
+                                        <div>원천징수이행상황신고서</div>
+                                    </td>
+                                    <td>
+                                        <div class="tac">-</div>
+                                    </td>
+                                    <td>
+                                        <div class="select_date">
+                                            <div class="date_wrap">
+                                                <select >
+                                                    <option>2022</option>
+                                                </select>
+                                                <select>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                    <option>6</option>
+                                                    <option>7</option>
+                                                    <option>8</option>
+                                                    <option>9</option>
+                                                    <option>10</option>
+                                                    <option>11</option>
+                                                    <option>12</option>
+                                                </select>
+                                            </div>
+                                            <span class="bar">~</span>
+                                            <div class="date_wrap">
+                                                <select >
+                                                    <option>2022</option>
+                                                </select>
+                                                <select disabled>
+                                                    <option>12</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="tac"><input type="checkbox"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tit">
+                                        <div>인건비</div>
+                                    </td>
+                                    <td>
+                                        <div class="tac">집계</div>
+                                    </td>
+                                    <td>
+                                        <div>원천징수이행상황신고서</div>
+                                    </td>
+                                    <td>
+                                        <div class="tac">-</div>
+                                    </td>
+                                    <td>
+                                        <div class="select_date">
+                                            <div class="date_wrap">
+                                                <select >
+                                                    <option>2022</option>
+                                                </select>
+                                                <select>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                    <option>6</option>
+                                                    <option>7</option>
+                                                    <option>8</option>
+                                                    <option>9</option>
+                                                    <option>10</option>
+                                                    <option>11</option>
+                                                    <option>12</option>
+                                                </select>
+                                            </div>
+                                            <span class="bar">~</span>
+                                            <div class="date_wrap">
+                                                <select >
+                                                    <option>2022</option>
+                                                </select>
+                                                <select disabled>
+                                                    <option>12</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="tac"><input type="checkbox"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tit">
+                                        <div>인건비</div>
+                                    </td>
+                                    <td>
+                                        <div class="tac">집계</div>
+                                    </td>
+                                    <td>
+                                        <div>원천징수이행상황신고서</div>
+                                    </td>
+                                    <td>
+                                        <div class="tac">-</div>
+                                    </td>
+                                    <td>
+                                        <div class="select_date">
+                                            <div class="date_wrap">
+                                                <select >
+                                                    <option>2022</option>
+                                                </select>
+                                                <select>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                    <option>6</option>
+                                                    <option>7</option>
+                                                    <option>8</option>
+                                                    <option>9</option>
+                                                    <option>10</option>
+                                                    <option>11</option>
+                                                    <option>12</option>
+                                                </select>
+                                            </div>
+                                            <span class="bar">~</span>
+                                            <div class="date_wrap">
+                                                <select >
+                                                    <option>2022</option>
+                                                </select>
+                                                <select disabled>
+                                                    <option>12</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="tac"><input type="checkbox"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tit">
+                                        <div>인건비</div>
+                                    </td>
+                                    <td>
+                                        <div class="tac">집계</div>
+                                    </td>
+                                    <td>
+                                        <div>원천징수이행상황신고서</div>
+                                    </td>
+                                    <td>
+                                        <div class="tac">-</div>
+                                    </td>
+                                    <td>
+                                        <div class="select_date">
+                                            <div class="date_wrap">
+                                                <select >
+                                                    <option>2022</option>
+                                                </select>
+                                                <select>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                    <option>6</option>
+                                                    <option>7</option>
+                                                    <option>8</option>
+                                                    <option>9</option>
+                                                    <option>10</option>
+                                                    <option>11</option>
+                                                    <option>12</option>
+                                                </select>
+                                            </div>
+                                            <span class="bar">~</span>
+                                            <div class="date_wrap">
+                                                <select >
+                                                    <option>2022</option>
+                                                </select>
+                                                <select disabled>
+                                                    <option>12</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="tac"><input type="checkbox"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tit">
+                                        <div>인건비</div>
+                                    </td>
+                                    <td>
+                                        <div class="tac">집계</div>
+                                    </td>
+                                    <td>
+                                        <div>원천징수이행상황신고서</div>
+                                    </td>
+                                    <td>
+                                        <div class="tac">-</div>
+                                    </td>
+                                    <td>
+                                        <div class="select_date">
+                                            <div class="date_wrap">
+                                                <select >
+                                                    <option>2022</option>
+                                                </select>
+                                                <select>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                    <option>6</option>
+                                                    <option>7</option>
+                                                    <option>8</option>
+                                                    <option>9</option>
+                                                    <option>10</option>
+                                                    <option>11</option>
+                                                    <option>12</option>
+                                                </select>
+                                            </div>
+                                            <span class="bar">~</span>
+                                            <div class="date_wrap">
+                                                <select >
+                                                    <option>2022</option>
+                                                </select>
+                                                <select disabled>
+                                                    <option>12</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="tac"><input type="checkbox"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tit">
+                                        <div>인건비</div>
+                                    </td>
+                                    <td>
+                                        <div class="tac">집계</div>
+                                    </td>
+                                    <td>
+                                        <div>원천징수이행상황신고서</div>
+                                    </td>
+                                    <td>
+                                        <div class="tac">-</div>
+                                    </td>
+                                    <td>
+                                        <div class="select_date">
+                                            <div class="date_wrap">
+                                                <select >
+                                                    <option>2022</option>
+                                                </select>
+                                                <select>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                    <option>6</option>
+                                                    <option>7</option>
+                                                    <option>8</option>
+                                                    <option>9</option>
+                                                    <option>10</option>
+                                                    <option>11</option>
+                                                    <option>12</option>
+                                                </select>
+                                            </div>
+                                            <span class="bar">~</span>
+                                            <div class="date_wrap">
+                                                <select >
+                                                    <option>2022</option>
+                                                </select>
+                                                <select disabled>
+                                                    <option>12</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="tac"><input type="checkbox"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tit">
+                                        <div>인건비</div>
+                                    </td>
+                                    <td>
+                                        <div class="tac">집계</div>
+                                    </td>
+                                    <td>
+                                        <div>원천징수이행상황신고서</div>
+                                    </td>
+                                    <td>
+                                        <div class="tac">-</div>
+                                    </td>
+                                    <td>
+                                        <div class="select_date">
+                                            <div class="date_wrap">
+                                                <select >
+                                                    <option>2022</option>
+                                                </select>
+                                                <select>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                    <option>6</option>
+                                                    <option>7</option>
+                                                    <option>8</option>
+                                                    <option>9</option>
+                                                    <option>10</option>
+                                                    <option>11</option>
+                                                    <option>12</option>
+                                                </select>
+                                            </div>
+                                            <span class="bar">~</span>
+                                            <div class="date_wrap">
+                                                <select >
+                                                    <option>2022</option>
+                                                </select>
+                                                <select disabled>
+                                                    <option>12</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="tac"><input type="checkbox"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tit">
+                                        <div>인건비</div>
+                                    </td>
+                                    <td>
+                                        <div class="tac">집계</div>
+                                    </td>
+                                    <td>
+                                        <div>원천징수이행상황신고서</div>
+                                    </td>
+                                    <td>
+                                        <div class="tac">-</div>
+                                    </td>
+                                    <td>
+                                        <div class="select_date">
+                                            <div class="date_wrap">
+                                                <select >
+                                                    <option>2022</option>
+                                                </select>
+                                                <select>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                    <option>6</option>
+                                                    <option>7</option>
+                                                    <option>8</option>
+                                                    <option>9</option>
+                                                    <option>10</option>
+                                                    <option>11</option>
+                                                    <option>12</option>
+                                                </select>
+                                            </div>
+                                            <span class="bar">~</span>
+                                            <div class="date_wrap">
+                                                <select >
+                                                    <option>2022</option>
+                                                </select>
+                                                <select disabled>
+                                                    <option>12</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="tac"><input type="checkbox"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tit">
+                                        <div>인건비</div>
+                                    </td>
+                                    <td>
+                                        <div class="tac">집계</div>
+                                    </td>
+                                    <td>
+                                        <div>원천징수이행상황신고서</div>
+                                    </td>
+                                    <td>
+                                        <div class="tac">-</div>
+                                    </td>
+                                    <td>
+                                        <div class="select_date">
+                                            <div class="date_wrap">
+                                                <select >
+                                                    <option>2022</option>
+                                                </select>
+                                                <select>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                    <option>6</option>
+                                                    <option>7</option>
+                                                    <option>8</option>
+                                                    <option>9</option>
+                                                    <option>10</option>
+                                                    <option>11</option>
+                                                    <option>12</option>
+                                                </select>
+                                            </div>
+                                            <span class="bar">~</span>
+                                            <div class="date_wrap">
+                                                <select >
+                                                    <option>2022</option>
+                                                </select>
+                                                <select disabled>
+                                                    <option>12</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="tac"><input type="checkbox"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tit">
+                                        <div>인건비</div>
+                                    </td>
+                                    <td>
+                                        <div class="tac">집계</div>
+                                    </td>
+                                    <td>
+                                        <div>원천징수이행상황신고서</div>
+                                    </td>
+                                    <td>
+                                        <div class="tac">-</div>
+                                    </td>
+                                    <td>
+                                        <div class="select_date">
+                                            <div class="date_wrap">
+                                                <select >
+                                                    <option>2022</option>
+                                                </select>
+                                                <select>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                    <option>6</option>
+                                                    <option>7</option>
+                                                    <option>8</option>
+                                                    <option>9</option>
+                                                    <option>10</option>
+                                                    <option>11</option>
+                                                    <option>12</option>
+                                                </select>
+                                            </div>
+                                            <span class="bar">~</span>
+                                            <div class="date_wrap">
+                                                <select >
+                                                    <option>2022</option>
+                                                </select>
+                                                <select disabled>
+                                                    <option>12</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="tac"><input type="checkbox"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tit">
+                                        <div>인건비</div>
+                                    </td>
+                                    <td>
+                                        <div class="tac">집계</div>
+                                    </td>
+                                    <td>
+                                        <div>원천징수이행상황신고서</div>
+                                    </td>
+                                    <td>
+                                        <div class="tac">-</div>
+                                    </td>
+                                    <td>
+                                        <div class="select_date">
+                                            <div class="date_wrap">
+                                                <select >
+                                                    <option>2022</option>
+                                                </select>
+                                                <select>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                    <option>6</option>
+                                                    <option>7</option>
+                                                    <option>8</option>
+                                                    <option>9</option>
+                                                    <option>10</option>
+                                                    <option>11</option>
+                                                    <option>12</option>
+                                                </select>
+                                            </div>
+                                            <span class="bar">~</span>
+                                            <div class="date_wrap">
+                                                <select >
+                                                    <option>2022</option>
+                                                </select>
+                                                <select disabled>
+                                                    <option>12</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="tac"><input type="checkbox"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tit">
+                                        <div>인건비</div>
+                                    </td>
+                                    <td>
+                                        <div class="tac">집계</div>
+                                    </td>
+                                    <td>
+                                        <div>원천징수이행상황신고서</div>
+                                    </td>
+                                    <td>
+                                        <div class="tac">-</div>
+                                    </td>
+                                    <td>
+                                        <div class="select_date">
+                                            <div class="date_wrap">
+                                                <select >
+                                                    <option>2022</option>
+                                                </select>
+                                                <select>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                    <option>6</option>
+                                                    <option>7</option>
+                                                    <option>8</option>
+                                                    <option>9</option>
+                                                    <option>10</option>
+                                                    <option>11</option>
+                                                    <option>12</option>
+                                                </select>
+                                            </div>
+                                            <span class="bar">~</span>
+                                            <div class="date_wrap">
+                                                <select >
+                                                    <option>2022</option>
+                                                </select>
+                                                <select disabled>
+                                                    <option>12</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="tac"><input type="checkbox"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tit">
+                                        <div>인건비</div>
+                                    </td>
+                                    <td>
+                                        <div class="tac">집계</div>
+                                    </td>
+                                    <td>
+                                        <div>원천징수이행상황신고서</div>
+                                    </td>
+                                    <td>
+                                        <div class="tac">-</div>
+                                    </td>
+                                    <td>
+                                        <div class="select_date">
+                                            <div class="date_wrap">
+                                                <select >
+                                                    <option>2022</option>
+                                                </select>
+                                                <select>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                    <option>6</option>
+                                                    <option>7</option>
+                                                    <option>8</option>
+                                                    <option>9</option>
+                                                    <option>10</option>
+                                                    <option>11</option>
+                                                    <option>12</option>
+                                                </select>
+                                            </div>
+                                            <span class="bar">~</span>
+                                            <div class="date_wrap">
+                                                <select >
+                                                    <option>2022</option>
+                                                </select>
+                                                <select disabled>
+                                                    <option>12</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="tac"><input type="checkbox"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tit">
+                                        <div>인건비</div>
+                                    </td>
+                                    <td>
+                                        <div class="tac">집계</div>
+                                    </td>
+                                    <td>
+                                        <div>원천징수이행상황신고서</div>
+                                    </td>
+                                    <td>
+                                        <div class="tac">-</div>
+                                    </td>
+                                    <td>
+                                        <div class="select_date">
+                                            <div class="date_wrap">
+                                                <select >
+                                                    <option>2022</option>
+                                                </select>
+                                                <select>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                    <option>6</option>
+                                                    <option>7</option>
+                                                    <option>8</option>
+                                                    <option>9</option>
+                                                    <option>10</option>
+                                                    <option>11</option>
+                                                    <option>12</option>
+                                                </select>
+                                            </div>
+                                            <span class="bar">~</span>
+                                            <div class="date_wrap">
+                                                <select >
+                                                    <option>2022</option>
+                                                </select>
+                                                <select disabled>
+                                                    <option>12</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="tac"><input type="checkbox"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tit">
+                                        <div>인건비</div>
+                                    </td>
+                                    <td>
+                                        <div class="tac">집계</div>
+                                    </td>
+                                    <td>
+                                        <div>원천징수이행상황신고서</div>
+                                    </td>
+                                    <td>
+                                        <div class="tac">-</div>
+                                    </td>
+                                    <td>
+                                        <div class="select_date">
+                                            <div class="date_wrap">
+                                                <select >
+                                                    <option>2022</option>
+                                                </select>
+                                                <select>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                    <option>6</option>
+                                                    <option>7</option>
+                                                    <option>8</option>
+                                                    <option>9</option>
+                                                    <option>10</option>
+                                                    <option>11</option>
+                                                    <option>12</option>
+                                                </select>
+                                            </div>
+                                            <span class="bar">~</span>
+                                            <div class="date_wrap">
+                                                <select >
+                                                    <option>2022</option>
+                                                </select>
+                                                <select disabled>
+                                                    <option>12</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="tac"><input type="checkbox"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tit">
+                                        <div>인건비</div>
+                                    </td>
+                                    <td>
+                                        <div class="tac">집계</div>
+                                    </td>
+                                    <td>
+                                        <div>원천징수이행상황신고서</div>
+                                    </td>
+                                    <td>
+                                        <div class="tac">-</div>
+                                    </td>
+                                    <td>
+                                        <div class="select_date">
+                                            <div class="date_wrap">
+                                                <select >
+                                                    <option>2022</option>
+                                                </select>
+                                                <select>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                    <option>6</option>
+                                                    <option>7</option>
+                                                    <option>8</option>
+                                                    <option>9</option>
+                                                    <option>10</option>
+                                                    <option>11</option>
+                                                    <option>12</option>
+                                                </select>
+                                            </div>
+                                            <span class="bar">~</span>
+                                            <div class="date_wrap">
+                                                <select >
+                                                    <option>2022</option>
+                                                </select>
+                                                <select disabled>
+                                                    <option>12</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="tac"><input type="checkbox"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tit">
+                                        <div>인건비</div>
+                                    </td>
+                                    <td>
+                                        <div class="tac">집계</div>
+                                    </td>
+                                    <td>
+                                        <div>원천징수이행상황신고서</div>
+                                    </td>
+                                    <td>
+                                        <div class="tac">-</div>
+                                    </td>
+                                    <td>
+                                        <div class="select_date">
+                                            <div class="date_wrap">
+                                                <select >
+                                                    <option>2022</option>
+                                                </select>
+                                                <select>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                    <option>6</option>
+                                                    <option>7</option>
+                                                    <option>8</option>
+                                                    <option>9</option>
+                                                    <option>10</option>
+                                                    <option>11</option>
+                                                    <option>12</option>
+                                                </select>
+                                            </div>
+                                            <span class="bar">~</span>
+                                            <div class="date_wrap">
+                                                <select >
+                                                    <option>2022</option>
+                                                </select>
+                                                <select disabled>
+                                                    <option>12</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="tac"><input type="checkbox"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tit">
+                                        <div>인건비</div>
+                                    </td>
+                                    <td>
+                                        <div class="tac">집계</div>
+                                    </td>
+                                    <td>
+                                        <div>원천징수이행상황신고서</div>
+                                    </td>
+                                    <td>
+                                        <div class="tac">-</div>
+                                    </td>
+                                    <td>
+                                        <div class="select_date">
+                                            <div class="date_wrap">
+                                                <select >
+                                                    <option>2022</option>
+                                                </select>
+                                                <select>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                    <option>6</option>
+                                                    <option>7</option>
+                                                    <option>8</option>
+                                                    <option>9</option>
+                                                    <option>10</option>
+                                                    <option>11</option>
+                                                    <option>12</option>
+                                                </select>
+                                            </div>
+                                            <span class="bar">~</span>
+                                            <div class="date_wrap">
+                                                <select >
+                                                    <option>2022</option>
+                                                </select>
+                                                <select disabled>
+                                                    <option>12</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="tac"><input type="checkbox"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tit">
+                                        <div>인건비</div>
+                                    </td>
+                                    <td>
+                                        <div class="tac">집계</div>
+                                    </td>
+                                    <td>
+                                        <div>원천징수이행상황신고서</div>
+                                    </td>
+                                    <td>
+                                        <div class="tac">-</div>
+                                    </td>
+                                    <td>
+                                        <div class="select_date">
+                                            <div class="date_wrap">
+                                                <select >
+                                                    <option>2022</option>
+                                                </select>
+                                                <select>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                    <option>6</option>
+                                                    <option>7</option>
+                                                    <option>8</option>
+                                                    <option>9</option>
+                                                    <option>10</option>
+                                                    <option>11</option>
+                                                    <option>12</option>
+                                                </select>
+                                            </div>
+                                            <span class="bar">~</span>
+                                            <div class="date_wrap">
+                                                <select >
+                                                    <option>2022</option>
+                                                </select>
+                                                <select disabled>
+                                                    <option>12</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="tac"><input type="checkbox"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tit">
+                                        <div>인건비</div>
+                                    </td>
+                                    <td>
+                                        <div class="tac">집계</div>
+                                    </td>
+                                    <td>
+                                        <div>원천징수이행상황신고서</div>
+                                    </td>
+                                    <td>
+                                        <div class="tac">-</div>
+                                    </td>
+                                    <td>
+                                        <div class="select_date">
+                                            <div class="date_wrap">
+                                                <select >
+                                                    <option>2022</option>
+                                                </select>
+                                                <select>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                    <option>6</option>
+                                                    <option>7</option>
+                                                    <option>8</option>
+                                                    <option>9</option>
+                                                    <option>10</option>
+                                                    <option>11</option>
+                                                    <option>12</option>
+                                                </select>
+                                            </div>
+                                            <span class="bar">~</span>
+                                            <div class="date_wrap">
+                                                <select >
+                                                    <option>2022</option>
+                                                </select>
+                                                <select disabled>
+                                                    <option>12</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="tac"><input type="checkbox"></div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!-- 2024-01-15 / height 수정 -->
+                    </div>
+
+    
+                <div class="grayBox" style="display: ;">
+                    <div class="inner">
+                        <div class="title_wrap">
+                            <div class="left">
+                                <h2 class="no_bg">■ 실시간정보수집 서비스 유의사항</h2>
+                            </div>
+                            <div class="right">
+                                <img src="../img/txof/bg/bg_emojiBox.png" alt="">
+                            </div>
+                        </div>
+                        <div class="txtArea">
+                            <div class="serviceNoti">
+                                <!-- emoji01, emoji02, emoji03으로 이미지 분기처리 -->
+                                <span class="emoji02">다소지연</span>
+                                <ul class="listDot">
+                                    <li>홈택스 법인세 신고 기간 : ~ 3월 31일</li>
+                                    <li>홈택스 사이트에 이용자가 집중되는 기간에는 이용자 증가로 인해 서비스가 다소 지연될 수 있으니 참고하시기 바랍니다.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <!-- //팝업 컨텐츠 -->
+        </div>
+    </div>
+</body>
+</html>

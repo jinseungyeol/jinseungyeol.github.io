@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<title>pop_수기증빙</title>
+<link rel="stylesheet" href="../css/reset_taxp.css">
+<link rel="stylesheet" href="../css/app_header.css">
+<link rel="stylesheet" href="../css/content_taxp.css">
+<link rel="stylesheet" href="../css/semo_rept.css">
+
+<!-- custom scrollbar plugin css -->
+<link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+<script src="https://publ.roumit.com/js/firebase_include.js"></script>
+  <script src="../js/lib/jquery/jquery-1.12.4.min.js"></script>
+<script src="../js/lib/jquery/jquery-ui-1.10.4.min.js"></script>
+<!-- custom scrollbar plugin -->
+<script src="../js/design/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../js/design/jquery.placeholder.min.js"></script>
+<script src="../js/lib/plugin/smart.popup.js"></script>
+<script src="../js/comm/common.js"></script>
+
+
+</head>
+<body style="">
+	<div class="window_open">
+		<div class="pop_wrap bd_round h_auto">
+			<!-- content -->
+			<div class="pop_container pd0 rept_pop" style="display: flex;">
+				<div class="leftTab">
+					<div class="src_box">
+						<div class="inner">
+							<img src="../img/txof/ico/search_14x14.svg" alt="" class="src_icon" id="btn_srch_word">
+							<input type="text" placeholder="검색" id="list_srch_word">
+						</div>
+					</div>				
+					<div class="reportListWrap">
+						<div class="areaTit filter">
+							<p class="count" id="tot_rprt_cnt">총 4건</p>
+							<div class="ly_filter type12">
+								<a href="#none" class="" id="selEvdcDivCd" data-val="">전체</a>
+								<ul class="ly_filter_inner" style="display:none;" id="ulEvdcDivCd">
+									<li><a href="#none" data-val="">전체</a></li>
+									<li><a href="#none" data-val="EVDC13">간이영수증</a></li>
+									<li><a href="#none" data-val="EVDC17">종이세금</a></li>
+									<li><a href="#none" data-val="EVDC16">종이계산서</a></li>
+								</ul>
+							</div>
+							<div class="rCont">
+								<label><input type="checkbox" id="rcpt_chk"> 미접수</label>
+							</div>
+						</div>
+						<ul class="reportList" id="metc_list">
+							<li class="active">
+								<a href="javascript:;">
+									<div class="titArea">
+										<strong class="tit" name="TITLE_NM">간이영수증</strong>
+										<span class="badge" name="RCPT_ICON" style="display: inline;">작성중</span>
+									</div>
+									<div class="cntArea">
+										<span name="REG_DT">등록 일자 : 2024-08-13</span>
+									</div>
+								</a>
+							</li>
+							<li class="complete">
+								<a href="javascript:;">
+									<div class="titArea">
+										<strong class="tit" name="TITLE_NM">종이계산서</strong>
+										<span class="badge color02" name="RCPT_ICON" style="display: inline;">완료</span>
+									</div>
+									<div class="cntArea">
+										<span name="REG_DT">등록 일자 : 2024-05-24</span>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<div class="titArea">
+										<strong class="tit" name="TITLE_NM">종이세금계산서</strong>
+										<span class="badge" name="RCPT_ICON" style="display:none;">완료</span>
+									</div>
+									<div class="cntArea">
+										<span name="REG_DT">등록 일자 : 2024-05-24</span>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<div class="titArea">
+										<strong class="tit" name="TITLE_NM">테스트 3번</strong>
+										<span class="badge" name="RCPT_ICON" style="display:none;">완료</span>
+									</div>
+									<div class="cntArea">
+										<span name="REG_DT">등록 일자 : 2024-05-24</span>
+									</div>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;">
+									<div class="titArea">
+										<strong class="tit" name="TITLE_NM">종이세금계산서</strong>
+										<span class="badge" name="RCPT_ICON" style="display:none;">완료</span>
+									</div>
+									<div class="cntArea">
+										<span name="REG_DT">등록 일자 : 2024-05-24</span>
+									</div>
+								</a>
+							</li>
+						</ul>
+						<div class="paging" id="CREATE_PG_LINK"><a id="paging_first" href="javascript:" class="btn_pag_cntr first"><span class="blind">first</span></a><a id="paging_pre" href="javascript:" class="btn_pag_cntr prev"><span class="blind">previous</span></a><span class="pag_num"><a class="on">1</a> </span><a id="paging_next" href="javascript:" class="btn_pag_cntr next"><span class="blind">next</span></a><a id="paging_last" href="javascript:" class="btn_pag_cntr last"><span class="blind">last</span></a></div>
+					</div>
+				</div>
+				<div class="ipt_bx_wrap" style="overflow-y: scroll; padding: 20px;">
+					<div class="top_area">
+						<div class="left">
+							<h2 id="evdc_title">신규등록</h2>
+						</div>
+						<div class="right">
+							<div class="button_wrap">
+								<button type="button" class="btn_style2_g" id="top_reg_btn" style="display: none;"><span>신규등록</span></button>
+								<button type="button" class="btn_style1_b" id="top_mod_btn" style="display:none;"><span>수정하기</span></button>
+								<button type="button" class="btn_style1_b" id="top_save_btn" style=""><span>저장하기</span></button>
+								<button type="button" class="btn_style1_b" id="top_input_btn" style="display:none;"><span>입력하기</span></button>
+							</div>
+						</div>
+						
+					</div>
+					<!-- 등록아닌경우는 save클래스 input border 사라지게 -->
+					<div class="ipt_bx_in" id="detl_div" style="padding-left: 370px; height: initial;">
+						<!-- 이미지 영역 -->
+						<div id="mod_img_div" style="display:;">
+							<div class="thumb" style="cursor: pointer;">
+								<img src="">
+							</div>
+						</div>
+						
+						<div id="reg_img_div" style="">
+							<div class="thumb no" style="cursor: pointer;">
+								<img src="" style="display: none;">
+							</div>
+							<div class="resistImg">
+								<form id="form_file" name="form1" method="post">
+									<label class="btnResist" for="img_file">
+										<input type="file" name="img_file" id="img_file" accept="image/*">
+										<span>이미지 등록하기</span>
+									</label>
+									<label class="img-down_btn mgl8" for="img_down">
+										<input type="button" name="img_down" id="img_down" accept="image/*">
+										<span>이미지 다운로드</span>
+									</label>
+								</form>
+								<p class="txt_g">
+									이미지 파일(PNG, JPG 등) / 사이즈 W(350) x H(500)
+								</p>
+							</div>
+						</div>
+						
+						<!-- //이미지 영역 -->
+						<!-- 테이블 영역 -->
+						<div class="ipt_bx">
+							<table class="" summary="">
+								<caption></caption>
+								<colgroup>
+									<col style="width:78px;">
+									<col>
+								</colgroup>
+								<tbody>
+									<!-- 2019-08-23 -->
+									<tr>
+										<th scope="row">
+											<div>등록일자</div>
+										</th>
+										<td>
+											<span id="str_reg_dtm">2024-08-13</span>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row">
+											<div>거래일자 <span class="txt_r">*</span></div>
+										</th>
+										<td>
+											<div>
+												<input type="text" style="width:80px;" id="str_trns_dt" readonly="readonly" value="" class="hasDatepicker"><img class="ui-datepicker-trigger" src="../img/txof/ico/ico_cal_14x14.svg" alt="..." title="...">&nbsp;&nbsp;
+												<!-- <a href="#none"><img src="../img/txof/ico/ico_calendar.png" alt="달력"></a> -->
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row">
+											<div>증빙구분</div>
+										</th>
+										<td>
+											<div class="title_wrap">
+												<div class="left">
+													<div class="ly_filter type4">
+														<a href="#none" id="sel_evdc_dv" data-val="EVDC13">간이영수증</a>
+														<ul id="sel_evdc_dv_ul" class="ly_filter_inner" style="min-width:100px !important; display:none;">
+															<li><a href="#none" data-val="EVDC13">간이영수증</a></li>
+															<li><a href="#none" data-val="EVDC17">종이세금계산서</a></li>
+															<li><a href="#none" data-val="EVDC16">종이계산서</a></li>
+														</ul>
+													</div>
+													<div class="ly_filter type4">
+														<a href="#none" id="sel_trsc_div" data-val="B">매입</a>
+														<ul id="sel_trsc_div_ul" class="ly_filter_inner" style="min-width:100px !important; display:none;">
+															<li><a href="#none" data-val="B">매입</a></li>
+															<li style="display: none;"><a href="#none" data-val="S">매출</a></li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row">
+											<div>사용처</div>
+										</th>
+										<td>
+											<div>
+												<div class="combo_postbx">
+													<div class="combo_post_bg no_pd"><!-- 비활성화클래스 dis -->
+														<input type="text" id="str_bzaq_nm" placeholder="수기입력" style="width:100%;" value="" maxlength="30">
+														<div class="btn" style="display:none;">
+															<a class="del"><span class="blind">삭제</span></a>
+														</div>
+													</div>
+													<!-- 자동완성기능 -->
+													<div class="combo_postAdd" style="right:0;z-index:2;display:;min-width:256px;display:none;">
+														<!-- 검색목록 -->
+														<div class="combo_postAdd_inner">
+															<ul style="display:block;max-height:250px;">
+																<li class="on"><!-- 활성화클래스 on -->
+																	<a href="#none" class="combo_postAdd_item">
+																		<span class="tx_name"><strong class="">가</strong>나상사나상사나상사나상사나상사</span>
+																		<span class="tx_no">1234567890</span>
+																	</a>
+																	<span style="display: none;">가나상사</span>
+																</li>
+															</ul>
+														</div>
+														<!-- //검색목록 -->
+													</div>
+													<!-- //자동완성기능 -->
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row">
+											<div>사업자번호</div>
+										</th>
+										<td>
+											<div>
+												<div class="combo_postbx">
+													<div class="combo_post_bg no_pd" style="padding-right:27px !important;">
+														<!-- 비활성화클래스 dis -->
+														<input type="text" class="tac" id="bzaq_bsnn_no" placeholder="숫자 10자리" style="width:100%; text-align: left !important;" value="" maxlength="10">
+													</div>
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row">
+											<div>합계 <span class="txt_r">*</span></div>
+										</th>
+										<td>
+											<div>
+												<div class="combo_postbx">
+													<div class="combo_post_bg no_pd" style="padding-right:27px !important;">
+														<!-- 비활성화클래스 dis -->
+														<input type="text" id="str_totl_amt" class="tar" style="width:100%;" onkeyup="numberWithCommas(this.value, 'str_totl_amt')" maxlength="15" placeholder="수기입력">
+														<div class="btn" style="display:none;">
+															<a class="del"><span class="blind">삭제</span></a>
+														</div>
+													</div>
+												</div>
+											</div>
+										</td>
+									</tr>
+									<!-- <tr>
+										<td colspan="2">
+											<div class="tar">
+												<a href="#none" id="btn_cal_tax" class="txt_b txt_uline">과세적용</a>
+											</div>
+										</td>
+									</tr> -->
+									<tr id="sply_div" style="display:none;">
+										<th scope="row">
+											<div>공급가<span class="txt_r">*</span></div>
+										</th>
+										<td>
+											<div>
+												<div class="combo_postbx">
+													<div class="combo_post_bg no_pd" style="padding-right:27px !important;">
+														<!-- 비활성화클래스 dis -->
+														<input type="text" id="str_sply_amt" class="tar" style="width:100%;" value="" onkeyup="numberWithCommas(this.value, 'str_sply_amt')" maxlength="15" placeholder="수기입력">
+														<div class="btn" style="display:none;">
+															<a class="del"><span class="blind">삭제</span></a>
+														</div>
+													</div>
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr id="vat_div" style="display:none;">
+										<th scope="row">
+											<div>부가세<span class="txt_r">*</span></div>
+										</th>
+										<td>
+											<div>
+												<div class="combo_postbx">
+													<div class="combo_post_bg no_pd" style="padding-right:27px !important;">
+														<!-- 비활성화클래스 dis -->
+														<input type="text" id="str_vat_amt" class="tar" style="width:100%;" value="" onkeyup="numberWithCommas(this.value, 'str_vat_amt')" maxlength="15" disabled="true" placeholder="자동계산">
+														<div class="btn" style="display:none;">
+															<a class="del"><span class="blind">삭제</span></a>
+														</div>
+													</div>
+												</div>
+											</div>
+										</td>
+									</tr>
+									<!-- //2019-08-23 -->
+									<tr>
+										<th scope="row" class="vat">
+											<div>메모</div>
+										</th>
+										<td>
+											<div>
+												<textarea id="str_appr_cont" style="width:97.7%;height:69px;" placeholder="(최대 100자)"></textarea>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row" class="vat">
+											<div>용도 <span class="txt_r">*</span></div>
+										</th>
+										<td>
+											<div class="title_wrap">
+												<div class="left">
+													<div class="ly_filter type4">
+														<a href="#none" id="sel_prps_cd" data-val="B003">기타매입</a>
+														<ul id="sel_prps_cd_ul" class="ly_filter_inner" style="min-width:100px !important; display:none;"><li><a href="#none" data-val="B001">매입</a></li><li><a href="#none" data-val="B002">임차료</a></li><li><a href="#none" data-val="B003">기타매입</a></li><li><a href="#none" data-val="B004">식대ㆍ경조사비</a></li><li><a href="#none" data-val="B005">세금과공과</a></li><li><a href="#none" data-val="B006">소모품비</a></li><li><a href="#none" data-val="B007">퀵ㆍ택배비</a></li><li><a href="#none" data-val="B008">접대비</a></li><li><a href="#none" data-val="B009">지급수수료</a></li><li><a href="#none" data-val="B010">차량유지비</a></li></ul>
+													</div>
+												</div>
+											</div>
+											<!-- <div>
+												<select id="sel_prps_cd">
+													<option>기타비용</option>
+												</select>
+											</div> -->
+										</td>
+									</tr>
+									<tr>
+										<th scope="row" class="vat">
+											<div>처리상태</div>
+										</th>
+										<td>
+											<div>
+												<!-- 비활성화시 off클래스 추가 -->
+												<a href="#none" class="btn_rud_semor" id="btn_set_rcpt"><span>접수하기</span></a>
+												<span class="mgl4" id="str_rcpt_dtm"><!-- 접수완료 2022.12.23 16:23 --></span>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+

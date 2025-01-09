@@ -1,0 +1,1861 @@
+<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<title>보고서 발송 단계</title>
+<link rel="stylesheet" href="../css/reset_taxp.css">
+<link rel="stylesheet" href="../css/app_header.css"><!-- [D] 세무대리인용 header -->
+<link rel="stylesheet" href="../css/content_taxp.css"><!-- [D] 세무대리인용 -->
+<link rel="stylesheet" href="../css/swiper-bundle.min.css" ><!-- [D] 세무대리인용 -->
+<link rel="stylesheet" href="../css/w2ui_2.0.css">
+
+<!-- custom scrollbar plugin css -->
+<link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+<script src="https://publ.roumit.com/js/firebase_include.js"></script>
+  <script src="../js/lib/jquery/jquery-1.12.4.min.js"></script>
+<script src="../js/lib/jquery/jquery-ui-1.10.4.min.js"></script>
+<script src="../js/lib/swiper/swiper-bundle.min.js"></script>
+<!-- custom scrollbar plugin -->
+<script src="../js/lib/plugin/w2ui.js"></script>
+<script src="../js/design/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../js/design/jquery.placeholder.min.js"></script>
+<script src="../js/lib/plugin/smart.popup.js"></script>
+<script src="../js/lib/chart/chart-3.5.1.min.js"></script>
+<script src="../js/comm/common.js"></script>
+<script>
+	        $(document).ready(function () {
+            $(".gr_err").parents("td").css({"background-color":"#fff6f6"}); 
+
+    })
+
+</script>
+</head>
+<body class="lnb_bg"><!-- [D] 메뉴영역(접기 : class="fold", 펼치기 : class="lnb_bg") -->
+
+<!-- 수임처 개선 -->
+<!-- header -->
+<div class="app_header">
+	<div class="app_header_inner">
+		<div class="ah_l">
+			<h1>세모리포트 <span>X</span> 로움세무회계법인</h1>
+		</div>
+
+		<div class="ah_r">
+			<ul class="ah_menu mgt10">
+				<li style="position:relative;">
+					<a href="#none" class="hd_tag weTalk " onclick="openChat('CHAT_LIST','')">
+						<img src="../img/txof/ico/ico_talk.svg" alt="">
+						<span>We Talk</span>
+						<span class="talk_conting_num" id="chat_bage" style="display: block;">N</span>
+					</a>
+				</li>
+				<li id="update_gud">
+					<a href="https://semo-report.gitbook.io/update/" class="hd_tag updateInfo">
+						<img src="../img/txof/ico/ico_speaker.svg" alt="">
+						<span>업데이트</span>
+						<span class="talk_conting_num" id="chat_bage" style="display: block;">N</span>
+					</a>
+				</li>
+                <li>
+                    <a  class="hd_tag hd_alarm" href="#none">
+						<img src="../img/txof/ico/ico_noti.svg" alt="">
+						<span>알림</span>
+						<div class="count" id="_noti_push_cnt" style="">4</div>
+					</a>
+                </li>
+				<li class="txtMenu">
+					<a href="javascript:openChannelBot();">채팅상담</a>
+					<a href="https://roumit.gitbook.io/undefined/" target="_blink">도움말</a>
+					<a href="https://roumit.gitbook.io/undefined-2/" target="_blink">공지사항</a>
+				</li>
+				
+				<!-- 
+				<li style="position:absolute;top:-16px;left:-47px;"><a href="#none" class="btn_alarm" title="알림"><em class="alarm_num" style="display: none;"></em></a></li>
+				<li><a href="#none"><img src="../img/txof/app_header/ic_top04.png" alt="">SMS</a></li>
+				<li style="position:relative;">
+					<a href="https://academyserp.notion.site/4ee92f23a9184afda550d61faf10a5e3" target="_blink"><img src="../img/txof/app_header/ic_top05.png" alt="">메뉴얼</a>
+				</li>
+				<li><a href="#none"><img src="../img/txof/app_header/ic_top02.png" alt="">로그아웃</a></li>
+				-->
+			</ul>
+		</div>
+	</div>
+    <div class="header-side_bg" style="display: none;">
+        <div class="header-side_box">
+            <div class="hds_inner">
+                <div class="hds_top">
+                    <div class="hds_title">
+                        <h1>알림</h1>
+                        <div class="btn">
+                            <button class="hd_close" type="button">
+                                <div class="icon"></div>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="hds_tab">
+                        <div class="left">
+                            <ul>
+                                <li >
+									<button class="active" type="button">안읽음</button>
+                                </li>
+                                <li>
+                                    <button type="button">전체</button>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="right">
+                            <div class="state">
+                                <button type="button">모두읽음</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hds_search">
+                        <div class="input_wrap">
+							<div class="left">
+								<button class="srch_btn" type="button">
+								</button>
+								<input type="text" value="" id="sch_word" placeholder="검색어를 입력하세요">
+							</div>
+							<div class="right">
+								<button class="clo_btn" type="button"></button>
+
+							</div>
+
+
+                        </div>
+                    </div>
+					<div class="hds_option">
+						<ul>
+							<li class="hds_opt_01">
+								<span>검색옵션</span>
+							</li>
+							<li class="hds_opt_02">
+								<button class="active" type="button">
+									<span>거래처명</span>
+								</button>
+								<button type="button">
+									<span>내용</span>
+								</button>
+							</li>
+						
+						</ul>
+					</div>
+                </div>
+                <div class="hds_content">
+
+                    <div class="list_wrap">
+
+						<!-- 알림 list -->
+                        <ul class="list">
+                            <li class="item active">
+                                <div class="top">
+                                    <h2>급여자료 도착</h2>
+                                    <span class="time">방금</span>
+                                </div>
+                                <div class="middle">
+                                    <div class="store">
+                                        <span>청년다방 검암점</span>
+                                    </div>
+                                    <div class="info">
+                                        <span>
+                                            2023년 01월 급여 자료가 도착했어요.
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="bottom">
+									<button type="button">
+										<img src="../img/txof/ico/ico_file_16x16.svg" alt="">
+										<span>첨부파일</span>
+									</button>
+                                </div>
+                            </li>
+                            <li class="item">
+                                <div class="top">
+                                    <h2>민원증명 발급</h2>
+                                    <span class="time">3시간 전</span>
+                                </div>
+                                <div class="middle">
+                                    <div class="store">
+                                        <span>청년다방 검암점</span>
+                                    </div>
+                                    <div class="info">
+                                        <span>
+                                            민원증명 서류 1건이 리포트로 발송되었어요.
+                                        </span>
+                                    </div>
+                                </div>
+								
+                                <div class="bottom">
+									<button type="button">
+										<img src="../img/txof/ico/ico_img_16x16.svg" alt="">
+										<span>이미지</span>
+									</button>
+                                </div>
+                            </li>
+                            <li class="item active">
+                                <div class="top">
+                                    <h2>민마음 한의원 구로점</h2>
+                                    <span class="time">어제</span>
+                                </div>
+                                <div class="middle">
+                                    <div class="store">
+                                        <span>청년다방 검암점</span>
+                                    </div>
+                                    <div class="info">
+                                        <span>
+                                            근로소득 이미나님의 입사요청을 확인해 주세요.<br>
+                                            (입사일자 : 23.01.17)
+                                        </span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="item active">
+                                <div class="top">
+                                    <h2>민마음 한의원 구로점</h2>
+                                    <span class="time">2023-01-20 18:30
+                                    </span>
+                                </div>
+                                <div class="middle">
+                                    <div class="store">
+                                        <span>청년다방 검암점</span>
+                                    </div>
+                                    <div class="info">
+                                        <span>
+                                            근로소득 이미나님의 입사요청을 확인해 주세요.<br>
+                                            (입사일자 : 23.01.17)
+                                        </span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="item active">
+                                <div class="top">
+                                    <h2>민원증명 오류</h2>
+                                    <span class="time">5시간 전
+                                    </span>
+                                </div>
+                                <div class="middle">
+                                    <div class="store">
+                                        <span>소백산 막걸리</span>
+                                    </div>
+                                    <div class="info">
+                                        <span>
+                                            이로움세무회계 인증서 문제로 민원증명 발급에 실패했어요.인증서 연결상태를 다시 확인해 주세요.
+                                        </span>
+                                    </div>
+                                </div>
+								<div class="bottom">
+									<button type="button">
+										<img src="../img/txof/ico/ico_img_16x16.svg" alt="">
+										<span>이미지</span>
+									</button>
+								</div>
+                            </li>
+                            <li class="item active">
+                                <div class="top">
+                                    <h2>민원증명 오류</h2>
+                                    <span class="time">5시간 전
+                                    </span>
+                                </div>
+                                <div class="middle">
+                                    <div class="store">
+                                        <span>소백산 막걸리</span>
+                                    </div>
+                                    <div class="info">
+                                        <span>
+                                            이로움세무회계 인증서 문제로 민원증명 발급에 실패했어요.인증서 연결상태를 다시 확인해 주세요.
+                                        </span>
+                                    </div>
+                                </div>
+								<div class="bottom">
+									<button type="button">
+										<img src="../img/txof/ico/ico_img_16x16.svg" alt="">
+										<span>이미지</span>
+									</button>
+								</div>
+                            </li>
+                            <li class="item active">
+                                <div class="top">
+                                    <h2>민원증명 오류</h2>
+                                    <span class="time">5시간 전
+                                    </span>
+                                </div>
+                                <div class="middle">
+                                    <div class="store">
+                                        <span>소백산 막걸리</span>
+                                    </div>
+                                    <div class="info">
+                                        <span>
+                                            이로움세무회계 인증서 문제로 민원증명 발급에 실패했어요.인증서 연결상태를 다시 확인해 주세요.
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="bottom">
+									<button type="button">
+										<img src="../img/txof/ico/ico_img_16x16.svg" alt="">
+										<span>이미지</span>
+									</button>
+								</div>
+                            </li>
+                            <li class="item active">
+                                <div class="top">
+                                    <h2>퇴사요청 도착</h2>
+                                    <span class="time">
+										2023-01-20  18:30
+                                    </span>
+                                </div>
+                                <div class="middle">
+                                    <div class="store">
+                                        <span>청년다방 검암점</span>
+                                    </div>
+                                    <div class="info">
+                                        <span>
+											일용소득 강백호님의 퇴사요청을 확인해 주세요.<br>(퇴사일자 : 23.01.31)
+										</span>
+                                    </div>
+                                </div>
+                                <div class="bottom">
+									<button type="button">
+										<img src="../img/txof/ico/ico_img_16x16.svg" alt="">
+										<span>이미지</span>
+									</button>
+								</div>
+                            </li>
+                            <li class="item active" style="height: 120px;">
+                                <div class="top">
+                                    <h2>간이영수증 도착</h2>
+                                    <span class="time">2023-01-10  13:45</span>
+                                </div>
+                                <div class="middle">
+                                    <div class="store">
+                                        <span>청년다방 검암점</span>
+                                    </div>
+                                    <div class="info">
+                                        <span>
+											23년 03월 소모품비 300,000원이 등록되었어요.
+										</span>
+                                    </div>
+                                </div>
+                                <div class="bottom">
+									<button type="button">
+										<img src="../img/txof/ico/ico_img_16x16.svg" alt="">
+										<span>이미지</span>
+									</button>
+								</div>
+                            </li>
+                            
+                        </ul>
+
+						<!-- 알람없을시 show  -->
+						<div class="no-alarm" style="display:none;">
+							<div class="icon">
+								<img src="../img/txof/ico/page_43x50.png" alt="">
+							</div>
+							<div class="desc">
+								<span>아직 도착한 업무 알림이 없어요</span>
+							</div>
+						</div>
+
+                    </div>
+					
+					<!-- 검색창 체크시 show -->
+					<div class="src_option"  style="display:none;">
+						<ul class="src_list">
+							<li>
+								<div class="item">
+									<div class="icon">
+										<img src="../img/txof/ico/search_g_32x32.png" alt="">
+									</div>
+									<div class="opt_cont">
+										<span>거위나라 청년과일 가게</span>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="item">
+									<div class="icon">
+										<img src="../img/txof/ico/search_g_32x32.png" alt="">
+									</div>
+									<div class="opt_cont">
+										<span>아리랑 청년</span>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="item">
+									<div class="icon">
+										<img src="../img/txof/ico/search_g_32x32.png" alt="">
+									</div>
+									<div class="opt_cont">
+										<span>청년다방 검암점</span>
+									</div>
+								</div>
+							</li>
+						</ul>
+						<div class="no-src" style="display:none;">
+							<div class="icon">
+								<img src="../img/txof/ico/excla_g_40x40.png" alt="">
+							</div>
+							<div class="desc">
+								<div class="info">
+									<p><strong>'꾀고리'</strong>에 대한<br>
+										검색결과가 없습니다.
+									</p>
+								</div>
+								<div class="link">
+									<a href="">
+										<span>전체목록 보기</span>
+										<img src="../img/txof/ico/arrow_b_5x9.png" alt="">
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+                </div>
+            </div>
+
+			<!-- 상세보기 -->
+			<div class="hds_detail">
+				<div class="detail_top">
+					<div class="detail_main-tit">
+						<div class="left">
+							<h1>청년다방 검암점</h1>
+							<img src="../img/txof/ico/search_gr_16x16.png" alt="">
+						</div>
+						<div class="right">
+							<div class="btn">
+								<button class="hd_close" tyle="button">
+									<div class="icon"></div>
+								</button>
+							</div>
+						</div>
+					</div>	
+					<div class="detail_sub-tit">
+						<div class="info_01">
+							<p>사업자번호: 219-10-222403</p>
+						</div>
+						<div class="info_02">
+							<div class="left">
+								<p>대표자명 : 홍길동</p>
+								<button type="button">
+									<span>바로가기</span>
+									<img src="../img/txof/ico/arr_g_6x8.png" alt="">
+								</button>
+							</div>
+							<div class="right">
+								<button type="button">
+									<img src="../img/txof/ico/ico_wetalk18x18_on.png" alt="">
+								</button>
+							</div>
+						</div>
+						<div class="info_01">
+							<p>사업자번호: 219-10-222403</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="detail_mid">
+					<ul>
+						<li class="list_01">
+							<h2>민원증명 발급</h2>
+						</li>
+
+						<li class="list_02">
+							<p class="main_txt">
+								민원증명 서류 1건이 리포트로 발송되었어요.
+							</p>
+							<p class="sub_txt">2023-02-23 16:20</p>
+						</li>
+
+						<li class="list_03">
+							<p class="main_txt">
+								청년다방 검암점에서 요청한 민원 증명서류가<br>리포트로 발송되었습니다.
+							</p>
+						</li>
+
+						<li class="list_04">
+							<h3>민원 증명 서류 발급 총 3건</h3>
+							<p class="sub_txt">- 사업자등록증명</p>
+							<p class="sub_txt">- 부가세과세표준증명</p>
+							<p class="sub_txt">- 납세증명서(국세완납증명)</p>
+						</li>
+						<li class="list_05">
+							<button class="linkBtn_green" type="button">
+								<span>자세히보기</span>
+								<img src="../img/txof/ico/arr_w_6x8.png" alt="">
+							</button>
+						</li>
+					</ul>
+				</div>
+
+				<div class="detail_bot">
+					<div class="read_time">
+						<p>최초읽음: 2023-02-23 16:20</p>
+					</div>
+
+					<!-- 첨부파일 있을시 노출 -->
+					<div class="file_list">
+						<div class="dtb_title">
+							<p>첨부파일 1개</p>
+							<span class="file_size">(573.3kB)</span>
+						</div>
+						<ul>
+							<li>
+								<div class="left">
+										<img src="../img/txof/ico/ico_file_16x16.svg" alt="">
+										<span>청년다방 검암점_사업자등록증명_202301223.pdf</span>
+										<span class="file_size">(573.3kB)</span>
+								</div>
+							 </li>
+							<li>
+								<div class="left">
+										<img src="../img/txof/ico/ico_file_16x16.svg" alt="">
+										<span>청년다방 검암점_사업자등록증명_202301223.pdf</span>
+										<span class="file_size">(573.3kB)</span>
+								</div>
+							</li>
+							<li>
+								<div class="left">
+										<img src="../img/txof/ico/ico_file_16x16.svg" alt="">
+										<span>청년다방 검암점_사업자등록증명_202301223.pdf</span>
+										<span class="file_size">(573.3kB)</span>
+								</div>
+							</li>
+							<li>
+								<div class="left">
+										<img src="../img/txof/ico/ico_file_16x16.svg" alt="">
+										<span>청년다방 검암점_사업자등록증명_202301223.pdf</span>
+										<span class="file_size">(573.3kB)</span>
+								</div>
+							</li>
+	
+		
+
+						
+						</ul>
+					</div>
+				</div>
+			</div>
+        </div>
+		
+    </div>
+</div>
+<!-- //header -->
+<!-- //수임처 개선 -->
+
+<div class="wrap"><!-- [D] 상세검색일 경우(class="mh") -->
+	<!-- Container -->
+	<div class="container">
+		<div class="lnb_box">	
+			<button class="btn_lnb_toggle"></button>
+			<!-- lnb_boxInn -->
+			<div class="lnb_boxInn">
+				<!-- lnb top 추가 -->
+				<div class="lnb_top">
+					<!-- user view -->
+					<div class="user_view">
+						<div class="user_r_side">
+							<p class="icon_user"><strong>홍길동</strong> 님</p>
+						</div>
+						<div class="select_wrap">
+							<div class="area_select">
+								<span>담당자</span>
+								<a class="entire" href="javascript:;">전체</a>
+
+								<!-- 활성화 시 on 클래스 추가 -->
+								<ul class="select_box" style="z-index: 302;">
+									<li>
+										<a href="javascript:;">
+											<p>담당자 전체</p>
+											<span class="num">599</span>
+										</a>
+									</li>
+									<!-- 활성화 시 on 클래스 추가 -->
+									<li class="user_list on">
+										<a href="javascript:;">
+											<p>박담당</p>
+											<span class="num">55</span>
+										</a>
+									</li>
+									<li class="user_list">
+										<a href="javascript:;">
+											<p>이담당</p>
+											<span class="num">55</span>
+										</a>
+									</li>
+									<li class="user_list">
+										<a href="javascript:;">
+											<p>김담당</p>
+											<span class="num">55</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="alarm_wrap">
+					<!-- 무료체험 사용중 -->
+					<div class="mygroupLst">
+						<div class="free_trial">
+							<div class="tit">
+								무료체험 사용중
+							</div>
+							<div class="count">
+								<span>2/3</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- //lnb top 추가 -->
+				<div class="alarm_wrap">
+					<div class="mygroupLst">
+						<dl id=""><!-- (modify)20220810 스타일 추가 -->
+							<dd class="">
+								<div class="line first">
+									<a href="#none">
+										<span>
+											<img src="../img/txof/ico/ico_userManage.png"
+												class="mCS_img_loaded">
+											고객관리
+										</span>
+										<span class="badge2"><strong id="GRP">126</strong></span>
+									</a>
+								</div>
+							</dd>
+						</dl>
+						<ul>
+							<!-- 그룹 -->
+							<!-- 2323-03-24 btn 이벤트 및 툴팁 이벤트 수정 newgroup 레이아웃 수정  -->
+							<li class="on"><!-- 활성화클래스 on -->
+								<div class="mygroupLst_tit">
+									<a href="#none" class="">
+										<img src="../img/txof/ico/ico_reptGroupManage.png" class="mCS_img_loaded">
+										그룹관리
+									</a>
+									<div class="mygroup_btn">
+										<i class="btn"></i>
+									</div>
+								</div>									
+								<div class="mygroupCont">
+									<!-- 20180906 수정 -->
+									<dl class="mygroup" id="" style="display: NONE;">
+										<!--<dt class="on"><a class="txt">그룹</a></dt>-->
+										<!-- 비활성 -->
+										<dd class="off">
+											<a href="#none">
+												<div class="line tooltipWrap rt">
+													<div class="left">
+														<span class="txt">
+															세모세모세모세모세모세모모세모세모세모t세모
+														</span>
+														<div class="tooltip">
+															<p class="tit">세모R<p>
+														</div>
+														<button type="button" class="btnEdit">
+														</button>
+													</div>
+													<div class="right">
+														<span class="groupCount">5</span>
+														<button type="button" class="btnEdit">
+														</button>
+													</div>
+												</div>
+											</a>
+										</dd>
+										<dd class="off">
+											<a href="#none" style="display: none;">
+												<div class="line tooltipWrap rt">
+													<div class="left grp_left_div">
+														<span class="txt" name="GRP_NM">ㄴㅇㄴㅁㅇㄴㅇ</span>
+														<div class="tooltip"><p class="tit" name="GRP_FULL_NM">ㄴㅇㄴㅁㅇㄴㅇ</p><p></p></div>
+														<button type="button" class="btnEdit"><img src="/img/txof/btn/btn_edit_w3.png" width="14px"></button>
+													</div>
+													<div class="right">
+														<span class="groupCount" name="GRP_CNT">0</span>
+														<button type="button" class="btnEdit grp_edit_btn">
+															<img src="/img/txof/btn/btn_edit_w3.png" width="14px">
+														</button>
+														<div class="tooltip grp_tooltip"><!-- acitve시 활성화 -->
+															<ul class="hoverList">
+																<li>
+																	<button type="button" class="grp_nm_mod">그룹명 변경</button>
+																</li>
+																<li>
+																	<button type="button" class="grp_clear">그룹 비우기</button>
+																</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+												</a>
+											<div class="new_group" style="">
+												<input type="text" id=""><a href="#none" id="save_group"><img src="../img/txof/ico/check_green_18p.svg" alt="확인" id="" class="mCS_img_loaded"></a>
+												<a href="#none" id="canc_group"><img src="../img/txof/ico/close_b_18p.svg" alt="취소" id="" class="mCS_img_loaded"></a>
+											</div>
+										</dd>
+
+										<dd class="on">
+											<a href="#none">
+												<div class="line">
+													<div class="left">
+														경리나라
+
+													</div>
+													<div class="right">
+														<p class="groupCount">5</p>
+													</div>
+												</div>
+											</a>
+										</dd>
+										<dd class="off">
+											<a href="#none">
+												<div class="line tooltipWrap rt">
+													<div class="left">
+														<span class="txt">
+															추가그룹명
+														</span>
+														<div class="tooltip">
+															<p class="tit">추가 그룹명<p>
+														</div>
+														<button type="button" class="btnEdit">
+														</button>
+													</div>
+													<div class="right">
+														<span class="groupCount">5</span>
+														<button type="button" class="btnEdit">
+														</button>
+														<div class="tooltip">
+															<ul class="hoverList">
+																<li>
+																	<button type="button">그룹명 변경</button>
+																</li>
+																<li>
+																	<button type="button">그룹 비우기</button>
+																</li>
+															</ul>
+														</div>
+														<div class="tooltip">
+															<ul class="hoverList">
+																<li>
+																	<button type="button">그룹명 변경</button>
+																</li>
+																<li>
+																	<button type="button">그룹 비우기</button>
+																</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+												<div class="new_group" style="">
+													<input type="text" id=""><a href="#none" id="save_group"><img src="../img/txof/ico/check_green_18p.svg" alt="확인" id="" class="mCS_img_loaded"></a>
+													<a href="#none" id="canc_group"><img src="../img/txof/ico/close_b_18p.svg" alt="취소" id="" class="mCS_img_loaded"></a>
+												</div>
+											</a>
+										</dd>
+									</dl>
+									<span class="btn_group_plus" id="">그룹추가</span>
+									<!-- //20180906 수정 -->
+								</div>
+							</li>
+							<!-- //그룹 -->
+					
+						</ul>
+					</div>
+				</div>
+				<div class="alarm_wrap">	
+					<!-- (add)20220804 -->
+					
+					<!-- 보고서 관리 -->
+					<div class="mygroupLst">
+			   
+				   <!-- <div class="mygroupLst"> -->
+					   <ul>
+						   <li class="on" id="grp_wrap_rprt"><!-- 활성화클래스 on -->
+							   <div class="mygroupLst_tit">
+								   <a href="#none" class="" name="btn_left_menu">
+									   <img src="../img/txof/ico/ico_reptManage.png" class="mCS_img_loaded">보고서 관리
+								   </a>
+								   <div class="mygroup_btn">
+									   <i class="btn"></i>
+								   </div>
+							   </div>
+							   <div class="mygroupCont">
+								<dl class="mygroup">
+									<dd class="on" id="mrprt_send" data-nm="보고서 현황" data-url="mrprt_send_001.act">
+									   <a href="#none">
+										   <div class="line">보고서 생성</div>
+									   </a>
+								   </dd>
+								   <dd class="off" id="mrprt_stts" data-nm="보고서 발송" data-url="mrprt_stts_001.act">
+									   <a href="#none">
+										   <div class="line">보고서 발송</div>
+									   </a>
+								   </dd>
+								   <dd class="off" id="mrprt_hist" data-nm="리포트 이력" data-url="mrprt_hist_001.act">
+									   <a href="#none">
+										   <div class="line">보고서 이력</div>
+									   </a>
+								   </dd>
+								   <dd class="off" id="mgnt_rept" data-nm="리포트 설정" data-url="mgnt_rept_001.act">
+									   <a href="#none">
+										   <div class="line">보고서 설정</div>
+									   </a>
+								   </dd>                                
+							   </dl>
+							   </div>
+						   </li>
+					   </ul>
+				  <!--  </div> -->
+				   </div>
+				   <div class="mygroupLst"> <!-- 고객 분석 임시 -->
+						<ul>
+							<li class="on" id="grp_comp_analy"><!-- 활성화클래스 on -->
+								<div class="mygroupLst_tit">
+									<a href="#none" class="" name="btn_left_menu">
+										<img src="../img/txof/ico/lnb_tab_01.svg" class="mCS_img_loaded">고객 분석
+									</a>
+									<div class="mygroup_btn">
+										<i class="btn"></i>
+									</div>
+								</div>
+								
+								<div class="mygroupCont">
+									<dl class="mygroup">
+										<dd class="off" id="analy_smry" data-nm="고객 요약 분석" data-url="analy_smry_001.act">
+											<a href="#none">
+												<div class="line">고객 요약 분석</div>
+											</a>
+										</dd>
+										<dd class="off" id="analy_detl" data-nm="고객 상세 분석" data-url="analy_detl_001.act">
+											<a href="#none">
+												<div class="line">고객 상세 분석</div>
+											</a>
+										</dd>
+										<dd class="off" id="analy_book" data-nm="고객 매입매출장" data-url="analy_book_001.act">
+											<a href="#none">
+												<div class="line">고객 매입매출장</div>
+											</a>
+										</dd>
+									</dl>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="mygroupLst">
+						<ul>
+						 <li class="on" id="grp_wrap_cafe"><!-- 활성화클래스 on -->
+						   <div class="mygroupLst_tit">
+								 <a href="#none" class="" name="btn_left_menu"><img src="../img/txof/ico/ico_taxCafe.png" class="mCS_img_loaded">업무 관리</a>
+								 <div class="mygroup_btn">
+								  <i class="btn"></i>
+							  </div>
+						  </div>
+						  <div class="mygroupCont">
+							  <dl class="mygroup">
+								  <dd class="off" id="mgnt_tran" data-nm="증빙 관리" data-url="mgnt_tran_001.act">
+									  <a href="#none">
+										  <div class="line">증빙 관리</div>
+									  </a>
+								  </dd>
+								  <dd class="off" id="mgnt_empl" data-nm="직원/급여 관리" data-url="mgnt_empl_001.act">
+									  <a href="#none">
+										  <div class="line">직원/급여 관리</div>
+									  </a>
+								  </dd>
+								  <dd class="off mgnt_cafe" id="mgnt_cafe" data-nm="세무지식 관리" data-url="mgnt_cafe_001.act" data-param="{&quot;blbd_id&quot;:&quot;TXOF_CAFE&quot;,&quot;blbd_nm&quot;:&quot;세무지식 관리&quot;}">
+									  <a href="#none">
+										  <div class="line first">세무지식 관리</div>
+									  </a>
+								  </dd>
+							  </dl>
+						  </div>
+						 </li>
+					   </ul>
+					  </div>
+					<!-- 환경 설정 -->
+					<div class="mygroupLst">
+						<ul>
+							<li class="off on" id="grp_wrap_main"><!-- 활성화클래스 on -->
+								<div class="mygroupLst_tit">
+									<a href="#none" class="" name="btn_left_menu"><img src="../img/txof/ico/ico_set.png" class="mCS_img_loaded">환경 설정</a>
+									<div class="mygroup_btn">
+										<i class="btn"></i>
+									</div>
+								</div>
+								<div class="mygroupCont" style="display: none 
+								;"><!-- style="display: none;" -->
+									<dl class="mygroup">
+										<dd class="off" id="mgnt_wpop" data-nm="웰컴팝업 관리" data-url="mgnt_wpop_001.act">
+											<!-- <div class="line">
+												웰컴팝업 관리 <span class="badge2"><strong></strong></span>
+											</div> -->
+											<a href="#none">
+												<div class="line">웰컴팝업 관리</div>
+											</a>
+										</dd>
+										<!-- <dd class="off" id="mgnt_pymt" data-nm="청구납부내역" data-url="mgnt_pymt_001.act" >
+											<span class=""></span>
+											<div class="line">
+												청구납부내역 <span class="badge2"><strong></strong></span>
+											</div>
+										</dd> -->
+										<dd class="off" id="mgnt_rept" data-nm="리포트 설정" data-url="mgnt_rept_001.act">
+											<a href="#none">
+												<div class="line">리포트 설정</div>
+											</a>
+										   <!--  <div class="line">
+												리포트 설정 <span class="badge2"><strong></strong></span>
+											</div> -->
+										</dd>
+										<dd class="off" id="mgnt_sett" data-nm="세무사무소 설정" data-url="mgnt_sett_001.act">
+											<a href="#none">
+												<div class="line">세무사무소 설정 </div>
+											</a>
+											<!-- <div class="line">
+												세무사무소 설정 <span class="badge2"><strong></strong></span>
+											</div> -->
+										</dd>
+										<dd class="off" id="mgnt_feld" data-nm="사용자필드 설정" data-url="mgnt_feld_001.act">
+											<!-- <span class=""></span> -->
+											<a href="#none">
+												<div class="line">사용자필드 설정 </div>
+											</a>
+											<!-- <div class="line">
+												사용자필드 설정 <span class="badge2"><strong></strong></span>
+											</div> -->
+										</dd>
+									</dl>
+								</div>
+							</li>
+						</ul>
+					</div>
+
+					<!-- 어드민 -->
+					<div class="mygroupLst">
+						<ul>
+							<li class="on"><!-- 활성화클래스 on -->
+								<div class="mygroupLst_tit">
+									<a href="#none" class="" name="btn_left_menu"><img src="../img/txof/ico/ico_set.png" class="mCS_img_loaded">어드민</a>
+									<div class="mygroup_btn">
+										<i class="btn"></i>
+									</div>
+								</div>
+								<div class="mygroupCont" style="display: block;">
+									<dl class="mygroup">
+										<dd class="off admin_menu" id="admn_intt" data-nm="세무사무소 관리" data-url="admn_intt_001.act">
+											<a href="#none">
+												<div class="line">세무사무소 관리</div>
+											</a>
+										</dd>
+										<dd class="off admin_menu" id="admn_bzaq" data-nm="수임거래처 관리" data-url="admn_bzaq_001.act">
+											<a href="#none">
+												<div class="line">수임거래처 관리</div>
+											</a>
+										</dd>
+										<dd class="off admin_menu" id="admn_actv" data-nm="세무사무소 이용현황" data-url="admn_actv_001.act">
+											<a href="#none">
+												<div class="line">세무사무소 이용현황</div>
+											</a>
+										</dd>
+										<dd class="off admin_menu" id="admn_cafe" data-nm="세모카페 어드민" data-url="mgnt_cafe_001.act" data-param="{&quot;blbd_id&quot;:&quot;MGNT_CAFE&quot;,&quot;blbd_nm&quot;:&quot;세모카페 어드민&quot;}">
+											<a href="#none">
+												<div class="line">세모카페 어드민</div>
+											</a>
+											<!-- <div class="line">
+												세모카페 어드민 <span class="badge2"><strong></strong></span>
+											</div> -->
+										</dd>
+										<dd class="off admin_menu" id="admn_noti" data-nm="공지사항 관리" data-url="admn_noti_001.act">
+											<!-- <div class="line">
+												공지사항 관리 <span class="badge2"><strong></strong></span>
+											</div> -->
+											<a href="#none">
+												<div class="line">공지사항 관리</div>
+											</a>
+										</dd>
+										<dd class="off admin_menu" id="admn_scrp" data-nm="클라이언트 스크래핑 조회" data-url="admn_scrp_001.act">
+											<!-- <span class=""></span> -->
+											<!-- <div class="line">
+												클라이언트 스크래핑 조회 <span class="badge2"><strong></strong></span>
+											</div> -->
+											<a href="#none">
+												<div class="line">클라이언트 스크래핑 조회</div>
+											</a>
+										</dd>
+									</dl>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				
+				
+			</div>
+			<div class="lnb-swiper">
+					<ul class="swiper-wrapper">
+						<li class="swiper-slide">
+							<a href="https://docs.google.com/forms/d/e/1FAIpQLScditNCBwg6JgkuYrhAzfnT3wEVHGL-3lrI5_IywMBY07dFzw/viewform" target="_blank">
+								<img src="../img/txof/bg/test_img_04.png" alt="">
+							</a>
+						</li>
+
+					</ul>
+					<div class="swiper-pagination"></div>
+			</div>
+			<!-- //lnb_boxInn -->
+		</div>
+		
+
+
+		<!-- content -->
+		<div class="content">
+
+			<div class="content_wrap">
+				<div class="cust_dv_wrap nobd">
+					<div class="title_wrap h1type">
+						<div class="left">
+							<h1>보고서</h1>
+						</div>
+					</div>
+					<div class="reportSendWrap">
+						<ul class="reportSendList">
+							<li class="rprt01 active" style="cursor: pointer;" data-rprt_div="">
+								<a href="javascript:;">
+									<strong>전체</strong>
+								</a>
+							</li>
+							<li class="rprt02" style="cursor: pointer;" data-rprt_div="RPRT01">
+								<a href="javascript:;" role="button">
+									<strong>사업분석</strong>
+								</a>
+							</li>
+							<li class="rprt03" style="cursor: pointer;" data-rprt_div="RPRT05">
+								<a href="javascript:;" role="button">
+									<strong>매출</strong>
+								</a>
+							</li>
+							<li class="rprt04" style="cursor: pointer;" data-rprt_div="RPRT06">
+								<a href="javascript:;" role="button">
+									<strong>매입</strong>
+								</a>
+							</li>
+							<li class="rprt06" style="cursor: pointer;" data-rprt_div="RPRT04">
+								<a href="javascript:;" role="button">
+									<strong>예상 부가세</strong>
+								</a>
+							</li>
+							<li class="rprt08" style="cursor: pointer;" data-rprt_div="RPRT08">
+								<a href="javascript:;" role="button">
+									<strong>매출장</strong>
+								</a>
+							</li>
+							<li class="rprt09" style="cursor: pointer;" data-rprt_div="RPRT09">
+								<a href="javascript:;" role="button">
+									<strong>매입장</strong>
+								</a>
+							</li>
+							<li class="rprt10 active" style="cursor: pointer;" data-rprt_div="RPRT10">
+								<a href="javascript:;" role="button">
+									<strong>영수증</strong>
+								</a>
+							</li>
+							<li class="rprt05" style="cursor: pointer;" data-rprt_div="RPRT03">
+								<a href="javascript:;" role="button">
+									<strong>인건비</strong>
+								</a>
+							</li>
+
+							<li class="rprt07" style="cursor: pointer;" data-rprt_div="RPRT07">
+								<a href="javascript:;" role="button">
+									<strong>부가세 신고분석</strong>
+								</a>
+							</li>							
+						</ul>
+					</div>
+					<!-- 프로그레스바 -->
+					<article class="mrprt_collect">
+						<div class="title">
+							<h2>전체보고서 <span>6월 수집일정</span>을 확인하세요.</h2>
+						</div>
+						<div class="collect_bg">
+							<!-- 데이터수집 step_01 (1일~17일), 데이터 검증 step_02 (18일), 보고서 생성 step_03 (19일), 보고서 발송 step_04(20일) -->
+							<div class="collect_cover step_03">
+							</div>
+						</div>
+						<!-- 데이터 검증시 노출 버튼wrap -->
+						<div class="button_wrap">
+							<button type="button" class="red_btn">
+								<span>검증 불일치 해결하기</span>
+								<img src="../img/txof/btn/red_rd_arr_20.svg" alt="">
+							</button>
+							<button type="button" class="gr_btn">
+								<span>데이터 검증하기</span>
+								<img src="../img/txof/btn/gr_rd_arr_20.svg" alt="">
+							</button>
+						</div>
+					</article>
+					<!-- 보고서 데이터 수집 일정 -->
+					<article class="mrprt_timeline">
+						<div class="timeline_title">
+							<img src="../img/txof/ico/clock.svg" alt="">
+							<span>보고서 데이터 수집 일정</span>
+							<button type="button" class="">
+								펼치기
+							</button>
+						</div>
+						<div class="timeline_inner">
+							<div class="month">
+								<span>06월</span>
+							</div>
+							<div class="day">
+								<!-- 날짜별 li 에 active  -->
+								<ul class="type_01">
+									<li class="">
+										<span>1</span>
+									</li>
+								</ul>
+								<ul class="type_02">
+									<li class="active">
+										<span>2</span>
+									</li>
+									<li>3</li>
+									<li>4</li>
+									<li>5</li>
+									<li>6</li>
+									<li>7</li>
+									<li>8</li>
+									<li>9</li>
+									<li class="">10</li>
+									<li>11</li>
+									
+								</ul>
+								<ul class="type_03">
+									<li>12</li>
+									<li>13</li>
+									<li>14</li>
+									<li>15</li>
+									<li class="">16</li>
+									<li>17</li>
+									
+								</ul>
+								<ul class="type_04">
+									<li class=""><span>18</span></li>
+									<li class="">19</li>
+
+								</ul>
+								<ul class="type_05">
+									<li class=""><span>20</span></li>
+									<li class="last"><span></span></li>
+								</ul>
+							</div>
+							<div class="desc_wrap">
+								<div class="desc item_01 active">
+									<div class="desc_inner">
+										<div class="main_txt">
+											<img src="../img/txof/ico/ico_create_14.svg" alt="">
+											<span>보고서 생성</span>
+										</div>
+										<div class="sub_txt">
+											<span>전체 보고서</span>
+										</div>
+									</div>								
+								</div>
+								<div class="desc item_02">
+									<div class="desc_inner">
+										<div class="main_txt">
+											<img src="../img/txof/ico/ico_office_14.svg" alt="">
+											<span>원천세 납부서 & 원천징수 이행상황신고서</span>					
+										</div>
+										<div class="sub_txt">
+											<span>국세 · 지방세 · 인건비</span>
+										</div>
+									</div>
+									
+												
+								</div>
+								<div class="desc item_03">
+									<div class="desc_inner">
+										<div class="main_txt">
+											<img src="../img/txof/ico/ico_memo_14.svg" alt="">
+											<span>현금영수증 & 전자세금계산서</span>
+										</div>
+										<div class="sub_txt">
+											<span>월별 매출 · 매입</span>
+										</div>
+									</div>
+									
+									
+								</div>
+								<div class="desc item_04">
+									<div class="desc_inner">
+										<div class="main_txt">
+											<img src="../img/txof/ico/ico_card_14.svg" alt="">
+											<span>사업용 카드</span>
+										</div>
+										<div class="sub_txt">
+											<span>월별 매출 · 매입</span>
+										</div>
+									</div>
+								</div>
+								<!-- <div class="desc item_08">
+									<div class="desc_inner">
+										<div class="main_txt">
+											<img src="../img/txof/ico/ico_card_14.svg" alt="">
+											<span>수출실적명세서</span>
+										</div>
+										<div class="sub_txt">
+											<span>월별 영세율 매출</span>
+										</div>
+									</div>
+								</div> -->
+								<div class="desc item_05">
+									<div class="desc_inner">
+										<div class="main_txt">
+											<img src="../img/txof/ico/ico_cart_14.svg" alt="">
+										<span>PG · 배달 · 쇼핑</span>
+										</div>
+										<div class="sub_txt">
+											<span>분기별 온라인매출</span>
+										</div>
+									</div>
+								</div>
+								<div class="desc item_06">
+									<div class="desc_inner">
+										<div class="main_txt">
+											<img src="../img/txof/ico/ico_chart_14.svg" alt="">
+											<span>보고서 데이터 검증</span>
+										</div>
+										<div class="sub_txt">
+											<span>사업분석 · 매출 · 매입 · 예상 부가세 보고서</span>
+										</div>
+									</div>				
+								</div>
+								<div class="desc item_07">
+									<div class="desc_inner">
+										<div class="main_txt">
+											<img src="../img/txof/ico/ico_rocket_14.svg" alt="">
+											<span>보고서 자동발송</span>
+										</div>
+										<div class="sub_txt">
+											<span>19일 전까지 데이터 검증 후,<br>
+												20일 오전 9시부터 보고서 순차 발송
+												<br><br>
+												(영수증 보고서 1일 자동발송)
+											</span>
+										</div>
+										<!-- <div class="sub_txt">
+											<span>19일 전까지 미리 데이터 검증을 진행해주세요!<br>
+												(자동발송 ON : 20일 오전 9시부터 순차발송)
+											</span>
+										</div> -->
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</article>
+					<!-- 그리드영역 -->
+					<article class="mrprt_status">
+						<div class="mrprt_tab">
+							<ul>
+								<li>생성 현황</li>
+								<li> 검증현황</li>
+								<li class="active"> 발송 현황</li>
+							</ul>
+						</div>
+						<!-- 검증현황 -->
+						<div class="mrprt_cont">
+							<!-- 차트 영역 -->
+							<div class="title_wrap h1type">
+								<div class="left">
+									<h1>보고서 발송 현황</h1>
+								</div>
+								<div class="right">
+									<ul class="chart_label_list">
+										<li>
+											<div class="label bg_per20"></div>
+											<span class="range">0 ~ 20%</span>
+										</li>
+										<li>
+											<div class="label bg_per40"></div>
+											<span class="range">0 ~ 40%</span>
+										</li>
+										<li>
+											<div class="label bg_per60"></div>
+											<span class="range">0 ~ 60%</span>
+										</li>
+										<li>
+											<div class="label bg_per80"></div>
+											<span class="range">0 ~ 80%</span>
+										</li>
+										<li>
+											<div class="label bg_per100"></div>
+											<span class="range">0 ~ 100%</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="title_wrap">
+								<div class="left">
+									<div class="ly_filter_wrap" style="display: ;">
+										<div class="filter_name">
+											<h3>기준월</h3>
+										</div>
+										<div class="ly_filter">
+											<a href="#none" id="send_cal_txt" class="" data-yyyymm="202407" data-bfyyyymm="202406">2024년 전체</a>
+											<div class="ly_year" style="display: none ;" id="send_cal_ly">
+												<div class="lytop">
+													<a href="#none" class="prev" id="send_a_prev"></a>
+													<span class="ytxt">2024년</span>
+													<a href="#none" class="next" id="send_a_next"></a>
+												</div>
+												<div class="lymcont">
+													<ol>
+														<li data-mon="01"><a href="#none">01</a></li>
+														<li data-mon="02"><a href="#none">02</a></li>
+														<li data-mon="03"><a href="#none">03</a></li>
+														<li data-mon="04"><a href="#none">04</a></li>
+														<li data-mon="05"><a href="#none">05</a></li>
+														<li data-mon="06"><a href="#none" class="on">06</a></li>
+														<li data-mon="07"><a href="#none">07</a></li>
+														<li data-mon="08"><a href="#none" class="dis">08</a></li>
+														<li data-mon="09"><a href="#none" class="dis">09</a></li>
+														<li data-mon="10"><a href="#none" class="dis">10</a></li>
+														<li data-mon="11"><a href="#none" class="dis">11</a></li>
+														<li data-mon="12"><a href="#none" class="dis">12</a></li>
+													</ol>
+												</div>
+												<div class="lybtm cboth">
+													<a href="#none" class="txt_b">이번달</a>
+													<a href="#none" class="right txt_b">전체</a>
+												</div>
+											</div>
+
+
+										</div>
+										<div class="tooltip yellow" style="display: block;">
+											<p class="tit">
+												보고서는 현재 월에 생성된 것으로,<br>
+												지난달 1일 ~ 말일까지의 신고내역<br>
+												기준으로 반영합니다.
+											</p>
+										</div>
+									</div>
+									<!-- //기준월 -->
+								</div>
+							</div>
+							<div class="rprt_current">
+								<div class="item item_01">
+									<div class="left">
+										<div class="area_tit">
+											<h2>거래처별 현황</h2>
+											<p class="txt_g">그래프에 마우스를 올려보세요.</p>
+										</div>
+										<div class="area_data">
+											<p class="key" id="cs_account">사용 거래처 수</p>
+											<strong class="value chart_blue">총 652개</strong>
+										</div>
+									</div>
+									<div class="right">
+										<canvas id="chart_busi_rept"  ></canvas>
+									</div>
+								</div>
+								<div class="item item_02">
+									<div class="left">
+										<div class="area_tit">
+											<h2>보고서별 현황</h2>
+											<p class="txt_g">그래프에 마우스를 올려보세요.</p>
+										</div>
+										<div class="area_data">
+											<p class="key">현재 발송 달성율</p>
+											<strong class="value chart_orange"><span>67.3</span>%</strong>
+										</div>
+									</div>
+									<div class="right">
+										<canvas id="chart_send_per" ></canvas>
+									</div>
+								</div>
+							</div>
+							<!-- //차트 영역 -->
+							<!-- 보고서  -->
+							<div class="title_wrap h1type">
+								<div class="left">
+									<h1>보고서 발송 이력</h1>
+								</div>
+							</div>
+						
+							<div class="grid_wrap" style="display: block;">
+								<div id="grid_01" style="height: 414px;"></div>
+							</div>
+							
+							<div class="grid_foot_info">
+								<!-- 선택일시 span class gr_text_yellow / 조회시 span class gr_text_blue  -->
+								<p>
+									• 아래로 스크롤하면 더 많은 데이터를 조회할 수 있습니다. ( <span class="gr_text_blue">선택 데이터 100건</span>  / 전체 데이터 : 10,000건)
+								</p>
+							</div>		
+							<div class="grid_foot">
+						
+							</div>		
+						</div>
+							
+					</article>
+				</div>
+
+			</div>
+		   <!-- //content_wrap -->
+		</div>
+		<!-- //content -->
+	</div>
+	<!-- //Container -->
+	<!-- footer 추가 : 20180828 -->
+	<div class="footer">
+		<!-- Copy right -->
+		<div class="copyright_wrap">
+			<div class="copyright_box">
+				<p>Copyright(c) <strong>Webcash.</strong> All rights reserved.</p>
+			</div>
+			<div class="ft_menu"></div>
+		</div>
+		<!-- //Copy right -->
+	</div>
+	<!-- //footer -->
+</div>
+<!-- //wrap -->
+<script>
+    let grid_01 = new w2grid({
+		name: 'grid_01',
+		box: '#grid_01',
+		show: {
+			
+			selectColumn: false //체크박스 생성
+			
+		},
+		
+		columns: [
+			{ field: 'th_01', text: '거래처명', size: '150px',  sortable: true,  attr: 'align=left'  },
+			{ field: 'th_02', text: '사업자번호', size: '120px', sortable: true,  attr: 'align=center' },
+			{ field: 'th_03', text: '유형', size: '100px',  sortable: true,  attr: 'align=center' },
+			{ field: 'th_04', text: '계약상태', size: '120px', sortable: true,  attr: 'align=center' },
+			{ field: 'th_05', text: '대표자', size: '150px', sortable: true,   attr: 'align=center'  },
+			{ field: 'th_06', text: '휴대폰번호', size: '120px',  sortable: true,  attr: 'align=center' },
+			{ field: 'th_07', text: '발송건수', size: '120px', sortable: true,  attr: 'align=center' },
+			{ field: 'th_08', text: '최근발송일자', size: '120px', sortable: true,  attr: 'align=center' },
+			{ field: 'th_09', text: '담당자', size: '150px', sortable: true,  attr: 'align=center' }
+
+			
+
+		],
+		records: [
+			{ "recid": 1, "th_01": "T_메이드유의원", "th_02" : "1039902063", "th_03" : "일반", "th_04" : "기장개인", "th_05" : "메이드", "th_06" : "010-1234-5678", "th_07" : "63", "th_08" : "2023-09-12", "th_09" : "한배찌"},
+
+		]
+	})
+
+
+	/* 
+
+	보고서별 현황 차트 chart_send_per 
+	
+	*/
+	// 툴팁 배경 박스 커스텀
+	var getOrCreateTooltip = (chart) => {
+			var tooltipEl = chart.canvas.parentNode.querySelector('div');
+
+			if (!tooltipEl) {
+					tooltipEl = document.createElement('div');
+					tooltipEl.classList.add('tooltip_box');
+
+					marker = document.createElement('div');
+					marker.classList.add('tooltip_marker');
+
+					var table = document.createElement('table');
+					table.classList.add("tooltip_table")
+
+					tooltipEl.appendChild(marker)
+					tooltipEl.appendChild(table);
+					chart.canvas.parentNode.appendChild(tooltipEl);
+			}
+
+			return tooltipEl;
+	};
+
+	// 툴팁 핸들러
+	var externalTooltipHandler = (context) => {
+		// Tooltip Element
+		var { chart, tooltip, } = context;
+		var tooltipEl = getOrCreateTooltip(chart);
+		var title; //강조 타이틀
+		var titleDataTxt = document.createTextNode(""); //강조 데이터 
+		var labelTxtArr; //타이틀 텍스트 배열
+
+		// 툴팁숨김처리
+		if (tooltip.opacity === 0) {
+			tooltipEl.style.opacity = 0;
+			return;
+		}
+
+		// Set Text
+		if (tooltip.body) {
+			var titleLines = tooltip.title || [];
+			var bodyLines = tooltip.body.map(b => b.lines);
+			var tableFoot = document.createElement('tfoot');
+			var { offsetLeft: positionX, offsetTop: positionY } = chart.canvas; //툴팁 노출좌표
+			var selectIndex = tooltip.dataPoints[0]?.dataIndex;
+			var selectMonth = chart.data.labels[selectIndex];
+			
+			titleLines.forEach((a, i) => {
+				var tr = document.createElement('tr');
+				var th = document.createElement('th');
+				th.classList.add("tooltip_last_data");
+				var span = document.createElement('span');
+
+				//제목 텍스트 분기처리 if문
+				if (chart.canvas.id == 'chart_busi_rept') {
+					title = document.createTextNode(`거래처 수 대비`);
+					titleDataTxt = document.createTextNode("%");
+					
+					var infoTxt = document.createElement('p');
+					infoTxt.innerHTML = '단, URL 링크 복사 등을 통해서 생성완료된 보고서를 고객이 읽은 경우 포함';
+					infoTxt.classList.add('txt_r');
+				} else if(chart.canvas.id == 'chart_send_per') {
+					title = document.createTextNode(`발송 비율`);
+					titleDataTxt = document.createTextNode("%");
+				}
+
+				tableFoot.appendChild(tr);
+				th.appendChild(title);
+				th.appendChild(span);
+				tr.appendChild(th);
+				span.appendChild(titleDataTxt);
+				th.appendChild(infoTxt);
+			});
+			var tableBody = document.createElement('tbody');
+
+			// 라벨 텍스트 분기처리 
+			if (chart.canvas.id == 'chart_busi_rept') {
+				labelTxtArr = chart.config._config.data.labels; //거래처별 현황 labels 배열
+			} else if (chart.canvas.id == 'chart_send_per') {
+				labelTxtArr = ['전체', '생성 대기', '생성 완료', '발송 완료'];
+			}
+
+			labelTxtArr.forEach((body, i) => {
+				var tr = document.createElement('tr');
+				var td = document.createElement('td');
+				td.style.padding = '8px 10px';
+				td.style.fontSize = '13px';
+				var text = document.createTextNode(`${labelTxtArr[i]} : ${Object.values(rprtData[tooltip.dataPoints[0].dataIndex])[i + 1]}`); //라벨텍스트 및 차트데이터 넣어주기
+
+				if(chart.canvas.id == 'chart_busi_rept' && tooltip.dataPoints[0].dataIndex !== i) {
+					text = document.createTextNode(`${labelTxtArr[tooltip.dataPoints[0].dataIndex]} : ${Object.values(rprtData[tooltip.dataPoints[0].dataIndex])[i + 1]}`);
+					return;
+				}
+
+				td.appendChild(text);
+				tr.appendChild(td);
+				tableBody.appendChild(tr);
+			});
+
+			var tableRoot = tooltipEl.querySelector('table');
+
+			if (!tableRoot) {
+				return;
+			}
+
+			while (tableRoot.firstChild) {
+				tableRoot.firstChild.remove();
+			}
+			tableRoot.appendChild(tableFoot);
+			tableRoot.appendChild(tableBody);
+		}
+		
+		// 툴팁좌표 최신
+		tooltipEl.style.opacity = 1;
+		tooltipEl.style.top = chart.canvas.getBoundingClientRect().top + tooltipEl.clientHeight / 2 + tooltip.dataPoints[0].element.y + 'px';
+		tooltipEl.style.left = chart.canvas.getBoundingClientRect().left + tooltip.caretX - (tooltipEl.clientWidth / 2) - 20 + 'px';
+	};
+	
+
+	// 차트데이터
+	var rprtData = [
+			{
+					name     : "사업분석",
+					all      : 320,
+					wait     : 0,
+					complete : 320,
+					complete2 : 0,
+			},
+			{
+					name     : "매출",
+					all      : 320,
+					wait     : 64,
+					complete : 256,
+					complete2 : 0,
+			},
+			{
+					name     : "매입",
+					all      : 320,
+					wait     : 125,
+					complete : 195,
+					complete2 : 0,
+			},
+			{
+					name     : "예상 부가세",
+					all      : 320,
+					wait     : 190,
+					complete : 130,
+					complete2 : 0,
+			},
+			{
+					name     : "매출장",
+					all      : 320,
+					wait     : 235,
+					complete : 65,
+					complete2 : 0,
+			},
+			{
+					name     : "매입장",
+					all      : 320,
+					wait     : 235,
+					complete : 65,
+					complete2 : 0,
+			},
+			{
+					name     : "영수증",
+					all      : 320,
+					wait     : 235,
+					complete : 65,
+					complete2 : 0,
+			},
+			{
+					name     : "인건비",
+					all      : 320,
+					wait     : 235,
+					complete : 65,
+					complete2 : 0,
+			},
+			{
+					name     : "부가세 신고분석",
+					all      : 320,
+					wait     : 235,
+					complete : 65,
+					complete2 : 0,
+			}
+	]
+	
+	// 발송비율 계산
+	var calcPer = (data) =>{
+			var arr = [];
+
+			for(let i=0; data.length>i; i++) {
+					arr.push(parseInt(data[i].complete/data[i].all * 100));
+			}
+
+			return arr;
+	}
+
+	var busiReptEl = document.getElementById('chart_busi_rept').getContext('2d');
+	var sendPerEl = document.getElementById('chart_send_per').getContext('2d');
+
+
+	var fn_barCharColor = function( value ) { // Callback instead of static color 
+		var barBgColor = sendPerEl.createLinearGradient(0, 0, 0, sendPerEl.canvas.height / 1.1);
+
+		if ( value.raw <= 20 ) {
+			barBgColor.addColorStop(0.3, 'rgba(255, 220, 98, 1)');
+			barBgColor.addColorStop(1, 'rgba(255, 220, 98, 0.55)');
+		} else if ( value.raw >= 21 && value.raw <= 40 ) {
+			barBgColor.addColorStop(0.3, 'rgba(255, 168, 37, 1)');
+			barBgColor.addColorStop(1, 'rgba(255, 168, 37, 0.55)');
+		} else if ( value.raw >= 41 && value.raw <= 60 ) {
+			barBgColor.addColorStop(0.3, 'rgba(255, 122, 26, 1)');
+			barBgColor.addColorStop(1, 'rgba(255, 122, 26, 0.55)');
+		} else if ( value.raw >= 61 && value.raw <= 80 ) {
+			barBgColor.addColorStop(0.3, 'rgba(255, 63, 2, 1)');
+			barBgColor.addColorStop(1, 'rgba(255, 63, 2, 0.55)');
+		} else {
+			barBgColor.addColorStop(0.1, 'rgba(255, 3, 2, 1)');
+			barBgColor.addColorStop(1, 'rgba(255, 3, 2, 0.55)');
+		}		
+
+		return barBgColor;
+	}
+
+	var busiReptObj = {
+		data: {
+			datasets: [
+				{
+					type: 'bar',
+					data: calcPer(rprtData),
+					backgroundColor: fn_barCharColor,
+					borderRadius: 9,
+					minBarLength: 20
+				}
+			],
+			labels: ["총 거래처", "보고서 생성", "보고서 발송", "보고서 읽음"]
+		},
+		options: {
+			onHover: function (event, el) {
+				event.native.target.style.cursor = el[0] ? 'pointer' : 'default';
+			},
+			maxBarThickness: 18,
+			plugins: {
+				legend: {
+					display: false
+				},
+				tooltip: {
+					enabled: false,
+					position: 'nearest',
+					external: externalTooltipHandler
+				}
+			},
+			scales: {
+				x: {
+					grid: {
+						drawBorder: false,
+						beginAtZero: true,
+						color: (context) => {
+								return "#E9EBF1"
+						}
+					},
+					ticks: {
+						color: "#000",
+						font: function(context) {
+							var width = context.chart.width;
+							var size = Math.round(width / 32);
+
+							if (window.innerWidth > 1680) {
+								size = Math.round(width / 34);
+							}
+
+							if (window.innerWidth > 1940) {
+								size = Math.round(width / 41);
+							}
+
+							return {
+								family: "Pretendard",
+								weight: 'normal',
+								size: '12px',
+							};
+						}
+					},
+				},
+				y: {
+					beginAtZero: true,
+					grid: {
+							drawBorder: false,
+							color: (context) => {
+									return "#E9EBF1"
+							}
+					},
+					ticks: {
+						stepSize: 20,
+						callback : function(value, index) {
+							return value + '%'
+						}
+					},
+					suggestedMax: 100 //y축 최댓값
+				}
+			}
+		}
+	}
+
+	var sendPerObj = {
+		data: {
+			datasets: [
+				{
+					type: 'bar',
+					data: calcPer(rprtData),
+					backgroundColor: fn_barCharColor,
+					borderRadius: 9,
+					minBarLength: 20,
+				}
+			],
+			labels: ["사업분석", "매출", "매입", ["예상","부가세"], "매출장","매입장","영수증","인건비",["부가세","신고분석"]]
+		},
+		options: {
+			onHover: function (event, el) {
+				event.native.target.style.cursor = el[0] ? 'pointer' : 'default';
+			},
+			maxBarThickness: 18,
+			plugins: {
+				legend: {
+					display: false
+				},
+				tooltip: {
+					enabled: false,
+					position: 'nearest',
+					external: externalTooltipHandler
+				}
+			},
+			scales: {
+				x: {
+					grid: {
+						drawBorder: false,
+						beginAtZero: true,
+						color: (context) => {
+								return "#E9EBF1"
+						}
+					},
+					ticks: {
+						color: "#000",
+						font: function(context) {
+							var width = context.chart.width;
+							var size = Math.round(width / 32);
+
+							if (window.innerWidth > 1680) {
+								size = Math.round(width / 34);
+							}
+
+							if (window.innerWidth > 1940) {
+								size = Math.round(width / 41);
+							}
+
+							return {
+								family: "Pretendard",
+								weight: 'normal',
+								size: '12px',
+							};
+						}
+					},
+				},
+				y: {
+					beginAtZero: true,
+					grid: {
+							drawBorder: false,
+							color: (context) => {
+									return "#E9EBF1"
+							}
+					},
+					ticks: {
+						stepSize: 20,
+						callback : function(value, index) {
+							return value + '%'
+						}
+					},
+					suggestedMax: 100 //y축 최댓값
+				}
+			}
+		}
+	}
+
+	var sendPerChart = new Chart(sendPerEl, sendPerObj);
+	var busiReptChart = new Chart(busiReptEl, busiReptObj);
+
+	// 거래처별 현황 클릭 이벤트
+	$('#chart_busi_rept').click(function(evt) {
+		var res = busiReptChart.getElementsAtEventForMode(evt, 'nearest', { intersect: true }, true);
+		
+		var chartIndex = res[0]?.index; //클릭한 차트 인덱스
+		var chartData = busiReptChart.data.datasets[0].data[chartIndex]; //클릭한 차트 데이터
+		var chartTitle = busiReptChart.data.labels[chartIndex]; //클릭한 차트 labels 
+
+		$("#cs_account").text(chartTitle);
+		$(".chart_blue").text(chartData);
+	});
+</script>
+
+</body>
+</html>
+

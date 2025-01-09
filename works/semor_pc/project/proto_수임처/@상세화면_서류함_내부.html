@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<title>세무대리인 for 경리나라</title>
+<link rel="stylesheet" href="../css/reset_taxp.css">
+<link rel="stylesheet" href="../css/app_header.css"><!-- [D] 세무대리인용 header -->
+<link rel="stylesheet" href="../css/content_taxp.css"><!-- [D] 세무대리인용 -->
+
+<!-- custom scrollbar plugin css -->
+<link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+<script src="https://publ.roumit.com/js/firebase_include.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+<!-- custom scrollbar plugin -->
+<script src="../js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../js/jquery.placeholder.min.js"></script>
+<script>
+	$(function(){
+		// Invoke the plugin
+		$('input, textarea').placeholder({customClass:'my-placeholder'});
+		// 상담문의
+		$( "#btn_notice" ).on( "click", function() {
+			$("#pop_notice").toggle();
+		});
+		// 담당자지정
+		$( "#btn_manager" ).on( "click", function() {
+			$("#pop_manager").toggle();
+		});
+		// 작업일시
+		$( "#btn_last_work" ).on( "click", function() {
+			$("#pop_last_work").toggle();
+		});
+	} );
+</script>
+
+</head>
+
+<body>
+
+<!-- header -->
+<div class="app_header">
+	<div class="app_header_inner">
+		<div class="ah_l">
+			<h1>수임처</h1>
+		</div>
+
+		<div class="ah_r"></div>
+	</div>
+</div>
+<!-- //header -->
+
+<div class="wrap">
+	<!-- Container -->
+	<div class="container">
+		<!-- content wrap -->
+		<div class="content">
+
+			<div class="content_wrap">
+
+				<!-- 거래처조회 > 상세(회사정보) -->
+				<div class="cust_dv_wrap nobd"><!-- [D] 편집기능 눌렀을때 class="edit_on" 추가 -->
+
+					<div class="top_cust_tit">
+						<div class="left">
+							<div class="cntalign"><h1 class="ipt_none">미소야</h1></div>
+							<div class="cntalign">
+								<!-- 사업자번호/대표자/전화번호/팩스번호 -->
+								<ul class="top_list">
+									<li class="col1"><span class="ipt_none">311-88-00892</span>&nbsp;<span class="ipt_none" style="display: none;"></span></li>
+									<li class="col2"><strong><span class="ipt_none">신영훈</span>&nbsp;대표</strong></li>
+									<li class="col3"><img src="../img/txof/ico/ico_tel.png" alt="Tel"><strong class="ipt_none">02-3779-0001</strong></li>
+									<li class="col4">
+										<img src="../img/txof/ico/ico_fax.png" alt="Fax">
+										<div class="lyinvm ipt_none"><strong>02-3779-0002</strong></div>
+									</li>
+								</ul>
+								<!-- //사업자번호/대표자/전화번호/팩스번호 -->
+							</div>
+						</div>
+						<div class="right">
+							<div class="cntalign">
+								<a class="btn_ico_back" href="#none"><span class="blind">뒤로가기</span></a>
+							</div>
+						</div>
+					</div>
+
+					<!-- 탭영역/버튼 -->
+					<div class="tabType02">
+						<ul>
+							<li><a href="#none">회사정보조회</a></li>
+							<li><a href="#none">거래증빙</a></li>
+							<li><a href="#none">ID / PW 관리</a></li>
+							<li class="on"><a href="#none">서류함</a></li>
+							<li><a href="#none">직원급여정보</a></li>
+							<li><a href="#none">활동이력</a></li>
+							<li><a href="#none">미수금관리</a></li> <!-- 2022-07-13 -->
+						</ul>
+						<div class="right">
+							<div class="cntalign">
+								<a href="#none" class="btn_wnotbd"><span>소통게시판</span></a>
+							</div>
+							<div class="cntalign">
+								<a href="#none" class="btn_webkr"><span class="blind">경리나라</span></a><!-- 2022-07-06 -->
+							</div>
+							<div class="cntalign">
+								<a href="#none" class="btn_wflow"><span>플로우</span></a>
+							</div>
+						</div>
+					</div>
+					<!-- //탭영역/버튼 -->
+
+					<div class="posiw">
+						<div class="title_wrap">
+							<div class="left">
+								<div class="cntalign"><a href="#none" class="btn_share"><span class="ishare">공유 서류함</span></a></div>
+								<div class="cntalign"><a href="#none" class="btn_share active"><span class="iinside">내부 서류함</span></a></div>
+								<div class="cntalign txt_acnt txt_b">※ 내부 서류함에 등록한 문서는 수임처와 공유되지 않는 <span class="fwb">내부 관리용</span>입니다.</div>
+							</div>
+							<div class="right"></div>
+						</div>
+
+						<!-- 기타증빙 -->
+						<div class="img_intbx_wp">
+							<!-- 이미지 등록 후 -->
+							<div class="img_intbx2">
+								<div class="img_logo on">
+									<div class="cell"><img src="../img/txof/img_sign.gif" alt=""></div><div class="edit"><a href="#none" class="imgdel"><span class="blind">이미지<br>삭제</span></a></div>
+									<div class="textbox"><a href="#none" style="display:block;"><span class="max_ellipsis">사업자등록증</span></a><input type="text" placeholder="문서이름 입력" style="display:none;"></div>
+									<div class="textbox">2019-05-21 11:21</div>
+								</div>
+								<div class="img_logo on">
+									<div class="cell"><img src="../img/txof/img_sign.gif" alt=""></div><div class="edit"><a class="imgdel"><span class="blind">이미지<br>삭제</span></a></div>
+									<div class="textbox"><a href="#none" style="display:block;"><span class="max_ellipsis">통장사본</span></a><input type="text" placeholder="문서이름 입력" style="display:none;"></div>
+									<div class="textbox">2019-05-21 11:21</div>
+								</div>
+								<div class="img_logo on focus">
+									<div class="cell"><img src="../img/txof/img_sign.gif" alt=""></div><div class="edit"><a class="imgdel"><span class="blind">이미지<br>삭제</span></a></div>
+									<div class="textbox"><a href="#none" style="display:none;"><span class="max_ellipsis">임대차 계약서</span></a><input type="text" placeholder="문서이름 입력" style="display:block;"></div>
+									<div class="textbox">2019-05-21 11:21</div>
+								</div>
+								<div class="img_logo on">
+									<div class="cell"><img src="../img/txof/img_sign.gif" alt=""></div><div class="edit"><a class="imgdel"><span class="blind">이미지<br>삭제</span></a></div>
+									<div class="textbox"><a href="#none" style="display:block;" class="nName"><span class="max_ellipsis">통장사본 통장사본 통장사본</span> <img src="../img/txof/ico/ico_new.png" alt=""></a><input type="text" placeholder="문서이름 입력" style="display:none;"></div>
+									<div class="textbox">2019-05-21 11:21</div>
+								</div>
+								<div class="img_logo on">
+									<div class="cell"><img src="../img/txof/img_sign.gif" alt=""></div><div class="edit"><a class="imgdel"><span class="blind">이미지<br>삭제</span></a></div>
+									<div class="textbox"><a href="#none" style="display:block;"><span class="max_ellipsis">통장사본 통장사본 통장사본</span></a><input type="text" placeholder="문서이름 입력" style="display:none;"></div>
+									<div class="textbox">2019-05-21 11:21</div>
+								</div>
+								<div class="img_logo off">
+									<div class="cell"><a>기타문서를<br>등록하세요</a></div>
+									<div class="textbox"><a href="#none" style="display:block;"><span class="max_ellipsis">새로운 문서</span></a><input type="text" placeholder="문서이름 입력" style="display:none;"></div>
+								</div>
+							</div>
+							<!-- //이미지 등록 후 -->
+						</div>
+						<!-- //기타증빙 -->
+
+						<div class="ly_afregist" style="display:none;">
+							<a href="#none" class="btn_lyclose"><span class="blind">닫기</span></a>
+							<p><img src="../img/txof/bg/bg_hTxt3.png" alt=""></p>
+							<a href="#none" class="info_btn"><span> 문서 등록</span></a>
+						</div>
+					</div>
+				</div>
+				<!-- //거래처조회 > 상세(회사정보) -->
+
+			</div>
+		</div>
+		<!-- //content wrap -->
+	</div>
+	<!-- //Container -->
+</div>
+<!-- //wrap -->
+
+
+</body>
+</html>
+

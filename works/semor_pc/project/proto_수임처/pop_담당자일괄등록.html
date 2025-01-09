@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html lang="ko" xml:lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<title>세무대리인 for 경리나라</title>
+<link rel="stylesheet" href="../css/reset_taxp.css">
+<link rel="stylesheet" href="../css/content_taxp.css"><!-- [D] 세무대리인용 -->
+
+<!-- custom scrollbar plugin css -->
+<link rel="stylesheet" href="../css/jquery.mCustomScrollbar.css">
+<script src="https://publ.roumit.com/js/firebase_include.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+<!-- custom scrollbar plugin -->
+<script src="../js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="../js/jquery.placeholder.min.js"></script>
+<script>
+$(function(){
+	// Invoke the plugin
+	$('input, textarea').placeholder({customClass:'my-placeholder'});
+});
+</script>
+
+</head>
+
+<body>
+
+<div class="pop_wrap" style="width:750px;">
+
+	<!-- 팝업 헤더 -->
+	<div class="pop_header">
+		<h1>담당자 일괄등록</h1>
+		<a href="#none" onClick="self.close()" class="btn_popclose"><img src="../img/txof/btn/btn_popclose.gif" alt="팝업닫기"></a>
+	</div>
+	<!-- //팝업 헤더 -->
+
+	<!-- 팝업 컨텐츠 -->
+	<div class="pop_container">
+
+		<div class="top_infobox2">
+			<p>- 엑셀양식을 다운받아 등록하시면 별도의 승인절차 없이 담당자로 등록됩니다.</p>
+			<p>- 엑셀양식은 전부 필수 항목입니다. 필수 항목이 누락되거나 휴대폰번호, 성명이 중복되는 경우 등록이 제한됩니다.</p>
+		</div>
+
+		<div class="title_wrap">
+			<div class="left"></div>
+			<div class="right">
+				<div class="cntalign"><a class="btn_style1 download" id="cancel" href="#none"><span class="fwb">양식 다운로드</span></a></div>
+				<div class="cntalign"><a class="btn_style1" id="file_open"><span class="normal"><em class="ico_filec"></em>파일 불러오기</span></a></div>
+			</div>
+		</div>
+
+		<!-- 리스트 테이블 -->
+		<div class="list_scroll_top" style="overflow:hidden;">
+			<!-- <div class="list_scroll_top pdr" style="overflow:hidden;"> --><!-- 하단테이블 세로스크롤 발생시 pdr 클래스 추가 -->
+			<table class="tbl_result" summary="">
+				<caption></caption>
+				<colgroup>
+				<col style="width:100px;">
+				<col style="width:120px;">
+				<col style="width:120px;">
+				<col style="width:150px;">
+				<col style="width:30px;">
+				</colgroup>
+				<thead>
+					<tr>
+						<th scope="col"><div>성명</div></th>
+						<th scope="col"><div>아이디</div></th>
+						<th scope="col"><div>휴대폰</div></th>
+						<th scope="col"><div>이메일</div></th>
+						<th scope="col"><div></div></th>
+					</tr>
+				</thead>
+			</table>
+		</div>
+		<div class="tbl_layout" style="border-bottom:1px solid #b4b4b4;height:374px;min-width:100%;overflow-y:auto;overflow-x:auto;">
+			<table class="tbl_result" summary="">
+				<caption></caption>
+				<colgroup>
+				<col style="width:100px;">
+				<col style="width:120px;">
+				<col style="width:120px;">
+				<col style="width:150px;">
+				<col style="width:30px;">
+				</colgroup>
+				<tfoot style="display:none;"><!-- display: none / table-tfoot -->
+					<tr class="no_hover">
+						<td colspan="5" class="no_info"><div>등록된 파일이 없습니다.</div></td>
+					</tr>
+				</tfoot>
+				<tbody>
+					<tr>
+						<td class="cell_er"><div class="tx_ellipsis_max" title=""></div></td>
+						<td><div class="tx_ellipsis_max" title="employee1001">employee1001</div></td>
+						<td><div>010-7845-5656</div></td>
+						<td><div class="tx_ellipsis_max" title="tystyd1001@global.co">tystyd1001@global.com</div></td>
+						<td><div><a href="#none"><img src="../img/txof/btn/btn_file_del.gif" alt=""></a></div></td>
+					</tr>
+					<tr>
+						<td><div class="tx_ellipsis_max" title="박명수">박명수</div></td>
+						<td class="cell_er"><div class="tx_ellipsis_max" title="employee1002">employee1002</div></td>
+						<td><div>010-7845-5656</div></td>
+						<td><div class="tx_ellipsis_max" title="tystyd1001@global.co">tystyd1001@global.com</div></td>
+						<td><div><a href="#none"><img src="../img/txof/btn/btn_file_del.gif" alt=""></a></div></td>
+					</tr>
+					<tr>
+						<td class="cell_er"><div class="tx_ellipsis_max" title="배지영123">배지영123</div></td>
+						<td class="cell_er"><div class="tx_ellipsis_max" title="employee1003">employee1003</div></td>
+						<td class="cell_er"><div><input type="text" value="010-4512-6532" style="width:137px;"></div></td>
+						<td class="cell_er"><div class="tx_ellipsis_max" title="jfdkjdif1003"><input type="text" value="jfdkjdif1003" style="width:178px;"></div></td>
+						<td><div><a href="#none"><img src="../img/txof/btn/btn_file_del.gif" alt=""></a></div></td>
+					</tr>
+					<tr>
+						<td class="cell_er"><div class="tx_ellipsis_max" title="배지영123"><input type="text" value="배지영123" style="width:110px;"></div></td>
+						<td class="cell_er"><div class="tx_ellipsis_max" title="employee1003"><input type="text" value="employee1003" style="width:137px;"></div></td>
+						<td class="cell_er"><div><input type="text" value="010-4512-6532" style="width:137px;"></div></td>
+						<td class="cell_er"><div class="tx_ellipsis_max" title="jfdkjdif1003"><input type="text" value="jfdkjdif1003" style="width:178px;"></div></td>
+						<td><div><a href="#none"><img src="../img/txof/btn/btn_file_del.gif" alt=""></a></div></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<!-- //리스트 테이블 -->
+		<div class="mgt10 tac">
+			<a href="#none" class="btn_style1_b"><span>등록</span></a>
+		</div>
+	</div>
+	<!-- //팝업 컨텐츠 -->
+</div>
+
+</body>
+</html>

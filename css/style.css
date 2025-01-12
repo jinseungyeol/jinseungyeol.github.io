@@ -67,11 +67,11 @@
 .about .aboutInner .aboutTxt .descBox .descTxt + .descTxt {margin-top: 2.125rem;}
 
 /* experience */
-.experience .experienceInner {max-width: 75rem; padding: 15rem 1.25rem; margin: 0 auto;}
+.experience .experienceInner {display: flex; flex-direction: column; justify-content: center; max-width: 75rem; height: 100%; padding: 5rem 1.25rem; margin: 0 auto;}
 .experience .experienceInner .experienceTit {position: fixed; top: 0; left: 0; right: 0; bottom: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 0 2.5rem;}
 .experience .experienceInner .experienceTit .secTit {opacity: 0; transform: translateY(50px); margin-bottom: 1.875rem; font-weight: 500; color: #dfdfdf; transition: .5s;}
 .experience .experienceInner .experienceTit img {opacity: 0; transform: translateY(50px); transition: .5s;}
-.experience .experienceInner .works {display: flex; flex-direction: column; align-items: center; margin: 0 auto;}
+.experience .experienceInner .works {display: flex; flex-direction: column; align-items: center; width: 100%; margin: 0 auto;}
 .experience .experienceInner .works .workItem {opacity: 0; transform: translateY(30px); position: relative; transition: .25s;}
 .experience .experienceInner .works .workItem a {display: block;}
 .experience .experienceInner .works .workItem:nth-of-type(4n+1) {left: -13.375rem;}

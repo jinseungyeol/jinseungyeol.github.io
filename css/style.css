@@ -100,7 +100,7 @@
 
 /* hire */
 .hire {position: relative; display: flex; justify-content: center; align-items: center; min-height: 100vh; background: url(../images/ico/ico_like.png) no-repeat center / cover;}
-.hire .bg {position: absolute; left: 0; top: 0; right: 0; bottom: 0; background: #faf7f5; z-index: -1;}
+.hire .bg {position: absolute; left: 0; top: 0; right: 0; bottom: 0; transform: translate3d(-100%, 0, 0); background: #faf7f5; z-index: -1;}
 .hire .hireInner {padding: 0 1.25rem; margin: 0 auto;}
 .hire .hireInner .hireTit .secTit {opacity: 0; transform: translateY(30px); margin-bottom: 3rem; transition: .25s;}
 .hire .hireInner .hireTit .subTit {opacity: 0; transform: translateY(30px); transition: .25s;}

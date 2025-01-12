@@ -281,11 +281,7 @@
     window.addEventListener('scroll', () => {
       yOffset = window.pageYOffset;
       scrollLoop();
-      window.onerror = function (message, source, lineno, colno, error) {
-        alert(`Error: ${message}\nSource: ${source}\nLine: ${lineno}, Column: ${colno}`);
-        return false; // 기본 브라우저 에러 로그도 출력하고 싶다면 false를 반환
-      };
-      
+
       if (!rafState) {
         rafId = requestAnimationFrame(loop);
         rafState = true;

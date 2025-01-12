@@ -43,7 +43,7 @@
         content : document.querySelector('.experienceInner')
 			},
       values: {
-        hireBg_translateX: [-100, 0, { start: 0.75, end: 0.9 }]
+        hireBg_translateX: [-100, 0, { start: 0.65, end: 0.9 }]
 			}
 		}
 	];
@@ -146,7 +146,7 @@
           applyClass('wk','remove');
         } 
         
-				if (scrollRatio >= 0.47) {
+				if (scrollRatio >= 0.34) {
           applyClass('ex','add');
         } else {
           applyClass('ex','remove');

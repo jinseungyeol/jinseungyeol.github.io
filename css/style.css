@@ -57,7 +57,7 @@
 
 /* about */
 .about {position: relative; padding: 0 1.25rem; background: #faf7f5; z-index: 2;}
-.about .decorationBox {position: absolute; top: 0; left: 0; width: 100%; height: 100dvh; background: #faf7f5; pointer-events: none;}
+.about .decorationBox {position: absolute; top: 0; left: 0; width: 100%; height: calc(60rem - 20dvh); background: #faf7f5; pointer-events: none;}
 .about .aboutInner {position: relative; display: flex; align-items: center; max-width: 75rem; min-height: 64rem; margin: 0 auto;}
 .about .aboutInner .aboutPic {opacity: 0; transform: translateY(30px); flex: 1 0 28.625rem; aspect-ratio: 1/1; transition: .5s;}
 .about .aboutInner .aboutTxt {margin-left: 5.3125rem; margin-top: 1rem;}

@@ -149,20 +149,20 @@
 
 				break;
 			case 2:
-        // applyClass('wk','add');
+        applyClass('wk','add');
 
-				// if (scrollRatio >= 0.65) {
-        //   applyClass('ex','remove');
+				if (scrollRatio >= 0.65) {
+          applyClass('ex','remove');
           
-        // } else {
-        //   applyClass('ex','add');
-        // }
+        } else {
+          applyClass('ex','add');
+        }
 
-        // if (scrollRatio >= 0.85) {
-        //   applyClass('hr','add');
-        // } else {
-        //   applyClass('hr','remove');
-        // }
+        if (scrollRatio >= 0.85) {
+          applyClass('hr','add');
+        } else {
+          applyClass('hr','remove');
+        }
         objs.hireBg.style.transform = `translate3d(${calcValues(values.hireBg_translateX, currentYOffset)}%, 0,0)`;
 
 				break;
@@ -228,6 +228,16 @@
 	// }
 
 	window.addEventListener('load', () => {
+    // sessionStorage에서 새로고침 여부 확인
+    const isPageRefreshed = sessionStorage.getItem('isPageRefreshed');
+
+    // 새로고침을 한 번만 실행하기 위해 sessionStorage 확인
+    if ((isTablet() || isMobile()) && !isPageRefreshed) {
+      // 새로고침 상태를 sessionStorage에 저장
+      sessionStorage.setItem('isPageRefreshed', 'true');
+      window.location.reload(); // 페이지 새로고침
+    }
+
     setLayout(); // 중간에 새로고침 시, 콘텐츠 양에 따라 높이 계산에 오차가 발생하는 경우를 방지하기 위해 beforeLoad 클래스 제거 전에도 확실하게 높이를 세팅하도록 한번 더 실행
     document.body.classList.remove('beforeLoad');
     setLayout();

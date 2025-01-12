@@ -1,6 +1,6 @@
 (() => {
 
-	let yOffset = 0; // window.pageYOffset 대신 쓸 변수
+	let yOffset = 0; // window.scrollY 대신 쓸 변수
 	let prevScrollHeight = 0; // 현재 스크롤 위치(yOffset)보다 이전에 위치한 스크롤 섹션들의 스크롤 높이값의 합
 	let currentScene = 0; // 현재 활성화된(눈 앞에 보고있는) 씬(scroll-section)
 	let enterNewScene = false; // 새로운 scene이 시작된 순간 true
@@ -68,7 +68,7 @@
 
 	function setLayout() {
 
-		yOffset = window.pageYOffset;
+		yOffset = window.scrollY;
 
 		let totalScrollHeight = 0;
 		for (let i = 0; i < sceneInfo.length; i++) {
@@ -230,9 +230,7 @@
 	window.addEventListener('load', () => {
     setLayout(); // 중간에 새로고침 시, 콘텐츠 양에 따라 높이 계산에 오차가 발생하는 경우를 방지하기 위해 beforeLoad 클래스 제거 전에도 확실하게 높이를 세팅하도록 한번 더 실행
     document.body.classList.remove('beforeLoad');
-    setTimeout(() => {
-      setLayout();
-    }, 1000);
+    setLayout();
 
 		// 중간에서 새로고침 했을 경우 자동 스크롤로 제대로 그려주기
     let tempYOffset = yOffset;
@@ -251,7 +249,7 @@
 
     window.addEventListener('scroll', () => {
       // alert('scroll')
-      yOffset = window.pageYOffset;
+      yOffset = window.scrollY;
       scrollLoop();
 
       // if (!rafState) {
@@ -277,7 +275,7 @@
       // Tab 키가 눌렸을 때만 동작
       if (isTabPressed && (focusedElement.tagName === 'A' || focusedElement.hasAttribute('tabindex'))) {
         const elementRect = focusedElement.getBoundingClientRect();
-        const elementTop = elementRect.top + window.pageYOffset;
+        const elementTop = elementRect.top + window.scrollY;
 
         // 현재 뷰포트 높이 확인
         const viewportHeight = window.innerHeight;

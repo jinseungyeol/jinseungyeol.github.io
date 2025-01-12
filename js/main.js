@@ -171,6 +171,7 @@
           applyClass('ex','remove');
           applyClass('hr','add');
           objs.hireBg.style.transform = `translate3d(${calcValues(values.hireBg_translateX, currentYOffset)}%, 0,0)`;
+          document.querySelector('#test').innerHTML = `translate3d(${calcValues(values.hireBg_translateX, currentYOffset)}%, 0,0)`;
         } else {
           applyClass('ex','add');
           objs.hireBg.style.transform = `translate3d(${calcValues(values.hireBg_translateX, currentYOffset)}%, 0,0)`;

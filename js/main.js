@@ -4,10 +4,6 @@
 	let prevScrollHeight = 0; // 현재 스크롤 위치(yOffset)보다 이전에 위치한 스크롤 섹션들의 스크롤 높이값의 합
 	let currentScene = 0; // 현재 활성화된(눈 앞에 보고있는) 씬(scroll-section)
 	let enterNewScene = false; // 새로운 scene이 시작된 순간 true
-	let acc = 0.2;
-	let delayedYOffset = 0;
-	let rafId;
-	let rafState;
 
 	const sceneInfo = [
 		{
@@ -21,9 +17,9 @@
         decorationBox: document.querySelector('.decorationBox'),
 			},
 			values: {
-        basic_opacity_out: [1, 0, { start: 0.1, end: 0.2 }],
+        basic_opacity_out: [1, 0, { start: 0.15, end: 0.2 }],
         mainTitBox_opacity_out: [1, 0, { start: 0.3, end: 0.5 }],
-        decorationBox_translateY: [0, 500, { start: 0.1, end: 0.5 }],
+        decorationBox_translateY: [0, -100, { start: 0.15, end: 0.5 }],
 				mainBgTxt_opacity_out: [1, 0, { start: 0.2, end: 0.5 }],
         scrolling_opacity_in: [0, 1, { start: 0.25, end: 0.35 }]
 			}
@@ -39,7 +35,7 @@
 				hireBg : document.querySelector('.hire .bg')
 			},
       values: {
-        hireBg_translateX: [-100, 0, { start: 0.85, end: 0.94 }]
+        hireBg_translateX: [-100, 0, { start: 0.75, end: 0.9 }]
 			}
 		}
 	];
@@ -79,6 +75,7 @@
 			}
 		}
 		document.body.setAttribute('id', `show-scene-${currentScene}`);
+    alert(totalScrollHeight)
 	}
 
 	function calcValues(values, currentYOffset) {
@@ -120,7 +117,7 @@
         objs.scrolling.style.opacity = calcValues(values.scrolling_opacity_in, currentYOffset);
 				objs.mainTitBox.style.opacity = calcValues(values.mainTitBox_opacity_out, currentYOffset);
         objs.mainBgTxt.style.opacity = calcValues(values.mainBgTxt_opacity_out, currentYOffset);
-        objs.decorationBox.style.transform = `translate3d(0,-${calcValues(values.decorationBox_translateY, currentYOffset)}px,0)`;
+        objs.decorationBox.style.transform = `translate3d(0,${calcValues(values.decorationBox_translateY, currentYOffset)}%,0)`;
 
         if (scrollRatio <= 0.62) {
           applyClass('ab','remove');
@@ -226,8 +223,8 @@
 	// 		rafState = false;
 	// 	}
 	// }
-  setLayout();
 	window.addEventListener('load', () => {
+    setLayout();
     document.body.classList.remove('beforeLoad');
     setLayout();
 
@@ -314,7 +311,6 @@
     document.querySelector('.loadingWrap').addEventListener('transitionend', (e) => {
       document.body.removeChild(e.currentTarget);
     });
-    setLayout();
 	});
 
 })();

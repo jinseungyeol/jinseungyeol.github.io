@@ -171,7 +171,6 @@
           applyClass('ex','remove');
           applyClass('hr','add');
           objs.hireBg.style.transform = `translate3d(${calcValues(values.hireBg_translateX, currentYOffset)}%, 0,0)`;
-          document.querySelector('#test').innerHTML = `translate3d(${calcValues(values.hireBg_translateX, currentYOffset)}%, 0,0)`;
         } else {
           applyClass('ex','add');
           objs.hireBg.style.transform = `translate3d(${calcValues(values.hireBg_translateX, currentYOffset)}%, 0,0)`;
@@ -259,7 +258,7 @@
 		}
 	}
 
-	window.addEventListener('load', () => {
+	window.addEventListener('DOMContentLoaded', () => {
     setLayout(); // 중간에 새로고침 시, 콘텐츠 양에 따라 높이 계산에 오차가 발생하는 경우를 방지하기 위해 beforeLoad 클래스 제거 전에도 확실하게 높이를 세팅하도록 한번 더 실행
     document.body.classList.remove('beforeLoad');
     setLayout();

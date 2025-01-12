@@ -171,6 +171,7 @@
           applyClass('ex','remove');
           applyClass('hr','add');
           objs.hireBg.style.transform = `translate3d(${calcValues(values.hireBg_translateX, currentYOffset)}%, 0,0)`;
+          alert('test')
         } else {
           applyClass('ex','add');
           objs.hireBg.style.transform = `translate3d(${calcValues(values.hireBg_translateX, currentYOffset)}%, 0,0)`;
@@ -181,20 +182,6 @@
         } else {
           applyClass('hr','remove');
         }
-
-				break;
-
-			case 3:
-				// console.log('3 play');
-
-
-				// index2 추가 코드
-				// if (scrollRatio <= values.messageA_opacity_in[2].start) {
-				// 	objs.messageA.style.opacity = values.messageA_opacity_in[0];
-				// }
-				// if (scrollRatio >= values.messageA_opacity_out[2].end) {
-				// 	objs.messageA.style.opacity = values.messageA_opacity_out[1];
-				// }
 
 				break;
 		}

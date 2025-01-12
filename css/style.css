@@ -44,20 +44,20 @@
 /*** SECTION ***/
 /* main */
 .main {position: relative; z-index: 3;}
-.main .mainInner {padding: calc(17vh + 10rem) 4.615vw 17vh;}
+.main .mainInner {padding: calc(17dvh + 10rem) 4.615vw 17dvh;}
 .main .mainTitBox {text-align: center;}
 .main .mainTitBox img {animation: btmToUp .5s ease-in-out forwards;}
-.main .mainTitBox .mainTxt {opacity: 0; margin: 10vh 0 12vh; animation: btmToUp .5s .15s ease-in-out forwards;}
+.main .mainTitBox .mainTxt {opacity: 0; margin: 10dvh 0 12dvh; animation: btmToUp .5s .15s ease-in-out forwards;}
 .main .mainTitBox .mainTxt span {display: block; line-height: 2; font-size: 1.375rem; color: #5e5e5e;}
 .main .keepScroll {opacity: 0; position: relative; text-align: center; animation: btmToUp .5s .3s ease-in-out forwards;}
 .main .keepScroll .txtBox {margin-bottom: 0.625rem;}
 .main .keepScroll .txtBox span {font-size: 0.875rem; color: #999;}
 .main .keepScroll .txtBox span.scrolling {opacity: 0; position: absolute; top: 0; left: 50%;transform: translateX(-50%);}
-.main .mainBgTxt {display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: url(../images/txt/txt_jin.svg) repeat-x center top calc(3vh + 18rem) / 25% auto; pointer-events: none; user-select: none; animation: scrollRepeatX 30s linear infinite;}
+.main .mainBgTxt {display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100dvh; background: url(../images/txt/txt_jin.svg) repeat-x center top calc(3dvh + 18rem) / 25% auto; pointer-events: none; user-select: none; animation: scrollRepeatX 30s linear infinite;}
 
 /* about */
 .about {position: relative; padding: 0 1.25rem; background: #faf7f5; z-index: 2;}
-.about .decorationBox {position: absolute; top: 0; left: 0; width: 100%; height: calc(60rem - 20vh); background: #faf7f5;}
+.about .decorationBox {position: absolute; top: 0; left: 0; width: 100%; height: calc(60rem - 20dvh); background: #faf7f5;}
 .about .aboutInner {position: relative; display: flex; align-items: center; max-width: 75rem; min-height: 64rem; margin: 0 auto;}
 .about .aboutInner .aboutPic {opacity: 0; transform: translateY(30px); flex: 1 0 28.625rem; aspect-ratio: 1/1; transition: .5s;}
 .about .aboutInner .aboutTxt {margin-left: 5.3125rem; margin-top: 1rem;}
@@ -99,7 +99,7 @@
 .experience .experienceInner .works .workItem.ongoing .workContents {opacity: 0.4;}
 
 /* hire */
-.hire {position: relative; display: flex; justify-content: center; align-items: center; min-height: 100vh; background: url(../images/ico/ico_like.png) no-repeat center / cover;}
+.hire {position: relative; display: flex; justify-content: center; align-items: center; min-height: 100dvh; background: url(../images/ico/ico_like.png) no-repeat center / cover;}
 .hire .bg {position: absolute; left: 0; top: 0; right: 0; bottom: 0; transform: translate3d(-100%, 0, 0); background: #faf7f5; z-index: -1;}
 .hire .hireInner {padding: 0 1.25rem; margin: 0 auto;}
 .hire .hireInner .hireTit .secTit {opacity: 0; transform: translateY(30px); margin-bottom: 3rem; transition: .25s;}

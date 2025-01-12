@@ -149,7 +149,6 @@
 
 				break;
 			case 2:
-        alert('case 2')
         applyClass('wk','add');
 
 				if (scrollRatio >= 0.65) {

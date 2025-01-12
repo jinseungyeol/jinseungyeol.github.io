@@ -116,27 +116,11 @@
 
 		switch (currentScene) {
 			case 0:
-				if (scrollRatio <= 0.22) {
-					// in
-          objs.basic.style.opacity = calcValues(values.basic_opacity_out, currentYOffset);
-          objs.scrolling.style.opacity = calcValues(values.scrolling_opacity_in, currentYOffset);
-				} 
-				if (scrollRatio <= 0.37) {
-					// in
-          objs.basic.style.opacity = calcValues(values.basic_opacity_out, currentYOffset);
-          objs.scrolling.style.opacity = calcValues(values.scrolling_opacity_in, currentYOffset);
-				} 
-
-				if (scrollRatio <= 0.52) {
-					// in
-          objs.mainTitBox.style.opacity = calcValues(values.mainTitBox_opacity_out, currentYOffset);
-          objs.mainBgTxt.style.opacity = calcValues(values.mainBgTxt_opacity_out, currentYOffset);
-          objs.decorationBox.style.transform = `translate3d(0,-${calcValues(values.decorationBox_translateY, currentYOffset)}px,0)`;
-				} else {
-          objs.mainTitBox.style.opacity = calcValues(values.mainTitBox_opacity_out, currentYOffset);
-          objs.mainBgTxt.style.opacity = calcValues(values.mainBgTxt_opacity_out, currentYOffset);
-          objs.decorationBox.style.transform = `translate3d(0,-${calcValues(values.decorationBox_translateY, currentYOffset)}px,0)`;
-        }
+        objs.basic.style.opacity = calcValues(values.basic_opacity_out, currentYOffset);
+        objs.scrolling.style.opacity = calcValues(values.scrolling_opacity_in, currentYOffset);
+				objs.mainTitBox.style.opacity = calcValues(values.mainTitBox_opacity_out, currentYOffset);
+        objs.mainBgTxt.style.opacity = calcValues(values.mainBgTxt_opacity_out, currentYOffset);
+        objs.decorationBox.style.transform = `translate3d(0,-${calcValues(values.decorationBox_translateY, currentYOffset)}px,0)`;
 
         if (scrollRatio <= 0.62) {
           applyClass('ab','remove');
@@ -169,12 +153,9 @@
 
 				if (scrollRatio >= 0.65) {
           applyClass('ex','remove');
-          applyClass('hr','add');
-          objs.hireBg.style.transform = `translate3d(${calcValues(values.hireBg_translateX, currentYOffset)}%, 0,0)`;
-          alert('test')
+          
         } else {
           applyClass('ex','add');
-          objs.hireBg.style.transform = `translate3d(${calcValues(values.hireBg_translateX, currentYOffset)}%, 0,0)`;
         }
 
         if (scrollRatio >= 0.85) {
@@ -182,6 +163,7 @@
         } else {
           applyClass('hr','remove');
         }
+        objs.hireBg.style.transform = `translate3d(${calcValues(values.hireBg_translateX, currentYOffset)}%, 0,0)`;
 
 				break;
 		}

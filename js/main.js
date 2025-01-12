@@ -245,7 +245,7 @@
 	// 	}
 	// }
 
-	window.addEventListener('DOMContentLoaded', () => {
+	window.addEventListener('load', () => {
     setLayout(); // 중간에 새로고침 시, 콘텐츠 양에 따라 높이 계산에 오차가 발생하는 경우를 방지하기 위해 beforeLoad 클래스 제거 전에도 확실하게 높이를 세팅하도록 한번 더 실행
     document.body.classList.remove('beforeLoad');
     setLayout();
@@ -301,7 +301,7 @@
         // 화면 중앙 근처로 이동 (적절히 조정 가능)
         const targetScrollPosition = elementTop - viewportHeight / 3;
 
-        // 부드럽게 스크롤
+        // 부드럽게 스크롤  
         window.scrollTo({
           top: targetScrollPosition,
           behavior: 'smooth'

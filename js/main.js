@@ -149,20 +149,20 @@
 
 				break;
 			case 2:
-        applyClass('wk','add');
+        // applyClass('wk','add');
 
-				if (scrollRatio >= 0.65) {
-          applyClass('ex','remove');
+				// if (scrollRatio >= 0.65) {
+        //   applyClass('ex','remove');
           
-        } else {
-          applyClass('ex','add');
-        }
+        // } else {
+        //   applyClass('ex','add');
+        // }
 
-        if (scrollRatio >= 0.85) {
-          applyClass('hr','add');
-        } else {
-          applyClass('hr','remove');
-        }
+        // if (scrollRatio >= 0.85) {
+        //   applyClass('hr','add');
+        // } else {
+        //   applyClass('hr','remove');
+        // }
         objs.hireBg.style.transform = `translate3d(${calcValues(values.hireBg_translateX, currentYOffset)}%, 0,0)`;
 
 				break;

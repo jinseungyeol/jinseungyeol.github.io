@@ -8,8 +8,10 @@
 	const sceneInfo = [
 		{
 			// 0
-			scrollHeight: document.querySelector('.main').offsetHeight,
+			scrollHeight: 0,
 			objs: {
+        container : document.querySelector('.main'),
+        content : document.querySelector('.mainInner'),
         mainBgTxt: document.querySelector('.mainBgTxt'),
         mainTitBox: document.querySelector('.mainTitBox'),
         basic: document.querySelector('.basic'),
@@ -26,13 +28,19 @@
 		},
 		{
 			// 1
-			scrollHeight: document.querySelector('.about').offsetHeight
+			scrollHeight: 0,
+      objs: {
+        container : document.querySelector('.about'),
+        content : document.querySelector('.aboutInner')
+      }
 		},
 		{
 			// 2
-			scrollHeight: document.querySelector('.experience').offsetHeight,
+			scrollHeight: 0,
 			objs: {
-				hireBg : document.querySelector('.hire .bg')
+				hireBg : document.querySelector('.hire .bg'),
+        container : document.querySelector('.experience'),
+        content : document.querySelector('.experienceInner')
 			},
       values: {
         hireBg_translateX: [-100, 0, { start: 0.75, end: 0.9 }]
@@ -63,6 +71,10 @@
   }
 
 	function setLayout() {
+    for (let i = 0; i < sceneInfo.length; i++) {
+      sceneInfo[i].scrollHeight = sceneInfo[i].objs.content.offsetHeight;
+      sceneInfo[i].objs.container.style.height = `${sceneInfo[i].scrollHeight}px`;
+    }
 
 		yOffset = window.scrollY;
 

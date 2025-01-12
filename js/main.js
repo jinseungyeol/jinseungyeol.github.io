@@ -87,7 +87,6 @@
 			}
 		}
 		document.body.setAttribute('id', `show-scene-${currentScene}`);
-    alert(totalScrollHeight)
 	}
 
 	function calcValues(values, currentYOffset) {
@@ -138,7 +137,6 @@
         } 
 
 				break;
-
 			case 1:
         applyClass('ab','add');
           
@@ -153,8 +151,6 @@
         } else {
           applyClass('ex','remove');
         } 
-
-				
 
 				break;
 			case 2:
@@ -172,6 +168,7 @@
         } else {
           applyClass('hr','remove');
         }
+
         objs.hireBg.style.transform = `translate3d(${calcValues(values.hireBg_translateX, currentYOffset)}%, 0,0)`;
 
 				break;
@@ -213,30 +210,9 @@
 
 		playAnimation();
 	}
-
-	// function loop() {
-	// 	delayedYOffset = delayedYOffset + (yOffset - delayedYOffset) * acc;
-
-  //   // 일부 기기에서 페이지 끝으로 고속 이동하면 body id가 제대로 인식 안되는 경우를 해결
-  //   // 페이지 맨 위로 갈 경우: scrollLoop와 첫 scene의 기본 캔버스 그리기 수행
-  //   if (delayedYOffset < 1) {
-  //     scrollLoop();
-  //   }
-  //   // 페이지 맨 아래로 갈 경우: 마지막 섹션은 스크롤 계산으로 위치 및 크기를 결정해야할 요소들이 많아서 1픽셀을 움직여주는 것으로 해결
-  //   if ((document.body.offsetHeight - window.innerHeight) - delayedYOffset < 1) {
-  //     let tempYOffset = yOffset;
-  //     scrollTo(0, tempYOffset - 1);
-  //   }
-
-	// 	rafId = requestAnimationFrame(loop);
-
-	// 	if (Math.abs(yOffset - delayedYOffset) < 1) {
-	// 		cancelAnimationFrame(rafId);
-	// 		rafState = false;
-	// 	}
-	// }
+  
 	window.addEventListener('load', () => {
-    setLayout();
+    setLayout(); // 중간에 새로고침 시, 콘텐츠 양에 따라 높이 계산에 오차가 발생하는 경우를 방지하기 위해 beforeLoad 클래스 제거 전에도 확실하게 높이를 세팅하도록 한번 더 실행
     document.body.classList.remove('beforeLoad');
     setLayout();
 
@@ -256,14 +232,8 @@
     }
 
     window.addEventListener('scroll', () => {
-      // alert('scroll')
       yOffset = window.scrollY;
       scrollLoop();
-
-      // if (!rafState) {
-      //   rafId = requestAnimationFrame(loop);
-      //   rafState = true;
-      // }
     });
 
     let isTabPressed = false;

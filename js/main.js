@@ -72,7 +72,7 @@
 
 	function setLayout() {
     for (let i = 0; i < sceneInfo.length; i++) {
-      sceneInfo[i].scrollHeight = sceneInfo[i].objs.content.offsetHeight;
+      sceneInfo[i].scrollHeight = sceneInfo[i].objs.content.offsetHeight * 1.05;
       sceneInfo[i].objs.container.style.height = `${sceneInfo[i].scrollHeight}px`;
     }
 

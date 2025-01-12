@@ -44,7 +44,7 @@
 /*** SECTION ***/
 /* main */
 .main {position: relative; z-index: 3;}
-.main .mainInner {padding: calc(17dvh + 10rem) 4.615vw 17dvh;}
+.main .mainInner {padding: calc(10dvh + 10rem) 4.615vw 17dvh;}
 .main .mainTitBox {text-align: center;}
 .main .mainTitBox img {animation: btmToUp .5s ease-in-out forwards;}
 .main .mainTitBox .mainTxt {opacity: 0; margin: 10dvh 0 12dvh; animation: btmToUp .5s .15s ease-in-out forwards;}

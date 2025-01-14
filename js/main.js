@@ -21,7 +21,7 @@
 			values: {
         basic_opacity_out: [1, 0, { start: 0.15, end: 0.2 }],
         mainTitBox_opacity_out: [1, 0, { start: 0.3, end: 0.5 }],
-        decorationBox_translateY: [0, -100, { start: 0.15, end: 0.5 }],
+        decorationBox_translateY: [0, -99, { start: 0.15, end: 0.5 }],
 				mainBgTxt_opacity_out: [1, 0, { start: 0.2, end: 0.5 }],
         scrolling_opacity_in: [0, 1, { start: 0.25, end: 0.35 }]
 			}

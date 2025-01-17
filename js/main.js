@@ -284,14 +284,15 @@
     });
 
     window.addEventListener('orientationchange', () => {
-    scrollTo(0, 0);
-    setTimeout(() => {
-      window.location.reload();
-    }, 500);
+      scrollTo(0, 0);
+      setTimeout(() => {
+        window.location.reload();
+      }, 500);
     });
 
     document.querySelector('.loadingWrap').addEventListener('transitionend', (e) => {
       document.body.removeChild(e.currentTarget);
+      document.querySelector('.mainInner').classList.add('active');
     });
 	});
 

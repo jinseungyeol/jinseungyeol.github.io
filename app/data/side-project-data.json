@@ -10,7 +10,7 @@
         "value": "TMDB API를 활용해 인기 콘텐츠를 실시간으로 제공하는 OTT 플랫폼 클론 프로젝트입니다. Firebase 인증으로 로그인·회원가입을 구현하고, 반응형 UI로 다양한 디바이스에서 동일한 경험을 제공합니다."
       }
     ],
-    "links": [{ "to": "https://d-plus-clone.netlify.app/", "text": "보러가기" }]
+    "links": [{ "to": "https://github.com/jinseungyeol/disney-plus-app", "text": "GitHub" }]
   },
   {
     "title": "틱택토 게임",
@@ -25,8 +25,8 @@
     ],
     "links": [
       {
-        "to": "https://tictactoe-side-project.netlify.app/",
-        "text": "보러가기"
+        "to": "https://github.com/jinseungyeol/react-tictactoe",
+        "text": "GitHub"
       }
     ]
   }

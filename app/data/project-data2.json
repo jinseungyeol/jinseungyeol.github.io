@@ -71,7 +71,7 @@
       { "label": "역할", "value": "프론트엔드 및 백엔드 신규개발 및 유지보수" },
       {
         "label": "기술",
-        "value": "HTML, CSS, JavaScript, Django, Python"
+        "value": "HTML, CSS, JavaScript, Django, MySQL"
       },
       { "label": "환경", "value": "홈페이지" },
       {
@@ -80,7 +80,7 @@
       }
     ],
     "links": [
-      { "to": "https://www.notion.so/25a15fb2e2a8808d99f5cce0e24a09b0?pvs=25", "text": "Notion" }
+      { "to": "https://tan-alibi-93d.notion.site/25a15fb2e2a8808d99f5cce0e24a09b0?source=copy_link", "text": "Notion" }
     ]
   }
 ]

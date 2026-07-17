@@ -36,7 +36,7 @@ export default function ProjectCard({
 }: ProjectCardProps) {
   return (
     <MagicCard
-      className="hover:translate-y-[-10px] hover:shadow-lg transition-all duration-300"
+      className="border border-gray-200 hover:translate-y-[-10px] hover:shadow-lg transition-all duration-300"
       gradientFrom="var(--accent)"
       gradientTo= "var(--accent)"
       gradientColor="var(--accent)"

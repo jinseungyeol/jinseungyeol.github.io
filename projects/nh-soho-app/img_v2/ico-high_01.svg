@@ -1,0 +1,16 @@
+<svg data-name="그룹 87159" xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80">
+    <defs>
+        <clipPath id="z3khuo4moa">
+            <path data-name="사각형 26724" style="fill:none" d="M0 0h80v80H0z"/>
+        </clipPath>
+    </defs>
+    <g data-name="그룹 87159" style="clip-path:url(#z3khuo4moa)">
+        <path data-name="패스 62084" d="M40 80a40 40 0 1 1 40-40 40 40 0 0 1-40 40" style="fill:#08f"/>
+        <path data-name="사각형 26721" d="M8.982 0h22.192a8.982 8.982 0 0 1 8.982 8.982v15.541a8.985 8.985 0 0 1-8.985 8.985H8.982A8.982 8.982 0 0 1 0 24.526V8.982A8.982 8.982 0 0 1 8.982 0z" transform="translate(19.676 23.564)" style="fill:#fff"/>
+        <path data-name="패스 62085" d="m114.981 120.81-6.23-11.346 6.173-3.389 6.229 11.345-4.193-.316z" transform="translate(-60.832 -55.89)" style="fill:#ff5c5c"/>
+        <path data-name="패스 62086" d="m101.463 120.81 6.23-11.346-6.176-3.389-6.229 11.345 4.193-.316z" transform="translate(-55.289 -55.89)" style="fill:#ff5c5c"/>
+        <path data-name="패스 62087" d="M114.312 102.715a5.836 5.836 0 1 1-5.837-5.838 5.837 5.837 0 0 1 5.837 5.838" transform="translate(-58.316 -52.101)" style="fill:#ffbc01"/>
+        <rect data-name="사각형 26722" width="19.866" height="3.289" rx="1.644" transform="translate(29.822 29.531)" style="fill:#164f7a"/>
+        <rect data-name="사각형 26723" width="26.158" height="2.115" rx="1" transform="translate(26.676 34.982)" style="fill:#7aa9cc"/>
+    </g>
+</svg>

@@ -1,0 +1,13 @@
+<svg id="ico_small_bank18_케이뱅크" xmlns="http://www.w3.org/2000/svg" width="88" height="88" viewBox="0 0 88 88">
+    <defs>
+        <style>
+            .cls-2{fill:#fff}
+        </style>
+    </defs>
+    <circle id="타원_84" data-name="타원 84" cx="44" cy="44" r="44" style="fill:#f74867"/>
+    <g id="그룹_517" data-name="그룹 517" transform="translate(22.002 17.6)">
+        <path id="패스_1496" data-name="패스 1496" class="cls-2" d="M922.454 1495.07h-34.375v4.158h34.375v43.523h-34.375v4.158h38.533v-51.84z" transform="translate(-881.149 -1495.07)"/>
+        <path id="사각형_146" data-name="사각형 146" class="cls-2" transform="translate(0 9.98)" d="M0 0h4.158v31.741H0z"/>
+        <path id="패스_1497" data-name="패스 1497" class="cls-2" d="M907.541 1519.071h-4.99l-14.138 15.834 14.138 15.906h4.99l-14.141-15.906z" transform="translate(-881.344 -1509.092)"/>
+    </g>
+</svg>

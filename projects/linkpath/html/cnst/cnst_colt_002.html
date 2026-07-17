@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- favicon -->
+  <link rel="icon" href="../../img/wp/logo/favicon.ico" type="image/x-icon">
+  <!-- CSS -->
+  <link rel="stylesheet" href="../../css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="../../css/w2ui_2.0.css">
+  <link rel="stylesheet" href="../../css/wp_base.css">
+  <link rel="stylesheet" href="../../css/wp_style.css">
+  <!-- JS -->
+  <script src="../../js/jquery-3.5.1.min.js"></script>
+  <script src="../../js/chart-3.5.1.min.js"></script>
+  <script src="../../js/swiper-bundle.min.js"></script>
+  <script src="../../js/w2ui.js"></script>
+  <script src="../../js/common_ui.js"></script>
+  <!-- PUBL 사이트 외부접속 스크립트 삽입 JS -->
+  <script src="https://publ.roumit.com/js/firebase_include.js"></script>
+  <title>Link Path</title>
+</head>
+<body>
+  <!-- container -->
+  <div class="container">
+    <!-- header -->
+    <header class="header">
+      <div class="inner">
+        <div class="left">
+          <h1>
+            <a href="#" class="logo">
+              <img src="../../img/wp/logo/logo_linkpath.svg" alt="로고">
+            </a>
+          </h1>
+        </div>
+      </div>
+    </header>
+    <!-- //header -->
+    <!-- wrapper -->
+    <div class="wrapper">
+      <!-- content -->
+      <div class="contentWrap consult">
+        <div class="inner">
+          <div class="selectWrap">
+            <div class="item">
+              <p class="title">사업장명</p>
+              <div class="selectBox">
+                <!-- error 클래스 추가시 에러, 입력 시 x버튼 노출 js처리 -->
+                <input type="text" placeholder="사업장명 입력">
+                <button type="button" class="deleteBtn"></button>
+              </div>
+            </div>
+          </div>
+          <div class="agencyInfo">
+            <table>
+              <colgroup>
+                <col width="40%"><!-- 2024-10-08 -->
+                <col>
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th>기관명</th>
+                  <th>수집서류</th>
+                </tr>
+                <tr>
+                  <td class="name">홈택스</td>
+                  <td>사업자등록 증명</td>
+                </tr>
+                <tr>
+                  <td class="name">홈택스</td>
+                  <td>납무내역(사실)증명</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="selectWrap">
+            <div class="item">
+              <p class="title">이름</p>
+              <div class="selectBox">
+                <!-- error 클래스 추가시 에러, 입력 시 x버튼 노출 js처리 -->
+                <input type="text" placeholder="이름 입력">
+                <button type="button" class="deleteBtn"></button>
+              </div>
+            </div>
+            <div class="item">
+              <p class="title">주민번호</p>
+              <div class="resiNumWrap">
+                <div class="selectBox regiInput">
+                  <input type="text" placeholder="생년월일 6자리">
+                  <button type="button" class="deleteBtn"></button>
+                </div>
+                <div class="divide">-</div>
+                <div class="selectBox">
+                  <input type="password" placeholder="주민번호 뒷자리">
+                  <button type="button" class="deleteBtn"></button>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <p class="title">휴대폰</p>
+              <div class="phoneNumWrap">
+                <div class="selectBox carrier">
+                  <button type="button" class="optionBtn selectTaget notSelected">통신사 선택</button>
+                  <div class="selectListWrap">
+                    <ul class="selectList">
+                      <li class="currentSelected">
+                        <label title="SKT"><span>SKT</span></label>
+                      </li>
+                      <li>
+                        <label title="KT"><span>KT</span></label>
+                      </li>
+                      <li>
+                        <label title="SKT 알뜰폰"><span>SKT 알뜰폰</span></label>
+                      </li>
+                      <li>
+                        <label title="KT 알뜰폰"><span>KT 알뜰폰</span></label>
+                      </li>
+                      <li>
+                        <label title="LG U+ 알뜰폰"><span>LG U+ 알뜰폰</span></label>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="selectBox cellNum">
+                  <input type="text" placeholder="휴대폰 번호 입력">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="agreeWrap">
+            <div class="titleWrap">
+              <p class="infoTit">
+                컨설팅을 위한 개인정보 활용 동의
+              </p>
+            </div>
+            <ul class="agreeList">
+              <li class="all">
+                <label>
+                  <input type="checkbox">
+                  <span>전체 동의</span>
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="checkbox">
+                  <span>개인정보 수집이용 동의 (필수)</span>
+                </label>
+                <a href="#" class="mvBtn"></a>
+              </li>
+              <li>
+                <label>
+                  <input type="checkbox">
+                  <span>마케팅 활용 동의 (필수)</span>
+                </label>
+                <a href="#" class="mvBtn"></a>
+              </li>
+              <li>
+                <label>
+                  <input type="checkbox">
+                  <span>마케팅 수신 동의 (필수)</span>
+                </label>
+                <a href="#" class="mvBtn"></a>
+              </li>
+            </ul>
+          </div>
+          <!-- 241018 -->
+          <div class="areaBtn serial">
+            <div class="cell">
+              <button class="activeBodyBtn"><span>카카오톡 간편인증</span></button>
+            </div>
+            <div class="cell">
+              <button class="bdGrayBodyBtn"><span>PASS 간편인증</span></button>
+            </div>
+          </div>
+          <!-- //241018 -->
+        </div>
+      </div>
+      <!-- //content -->
+    </div>
+    <!-- //wrapper -->
+  </div>
+  <!-- //container -->
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- favicon -->
+  <link rel="icon" href="../../img/wp/logo/favicon.ico" type="image/x-icon">
+  <!-- CSS -->
+  <link rel="stylesheet" href="../../css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="../../css/w2ui_2.0.css">
+  <link rel="stylesheet" href="../../css/wp_base.css">
+  <link rel="stylesheet" href="../../css/wp_style.css">
+  <!-- JS -->
+  <script src="../../js/jquery-3.5.1.min.js"></script>
+  <script src="../../js/chart-3.5.1.min.js"></script>
+  <script src="../../js/swiper-bundle.min.js"></script>
+  <script src="../../js/w2ui.js"></script>
+  <script src="../../js/common_ui.js"></script>
+  <!-- PUBL 사이트 외부접속 스크립트 삽입 JS -->
+  <script src="https://publ.roumit.com/js/firebase_include.js"></script>
+  <title>Link Path</title>
+  <script>
+    $(function() {
+      popCenter('.popWrap');
+    })
+  </script>
+</head>
+<body>
+  <div class="popWrap">
+    <div class="dim" onclick="popdimClose(this)"></div>
+    <div class="popInner small">
+      <div class="popTit"></div>
+      <div class="popCont">
+        <div class="acWrap">
+          <strong class="infoTit">간편인증이 필요합니다.</strong>
+          <p class="infoTxt">인증완료시 자료가 자동으로 수집됩니다.</p>
+          <div class="acTableWrap">
+            <div class="agencyInfo">
+              <div class="agencyInfoTop">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>기관명</th>
+                      <th>수집서류</th>
+                    </tr>
+                  </thead>
+                </table>
+              </div>
+              <div class="agencyInfoBtm">
+                <table>
+                  <tbody>
+                    <tr>
+                      <td class="name">정부24</td>
+                      <td>주민등록등본</td>
+                    </tr>
+                    <tr>
+                      <td class="name">정부24</td>
+                      <td>지방세세목별과세증명서</td>
+                    </tr>
+                    <tr>
+                      <td class="name"></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td class="name"></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td class="name"></td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="confirmPopBtnWrap">
+        <div class="areaBtnType02">
+          <button class="activeBodyBtn">시작하기</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

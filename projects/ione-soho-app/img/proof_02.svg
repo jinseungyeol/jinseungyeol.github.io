@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60">
+    <defs>
+        <clipPath id="clip-path">
+            <path id="사각형_16252" data-name="사각형 16252" transform="translate(137.305 272.053)" d="M0 0h60v60H0z"/>
+        </clipPath>
+        <clipPath id="clip-path-2">
+            <path id="사각형_16251" data-name="사각형 16251" class="cls-1" d="M0 0h46.555v47.005H0z"/>
+        </clipPath>
+        <clipPath id="clip-path-3">
+            <path id="사각형_16250" data-name="사각형 16250" class="cls-1" d="M0 0h16.32v16.323H0z"/>
+        </clipPath>
+        <style>
+            .cls-1{fill:none}
+        </style>
+    </defs>
+    <g id="마스크_그룹_29" data-name="마스크 그룹 29" transform="translate(-137.305 -272.053)" style="clip-path:url(#clip-path)">
+        <g id="그룹_62664" data-name="그룹 62664" transform="translate(144.027 278.551)">
+            <g id="그룹_62663" data-name="그룹 62663" style="clip-path:url(#clip-path-2)">
+                <path id="패스_47832" data-name="패스 47832" d="M35.407 31.461a.6.6 0 0 0-.849 0L23.214 42.805 11.873 31.47a.6.6 0 0 0-.851 0L.611 41.877a.6.6 0 0 0 0 .847l1.43 1.431a.6.6 0 0 0 .846 0l8.558-8.565 11.239 11.239a.6.6 0 0 0 .848 0l.068-.066 2.891-2.675 8.492-8.5 8.559 8.561a.6.6 0 0 0 .846 0l1.431-1.429a.6.6 0 0 0 0-.847z"/>
+                <path id="패스_47833" data-name="패스 47833" d="M507.947 18.195a7.677 7.677 0 1 1-7.677 7.677 7.677 7.677 0 0 1 7.677-7.677" transform="translate(-498.525 -15.787)" style="stroke:#000;stroke-width:3px;fill:none"/>
+                <g id="그룹_62662" data-name="그룹 62662" transform="translate(29.637 .986)">
+                    <g id="그룹_62661" data-name="그룹 62661" style="clip-path:url(#clip-path-3)">
+                        <path id="패스_47834" data-name="패스 47834" d="M15.753 0H.567A.569.569 0 0 0 0 .568v1.987a.557.557 0 0 0 .167.4.556.556 0 0 0 .4.166H13.2v12.634a.569.569 0 0 0 .568.568h1.981a.569.569 0 0 0 .569-.568V.568A.569.569 0 0 0 15.753 0"/>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="35" height="44">
+    <defs>
+        <clipPath id="clip-path">
+            <path id="사각형_3562" data-name="사각형 3562" transform="translate(-.287 .068)" style="fill:none" d="M0 0h35v44H0z"/>
+        </clipPath>
+        <clipPath id="clip-path-2">
+            <path id="사각형_3564" data-name="사각형 3564" class="cls-2" d="M0 0h12.18v17.729H0z"/>
+        </clipPath>
+        <style>
+            .cls-2{fill:#fff}
+        </style>
+    </defs>
+    <g id="그룹_24194" data-name="그룹 24194" transform="translate(.287 -.068)">
+        <g id="그룹_11237" data-name="그룹 11237" style="clip-path:url(#clip-path)">
+            <path id="패스_20497" data-name="패스 20497" d="M34.325 62.047a17.063 17.063 0 0 1-17.163 16.964 16.965 16.965 0 1 1 0-33.927 17.063 17.063 0 0 1 17.163 16.963" transform="translate(0 -35.004)" style="fill:#d4b36e"/>
+            <path id="패스_20498" data-name="패스 20498" d="M43.117 76.469a13.275 13.275 0 1 1-13.275-13.121 13.2 13.2 0 0 1 13.275 13.121" transform="translate(-12.82 -49.185)" style="fill:#b07e30"/>
+            <path id="사각형_3559" data-name="사각형 3559" transform="translate(7.983 .026)" style="fill:#e2e2e2" d="M0 0h18.043v8.62H0z"/>
+            <path id="사각형_3560" data-name="사각형 3560" transform="translate(13.894)" style="fill:#efefef" d="M0 0h6.221v8.673H0z"/>
+            <path id="사각형_3561" data-name="사각형 3561" transform="translate(7.977 8.598)" style="fill:#e0e0e0" d="M0 0h18.089v.757H0z"/>
+            <g id="그룹_11242" data-name="그룹 11242" transform="translate(11.073 18.508)">
+                <g id="그룹_11242-2" data-name="그룹 11242" style="clip-path:url(#clip-path-2)">
+                    <path id="패스_20501" data-name="패스 20501" class="cls-2" d="M9.992 8.866a4.715 4.715 0 0 0 2.188-3.85C12.18 2.246 9.454 0 6.091 0S0 2.246 0 5.016h2.844a3 3 0 0 1 3.247-2.675 3 3 0 0 1 3.248 2.675 3 3 0 0 1-3.248 2.675V7.7h-2.57v2.341h2.593a3 3 0 0 1 3.222 2.674 3 3 0 0 1-3.248 2.674 3 3 0 0 1-3.248-2.674H0c0 2.77 2.726 5.015 6.089 5.015s6.089-2.245 6.089-5.015a4.713 4.713 0 0 0-2.186-3.849" transform="translate(0 -.001)"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

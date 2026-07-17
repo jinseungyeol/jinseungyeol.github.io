@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- favicon -->
+  <link rel="icon" href="../../img/wp/logo/favicon.ico" type="image/x-icon">
+  <!-- CSS -->
+  <link rel="stylesheet" href="../../css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="../../css/w2ui_2.0.css">
+  <link rel="stylesheet" href="../../css/wp_base.css">
+  <link rel="stylesheet" href="../../css/wp_style.css">
+  <!-- JS -->
+  <script src="../../js/jquery-3.5.1.min.js"></script>
+  <script src="../../js/chart-3.5.1.min.js"></script>
+  <script src="../../js/swiper-bundle.min.js"></script>
+  <script src="../../js/w2ui.js"></script>
+  <script src="../../js/common_ui.js"></script>
+  <!-- PUBL 사이트 외부접속 스크립트 삽입 JS -->
+  <script src="https://publ.roumit.com/js/firebase_include.js"></script>
+  <title>Link Path</title>
+  <script>
+    $(function() {
+      popCenter('.popWrap');
+    })
+  </script>
+</head>
+<body>
+  <div class="popWrap">
+    <div class="dim" onclick="popdimClose(this)"></div>
+    <div class="popInner small">
+      <div class="popTit">
+        <div class="titleWrapCenter">
+          <h1>미리보기</h1>
+          <button type="button" class="popCloseBtn" title="닫기" onclick="popClose(this)"></button>
+        </div>
+      </div>
+      <div class="popCont">
+        <div class="selectWrap">
+            <div class="item">
+              <p class="title">· 방법</p>
+              <div class="selectBox">
+                <button type="button" title="카카오톡(발송실패시 문자)" class="optionBtn selectTaget ellipsis">카카오톡(발송실패시 문자)</button>
+                <div class="selectListWrap">
+                  <ul class="selectList">
+                    <li class="currentSelected">
+                      <label title="카카오톡(발송실패시 문자)"><span>카카오톡(발송실패시 문자)</span></label>
+                    </li>
+                    <li>
+                      <label title="문자"><span>문자</span></label>
+                    </li>
+                    <li>
+                      <label title="전체(문자 + 카카오톡)"><span>전체(문자 + 카카오톡)</span></label>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        <div class="msgBox">
+          <textarea>
+안녕하세요,
+OOO세무사무소입니다.
+
+고객님에게 효과적인 컨설팅을 제공하기 위해 간편인증으로 문서 수집을 진행해주세요.
+
+소요시간 : 1분이내
+#{url}
+
+감사합니다.
+          </textarea>
+        </div>
+      </div>
+      <div class="confirmPopBtnWrap">
+        <div class="left">
+          <p class="infoTxt">· 메세지 예시 내용입니다.</p>
+        </div>
+        <div class="areaBtn">
+          <button class="activeBodyBtn">확인</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

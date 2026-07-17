@@ -1,0 +1,101 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 배포는 한 번에 하나만. 진행 중인 배포는 취소하지 않는다.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      # 1. 메인 포트폴리오 (React Router SPA) → dist/
+      - name: Build portfolio
+        run: |
+          npm ci
+          npm run build
+          mkdir -p dist
+          cp -r build/client/. dist/
+
+      # SPA 폴백. GitHub Pages는 Netlify의 _redirects를 읽지 않는다.
+      # /project/* 는 실제 파일이므로 404.html보다 우선한다.
+      - name: Add SPA fallback
+        run: cp dist/index.html dist/404.html
+
+      # 2. 정적 데모 8개는 그대로 복사 (전부 상대경로라 서브경로에서 동작)
+      - name: Copy static demos
+        run: |
+          mkdir -p dist/project
+          for d in kt-jangbu m-kt-jangbu kt-jangbu-app ione-soho-app \
+                   semoreport smjb-app nh-soho-app linkpath; do
+            cp -r "projects/$d" "dist/project/$d"
+          done
+
+      # 3. wemembers-scheduler만 Vite 앱이라 빌드가 필요하다.
+      #    base와 라우터 basename은 /project/wemembers-scheduler/ 로 맞춰져 있다.
+      - name: Build wemembers-scheduler
+        working-directory: projects/wemembers-scheduler
+        run: |
+          npm ci
+          npm run build
+          # 이 앱은 클라이언트 라우팅을 쓴다(/output/login 등). Netlify에서는
+          # public/_redirects가 폴백을 맡았지만 Pages는 그 파일을 읽지 않는다.
+          # Pages는 없는 경로에 대해 가장 가까운 상위 404.html을 돌려주므로,
+          # 여기에 index.html 사본을 두면 하위 라우트 직접 진입이 동작한다.
+          cp dist/index.html dist/404.html
+
+      - name: Copy wemembers-scheduler build
+        run: cp -r projects/wemembers-scheduler/dist dist/project/wemembers-scheduler
+
+      # 배포 결과가 기대와 맞는지 확인. 하나라도 없으면 여기서 실패시킨다.
+      - name: Verify deploy tree
+        run: |
+          set -e
+          for f in dist/index.html \
+                   dist/404.html \
+                   dist/project/kt-jangbu/index.html \
+                   dist/project/kt-jangbu/img/bg_cont02_tab01.png \
+                   dist/project/m-kt-jangbu/index.html \
+                   dist/project/kt-jangbu-app/index.html \
+                   dist/project/ione-soho-app/index.html \
+                   dist/project/semoreport/index.html \
+                   dist/project/semoreport/publGuide/markupUI/html/index.html \
+                   dist/project/smjb-app/index.html \
+                   dist/project/nh-soho-app/index.html \
+                   dist/project/linkpath/index.html \
+                   dist/project/wemembers-scheduler/index.html \
+                   dist/project/wemembers-scheduler/404.html; do
+            [ -f "$f" ] || { echo "MISSING: $f"; exit 1; }
+          done
+          echo "모든 배포 대상 확인됨"
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

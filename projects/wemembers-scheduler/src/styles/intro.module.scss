@@ -1,0 +1,37 @@
+.output :global(.wrapper){
+  max-width: initial;
+}
+
+.title {
+  margin: 15px 0;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.table {
+  background: #fff;
+}
+
+.table tr {
+  th {
+    padding: 10px;
+    background: #788496;
+    color: #fff;
+    border: 1px solid #d1d1d1;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #d1d1d1;
+    word-break: keep-all;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  &:hover {
+    background: #f0eefc;
+  }
+}

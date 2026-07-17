@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../css_v2/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../../css_v2/mobiscroll.jquery.min.css">
+    <link rel="stylesheet" href="../../css_v2/common.css">
+    <link rel="stylesheet" href="../../css_v2/main.css">
+    <link rel="stylesheet" href="../../css_v2/semo_style.css">
+    <link rel="stylesheet" href="../../css_v2/nh_style.css">
+    <!-- JS -->
+    <script src="../../js_v2/jquery-3.5.1.min.js"></script>
+    <script src="../../js_v2/mobiscroll.jquery.min.js"></script>
+    <script src="../../js_v2/swiper-bundle.min.js"></script>
+    <script src="../../js_v2/wow.min.js"></script>
+    <script src="../../js_v2/chart-3.5.1.min.js"></script>
+    <title>여신본인확인</title>
+</head>
+<body>
+    <div class="title b_white">
+        <div class="title_left">
+            <i class="ico_cen left_arrow"></i>
+        </div>
+        <span class="title_text">카드매출 연결하기</span>
+    </div>
+    <div class="basic_wrapper">
+        <div class="card_connect_wrap">
+            <!-- 본인확인 -->
+            <section class="identi_wrap">
+                <header class="main_tit">
+                    <h1 class="txt01">통신사 인증으로 본인 확인</h1>
+                    <h2 class="txt01">
+                        본인명의 휴대폰만 가능
+                    </h2>
+                </header>
+                <div class="content">
+                    <article class="name">
+                        <div class="tit">
+                            <h1>이름</h1>
+                        </div>
+                        <div class="input_wrap">
+                            <input type="text" value="김세모">
+                        </div>
+                    </article>
+                    <article class="birth">
+                        <div class="tit">
+                            <h1>생년월일</h1>
+                        </div>
+                        <div class="input_wrap">
+                            <div class="num">
+                                <input type="number" placeholder="주민등록 앞 6자리">
+                            </div>
+                            <span>-</span>
+                            <div class="pass">
+                                <input type="number">
+                                <div class="secret">
+                                    <span>●</span>
+                                    <span>●</span>
+                                    <span>●</span>
+                                    <span>●</span>
+                                    <span>●</span>
+                                    <span>●</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="email">
+                        <div class="tit">
+                            <h1>이메일</h1>
+                        </div>
+                        <div class="input_wrap">
+                            <input type="email" placeholder="이메일 주소 전체입력">
+                        </div>
+                    </article>
+                    <article class="phone">
+                        <div class="tit">
+                            <h1>휴대폰번호</h1>
+                        </div>
+                        <div class="item">
+                            <div class="select">
+                                <span>통신사</span>
+                                <i class="ico_cont"></i>
+                            </div>
+                            <div class="input_wrap">
+                                <input type="number" value="010-3258-0000">
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <!-- 활성화상태 addClass bgc_sig -->
+                <div class="bot_fix">
+                    <button type="button" class="type_A bgc_sig">
+                        <span>다음</span>
+                    </button>
+                </div>
+                <!-- 통신사선택 팝업  -->
+                <div class="popup_bg" id="slide_popup" style="display: none;">
+                    <div class="popup bottom">
+                        <div class="popup_title">
+                            <b>통신사 선택</b>
+                            <i class="ico_cen del"></i>
+                        </div>
+                        <div class="popup_bottom_con">
+                            <span>
+                                <b>KT</b>
+                            </span>
+                            <span>
+                                <b>SKT</b>
+                            </span>
+                            <span>
+                                <b>LG U+</b>
+                            </span>
+                            <span>
+                                <b>KT 알뜰폰</b>
+                            </span>
+                            <span>
+                                <b>STK 알뜰폰</b>
+                            </span>
+                            <span>
+                                <b>LG U+ 알뜰폰</b>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <script>
+        // 팝업
+        $(document).ready(function () {
+            $(".select").click(function () {
+                $(".identi_wrap #slide_popup").fadeIn(500);
+                $(".identi_wrap  #slide_popup > .popup.bottom").css("bottom", "0");
+                $("html, body").css("overflow", "hidden");
+                $("html, body").css("height", "100%");
+            });
+            // 팝업 배경터치하면 사라짐
+            $(document).click(function (e) {
+                if ($(".popup_bg, .del").is(e.target)) {
+                    $(".popup_bg").hide();
+                    $(".popup.bottom").show().animate({
+                        bottom: "-100%"
+                    }, 100);
+                }
+            });
+            $(".phone .btn button.active").click(function () {
+                $(".code").css("display", "flex");
+            });
+        });
+    </script>
+</body>
+</html>

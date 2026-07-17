@@ -1,0 +1,81 @@
+@charset "utf-8";
+
+/* reset */
+@font-face {font-family: 'Pretendard'; font-weight: normal; src: url(../font/Pretendard-Medium.woff2) format('woff2');}
+@font-face {font-family: 'Pretendard'; font-weight: 600; src: url(../font/Pretendard-SemiBold.woff2) format('woff2');}
+@font-face {font-family: 'Pretendard'; font-weight: bold; src: url(../font/Pretendard-Bold.woff2) format('woff2');}
+
+html {position:relative;height:100%;}
+html,body {font-family:'Pretendard'; color:#111; font-weight:normal; -webkit-text-size-adjust:none;-moz-text-size-adjust:none; -ms-text-size-adjust:none; -webkit-tap-highlight-color:transparent; line-height: 1.5}
+html,body,div,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,address,cite,code,del,dfn,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,input,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video {margin:0; padding:0; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; -webkit-tap-highlight-color:transparent;-webkit-text-size-adjust:none; -webkit-touch-callout:none; -webkit-font-smoothing:antialiased; -webkit-user-select: auto; font-size: 15px}
+body,button,h1,h2,h3,h4,h5,input,select,table,textarea {font-family:'Pretendard'; margin:0; padding:0}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,legend,select,input,textarea,p,blockquote,th,td,menu,button,a,span,strong,label,header,footer,section,article,aside,nav,hgroup,details,figure,figcaption {word-break:break-word; box-sizing:border-box;-moz-box-sizing:border-box; -webkit-box-sizing:border-box; -ms-box-sizing:border-box} /* 여백을 포함한 사이즈 설정*/ 
+h1,h2,h3,h4,h5,h6,input,select,textarea,button,option {color:inherit; font-family:'Pretendard'; font-size:100%; font-weight:normal}
+h1,h2,h3,h4,h5,h6,strong,b,th {font-weight:bold}
+em,var,address,i {font-style:normal}
+ul,ol,li {list-style:none}
+legend,fieldset,button,img {border:0}
+img {max-width:100%; vertical-align:top}
+input,select,textarea,button,label,strong,a,time {vertical-align:inherit}
+input,select,textarea,button,option {font-family:inherit; font-weight:inherit}
+input,select,textarea {appearance:none; -webkit-appearance:none; border-radius: 0}
+input:focus, textarea:focus {outline-style: none; box-shadow: none; border: 0px}
+textarea {resize:none; border: none}
+button,select,option {color:inherit; text-transform:none} 
+table {table-layout:fixed; width:100%; border-collapse:collapse; border-spacing:0} 
+button {background:none; cursor:pointer; white-space: nowrap; overflow:visible; outline: none}
+a {color:inherit; font-size: inherit; text-decoration:none}
+
+/* base */
+h2.defTit {font-size: 1.4rem;}
+.descTxt {font-size: 15px; color: #8a8a8b;}
+
+.pointColor {color: #17bf98;}
+.pointColor02 {color: #12997a;}
+
+/* iframe */
+.headerFrame {width: 100%; height: 60px;}
+.snbFrame {width: 290px; height: calc(100vh - 59px); margin-top: -8px; padding: 0 30px; box-shadow: 3px 0px 5px -2px rgba(0,0,0,0.1);}
+.contentFrame {position: absolute; top: 60px; left: 290px; width: calc(100% - 290px); height: calc(100vh - 60px);}
+
+/* include header */
+.includeHeader {display: flex; justify-content: space-between; align-items: center; height: 60px; padding: 0 30px; border-bottom: 1px solid #d1d1d1;}
+.includeHeader .gnb {display: flex;}
+.includeHeader .gnb li {padding: 0 20px;}
+.includeHeader .gnb li.active {position: relative; color: #12997a;}
+.includeHeader .gnb li.active::after {content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 3px; background: #12997a;}
+.includeHeader .gnb li a {display: block; height: 60px; line-height: 60px; font-size: 20px;}
+
+/* include SNB */
+.pageListWrap .tit {display: block; padding: 36px 0 20px 0; font-size: 24px; font-weight: 600; border-bottom: 2px solid #000;}
+.pageListWrap .pageList > li .menu {position: relative; display: block; height: 60px; line-height: 60px; font-size: 18px; color: #666;}
+.pageListWrap .pageList > li .menu::after {content: ''; position: absolute; top: 50%; transform: translateY(-50%); right: 0; width: 11px; height: 7px; background: url(../img/ico_ts_down.png) no-repeat center / contain;}
+.pageListWrap .pageList > li .subMenuList {display: none;}
+.pageListWrap .pageList > li .subMenuList > li.active {background: #999; color: #fff; border-radius: 10px;}
+.pageListWrap .pageList > li .subMenuList > li > a {display: block; padding: 10px 0 10px 20px; font-size: 16px;}
+
+/* active */
+.pageListWrap .pageList > li.active > a::after {background-image: url(../img/ico_ts_up.png);}
+
+/* guideCont */
+.guideCont { margin: 0 auto; padding: 30px 20px 90px 60px;}
+.guideCont a.moveLink {display: inline-block; margin-bottom: 2px; color: #12997a; text-decoration: underline;}
+.guideCont .header {position: static}
+.guideCont .header .mainTit {padding: 0; font-size: 32px}
+.guideCont .content .titArea {margin: 30px 0 10px}
+.guideCont .content .titArea .defTit {margin: 100px 0 10px}
+.guideCont .content .tblReference {margin-bottom: 20px}
+.guideCont .content .tblReference th { padding: 10px; background-color: #788496; border: 1px solid #d1d1d1; color: #fff; font-size: 15px;}
+.guideCont .content .tblReference td {padding: 10px; border: 1px solid #ccc; font-size: 15px;}
+.guideCont .content .guideIframeWrap {margin-top: 10px}
+.guideCont .content .guideIframeWrap .tooltip {position: absolute; height: 30px; line-height: 30px; padding: 0 20px; background-color: #788496; color: #fff; font-size: 16px}
+.guideCont .content .guideIframeWrap iframe {margin-top: 29px; border: 1px solid #d1d1d1; box-sizing: content-box}
+.guideCont .content xmp {overflow-y: auto; padding: 10px; margin: 10px 0; color: #fff; font-family: "pretendard"; background-color: rgb(51, 51, 51); letter-spacing: 0.5px}
+
+.areaFloatingBtn {position: fixed; bottom: 40px; right: 20px; opacity: 0; visibility: hidden; z-index: 1100; transition: .35s}
+.areaFloatingBtn a {display: block; width: 60px; height: 60px; padding-top: 7px; box-shadow: 4px 5px 8px rgba(0,0,0,0.28); background: #fff; text-align: center; border-radius: 50%}
+.areaFloatingBtn a img {vertical-align: middle}
+.areaFloatingBtn a p {font-size: 0.8rem; font-weight: 600}
+
+/* active */
+body.active .areaFloatingBtn.btnTop {opacity: 1; visibility: visible}

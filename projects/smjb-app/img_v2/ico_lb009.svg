@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="prefix__ico_big_bank_KDB산업은행" width="40" height="40" viewBox="0 0 40 40">
+    <defs>
+        <radialGradient id="prefix__radial-gradient" cx="-.003" cy=".992" r="1.19" gradientTransform="matrix(.793 0 0 1 -.035 0)" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#bad7f1"/>
+            <stop offset=".198" stop-color="#a7c7e9"/>
+            <stop offset=".295" stop-color="#8bacd6"/>
+            <stop offset=".523" stop-color="#4f74af"/>
+            <stop offset=".717" stop-color="#244b92"/>
+            <stop offset=".867" stop-color="#093280"/>
+            <stop offset=".956" stop-color="#00297a"/>
+        </radialGradient>
+        <radialGradient id="prefix__radial-gradient-2" cx="1.028" cy=".574" r=".79" fx=".839" fy=".981" gradientTransform="matrix(1.264 0 0 1 -.227 0)" gradientUnits="objectBoundingBox">
+            <stop offset=".055" stop-color="#bad7f1"/>
+            <stop offset=".33" stop-color="#98c2e4"/>
+            <stop offset=".439" stop-color="#81abd4"/>
+            <stop offset=".666" stop-color="#4872ac"/>
+            <stop offset=".929" stop-color="#00297a"/>
+        </radialGradient>
+        <style>
+            .prefix__cls-2{fill:url(#prefix__radial-gradient)}.prefix__cls-3{fill:url(#prefix__radial-gradient-2)}
+        </style>
+    </defs>
+    <circle id="prefix__타원_71" cx="20" cy="20" r="20" fill="#013580" data-name="타원 71"/>
+    <g id="prefix__그룹_470" data-name="그룹 470" transform="translate(89.35 -2211.824)">
+        <g id="prefix__그룹_472" data-name="그룹 472" transform="translate(-210.485 -3.003)">
+            <g id="prefix__그룹_468" data-name="그룹 468" transform="translate(141.669 2221.824)">
+                <path id="prefix__패스_937" d="M197.86 2256.359a2 2 0 0 1 0 2.412s-4.346 6.94-5.1 8.019a2.477 2.477 0 0 1-1.978 1.038h-7s2.97-4.4 5.469-8.29a3.966 3.966 0 0 0 .776-2.713z" class="prefix__cls-2" data-name="패스 937" transform="translate(-183.781 -2247.339)"/>
+                <path id="prefix__패스_938" d="M183.781 2221.824h7a2.477 2.477 0 0 1 1.978 1.037c.755 1.079 5.1 8.02 5.1 8.02a2 2 0 0 1 0 2.412c-.871 1.473-4.332 6.81-4.332 6.81a7.177 7.177 0 0 0-1.071-4.929c-1.599-2.743-8.675-13.35-8.675-13.35z" class="prefix__cls-3" data-name="패스 938" transform="translate(-183.781 -2221.824)"/>
+            </g>
+            <g id="prefix__그룹_471" data-name="그룹 471" transform="rotate(180 70.623 1123.638)">
+                <path id="prefix__패스_937-2" d="M14.079 0a2 2 0 0 1 0 2.412s-4.346 6.94-5.1 8.019A2.478 2.478 0 0 1 7 11.469H0s2.97-4.4 5.469-8.29A3.965 3.965 0 0 0 6.245.466z" class="prefix__cls-2" data-name="패스 937" transform="translate(0 9.02)"/>
+                <path id="prefix__패스_938-2" d="M0 0h7a2.477 2.477 0 0 1 1.977 1.037c.755 1.079 5.1 8.019 5.1 8.019a2 2 0 0 1 0 2.412c-.871 1.473-4.332 6.81-4.332 6.81a7.177 7.177 0 0 0-1.069-4.928C7.076 10.607 0 0 0 0z" class="prefix__cls-3" data-name="패스 938"/>
+            </g>
+        </g>
+    </g>
+</svg>

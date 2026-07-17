@@ -1,0 +1,825 @@
+@charset "utf-8";
+
+:root {
+  --color-primary: #207ffc;
+	--color-blue50: #e2f1ff;
+	--color-blue100: #badcff;
+	--color-blue200: #8dc7ff;
+	--color-blue300: #5cb0ff;
+	--color-blue400: #359fff;
+	--color-blue500: #118eff;
+	--color-blue600: #207ffc;
+	--color-blue700: #266de7;
+	--color-blue800: #285bd5;
+	--color-blue900: #2A39B5;
+	--color-black: #000;
+	--color-black900: #101828;
+	--color-black950: #0c111d;
+	--color-navy700: #344054;
+	--color-navy800: #1d2939;
+	--color-gray25: #fcfcfd;
+	--color-gray50: #f9fafB;
+	--color-gray100: #f2f4f7;
+	--color-gray200: #e4e7ec;
+	--color-gray300: #d0d5dd;
+	--color-gray400: #98a2b3;
+	--color-gray500: #667085;
+	--color-gray600: #475467;
+	--color-red: #ff4d4d;
+	--color-purple: #814cff;
+	--font-size-default: 12px;
+}
+
+/* reset */
+@font-face {font-family: 'Pretendard'; font-weight: normal; src: url(../font/Pretendard-Medium.woff2) format('woff2');}
+@font-face {font-family: 'Pretendard'; font-weight: 600; src: url(../font/Pretendard-SemiBold.woff2) format('woff2');}
+@font-face {font-family: 'Pretendard'; font-weight: bold; src: url(../font/Pretendard-Bold.woff2) format('woff2');}
+
+*::-webkit-scrollbar {width: 8px; height: 8px;} 
+*::-webkit-scrollbar-thumb {background: var(--color-gray300); border-radius: 3px;} 
+html {position:relative;height:100%}
+html,body {font-family:'Pretendard'; color:var(--color-black900); font-weight:normal; -webkit-text-size-adjust:none;-moz-text-size-adjust:none; -ms-text-size-adjust:none; font-size: var(--font-size-default); line-height: 1;}
+html,body,div,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,address,cite,code,del,dfn,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,input,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video {margin:0; padding:0; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; -webkit-text-size-adjust:none; -webkit-font-smoothing:antialiased; word-break: keep-all}
+body,button,h1,h2,h3,h4,h5,input,select,table,textarea {font-family: 'Pretendard'; margin:0; padding:0}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,legend,select,input,textarea,p,blockquote,th,td,menu,button,a,span,strong,label,header,footer,section,article,aside,nav,hgroup,details,figure,figcaption {word-break:break-word; box-sizing:border-box;-moz-box-sizing:border-box; -webkit-box-sizing:border-box; -ms-box-sizing:border-box; word-break: keep-all} /* 여백을 포함한 사이즈 설정*/ 
+h1,h2,h3,h4,h5,h6,input,select,textarea,button,option {color:inherit; font-family: 'Pretendard'; font-size:100%; font-weight:normal}
+h1,h2,h3,h4,h5,h6,strong,b,th {font-weight:bold}
+em,var,address,i {font-style:normal}
+ul,ol,li {list-style:none}
+legend,fieldset,button,img {border:0}
+img {max-width:100%; vertical-align:top}
+input,select,textarea,button,label,strong,a,time {vertical-align:inherit}
+input,select,textarea,button,option {font-family:inherit; font-weight:inherit}
+input,select,textarea {appearance:none; -webkit-appearance:none; border-radius: 0}
+input:focus {outline-style: none; box-shadow: none; border: 0px}
+textarea {width: 100%; padding: 10px; background: var(--color-gray50); border: 1px solid var(--color-gray200); resize:none; border-radius: 8px; color: var(--color-navy700);}
+textarea:focus {outline: none;}
+button,select,option {color:inherit; text-transform:none} 
+table {table-layout:fixed; width:100%; border-collapse:collapse; border-spacing:0} 
+button {background:none; cursor:pointer; white-space: nowrap; overflow:visible; outline: none; font-size: 1rem;}
+a {color:inherit; font-size: inherit; text-decoration:none; cursor: pointer;}
+
+/** important 정의 **/
+.pointColor {color: var(--color-primary) !important} 
+.colorRed {color: var(--color-red) !important;}
+.colorGreen {color: #00A876 !important;}
+.colorOrange {color: #FF7118 !important;}
+.colorGray {color: #98A2B3 !important;}
+.pointBgColor {background-color: var(--color-primary) !important} 
+.gray500 {color: var(--color-gray500) !important;}
+.dB {display :block !important}
+.dIb {display: inline-block !important}
+.dN {display: none !important}
+.posR {position: relative !important}
+.posA {position: absolute !important}
+.w35p {width: 35% !important}
+.w50p {width: 50% !important}
+.taLeft {text-align: left !important}
+.taCenter {text-align: center !important}
+.taLeft {text-align: left !important}
+.taRight {text-align: right !important}
+.fontSize19 {font-size: 1.267rem !important}
+.bdNone {border: none !important}
+.fwNormal {font-weight:normal !important}
+.fwSemi {font-weight:600 !important}
+.fwBold {font-weight:bold !important}
+.txtUnderline:hover {text-decoration: underline !important}
+
+/* padding */
+.pd0 {padding: 0 !important}
+.pdt0 {padding-top: 0 !important}
+.pdt12 {padding-top: 12px !important}
+.pdb0 {padding-bottom: 0 !important}
+.pdl20 {padding-left: 20px !important}
+.pdr40 {padding-right: 40px !important}
+
+/* margin */
+.mg0 {margin: 0 !important}
+.mgt0 {margin-top: 0 !important}
+.mgb0 {margin-bottom: 0 !important}
+.mgr0 {margin-right: 0 !important}
+.mgt15 {margin-top: 15px !important}
+.mgt18 {margin-top: 18px !important}
+.mgt25 {margin-top: 25px !important}
+.mgb25 {margin-bottom: 25px !important}
+.mgl8 {margin-left: 8px !important;}
+
+/* maxH */
+.maxH120 {max-height: 120px !important; overflow-y: auto;}
+.maxH140 {max-height: 140px !important; overflow-y: auto;}
+
+/* setting */
+.blind {position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); border: 0; white-space: nowrap}
+.ellipsis {display:block; overflow:hidden; white-space:nowrap; text-overflow:ellipsis}
+
+/**************************************************
+
+	z-index 정리
+
+	lnb : 1000
+	contentWrap : 900
+	header : 1100
+	popWrap : 1101
+	popWrap popInner : 1201
+	toast : 1301
+
+**************************************************/
+
+/* header */
+.header {position: fixed; top: 0; left: 0; right: 0; background: #fff; z-index: 1100;}
+.header .inner {display: flex; align-items: center; justify-content: space-between; padding: 0 20px; height: 60px; border-bottom: 1px solid var(--color-gray100);}
+.header .inner .left {display: flex; align-items: center;}
+.header .inner .left h1 .logo {font-size: 1.5rem; font-weight: bold;}
+.header .inner .center {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
+.header .inner .center .warningTxt {height: 24px; line-height: 24px; padding-left: 37px; background: url(../img/wp/ico/ico_error02.png) no-repeat center left / 24px; color: #f00; font-size: 16px; font-weight: 600;}
+.header .inner .center .warningTxt p {animation: fadeIn .7s linear infinite alternate;}
+.header .inner .center .warningTxt02 {height: 24px; line-height: 24px; padding-left: 37px; background: url(../img/wp/ico/ico_speaker_green.svg) no-repeat center left / 24px; color: #f00; font-size: 16px; font-weight: 600;}
+.header .inner .center .warningTxt02 p {animation: fadeIn .7s linear infinite alternate;}
+.header .inner .right > ul {display: flex; align-items: center;}
+.header .inner .right > ul > li + li {margin-left: 20px;}
+.header .inner .right > ul > li:not(.case).remain {cursor: pointer;}
+.header .inner .right > ul > li.remain .key {position: relative; padding-left: 12px; font-size: 1.167rem; color: var(--color-gray500); font-weight: 600;}
+.header .inner .right > ul > li:not(.case).remain:hover .key {text-decoration: underline;}
+.header .inner .right > ul > li.remain .key::before {content: '·'; position: absolute; left: 0; top: 50%; transform: translateY(-50%); font-size: 20px; font-weight: bold;}
+.header .inner .right > ul > li.remain .value {margin-left: 12px; padding: 5px 8px; border: 1px solid var(--color-gray100); border-radius: 6px; font-size: 1.167rem; font-weight: 600;}
+.header .inner .right > ul > li .alarmWrap {position: relative;}
+.header .inner .right > ul > li .alarmWrap .alarmPop {opacity: 0; visibility: hidden; position: absolute; top: calc(100% + 10px); right: 0; transform: translateY(10px); border-radius: 12px; background: #fff; box-shadow: 0 4px 24px rgba(0,0,0,0.08); transition: .25s;}
+.header .inner .right > ul > li .alarmWrap .alarmPop .alarmInner {width: 288px;}
+.header .inner .right > ul > li .alarmWrap .alarmPop .alarmTit {display: flex; align-items: center; justify-content: space-between; padding: 20px 0 12px; margin: 0 20px; border-bottom: 1px solid var(--color-gray100);}
+.header .inner .right > ul > li .alarmWrap .alarmPop .alarmTit strong {font-size: 1.333rem; font-weight: 600; color: var(--color-black900);}
+.header .inner .right ul > li .alarmWrap .alarmPop .alarmTit .popCloseBtn {width: 20px; height: 20px; background: url(../img/wp/btn/btn_close_gray.svg) no-repeat center / 16px;}
+.header .inner .right > ul > li .alarmWrap .alarmPop .alarmList {max-height: 476.5px; overflow-y: auto;}
+.header .inner .right > ul > li .alarmWrap .alarmPop .alarmList > li {padding: 20px; cursor: pointer; transition: .25s;}
+.header .inner .right > ul > li:not(.cs) .alarmWrap .alarmPop .alarmList > li:hover {background: var(--color-gray100);}
+.header .inner .right > ul > li .alarmWrap .alarmPop .alarmList > li + li {border-top: 1px solid var(--color-gray100);}
+.header .inner .right > ul > li .alarmWrap .alarmPop .alarmList > li .alarmInfo {display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;}
+.header .inner .right > ul > li .alarmWrap .alarmPop .alarmList > li .alarmInfo .cate span {padding-left: 20px; background: url(../img/wp/btn/btn_alarm_new.svg) no-repeat center left / 14px; font-size: 1.083rem; font-weight: 600;}
+.header .inner .right > ul > li .alarmWrap .alarmPop .alarmList > li .alarmInfo .time {font-size: 1.083rem; color: var(--color-gray600);}
+.header .inner .right > ul > li .alarmWrap .alarmPop .alarmList > li .txtArea p {font-size: 1.083rem; color: var(--color-gray600); line-height: 1.25;}
+.header .inner .right > ul > li .noticeBtn {position: relative; padding: 5px 8px 5px 25px; background: #F9FAFB url(../img/wp/ico/ico_alarm_primary.svg) no-repeat center left 5px / 16px; border-radius: 20px; font-size: 1.167rem; font-weight: 600; transition: .25s;}
+.header .inner .right > ul > li .noticeBtn .alarmNum {position: absolute; top: -7px; left: 45px; font-size: 0.75rem; color: #fff; background: var(--color-red); min-width: 18px; padding: 3px; border-radius: 8px;}
+.header .inner .right > ul > li .noticeBtn:hover {text-decoration: underline; background-color: var(--color-gray100);}
+.header .inner .right > ul > li.cs .noticeBtn {background-image: url(../img/wp/ico/ico_menu_primary.svg);}
+.header .inner .right > ul > li.cs .alarmWrap .alarmPop {background: var(--color-primary);}
+.header .inner .right > ul > li.cs .alarmWrap .alarmPop .alarmTit {padding-bottom: 0; border: none;}
+.header .inner .right > ul > li.cs .alarmWrap .alarmPop .alarmTit strong {color: #fff;}
+.header .inner .right > ul > li.cs .alarmWrap .alarmPop .alarmTit .popCloseBtn {background-image: url(../img/wp/ico/ico_close_white.svg);}
+.header .inner .right > ul > li.cs .alarmWrap .alarmPop .alarmList {margin: 20px; background: #fff; border-radius: 10px;}
+.header .inner .right > ul > li.cs .alarmWrap .alarmPop .alarmList > li {padding: 0;}
+.header .inner .right > ul > li.cs .alarmWrap .alarmPop .alarmList > li > a {display: block; padding: 20px;}
+.header .inner .right > ul > li.cs .alarmWrap .alarmPop .alarmList > li + li {border-top: none;}
+.header .inner .right > ul > li.cs .alarmWrap .alarmPop .alarmList > li .alarmInfo {margin-bottom: 0;}
+.header .inner .right > ul > li.cs .alarmWrap .alarmPop .alarmList > li .alarmInfo .cate {position: relative;}
+.header .inner .right > ul > li.cs .alarmWrap .alarmPop .alarmList > li .alarmInfo .cate span {padding-left: 24px; background-image: none; transition: .25s;}
+.header .inner .right > ul > li.cs .alarmWrap .alarmPop .alarmList > li:hover .alarmInfo .cate span {color: var(--color-primary);}
+.header .inner .right > ul > li.cs .alarmWrap .alarmPop .alarmList > li .alarmInfo .cate .ico {position: absolute; left: 0; top: -4px;}
+.header .inner .right > ul > li.cs .alarmWrap .alarmPop .alarmList > li.title {padding: 20px 20px 10px; cursor: initial;}
+.header .inner .right > ul > li.cs .alarmWrap .alarmPop .alarmList > li.title strong {font-size: 1.167rem; font-weight: bold;}
+.header .inner .right .rContBtnCol {display: flex;}
+.header .inner .right .rContBtnCol .btnBox + .btnBox {margin-left: 4px;}
+.contentWrap.consult.fixB .inner {padding-bottom: 150px;}
+
+/* header.active */
+.header.active ~ .wrapper .lnb {transform: translateX(0);}
+.header.active ~ .wrapper .lnb ~ .contentWrap {left: 0; margin-right: 0;}
+.header .inner .right > ul > li .alarmWrap.active .alarmPop {opacity: 1; visibility: visible; transform: translateY(0);}
+.header .inner .right > ul > li.cs .alarmWrap.active .noticeBtn {background-image: url(../img/wp/ico/ico_menu_white.svg); background-color: var(--color-primary); color: #fff;} 
+.header.hover ~ .wrapper .lnb {transform: translateX(0);}
+
+/* landingHeader */
+.landingHeader {position: fixed; top: 0; left: 0; right: 0; background: #fff; z-index: 1100;}
+.landingHeader .inner {display: flex; align-items: center; justify-content: space-between; padding: 0 20px; height: 80px; border-bottom: 1px solid var(--color-gray100);}
+.landingHeader .inner .left {display: flex; align-items: center;}
+.landingHeader .inner .left h1 .logo {display: block; height: 60px; font-size: 1.5rem; font-weight: bold;}
+.landingHeader .inner .left h1 .logo img {height: inherit;}
+.landingHeader .inner .right .rContBtnCol {display: flex;}
+.landingHeader .inner .right .rContBtnCol .btnBox + .btnBox {margin-left: 4px;}
+.landingHeader .inner .right .rContBtnCol .btnBox button {height: 44px; padding: 0 14px;}
+.landingHeader .inner .right .rContBtnCol .btnBox button span {font-size: 1.333rem;}
+
+/* wrapper */
+.wrapper {position: relative; display: flex; padding-top: 60px;}
+.wrapper .contentWrap {position: relative; flex: 1; display: flex; flex-direction: column; padding: 20px; background: var(--color-gray50); overflow-y: auto;}
+.wrapper .contentWrap.complete {height: 100dvh; margin-top: -60px; justify-content: center; align-items: center; background: #fff;}
+.header ~ .wrapper .contentWrap {height: calc(100dvh - 60px);}
+.wrapper .contentWrap .gridCont {display: flex; flex-direction: column; height: calc(100dvh - 80px);}
+.wrapper .contentWrap .gridCont .gridBox .gCol {display: flex; flex-direction: column;}
+.wrapper .contentWrap .gridCont .gridBox .gCol .gridArea {flex-grow: 1;}
+.wrapper .lnb ~ .contentWrap {left: -194px; margin-right: -194px;}
+.contentWrap.full {height: 100dvh;}
+.header ~ .wrapper .contentWrap.full {height: calc(100dvh - 60px); background: #fff;}
+.header ~ .wrapper .contentWrap.consult {height: auto; overflow-y: initial;}
+.header ~ .wrapper .contentWrap.complete {height: calc(100dvh - 60px); margin-top: 0;}
+.landingHeader ~ .wrapper {padding-top: 80px;}
+
+/* lnb */
+.wrapper .lnb {position: relative; transform: translateX(-194px); width: 210px; background: var(--color-gray25); box-shadow: 4px 0 16px rgba(0,0,0,0.08); z-index: 1000; transition: .15s;}
+.wrapper .lnb .btnLnbToggle { display: flex; align-items: center; justify-content: center; position: absolute; right: -15px; top: 50%; width: 30px; height: 30px; border-radius: 50%; border: none; white-space: nowrap; cursor: pointer; box-shadow: 0 0 10px 2px rgba(0,0,0,0.1); z-index: 1; transition: .15s; background: url(../img/wp/ico/ico_ts_right.svg) no-repeat center / 16px; background-color: #fff; } 
+.wrapper .lnb .btnLnbToggle:hover { background-image: url(../img/wp/ico/ico_ts_right_white.svg); background-color: var(--color-primary); } 
+.wrapper .lnb .inner {height: calc(100dvh - 60px); padding: 20px 16px 145px; overflow-y: auto;}
+.wrapper .lnb .inner .profile {display: flex; align-items: center; margin-bottom: 16px;}
+.wrapper .lnb .inner .profile .profileImg {width: 40px;}
+.wrapper .lnb .inner .profile .profileInfo {margin-left: 12px;}
+.wrapper .lnb .inner .profile .profileInfo .manager {font-size: 1.333rem; color: var(--color-primary);}
+.wrapper .lnb .inner .profile .profileInfo p {margin-top: 6px; font-size: 1.333rem; font-weight: 600;}
+.wrapper .lnb .inner .selectWrap .selectBox {min-width: 0;}
+.wrapper .lnb .inner .selectWrap .selectBox .selectListWrap {right: 0;}
+.wrapper .lnb .inner nav > ul > li + li {margin-top: 8px;}
+.wrapper .lnb .inner nav > ul > li .mainMenu {position: relative; display: block; padding: 7px 22px 7px 24px; font-weight: 600; font-size: 1.167rem; border-radius: 4px; transition: .25s;}
+.wrapper .lnb .inner nav > ul > li .mainMenu::after {content: ''; position: absolute; top: 50%; transform: translateY(-50%); right: 6px; width: 16px; height: 16px; background: url(../img/wp/ico/ico_ts_down_gray.svg) no-repeat center / contain; transition: .25s;}
+.wrapper .lnb .inner nav > ul > li .mainMenu:hover {background-color: var(--color-gray100);}
+.wrapper .lnb .inner nav > ul > li .mainMenu > img {position: absolute; left: 6px;}
+.wrapper .lnb .inner nav > ul > li .subMenuList {display: none;}
+.wrapper .lnb .inner nav > ul > li .subMenuList > li a {position: relative; display: block; padding: 7px 5px 7px 28px; font-size: 1.167rem; border-radius: 4px; color: var(--color-gray600); transition: .25s;}
+.wrapper .lnb .inner nav > ul > li .subMenuList > li a:hover {background: var(--color-gray100);}
+.wrapper .lnb .inner nav > ul > li .subMenuList > li a::before {content: '└'; position: absolute; top: 9px; left: 7px; font-size: 1.167rem; font-weight: bold;}
+.wrapper .lnb .inner .introProfile {margin-bottom: 40px; text-align: center;}
+.wrapper .lnb .inner .introProfile .introTxt {margin-top: 16px;}
+.wrapper .lnb .inner .introProfile .introTxt p {font-size: 1.167rem; font-weight: 600; color: var(--color-gray600); line-height: 1.5;}
+.wrapper .lnb .inner .serviceApply .termsList {margin-bottom: 18px;}
+.wrapper .lnb .inner .serviceApply .areaBtn button {width: 100%;}
+.wrapper .lnb .inner [class^="selectBox"] .selectListWrap {max-height: 120px; overflow-y: auto;}
+
+/* lnb active */
+.wrapper .lnb .inner nav > ul > li.active .mainMenu::after {transform: translateY(-50%) rotate(180deg);}
+.wrapper .lnb .inner nav > ul > li .subMenuList > li.active a {background-color: rgba(32,127,252, 0.05); color: var(--color-primary);}
+.header.active ~ .wrapper .lnb .btnLnbToggle {transform: rotate(180deg);} 
+.header.active ~ .wrapper .lnb .btnLnbToggle:hover {background-image: url(../img/wp/ico/ico_ts_right_white.svg);} 
+
+.btmBanner {position: absolute; bottom: 20px; left: 20px;}
+.btmBanner .btmBannerList {width: 170px; overflow: hidden; border-radius: 6px;}
+.btmBanner .btmBannerList > li a {display: block;}
+.btmBanner .swiper-pagination {bottom: calc(100% + 4px); right: 0; left: unset; width: fit-content; padding: 3px 7px; border-radius: 4px; background: var(--color-gray100); font-size: 1rem;}
+
+.lnbBtm {position: absolute; left: 20px; bottom: 20px; right: 20px;}
+.lnbBtm .privacyBtn {display: block; margin: 0 auto; font-weight: 600; font-size: 1rem; color: var(--color-navy700);}
+.lnbBtm .privacyBtn:hover {text-decoration: underline;}
+
+/* titleWrap */
+[class^='titleWrap'] {position: relative; display: flex; margin-bottom: 16px;}
+[class^='titleWrap'] .lCont .goBackBtn {position: absolute; left: 0; top: -4px; width: 24px; height: 24px; background: url(../img/wp/ico/ico_ts_left.svg) no-repeat center / contain;}
+[class^='titleWrap'] .lCont .goBackBtn ~ .defTit {padding-left: 36px;}
+[class^='titleWrap'] .rCont {margin-left: auto;}
+[class^='titleWrap'] .rCont .rContBtnCol {display: flex;}
+[class^='titleWrap'] .rCont .btnBox ~ .btnBox {margin-left: 4px;}
+[class^='titleWrap'] .rCont .btnBox .toggleArea {margin-top: 5px;}
+[class^='titleWrap'] .rCont .btnBox .toggleArea .switch ~ .infoTxt {margin-left: 6px;}
+[class^='titleWrap'] .infoSub {display: flex; align-items: center;}
+[class^='titleWrap'] .infoSub .targetNum { font-size: 1.167rem; color: var(--color-gray500); font-weight: 600;}
+[class^='titleWrap'] .infoSub .infoSubGrayTit + .targetNum {margin-left: 8px;}
+[class^='titleWrap'] .infoSub .divide + .targetNum {margin-left: 0;}
+[class^='titleWrap'] .infoSub .divide {width: 2px; height: 18px; margin: 0 8px; background: var(--color-gray100);}
+.titleWrapCenter {align-items: center;}
+[class^='titleWrap'].typebd {padding-bottom: 12px; border-bottom: 1px solid var(--color-gray100);}
+[class^='titleWrap'].sticky {position: sticky; top: 0; padding-top: 20px; margin-bottom: 0; z-index: 100; transform: translateY(-20px); background: #fff;}
+
+/* title 정의 */
+.defTit {font-weight: bold; font-size: 1.333rem}
+.infoTit {font-size: 1.5rem; font-weight: bold;}
+.infoTit .referTxt {margin-left: 20px; color: var(--color-gray500); font-size: 1rem; font-weight: 600; vertical-align: middle;}
+.infoSubGrayTit {font-size: 1.167rem; font-weight: 600; color: var(--color-gray500);}
+.selectListTit {font-size: 1.167rem; font-weight: 600;}
+
+/* Text 정의 */
+.defTxt {font-size: 1rem; color: #111;}
+.defTxt01 {font-size: 1rem; color: #85888d}
+.defTxt02 {font-size: 0.866rem; color: #8a8a8b}
+.infoTxt {font-size: 1rem; color: var(--color-gray500);}
+.dotListMsg > li {position: relative; padding-left: 8px; font-size: 1rem}
+.dotListMsg > li::before {content: '·'; position: absolute; top: 0px; left: 0}
+.referTxt {position: relative; margin-top: 14px; padding-left: 14px; font-weight: 600; font-size: 1.083rem; color: var(--color-gray500);}
+.referTxt::before {content: ''; position: absolute; left: 0; top: -3px; width: 4px; height: 20px; border-radius: 3px; background: var(--color-primary);}
+
+/* 헤더 외 상단 고정 */
+.areaTopFixed {position: fixed; top: 60px; left: 0px; right: 0px; padding: 0 20px; background-color: #fff; z-index: 1100}
+.areaTopFixed .areaFilter {margin-bottom: 0}
+
+/* button 정의 */
+[class*="BodyBtn"] {min-width: 60px; padding: 0 6px; height: 28px; border-radius: 4px; transition: .15s;}
+[class*="BodyBtn"] img.leftIcon {margin-right: 4px;}
+.activeBodyBtn {background: var(--color-primary); color: #fff;}
+.activeBodyBtn:hover {opacity: 0.9;}
+.inActiveBodyBtn {background: #BDD9FE;}
+.cancelBodyBtn {background: var(--color-gray100); color: var(--color-gray500);}
+.cancelBodyBtn:hover {opacity: 0.9;}
+.cancelBigBodyBtn {height: 40px; padding: 0 22px; background: var(--color-gray100); color: var(--color-gray500); border-radius: 8px;}
+.cancelBigBodyBtn span {font-size: 1.333rem;}
+.cancelBigBodyBtn:hover {opacity: 0.9;}
+.bdGrayBodyBtn {display: flex; justify-content: center; align-items: center; border: 1px solid var(--color-gray200); color: var(--color-gray500); background-color: #fff;}
+.bdGrayBodyBtn:hover {border-color: var(--color-primary);}
+.bgGrayBodyBtn {display: flex; justify-content: center; align-items: center; background: var(--color-gray100); color: var(--color-gray500);}
+.deleteCircleBtn {width: 25px; height: 25px; background: url(../img/wp/btn/btn_close_circle_gray02.svg) no-repeat center / 16px; transition: .25s;}
+.deleteCircleBtn:hover {background-color: #fff; border-radius: 50%; background-color: var(--color-gray200);}
+.bdGrayBodyBtn.excel:hover {border-color: #217346;}
+.bdGrayBodyBtn.excel span {color: #217346;}
+.bdGrayBodyBtn.pdf:hover {border-color: #E1574C;}
+.bdGrayBodyBtn.pdf span {color: #E1574C;}
+.activeBigBodyBtn {height: 40px; padding: 0 22px; background: var(--color-primary); border-radius: 8px;}
+.activeBigBodyBtn:hover {opacity: 0.9;}
+.activeBigBodyBtn span {color: #fff; font-size: 1.333rem;}
+.activeBigBodyBtnType02 {height: 80px; padding: 0 40px; background: var(--color-primary); border-radius: 8px;}
+.activeBigBodyBtnType02:hover {opacity: 0.9;}
+.activeBigBodyBtnType02 span {color: #fff; font-size: 2.333rem;}
+.addBodyBtn {display: flex; align-items: center; justify-content: center; width: 100%; height: 76px; border: 1px solid var(--color-gray100); border-radius: 20px;}
+.addBodyBtn span {margin-left: 12px; font-size: 1.667rem; font-weight: 600;}
+.deleteBtnType02 {width: 24px; height: 24px; background: url(../img/wp/btn/ico_delete_gray_circle.svg) no-repeat center / 24px;}
+.inPopBtnWrap {margin-top: 16px;}
+.inPopBtnWrap .inPopBtnBox button {width: 100%; height: 36px; padding: 0 10px; color: var(--color-primary); border-radius: 8px; border: 1px solid var(--color-gray100); background: var(--color-gray25);}
+.mvLinkPrimaryBtn {padding-right: 20px; background: url(../img/wp/ico/ico_ts_right_primary.svg) no-repeat center right / 16px; font-size: 1.167rem; color: var(--color-primary); font-weight: 600;}
+.btnUpdate {padding: 5px 8px 5px 25px; font-size: 1.167rem; font-weight: 600; background: #F9FAFB url(../img/wp/ico/ico_update.svg) no-repeat center left 5px / 16px; border-radius: 20px;}
+.historyBtn {width: 16px; height: 16px; background: url(../img/wp/ico/ico_clock_primary.svg) no-repeat center / contain;}
+.cManageBtn {width: 16px; height: 16px; background: url(../img/wp/ico/ico_edit.svg) no-repeat center / contain; transition: .25s;}
+.cManageBtn:hover {background-image: url(../img/wp/ico/ico_edit_primary.svg);}
+.btnUpdate:hover {text-decoration: underline; background-color: var(--color-gray100);}
+.areaFixedBottom {position: fixed; bottom: 0; left: 0; right: 0; background: linear-gradient(0deg, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 100%); z-index: 100;}
+.shareBtn {width: 16px; height: 16px; background: url(../img/wp/ico/ico_share.svg) no-repeat center / contain; transition: .25s;}
+.shareBtn:hover {background-image: url(../img/wp/ico/ico_share_primary.svg);}
+.linkCopyBtn {width: 16px; height: 16px; background: url(../img/wp/ico/ico_link.svg) no-repeat center / contain; transition: .25s;}
+.linkCopyBtn:hover {background-image: url(../img/wp/ico/ico_link_primary.svg);}
+.memoBtn {width: 16px; height: 16px; background: url(../img/wp/ico/ico_memo_white.svg) no-repeat center / contain; transition: .25s;}
+.memoBtn.active {width: 16px; height: 16px; background: url(../img/wp/ico/ico_memo_primary.svg) no-repeat center / contain; transition: .25s;}
+.chatCnstBodyBtn {padding: 5px 8px; border-radius: 20px; background: var(--color-gray50);}
+.chatCnstBodyBtn span {font-size: 1.167rem;}
+.areaFixedBottom .fixedBottomInner {display: flex; gap: 8px; padding: 20px; margin: 0 auto;}
+.areaFixedBottom .cell {flex: 1;}
+.areaFixedBottom .cell button {width: 100%; height: 80px; font-size: 2.333rem; border-radius: 18px;}
+.areaFixedBottom .fixedBottomInner.flex46 .cell:first-child {flex: 4;}
+.areaFixedBottom .fixedBottomInner.flex46 .cell:last-child {flex: 6;}
+
+.bodyTabMenu {padding: 4px; border-radius: 8px; background: var(--color-gray100);}
+.bodyTabMenu button {min-width: 60px; height: 28px; border-radius: 6px; color: var(--color-gray400); transition: .25s;}
+.bodyTabMenu button.active {background: var(--color-primary); color: #fff;} 
+
+/* input 정의 */
+input {width: 100%; height: 28px; line-height: 28px; padding: 6px 8px; border-style: initial;  font-size: 1rem; border: 1px solid var(--color-gray300); border-radius: 4px; transition: .25s;}
+input:focus {border: 1px solid var(--color-primary);}
+input::placeholder {color: var(--color-gray400)}
+input:read-only {background-color: var(--color-gray100); border: 1px solid var(--color-gray300); color: var(--color-gray400);}
+input.error {border: 1px solid var(--color-red)}
+input[type="radio"],input[type="checkbox"] {width:16px; height:16px; margin:0; padding:0; border:0; vertical-align:middle;-webkit-appearance:none; cursor: pointer}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {-webkit-appearance: none} /* input number 증가, 감소버튼제거 */
+/* 다중체크박스 */
+input[type="checkbox"] {border-radius: 4px; border: 1px solid var(--color-gray300); background: #fff;}
+input[type="checkbox"]:checked {background: var(--color-primary) url(../img/wp/ico/ico_check_white.svg) no-repeat center / 9px; border: none;}
+input[type="checkbox"].disabled {background: var(--color-gray300) url(../img/wp/ico/ico_check_white.svg) no-repeat center / 9px; border: none;}
+input[type="checkbox"].inactive {background: var(--color-gray300)}
+/* 라디오 */
+input[type="radio"] {position: relative; border: 1px solid var(--color-gray200); border-radius: 50%;}
+input[type="radio"]::before {content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 7px; height: 7px; border-radius: 50%; transition: .25s;}
+input[type="radio"]:checked::before {background: var(--color-primary);}
+
+.radioWrap input[type='radio']:checked + span {color: var(--color-primary);}
+
+/* popup 세팅 */
+.popWrap {display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1101}
+.dim {position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.7); font-size: 0}
+.popWrap .popInner {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); min-width: 1020px; max-width: calc(100% - 40px); z-index: 1201}
+.popWrap .popInner .popTit {padding: 12px; margin-bottom: -12px; background-color: #fff; border-radius: 8px 8px 0 0;}
+.popWrap .popInner .popTit [class^='titleWrap'] h1 {font-size: 1.333rem}
+.popWrap .popInner .popTit [class^='titleWrap'] .popCloseBtn {margin-left: auto; margin-right: -6px; min-width: auto; width: 24px; height: 24px; background: url(../img/wp/btn/btn_close_gray.svg) no-repeat center / 16px; transition: .25s;}
+.popWrap .popInner .popTit [class^='titleWrap'] .popCloseBtn:hover {background-image: url(../img/wp/btn/btn_close.svg);}
+.popWrap .popInner .popTit .selectWrap {margin-bottom: 0;}
+.popWrap .popInner .popTit.divide [class^='titleWrap'] {padding-bottom: 8px; border-bottom: 1px solid var(--color-gray100);}
+.popWrap .popInner .popCont {padding: 12px 12px 8px 12px; background-color: #fff; overflow-y: auto;}
+.popWrap .popInner .popCont .selectWrap {margin-bottom: 8px;}
+.popWrap .popInner .popCont .noticeWrap .noticeInner {padding: 0;}
+.popWrap .popInner .popCont .txtArea + .txtArea {margin-top: 24px;}
+.popWrap .popInner .popCont .txtArea .boldTxt {margin-bottom: 8px; font-size: 1.333rem; font-weight: 600; line-height: 1.5;}
+.popWrap .popInner .popCont .txtArea .stageGray {margin: 8px 0;}
+.popWrap .popInner .popCont .txtArea .stageGray p {color: var(--color-gray600); font-size: 1.167rem;}
+.popWrap .popInner .popCont .txtArea .stageGray p + p {margin-top: 6px;}
+.popWrap .popInner .popCont .txtArea .infoTxtOrange {color: #FF981F; font-size: 1.167rem; font-weight: 600;}
+.popWrap .popInner .confirmPopBtnWrap {display: flex; align-items: center; margin-top: -1px; padding: 12px; background: #fff; border-radius: 0 0 8px 8px;}
+.popWrap .popInner .confirmPopBtnWrap .areaBtn {margin-left: auto;}
+.popWrap .popInner .confirmPopBtnWrap .areaBtnType02 {flex: 1; display: flex;}
+.popWrap .popInner .confirmPopBtnWrap .areaBtnType02 .activeBodyBtn {flex: 1; height: 60px; border-radius: 12px; font-size: 1.667rem;}
+.popWrap .popInner.small {min-width: 320px;}
+.popWrap .popInner.middle {min-width: 600px;}
+
+/* confirmPop */
+.popWrap.confirm .popInner {padding: 0; overflow: hidden;}
+.popWrap.confirm .popInner .popCont {padding: 32px; border-radius: 8px 8px 0 0;}
+.popWrap.confirm .popCont .popTit {margin-bottom: 0; padding-top: 0; text-align: center;}
+.popWrap.confirm .popCont .popTit h1 {font-size: 1.333rem;}
+.popWrap.confirm .popCont .confirmTxt {text-align: center;}
+.popWrap.confirm .popCont .confirmTxt p {color: var(--color-gray500); font-weight: 600; line-height: 1.5;}
+.popWrap.confirm .popCont .confirmTxt p + p {margin-top: 4px;}
+.popWrap.confirm .popCont .confirmTxt p .pointColor {font-weight: bold;}
+.popWrap.confirm .popInner .popBtnWrap {display: table; width: 100%; margin-top: -1px; border-radius: 0 0 8px 8px; overflow: hidden;}
+.popWrap.confirm .popInner .popBtnWrap .cell {display: table-cell; text-align: center}
+.popWrap.confirm .popInner .popBtnWrap .cell button {width: 100%; height: 60px; font-size: 1.25rem; cursor: pointer; border-radius: 0;}
+.popWrap.confirm .popInner .popBtnWrap .cell .btnNotFocus {color: #acacac}
+
+/* loading 팝업 */
+.popWrap .loading {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
+.popWrap .loading .loadingImg {width: 250px;}
+.popWrap .loading .loadingImg2 {display: block; margin: 0 auto; width: 100px;}
+.popWrap .loading .txtArea {margin-top: 20px;}
+.popWrap .loading .txtArea .headingTxt strong span {display: block; font-size: 2.083rem; font-weight: bold; color: #fff; line-height: 1.5;}
+.popWrap .loading .txtArea .infoTxt {margin-top: 20px; text-align: center;}
+.popWrap .loading .txtArea .infoTxt span {display: block; font-size: 1.167rem; color: #fff; line-height: 1.5;}
+
+/* 공지팝업 처리 */
+.popWrap .popInner .noticePopCont {border-radius: 8px 8px 0 0; overflow: hidden;}
+.popWrap .popInner .noticePopBtnWrap {display: flex; align-items: center; justify-content: space-between; padding: 0 20px; background: #000; border-radius: 0 0 8px 8px;}
+.popWrap .popInner .noticePopBtnWrap button {height: 50px; color: #fff; font-size: 1.333rem; transition: .25s;}
+.popWrap .popInner .noticePopBtnWrap button:hover {opacity: 0.9;}
+
+/* 인증서팝업 */
+.popWrap .popInner .popCont .certiTable {width: 498px; border-radius: 4px; border: 1px solid #CCCCCF;}
+.popWrap .popInner .popCont .certiTable table thead tr th {position: sticky; top: 0; background: #6b7280;}
+.popWrap .popInner .popCont .certiTable table thead tr th > div {padding: 16px; color: #fff;}
+.popWrap .popInner .popCont .certiTable table tbody tr + tr td {border-top: 1px solid #CCCCCF;}
+.popWrap .popInner .popCont .certiTable table tbody tr td > div {padding: 9px 16px; text-align: center;}
+.popWrap .popInner .popCont .certiTable table .certiName label {display: flex; align-items: center;}
+.popWrap .popInner .popCont .certiTable table .certiName label input {flex: 0 0 auto; margin-right: 6px;}
+.popWrap .popInner .popCont .certiTable .tableBottom {max-height: 208px; overflow-y: auto;}
+
+/* toast팝업 */
+.toast {opacity: 0; visibility: hidden; position: fixed; left: 0; right: 0; top: 20px; display: flex; justify-content: center; z-index: 1301; transition: .5s;}
+.toast .inner {padding: 15px 18px; border-radius: 12px; background: rgba(29,41,57,0.7); font-size: 1.167rem; color: #fff; font-weight: 600; line-height: 1.5;}
+
+/* toast팝업 active */
+.toast.active {opacity: 1; visibility: visible; transform: translateY(60px);}
+
+/* slide 오른쪽 팝업 */
+.slideRightPopWrap {opacity: 0; visibility: hidden; position: fixed; top: 0; right: 0; bottom: 0; z-index: 1200; transform: translateX(100%); transition: .25s;}
+.slideRightPopWrap .slideRightPopInner {height: 100%; padding: 29px; background: #fff; border: 1px solid #aaa;}
+.slideRightPopWrap .slideRightPopInner .popTit [class^='titleWrap'] h1 {font-size: 1.167rem;}
+.slideRightPopWrap .slideRightPopInner .popTit [class^='titleWrap'] .popCloseBtn {margin-left: auto; margin-right: -6px; min-width: auto; width: 24px; height: 24px; background: url(../img/wp/btn/btn_close_gray.svg) no-repeat center / 16px; transition: .25s;}
+.slideRightPopWrap .slideRightPopInner .popCont .memoWrap .titleWrap .lCont .customerName {font-size: 1rem; font-weight: bold;}
+.slideRightPopWrap .slideRightPopInner .popCont .memoWrap .memoArea {width: 340px; height: calc(100dvh - 241px);}
+.slideRightPopWrap .slideRightPopInner .popCont .memoWrap .memoArea textarea {height: 100%;}
+.slideRightPopWrap .slideRightPopInner .popCont .memoWrap .areaBtn {margin-top: 20px; text-align: center;}
+.slideRightPopWrap .slideRightPopInner .popCont .memoWrap .areaBtn button {margin: 0 4px;}
+
+/* active */
+.slideRightPopWrap.active {opacity: 1; visibility: visible; transform: translateX(0);}
+.topBanner.active ~ .slideRightPopWrap {top: 45px;}
+
+[class^="selectBox"] {position: relative; z-index: 12;}
+[class^="selectBox"] .optionBtn {position: relative; width: 100%; height: 28px; padding: 6px 30px 6px 8px; border-radius: 4px; border: 1px solid var(--color-gray300); text-align: left; background: #fff; font-size: 1rem; transition: .25s;}
+[class^="selectBox"] .optionBtn::before {content: ''; width: 16px; height: 16px; background: url(../img/wp/ico/ico_ts_down.svg) no-repeat center / contain; position: absolute; right: 8px; top: 50%; transform: translateY(-50%); cursor: pointer; transition: .25s;}
+[class^="selectBox"] .optionBtn:hover {border-color: var(--color-primary);}
+[class^="selectBox"].showPop .optionBtn:hover {border-color: var(--color-gray300);}
+[class^="selectBox"] .optionBtn.notSelected {color: var(--color-gray400);}
+[class^="selectBox"] .deleteBtn {display: none; position: absolute; right: 6px; top: 4px; width: 20px; height: 20px; background: url(../img/wp/btn/btn_close_circle_gray.svg) no-repeat center / 18px;}
+[class^="selectBox"] .toggleShowBtn {position: absolute; right: 6px; top: 4px; width: 20px; height: 20px; background: url(../img/wp/btn/btn_password_hide.svg) no-repeat center / 18px;}
+[class^="selectBox"] .toggleShowBtn.show {background: url(../img/wp/btn/btn_password_show.svg) no-repeat center / 18px;}
+[class^="selectBox"] input.inputed {padding-right: 30px;}
+[class^="selectBox"] input.inputed ~ .deleteBtn {display: block;}
+[class^="selectBox"].readonly .optionBtn {background-color: var(--color-gray100); border: 1px solid var(--color-gray300); color: var(--color-gray400);}
+[class^="selectBox"].readonly .optionBtn::before {content: none;}
+[class^="selectBox"].toggleShow input {padding-right: 35px;}
+
+/* selectListWrap */
+.selectListWrap {display: none; position: absolute; top: calc(100% + 5px); left: 0; min-width: 100%; background: #fff; border-radius: 4px; border: 1px solid var(--color-gray200); box-shadow: 0 4px 24px rgba(0,0,0,0.08);}
+.selectListWrap.up {top: unset; bottom: calc(100% + 5px);}
+.selectListWrap .listCol {flex: 1 0 auto;}
+.selectListWrap .listCol .titleWrap {padding: 10px 10px 0;}
+.selectListWrap .listCol + .listCol {border-left: 1px solid var(--color-gray50);}
+.selectListWrap .selectList {min-width: 0; flex: 1;}
+.selectListWrap .selectList > li {position: relative; padding: 6px 8px; text-align: left; transition: .25s; cursor: pointer;}
+.selectListWrap .selectList > li label {display: block; cursor: pointer;}
+.selectListWrap .selectList > li.currentSelected {padding-right: 24px; color: var(--color-blue700); background: url(../img/wp/ico/ico_check_blue.svg) no-repeat center right 8px / 18px;}
+.selectListWrap .selectList > li:hover {background-color: var(--color-gray100);}
+.selectListWrap .selectList > li .radioWrap:hover input[type="radio"]::before {background: var(--color-primary);}
+.selectListWrap .selectList > li label span {font-size: 1rem; white-space: nowrap;}
+.selectListWrap .selectList > li.rData {display: flex; align-items: center; justify-content: space-between;}
+.selectListWrap .listBtnWrap {margin-top: 12px; padding: 0 10px 10px;}
+.selectListWrap .listBtnWrap .activeBodyBtn {width: 100%;}
+.selectListWrap .selectList > li label span.ellipsis.maxW80 {width: 80px;}
+/* selectListWrap radio */
+.selectListWrap .selectList.radio > li {display: flex; align-items: center; padding: 0 8px;}
+.selectListWrap .selectList.radio > li.success:hover label span {text-decoration: underline;}
+.selectListWrap .selectList.radio > li label {flex: 1; display: flex; align-items: center; padding: 6px 0; border-radius: 4px;}
+.selectListWrap .selectList.radio > li label input {flex: 0 0 auto; margin-right: 4px;}
+.selectListWrap .selectList.radio > li label input ~ span {transition: .25s;}
+.selectListWrap .selectList.radio > li label input:checked ~ span {color: var(--color-primary)}
+.selectListWrap .selectList.radio > li .rCont {margin-left: auto; padding-left: 15px;}
+.selectListWrap .selectList.radio > li .rCont .deleteTrashBtn {width: 20px; height: 20px; background: url(../img/wp/btn/btn_trash.svg) no-repeat center right / 16px; transition: .25s;}
+.selectListWrap .selectList.radio > li .rCont .deleteTrashBtn:hover {background-image: url(../img/wp/btn/btn_trash_hover.svg)}
+
+/* selectBox.active */
+[class^="selectBox"].active {z-index: 14;}
+[class^="selectBox"].active .optionBtn {border-color: var(--color-primary);}
+[class^="selectBox"].active .optionBtn::before {transform: translateY(-50%) rotate(180deg);}
+[class^="selectBox"].active.showPop .optionBtn {border-color: var(--color-gray300);}
+[class^="selectBox"].active.showPop .optionBtn::before {transform: translateY(-50%) rotate(0);}
+[class^="selectBox"].active .selectListWrap {display: flex;}
+[class^="selectBox"].leftIcon input {padding-left: 30px;}
+[class^="selectBox"].leftIcon .ico {position: absolute; left: 8px; top: 6px; width: 16px;}
+
+.selectWrap {position: relative; margin-bottom: 16px; z-index: 100;}
+.selectWrap .item {display: flex; align-items: center;}
+.selectWrap .item .rCont {margin-left: auto;}
+.selectWrap .item .title {font-size: 1rem; color: var(--color-gray500);}
+.selectWrap .item .title.big {font-size: 1.167rem; font-weight: 600;}
+.selectWrap .item .title .required {color: var(--color-red);}
+.selectWrap .item .title + .selectBox {margin-left: 13px;}
+.selectWrap .item .selectBox {flex: 1; text-align: left;}
+.selectWrap .item .selectBox + .selectBoxTypeBtn {margin-left: 4px;}
+
+/* detailBox */
+.detailBox {position: relative;}
+.detailBox .detailModal {opacity: 0; visibility: hidden; position: absolute; top: calc(100% + 5px); right: 0; transform: translateY(10px); z-index: 10; transition: .15s;}
+.detailBox .detailModal .inner {padding: 12px; background: #fff; border-radius: 8px; box-shadow: 0 4px 24px rgba(0,0,0,0.08);}
+.detailBox .detailModal .detailList > li + li {margin-top: 12px;}
+.detailBox .detailModal .detailList > li .item {display: flex;}
+.detailBox .detailModal .detailList > li .item .detailTit {width: 100px; margin-top: 2px; font-weight: 600; color: var(--color-gray600);}
+.detailBox .detailModal .detailList > li .item .checkArea {display: flex;}
+.detailBox .detailModal .detailList > li .item .checkArea label {display: flex; align-items: center; width: 80px; cursor: pointer;}
+.detailBox .detailModal .detailList > li .item .checkArea label span {margin-left: 4px; color: var(--color-gray600);}
+.searchBar {display: flex; border: 1px solid var(--color-gray300); height: 28px; border-radius: 4px; background-color: #fff; transition: .25s;}
+.detailBox .detailModal .detailList > li .item.industry .selectBox {width: 230px; margin-right: 40px;}
+.detailBox .detailModal .detailList > li .item.industry .selectArea {flex: 1; display: flex;}
+.detailBox .detailModal .detailList > li .item.industry .selectArea .btnWrap {margin-left: auto; display: flex;}
+.detailBox .detailModal .detailList > li .item.industry .selectArea .btnWrap button + button {margin-left: 4px;}
+.searchBar:hover {border-color: var(--color-primary);}
+.detailBox .detailModal .detailList > li .item.industry .selectListWrap .selectList > li label {display: inline-block; width: 135px;}
+.searchBar input {padding-left: 32px; border: none; background: url(../img/wp/ico/ico_search_gray.svg) no-repeat center left 8px / 16px;}
+.searchBar .detailBtn {position: relative; padding: 0 8px 0 10px; transition: .25s;}
+.searchBar .detailBtn:hover {color: var(--color-primary);}
+.searchBar .detailBtn::before {content: ''; position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 1px; height: 12px; background: var(--color-gray400);}
+
+.detailBox.active .searchBar .detailBtn {color: var(--color-primary);}
+.detailBox.active .searchBar + .detailModal {opacity: 1; visibility: visible; transform: translateY(0);}
+
+/* toggle 정의 */
+.switch {cursor: pointer}
+.switch span {display: inline-block; margin: 4px 5px 0 0; color: #b4bac4; font-size: 0.866rem}
+.switch input {display: none}
+.switch .slider {display: inline-block; position: relative; width: 42px; height: 20px; background: #e9e9eb; border-radius: 15px; vertical-align: top; -webkit-transition: .4s; transition: .4s}
+.switch .slider::before {content: ''; position: absolute; top: 2px; left: 1px; width: 16px; height: 16px; background: #fff; border-radius: 50%; -webkit-transition: .4s; transition: .4s; z-index: 1;}
+.switch .slider::after {content: 'OFF'; font-size: 10px; color: var(--color-gray500); font-weight: 600; position: absolute; right: 4px; top: 50%; transform: translateY(-50%); transition: .25s;}
+.switch input:checked ~ .slider {background: var(--color-primary)} 
+.switch input:checked ~ .slider::before {transform: translateX(23px)}
+.switch input:checked ~ .slider::after {content: 'ON'; color: #fff; transform: translate(-19px, -50%)}
+
+/* table 정의 */
+.dataTable {border-collapse: initial;}
+.dataTable thead {box-shadow: 0 4px 12px rgba(0,0,0,0.08);}
+.dataTable th {height: 38px; color: var(--color-navy700); font-size: 1rem; font-weight: bold; background: #FBFBFB; border: 1px solid var(--color-gray200);}
+.dataTable th + th {border-left: none;}
+.dataTable th > div {padding: 0 12px;}
+.dataTable td {height: 38px; text-align: left; border: 1px solid var(--color-gray200);}
+.dataTable td.checkTd {padding: 0 5px; background: #FBFBFB;}
+.dataTable td > div {padding: 0 12px;}
+.dataTable tr:first-child td {border-top: none}
+.dataTable tr:first-child td + td {border-left: none;}
+.dataTable tr + tr td + td {border-left: none; border-top: none;}
+/* .dataTable td > div .calWrap .quarter .selectBox {z-index: 10;} */
+/* 결제방법 등록하기 */
+.dataTable td > div .payRegist {position: relative; user-select: none; min-width: 150px;}
+.dataTable td > div .payRegist::before {content: ''; position: absolute; left: -12px; top: -4px; bottom: -4px; right: -12px; display: flex; justify-content: center; align-items: center; padding-right: 12px; backdrop-filter: blur(3px); background: rgba(255,255,255,0.4) url(../img/wp/bg/bg_payRegist_txt.svg) no-repeat center / 148px; font-weight: 600; cursor: pointer; z-index: 13;}
+
+/* calWrap */
+.calWrap {display: inline-flex; align-items: center;}
+.calWrap .calBox {position: relative; cursor: pointer;}
+.calWrap .calBox input {width: 110px;}
+.calWrap .calBox input:read-only {background: #fff; color: var(--color-black900);}
+.calWrap .calBox .ui-datepicker-trigger {position: absolute; top: 6px; right: 9px;}
+.calWrap .calBox .calBtn {display: block; width: 136px; height: 28px; padding: 0 8px; line-height: 28px; border-radius: 4px; border: 1px solid var(--color-gray300); cursor: pointer; transition: .25s;}
+.calWrap .calBox:hover .calBtn {border-color: var(--color-primary);}
+.calWrap .quarter {display: flex;} 
+.calWrap .quarter .selectBox {width: 66px;}
+.calWrap .quarter .selectBox + .selectBox {margin-left: 4px;}
+.calWrap .quarter + .year {margin-left: 8px;}
+.calWrap .divide {margin: 0 8px;}
+.calWrap .selectBox {width: 90px;}
+.calWrap .selectBox + .calBox {margin-left: 4px;}
+.calWrap .selectBox + .quarter {margin-left: 4px;}
+.calWrap.law .quarter .selectBox {width: 122px;}
+
+/* calWrap active */
+.calWrap .calBox.active .calBtn {border-color: var(--color-primary);}
+.calWrap.readonly .calBox .calBtn {background: var(--color-gray100); color: var(--color-gray400);}
+.calWrap.readonly .calBox .calBtn:hover {border-color: var(--color-gray300);}
+.calWrap.readonly .calBox input {background-color: var(--color-gray100); color: var(--color-gray400);}
+.calWrap.readonly .calBox input[type='month']::-webkit-calendar-picker-indicator {background: url(../img/wp/ico/ico_cal.svg) no-repeat center / 16px; cursor: pointer;}
+.calWrap.readonly .quarter .selectBox input {background: var(--color-gray100); color: var(--color-gray400); cursor: pointer;}
+.calWrap.readonly .quarter .selectBox .optionBtn {background: var(--color-gray100); color: var(--color-gray400); cursor: pointer;}
+
+/* gridBox */
+.gridTable {height: 100%;}
+.gridBox {flex-grow: 1; display: flex; gap: 16px;}
+.gridBox + .gridBox {margin-top: 16px;}
+.gridBox .gCol {padding: 20px; border-radius: 12px; background-color: #fff; box-shadow: 0 4px 24px rgba(0,0,0,0.08);}
+.gridBox .data {flex: 1;}
+
+/* gridTabWrap */
+.gridTabWrap {flex: 1; display: flex; flex-direction: column; min-width: 0;}
+.gridTabWrap .gridTabBox {display: flex;}
+.gridTabWrap .gridTabBox .rCont {margin-left: auto;}
+.gridTabWrap .gridTabBox .rCont .rContBtnCol {display: flex;}
+.gridTabWrap .gridTabBox .rCont .btnBox + .btnBox {margin-left: 4px;}
+.gridTabWrap .gridTabBox .tabList {display: flex;}
+.gridTabWrap .gridTabBox .tabList > li + li {margin-left: 6px;}
+.gridTabWrap .gridTabBox .tabList > li button {width: 100px; height: 40px; line-height: 40px; border-radius: 12px 12px 0 0; background: var(--color-gray100); color: var(--color-gray500); font-weight: 600; font-size: 1.167rem;}
+.gridTabWrap .gridTabBox .tabList > li button span {display: block; margin-bottom: 10px;}
+.gridTabWrap .gridTabBox .tabList > li.active {position: relative; z-index: 1;}
+.gridTabWrap .gridTabBox .tabList > li.active button {background: #fff;}
+.gridTabWrap .gridTabBox ~ .gCol {border-radius: 0 12px 12px 12px;}
+/* gridTabWrap.type02 */
+.gridTabWrap.type02 .gridTabBox .tabList > li button {width: 140px; color: var(--color-primary); border: 1px solid var(--color-primary); border-bottom: none; background: #F3F9FF;}
+.gridTabWrap.type02 .gridTabBox .tabList > li.active button {background: var(--color-primary); color: #fff;}
+
+/* grayBox */
+.grayBox {padding: 20px; background: var(--color-gray50); border: 1px solid var(--color-gray100); border-radius: 12px;}
+.infoGrayBox {padding: 8px; background: var(--color-gray100); border-radius: 6px;}
+.infoGrayBox .titleWrap {margin-bottom: 8px;}
+.infoGrayBox .titleWrap .lbTit {position: relative; padding-left: 8px; font-weight: bold; font-size: 1rem;}
+.infoGrayBox .titleWrap .lbTit::before {content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 2px; border-radius: 2px; background: var(--color-primary);}
+.infoGrayBox .desc {padding-left: 8px;}
+.infoGrayBox .desc p {font-weight: 600; font-size: 1rem; color: var(--color-gray500); line-height: 1.5;}
+
+/* addToggle */
+.popWrap .gridArea {min-height: 350px; height: 60dvh;}
+.popWrap .gridArea.addToggle {display: flex;}
+.popWrap .gridArea.addToggle .divideArea {display: flex; flex-direction: column; justify-content: center; padding: 0 20px; cursor: ew-resize;}
+.popWrap .gridArea.addToggle .divideArea .bdGrayBodyBtn {margin-top: 8px;}
+.popInner .gridArea.addToggle .showGrid {width: 636px; min-width: 291px; max-width: 636px;}
+.popInner .gridArea.addToggle .selectGrid {min-width: 260px; flex: 1;}
+
+/* dataFilter */
+.dataFilter {display: flex;}
+.dataFilter .filterBox {display: flex; align-items: center;}
+.dataFilter .filterBox + .filterBox {margin-left: 12px;}
+.dataFilter .filterBox .filterTit {color: var(--color-gray400); margin-right: 12px;}
+.dataFilter .filterBox.status .selectBox {width: 86px;}
+.dataFilter .filterBox.lookMonth .selectBox {width: 110px;}
+
+/* msgBox */
+.msgBox {height: 220px;}
+.msgBox textarea {height: 100%;}
+
+/* indicator */
+.indicator {position: relative; margin-bottom: 16px; z-index: 102;}
+.indicator .subMenuBg {display: none; position: absolute; top: calc(100% - 5px); left: 0; right: 0; height: 180px; background: #fff; box-shadow: 0 4px 24px rgba(0,0,0,0.08); border-radius: 0 0 8px 8px;}
+.indicator .indicatorList {position: relative; display: flex; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-radius: 8px; z-index: 12;}
+.indicator .indicatorList > li {position: relative; flex: 1;}
+.indicator .indicatorList > li::after {content: ''; position: absolute; top: 0; right: -34px; height: 56px; width: 56px; background: url(../img/wp/bg/bg_indicator.png); cursor: pointer; z-index: 2;}
+.indicator .indicatorList > li:first-child .indicatorBox {border-radius: 8px 0 0 8px;}
+.indicator .indicatorList > li:first-child::before {content: none;}
+/* .indicator .indicatorList > li:last-child {flex: 1.3;} */
+.indicator .indicatorList > li:last-child .indicatorBox {border-radius: 0 8px 8px 0;}
+.indicator .indicatorList > li:last-child::after {content: none;}
+.indicator .indicatorList > li .indicatorBox {width: 100%; display: flex; align-items: center; justify-content: center; background: #fff; cursor: pointer;}
+.indicator .indicatorList > li .indicatorBox .indicatorFilter {position: relative; display: flex; justify-content: center; height: 56px; flex-direction: column; padding-left: 24px; background: url(../img/wp/ico/ico_document.svg) no-repeat center left / 16px;}
+.indicator .indicatorList > li .indicatorBox .indicatorFilter .areaStatus .statusTit {font-size: 1.333rem; font-weight: 600;}
+.indicator .indicatorList > li .indicatorBox .indicatorFilter .areaStatus .statusNum {font-size: 1.333rem; font-weight: 600; color: var(--color-primary);}
+.indicator .indicatorList > li .indicatorBox .indicatorFilter .areaStatus .selectStatus {margin-top: 4px; font-size: 1rem; color: var(--color-gray400);}
+.indicator .indicatorList > li .indicatorBox .statusMenuList {display: none; position: absolute; top: 100%; left: 0; right: 0; padding-top: 8px;}
+.indicator .indicatorList > li .indicatorBox .statusMenuList > li + li {padding-top: 4px;}
+.indicator .indicatorList > li .indicatorBox .statusMenuList > li button {width: 160px; height: 36px; padding-left: 12px; text-align: left; border-radius: 6px; transition: .25s;}
+.indicator .indicatorList > li .indicatorBox .statusMenuList > li button:hover {background: var(--color-gray100);}
+.indicator .indicatorList > li .indicatorBox .statusMenuList > li button span {font-size: 1.333rem; font-weight: 600;}
+.indicator .indicatorList > li .indicatorBox .statusMenuList > li button em {color: var(--color-primary); font-size: 1.333rem; font-weight: 600;}
+.indicator .indicatorList > li .indicatorBox .statusMenuList > li.active button {background: rgba(32,127,252, 0.05);}
+.indicator .indicatorList > li .statusDeleteBtn { width: 25px; height: 25px; background: url(../img/wp/ico/ico_close_white.svg) no-repeat center / 16px; position: absolute; right: 0; top: 50%; transform: translateY(-50%); z-index: 5;}
+.indicator .indicatorList > li:last-child .statusDeleteBtn {right: 15px;}
+
+/* indicator.hover */
+.indicator .indicatorList > li:is(.hover,.active)::after {background-image: url(../img/wp/bg/bg_indicator_active.png); z-index: 1;}
+.indicator .indicatorList > li:is(.hover,.active)::before {content: ''; position: absolute; top: 0; left: -22px; height: 56px; width: 56px; cursor: pointer; background: url(../img/wp/bg/bg_indicator_active_before.png) no-repeat center / contain; z-index: 2;}
+.indicator .indicatorList > li:first-child::before {content: none;}
+.indicator .indicatorList > li:is(.hover,.active) .indicatorBox {background: var(--color-primary);}
+.indicator .indicatorList > li:is(.hover,.active) .indicatorBox .indicatorFilter {background-image: url(../img/wp/ico/ico_document_white.svg);}
+.indicator .indicatorList > li:is(.hover,.active) .indicatorBox .indicatorFilter .areaStatus :is(.statusTit, .statusNum) {color: #fff;}
+.indicator .indicatorList > li:is(.hover,.active) .indicatorBox .indicatorFilter .selectStatus {color: #fff;}
+/* indicator.siblingsHover */
+.indicator .indicatorList > li.prev::after {background-image: url(../img/wp/bg/bg_indicator_active_siblings.png); z-index: 3;}
+.indicator .indicatorList > li.next::before {background-image: url(../img/wp/bg/bg_indicator_active_siblings.png); z-index: 3;}
+/* indicator.down */
+.indicator.down .subMenuBg {display: block;}
+.indicator.down .indicatorList > li .indicatorBox .statusMenuList {display: block;}
+.indicator.down .subMenuToggleBtn {transform: translateY(-50%) rotate(180deg);}
+
+/* noneData */
+.noneData {display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; text-align: center;}
+.noneData .visualImg {margin-bottom: 40px;}
+.noneData .nonTit {display: block; margin-bottom: 20px; font-size: 1.5rem;}
+.noneData .txtCont p {color: var(--color-gray600); font-weight: 600; font-size: 1.167rem;}
+.noneData .txtCont p + p {margin-top: 6px;}
+.noneData .noneBtnWrap {margin-top: 40px;}
+
+/* qm */
+.qm {position: relative; width: fit-content; padding-right: 24px;}
+.qm .qBtn {position: absolute; right: 0; top: 50%; transform: translateY(-50%); width: 20px; height: 20px; background: url(../img/wp/ico/ico_qm_primary.svg) no-repeat center / 16px;}
+
+/* infoMark */
+.infoMark {position: relative; width: fit-content; padding-left: 24px;}
+.infoMark .infoBtn {position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 20px; height: 20px; background: url(../img/wp/ico/ico_info_primary.svg) no-repeat center / 16px;}
+
+/* accordionToggle */
+.accordionToggle {position: relative; display: block}
+.accordionToggle::after {content: ''; position: absolute; top: 50%; right: -4.5px; transform: translateY(-50%); width: 20px; height: 20px; background: url(../img/wp/ico/ico_ts_down.svg) no-repeat center / 16px; cursor: pointer}
+.accordionToggle.active::after {transform: translateY(-50%) rotate(180deg)}
+.accordionToggleWrap {display: none}
+
+/* listShowHide 삭제예정 */
+.listShowHide {position: relative; text-align: left;}
+.listShowHide .toggleBtn {position: absolute; top: 1px; left: 0; right: 0; height: 20px; background: url(../img/wp/ico/ico_ts_down.svg) no-repeat center right 10px / 16px;}
+.listShowHide .all {height: 22px; line-height: 22px; padding: 0 12px; font-size: 1rem;}
+.listShowHide .itemList {opacity: 0; visibility: hidden; padding-left: 12px; position: absolute; top: 100%; left: 0; right: 0;  transform: translateY(10px); background: #fff; box-shadow: 0 4px 24px rgba(0,0,0,0.08); border: 1px solid var(--color-gray200); border-radius: 4px; z-index: 1; transition: .25s;}
+.listShowHide .itemList li {height: 28px; line-height: 28px; font-size: 1rem;}
+.listShowHide.active .itemList {opacity: 1; visibility: visible; transform: translateY(0);}
+.listShowHide.active .toggleBtn {background-image: url(../img/wp/ico/ico_ts_up.svg);}
+
+/* mvLink */
+.mvLink {display: flex; align-items: center; padding: 6px 8px; border-radius: 4px; transition: .25s;}
+.mvLink .linkName {font-size: 1rem; font-weight: 600; color: var(--color-gray500);}
+.mvLink .rCont {margin-left: auto;}
+.mvLink:hover {background: var(--color-gray100);}
+
+/* tblInfoGray */
+.tblInfoGray {vertical-align: middle;}
+.tblInfoGray tbody tr th {padding: 5px 0; text-align: left; font-weight: 600; font-size: 1.167rem;}
+.tblInfoGray tbody tr th.tit {color: var(--color-gray500);}
+.tblInfoGray tbody tr td {padding: 5px 0; font-weight: 600; font-size: 1.167rem;}
+.tblInfoGray tbody tr td .divide {margin-right: 12px;}
+
+/* termsList */
+.termsList li {display: flex;}
+.termsList li.all {padding-bottom: 10px; border-bottom: 1px solid var(--color-gray100);}
+.termsList li + li {margin-top: 10px;}
+.termsList li label {flex: 1; display: flex; align-items: center;}
+.termsList li label span {margin-left: 8px; font-size: 0.917rem;}
+.termsList li .mvLinkBtn {width: 20px; height: 20px; margin-left: auto; margin-right: -6px; background: url(../img/wp/ico/ico_ts_right.svg) no-repeat center / 16px;}
+
+/* topBanner */
+.topBanner {display: none; position: relative; height: 45px; overflow: hidden;}
+.topBanner .topBannerList > li a {display: flex; height: 100%; justify-content: center; align-items: center; cursor: pointer;}
+.topBanner .topBannerList > li.notice a {background: #11ADAD;}
+.topBanner .topBannerList > li.edu a {background: #FF8412;}
+.topBanner .topBannerList > li.event a {background: #7862FF;}
+.topBanner .topBannerList > li.update a {background: #3785FF;}
+.topBanner .topBannerList > li.check a {background: #F95165;}
+.topBanner .topBannerList > li a span {padding-right: 22px; color: #fff; font-size: 1.333rem; background: url(../img/wp/ico/ico_ts_right_white.svg) no-repeat center right / 22px;}
+.topBanner .topBannerList > li .btnTodayHide {position: absolute; top: 50%; transform: translateY(-50%); right: 20px; padding-right: 24px; color: #fff; font-size: 1rem;}
+.topBanner .topBannerList > li .btnTodayHide img {position: absolute; right: 0; top: -1px; transition: .25s;}
+.topBanner .topBannerList > li .btnTodayHide:hover img {transform: rotate(180deg);}
+
+/* topBanner Active */
+.topBanner.active {display: block;}
+.topBanner.active ~ .header {top: 45px;}
+.topBanner.active ~ .wrapper .lnb .inner {height: calc(100dvh - 105px);}
+.topBanner.active ~ .wrapper .contentWrap {height: calc(100dvh - 105px);}
+.topBanner.active ~ .wrapper .contentWrap .collectRequest .gridBox {height: calc(100dvh - 177px);}
+.topBanner.active ~ .wrapper .contentWrap .collectRequest .gridBox .data .tblRqDocuArea {height: calc(100dvh - 335px);}
+.topBanner.active ~ .wrapper .contentWrap .requestCustomer .requestTargetListWrap {height: calc(100dvh - 527px);}
+.topBanner.active ~ .wrapper .contentWrap .collectStatus.gridCont .gridBox .gCol {height: calc(100dvh - 217px);}
+.topBanner.active ~ .wrapper .contentWrap .cusManager.gridCont .gridBox {height: calc(100dvh - 268px);}
+.topBanner.active ~ .wrapper .contentWrap .cusInflow .gridBox {height: calc(100dvh - 177px);}
+.topBanner.active ~ .wrapper .contentWrap .cusInflow.gridCont .gridBox .gCol .gridArea {height: calc(100dvh - 335px);}
+.topBanner.active ~ .wrapper .contentWrap .landingEdit .gridBox .gCol.info {height: calc(100dvh - 177px);}
+
+/* tooltip */
+.tooltipWrap {position: relative; z-index: 99;}
+.tooltip {display: none; position: absolute; padding: 12px; border-radius: 8px; background: #344054; z-index: 1202}
+.tooltip .text {color: #fff; font-size: 1rem; line-height: 1.5; white-space: nowrap;}
+.tooltip::before {content: ''; position: absolute; width: 10px; height: 10px; background: #344054;}
+.tooltip.bottom {top: calc(100% + 10px); left: 50%; transform: translateX(-50%);}
+.tooltip.bottom::before {top: -5px; left: 50%; transform: translateX(-50%) rotate(45deg);}
+.tooltip.right {left: calc(100% + 10px); top: 50%; transform: translateY(-50%);}
+.tooltip.right::before {left: -5px; top: 50%; transform: translateY(-50%) rotate(45deg);}
+.tooltipWrap:hover .tooltip {display: block;}
+/* 아이콘 오른쪽 툴팁 케이스 추가 - 2025-01-14 */
+.rIconTooltip {display: flex;}
+.rIconTooltip .tooltipWrap {margin-left: 4px; top: -1px;}
+
+/* stateBadge */
+.stateBadge {position: relative; padding-left: 16px;}
+.stateBadge > img {position: absolute; left: 0;}
+
+/* dtList */
+.dtList > li {padding: 10px 0; border-top: 1px solid var(--color-gray100);}
+.dtList > li dl {display: flex; justify-content: space-between; padding: 10px 0;}
+.dtList > li dl dt > div p {font-size: 1.167rem; color: var(--color-gray500); font-weight: 600;}
+.dtList > li dl dd > div p {font-size: 1.167rem; font-weight: 600;}
+.dtList > li.sum dl {padding-bottom: 12px;}
+.dtList > li.sum dl dt > div p {font-size: 1.333rem; color: var(--color-black900); font-weight: bold;}
+.dtList > li.sum dl dd > div p {font-size: 1.333rem; font-weight: bold;}
+.dtList > li.sum .infoTxt {font-size: 0.917rem;}
+
+/* new */ 
+.new {position: relative; width: fit-content; padding-right: 16px !important;}
+.new::after {content: ''; position: absolute; top: 50%; right: 0; transform: translateY(-50%); width: 14px; height: 14px; background: url(../img/wp/ico/ico_new.svg) no-repeat center right / 14px;}
+.newType02 {position: relative; width: fit-content; padding-right: 8px !important;}
+.newType02::after {content: ''; position: absolute; right: 0; top: 0; width: 4px; height: 4px; border-radius: 50%; background: #ff5353;}
+
+/* footer 숨김처리 */
+.footer {display: none;}
+
+/* ANIMATION */
+@keyframes fadeIn {
+	0% {
+    opacity: 0;
+    visibility: hidden;
+	}
+	100% {
+		opacity: 1;
+		visibility: visible;
+	}
+}

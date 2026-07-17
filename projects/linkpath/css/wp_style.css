@@ -1,0 +1,876 @@
+@charset "utf-8";
+
+/* cusInflow - 고객유입현황 */
+.cusInflow .gridBox {height: calc(100dvh - 132px);}
+.cusInflow.gridCont .gridBox .gCol {overflow-y: auto;}
+.cusInflow.gridCont .gridBox .gCol .gridArea {height: calc(100dvh - 285px);}
+
+/* statusDataWrap - 유입현황 차트 */
+.statusDataWrap {display: flex;}
+.statusDataWrap + .statusDataWrap {margin-top: 16px;}
+.statusDataWrap .statusDataCol {flex: 1; border-radius: 20px;}
+.statusDataWrap .statusDataCol.bdGray {padding: 20px; border: 1px solid var(--color-gray100);}
+.statusDataWrap .statusDataCol + .statusDataCol {margin-left: 16px;}
+.statusDataWrap .statusDataCol .areaChart canvas {display: block; width: 100% !important; max-width: 500px; margin: 0 auto;}
+.statusDataWrap .statusDataCol .areaChart .chartLabelWrap {display: flex; justify-content: center; margin-top: 30px;}
+.statusDataWrap .statusDataCol .areaChart .chartLabelWrap + .chartLabelWrap {margin-top: 8px;}
+.statusDataWrap .statusDataCol .areaChart .chartLabelWrap .chartLabel {display: flex; align-items: center;}
+.statusDataWrap .statusDataCol .areaChart .chartLabelWrap .chartLabel + .chartLabel {margin-left: 8px;}
+.statusDataWrap .statusDataCol .areaChart .chartLabelWrap .chartLabel .labelBox {width: 12px; height: 12px; margin-right: 4px; border-radius: 2px;}
+.statusDataWrap .statusDataCol .areaChart .chartLabelWrap .chartLabel.gray .labelBox {background: var(--color-gray200);}
+.statusDataWrap .statusDataCol .areaChart .chartLabelWrap .chartLabel.red .labelBox {background: var(--color-red)}
+.statusDataWrap .statusDataCol .areaChart .chartLabelWrap .chartLabel.primary .labelBox {background: var(--color-primary)}
+.statusDataWrap .statusDataCol .areaChart .chartLabelWrap .chartLabel.yellow .labelBox {background: #FFC64C;}
+.statusDataWrap .statusDataCol .areaChart .chartLabelWrap .chartLabel.purple .labelBox {background: var(--color-purple);}
+.statusDataWrap .statusDataCol .areaChart .chartLabelWrap .chartLabel.purple02 .labelBox {background: #6378ED;}
+.statusDataWrap .statusDataCol .areaChart .chartLabelWrap .chartLabel.mint .labelBox {background: #0FC9BE;}
+.statusDataWrap .statusDataCol .areaChart .chartLabelWrap .chartLabel.pink .labelBox {background: #FF6580;}
+.statusDataWrap .statusDataCol .areaChart .chartLabelWrap .chartLabel.pink02 .labelBox {background: #FF369B;}
+.statusDataWrap .statusDataCol .areaChart .chartLabelWrap .chartLabel.green .labelBox {background: #618987;}
+.statusDataWrap .statusDataCol .areaChart .chartLabelWrap .chartLabel.green02 .labelBox {background: #60A997;}
+.statusDataWrap .statusDataCol .areaChart .chartLabelWrap .chartLabel.green03 .labelBox {background: #20C072;}
+.statusDataWrap .statusDataCol .areaChart .chartLabelWrap .chartLabel.skyblue .labelBox {background: #8DC7FF;}
+.statusDataWrap .statusDataCol .areaChart .chartLabelWrap .chartLabel.brick .labelBox {background: #EC5B55;}
+.statusDataWrap .statusDataCol .areaChart .chartLabelWrap .chartLabel.orange .labelBox {background: #FF8126;}
+.statusDataWrap .statusDataCol .areaChart .chartLabelWrap .chartLabel em {max-width: 83px; text-overflow: ellipsis; overflow: hidden; color: var(--color-gray400); white-space: nowrap;}
+.statusDataWrap.grid {flex-grow: 1; display: flex;}
+.statusDataWrap.grid .statusDataCol {display: flex; flex-direction: column;}
+.statusDataWrap.grid .statusDataCol .gridArea {height: calc(100dvh - 290px);}
+
+/* collectStatus - 수집현황 */
+.collectStatus.gridCont .gridBox .gCol {height: calc(100dvh - 172px); overflow-y: auto;}
+.collectStatus .tblRqDocuArea {position: relative; height: calc(100dvh - 250px); overflow-y: auto; z-index: 1;}
+.selectBoxTypeBtn.right .selectListWrap {left: unset; right: 0; width: max-content;}
+.managerBox {margin-bottom: 40px;}
+.managerBox .col {display: flex; margin-bottom: 4px;}
+.managerBox .col .row + .row {margin-left: 4px;}
+.managerBox .col :is(.phone, .email) {width: 100%;}
+.managerBox .col .row .selectBox {width: 80px;}
+.managerBox .col .row.name input {width: 80px;}
+.requestCustomer .titleWrapCenter {margin-bottom: 8px;}
+.requestCustomer .requestTargetListWrap {height: calc(100dvh - 482px); border: 1px solid var(--color-gray100); border-radius: 8px; overflow-y: auto;}
+.requestTargetList {padding: 12px;}
+.requestTargetList > li {display: flex; justify-content: space-between; align-items: center; padding: 6px 8px; background: var(--color-gray100); border-radius: 6px;}
+.requestTargetList > li + li {margin-top: 4px;}
+.requestTargetList > li .targetInfo {display: flex; align-items: center;}
+.requestTargetList > li .targetInfo .name {width: 100px;}
+.requestTargetList > li .targetInfo .divide {width: 1px; height: 12px; margin: 0 8px; background: var(--color-gray300);}
+.requestTargetList > li .targetInfo :is(.name, .callNum) {color: var(--color-gray500);}
+.requestCustomer .requestBtnArea {display: flex; align-items: center; justify-content: space-between; margin-top: 8px;}
+.requestCustomer .requestBtnArea .right {display: flex;}
+.requestCustomer .requestBtnArea .right button + button {margin-left: 4px;}
+
+/* collectRequest - 수집요청 */
+.collectRequest .selectListWrap .listCol {min-width: 190px;}
+.collectRequest .gridBox {height: calc(100dvh - 132px);}
+.collectRequest .gridBox .info {flex: 0 0 368px; overflow-y: auto;}
+.collectRequest .gridBox .data {overflow-y: auto;}
+.collectRequest .gridBox .data .tblRqDocuArea {overflow-x: auto; height: calc(100dvh - 295px);}
+.collectRequest .gridBox .data .tblRqDocuArea table {min-width: 733px;}
+.collectRequest .gridBox .data .tblRqDocuArea table thead {position: sticky; top: 0; z-index: 99;}
+
+/* cusManager - 고객관리 */
+.cusManager.gridCont .gridBox {height: calc(100dvh - 223px);}
+.cusManager.gridCont .gridBox .gCol {overflow-y: auto;}
+.cusManager .gridBox .info {width: 246px;}
+.cusManager .gridBox .info .titleWrap {margin-bottom: 22px;}
+.cusManager .indicator .subMenuBg {height: 177px;}
+
+/* seviceSet - 서비스 설정 */
+.moveActive {display: flex; align-items: center; justify-content: space-between;}
+.moveActive .activeTit {font-size: 1.167rem; font-weight: 600; color: var(--color-gray600);}
+.seviceSet .kakaoChanel .titleWrap .infoMark {margin-top: 12px; font-weight: 600;}
+.toggleArea {display: flex; align-items: center;}
+.toggleArea span {margin-right: 12px; font-size: 1rem; font-weight: 600;}
+.seviceSet .kakaoChanel .kakaoQna .chanelInfo .grayBox {display: none; margin-top: 20px;}
+.seviceSet .kakaoChanel .kakaoQna .chanelInfo .grayBox .tblInfoGray {margin-top: 12px;}
+.seviceSet .kakaoChanel .kakaoQna .qnaList {margin-top: 20px; border-top: 1px solid var(--color-gray100); border-bottom: 1px solid var(--color-gray100);}
+.seviceSet .kakaoChanel .kakaoQna .qnaList > li + li {border-top: 1px solid var(--color-gray100);}
+.seviceSet .kakaoChanel .kakaoQna .qnaList .accordionToggle {padding: 16px 0;}
+.seviceSet .kakaoChanel .kakaoQna .qnaList .accordionToggle .tit {font-weight: 600; font-size: 1.167rem;}
+.seviceSet .kakaoChanel .kakaoQna .qnaList .accordionToggleWrap {margin-bottom: 16px;}
+.seviceSet .kakaoChanel .kakaoQna .qnaList .accordionToggleWrap .txt {line-height: 1.5; font-weight: 600; font-size: 1rem; color: var(--color-gray500);}
+.seviceSet .gridBox .mvLinkList > li + li {margin-top: 8px;}
+.seviceSet .gridBox .reception {padding-left: 8px; margin-top: 8px;}
+.seviceSet .gridBox .reception .date {margin-left: 20px; color: var(--color-primary); font-weight: 600; font-size: 1rem;}
+
+/* ratePlan - 요금제 */
+.ratePlan {padding-left: 20px;}
+.ratePlan .titleWrap .myRate {color: var(--color-gray600); font-weight: bold; font-size: 1.667rem;}
+.ratePlan .inner {display: flex;}
+.ratePlan .inner .joinApply {display: flex; flex-direction: column; justify-content: center; align-items: center;}
+.ratePlan .inner .joinApply .deal {margin-top: 54px;}
+.ratePlan .inner .joinApply .deal span {background: linear-gradient(135deg, rgba(32,127,252,1) 0%, rgba(248,32,252,1) 100%); background-clip: text; -webkit-background-clip: text; color: transparent; font-weight: bold; font-size: 2rem;}
+.ratePlan .inner .joinApply .deal .infoTxt {margin-top: 16px; text-align: center; font-size: 1.5rem;}
+.ratePlan .inner .divide {width: 2px; margin: 0 60px; border-radius: 1px; background: var(--color-gray100);}
+.ratePlan .inner .areaBtn {margin-top: 40px;}
+.ratePlan .inner .areaBtn .activeBigBodyBtn {width: 180px;}
+.ratePlan .inner .funcDesc .item + .item {margin-top: 40px;}
+.ratePlan .inner .funcDesc .item .tit {position: relative; padding-left: 22px; font-size: 1.667rem; font-weight: bold; color: var(--color-primary);}
+.ratePlan .inner .funcDesc .item .tit::before {content: ''; position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 6px; height: 24px; border-radius: 4px; background: var(--color-primary);}
+.ratePlan .inner .funcDesc .item .descList {margin: 20px 0 0 10px;}
+.ratePlan .inner .funcDesc .item .descList > li {position: relative; padding-left: 16px;}
+.ratePlan .inner .funcDesc .item .descList > li::before {content: '•'; position: absolute; left: 0; font-weight: bold; color: var(--color-gray600);}
+.ratePlan .inner .funcDesc .item .descList > li p {font-size: 1.333rem; color: var(--color-gray600);}
+.ratePlan .inner .funcDesc .item .descList > li p + p {margin-top: 8px;}
+.ratePlan .inner .funcDesc .item .descList > li + li {margin-top: 8px;}
+
+/* serviceCashInput - 전자민원캐시 */
+.serviceCashInput .selectWrap .item .title {width: 103px;}
+.serviceCashInput .selectWrap .item input {width: 177px;}
+
+/* consult - 간편인증 및 랜딩페이지 */
+.contentWrap.consult {padding: 0; background: #fff;}
+.contentWrap.consult .landingIntro {padding-top: 20px;}
+.contentWrap.consult .landingIntro > li {text-align: center;}
+.contentWrap.consult .inner {width: 640px; padding: 60px 20px 150px; margin: 0 auto;}
+.contentWrap.consult .inner .certiTitArea {margin-bottom: 40px; text-align: left;}
+.contentWrap.consult .inner .certiTitArea img ~ .certiTit {margin-left: 8px;}
+.contentWrap.consult .inner .certiTitArea .certiTit {font-size: 3rem; font-weight: bold;}
+.contentWrap.consult .inner .certiTitArea .certiTit .progress {font-size: 2.5rem;}
+.contentWrap.consult .inner .certiTitArea .certiTxt {margin-top: 24px; font-weight: 600; font-size: 2.333rem; color: var(--color-gray600);}
+.contentWrap.consult .inner .certiTitArea .info {margin-top: 16px; font-weight: 600; font-size: 1.5rem; color: var(--color-gray600);}
+.contentWrap.consult .inner .directTxtBox {margin-bottom: 60px; text-align: center;}
+.contentWrap.consult .inner .directTxtBox p {color: var(--color-gray600); font-weight: 600; font-size: 1.667rem; line-height: 1.5;}
+.contentWrap.consult .inner .directTxtBox p .focus {color: #101828;}
+.contentWrap.consult .inner .titleWrap {margin: 60px 0 40px;}
+.contentWrap.consult .inner .infoTit {font-size: 2.667rem; font-weight: bold;}
+.contentWrap.consult .inner .selectWrap {margin-bottom: 40px;}
+.contentWrap.consult .inner .selectWrap .item + .item {margin-top: 16px;}
+.contentWrap.consult .inner .selectWrap .item .title {width: 131px; font-size: 2rem; font-weight: 600; color: var(--color-black900);}
+.contentWrap.consult .inner .resiNumWrap {flex: 1; margin-left: 13px; display: flex; align-items: center;}
+.contentWrap.consult .inner .resiNumWrap .regiInput {width: 180px;}
+.contentWrap.consult .inner .resiNumWrap .divide {margin: 0 10px; font-size: 1.667rem; font-weight: 600;} 
+.contentWrap.consult .inner .phoneNumWrap {flex: 1; margin-left: 13px; display: flex;}
+.contentWrap.consult .inner .phoneNumWrap .selectBox.carrier {flex: 0 0 180px;}
+.contentWrap.consult .inner .phoneNumWrap .selectBox.cellNum {margin-left: 8px;}
+.contentWrap.consult .inner .addrWrap {flex: 1; display: flex; margin-left: 13px;}
+.contentWrap.consult .inner .addrWrap .selectBox + .selectBox {margin-left: 8px;}
+.contentWrap.consult .inner .addrWrap .selectBox .selectListWrap {max-height: 270px; overflow-y: auto;}
+.contentWrap.consult .inner .bankSelectWrap {flex: 1; display: flex; align-items: center; margin-left: 13px;} 
+.contentWrap.consult .inner .bankSelectWrap .selectBox  {flex: 0 0 335px;}
+.contentWrap.consult .inner .bankSelectWrap .rCont .basic {color: var(--color-gray400); font-size: 1.667rem; font-weight: 600;}
+.contentWrap.consult .inner .optionBtn {height: 60px; border-radius: 12px; font-size: 1.667rem; font-weight: 600;}
+.contentWrap.consult .inner .optionBtn::before {width: 24px; height: 24px;}
+.contentWrap.consult .inner .selectWrap .selectBox.consultCnt select {width: 100%; height: 60px; padding: 16px 20px; border-radius: 12px; border: 1px solid var(--color-gray300); outline: none; font-size: 1.667rem;
+  font-weight: 600; background: url(../img/wp/ico/ico_ts_down.svg) no-repeat center right 18px / 24px; transition: .25s;}
+.contentWrap.consult .inner .selectWrap .selectBox.consultCnt select:focus {border-color: var(--color-primary);}
+.contentWrap.consult .inner .selectWrap .busiNumValid {flex: 1; display: flex; margin-left: 13px;}
+.contentWrap.consult .inner .selectWrap .busiNumValid .activeBodyBtn {height: 60px; width: 120px; margin-left: 8px; border-radius: 12px; font-size: 1.667rem; font-weight: 600;}
+.contentWrap.consult .inner .selectListWrap .selectList > li {display: flex; align-items: center; height: 48px;}
+.contentWrap.consult .inner .selectListWrap .selectList > li.currentSelected {padding-right: 36px; background-size: 30px;}
+.contentWrap.consult .inner .selectListWrap .selectList > li span {font-size: 20px; }
+.contentWrap.consult .inner input:not([type="checkbox"]) {height: 60px; padding: 18px 20px; border-radius: 12px; font-size: 1.667rem; font-weight: 600;}
+.contentWrap.consult .inner input::placeholder {font-size: 1.667rem;}
+.contentWrap.consult .inner input.inputed {padding-right: 60px;}
+.contentWrap.consult .inner .deleteBtn {width: 30px; height: 30px; top: 14px; right: 15px; background-size: 24px;}
+.contentWrap.consult .inner .agreeWrap {margin-bottom: 60px;}
+.contentWrap.consult .inner .agreeWrap .agreeList > li {display: flex; align-items: center;}
+.contentWrap.consult .inner .agreeWrap .agreeList > li.all {padding-bottom: 16px; border-bottom: 1px solid var(--color-gray100);}
+.contentWrap.consult .inner .agreeWrap .agreeList > li + li {margin-top: 16px;}
+.contentWrap.consult .inner .agreeWrap .agreeList > li label {display: flex; align-items: center; cursor: pointer;}
+.contentWrap.consult .inner .agreeWrap .agreeList > li label span {margin-left: 12px; font-weight: 600; font-size: 1.2rem; color: var(--color-gray600);}
+.contentWrap.consult .inner .agreeWrap .agreeList > li label input {width: 20px; height: 20px; padding: 0; border-radius: 5px;}
+.contentWrap.consult .inner .agreeWrap .agreeList > li .mvBtn {width: 25px; height: 25px; margin-left: auto; background: url(../img/wp/ico/ico_ts_right.svg) no-repeat center / 20px;}
+.contentWrap.consult .inner .grayBox {margin-bottom: 40px;}
+.contentWrap.consult .inner .grayBox .dotListMsg > li {font-size: 1.417rem; color: var(--color-gray500);}
+.contentWrap.consult .inner .grayBox .dotListMsg > li + li {margin-top: 20px;}
+.contentWrap.consult .inner .grayBox .dotListMsg > li .mvLink {display: inline-block; padding: 0; color: #111; font-weight: 600;}
+.contentWrap.consult .inner .areaBtn {display: flex; margin: 0 -4px;}
+.contentWrap.consult .inner .areaBtn .cell {flex: 1; margin: 0 4px;}
+.contentWrap.consult .inner .areaBtn .cell + .cell {flex: 1.5;}
+.contentWrap.consult .inner .areaBtn button {width: 100%; height: 80px; border-radius: 18px;}
+.contentWrap.consult .inner .areaBtn button + button {margin-top: 20px;}
+.contentWrap.consult .inner .areaBtn button span {font-size: 2rem;}
+.contentWrap.consult .inner .areaBtn.serial {display: block;}
+.contentWrap.consult .inner .areaBtn.serial .cell + .cell {margin-top: 20px;}
+.contentWrap.consult .inner .areaBtn.flex1 .cell {flex: 1;}
+.contentWrap.consult .inner .stepWrap {margin-bottom: 80px; padding: 40px; border-radius: 20px; background: #F9FAFB;}
+.contentWrap.consult .inner .stepWrap .step {display: flex; align-items: center;}
+.contentWrap.consult .inner .stepWrap .step + .step {margin-top: 40px;}
+.contentWrap.consult .inner .stepWrap .step img {margin-right: 40px;}
+.contentWrap.consult .inner .stepWrap .step .stepTxt > p {margin-bottom: 12px; font-size: 2rem; font-weight: bold; color: var(--color-black900);}
+.contentWrap.consult .inner .stepWrap .step .stepTxt .info span {display: block; line-height: 1.5; font-size: 1.5rem; font-weight: 600; color: var(--color-gray600);}
+.contentWrap.consult .inner .stepWrap .stepTitArea {margin-bottom: 40px; text-align: center;}
+.contentWrap.consult .inner .stepWrap .stepTitArea strong {font-weight: bold; font-size: 2.333rem;}
+.contentWrap.consult .inner .areaFixedBottom .fixedBottomInner {max-width: 600px;}
+.contentWrap.consult .inner .infoMsgBox {padding: 24px 30px; background: #f9fafb; border-radius: 20px;}
+.contentWrap.consult .inner .infoMsgBox .infoMsg {font-size: 18px; font-weight: 600; line-height: 1.5;}
+.contentWrap.consult .inner .infoMsgBox .dotListMsg {margin-top: 10px;}
+.contentWrap.consult .inner .infoMsgBox .dotListMsg > li {font-size: 1.333rem;}
+.contentWrap.consult .inner .userInfoSection {margin-top: 60px;}
+.contentWrap.consult .inner .userInfoSection .InfoPanel {margin-bottom: 20px;}
+.contentWrap.consult .inner .userInfoSection .InfoPanel .pannelTit {font-size: 24px; font-weight: bold;}
+.contentWrap.consult .inner .userInfoSection .selectWrap {margin-bottom: 20px;}
+.contentWrap.consult .inner .userInfoBox {padding: 24px 30px; border-radius: 20px; background: #fcfcfd; border: 1px solid #EFEFF1;}
+.contentWrap.consult .inner .userInfoBox + .userInfoBox {margin-top: 20px;}
+.contentWrap.consult .inner .userInfoBox .addrWrap {margin-left: 0;}
+.contentWrap.consult .inner .userInfoBox .item .title {font-size: 20px; color: var(--color-navy700);}
+.contentWrap.consult .inner .userInfoBox .addrSearchInput {padding-right: 48px; background: var(--color-gray100) url(../img/wp/ico/ico_search.svg) no-repeat center right 20px / 20px; cursor: pointer;}
+
+/* 간편수집 결과안내 */
+.collectResultWrap {display: flex; flex-direction: column; justify-content: center; width: fit-content; height: calc(100dvh - 160px); margin: -60px auto 0;}
+.collectResult .item + .item {margin-top: 20px;}
+.collectResult .item .cate {display: flex; align-items: center; margin-bottom: 20px;}
+.collectResult .item .cate .num {display: flex; align-items: center; justify-content: center; width: 36px; height: 36px;  font-size: 2rem; font-weight: 600; color: var(--color-gray600); background: var(--color-gray100); border-radius: 50%;}
+.collectResult .item .cate .notiTit {display: flex; align-items: center; margin-left: 40px;}
+.collectResult .item .cate .notiTit .name {font-size: 3rem; font-weight: bold;}
+.collectResult .item .cate .notiTit .badge {margin-left: 20px; padding: 6px 7px; font-size: 1.5rem; font-weight: bold; color: #fff; border-radius: 4px;}
+.collectResult .item .cate .notiTit .badge.complete {background: var(--color-primary);}
+.collectResult .item .cate .notiTit .badge.inComplete {background: var(--color-gray600);}
+.collectResult .item .info {position: relative; display: flex; align-items: center; height: 80px; padding-left: 62px; margin-left: 15px;}
+.collectResult .item .info::before {content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 8px; border-radius: 4px; background: var(--color-gray100);}
+.collectResult .item .info p {font-size: 2rem; font-weight: 600; color: var(--color-gray400);}
+
+/* agencyInfo - 사업자정보 */
+.agencyInfo {margin-bottom: 60px;}
+.agencyInfo table th {padding: 20px 0; font-size: 1.898rem; font-weight: bold; color: var(--color-navy700); background: #FBFBFB; border: 1px solid var(--color-gray200);}
+.agencyInfo table td {padding: 20px; font-size: 1.898rem; border: 1px solid var(--color-gray200);}
+.agencyInfo table .name {text-align: center; color: var(--color-gray500);}
+.agencyInfo table .activeBodyBtn {padding: 0 12px; height: 36px; font-size: 1.333rem;}
+.agencyInfo table .activeBodyBtn.confirm {background: var(--color-black900);}
+.agencyInfo table .activeBodyBtn.complete {background: var(--color-gray100); color: var(--color-gray500);}
+
+/* addrSearch - 주소검색 */
+.areaAddrSearch {display: flex; align-items: center; padding: 0 20px; margin-bottom: 20px;}
+.areaAddrSearch input {flex: 1; height: auto; padding: 10px; margin-right: 8px; border: none; border-bottom: 1px solid #207FFC; font-size: 18px; font-weight: 600; border-radius: 0;}
+.areaAddrSearch input::placeholder {color: #c4c4c4; font-size: 18px;}
+.areaAddrSearch .btnAddrSearch {width: 20px; height: 20px; background: url(../img/wp/ico/ico_search.svg) no-repeat center / 20px}
+.areaAddrList {height: 50vh; overflow-y: auto;}
+.areaAddrList::-webkit-scrollbar {width: 8px}
+.areaAddrList::-webkit-scrollbar-thumb { background: #aaa; border-radius: 10px}
+.areaAddrList::-webkit-scrollbar-track {background-color: #f1f1f1;}
+.areaAddrList .addrList ul li { display: flex; align-items: center; justify-content: space-between;}
+.areaAddrList .addrList ul li + li {border-top: 1px solid #e1e1e1;}
+.areaAddrList .addrList ul li:hover {background-color: #f9f9f9; }
+.areaAddrList .addrList ul li .addrResult {display: block; padding: 20px 40px 20px 20px; flex: 1; background: url(../img/ico_ts_right.png) no-repeat center right 20px / 7px;}
+.areaAddrList .addrList ul li .addrResult input[name="zipNo"] {margin-bottom: 4px; color: #12997a;}
+.areaAddrList .addrList ul li .addrResult .addr {display: flex; padding: 2px 0;}
+.areaAddrList .addrList ul li .addrResult .addr + .addr {margin-top: 6px;}
+.areaAddrList .addrList ul li .addrResult .addr .label {flex-shrink: 0; width: 45px; height:max-content; padding: 2px 0; font-size: 14px; color: #207FFC; border-radius: 4px;}
+.areaAddrList .addrList ul li .addrResult .addr :is(.roadAddrPart , .jibunAddr) {font-size: 17px;}
+.areaAddrList .addrEx {padding: 40px 20px;}
+.areaAddrList .addrEx .exTit {margin-bottom: 20px; font-size: 18px; font-weight: 600;}
+.areaAddrList .addrEx .exList li {margin-top: 20px;}
+.areaAddrList .addrEx .exList li p {font-size: 16px; color: #a3a3a3; line-height: 1.5;}
+.areaAddrList .addrEx .exList li span {color: #207FFC; font-size: 16px; line-height: 1.5;}
+.areaAddrList .noResult {display: none; flex-direction: column; justify-content: center; align-items: center; height: inherit; padding: 30px;}
+.areaAddrList .noResult.active {display: flex;}
+.areaAddrList .noResult p {font-size: 20px; margin-bottom: 12px;}
+.areaAddrList .noResult span {font-size: 14px; color: #8a8a8b; text-align: center;}
+
+/* landingEdit - 랜딩페이지 편집 */
+.contentWrap .landingEdit .gridBox .gCol.info {flex: 0 0 250px; position: relative; width: 246px; height: calc(100dvh - 132px);}
+.contentWrap .landingEdit .gridBox .gCol.info .titleWrapCenter .rCont .selectBox {width: 80px;}
+.contentWrap .landingEdit .gridBox .gCol.info .tblLanding {height: calc(100% - 94px); overflow-y: auto;}
+.contentWrap .landingEdit .gridBox .gCol.info .tblLanding .dataTable tr {cursor: pointer; transition: .25s;}
+.contentWrap .landingEdit .gridBox .gCol.info .tblLanding .dataTable tr:hover {background: var(--color-gray100);}
+.contentWrap .landingEdit .gridBox .gCol.info .areaBtn {position: absolute; left: 20px; right: 20px; bottom: 20px;}
+.contentWrap .landingEdit .gridBox .gCol.info .areaBtn button {width: 100%;}
+.contentWrap .landingEdit .gridBox .gCol.data {flex: 1 0 1000px;}
+.contentWrap .landingEdit .gridBox .gCol.data .previewFrame {flex: 1;}
+.contentWrap .landingEdit .gridBox .gCol.data .previewFrame iframe {width: 100%; height: 100%;}
+/* landingEdit Active */
+.contentWrap .landingEdit .gridBox .gCol.info .tblLanding .dataTable tr.active  {background: rgba(32, 127, 252, 0.05);}
+.contentWrap .landingEdit .gridBox .gCol.info .tblLanding .dataTable tr.active td:nth-child(2) {color: var(--color-primary);}
+.contentWrap .landingEdit .gridBox .gCol.info .tblLanding .dataTable tr.disabled td:nth-child(2) {padding-right: 30px; background: url(../img/wp/ico/ico_password_hide_gray.svg) no-repeat center right 12px / 16px;}
+
+/* intro - 소개 */
+.contentWrap .intro {height: calc(100dvh - 82px); overflow-y: auto;}
+.contentWrap .intro .areaTabFixed { position: sticky; top: 40px; z-index: 11; transition: .25s;}
+.contentWrap .intro .areaTabFixed.down {opacity: 0; visibility: hidden; transform: translateY(-20px);}
+.contentWrap .intro .bodyTabMenuType02 {width: fit-content; margin: 0 auto; padding: 4px; border-radius: 12px; background: var(--color-gray100); box-shadow: 0 4px 24px rgba(0,0,0,0.08);}
+.contentWrap .intro .bodyTabMenuType02 button {width: 160px; height: 40px; border-radius: 8px; font-weight: 600; font-size: 1.333rem;}
+.contentWrap .intro .bodyTabMenuType02 button.active {background: #fff;}
+.contentWrap .intro .gridBox .gCol {padding: 40px 20px 94px; border-radius: 12px 12px 0 0;}
+.contentWrap .intro section .inner {width: 960px; margin: 0 auto;}
+.contentWrap .intro section .inner .headingTxt {margin-bottom: 32px; font-weight: bold; font-size: 4.667rem; line-height: 1.25;}
+.contentWrap .intro section .inner .headingTxtGd {margin-bottom: 120px;}
+.contentWrap .intro section .inner .headingTxtGd p {text-align: center; font-weight: bold; font-size: 4.667rem; line-height: 1.25; background: linear-gradient(90deg, rgba(32,127,252,1) 0%, rgba(200,32,252,1) 100%); background-clip: text; color: transparent;}
+.contentWrap .intro section .inner .grayTxt {color: var(--color-gray400); font-size: 2rem; font-weight: 600; line-height: 1.25;}
+.contentWrap .intro section .inner .grayTxt.focus {color: var(--color-gray500);}
+.contentWrap .intro section .inner .descBox {position: relative; padding-left: 26px; margin-bottom: 60px;}
+.contentWrap .intro section .inner .descBox::before {content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 6px; border-radius: 3px; background: var(--color-primary);}
+.contentWrap .intro section .inner .descBox strong {display: block; margin-bottom: 12px; font-size: 2.667rem; font-weight: bold;}
+.contentWrap .intro section .inner .introSlide {position: relative; margin-bottom: 38px;}
+.contentWrap .intro section .inner .introSlide .slideList > li {display: flex; align-items: center; justify-content: space-between; border-radius: 20px; border: 1px solid #c4d9f3; background: var(--color-gray100);}
+.contentWrap .intro section .inner .introSlide .slideList > li .txtArea {padding-left: 40px;}
+.contentWrap .intro section .inner .introSlide .slideList > li .txtArea .tit {margin-bottom: 16px; color: var(--color-primary); font-size: 1.5rem; font-weight: bold;}
+.contentWrap .intro section .inner .introSlide .slideList > li .txtArea strong p {font-weight: bold; font-size: 3rem; line-height: 1.2;}
+.contentWrap .intro section .inner .introSlide .slideList > li .txtArea .subTxt {margin-top: 16px;}
+.contentWrap .intro section .inner .introSlide .slideList > li .txtArea .subTxt p {font-weight: 600; font-size: 1.5rem; color: #8d96a1; line-height: 1.5;}
+.contentWrap .intro section .inner .introSlide .slideList > li .txtArea .moveLink {display: block; width: fit-content; margin-top: 24px; padding-right: 24px; font-size: 1.5rem; color: #FF7118; background: url(../img/wp/ico/ico_ts_right_orange.svg) no-repeat center right / 24px;}
+.contentWrap .intro section .inner .introSlide .swiper-pagination {bottom: -38px;}
+.contentWrap .intro section .inner .introSlide .swiper-pagination .swiper-pagination-bullet {width: 12px; height: 12px; color: #d9d9d9; transition: .25s;}
+.contentWrap .intro section .inner .introSlide .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {width: 28px; border-radius: 8px; background: #53607b;}
+.contentWrap .intro .visual {padding: 80px 0 200px; text-align: center;}
+.contentWrap .intro .visual .visualTxt {margin: 32px 0;}
+.contentWrap .intro .visual .areaBtn button {width: 180px; height: 50px; border-radius: 25px; background: linear-gradient(90deg, rgba(32,127,252,1) 0%, rgba(32,80,252,1) 100%);; box-shadow: 0 8px 16px rgba(32, 127, 252, 0.24); font-weight: bold; font-size: 1.333rem; color: #fff;}
+.contentWrap .intro .serviceIntro {margin-bottom: 122px;}
+.contentWrap .intro .function .productWrap + .productWrap {margin-top: 160px}
+.contentWrap .intro .ratePlan {width: fit-content; margin: 80px auto 0;}
+
+/* .popWrap.pageEdit - 페이지 편집 팝업 */
+.popWrap.pageEdit .popInner .popCont {display: flex; flex-direction: column; height: 100dvh; padding-bottom: 12px; border-radius: 0 0 8px 8px;}
+.popWrap.pageEdit .popInner .popCont .gridBox .gCol {padding: 15px;}
+.popWrap.pageEdit .popInner .popCont .gridBox .gCol .editForm .selectWrap .infoMark {margin-top: 12px;}
+.popWrap.pageEdit .popInner .popCont .gridBox .gCol .editForm .selectWrap.consult .selectList {height: 224px; overflow-y: auto;}
+.popWrap.pageEdit .popInner .popCont .gridBox .gCol .areaBtn {position: absolute; bottom: 20px; left: 20px; right: 20px; display: flex;} 
+.popWrap.pageEdit .popInner .popCont .gridBox .gCol .areaBtn .cancelBigBodyBtn {flex: 0 0 95px;}
+.popWrap.pageEdit .popInner .popCont .gridBox .gCol .areaBtn .activeBigBodyBtn {flex: 1;}
+.popWrap.pageEdit .popInner .popCont .gridBox .gCol .areaBtn button + button {margin-left: 8px;}
+.popWrap.pageEdit .popInner .popCont .gridBox .gCol.info {position: relative; width: 320px; padding-bottom: 80px;} 
+.popWrap.pageEdit .popInner .popCont .gridBox .gCol.info .editForm .selectWrap {z-index: initial;}
+.popWrap.pageEdit .popInner .popCont .gridBox .gCol.info .editForm .selectWrap + .selectWrap {margin-top: 24px;}
+.popWrap.pageEdit .popInner .popCont .gridBox .gCol.info .editForm .selectWrap .item {display: block;}
+.popWrap.pageEdit .popInner .popCont .gridBox .gCol.info .editForm .selectWrap .item .title {margin-bottom: 12px; font-size: 1.167rem; color: var(--color-black900);}
+.popWrap.pageEdit .popInner .popCont .gridBox .gCol.info .editForm .selectWrap .item .selectBox {margin-left: 0;}
+.popWrap.pageEdit .popInner .popCont .gridBox .gCol.info .editForm .selectWrap .item .selectBox + .selectBox {margin-top: 8px;}
+.popWrap.pageEdit .popInner .popCont .gridBox .gCol.info .editForm .thumnail {position: relative; width: 100%; padding: 22px; aspect-ratio: 29/8; border: 2px dashed var(--color-gray300); border-radius: 4px; transition: .25s;}
+.popWrap.pageEdit .popInner .popCont .gridBox .gCol.info .editForm .thumnail:hover {border-color: var(--color-primary);}
+.popWrap.pageEdit .popInner .popCont .gridBox .gCol.info .editForm .thumnail .thumInner {height: 80px; display: flex; align-items: center; justify-content: center; }
+.popWrap.pageEdit .popInner .popCont .gridBox .gCol.info .editForm .thumnail .thumnailDesc {text-align: center;}
+.popWrap.pageEdit .popInner .popCont .gridBox .gCol.info .editForm .thumnail .thumnailDesc strong {font-size: 1rem; font-weight: 600; color: var(--color-gray600);}
+.popWrap.pageEdit .popInner .popCont .gridBox .gCol.info .editForm .thumnail .thumnailDesc .desc {margin-top: 8px;}
+.popWrap.pageEdit .popInner .popCont .gridBox .gCol.info .editForm .thumnail .thumnailDesc .desc p {font-size: 1rem; color: var(--color-gray400); line-height: 1.5;}
+.popWrap.pageEdit .popInner .popCont .gridBox .gCol.info .editForm .thumnail .logoImg {display: none; width: 100%;}
+.popWrap.pageEdit .popInner .popCont .gridBox .gCol.data .titleWrapCenter .lCont .landingLogo {height: 60px;}
+.popWrap.pageEdit .popInner .popCont .gridBox .gCol.data .imgEdit {height: calc(100dvh - 345px); overflow-y: auto;}
+.popWrap.pageEdit .popInner .popCont .gridBox .gCol.data .imgEditList li + li {margin-top: 16px;}
+.popWrap.pageEdit .popInner .popCont .gridBox .gCol.data .editBoxBtn {width: 100%;}
+.popWrap.pageEdit .popInner .popCont .gridBox .gCol.data .editBoxBtn .editBox {height: 100%; display: none; align-items: center; justify-content: center; text-align: center; border: 2px dashed var(--color-gray300); border-radius: 8px; transition: .25s;}
+.popWrap.pageEdit .popInner .popCont .gridBox .gCol.data .editBoxBtn:hover .editBox {border-color: var(--color-primary);}
+.popWrap.pageEdit .popInner .popCont .gridBox .gCol.data .editBoxBtn .thumnailDesc {text-align: center;}
+.popWrap.pageEdit .popInner .popCont .gridBox .gCol.data .editBoxBtn .thumnailDesc strong {font-size: 2rem; font-weight: bold; color: var(--color-gray600);}
+.popWrap.pageEdit .popInner .popCont .gridBox .gCol.data .editBoxBtn .thumnailDesc .desc {margin-top: 24px;}
+.popWrap.pageEdit .popInner .popCont .gridBox .gCol.data .editBoxBtn .thumnailDesc .desc p {font-size: 1.167rem; font-weight: 600; line-height: 1.5; color: var(--color-gray400);}
+.popWrap.pageEdit .popInner .popCont .gridBox .gCol.data .editBoxBtn .thumArea {position: relative; border-radius: 8px; overflow: hidden;}
+.popWrap.pageEdit .popInner .popCont .gridBox .gCol.data .editBoxBtn .thumArea img {width: 100%; max-width: 622px;}
+.popWrap.pageEdit .popInner .popCont .gridBox .gCol.data .editBoxBtn .thumArea .changeBox {position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: flex; align-items: flex-start; background: rgba(0,0,0,0.1); transition: .25s;}
+.popWrap.pageEdit .popInner .popCont .gridBox .gCol.data .editBoxBtn .thumArea:hover .changeBox {background: rgba(0,0,0,0.3);}
+.popWrap.pageEdit .popInner .popCont .gridBox .gCol.data .editBoxBtn .thumArea .changeBox .changeBoxInner {margin: 20px; padding: 12px; border-radius: 8px; background: #fff; border: 1px solid transparent;}
+.popWrap.pageEdit .popInner .popCont .gridBox .gCol.data .editBoxBtn .thumArea:hover .changeBox .changeBoxInner {background: rgba(255,255,255,0.3); border-color: #fff;}
+.popWrap.pageEdit .popInner .popCont .gridBox .gCol.data .editBoxBtn .thumArea .changeBox strong {color: var(--color-gray600); font-size: 1.333rem; transition: .25s;}
+.popWrap.pageEdit .popInner .popCont .gridBox .gCol.data .editBoxBtn .thumArea:hover .changeBox strong {color: #fff;}
+.popWrap.pageEdit .popInner .popCont .gridBox .gCol.data .editBoxBtn .thumArea .changeBox .desc {margin-top: 8px;}
+.popWrap.pageEdit .popInner .popCont .gridBox .gCol.data .editBoxBtn .thumArea .changeBox .desc p {color: var(--color-gray400); line-height: 1.5; font-size: 1.083rem;  transition: .25s;}
+.popWrap.pageEdit .popInner .popCont .gridBox .gCol.data .editBoxBtn .thumArea:hover .changeBox .desc p {color: #fff;}
+.popWrap.pageEdit .popInner .popCont .gridBox .gCol.data .fixSection .editBoxBtn {cursor: initial;}
+
+/* editPreview - 편집 미리보기 */
+.contentWrap.editPreview {min-width: 1024px; max-width: 1920px; padding: 0;  margin: 0 auto;}
+.contentWrap.editPreview .titleWrapCenter {position: sticky; top: 0; margin-bottom: -20px; padding: 20px; background: #fff;}
+.contentWrap.editPreview .gridBox  {margin: 0 auto;}
+.contentWrap.editPreview .gridBox .gCol {padding: 0; border-radius: 0; box-shadow: none;}
+.contentWrap.editPreview .gridBox .gCol .savePreviewList li {text-align: center;}
+.contentWrap.editPreview .floatBtn {position: fixed; bottom: 100px; left: 50%; transform: translateX(-50%); height: 80px; padding: 0 69px; color: #3f4804; background: #33ED94; font-size: 32px; font-weight: 600; border-radius: 100px; z-index: 10;}
+/* 예외처리 */
+.wrapper .contentWrap.editPreview {height: auto;}
+.wrapper .contentWrap.editPreview .gridCont {height: auto;}
+
+/* .popWrap.pageEdit active */
+.popWrap.pageEdit .popInner .popCont .gridBox .gCol.info .editForm .thumnail.active:hover {border-color: var(--color-gray300);}
+.popWrap.pageEdit .popInner .popCont .gridBox .gCol.info .editForm .thumnail.active .thumnailDesc {opacity: 0; visibility: hidden; position: absolute; left: 0; right: 0; bottom: 0; left: 0; top: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; background: rgba(0,0,0,0.5); transition: .25s;}
+.popWrap.pageEdit .popInner .popCont .gridBox .gCol.info .editForm .thumnail.active:hover .thumnailDesc {opacity: 1; visibility: visible;}
+.popWrap.pageEdit .popInner .popCont .gridBox .gCol.info .editForm .thumnail.active .thumnailDesc strong {color: #fff;}
+.popWrap.pageEdit .popInner .popCont .gridBox .gCol.info .editForm .thumnail.active .thumnailDesc .desc p {color: #fff;}
+.popWrap.pageEdit .popInner .popCont .gridBox .gCol.info .editForm .thumnail.active .logoImg {display: block;}
+.popWrap.pageEdit .popInner .popCont .gridBox .gCol.data .editBoxBtn.edit {aspect-ratio: 16/9;}
+.popWrap.pageEdit .popInner .popCont .gridBox .gCol.data .editBoxBtn.edit .editBox {display: flex;}
+.popWrap.pageEdit .popInner .popCont .gridBox .gCol.data .editBoxBtn.edit .thumArea {display: none;}
+
+/* datepicker custom */
+.ui-datepicker {z-index: 100 !important;}
+/* w2ui grid custom */
+.w2ui-grid .w2ui-grid-body table .w2ui-col-select {width: 28px;}
+.w2ui-grid .w2ui-grid-body table td.w2ui-grid-data.overflow {overflow: visible;}
+.w2ui-grid .w2ui-grid-body table td.w2ui-grid-data.overflow > div {overflow: visible;}
+.w2ui-grid .w2ui-grid-body table td.w2ui-grid-data > div {padding: 4px;}
+.w2ui-grid .w2ui-grid-body table .w2ui-col-select div input[type=checkbox] {margin-top: 0;}
+.w2ui-grid .w2ui-grid-body table .w2ui-head > div {height: 32px; padding: 11px 5px;}
+.w2ui-grid .w2ui-grid-body div.w2ui-col-header > div.w2ui-sort-down {margin-top: 3px;}
+.w2ui-grid .w2ui-grid-body div.w2ui-col-header > div.w2ui-sort-up {margin-top: -1px;}
+.w2ui-grid .w2ui-grid-body .w2ui-grid-records table tr.w2ui-even, .w2ui-grid .w2ui-grid-body .w2ui-grid-frecords table tr.w2ui-even {height: 39px !important;}
+.w2ui-grid .w2ui-grid-body .w2ui-grid-records table tr.w2ui-odd, .w2ui-grid .w2ui-grid-body .w2ui-grid-frecords table tr.w2ui-odd {height: 39px !important;}
+.w2ui-grid .w2ui-grid-body table td.w2ui-grid-data .w2ui-info {position: absolute; top: 11px; left: 3px; color: var(--color-primary);}
+.gridTable .w2ui-lock {z-index: 101;}
+/* w2ui grid tooltip custom */
+.w2ui-overlay .w2ui-overlay-body.w2ui-info-bubble.w2ui-custom-light { background: #344054; border: none; border-radius: 8px;} 
+.w2ui-overlay .w2ui-overlay-body.w2ui-info-bubble.w2ui-custom-light table { width: auto; text-shadow: none; color: #3c3c3c; } 
+.w2ui-overlay .w2ui-overlay-body.w2ui-info-bubble.w2ui-custom-light table tr td:first-child { color: var(--color-gray400); }
+.w2ui-overlay .w2ui-overlay-body.w2ui-info-bubble.w2ui-custom-light table tr td:last-child { color: #fff;}
+/* w2ui popup custom */
+.w2ui-lock {width: 100% !important;}
+.w2ui-popup {left: 50% !important; top: 50% !important; width: calc(100% - 40px) !important; max-width: 500px; transform: translate(-50%, -50%) scale(1); border: none; transition: none !important;}
+.w2ui-popup.w2ui-anim-open, .w2ui-popup.w2ui-anim-close {transform: scale(0);}
+.w2ui-popup * {font-family: 'Pretendard';}
+.w2ui-popup .w2ui-popup-title {background: var(--color-primary);}
+.w2ui-popup .inPopBtn {min-width: 256px; height: 36px; line-height: 36px; padding: 0 10px; color: #207ffc; border-radius: 8px; border: 1px solid #f2f4f7; background: #fcfcfd;}
+button.w2ui-btn:active, button.w2ui-btn.clicked {background: var(--color-primary);}
+.w2ui-centered {flex-direction: column;}
+input[type=button].w2ui-btn, button.w2ui-btn {background: var(--color-primary);}
+/* 인증서모듈 custom */
+#cert_pop {z-index: 100;}
+
+/* APPLY - 무료혜택 신청하기 */
+.apply {width: 100%; position: relative; display: flex; justify-content: center; align-items: center; padding: 80px 0 40px; background: #242441;}
+.apply .inner {max-width: 1680px; flex: 1; padding: 0 20px;}
+.apply .description {max-width: 988px; margin: 0 auto;}
+.apply .description h1 {font-size: 52px; color: #cddffa; font-weight: normal; text-align: center;}
+.apply .description .txtBox {width: fit-content; margin: 30px auto 60px;}
+.apply .description .txtBox p {font-size: 20px; font-weight: 600; color: #cddffa;}
+.apply .description .txtBox p + p {margin-top: 8px;}
+.apply #applyForm .inputWrap {display: flex;}
+.apply #applyForm .inputWrap .col + .col {margin-left: 69px;}
+.apply #applyForm .inputWrap .col + .col .inputBox .formTit {text-align: right;}
+.apply #applyForm .inputBox {display: flex; align-items: center}
+.apply #applyForm .inputBox + .inputBox {margin-top: 30px;}
+.apply #applyForm .inputBox .formTit {width: 116px; margin-right: 28px; color: #5C6BA0; font-size: 24px;}
+.apply #applyForm .inputBox .field {width: 315px;}
+.apply #applyForm .inputBox .field.num {display: flex; align-items: center;}
+.apply #applyForm .inputBox .field input {height: 60px; padding: 0 14px; font-size: 24px; border-radius: 10px; transition: none;}
+.apply #applyForm .inputBox .field input::placeholder {color: #D8D8D8; font-size: 24px;}
+.apply #applyForm .inputBox .field input:focus {padding: 0 10px; border: 5px solid #5C6BA0;}
+.apply #applyForm .inputBox .field input[name='biz_no2'] {width: 60px;}
+.apply #applyForm .inputBox .field .divide {margin: 0 6px; color: #fff; font-size: 24px;}
+.apply #applyForm .useService {display: flex; align-items: center; justify-content: space-between; margin: 30px 0 42px;}
+.apply #applyForm .useService .formTit {color: #5C6BA0; font-size: 24px;}
+.apply #applyForm .useService .selectBox {position: relative;}
+.apply #applyForm .useService .selectBox select {position: relative; display: flex; justify-content: space-between; align-items: center; width: 315px; height: 60px; padding: 0 15px; background: #fff url(../img/wp/ico/ico_ts_down.svg) no-repeat center right 18px / 24px; border-radius: 10px; z-index: 1; font-size: 24px;}
+.apply #applyForm .useService .selectBox select:focus {outline: none;}
+.apply #applyForm .interest {margin-bottom: 75px;}
+.apply #applyForm .interest .formTit {color: #5C6BA0; font-size: 24px;}
+.apply #applyForm .interest .checkList {display: flex; align-items: center; flex-wrap: wrap;}
+.apply #applyForm .interest .checkList > li {margin-top: 20px;}
+.apply #applyForm .interest .checkList > li label {display: flex; align-items: center; margin-right: 60px; cursor: pointer;}
+.apply #applyForm .interest .checkList > li label input[type='checkbox']:checked {background: url(../img/ico_check_rect_on.png) no-repeat center;}
+.apply #applyForm .interest .checkList > li label span {margin-left: 20px; color: #fff; font-size: 28px; font-weight: 600;}
+.apply #applyForm .customerInquiry {margin-bottom: 75px;}
+.apply #applyForm .customerInquiry .formTit {margin-bottom: 20px; color: #5C6BA0; font-size: 24px;}
+.apply #applyForm .customerInquiry textarea {padding: 15px; border: 1px solid #CED4DA;  border-radius: 12px; color: #111;font-size: 20px;}
+.apply #applyForm .customerInquiry textarea::placeholder {color: #bfc1cc;}
+.apply #applyForm .customerInquiry textarea:focus {padding: 11px; border: 5px solid #5C6BA0;}
+.apply #applyForm .privacy {display: flex; align-items: center; justify-content: space-between;}
+.apply #applyForm .privacy .areaCheck {display: flex; align-items: center;}
+.apply #applyForm .privacy .areaCheck label {display: flex; align-items: center; cursor: pointer;}
+.apply #applyForm .privacy .areaCheck input[type='checkbox'] {width: 30px; height: 30px; border: none; background: url(../img/wp/ico/ico_check_circle.png) no-repeat center / contain;}
+.apply #applyForm .privacy .areaCheck input[type='checkbox']:checked {background-image: url(../img/wp/ico/ico_check_circle_on.png);}
+.apply #applyForm .privacy .areaCheck label span {margin-left: 16px; color: #fff; font-size: 28px; font-weight: 600;}
+.apply #applyForm .privacy .areaCheck a {position: relative; margin-left: 10px; color: #fff; font-weight: 600; font-size: 28px;}
+.apply #applyForm .privacy .btnSubmit {color: #3f4804; font-size: 32px; font-weight: 600; width: 415px; height: 80px; border-radius: 100px; background: #787aad; transition: 0.35s;}
+
+/* APPLY : ACTIVE */
+.apply #applyForm .useService .selectBox.active > a {padding: 0 10px; border: 5px solid #5C6BA0;}
+.apply #applyForm .useService .selectBox.active .selectList {display: block;}
+.apply #applyForm .privacy .btnSubmit.active {background: #33ED94;}
+
+/* btnfitApply - 무료혜택 신청하기 버튼 */
+.btnfitApply {position: fixed; bottom: 0; left: 0; right: 0; display: flex; align-items: center; justify-content: center; height: 120px; background: #F4F4F4; border-radius: 60px 60px 0 0; box-shadow: 0 0 10px 20px rgba(0,0,0,0.15); z-index: 12;}
+.btnfitApply .content {display: flex; align-items: center; justify-content: center;}
+.btnfitApply .content .btnApply {display: flex; align-items: center; height: 80px; padding: 0 45px; color: #fff; font-weight: 600; font-size: 30px; background: linear-gradient(90deg, rgba(1,181,255,1) 0%, rgba(96,69,242,1) 100%); border-radius: 60px;}
+.btnfitApply .content .btnApply .arrow {display: flex; align-items: center; margin-left: 30px;}
+.btnfitApply .content .btnApply .arrow img {animation: ani_opacity 1s linear infinite}
+.btnfitApply .content .btnApply .arrow img:nth-child(2) {animation-delay: 0.1s;}
+.btnfitApply .content .btnApply .arrow img:nth-child(3) {animation-delay: 0.2s;}
+
+/* savingWrap - 부가세 절세 진단서비스 */
+.savingWrap {flex: 1; display: flex; align-items: center; justify-content: center;  min-height: calc(100dvh - 80px); padding: 80px 20px; background: #001855;}
+.savingWrap .inner {max-width: 900px; padding-top: 80px;}
+.savingWrap .areaTit {margin-bottom: 47px; text-align: center;}
+.savingWrap .areaTit .defTit {margin-bottom: 20px; color: #fff; font-size: 32px;}
+.savingWrap .areaTit p {color: #85c4ff; font-size: 20px;}
+
+/* 부가세 절세진단 완료 페이지 */
+.vatSave {padding-top: 100px;}
+.vatSave > img {display: block; margin: 0 auto 46px;}
+.vatSave .headingTxt {margin-bottom: 79px; text-align: center;}
+.vatSave .headingTxt > p span {display: block; font-size: 3rem; line-height: 1.5;}
+.vatSave .headingTxt > strong {display: block; margin: 10px 0;}
+.vatSave .headingTxt > strong span {display: block; font-size: 5rem; line-height: 1.5;}
+.vatSave .infoTxt {text-align: center; margin-bottom: 20px;}
+.vatSave .infoTxt span {display: block; font-size: 2.167rem; line-height: 1.5;}
+.vatSave .infoTxt span .fwBold {color: #111;}
+.vatSave .areaFixedBottom {max-width: 600px; margin: 0 auto;}
+
+/* CERTIFORM - 절세진단 신청폼 */
+#certiForm input {width: 100%; height: 60px; padding: 0 20px; border-radius: 10px; font-size: 24px; box-sizing: border-box;}
+#certiForm input::placeholder {font-size: 24px;}
+#certiForm input:-webkit-autofill { -webkit-box-shadow: 0 0 0 30px #fff inset; -webkit-text-fill-color: #000; }
+#certiForm .busiNum {display: flex; align-items: center;}
+#certiForm .busiNum > div {display: flex; align-items: center;}
+#certiForm .busiNum .formTit {margin-right: 20px; color: #fff; font-size: 20px; word-break: keep-all;}
+#certiForm .busiNum button {border: none; cursor: pointer; text-align: center; height: 64px; padding: 0 60px; margin-left: 14px; background: #334982; color: #001855; font-size: 24px; border-radius: 10px; transition: .35s;}
+#certiForm .busiNum button:hover {opacity: 0.8;}
+#certiForm .simpleCerti {display: none; max-width: 600px; padding: 0 20px; margin: 27px auto 0;}
+#certiForm .simpleCerti .btnWrap {display: block; margin-top: 42px;}
+#certiForm .simpleCerti .btnWrap :is(.btnKakao, .btnPass, .btnPoint) {text-align: center; width: 100%; height: 64px; border-radius: 60px; background: #334982; color: #001855; font-weight: 600; font-size: 24px; transition: .35s;}
+#certiForm .simpleCerti .btnWrap button + button {margin-top: 16px;}
+#certiForm .agree .formTit {margin-bottom: 14px; color: #fff; font-size: 24px;}
+#certiForm .agree .checkList > li + li {margin-top: 12px;}
+#certiForm .agree .checkList > li > div {display: flex; align-items: center; justify-content: space-between;}
+#certiForm .agree .checkList > li > div > label {display: flex; align-items: center; cursor: pointer;}
+#certiForm .agree .checkList > li > div > label input[type='checkbox'] {border: none; width: 30px; height: 30px; margin-right: 16px; background: url(../img/wp/ico/ico_check_circle_green.png) no-repeat center / contain; cursor: pointer; appearance: none; -webkit-appearance: none;}
+#certiForm .agree .checkList > li > div > label input[type='checkbox']:checked {background-image: url(../img/wp/ico/ico_check_circle_green_on.png);}
+#certiForm .agree .checkList > li > div > label span {color: #fff; font-size: 20px;}
+#certiForm .agree .checkList > li > div a {display: flex; justify-content: center; align-items: center; width: 40px; height: 40px; margin-right: -15px;}
+#certiForm .inputWrap {margin-top: 30px;}
+#certiForm .inputWrap > p {margin-bottom: 22px; text-align: center; color: #61C6FF; font-size: 18px;}
+#certiForm .inputWrap .inputBox {margin-top: 12px;}
+#certiForm .inputWrap .inputBox.resident {display: flex; align-items: center; padding: 0 20px; background: #fff; border-radius: 10px;}
+#certiForm .inputWrap .inputBox.resident input {padding: 0; background: none; border: none;}
+#certiForm .inputWrap .inputBox.resident input:nth-of-type(1) {flex: 0 0 145px}
+#certiForm .inputWrap .inputBox.resident input:nth-of-type(2) {flex: 0 0 20px}
+#certiForm .inputWrap .inputBox.resident .divide {height: 100%; margin: 0 10px;}
+#certiForm .inputWrap .inputBox.resident .backNum {font-size: 20px;}
+#certiForm .inputWrap .btnKakao:hover {opacity: 0.8;}
+#certiForm .inputWrap .telBox {display: flex; align-items: center; gap: 16px; margin-top: 12px;}
+#certiForm .inputWrap .telBox .inputBox {flex: 1; margin-top: 0;}
+#certiForm .inputWrap .telBox .selectBox .selectItem input {padding: 0; background: none;}
+#certiForm .pcOnly {display: none; margin-top: 80px; text-align: center;}
+#certiForm .pcOnly p {font-size: 18px; line-height: 1.5; color: #fff;}
+#certiForm .pcOnly .pointTxt {color: #f8ab37;}
+#certiForm .pcOnly p span {display: block;}
+#certiForm .selectBox {position: relative}
+#certiForm .selectBox .selectItem {position: relative; display: flex; align-items: center; justify-content: space-between; width: 147px; height: 60px; padding: 0 20px; border: 1px solid #ced4da; border-radius: 10px; font-size: 20px; font-weight: 500; z-index: 2; background: #fff url(../img/wp/ico/ico_ts_down.svg) no-repeat center right 18px / 24px;}
+#certiForm .selectBox .selectItem:focus {outline: none;}
+
+/* CERTIFORM : ACTIVE */
+#certiForm .busiNum.active + .simpleCerti {display: block;}
+#certiForm .busiNum button.active {background: #33ED94; color: #001855;}
+#certiForm .simpleCerti .btnKakao.active {background: #fae100; color: #381e1f;}
+#certiForm .simpleCerti .btnPass.active {background: #FF3447; color: #fff;}
+
+/* CERTIFORM mobile */
+#certiForm .busiNum.mobile ~ .simpleCerti {display: none;}
+#certiForm .busiNum.mobile ~ .pcOnly {display: block;}
+
+/* swiper custom */
+.swiper-button-prev {width: 60px; height: 60px; right: calc(100% + 14px); left: unset; border-radius: 50%; transition: .25s;}
+.swiper-button-prev:hover {box-shadow: 0 4px 14px rgba(0,0,0,0.1);}
+.swiper-button-next {width: 60px; height: 60px; left: calc(100% + 14px); right: unset; border-radius: 50%; transition: .25s;}
+.swiper-button-next:hover {box-shadow: 0 4px 14px rgba(0,0,0,0.1);}
+.swiper-button-next::after {content: ''; display: inline-block; width: 60px; height: 60px; background: url(../img/wp/btn/btn_next_gray.svg) no-repeat center / 11px; transition: .25s;}
+.swiper-button-prev:after {content: ''; display: inline-block; width: 60px; height: 60px; background: url(../img/wp/btn/btn_prev_gray.svg) no-repeat center / 11px; transition: .25s;}
+.swiper-button-next:hover::after {background-image: url(../img/wp/btn/btn_next_hover.svg);}
+.swiper-button-prev:hover::after {background-image: url(../img/wp/btn/btn_prev_hover.svg);}
+
+/* 공지페이지 */
+.contentWrap.notice {display: flex; justify-content: center; align-items: center;}
+.noticeWrap .noticeInner {padding: 20px; text-align: center;}
+.noticeWrap .noticeInner .bdMsgBox {margin-top: 30px; padding: 16px; border: 1px solid var(--color-gray200); border-radius: 16px; text-align: left;}
+.noticeWrap .noticeInner .bdMsgBox p {color: #475467; line-height: 1.5; font-size: 1.25rem;}
+.noticeWrap .noticeInner .bdMsgBox p + p {margin-top: 12px;}
+.noticeWrap .ico {display: block; width: 60px; margin: 0 auto 30px;}
+.noticeWrap .bigIco {display: block; margin: 0 auto 40px;}
+.noticeWrap .noticeCnt {margin: 20px 0 40px;}
+.noticeWrap .noticeCnt .noticeTit {display: block; font-size: 2.333rem; font-weight: 600; line-height: 1.5;}
+.noticeWrap .noticeCnt .noticeTit.gra {margin-bottom: 40px; font-size: 4.667rem; font-weight: bold; background: linear-gradient(135deg, rgba(32,127,252,1) 0%, rgba(248,32,252,1) 100%); background-clip: text; -webkit-background-clip: text; color: transparent;}
+.noticeWrap .noticeCnt .noticTxt {margin-top: 12px; font-size: 1.667rem; color: var(--color-gray600); line-height: 1.5;}
+.noticeWrap .noticeBox {padding: 28px 30px; margin-top: 20px; background: var(--color-gray100); border-radius: 12px;}
+.noticeWrap .noticeBox .txt p {font-size: 1.5rem; font-weight: 600;}
+.noticeWrap .noticeBox .txt p + p {margin-top: 8px;}
+.noticeWrap .noticeBox .txt p.gray {color: var(--color-gray500);}
+.noticeWrap .noticeBox .txt.type02 {display: flex;}
+.noticeWrap .noticeBox .txt.type02 + .txt.type02 {margin-top: 12px;}
+.noticeWrap .noticeBox .txt.type02 p + p {margin-top: 0; margin-left: 20px;}
+.noticeWrap .areaBtn {margin-top: 40px;}
+.noticeWrap .areaBtn button {width: 280px; height: 60px; padding: 0 68px; font-size: 1.666rem; border-radius: 12px;}
+.noticeWrap.inspect .ico {width: 120px; animation: ani_spin 2s linear infinite;}
+.noticeWrap.logout .noticeInner .ico {width: 120px;}
+.noticeWrap.logout .noticeCnt .noticeTit {color: #475467; font-size: 1.333rem;}
+/* .noticeBox.type02 */
+.noticeWrap .noticeBox.type02 {background: #f3f9ff;} 
+/* 완료페이지 */
+.complete .completeInner {position: relative; padding: 70px 20px 20px;}
+.complete .completeInner .lottieImg {position: absolute; top: 0px; left: 50%; transform: translateX(-50%); width: 70px; pointer-events: none;}
+.complete .completeInner .txtArea {padding-top: 20px; text-align: center;}
+.complete .completeInner .txtArea .completeTit {font-size: 2.333rem; font-weight: 600;}
+.complete .completeInner .txtArea .completeTxtBox {margin-top: 20px;}
+.complete .completeInner .txtArea .completeTxtBox .txt {color: var(--color-gray600); font-size: 1.167rem; line-height: 1.5;}
+.complete .completeInner .txtArea .btnArea {margin-top: 42px;}
+.complete .completeInner .txtArea .btnArea button {width: 120px;}
+
+/* jex 관련 공통 로딩 아이콘 수정 */
+.jexjs-indicator-img{width: 50px; aspect-ratio: 1; border-radius: 50%; background: none; background: radial-gradient(farthest-side,var(--color-primary) 94%,#0000) top/8px 8px no-repeat, conic-gradient(#0000 30%, var(--color-primary)); -webkit-mask: radial-gradient(farthest-side,#0000 calc(100% - 8px),#000 0); animation: l13 1s infinite linear;} /* jex 공통 소스에서 수정해서 링크패스에만 로딩 적용 */
+
+/* 요금 및 청구내역 2024-12-10 */
+.wrapper .contentWrap .fbInfo.gridCont .gridBox .gCol.info {position: relative; flex: 0 0 300px; padding-bottom: 112px;}
+.wrapper .contentWrap .fbInfo.gridCont .gridBox .gCol.info .areaBtmFixed {position: absolute; bottom: 20px; left: 20px; right: 20px;}
+
+/* 간편인증 테이블 추가 - 2025-01-20 */
+.acWrap .infoTit {font-size: 2rem; font-weight: 600; line-height: 1.5;}
+.acWrap .infoTxt {margin: 12px 0 24px; font-size: 16px;}
+.acTableWrap {width: 420px;}
+.acTableWrap .agencyInfo { margin-bottom: 20px;}
+.acTableWrap .agencyInfo table th {font-size: 1.5rem;}
+.acTableWrap .agencyInfo table td {height: 46px; padding: 0 20px; font-size: 1.5rem;}
+.acTableWrap .agencyInfo table tr th:first-child {width: 120px;}
+.acTableWrap .agencyInfo table tr td:first-child {width: 120px;}
+.acTableWrap .agencyInfo .agencyInfoBtm {max-height: 265px; overflow-y: auto;}
+
+/* 은행리스트 - 2025-01-22 */
+.bkGridList {display: grid; grid-template-columns: repeat(3, 1fr); grid-gap: 8px; max-height: 384px; margin-top: 24px; overflow-y: auto;}
+.bkGridList > li a {display: flex; flex-direction: column; align-items: center; justify-content: center; height: 68px; background: #FAFAFB; border-radius: 8px;}
+.bkGridList > li a > em {width: 20px; height: 20px; background: no-repeat center / 20px;}
+.bkGridList > li a > em.bk002 {background-image: url(../img/wp/bk/bk_kdb.svg);} /* KDB산업 */
+.bkGridList > li a > em.bk003 {background-image: url(../img/wp/bk/bk_ibk.svg);} /* IBK기업 */
+.bkGridList > li a > em.bk004 {background-image: url(../img/wp/bk/bk_kb.svg);} /* KB국민 */
+.bkGridList > li a > em.bk007 {background-image: url(../img/wp/bk/bk_sh.svg);} /* 수협 */
+.bkGridList > li a > em.bk011 {background-image: url(../img/wp/bk/bk_nh.svg);} /* 농협 */
+.bkGridList > li a > em.bk020 {background-image: url(../img/wp/bk/bk_woori.svg);} /* 우리 */
+.bkGridList > li a > em.bk023 {background-image: url(../img/wp/bk/bk_sc.svg);} /* SC제일 */
+.bkGridList > li a > em.bk027 {background-image: url(../img/wp/bk/bk_citi.svg);} /* 씨티 */
+.bkGridList > li a > em.bk031 {background-image: url(../img/wp/bk/bk_im.svg);} /* IM뱅크(대구) */
+.bkGridList > li a > em.bk032 {background-image: url(../img/wp/bk/bk_bnk.svg);} /* 부산 */
+.bkGridList > li a > em.bk034 {background-image: url(../img/wp/bk/bk_jb.svg);} /* 광주 */
+.bkGridList > li a > em.bk035 {background-image: url(../img/wp/bk/bk_jeju.svg);} /* 제주 */
+.bkGridList > li a > em.bk037 {background-image: url(../img/wp/bk/bk_jb.svg);} /* 전북 */
+.bkGridList > li a > em.bk039 {background-image: url(../img/wp/bk/bk_bnk.svg);} /* 경남 */
+.bkGridList > li a > em.bk045 {background-image: url(../img/wp/bk/bk_kfcc.svg);} /* 새마을 */
+.bkGridList > li a > em.bk048 {background-image: url(../img/wp/bk/bk_cu.svg);} /* 신협 */
+.bkGridList > li a > em.bk057 {background-image: url(../img/wp/bk/bk_jp.svg);} /* JP모건 */
+.bkGridList > li a > em.bk060 {background-image: url(../img/wp/bk/bk_boa.svg);} /* BOA */
+.bkGridList > li a > em.bk064 {background-image: url(../img/wp/bk/bk_nfcf.svg);} /* 산림조합 */
+.bkGridList > li a > em.bk071 {background-image: url(../img/wp/bk/bk_epost.svg);} /* 우체국 */
+.bkGridList > li a > em.bk081 {background-image: url(../img/wp/bk/bk_hana.svg);} /* 하나 */
+.bkGridList > li a > em.bk088 {background-image: url(../img/wp/bk/bk_jeju.svg);} /* 신한 */
+.bkGridList > li a > em.bk089 {background-image: url(../img/wp/bk/bk_kbank.svg);} /* K뱅크 */
+.bkGridList > li a > em.bk090 {background-image: url(../img/wp/bk/bk_kakao.svg);} /* 카카오뱅크 */
+.bkGridList > li a > em.bk092 {background-image: url(../img/wp/bk/bk_toss.svg);} /* 토스뱅크 */
+.bkGridList > li a > em.bk501 {background-image: url(../img/wp/bk/bk_thek.svg);} /* 더케이 */
+.bkGridList > li a > em.bk502 {background-image: url(../img/wp/bk/bk_daol.svg);} /* 다올(현대) */
+.bkGridList > li a > em.bk503 {background-image: url(../img/wp/bk/bk_db.svg);} /* DB(동부) */
+.bkGridList > li a > em.bk504 {background-image: url(../img/wp/bk/bk_mk.svg);} /* 민국 */
+.bkGridList > li a > em.bk505 {background-image: url(../img/wp/bk/bk_kiwoom.svg);} /* 키움예스 */
+.bkGridList > li a > em.bk507 {background-image: url(../img/wp/bk/bk_solomon.svg);} /* 솔로몬 */
+.bkGridList > li a > em.bk508 {background-image: url(../img/wp/bk/bk_welcome.svg);} /* 웰컴 */
+.bkGridList > li a > em.bk512 {background-image: url(../img/wp/bk/bk_bnk.svg);} /* BS(BNK) */
+.bkGridList > li a > em.bk515 {background-image: url(../img/wp/bk/bk_sbi.svg);} /* SBI */
+.bkGridList > li a > em.bk518 {background-image: url(../img/wp/bk/bk_acuon.svg);} /* 애큐온(HK) */
+.bkGridList > li a > em.bk527 {background-image: url(../img/wp/bk/bk_moa.svg);} /* 모아 */
+.bkGridList > li a > em.bk530 {background-image: url(../img/wp/bk/bk_seram.svg);} /* 세람 */
+.bkGridList > li a > em.bk537 {background-image: url(../img/wp/bk/bk_ibk.svg);} /* IBK저축은행 */
+.bkGridList > li a > em.bk539 {background-image: url(../img/wp/bk/bk_ki.svg);} /* 한국투자 */
+.bkGridList > li a > em.bk542 {background-image: url(../img/wp/bk/bk_choeun.svg);} /* 조은 */
+.bkGridList > li a > em.bk545 {background-image: url(../img/wp/bk/bk_snt.svg);} /* S&T */
+.bkGridList > li a > em.bk548 {background-image: url(../img/wp/bk/bk_prsb.svg);} /* 푸른 */
+.bkGridList > li a > em.bk549 {background-image: url(../img/wp/bk/bk_ehk.svg);} /* 흥국 */
+.bkGridList > li a > em.bk550 {background-image: url(../img/wp/bk/bk_osb.svg);} /* OSB */
+.bkGridList > li a > em.bk551 {background-image: url(../img/wp/bk/bk_bulim.svg);} /* 부림 */
+.bkGridList > li a > em.bk552 {background-image: url(../img/wp/bk/bk_double.svg);} /* 더블 */
+.bkGridList > li a > em.bk553 {background-image: url(../img/wp/bk/bk_kb.svg);} /* KB저축은행 */
+.bkGridList > li a > em.bk554 {background-image: url(../img/wp/bk/bk_hana.svg);} /* 하나저축은행 */
+.bkGridList > li a > em.bk556 {background-image: url(../img/wp/bk/bk_jeju.svg);} /* 신한저축은행 */
+.bkGridList > li a > em.bk534 {background-image: url(../img/wp/bk/bk_yc.svg);} /* 융창 */
+.bkGridList > li a > em.bk557 {background-image: url(../img/wp/bk/bk_jt.svg);} /* 친애 */
+.bkGridList > li a > em.bk558 {background-image: url(../img/wp/bk/bk_baro.svg);} /* 바로(신안) */
+.bkGridList > li a > em.bk559 {background-image: url(../img/wp/bk/bk_ok.svg);} /* OK저축은행 */
+.bkGridList > li a > .bkName {margin-top: 8px; font-size: 1.083rem;}
+
+/* 서류제출 - 2025-03-05 */
+.submitDoc {display: flex; align-items: center; min-height: calc(100dvh - 60px);}
+.submitDoc .inner > .lpfiAlert {margin-top: 24px;}
+.submitDocVisual {border-radius: 16px 16px 0 0; overflow: hidden; margin-bottom: 24px;}
+.submitDocVisual .submitDocVisualTop {padding: 13px 0; text-align: center; background: #E2F1FF;}
+.submitDocVisual .submitDocVisualTop p {color: var(--color-primary); font-size: 1.667rem; font-weight: bold;}
+.submitDocVisual .submitDocVisualCnt {display: flex; align-items: center; justify-content: space-between; padding: 40px; background: linear-gradient(180deg, rgba(253,254,255,1) 0%, rgba(243,249,255,1) 100%); border: 1px solid #F2F4F7;}
+.submitDocVisual .submitDocVisualCnt .txtArea strong p {font-size: 2.333rem; font-weight: bold; color: var(--color-navy700); line-height: 1.5;}
+.submitDocVisual .lpfiAlert .grayBox {margin-bottom: 0 !important; border-radius: 0 0 12px 12px;}
+.lpfiAlert .grayBox {padding: 40px; margin-bottom: 0;}
+.lpfiAlert .grayBox .desc + .desc {margin-top: 40px;}
+.lpfiAlert .grayBox .desc .tit {display: block; margin-bottom: 12px; font-size: 2rem; color: var(--color-navy700);}
+.lpfiAlert .grayBox .desc p {font-size: 1.333rem; font-weight: 600; color: var(--color-gray500);}
+.lpfiAlert .grayBox .desc p + p {margin-top: 17px;}
+.lpfiAlert .grayBox .desc p span {display: block; line-height: 1.5;}
+.lpfiAlert .moveLink {color: var(--color-navy700); font-size: 1.667rem; font-weight: 600;}
+.lpfiAlert .moveLink:hover {text-decoration: underline;}
+.tblInfoManager tr th, .tblInfoManager tr td {padding: 6px; text-align: left; font-size: 1.333rem; color: var(--color-gray500); line-height: 1.5; font-weight: 600;}
+
+/* 무료사용종료 - 2025-03-11 */
+.contentWrap.consult .freeEnd .inner {max-width: 520px;}
+.contentWrap.consult .freeEnd .inner .grayBox {margin: 60px 0 0;}
+.freeEnd {display: flex; align-items: center; min-height: calc(100dvh - 60px);}
+.freeEnd .headingTxt img {display: block; margin: 0 auto 40px;}
+.freeEnd .headingTxt strong {text-align: center;}
+.freeEnd .headingTxt strong p {font-size: 2rem; font-weight: 600; color: var(--color-gray600); line-height: 1.5;}
+.freeEnd .rateInfo .rateInfoBox {margin-top: 40px; padding: 28px 30px; border: 1px solid #F2F4F7; border-radius: 16px;}
+.freeEnd .rateInfo .rateInfoBox .macketingTxt {display: flex; align-items: center; justify-content: space-between; padding-bottom: 12px; border-bottom: 1px solid var(--color-gray100);}
+.freeEnd .rateInfo .rateInfoBox .macketingTxt .left {display: flex; align-items: center;}
+.freeEnd .rateInfo .rateInfoBox .macketingTxt .left strong {font-size: 16px; font-weight: bold; margin-right: 12px;}
+.freeEnd .rateInfo .rateInfoBox .macketingTxt .left span {font-weight: 600; background: linear-gradient(135deg, rgba(32,127,252,1) 0%, rgba(248,32,252,1) 100%); background-clip: text; -webkit-background-clip: text; color: transparent;}
+.freeEnd .rateInfo .rateInfoBox .dtList > li {border-top: none;}
+.freeEnd .rateInfo .grayBox .tblInfoManager tr th {color: #1D2939; font-size: 1.167rem;}
+.freeEnd .rateInfo .grayBox .tblInfoManager tr td {font-size: 1.167rem;}
+.freeEnd .rateInfo .caution .accordionToggle {font-weight: bold; font-size: 1.333rem;}
+.freeEnd .rateInfo .caution .accordionToggleWrap {padding-top: 12px;}
+.freeEnd .rateInfo .caution .accordionToggleWrap .item + .item {margin-top: 12px;}
+.freeEnd .rateInfo .caution .accordionToggleWrap .item .tit {margin-bottom: 12px; font-size: 1.167rem; font-weight: 600;}
+.freeEnd .rateInfo .caution .accordionToggleWrap .item .dotListMsg > li {font-size: 1.083rem; line-height: 1.5; font-weight: 600;}
+.freeEnd .rateInfo .caution .agreeWrap {margin: 14px 0 0;}
+.freeEnd .rateInfo .caution .agreeWrap .agreeList > li label span {font-size: 1.083rem; line-height: 1.5; color: var(--color-gray500);}
+
+/* MEDIA QUERY */
+@media screen and (max-width: 1680px) {
+  /* header */
+  .header .inner .center {position: static; transform: initial;}
+}
+
+@media screen and (max-width: 1400px) {
+  /* header */
+  .header .inner .right > ul > li .noticeBtn {width: 30px; height: 30px; padding: 0; background-position: center;}
+  .header .inner .right > ul > li .noticeBtn span {display: none;}
+  .header .inner .right > ul > li .noticeBtn .alarmNum {left: 20px; top: 2px; font-size: 0; min-width: 2px; height: 2px;}
+  .fixB .inner {padding-bottom: 60px;}
+
+  /* contentWrap */
+  .wrapper .lnb ~ .contentWrap {padding-left: 36px; left: 0; margin-right: 0;}
+
+  /* lnb */
+	.wrapper .lnb {position: absolute; top: 0; left: 0; bottom: 0;}
+
+  /* button 정의 */
+  .btnUpdate {display: block; width: 30px; height: 30px; padding: 0; background-position: center;}
+  .btnUpdate span {display: none;}
+
+  /* indicator */
+  .indicator .indicatorList > li .indicatorBox .indicatorFilter {background: none; padding-left: 0;}
+  .indicator .indicatorList > li:is(.hover,.active) .indicatorBox .indicatorFilter {background: none;}
+
+  /* 부가세 절세진단 완료 페이지 */
+  .vatSave {padding-top: 0;}
+  .vatSave > img {max-width: 500px;}
+  .vatSave .headingTxt > p span {font-size: 32px;}
+  .vatSave .headingTxt > strong span {font-size: 45px;}
+  .vatSave .infoTxt span {font-size: 20px;}
+}
+
+@media screen and (max-width: 640px) {
+  /* popup 세팅 */
+  .popWrap .popInner.middle {width: 100%; min-width: initial;}
+  /* consult - 간편인증 및 랜딩페이지 */
+  .contentWrap.consult:not(.editPreview) .inner {width: 100%;}
+}
+
+@media screen and (max-width: 767px) {
+  /* header */
+  .fixB .inner {padding-bottom: 60px;}
+
+  /* button 정의 */
+  .areaFixedBottom .cell button {height: 60px; font-size: 1.5rem;}
+
+  /* consult - 간편인증 및 랜딩페이지 */
+  .header ~ .wrapper .contentWrap.consult.complete {height: auto;}
+  .contentWrap.consult .inner .certiTitArea {margin-bottom: 20px;}
+  .contentWrap.consult .inner .certiTitArea .certiTit {font-size: 20px;}
+  .contentWrap.consult .inner .certiTitArea .certiTit .progress {font-size: 18px;}
+  .contentWrap.consult .inner .stepWrap {padding: 20px 15px;}
+  .contentWrap.consult .inner .stepWrap .stepTitArea {margin-bottom: 20px;}
+  .contentWrap.consult .inner .stepWrap .stepTitArea strong {font-size: 16px;}
+  .contentWrap.consult .inner .stepWrap .step .stepTxt > p {font-size: 18px;}
+  .contentWrap.consult .inner .stepWrap .step {display: flex; flex-direction: column;}
+  .contentWrap.consult .inner .stepWrap .step + .step {margin-top: 60px;}
+  .contentWrap.consult .inner .stepWrap .step img {margin-right: 0; order: 2;}
+  .contentWrap.consult .inner .stepWrap .step .stepTxt {margin-bottom: 20px; text-align: left;}
+  .contentWrap.consult .inner .stepWrap .step .stepTxt .info span {display: inline; font-size: 14px;}
+  .contentWrap.consult:not(.editPreview) .inner {padding: 40px 20px 100px;}
+  .contentWrap.consult:not(.editPreview) .inner .selectWrap .selectBox.consultCnt select {height: 50px; padding: 10px 15px;}
+  .contentWrap.consult:not(.editPreview) .inner .selectWrap .busiNumValid {margin-left: 0;}
+  .contentWrap.consult:not(.editPreview) .inner .selectWrap .busiNumValid .activeBodyBtn {height: 50px; font-size: 17px;}
+  .contentWrap.consult:not(.editPreview) .inner .selectWrap .addrWrap {display: block; margin-left: 0;}
+  .contentWrap.consult:not(.editPreview) .inner .selectWrap .addrWrap .selectBox +.selectBox {margin-top: 8px; margin-left: 0;}
+  .contentWrap.consult:not(.editPreview) .inner .selectWrap .addrWrap .selectBox .selectListWrap {max-height: 170px;}
+  .contentWrap.consult:not(.editPreview) .inner .directTxtBox {margin-bottom: 40px;}
+  .contentWrap.consult:not(.editPreview) .inner .directTxtBox p {font-size: 1.417rem;} 
+  .contentWrap.consult:not(.editPreview) .selectWrap .item {display: block;}
+  .contentWrap.consult:not(.editPreview) .inner .infoTit {font-size: 24px;}
+  .contentWrap.consult:not(.editPreview) .inner input {height: 50px; padding: 10px 15px; font-size: 17px;}
+  .contentWrap.consult:not(.editPreview) .inner input::placeholder {font-size: 17px;}
+  .contentWrap.consult:not(.editPreview) .inner input.inputed {padding-right: 50px;}
+  .contentWrap.consult:not(.editPreview) .inner .deleteBtn {top: 10px;}
+  .contentWrap.consult:not(.editPreview) .inner .selectWrap .item + .item {margin-top: 40px;}
+  .contentWrap.consult:not(.editPreview) .inner .selectWrap .item .title {font-size: 20px; margin-bottom: 10px;}
+  .contentWrap.consult:not(.editPreview) .inner .selectListWrap .selectList > li span {font-size: 17px;}
+  .contentWrap.consult:not(.editPreview) .selectWrap .item .title + .selectBox {margin-left: 0;}
+  .contentWrap.consult:not(.editPreview) .inner .resiNumWrap {margin-left: 0;}
+  .contentWrap.consult:not(.editPreview) .inner .phoneNumWrap {margin-left: 0;}
+  .contentWrap.consult:not(.editPreview) .inner .phoneNumWrap .selectBox.carrier {flex: 0 0 140px;}
+  .contentWrap.consult:not(.editPreview) .inner .phoneNumWrap .selectBox.cellNum {margin-left: 4px;}
+  .contentWrap.consult:not(.editPreview) .inner .optionBtn {height: 50px; font-size: 17px;}
+  .contentWrap.consult:not(.editPreview) .inner .areaBtn button {height: 60px; border-radius: 8px;}
+  .contentWrap.consult:not(.editPreview) .inner .areaBtn button span {font-size: 18px;}
+  .contentWrap.consult:not(.editPreview) .inner .areaBtn button + button {margin-top: 0;}
+  .contentWrap.consult:not(.editPreview) .inner .certiTitArea .info {font-size: 19px; line-height: 1.25;}
+  .contentWrap.consult:not(.editPreview) .inner .certiTitArea img {width: 20px;}
+  .contentWrap.consult:not(.editPreview) .inner .userInfoBox {padding: 0; border: none; background: none;}
+  .contentWrap.consult:not(.editPreview) .inner .infoMsgBox {padding: 16px 20px; border-radius: 12px;}
+  .contentWrap.consult:not(.editPreview) .inner .infoMsgBox .infoMsg {font-size: 16px;}
+  .contentWrap.consult:not(.editPreview) .inner .userInfoSection .InfoPanel .pannelTit {font-size: 18px;}
+  .contentWrap.consult:not(.editPreview) .inner .userInfoBox .item .title {display: none;}
+  .contentWrap.consult:not(.editPreview) .inner .userInfoBox .item + .item {margin-top: 20px;}
+
+  /* agencyInfo - 사업자정보 */
+  .agencyInfo table th {font-size: 18px;}
+  .agencyInfo table td {padding: 15px; font-size: 16px;}
+  /* 간편인증 테이블 추가 - 2025-01-20 */
+  .acTableWrap .agencyInfo table tr th:first-child {width: 90px;}
+  .acTableWrap .agencyInfo table tr td:first-child {width: 90px;}
+  
+  /* CERTIFORM - 절세진단 신청폼 */
+  #certiForm input {padding: 0 10px; font-size: 18px;}
+  #certiForm input::placeholder {font-size: 18px;}
+  #certiForm .busiNum {display: block;}
+  #certiForm .busiNum .formTit {margin-right: 16px;}
+  #certiForm .busiNum button {width: 100%; margin: 40px 0 0 0; font-size: 20px;}
+  #certiForm .simpleCerti {margin-top: 48px; padding: 0;}
+  #certiForm .agree .formTit {font-size: 21px;}
+  #certiForm .agree .checkList > li > div > label span {font-size: 18px;}
+  #certiForm .inputWrap > p strong {display: block;}
+  #certiForm .inputWrap .inputBox.resident .backNum {font-size: 16px;}
+  #certiForm .inputWrap .telBox {gap: 8px;}
+
+  /* 간편수집 결과안내 */
+  .collectResult .item .cate .notiTit {margin-left: 20px;}
+  .collectResult .item .cate .notiTit .name {font-size: 2rem;}
+  .collectResult .item .cate .notiTit .badge {font-size: 1.167rem;}
+  .collectResult .item .info {height: 60px; padding-left: 42px;}
+  .collectResult .item .info p {font-size: 1.5rem;}
+  .collectResult .item .info p span {display: block; line-height: 1.5;}
+
+  /* 부가세 절세진단 완료 페이지 */
+  .vatSave {padding-top: 0;}
+  .vatSave > img {max-width: 300px;}
+  .vatSave .headingTxt > p span {font-size: 22px;}
+  .vatSave .headingTxt > strong span {font-size: 32px;}
+  .vatSave .infoTxt span {font-size: 17px;}
+
+  /* 간편인증 테이블 추가 - 2025-01-20 */
+  .acWrap .infoTit {font-size: 20px;}
+  .acWrap .infoTxt {font-size: 14px;}
+  .acTableWrap {width: 100%;}
+  .acTableWrap .agencyInfo table th {font-size: 16px;}
+  .acTableWrap .agencyInfo table td {padding: 0 5px; font-size: 14px;}
+
+  /* addrSearch - 주소검색 */
+  .areaAddrSearch {padding: 0;}
+  .areaAddrList .addrEx {padding: 15px;}
+  .areaAddrList .addrEx .exList li {margin-top: 20px;}
+  .areaAddrList .noResult {padding: 30px;}
+  .areaAddrList .noResult span {line-height: 1.5;}
+  .areaAddrList .addrList ul li .addrResult {padding: 15px; background-position: center right 15px;}
+  .areaAddrList .addrList ul li .addrResult .addr .label {font-size: 13px; padding: 1px 0;}
+  .areaAddrList .addrList ul li .addrResult .addr :is(.roadAddrPart , .jibunAddr) {font-size: 15px;}
+}
+
+/* ANIMATION */
+@keyframes ani_opacity {
+    0% {opacity: 0; visibility: hidden;}
+    100% {opacity: 1; visibility: visible;}
+}
+
+@keyframes ani_spin {
+    0% {transform: rotate(0);}
+    100% {transform: rotate(360deg);}
+}
+@keyframes l13{ 
+  100%{transform: rotate(1turn)}
+}

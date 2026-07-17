@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../css_v2/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../../css_v2/mobiscroll.jquery.min.css">
+    <link rel="stylesheet" href="../../css_v2/common.css">
+    <link rel="stylesheet" href="../../css_v2/main.css">
+    <link rel="stylesheet" href="../../css_v2/semo_style.css">
+    <link rel="stylesheet" href="../../css_v2/nh_style.css">
+    <!-- JS -->
+    <script src="../../js_v2/jquery-3.5.1.min.js"></script>
+    <script src="../../js_v2/mobiscroll.jquery.min.js"></script>
+    <script src="../../js_v2/swiper-bundle.min.js"></script>
+    <script src="../../js_v2/wow.min.js"></script>
+    <script src="../../js_v2/chart-3.5.1.min.js"></script>
+    <title>카드매출관리</title>
+</head>
+<body>
+    <div class="basic_wrapper bgc_gray01">
+
+        <div class="free_end">
+            <div class="heading_txt">
+                <img src="../../img_v2/nh_logo.svg" width="200px" alt="세모장부 로고">
+                <strong>
+                    <p class="point">무료 사용기간이 종료되었어요</p>
+                    <p>요금을 확인하고 계속 이용해보세요</p>
+                </strong>
+            </div>
+            <article class="link-template">
+                <ul class="link-template_list">
+                    <li class="item_wrap">
+                        <div class="basic_item">
+                            <div class="txt">
+                                <span>무료 사용기간</span>
+                            </div>
+                            <div class="data">
+                                <span>2025-02-26 ~ 2025-03-31</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </article>
+            <article class="link-template">
+                <div class="tit_area">
+                    <h1 class="main_tit">요금안내</h1>
+                    <span class="ps">* 요금은 매월 자동 결제 (vat 별도)</span>
+                </div>
+                <ul class="link-template_list">
+                    <li class="item_wrap">
+                        <div class="basic_item">
+                            <div class="txt">
+                                <span class="point">프리미엄 서비스</span>
+                            </div>
+                            <div class="data">
+                                <span>월 10,000원</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </article>
+            <article class="link-template">
+                <div class="tit_area">
+                    <h1 class="main_tit">결제정보</h1>
+                </div>
+                <ul class="link-template_list">
+                    <li class="item_wrap">
+                        <div class="basic_item">
+                            <div class="txt">
+                                <span>다음 결제일</span>
+                            </div>
+                            <div class="data">
+                                <span>익월 10일</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="item_wrap">
+                        <div class="basic_item">
+                            <div class="txt">
+                                <span>출금계좌</span>
+                            </div>
+                            <div class="data">
+                                <span>우리은행 1000550*******</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </article>
+            <article class="link-template">
+                <!-- active 클래스 추가시 펼쳐짐 -->
+                <div class="caution active">
+                    <button type="button" class="accor_toggle_btn">
+                        유의사항
+                        <i class="ico_cont"></i>
+                    </button>
+                    <div class="accor_content">
+                        <div class="item">
+                            <p class="tit">1. 이용료 결제 및 이용기간</p>
+                            <ul class="dot_list">
+                                <li>
+                                    세모장부 회원은 서비스의 이용을 위해 입력한 결제정보를 통해 월 단위로 정기 결제(자동 결제) 됩니다.
+                                </li>
+                                <li>
+                                    자동 결제일은 매월 10일 입니다.(단, 공휴일인 경우 익영업일에 출금)
+                                </li>
+                                <li>
+                                    자동 결제일에 결제가 실패한 경우 추가 결제일인 17일, 24일에 재결제 됩니다. (단, 공휴일인 경우 익영업일에 출금)
+                                </li>
+                                <li>
+                                    자동 결제일 / 추가 결제일에 결제가 완료되지 못한 경우, 다음 달에 서비스가 정지됩니다.
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="item">
+                            <p class="tit">2. 해지 및 환불</p>
+                            <ul class="dot_list">
+                                <li>
+                                    서비스 해지는 [세모장부 앱 > 전체 > 설정 > 내정보 > 서비스 해지하기 ] 클릭 시, 언제든지 해지 신청이 가능합니다.
+                                </li>
+                                <li>
+                                    해지 신청 시 세모장부에서 제공하는 서비스를 이용하실 수 없으며 다음 달부터 결제가 진행되지 않습니다.
+                                </li>
+                                <li>
+                                    프리미엄 서비스를 제외한 무료 서비스 이용을 원하실 경우, 서비스 해지 후 재가입 해주시기 바랍니다.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <ul class="link-template_list">
+                    <li class="item_wrap">
+                        <label class="checkbox">
+                            <input type="checkbox">
+                            <span>[필수] 유료 서비스 결제 및 환불 정책에 동의합니다.</span>
+                        </label>
+                    </li>
+                </ul>
+            </article>
+            <!-- 하단고정 -->
+            <footer class="bot_fix_pd20 bgc_gray01 set_pdb27">
+                <!-- 버튼 / bgc_sig 클래스로 제휴별 배경색상 제어 -->
+                <button type="button" class="type_B bgc_sig"><span>계속 사용하기</span></button>
+                <a href="javascript:;" class="move_link_gray">해지하기</a>
+            </footer>
+        </div>
+
+    </div>    
+</body>
+</html>

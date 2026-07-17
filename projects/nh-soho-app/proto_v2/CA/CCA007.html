@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../css_v2/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../../css_v2/mobiscroll.jquery.min.css">
+    <link rel="stylesheet" href="../../css_v2/common.css">
+    <link rel="stylesheet" href="../../css_v2/main.css">
+    <link rel="stylesheet" href="../../css_v2/semo_style.css">
+    <link rel="stylesheet" href="../../css_v2/nh_style.css">
+    <!-- JS -->
+    <script src="../../js_v2/jquery-3.5.1.min.js"></script>
+    <script src="../../js_v2/mobiscroll.jquery.min.js"></script>
+    <script src="../../js_v2/swiper-bundle.min.js"></script>
+    <script src="../../js_v2/wow.min.js"></script>
+    <script src="../../js_v2/chart-3.5.1.min.js"></script>
+  <title>카드매출 관리</title>
+</head>
+<body>
+  <!-- 헤더 타이틀 -->
+  <div class="title b_white">
+    <div class="title_left">
+      <i class="ico_cen left_arrow"></i>
+    </div>
+    <span class="title_text">카드매출 관리</span>
+  </div>
+  <!-- ************* 카드매출 관리 컨텐츠 START ************* -->
+  <div class="basic_wrapper">
+    <section class="franchise_wrap">
+      <!-- 가맹점 로고 -->
+      <article class="franchise">
+        <div class="logo">
+          <span class="ico_cen"></span>
+        </div>
+        <div class="store">
+          <h1>SEMO2022</h1>
+          <p class="elipsis">GS25 000가맹점000가맹점</p>
+        </div>
+      </article>
+      <!-- 최근 수집 일시 박스 -->
+      <article class="recent_box_wrap">
+        <div class="recent_box">
+          <div class="date">
+            <p>최근 수집 일시</p>
+            <div class="flex_ac update">
+              <!-- flex_ac 클래스에 update 클래스가 있을땐 recent 클래스가 보이고, update 클래스 없을땐 default 클래스가 보여용 -->
+              <b class="recent">10분 전</b>
+              <b class="default">2022-01-17</b>
+              <em>오후 17:28</em>
+              <span class="ico_cen refresh_02"></span>
+            </div>
+          </div>
+          <div class="state">
+            <!-- error 클래스 추가시 '연결오류' 활성화 -->
+            <p>정상</p>
+            <span>연결오류</span>
+          </div>
+        </div>
+      </article>
+      <!-- 버튼 -->
+      <article class="btn flex_cs">
+        <button type="button" class="type_B cancel"><span>삭제하기</span></button>
+        <button type="button" class="type_B"><span>비밀번호 변경</span></button>
+      </article>
+
+    </section>
+  </div>
+  <!-- ************* 카드매출 관리 컨텐츠 END ************* -->
+  <script>
+    // 카드매출 삭제하기 팝업 JQUERY
+    $('button.cancel').click(function () {
+      $('.popup_bg.link_cancel').fadeIn();
+    })
+    $('.popup_bg .btm_button .bgc_sig').click(function () {
+      $('.popup_bg').fadeOut();
+    })
+  </script>
+
+</body>
+</html>

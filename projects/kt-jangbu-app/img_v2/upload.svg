@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40.249">
+    <defs>
+        <style>
+            .cls-1{fill:#12997a;stroke-miterlimit:10;stroke-width:.5px}.cls-1,.cls-3{stroke:#12997a}.cls-2,.cls-3{fill:none}.cls-3{stroke-linecap:round;stroke-width:3.5px}
+        </style>
+    </defs>
+    <g id="그룹_56612" data-name="그룹 56612" transform="translate(-562 -81)">
+        <g id="그룹_56180" data-name="그룹 56180" transform="translate(275.857 -323.096)">
+            <path id="패스_44249" data-name="패스 44249" class="cls-1" d="M290.857 428.34V435a6.357 6.357 0 0 0 6.336 6.364h14.482a6.357 6.357 0 0 0 6.336-6.364v-6.66m2.715 0V435a9.071 9.071 0 0 1-9.051 9.091h-14.482a9.071 9.071 0 0 1-9.051-9.091v-6.66" transform="translate(1.707)"/>
+            <ellipse id="타원_1369" data-name="타원 1369" class="cls-1" cx="1.4" cy="1.497" rx="1.4" ry="1.497" transform="translate(289.793 426.584)"/>
+            <circle id="타원_1370" data-name="타원 1370" class="cls-1" cx="1.4" cy="1.4" r="1.4" transform="translate(319.643 426.584)"/>
+            <g id="패스_44247" data-name="패스 44247" transform="translate(288.142 423.765)">
+                <path id="패스_44248" data-name="패스 44248" class="cls-2" d="M324.142 426.764V437.1a10 10 0 0 1-10 10h-16a10 10 0 0 1-10-10v-10.336" transform="translate(-288.142 -426.764)"/>
+            </g>
+            <path id="패스_44246" data-name="패스 44246" class="cls-3" d="m294.473 418.48 11.733-10.631 11.631 10.631"/>
+            <path id="선_1" data-name="선 1" class="cls-3" transform="translate(305.973 409.441)" d="M0 0v21.568"/>
+        </g>
+        <path id="사각형_12779" data-name="사각형 12779" class="cls-2" transform="translate(562 81)" d="M0 0h40v40H0z"/>
+    </g>
+</svg>

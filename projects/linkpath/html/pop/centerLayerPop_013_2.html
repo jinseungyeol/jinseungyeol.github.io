@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- favicon -->
+  <link rel="icon" href="../../img/wp/logo/favicon.ico" type="image/x-icon">
+  <!-- CSS -->
+  <link rel="stylesheet" href="../../css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="../../css/w2ui_2.0.css">
+  <link rel="stylesheet" href="../../css/wp_base.css">
+  <link rel="stylesheet" href="../../css/wp_style.css">
+  <!-- JS -->
+  <script src="../../js/jquery-3.5.1.min.js"></script>
+  <script src="../../js/chart-3.5.1.min.js"></script>
+  <script src="../../js/swiper-bundle.min.js"></script>
+  <script src="../../js/w2ui.js"></script>
+  <script src="../../js/common_ui.js"></script>
+  <!-- PUBL 사이트 외부접속 스크립트 삽입 JS -->
+  <script src="https://publ.roumit.com/js/firebase_include.js"></script>
+  <title>Link Path</title>
+  <script>
+    $(function() {
+      popCenter('.popWrap');
+    })
+  </script>
+</head>
+<body>
+  <div class="popWrap">
+    <div class="dim" onclick="popdimClose(this)"></div>
+    <div class="popInner middle">
+      <div class="popTit">
+        <div class="titleWrapCenter">
+          <button type="button" class="popCloseBtn" title="닫기" onclick="popClose(this)"></button>
+        </div>
+      </div>
+      <div class="popCont">
+        <div id="addrSearch" class="areaAddrSearch">
+          <input type="text" name="keyword" placeholder="도로명, 건물명, 지번 입력">
+          <button type="button" class="btnAddrSearch"></button>
+        </div>
+        <div class="areaAddrList">
+          <div class="addrList"> <!-- 검색 결과 리스트 출력 영역 -->
+            <ul>
+              <li>
+                <a href="javascript:;" class="addrResult">
+                  <input type="hidden" name="zipNo" value="07550">
+                  <div class="addr">
+                    <p class="label">도로명</p>
+                    <p class="roadAddrPart">서울특별시 강서구 화곡로66길 105</p>
+                  </div>
+                  <div class="addr">
+                    <p class="label">지번</p>
+                    <p class="jibunAddr">서울특별시 강서구 등촌동 637-19 라빌라스오피스텔</p>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="confirmPopBtnWrap"></div>
+    </div>
+  </div>
+</body>
+</html>

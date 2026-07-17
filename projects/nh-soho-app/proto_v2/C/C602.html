@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../css_v2/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../../css_v2/mobiscroll.jquery.min.css">
+    <link rel="stylesheet" href="../../css_v2/common.css">
+    <link rel="stylesheet" href="../../css_v2/main.css">
+    <link rel="stylesheet" href="../../css_v2/semo_style.css">
+    <link rel="stylesheet" href="../../css_v2/nh_style.css">
+    <!-- JS -->
+    <script src="../../js_v2/jquery-3.5.1.min.js"></script>
+    <script src="../../js_v2/mobiscroll.jquery.min.js"></script>
+    <script src="../../js_v2/swiper-bundle.min.js"></script>
+    <script src="../../js_v2/wow.min.js"></script>
+    <script src="../../js_v2/chart-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("i.search").click(function(){
+                $(this).toggleClass("active");
+                if($("i.search").hasClass("active")){
+                    $(".title_serach_section").css("display","flex");
+                    $(".content_list_wrapper").css("height","calc(100vh - 84.165vw)");
+                } else{
+                    $(".title_serach_section").css("display","none");
+                    $(".content_list_wrapper").css("height","calc(100vh - 64.165vw)");
+                }
+            });
+        });
+    </script>
+    <title>C602직원관리</title>
+</head>
+<body>
+    <div class="title b_white">
+        <div class="title_left">
+            <i class="ico_cen left_arrow"></i>
+        </div>
+        <span class="title_text">직원관리</span>
+        <div class="title_right">
+            <i class="ico_cen share"></i>
+            <i class="ico_cen search "></i>
+            <i class="ico_cen info"></i>
+        </div>
+    </div>
+    <div class="basic_wrapper sample">
+        <div class="under_button_click" style="display: none;">
+            <span>아래 직원등록 버튼을 눌러 <br>
+                직원 정보를 입력해 주세요.
+            </span>
+            <span class="staff_reg_info">
+                <div>
+                    <i class="ico_cen"></i>
+                    <i class="ico_cen"></i>
+                    <i class="ico_cen"></i>
+                </div>
+            </span>
+        </div>
+        <div class="under_button_click" style="display:none;">
+            <span>검색결과가 없습니다</span>
+        </div>
+        <div class="title_serach_section" style="display: none;">
+            <i class="ico_cen search"></i>
+            <input type="text" placeholder="직원명을 검색해 주세요">
+        </div>
+        <div class="padding_wrapper20" style="display: block;">
+            <div class="content_title set_mgt11">
+                <b class="content_title_text">전체 <b>9</b></b>
+                <div class="onoff_input_wrap">
+                    <div class="onoff_input">
+                        <input type="checkbox" id="slideOne" name="check">
+                        <label for="slideOne"></label>
+                        <span>퇴직자포함</span>
+                        <div class="onoff_input_bg"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="content_list_wrapper set_mgt26 set_pdb150">
+                <div class="listview">
+                    <div class="listview_cell">
+                        <div class="listview_cell_title">
+                            <em>정규직 &nbsp;<em> 6</em></em>
+                            <i class="ico_cen up_gray"></i>
+                        </div>
+                        <div class="listview_con">
+                            <span>
+                                <div>
+                                    <i class="semo_f_1"></i>
+                                    <p>김세모</p>
+                                    <i class="ico_cen ico_new"></i>
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="listview_cell">
+                        <div class="listview_cell_title">
+                            <em>정규직 &nbsp;<em> 6</em></em>
+                            <i class="ico_cen up_gray"></i>
+                        </div>
+                        <div class="listview_con">
+                            <span>
+                                <div>
+                                    <i class="semo_f_2"></i>
+                                    <p>김세모</p>
+                                    <em class="f_blue">&nbsp; 샘플*</em>
+                                </div>
+                                <p class="list_status contract">계약만료예정</p>
+                            </span>
+                            <span>
+                                <div>
+                                    <i class="semo_f_3"></i>
+                                    <p>김세모</p>
+                                </div>
+                                <p class="list_status c_expire">계약만료</p>
+                            </span>
+                            <span>
+                                <div>
+                                    <i class="semo_absence"></i>
+                                    <p>김세모</p>
+                                    <em class="f_gray">&nbsp; (휴직)</em>
+                                </div>
+                                <p class="list_status document">서류만료예정</p>
+                            </span>
+                        </div>
+                    </div>
+                    <!-- 기타소득 -->
+                    <div class="listview_cell">
+                        <div class="listview_cell_title">
+                            <em>기타소득 &nbsp;<em> 6</em></em>
+                            <i class="ico_cen up_gray"></i>
+                        </div>
+                        <div class="listview_con">
+                            <span>
+                                <div>
+                                    <i class="semo_f_5"></i>
+                                    <p>김세모</p>
+                                    <em class="f_blue">&nbsp; 샘플*</em>
+                                </div>
+                                <p class="list_status contract">계약만료예정</p>
+                            </span>
+                            <span>
+                                <div>
+                                    <i class="semo_f_5"></i>
+                                    <p>김세모</p>
+                                </div>
+                                <p class="list_status c_expire">계약만료</p>
+                            </span>
+                            <span>
+                                <div>
+                                    <i class="semo_f_5"></i>
+                                    <p>김세모</p>
+                                    <em class="f_gray">&nbsp; (휴직)</em>
+                                </div>
+                                <p class="list_status document">서류만료예정</p>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <!-- 계약직 -->
+                <div class="listview">
+                    <div class="listview_cell">
+                        <div class="listview_cell_title">
+                            <em>계약직 &nbsp;<em> 1</em></em>
+                            <i class="ico_cen up_gray"></i>
+                        </div>
+                        <div class="listview_con">
+                            <span>
+                                <div>
+                                    <i class="semo_absence"></i>
+                                    <p>김세모</p>
+                                    <em class="f_red">&nbsp; (퇴사)</em>
+                                </div>
+                                <p class="list_status d_expire">서류만료</p>
+                            </span>
+                            <span>
+                                <div>
+                                    <i class="semo_absence"></i>
+                                    <p>김세모</p>
+                                    <em class="f_red">&nbsp; (퇴사)</em>
+                                </div>
+                                <p class="list_status d_expire">서류만료</p>
+                            </span>
+                            <span>
+                                <div>
+                                    <i class="semo_absence"></i>
+                                    <p>김세모</p>
+                                    <em class="f_red">&nbsp; (퇴사)</em>
+                                </div>
+                                <p class="list_status d_expire">서류만료</p>
+                            </span>
+                            <span>
+                                <div>
+                                    <i class="semo_absence"></i>
+                                    <p>김세모</p>
+                                    <em class="f_red">&nbsp; (퇴사)</em>
+                                </div>
+                                <p class="list_status d_expire">서류만료</p>
+                            </span>
+                            <span>
+                                <div>
+                                    <i class="semo_absence"></i>
+                                    <p>김세모</p>
+                                    <em class="f_red">&nbsp; (퇴사)</em>
+                                </div>
+                                <p class="list_status d_expire">서류만료</p>
+                            </span>
+                            <span>
+                                <div>
+                                    <i class="semo_absence"></i>
+                                    <p>김세모</p>
+                                    <em class="f_red">&nbsp; (퇴사)</em>
+                                </div>
+                                <div>
+                                    <span>20.08.05</span>
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="btn_bottom_fix bgc_white01">
+            <div class="btn_sample">
+                <i class="ico_cont info_02"></i>
+                <u>직원정보 샘플 보기</u>
+            </div>
+            <div class="add_button_wrap pos_static">
+                <button class="add_button">
+                    <i class="ico_cont plus_01"></i>
+                    <em>직원등록</em>
+                </button>
+            </div>
+        </div>
+        <div class="toast">
+            <span>직원등록이 완료되었습니다</span>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<svg id="ico_big_bank_KDB산업은행" xmlns="http://www.w3.org/2000/svg" width="36" height="36">
+    <defs>
+        <radialGradient id="radial-gradient" cx="-.003" cy=".992" r="1.19" gradientTransform="matrix(.793 0 0 1 -.035 0)" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#bad7f1"/>
+            <stop offset=".198" stop-color="#a7c7e9"/>
+            <stop offset=".295" stop-color="#8bacd6"/>
+            <stop offset=".523" stop-color="#4f74af"/>
+            <stop offset=".717" stop-color="#244b92"/>
+            <stop offset=".867" stop-color="#093280"/>
+            <stop offset=".956" stop-color="#00297a"/>
+        </radialGradient>
+        <radialGradient id="radial-gradient-2" cx="1.028" cy=".574" fx=".839" fy=".981" r=".79" gradientTransform="matrix(1.264 0 0 1 -.227 0)" gradientUnits="objectBoundingBox">
+            <stop offset=".055" stop-color="#bad7f1"/>
+            <stop offset=".33" stop-color="#98c2e4"/>
+            <stop offset=".439" stop-color="#81abd4"/>
+            <stop offset=".666" stop-color="#4872ac"/>
+            <stop offset=".929" stop-color="#00297a"/>
+        </radialGradient>
+        <style>
+            .cls-2{fill:url(#radial-gradient)}.cls-3{fill:url(#radial-gradient-2)}
+        </style>
+    </defs>
+    <circle id="타원_71" data-name="타원 71" cx="18" cy="18" r="18" style="fill:#013580"/>
+    <g id="그룹_470" data-name="그룹 470" transform="translate(5.082 6.297)">
+        <g id="그룹_472" data-name="그룹 472">
+            <g id="그룹_468" data-name="그룹 468" transform="translate(13.399)">
+                <path id="패스_937" data-name="패스 937" class="cls-2" d="M196.452 2256.359a1.8 1.8 0 0 1 0 2.17s-3.912 6.246-4.592 7.219a2.23 2.23 0 0 1-1.78.933h-6.3s2.673-3.963 4.922-7.46a3.57 3.57 0 0 0 .7-2.44z" transform="translate(-183.781 -2248.241)"/>
+                <path id="패스_938" data-name="패스 938" class="cls-3" d="M183.781 2221.824h6.3a2.236 2.236 0 0 1 1.78.935c.68.973 4.592 7.219 4.592 7.219a1.8 1.8 0 0 1 0 2.17c-.784 1.324-3.9 6.129-3.9 6.129a6.467 6.467 0 0 0-.964-4.439c-1.439-2.465-7.808-12.014-7.808-12.014z" transform="translate(-183.781 -2221.824)"/>
+            </g>
+            <g id="그룹_471" data-name="그룹 471" transform="rotate(180 6.51 11.453)">
+                <path id="패스_937-2" data-name="패스 937" class="cls-2" d="M12.671 0a1.8 1.8 0 0 1 0 2.171S8.759 8.417 8.079 9.388a2.23 2.23 0 0 1-1.78.934H0s2.673-3.964 4.922-7.461A3.569 3.569 0 0 0 5.62.419z" transform="translate(0 8.118)"/>
+                <path id="패스_938-2" data-name="패스 938" class="cls-3" d="M0 0h6.3a2.229 2.229 0 0 1 1.78.933c.68.971 4.592 7.217 4.592 7.217a1.8 1.8 0 0 1 0 2.171c-.784 1.326-3.9 6.129-3.9 6.129a6.459 6.459 0 0 0-.964-4.436C6.369 9.546 0 0 0 0z"/>
+            </g>
+        </g>
+    </g>
+</svg>

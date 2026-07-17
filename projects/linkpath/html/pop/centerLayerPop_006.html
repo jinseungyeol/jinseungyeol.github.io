@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- favicon -->
+  <link rel="icon" href="../../img/wp/logo/favicon.ico" type="image/x-icon">
+  <!-- CSS -->
+  <link rel="stylesheet" href="../../css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="../../css/w2ui_2.0.css">
+  <link rel="stylesheet" href="../../css/wp_base.css">
+  <link rel="stylesheet" href="../../css/wp_style.css">
+  <!-- JS -->
+  <script src="../../js/jquery-3.5.1.min.js"></script>
+  <script src="../../js/chart-3.5.1.min.js"></script>
+  <script src="../../js/swiper-bundle.min.js"></script>
+  <script src="../../js/w2ui.js"></script>
+  <script src="../../js/common_ui.js"></script>
+  <!-- PUBL 사이트 외부접속 스크립트 삽입 JS -->
+  <script src="https://publ.roumit.com/js/firebase_include.js"></script>
+  <title>Link Path</title>
+  <script>
+    $(function() {
+      popCenter('.popWrap')
+    })
+  </script>
+</head>
+<body>
+  <div class="popWrap">
+    <div class="dim" onclick="popdimClose(this)"></div>
+    <div class="popInner small">
+      <div class="popTit">
+        <div class="titleWrapCenter">
+          <h1>전자민원캐시</h1>
+          <button type="button" class="popCloseBtn" title="닫기" onclick="popClose(this)"></button>
+        </div>
+      </div>
+      <div class="popCont">
+        <div class="serviceCashInput">
+          <div class="selectWrap">
+            <div class="item">
+              <p class="title">선불전자지급수단번호</p> 
+              <div class="selectBox">
+                <!-- error 클래스 추가시 에러, 입력 시 x버튼 노출 js처리 -->
+                <input type="text" class="error" placeholder="12자리를 입력해주세요.">
+                <button type="button" class="deleteBtn"></button>
+              </div>
+            </div>
+          </div>
+          <div class="selectWrap">
+            <div class="item">
+              <p class="title">결제 비밀번호</p>
+              <div class="selectBox">
+                <!-- error 클래스 추가시 에러 -->
+                <input type="password" placeholder="비밀번호를 입력해주세요.">
+                <button type="button" class="deleteBtn"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="confirmPopBtnWrap">
+        <div class="areaBtn">
+          <!-- 활성화 시 inActiveBodyBtn 클래스 제거 -->
+          <button class="activeBodyBtn inActiveBodyBtn">등록</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

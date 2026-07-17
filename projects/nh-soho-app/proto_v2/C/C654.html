@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../css_v2/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../../css_v2/mobiscroll.jquery.min.css">
+    <link rel="stylesheet" href="../../css_v2/common.css">
+    <link rel="stylesheet" href="../../css_v2/main.css">
+    <link rel="stylesheet" href="../../css_v2/semo_style.css">
+    <link rel="stylesheet" href="../../css_v2/nh_style.css">
+    <!-- JS -->
+    <script src="../../js_v2/jquery-3.5.1.min.js"></script>
+    <script src="../../js_v2/mobiscroll.jquery.min.js"></script>
+    <script src="../../js_v2/swiper-bundle.min.js"></script>
+    <script src="../../js_v2/wow.min.js"></script>
+    <script src="../../js_v2/chart-3.5.1.min.js"></script>
+    <title>기타지출 C932</title>
+    <script>
+        // 팝업
+        $(document).ready(function () {
+            $(".oth_list").click(function () {
+                $("#slide_popup").fadeIn(500);
+                $("#slide_popup > .popup.bottom").css("bottom", "0");
+                $("html, body").css("overflow", "hidden");
+                $("html, body").css("height", "100%");
+                
+            });
+            // 팝업 배경터치하면 사라짐
+            $(document).click(function (e) {
+                if ($(".popup_bg, .del").is(e.target)) {
+                    $(".popup_bg").hide();
+                    $(".popup.bottom").show().animate({bottom: "-100%"}, 100);
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="title">
+        <div class="title_left">
+            <i class="ico_cen left_arrow"></i>
+        </div>
+        <span class="title_text">기타지출 입력하기</span>
+    </div>
+    <div class="report_wrap">
+        <div class="out_bg"></div>
+        <div class="oth_sales_wrap">
+            <div class="oth_top">
+                <div class="oth_top_txt">
+                    <p>나의 기타 지출은?</p>
+                    <span>
+                        누락되거나 중복된 지출을 입력하면<br>
+                        총 지출에 반영해 드려요!
+                    </span>
+                </div>
+                <div class="oth_ico">
+                    <i class="ico_cen"></i>
+                </div>
+            </div>
+            <div class="oth_sales">
+                <div class="rt_calen">
+                    <div class="rt_arr">
+                        <i class="ico_cont left_ar"></i>
+                    </div>
+                    <div class="rt_date_year">
+                        <i class="ico_cont ico_cal"></i>
+                        <span>2021년 08월</span>
+                    </div>
+                    <div class="rt_arr">
+                        <i class="ico_cont right_ar"></i>
+                    </div>
+                </div>
+                <div class="oth_add" style="display: none;">
+                    <i class="ico_cen bg"></i>
+                    <p>아직 추가한 기타지출이 없어요</p>
+                </div>
+                <div class="oth_list_wrap">
+                    <div class="total">
+                        <span>합계</span>
+                        <p>0원</p>
+                    </div>
+                    <div class="oth_list">
+                        <div class="oth_due">
+                            2021. 7월 ~ 2021. 10월
+                        </div>
+                        <div class="oth_list_con">
+                            <div class="oth_list_txt">
+                                네이버 스토어팜
+                            </div>
+                            <div class="oth_list_num">
+                                <p>65,000원</p>
+                                <div class="icon">
+                                    <i class="ico_cont"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="oth_list">
+                        <div class="oth_due">
+                            2021. 7월 ~ 2021. 10월
+                        </div>
+                        <div class="oth_list_con">
+                            <div class="oth_list_txt">
+                                고도몰 가맹점
+                            </div>
+                            <div class="oth_list_num">
+                                <p>-250,000원</p>
+                                <div class="icon">
+                                    <i class="ico_cont"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="oth_list">
+                        <div class="oth_due">
+                            2021. 7월 ~ 2021. 10월
+                        </div>
+                        <div class="oth_list_con">
+                            <div class="oth_list_txt">
+                                고도몰 가맹점
+                            </div>
+                            <div class="oth_list_num">
+                                <p>-250,000원</p>
+                                <div class="icon">
+                                    <i class="ico_cont"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btm_plus bottom_fix">
+                    <i class="ico_cen plus_white"></i>
+                    <span>지출 추가하기</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

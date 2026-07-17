@@ -39,10 +39,10 @@
     ],
     "links": [
       {
-        "to": "https://semoreport.netlify.app/publguide/markupui/html/",
+        "to": "/project/semoreport/publGuide/markupUI/html/",
         "text": "UIKit"
       },
-      { "to": "https://semoreport.netlify.app/", "text": "App" }
+      { "to": "/project/semoreport/", "text": "App" }
     ]
   },
   {
@@ -56,7 +56,7 @@
       { "label": "환경", "value": "웹 앱" },
       { "label": "성과", "value": "Chart.js를 활용한 데이터 시각화" }
     ],
-    "links": [{ "to": "https://linkpath.netlify.app/", "text": "Web" }]
+    "links": [{ "to": "/project/linkpath/", "text": "Web" }]
   },
   {
     "title": "위멤버스 스케줄러",
@@ -73,7 +73,7 @@
       }
     ],
     "links": [
-      { "to": "https://wemembers-scheduler.netlify.app/", "text": "Web" }
+      { "to": "/project/wemembers-scheduler/", "text": "Web" }
     ]
   },
   {
@@ -97,9 +97,9 @@
       }
     ],
     "links": [
-      { "to": "https://kt-jangbu.netlify.app/", "text": "PC Web" },
-      { "to": "https://m-kt-jangbu.netlify.app/", "text": "Mobile Web" },
-      { "to": "https://kt-jangbu-app.netlify.app/", "text": "Mobile App" }
+      { "to": "/project/kt-jangbu/", "text": "PC Web" },
+      { "to": "/project/m-kt-jangbu/", "text": "Mobile Web" },
+      { "to": "/project/kt-jangbu-app/", "text": "Mobile App" }
     ]
   },
   {
@@ -123,8 +123,7 @@
       }
     ],
     "links": [
-      { "to": "https://ione-soho.netlify.app/", "text": "Web" },
-      { "to": "https://ione-soho-app.netlify.app/", "text": "Mobile App" }
+      { "to": "/project/ione-soho-app/", "text": "Mobile App" }
     ]
   },
   {
@@ -163,7 +162,7 @@
         "value": "SVN 및 HTML 산출물 페이지 구축을 통한 업무 프로세스 30% 단축"
       }
     ],
-    "links": [{ "to": "https://nh-soho.netlify.app/", "text": "Mobile App" }]
+    "links": [{ "to": "/project/nh-soho-app/", "text": "Mobile App" }]
   },
   {
     "title": "세모장부",
@@ -179,6 +178,6 @@
         "value": "CSS 하드웨어 가속을 활용한 프레임 속도 2배 향상 및 Mobiscroll.js를 활용한 달력 적용"
       }
     ],
-    "links": [{ "to": "https://smjb.netlify.app/", "text": "Mobile App" }]
+    "links": [{ "to": "/project/smjb-app/", "text": "Mobile App" }]
   }
 ]

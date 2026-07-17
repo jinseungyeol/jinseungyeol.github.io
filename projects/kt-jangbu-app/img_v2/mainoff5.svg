@@ -1,0 +1,18 @@
+<svg id="_5_time_off" data-name="5_time_off" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="360" height="360" viewBox="0 0 360 360">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="사각형_25154" data-name="사각형 25154" width="308.57" height="308.57" fill="#e8e8e8" stroke="#e8e8e8" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <rect id="사각형_25153" data-name="사각형 25153" width="360" height="360" fill="none"/>
+  <g id="그룹_83824" data-name="그룹 83824" transform="translate(25.715 25.715)">
+    <g id="그룹_83824-2" data-name="그룹 83824" clip-path="url(#clip-path)">
+      <path id="패스_60890" data-name="패스 60890" d="M87.741,111.708l-13.9-16.272L17.165,29.068a10.7,10.7,0,0,1,16.2-13.984l.075.082L90.111,81.54l33.831-28.888A10.7,10.7,0,1,1,137.987,68.8l-.082.068-.068.061L104.013,97.806Z" transform="translate(67.511 66.298)" fill="#e8e8e8" stroke="#e8e8e8" stroke-width="2" fill-rule="evenodd"/>
+      <path id="패스_60891" data-name="패스 60891" d="M29.244,34.3h0a7.906,7.906,0,0,0-7.884,7.884V56.821a7.884,7.884,0,1,0,15.768,0V42.183A7.906,7.906,0,0,0,29.244,34.3" transform="translate(126.015 202.223)" fill="#e8e8e8" stroke="#e8e8e8" stroke-width="2" fill-rule="evenodd"/>
+      <path id="패스_60892" data-name="패스 60892" d="M29.244,6.674h0a7.906,7.906,0,0,0-7.884,7.884V29.2a7.884,7.884,0,1,0,15.768,0V14.558a7.906,7.906,0,0,0-7.884-7.884" transform="translate(126.015 35.767)" fill="#e8e8e8" stroke="#e8e8e8" stroke-width="2" fill-rule="evenodd"/>
+      <path id="패스_60893" data-name="패스 60893" d="M36.868,29.473h0a7.906,7.906,0,0,0-7.884-7.884H14.346a7.884,7.884,0,0,0,0,15.768H28.984a7.906,7.906,0,0,0,7.884-7.884" transform="translate(230.706 125.399)" fill="#e8e8e8" stroke="#e8e8e8" stroke-width="2" fill-rule="evenodd"/>
+      <path id="패스_60894" data-name="패스 60894" d="M64.5,29.446h0a7.906,7.906,0,0,0-7.884-7.884H41.982a7.884,7.884,0,1,0,0,15.768H56.62A7.906,7.906,0,0,0,64.5,29.446" transform="translate(8.913 125.242)" fill="#e8e8e8" stroke="#e8e8e8" stroke-width="2" fill-rule="evenodd"/>
+      <path id="패스_60895" data-name="패스 60895" d="M154.285,0A154.285,154.285,0,1,1,0,154.285,154.284,154.284,0,0,1,154.285,0M33.429,154.278c0,66.069,53.745,120.284,119.787,120.856l1.117.007c66.048-.014,120.236-53.759,120.808-119.814.579-66.559-53.1-121.244-120.012-121.9C88.4,33.429,33.8,87.658,33.429,154.278" transform="translate(0 0.001)" fill="#e8e8e8" stroke="#e8e8e8" stroke-width="1"/>
+    </g>
+  </g>
+</svg>

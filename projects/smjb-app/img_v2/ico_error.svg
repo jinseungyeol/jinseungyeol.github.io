@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="ico_error_에러_아이콘" width="30" height="30" viewBox="0 0 30 30">
+    <defs>
+        <style>
+            .cls-2{fill:#fff}
+        </style>
+    </defs>
+    <path id="패스_596" fill="#b4bac4" d="M15 0A15 15 0 1 1 0 15 15 15 0 0 1 15 0z"/>
+    <g id="그룹_342" transform="translate(12.954 5.455)">
+        <path id="사각형_121" d="M0 0H4.091V12.273H0z" class="cls-2" transform="translate(0)"/>
+        <path id="사각형_122" d="M0 0H4.091V4.091H0z" class="cls-2" transform="translate(0 15.341)"/>
+    </g>
+</svg>

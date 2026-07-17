@@ -1,0 +1,14 @@
+<svg id="ico_small_bank24_제이피모건" xmlns="http://www.w3.org/2000/svg" width="36" height="36">
+    <defs>
+        <style>
+            .cls-2{fill:#fff}
+        </style>
+    </defs>
+    <circle id="타원_90" data-name="타원 90" cx="18" cy="18" r="18" style="fill:#2c5aaf"/>
+    <g id="그룹_523" data-name="그룹 523" transform="translate(8.1 8.098)">
+        <path id="패스_1511" data-name="패스 1511" class="cls-2" d="M1432.816 2357.659a.707.707 0 0 0-.707.706v4.951h13.081l-5.958-5.656h-6.416" transform="translate(-1425.658 -2357.659)"/>
+        <path id="패스_1512" data-name="패스 1512" class="cls-2" d="M1457.839 2374.744a.705.705 0 0 0-.708-.706h-4.948v13.08l5.654-5.958v-6.416" transform="translate(-1437.828 -2367.589)"/>
+        <path id="패스_1513" data-name="패스 1513" class="cls-2" d="M1429.312 2399.753a.707.707 0 0 0 .707-.707v-4.951h-13.081l5.958 5.656h6.417" transform="translate(-1416.459 -2379.749)"/>
+        <path id="패스_1514" data-name="패스 1514" class="cls-2" d="M1415.723 2371.24a.708.708 0 0 0 .707.708h4.952v-13.082l-5.657 5.958v6.416" transform="translate(-1415.723 -2358.39)"/>
+    </g>
+</svg>

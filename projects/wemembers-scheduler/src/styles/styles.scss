@@ -1,0 +1,1001 @@
+.container {
+  .contents {
+    display: flex;
+    height: calc(100vh - 30px);
+  }
+
+  .closeWrap {
+    -webkit-user-select: none;
+    -webkit-app-region: drag;
+    position: relative;
+    z-index: 6;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 9px;
+    height: 30px;
+    background: linear-gradient(90deg, rgba(43, 43, 44, 1) 0%, rgba(1, 1, 53, 1) 100%);
+    color: #fff;
+
+    strong {
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .closeBtn {
+      -webkit-app-region: no-drag;
+      width: 30px;
+      height: 30px;
+      background: url(../assets/images/ico_close_white.svg) no-repeat (center / 12px);
+    }
+  }
+}
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  overflow-y: auto;
+
+  &:has(.header) {
+    padding-top: 60px;
+  }
+
+  &:has(.fixedBtm) {
+    padding-bottom: 92px;
+  }
+}
+
+.lnbWrapper {
+  flex: 0 0 56px;
+  padding: 16px 10px;
+  background: linear-gradient(180deg, rgba(142, 115, 249, 1) 0%, rgba(76, 47, 255, 1) 100%);
+  overflow-y: auto;
+  color: #fff;
+
+  li {
+    + li {
+      margin-top: 20px;
+    }
+
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 36px;
+      height: 36px;
+      transition: 0.35s;
+      border: 1px solid transparent;
+      border-radius: 8px;
+
+      &:hover {
+        border-color: #fff;
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+
+      svg {
+        fill: #fff;
+      }
+    }
+
+    &.active a {
+      border-color: #fff;
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+  }
+}
+
+.header {
+  position: fixed;
+  top: 30px;
+  left: 56px;
+  right: 0;
+  max-width: 900px;
+  height: 50px;
+  line-height: 50px;
+  margin: 0 auto 20px;
+  background: #fff;
+
+  .mainTitle {
+    padding: 0 20px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .moreDepth {
+    text-align: center;
+
+    .btnGoback {
+      position: absolute;
+      left: 16px;
+      top: 16px;
+      width: 20px;
+      height: 20px;
+      background: url(../assets/images/ico_ts_left.svg) no-repeat (center / 16px);
+    }
+  }
+}
+
+.boxList li + li {
+  margin-top: 12px;
+}
+
+.listTitArea {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.listTit {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.boxList {
+  .ctTask .grayCard {
+    height: 150px;
+    overflow-y: auto;
+  }
+
+  .ctResult .grayCard {
+    height: 262px;
+    overflow-y: auto;
+  }
+
+  .fmsiResult .grayCard {
+    height: 190px;
+    overflow-y: auto;
+  }
+
+  + .checkBox {
+    margin: 12px 0 36px;
+  }
+}
+
+.dotList li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .left {
+    position: relative;
+    padding-left: 15px;
+
+    &::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: 2px;
+    }
+
+    p {
+      font-size: 12px;
+      line-height: 1.5;
+    }
+  }
+
+  .right .state {
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  &.spacing {
+    margin-top: 40px;
+  }
+}
+
+.grayCard {
+  padding: 16px;
+  background: #fcfcfc;
+  border: 1px solid #f1f1f1;
+  border-radius: 6px;
+}
+
+.listNone {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  p {
+    color: #333;
+    font-size: 12px;
+    font-weight: 600;
+  }
+}
+
+.grayCard .infoTxt {
+  color: #555;
+  font-size: 12px;
+}
+
+.whiteCard {
+  padding: 16px;
+  background: #fff;
+  border: 1px solid #f1f1f1;
+  border-radius: 6px;
+}
+
+.dotList ~ .ctResultBox {
+  margin-top: 40px;
+}
+
+.ctResultBox .item {
+  + .item {
+    margin-top: 15px;
+  }
+
+  strong {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 12px;
+    font-weight: bold;
+  }
+}
+
+/* login */
+
+.loginInfo {
+  margin-top: 60px;
+  text-align: center;
+
+  img {
+    margin-bottom: 40px;
+  }
+
+  .grayCard {
+    width: fit-content;
+    margin: 0 auto 20px;
+    padding: 20px;
+    border: none;
+    font-weight: 600;
+    font-size: 18px;
+    background: #f4f5f7;
+  }
+
+  p {
+    font-weight: 600;
+    font-size: 12px;
+    color: #b4b4b4;
+
+    span {
+      display: block;
+      line-height: 1.5;
+    }
+  }
+}
+
+.loginInputBox {
+  margin-top: 56px;
+
+  .inputWrap input {
+    height: 52px;
+  }
+
+  .password {
+    margin-top: 20px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+}
+
+.tblInput {
+  th {
+    color: #555;
+    font-weight: 500;
+  }
+
+  tr + tr {
+    th, td {
+      padding-top: 12px;
+    }
+  }
+
+  td .data {
+    font-size: 12px;
+    color: #555;
+  }
+
+  + .referTxt {
+    margin-top: 15px;
+  }
+}
+
+.tooltipWrap {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip {
+  position: fixed;
+  padding: 7px 12px;
+  background: #000;
+  border-radius: 4px;
+  color: #fff;
+  white-space: nowrap;
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+
+  /* transition: 0.15s; */
+
+  p {
+    line-height: 1.25;
+    font-weight: 600;
+    font-size: 12px;
+
+    + p {
+      margin-top: 12px;
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    background: #000;
+    width: 6px;
+    height: 6px;
+  }
+
+  &.right::before {
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    left: -3px;
+  }
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.addTaskList {
+  margin-bottom: 40px;
+
+  > li {
+    + li {
+      margin-top: 15px;
+    }
+
+    .whiteCard {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: 0.35s;
+
+      &:hover {
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+      }
+    }
+
+    .name {
+      display: flex;
+      align-items: center;
+      min-width: 0;
+
+      img {
+        margin-right: 8px;
+      }
+
+      span {
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      .selectDate .pointColor {
+        margin-left: 4px;
+      }
+    }
+
+    .buttonArea {
+      margin-left: 20px;
+    }
+  }
+}
+
+.dropdownWrap {
+  position: relative;
+}
+
+.termSelect {
+  + .termSelect {
+    margin-top: 20px;
+  }
+
+  .selectBtn {
+    margin-top: 12px;
+    width: 100%;
+  }
+
+  ~ .boxList {
+    margin-top: 12px;
+  }
+}
+
+.WorkSettingsPage {
+  .visualTxt {
+    padding-top: 50px;
+    background: linear-gradient(90deg, rgba(82, 53, 255, 1) 0%, rgba(255, 53, 138, 1) 100%);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 26px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .cdrVisualBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 312px;
+    margin-top: 44px;
+    border-radius: 20px;
+  }
+
+  .infoTxt {
+    margin-top: 32px;
+    text-align: center;
+
+    span {
+      display: block;
+      font-size: 16px;
+      font-weight: 600;
+      color: #4d4d4f;
+      line-height: 1.5;
+    }
+  }
+}
+
+.calGrid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-row-gap: 12px;
+  text-align: center;
+  width: 100%;
+
+  .day {
+    position: relative;
+    display: inline-block;
+    height: 24px;
+    font-size: 14px;
+    font-weight: 600;
+
+    &.active {
+      color: #fff;
+      z-index: 1;
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #4f32ff;
+        z-index: -1;
+      }
+    }
+  }
+}
+
+.checkBox {
+  display: flex;
+
+  label {
+    margin-left: 8px;
+    margin-top: 2px;
+    font-size: 12px;
+    color: #555;
+  }
+}
+
+.checkList > li + li {
+  margin-top: 8px;
+}
+
+.purpleCard {
+  padding: 8px 16px;
+  background: rgba(79, 50, 255, 0.04);
+  border: 1px solid #4f32ff;
+  border-radius: 6px;
+
+  .infoTxt {
+    font-size: 14px;
+    font-weight: 600;
+
+    + .infoTxt {
+      margin-top: 4px;
+    }
+  }
+}
+
+.toast {
+  position: fixed;
+  padding: 10px 16px;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  top: 78px;
+  left: calc(50% + 28px);
+  transform: translate(-50%, -200px);
+  animation: slideDownUp 3.5s ease-in-out both;
+  z-index: 5;
+
+  .inner {
+    display: flex;
+    align-items: center;
+  }
+
+  .toastMsg {
+    margin-left: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+  }
+}
+
+.popWrap {
+  position: fixed;
+  top: 30px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+
+  .dim {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+  }
+
+  &.loading {
+    z-index: 150;
+
+    .loadingInner {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      width: 100%;
+    }
+
+    .loadingTxt {
+      margin-top: 40px;
+
+      p {
+        line-height: 1.5;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .popInner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 8px;
+    background: #fff;
+    border: 1px solid #000;
+
+    .popHeader {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 16px;
+      border-bottom: 1px solid #f1f1f1;
+
+      .left h1 {
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      .right .popCloseBtn {
+        width: 25px;
+        height: 25px;
+        margin-right: -7px;
+        background: url(../assets/images/ico_close.svg) no-repeat (center / 12px);
+      }
+    }
+
+    .popCont {
+      padding: 16px;
+
+      .tblType01 .tblCont {
+        height: 224px;
+      }
+    }
+
+    .popBtnWrap {
+      padding: 0 16px 16px;
+    }
+  }
+
+  &.certi {
+    .popInner {
+      width: 400px;
+      border-radius: 0;
+    }
+
+    .popBtnWrap .bodyActiveBtn {
+      background: #558ad9;
+    }
+  }
+}
+
+/* 인증서 팝업 */
+
+/* 테이블 정의 */
+
+.tblType01 {
+  margin-bottom: 24px;
+  border-radius: 4px 4px 0 0;
+  overflow: hidden;
+
+  button {
+    padding-left: 0;
+  }
+
+  table thead {
+    background: #6b7280;
+
+    tr th {
+      padding: 8px 16px;
+      text-align: left;
+
+      .tit {
+        color: #fff;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .tblCont {
+    overflow-y: auto;
+    border: 1px solid #cccccf;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+
+    table tr {
+      td {
+        padding: 8px 16px;
+      }
+
+      + tr {
+        border-top: 1px solid #cccccf;
+      }
+    }
+  }
+}
+
+/* react-datepicker custom */
+
+.react-datepicker__tab-loop * {
+  font-family: "pretendard";
+}
+
+.react-datepicker {
+  border: none;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+  border-radius: 8px;
+}
+
+.react-datepicker__header {
+  padding: 16px 16px 8px;
+  background: #fff;
+  border-bottom: none;
+}
+
+.react-datepicker__current-month {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.react-datepicker__day-names {
+  display: none;
+}
+
+.react-datepicker__navigation {
+  top: 9px;
+}
+
+.react-datepicker__navigation-icon::before {
+  display: none;
+}
+
+.react-datepicker__navigation--previous {
+  background: url(../assets/images/ico_ts_left.svg) no-repeat (center / 16px);
+  left: 14px;
+}
+
+.react-datepicker__navigation--next {
+  background: url(../assets/images/ico_ts_right_v2.svg) no-repeat (center / 16px);
+  right: 14px;
+}
+
+.react-datepicker-popper[data-placement^="bottom"] .react-datepicker__triangle {
+  fill: #fff;
+  color: #fff;
+  stroke: none;
+}
+
+.react-datepicker__day {
+  color: #333;
+  margin: 0.672rem;
+  font-size: 14px;
+}
+
+.react-datepicker__day--selected, .react-datepicker__day--keyboard-selected {
+  color: #fff;
+  background: #4f32ff;
+  border-radius: 50%;
+}
+
+.react-datepicker__day--outside-month {
+  color: rgba(194, 194, 194, 1);
+
+  .react-datepicker__day:hover {
+    background: rgb(79, 50, 255, 0.12);
+    border-radius: 50%;
+  }
+}
+
+.react-datepicker__day:hover {
+  background: rgb(79, 50, 255, 0.12);
+  border-radius: 50%;
+}
+
+.react-datepicker__day--selected:hover {
+  background: #4f32ff;
+}
+
+.react-datepicker__children-container {
+  width: 100%;
+  padding: 0 22px;
+  margin: 0;
+
+  .btnWrap {
+    margin: 16px 0;
+    padding-top: 12px;
+    border-top: 1px solid #f1f1f1;
+  }
+}
+
+.react-datepicker__day--in-selecting-range:not(.react-datepicker__day--in-range,
+.react-datepicker__month-text--in-range,
+.react-datepicker__quarter-text--in-range,
+.react-datepicker__year-text--in-range
+), .react-datepicker__month-text--in-selecting-range:not(.react-datepicker__day--in-range,
+.react-datepicker__month-text--in-range,
+.react-datepicker__quarter-text--in-range,
+.react-datepicker__year-text--in-range
+), .react-datepicker__quarter-text--in-selecting-range:not(.react-datepicker__day--in-range,
+.react-datepicker__month-text--in-range,
+.react-datepicker__quarter-text--in-range,
+.react-datepicker__year-text--in-range
+), .react-datepicker__year-text--in-selecting-range:not(.react-datepicker__day--in-range,
+.react-datepicker__month-text--in-range,
+.react-datepicker__quarter-text--in-range,
+.react-datepicker__year-text--in-range
+) {
+  background-color: rgb(234, 231, 255);
+  border-radius: 50%;
+}
+
+.react-datepicker__month-container {
+  float: none;
+}
+
+.seletedDateWrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-top: 16px;
+  border-top: 1px solid #f1f1f1;
+
+  .date {
+    color: #9c9b9b;
+
+    &.selected {
+      color: #4f32ff;
+      font-weight: bold;
+    }
+
+    ~ .date {
+      margin-left: auto;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 1px;
+        height: 12px;
+        background: #d4d4d9;
+      }
+    }
+  }
+}
+
+.calHalfYear {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  right: 0;
+  padding: 16px 16px 0;
+  background: #fff;
+  border-radius: 8px;
+  z-index: 1;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+
+  .calHalfYearBody {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    margin-bottom: 12px;
+  }
+
+  .calHalfYearHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+
+    .year {
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    button {
+      height: 40px;
+      width: 40px;
+      background: no-repeat center / 16px;
+    }
+
+    .prevBtn {
+      background-image: url(../assets/images/ico_ts_left.svg);
+
+      &.disabled {
+        background-image: url(../assets/images/ico_ts_left_light_gray.svg);
+      }
+    }
+
+    .nextBtn {
+      background-image: url(../assets/images/ico_ts_right_v2.svg);
+
+      &.disabled {
+        background-image: url(../assets/images/ico_ts_right_light_gray.svg);
+      }
+    }
+  }
+
+  .calHalfYearBody {
+    button {
+      height: 56px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 56px;
+      border-radius: 8px;
+      transition: 0.15s;
+
+      &:hover {
+        background: rgb(79, 50, 255, 0.12);
+      }
+
+      &.active {
+        background: #4f32ff;
+        color: #fff;
+      }
+
+      &.inActive {
+        color: #c2c2c2;
+
+        &:hover {
+          background: none;
+        }
+      }
+    }
+
+    .fullYear {
+      grid-column: span 3;
+    }
+  }
+
+  .btnWrap {
+    margin: 16px 0;
+    padding-top: 12px;
+    border-top: 1px solid #f1f1f1;
+  }
+
+  &.col4 .calHalfYearBody {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.homeWrapper .boxList .ctResult .grayCard {
+  height: 346px;
+}
+
+/* vatOverview */
+.vatOverview .boxList .ctResult .grayCard {
+  height: 160px;
+  margin-bottom: 20px;
+}
+
+/* qm 2024-12-23 */
+.qmWrap {
+  display: flex;
+  align-items: center;
+
+  .qm {
+    position: relative;
+    margin-left: 6px;
+  }
+}
+
+.qmPop {
+  display: none;
+  position: absolute;
+  left: -40px;
+  top: calc(100% + 22px);
+
+  .tail {
+    position: absolute;
+    top: -11px;
+    left: 38px;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    transform: rotate(45deg);
+    border-left: 1px solid #f1f1f1;
+    border-top: 1px solid #f1f1f1;
+  }
+
+  .qmPopCont {
+    padding: 12px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+    background: #fff;
+    border: 1px solid #f1f1f1;
+  }
+}
+
+.qmWrap .qm:hover .qmPop {
+  display: block;
+}
+
+/* 애니메이션 정의 */
+@keyframes slideDownUp {
+  0% {
+    transform: translate(-50%, -200px);
+  }
+
+  20% {
+    transform: translate(-50%, 0);
+  }
+
+  80% {
+    transform: translate(-50%, 0);
+  }
+
+  100% {
+    transform: translate(-50%, -200px);
+  }
+}

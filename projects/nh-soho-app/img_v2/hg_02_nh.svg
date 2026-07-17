@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="454" height="119" viewBox="0 0 454 119">
+    <defs>
+        <clipPath id="nwszm4ucma">
+            <path data-name="사각형 18002" transform="translate(226 1398)" style="fill:none" d="M0 0h454v119H0z"/>
+        </clipPath>
+    </defs>
+    <g data-name="마스크 그룹 5" transform="translate(-226 -1398)" style="clip-path:url(#nwszm4ucma)">
+        <path data-name="패스 50958" d="M293.875 22.294c0-1.267-3.491-2.294-7.8-2.294H7.8C3.491 20 0 21.027 0 22.294v19.882h293.875z" transform="rotate(180 316.437 763.547)" style="fill:#ececec"/>
+        <g data-name="사각형 17534" style="fill:#fff;stroke:#000;stroke-width:4px">
+            <path style="stroke:none" d="M0 0h387v78H0z" transform="translate(246 1414)"/>
+            <path style="fill:none" d="M2 2h383v74H2z" transform="translate(246 1414)"/>
+        </g>
+        <text transform="translate(274.354 1465.764)" style="font-size:36px;font-family:Pretendard-SemiBold,Pretendard;font-weight:600;fill:#222"><tspan x="0" y="0">NH소상공인파트너</tspan></text>
+        <g data-name="OFF_돋보기 40px">
+            <g data-name="그룹 56179">
+                <path data-name="합치기 27" d="m34.081 37.252-8.423-8.563a13.571 13.571 0 0 1-18.2-1.1 14.122 14.122 0 0 1 .005-19.733 13.573 13.573 0 0 1 19.424-.012A14.13 14.13 0 0 1 28.43 25.7l8.285 8.421a2.071 2.071 0 0 1 .72 1.576 2.042 2.042 0 0 1-2.023 2.06 1.994 1.994 0 0 1-1.331-.505zM14.4 7.251a10.648 10.648 0 0 0-4.77 2.809 10.968 10.968 0 0 0-.009 15.333 10.547 10.547 0 0 0 15.086-.009 10.968 10.968 0 0 0 .008-15.334 10.606 10.606 0 0 0-7.553-3.169 10.473 10.473 0 0 0-2.762.37z" transform="translate(577.564 1432.239)" style="fill:#222"/>
+                <path data-name="사각형 12691" transform="translate(580 1435)" style="fill:none" d="M0 0h36v36H0z"/>
+            </g>
+            <path data-name="사각형 12778" transform="translate(578 1433)" style="fill:none" d="M0 0h40v40H0z"/>
+        </g>
+    </g>
+</svg>

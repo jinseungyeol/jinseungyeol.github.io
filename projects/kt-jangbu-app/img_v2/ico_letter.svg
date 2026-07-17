@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="56.322" height="38.3">
+    <defs>
+        <style>
+            .cls-2{stroke:#6c6c6c;stroke-width:.3px;fill:#6c6c6c}
+        </style>
+    </defs>
+    <g id="그룹_56616" data-name="그룹 56616" transform="translate(-196.4 -556.207)">
+        <g id="그룹_56613" data-name="그룹 56613" transform="translate(197.215 556.357)">
+            <path id="사각형_13039" data-name="사각형 13039" transform="translate(.654 .655)" style="stroke-width:.3px;stroke:#6c6c6c;fill:#fff" d="M0 0h54.036v36.69H0z"/>
+            <path id="패스_44713" data-name="패스 44713" class="cls-2" d="M251.894 594.357h-54.013a.663.663 0 0 1-.666-.661v-36.678a.663.663 0 0 1 .666-.661h54.013a.663.663 0 0 1 .666.661V593.7a.663.663 0 0 1-.666.657zm-53.348-1.323h52.682V557.68h-52.682z" transform="translate(-197.215 -556.357)"/>
+        </g>
+        <g id="그룹_56614" data-name="그룹 56614" transform="translate(196.56 570.6)">
+            <path id="패스_44714" data-name="패스 44714" d="m224.733 567.436 27.018 22.447h-54.036z" transform="translate(-196.406 -566.781)" style="stroke:#8a8a8b;stroke-width:.3px;fill:#fff"/>
+            <path id="패스_44715" data-name="패스 44715" d="M251.894 590.693h-54.013a.666.666 0 0 1-.626-.429.649.649 0 0 1 .2-.725l27.007-22.447a.673.673 0 0 1 .86 0l27.007 22.447a.649.649 0 0 1 .2.725.666.666 0 0 1-.635.429zm-52.194-1.31h50.376l-25.188-20.935z" transform="translate(-197.215 -566.936)" style="fill:#6d6d6d;stroke:#6d6d6d;stroke-width:.3px"/>
+        </g>
+        <g id="그룹_56615" data-name="그룹 56615" transform="translate(197.215 556.357)">
+            <path id="패스_44716" data-name="패스 44716" d="m224.733 579.3-27.018-22.447h54.036z" transform="translate(-197.06 -556.202)" style="fill:#63e2c5;stroke:#8a8a8b;stroke-width:.3px"/>
+            <path id="패스_44717" data-name="패스 44717" class="cls-2" d="M224.888 580.113a.672.672 0 0 1-.43-.154l-27.007-22.447a.649.649 0 0 1-.2-.725.666.666 0 0 1 .626-.429h54.013a.666.666 0 0 1 .626.429.649.649 0 0 1-.2.725l-27.007 22.447a.672.672 0 0 1-.421.154zM199.7 557.666l25.188 20.934 25.188-20.935z" transform="translate(-197.215 -556.357)"/>
+        </g>
+    </g>
+</svg>

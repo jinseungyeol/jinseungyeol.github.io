@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- favicon -->
+  <link rel="icon" href="../../img/wp/logo/favicon.ico" type="image/x-icon">
+  <!-- CSS -->
+  <link rel="stylesheet" href="../../css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="../../css/w2ui_2.0.css">
+  <link rel="stylesheet" href="../../css/wp_base.css">
+  <link rel="stylesheet" href="../../css/wp_style.css">
+  <!-- JS -->
+  <script src="../../js/jquery-3.5.1.min.js"></script>
+  <script src="../../js/chart-3.5.1.min.js"></script>
+  <script src="../../js/swiper-bundle.min.js"></script>
+  <script src="../../js/w2ui.js"></script>
+  <script src="../../js/common_ui.js"></script>
+  <!-- PUBL 사이트 외부접속 스크립트 삽입 JS -->
+  <script src="https://publ.roumit.com/js/firebase_include.js"></script>
+  <title>Link Path</title>
+  <script>
+    $(function() {
+      popCenter('.popWrap')
+    })
+  </script>
+</head>
+<body>
+  <div class="popWrap pageEdit">
+    <div class="dim" onclick="popdimClose(this)"></div>
+    <div class="popInner">
+      <div class="popTit">
+        <div class="titleWrapCenter">
+          <h1>페이지 편집</h1>
+          <button type="button" class="popCloseBtn" title="닫기" onclick="popClose(this)"></button>
+        </div>
+      </div>
+      <div class="popCont">
+        <div class="gridBox">
+          <div class="gCol info">
+            <div class="editForm">
+              <!-- 페이지 명 -->
+              <div class="selectWrap">
+                <div class="item">
+                  <p class="title">페이지 명</p><!-- 2025-01-08 -->
+                  <div class="selectBox">
+                    <input type="text" placeholder="페이지 명을 입력해주세요. (10글자 제한)" maxlength="10">
+                    <button type="button" class="deleteBtn"></button>
+                  </div>
+                </div>
+              </div>
+              <!-- //페이지 명 -->
+              <!-- 페이지 유형 -->
+              <div class="selectWrap">
+                <div class="item">
+                  <p class="title">페이지 유형</p><!-- 2025-01-08 -->
+                  <div class="selectBox">
+                    <!-- 선택시 notSelected 클래스 제거 -->
+                    <button type="button" class="optionBtn selectTaget notSelected">페이지 유형을 선택해주세요.</button>
+                    <div class="selectListWrap">
+                      <ul class="selectList">
+                        <li class="currentSelected">
+                          <label><span>컨설팅</span></label>
+                        </li>
+                        <li>
+                          <label><span>절세진단</span></label>
+                        </li>
+                        <li>
+                          <label><span>상담</span></label>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="infoMark">
+                    <button class="infoBtn"></button>
+                    <span class="qmTarget infoTxt">페이지 유형 변경 시 디자인과 콘텐츠 내용이 변경됩니다.</span>
+                  </div>
+                </div>
+              </div>
+              <!-- //페이지 유형 -->
+              <!-- 컨설팅 항목 -->
+              <div class="selectWrap consult">
+                <div class="item">
+                  <p class="title">컨설팅 항목</p><!-- 2025-01-08 -->
+                  <div class="selectBox">
+                    <!-- 선택시 notSelected 클래스 제거 -->
+                    <button type="button" class="optionBtn selectTaget notSelected">컨설팅 항목을 선택해주세요.</button>
+                    <div class="selectListWrap">
+                      <div class="listCol">
+                        <div class="titleWrap">
+                          <p class="selectListTit">컨설팅 서류</p>
+                        </div>
+                        <ul class="selectList radio">
+                          <li class="all">
+                            <label class="radioWrap">
+                              <input type="checkbox">
+                              <span>전체</span>
+                            </label>
+                          </li>
+                          <li>
+                            <label class="radioWrap">
+                              <input type="checkbox">
+                              <span>경정청구 (<em>7</em>건)</span>
+                            </label>
+                          </li>
+                          <li>
+                            <label class="radioWrap">
+                              <input type="checkbox">
+                              <span>정책자금 (<em>7</em>건)</span>
+                            </label>
+                          </li>
+                          <li>
+                            <label class="radioWrap">
+                              <input type="checkbox">
+                              <span>법인전환 (<em>7</em>건)</span>
+                            </label>
+                          </li>
+                          <li>
+                            <label class="radioWrap">
+                              <input type="checkbox">
+                              <span>절세진단 (<em>7</em>건)</span>
+                            </label>
+                          </li>
+                          <li>
+                            <label class="radioWrap">
+                              <input type="checkbox">
+                              <span>사내근로복지기금 (<em>7</em>건)</span>
+                            </label>
+                          </li>
+                          <li>
+                            <label class="radioWrap">
+                              <input type="checkbox">
+                              <span>자본거래 (<em>7</em>건)</span>
+                            </label>
+                          </li>
+                          <li>
+                            <label class="radioWrap">
+                              <input type="checkbox">
+                              <span>근로소득비과세 (<em>7</em>건)</span>
+                            </label>
+                          </li>
+                          <li>
+                            <label class="radioWrap">
+                              <input type="checkbox">
+                              <span>고용지원금 (<em>7</em>건)</span>
+                            </label>
+                          </li>
+                          <li>
+                            <label class="radioWrap">
+                              <input type="checkbox">
+                              <span>CEO 보험 (<em>7</em>건)</span>
+                            </label>
+                          </li>
+                          <li>
+                            <label class="radioWrap">
+                              <input type="checkbox">
+                              <span>부가세 절세진단 (<em>7</em>건)</span>
+                            </label>
+                          </li>
+                          <!-- 2025-01-08 -->
+                          <li>
+                            <label class="radioWrap">
+                              <input type="checkbox">
+                              <span class="newType02">연말정산 간소화 자료 (<em>7</em>건)</span>
+                            </label>
+                          </li>
+                          <!-- //2025-01-08 -->
+                          <li>
+                            <label class="radioWrap">
+                              <input type="checkbox">
+                              <span>신규고객 접수 (<em>7</em>건)</span>
+                            </label>
+                          </li>
+                        </ul>
+                        <div class="listBtnWrap">
+                          <button class="activeBodyBtn">적용하기</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- //컨설팅 항목 -->
+              <!-- 로고 -->
+              <div class="selectWrap">
+                <div class="item">
+                  <p class="title">로고 (선택)</p>
+                  <button type="button" class="thumnail"><!-- active 클래스 추가시 로고이미지 보임 -->
+                    <div class="thumInner">
+                      <div class="thumnailDesc">
+                        <strong>로고 이미지 업로드</strong>
+                        <div class="desc">
+                          <p>이미지 파일 (PNG, JPG)</p>
+                          <p>사이즈 : W(290) x H(80)</p>
+                        </div>
+                      </div>
+                      <img src="../../img/wp/logo/logo_circle_primary.svg" class="logoImg" alt="로고이미지">
+                    </div>
+                  </button>
+                </div>
+              </div>
+              <!-- //로고 -->
+              <!-- 링크 -->
+              <div class="selectWrap">
+                <div class="item">
+                  <p class="title">링크 (선택)</p>
+                  <div class="selectBox leftIcon">
+                    <img src="../../img/wp/ico/ico_home.svg" class="ico" alt="홈페이지">
+                    <input type="text" placeholder="홈페이지 링크를 입력해주세요.">
+                    <button type="button" class="deleteBtn"></button>
+                  </div>
+                  <div class="selectBox leftIcon">
+                    <img src="../../img/wp/ico/ico_consult.svg" class="ico" alt="카카오">
+                    <input type="text" placeholder="카카오톡 채널 링크를 입력해주세요.">
+                    <button type="button" class="deleteBtn"></button>
+                  </div>
+                  <div class="infoMark">
+                    <button class="infoBtn"></button>
+                    <span class="qmTarget infoTxt">링크를 미입력하시면 버튼은 노출되지 않습니다.</span>
+                  </div>
+                </div>
+              </div>
+              <!-- //링크 -->
+            </div>
+            <div class="areaBtn">
+              <button class="cancelBigBodyBtn"><span>취소</span></button>
+              <button class="activeBigBodyBtn inActiveBodyBtn"><span>저장하기</span></button> <!-- 활성화 시 inActiveBodyBtn 클래스 제거 -->
+            </div>
+          </div>
+          <div class="gCol data">
+            <div class="titleWrapCenter">
+              <div class="lCont">
+                <!-- 2024-11-21 -->
+                <img class="landingLogo" src="../../img/wp/logo/logo_primary02.svg" alt="로고이미지">
+              </div>
+              <div class="rCont">
+                <div class="rContBtnCol">
+                  <div class="btnBox">
+                    <button class="bdGrayBodyBtn">
+                      <span>홈페이지</span>
+                    </button>
+                  </div>
+                  <div class="btnBox">
+                    <button class="bdGrayBodyBtn">
+                      <span>문의하기</span>
+                    </button>
+                  </div>
+                  <div class="btnBox">
+                    <button class="bdGrayBodyBtn">
+                      <img class="leftIcon" src="../../img/wp/ico/ico_link_gray.svg" alt="링크">
+                      <span>공유하기</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="imgEdit">
+              <ul class="imgEditList">
+                <li>
+                  <!-- edit 클래스 추가 시 이미지변경 -->
+                  <button type="button" class="editBoxBtn edit">
+                    <div class="editBox">
+                      <div class="thumnailDesc">
+                        <strong>Section1 이미지 영역</strong>
+                        <div class="desc">
+                          <p>이미지 파일 (PNG, JPG)</p>
+                          <p>사이즈 : W(1920) x H(1080)</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="thumArea">
+                      <img src="../../img/wp/thum/thum_landing_edit_tax.png" alt="section1 이미지영역">
+                      <div class="changeBox">
+                        <div class="changeBoxInner">
+                          <strong>이미지 변경</strong>
+                          <div class="desc">
+                            <p>이미지 파일 (PNG, JPG)</p>
+                            <p>사이즈 : W(1920) x H(1080)</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </button>
+                </li>
+                <li>
+                  <!-- edit 클래스 추가 시 이미지변경 -->
+                  <button type="button" class="editBoxBtn edit">
+                    <div class="editBox">
+                      <div class="thumnailDesc">
+                        <strong>Section2 이미지 영역</strong>
+                        <div class="desc">
+                          <p>이미지 파일 (PNG, JPG)</p>
+                          <p>사이즈 : W(1920) x H(1080)</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="thumArea">
+                      <img src="../../img/wp/thum/thum_landing_edit_tax02.png" alt="section2 이미지영역">
+                      <div class="changeBox">
+                        <div class="changeBoxInner">
+                          <strong>이미지 변경</strong>
+                          <div class="desc">
+                            <p>이미지 파일 (PNG, JPG)</p>
+                            <p>사이즈 : W(1920) x H(1080)</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </button>
+                </li>
+                <li>
+                  <!-- edit 클래스 추가 시 이미지변경 -->
+                  <button type="button" class="editBoxBtn edit">
+                    <div class="editBox">
+                      <div class="thumnailDesc">
+                        <strong>Section3 이미지 영역</strong>
+                        <div class="desc">
+                          <p>이미지 파일 (PNG, JPG)</p>
+                          <p>사이즈 : W(1920) x H(1080)</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="thumArea">
+                      <img src="../../img/wp/thum/thum_landing_edit_tax03.png" alt="section3 이미지영역">
+                      <div class="changeBox">
+                        <div class="changeBoxInner">
+                          <strong>이미지 변경</strong>
+                          <div class="desc">
+                            <p>이미지 파일 (PNG, JPG)</p>
+                            <p>사이즈 : W(1920) x H(1080)</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

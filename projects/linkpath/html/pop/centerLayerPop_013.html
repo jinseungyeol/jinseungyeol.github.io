@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- favicon -->
+  <link rel="icon" href="../../img/wp/logo/favicon.ico" type="image/x-icon">
+  <!-- CSS -->
+  <link rel="stylesheet" href="../../css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="../../css/w2ui_2.0.css">
+  <link rel="stylesheet" href="../../css/wp_base.css">
+  <link rel="stylesheet" href="../../css/wp_style.css">
+  <!-- JS -->
+  <script src="../../js/jquery-3.5.1.min.js"></script>
+  <script src="../../js/chart-3.5.1.min.js"></script>
+  <script src="../../js/swiper-bundle.min.js"></script>
+  <script src="../../js/w2ui.js"></script>
+  <script src="../../js/common_ui.js"></script>
+  <!-- PUBL 사이트 외부접속 스크립트 삽입 JS -->
+  <script src="https://publ.roumit.com/js/firebase_include.js"></script>
+  <title>Link Path</title>
+  <script>
+    $(function() {
+      popCenter('.popWrap');
+    })
+  </script>
+</head>
+<body>
+  <div class="popWrap">
+    <div class="dim" onclick="popdimClose(this)"></div>
+    <div class="popInner middle">
+      <div class="popTit">
+        <div class="titleWrapCenter">
+          <button type="button" class="popCloseBtn" title="닫기" onclick="popClose(this)"></button>
+        </div>
+      </div>
+      <div class="popCont">
+        <div id="addrSearch" class="areaAddrSearch">
+          <input type="text" name="keyword" placeholder="도로명, 건물명, 지번 입력">
+          <button type="button" class="btnAddrSearch"></button>
+        </div>
+        <div class="areaAddrList">
+          <div class="addrEx">
+            <p class="exTit">입력예시</p>
+            <ul class="exList">
+              <li>
+                <p>도로명 + 건물번호</p>
+                <span>남대문로 9길 40</span>
+              </li>
+              <li>
+                <p>지역명(동/리) + 번지</p>
+                <span>중구 다동 155</span>
+              </li>
+              <li>
+                <p>지역명(동/리) + 건물명</p>
+                <span>분당 주공</span>
+              </li>
+            </ul>
+          </div>
+          <div class="noResult">
+            <p>검색 결과가 없습니다.</p>
+            <span>찾으시려는 도로명주소의 건물번호 또는 건물명까지 상세히 입력 후 검색해 주세요.</span>
+          </div>
+          <div class="addrList"></div><!-- 검색 결과 리스트 출력 영역 -->
+        </div>
+      </div>
+      <div class="confirmPopBtnWrap"></div>
+    </div>
+  </div>
+</body>
+</html>

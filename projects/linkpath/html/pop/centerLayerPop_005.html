@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- favicon -->
+  <link rel="icon" href="../../img/wp/logo/favicon.ico" type="image/x-icon">
+  <!-- CSS -->
+  <link rel="stylesheet" href="../../css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="../../css/w2ui_2.0.css">
+  <link rel="stylesheet" href="../../css/wp_base.css">
+  <link rel="stylesheet" href="../../css/wp_style.css">
+  <!-- JS -->
+  <script src="../../js/jquery-3.5.1.min.js"></script>
+  <script src="../../js/chart-3.5.1.min.js"></script>
+  <script src="../../js/swiper-bundle.min.js"></script>
+  <script src="../../js/w2ui.js"></script>
+  <script src="../../js/common_ui.js"></script>
+  <!-- PUBL 사이트 외부접속 스크립트 삽입 JS -->
+  <script src="https://publ.roumit.com/js/firebase_include.js"></script>
+  <title>Link Path</title>
+  <script>
+    $(function() {
+      popCenter('.popWrap')
+    })
+  </script>
+</head>
+<body>
+  <div class="popWrap certi">
+    <div class="dim" onclick="popdimClose(this)"></div>
+    <div class="popInner small">
+      <div class="popTit divide">
+        <div class="titleWrapCenter">
+          <h1>인증서 선택</h1>
+          <button type="button" class="popCloseBtn" title="닫기" onclick="popClose(this)"></button>
+        </div>
+      </div>
+      <div class="popCont">
+        <div class="txtArea">
+          <p class="boldTxt">• 4대보험에서 사용하는 인증서를 선택해주세요.</p>
+          <div class="certiTable">
+            <div class="tableTop">
+              <table>
+                <colgroup>
+                  <col width="270px">
+                  <col width="100px">
+                  <col width="">
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th>
+                      <div>인증서명</div>
+                    </th>
+                    <th>
+                      <div>인증서 종류</div>
+                    </th>
+                    <th>
+                      <div>만료일자</div>
+                    </th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+            <div class="tableBottom">
+              <table>
+                <colgroup>
+                  <col width="270px">
+                  <col width="100px">
+                  <col width="">
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="certiName">
+                        <label>
+                          <input type="checkbox">
+                          <span class="ellipsis">위멤버스(29754)0003681201706134110000000</span>
+                        </label>
+                      </div>
+                    </td>
+                    <td>
+                      <div>전자세금융</div>
+                    </td>
+                    <td>
+                      <div>2024-00-00</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="certiName">
+                        <label>
+                          <input type="checkbox">
+                          <span class="ellipsis">이민기()000368120170613411000</span>
+                        </label>
+                      </div>
+                    </td>
+                    <td>
+                      <div>전자세금융</div>
+                    </td>
+                    <td>
+                      <div>2024-00-00</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="certiName">
+                        <label>
+                          <input type="checkbox">
+                          <span class="ellipsis">이민기()000368120170613411000</span>
+                        </label>
+                      </div>
+                    </td>
+                    <td>
+                      <div>전자세금융</div>
+                    </td>
+                    <td>
+                      <div>2024-00-00</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="certiName">
+                        <label>
+                          <input type="checkbox">
+                          <span class="ellipsis">이민기()000368120170613411000</span>
+                        </label>
+                      </div>
+                    </td>
+                    <td>
+                      <div>전자세금융</div>
+                    </td>
+                    <td>
+                      <div>2024-00-00</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="certiName">
+                        <label>
+                          <input type="checkbox">
+                          <span class="ellipsis">이민기()000368120170613411000</span>
+                        </label>
+                      </div>
+                    </td>
+                    <td>
+                      <div>전자세금융</div>
+                    </td>
+                    <td>
+                      <div>2024-00-00</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="certiName">
+                        <label>
+                          <input type="checkbox">
+                          <span class="ellipsis">이민기()000368120170613411000</span>
+                        </label>
+                      </div>
+                    </td>
+                    <td>
+                      <div>전자세금융</div>
+                    </td>
+                    <td>
+                      <div>2024-00-00</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="certiName">
+                        <label>
+                          <input type="checkbox">
+                          <span class="ellipsis">이민기()000368120170613411000</span>
+                        </label>
+                      </div>
+                    </td>
+                    <td>
+                      <div>전자세금융</div>
+                    </td>
+                    <td>
+                      <div>2024-00-00</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="certiName">
+                        <label>
+                          <input type="checkbox">
+                          <span class="ellipsis">이민기()000368120170613411000</span>
+                        </label>
+                      </div>
+                    </td>
+                    <td>
+                      <div>전자세금융</div>
+                    </td>
+                    <td>
+                      <div>2024-00-00</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="certiName">
+                        <label>
+                          <input type="checkbox">
+                          <span class="ellipsis">이민기()000368120170613411000</span>
+                        </label>
+                      </div>
+                    </td>
+                    <td>
+                      <div>전자세금융</div>
+                    </td>
+                    <td>
+                      <div>2024-00-00</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="certiName">
+                        <label>
+                          <input type="checkbox">
+                          <span class="ellipsis">이민기()000368120170613411000</span>
+                        </label>
+                      </div>
+                    </td>
+                    <td>
+                      <div>전자세금융</div>
+                    </td>
+                    <td>
+                      <div>2024-00-00</div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="txtArea">
+          <p class="boldTxt">• 인증서 비밀번호</p>
+            <div class="selectWrap">
+              <div class="item">
+                <div class="selectBox toggleShow">
+                  <!-- error 클래스 추가시 에러, 입력 시 x버튼 노출 js처리 -->
+                  <input type="text" class="" placeholder="암호는 대소문자를 구분합니다.">
+                  <button type="button" class="toggleShowBtn"></button> <!-- show 클래스로 쇼하이드 -->
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+      <div class="confirmPopBtnWrap">
+        <div class="areaBtn">
+          <button class="cancelBodyBtn">취소</button>
+          <button class="activeBodyBtn">수정하기</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

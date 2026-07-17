@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>layout</title>
+    <link rel="stylesheet" href="../../common/css/guide.css">
+</head>
+<body>
+    <!-- wrapper -->
+    <div class="wrapper">
+        <div class="guideCont">
+            <!-- header -->
+            <div class="header">
+                <h1 class="mainTit">본문영역(Content)</h1>
+            </div>
+            <!-- //header -->
+            
+            <!-- content -->
+            <div class="content">
+
+                <div class="titArea">
+                    <h2 class="defTit">1. 기준</h2>
+                    <p class="defTxt">
+                        1) [마크업공통] 본문영역 레이아웃
+                    </p>
+                </div>
+                <table class="tblReference">
+                    <colgroup>
+                        <col style="width: 300px">
+                        <col style="width: 400px">
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <th>마크업기준</th>
+                        <th>마크업구조 및 cssClass명</th>
+                        <th>UI기준 및 CSS 적용</th>
+                        <th>비고</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>본문영역 레이아웃</td>
+                            <td>div class="container"</td>
+                            <td>좌우여백 20px (상하 여백 컨텐츠 따라 유동적)</td>
+                            <td>
+                                <strong>semoR_ui.js 참고</strong><br>
+                                · header 있을경우 상단여백 세팅<br>
+                                · min-height 디바이스 높이값으로 세팅<br>
+                                · 하단 고정버튼이 있을때 하단 여백세팅
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="titArea">
+                    <h2 class="defTit">2. 템플릿(Template)/목업(Mockup)/예시(Sample)</h2>
+                </div>
+                <div class="guideIframeWrap">
+                    <span class="tooltip">본문영역 레이아웃</span><iframe src="layout_mockup01.html" frameborder="0" width="360px"
+                    height="400px"></iframe>
+                </div>
+            </div>
+            <!-- //content -->
+        </div>
+    </div>
+    <!-- //wrapper -->
+
+</body>
+
+</html>

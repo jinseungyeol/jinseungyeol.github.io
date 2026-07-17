@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+    <defs>
+        <clipPath id="3nj5m1itca">
+            <path data-name="사각형 35934" transform="translate(5754 -10024)" style="fill:#fff" d="M0 0h50v50H0z"/>
+        </clipPath>
+    </defs>
+    <g data-name="마스크 그룹 86259" transform="translate(-5754 10024)" style="clip-path:url(#3nj5m1itca)">
+        <g data-name="그룹 109456">
+            <g data-name="타원 3498" transform="translate(5756 -10022)" style="stroke:#000;stroke-width:2.5px;fill:none">
+                <circle cx="23" cy="23" r="23" style="stroke:none"/>
+                <circle cx="23" cy="23" r="21.75" style="fill:none"/>
+            </g>
+            <path data-name="Oval 318" d="M499.764 611.1v4.8h5.195v-4.8zm-2.893-19.575a7.645 7.645 0 0 0-3.469 6.7h5.037a4.735 4.735 0 0 1 .846-2.655c1.836-2.387 6.5-1.524 6.474 2.059-.016 2.777-3.15 3.593-4.567 5.305a7.51 7.51 0 0 0-1.308 4.966h4.706a4.213 4.213 0 0 1 .893-3.066 11.211 11.211 0 0 1 1.9-1.5c2.234-1.611 4.065-3.739 3.65-6.936-.861-6.664-9.94-7.449-14.161-4.869z" transform="translate(5276.189 -10601.708)" style="stroke:transparent;fill-rule:evenodd"/>
+        </g>
+    </g>
+</svg>

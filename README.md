@@ -15,6 +15,39 @@
 
 각 프로젝트 카드는 참여도·역할·기술·환경·성과를 요약해 보여주고, **Notion 버튼**으로 상세 페이지(배경·구현 방식·트러블슈팅)에 연결됩니다. 카드에는 요약만 두고 깊은 내용은 Notion에 두는 2단 구조입니다.
 
+## 프로젝트 문서
+
+각 프로젝트의 요약 문서는 [`docs/projects/`](docs/projects/)에 있습니다.
+
+### 개발
+
+| 프로젝트 | 한 줄 소개 |
+|---|---|
+| [커머스 채널 데이터 수집 자동화](docs/projects/commerce-data-pipeline.md) | 쿠팡·네이버 13개 브랜드 광고비·매출을 매시간 자동 수집해 Sheets·BigQuery 적재 (일 2~3시간 절감) |
+| [카페24 상품 이미지 WebP 자동 변환 앱](docs/projects/cafe24-webp-optimizer.md) | 본문 HTML을 건드리지 않는 무오염 설계로 이미지 평균 84% 용량 절감 |
+| [카페24 자사몰 통합 운영](docs/projects/cafe24-mall-operations.md) | 13개 브랜드 자사몰을 git 파이프라인 + AI 워크플로우로 3인 → 1인 전담 운영 전환 |
+| [칼로리바](docs/projects/caloriebar.md) | 프랜차이즈 고객 홈페이지 + 지점 백오피스 (Django, 홈쇼핑 다채널·방문자 통계·권역 관리) |
+
+### 퍼블리싱
+
+| 프로젝트 | 기간 | 한 줄 소개 |
+|---|---|---|
+| [세모리포트](docs/projects/semoreport.md) | 2024.01 ~ 2024.12 | 앱 UIKit 구축으로 개발 속도·효율 개선 |
+| [링크패스](docs/projects/linkpath.md) | 2024.06 ~ 2024.12 | Chart.js 데이터 시각화 웹 앱 |
+| [위멤버스 스케줄러](docs/projects/wemembers-scheduler.md) | 2024.01 ~ 2024.06 | React + TypeScript + SCSS 웹 앱 퍼블리싱 |
+| [KT 사장님 장부비서](docs/projects/kt-jangbu.md) | 2022.01 ~ 2023.12 | Ajax 렌더링·도메인 분리 PC/모바일 맞춤 UI |
+| [i-ONE 소상공인](docs/projects/ione-soho.md) | 2022.01 ~ 2023.12 | AWS 정적 배포 + GA4 사용자 흐름 분석 |
+| [로움아이티](docs/projects/roumit.md) | 2022.06 ~ 2022.12 | 바닐라 JS 스크롤 인터랙션·카카오 지도 연동 홈페이지 |
+| [NH소상공인파트너](docs/projects/nh-soho.md) | 2022.01 ~ 2022.12 | SVN·산출물 페이지 구축으로 업무 프로세스 30% 단축 |
+| [세모장부](docs/projects/semojangbu.md) | 2022.01 ~ 2022.12 | CSS 하드웨어 가속으로 프레임 속도 2배 향상 |
+
+### 사이드 프로젝트
+
+| 프로젝트 | 한 줄 소개 |
+|---|---|
+| [디즈니플러스 클론 웹앱](docs/projects/disney-plus-clone.md) | TMDB API + Firebase 인증 OTT 클론 |
+| [틱택토 게임](docs/projects/tictactoe.md) | React 상태 관리 연습 게임 |
+
 ## 콘텐츠는 데이터가 결정합니다
 
 카드 UI는 컴포넌트 하나(`ProjectCard`)이고, 실제 내용은 전부 JSON에서 옵니다. 프로젝트를 추가·수정할 때 코드는 건드리지 않습니다.

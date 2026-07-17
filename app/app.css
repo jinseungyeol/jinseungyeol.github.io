@@ -4,20 +4,22 @@
 @custom-variant dark (&:is(.dark *));
 
 /* font */
+/* public/ 이 정적 루트이므로 실제 서빙 경로는 /assets/fonts/ 다.
+   public/font/... 로 쓰면 빌드 시 해석되지 않아 폰트가 로드되지 않는다. */
 @font-face {
   font-family: "Pretendard";
   font-weight: normal;
-  src: url(public/font/Pretendard-Medium.woff2) format("woff2");
+  src: url(/assets/fonts/Pretendard-Medium.woff2) format("woff2");
 }
 @font-face {
   font-family: "Pretendard";
   font-weight: 600;
-  src: url(public/font/Pretendard-SemiBold.woff2) format("woff2");
+  src: url(/assets/fonts/Pretendard-SemiBold.woff2) format("woff2");
 }
 @font-face {
   font-family: "Pretendard";
   font-weight: bold;
-  src: url(public/font/Pretendard-Bold.woff2) format("woff2");
+  src: url(/assets/fonts/Pretendard-Bold.woff2) format("woff2");
 }
 
 @theme {

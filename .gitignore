@@ -4,3 +4,13 @@
 # React Router
 /.react-router/
 /build/
+
+# 로컬 배포 미리보기 산출물
+/dist/
+
+# 데모 프로젝트 의존성 / 빌드 산출물
+/projects/*/node_modules/
+/projects/*/dist/
+
+# 개인 문서 (공개 저장소에 포함하지 않음)
+/*.txt

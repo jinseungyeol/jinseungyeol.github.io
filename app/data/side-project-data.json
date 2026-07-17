@@ -1,0 +1,33 @@
+[
+  {
+    "title": "디즈니플러스 클론 웹앱",
+    "period": "2개월 소요",
+    "imageUrl": "/assets/images/preview/preview_side03.png",
+    "details": [
+      { "label": "기술", "value": "React, Styled Components, Firebase, Axios" },
+      {
+        "label": "설명",
+        "value": "TMDB API를 활용해 인기 콘텐츠를 실시간으로 제공하는 OTT 플랫폼 클론 프로젝트입니다. Firebase 인증으로 로그인·회원가입을 구현하고, 반응형 UI로 다양한 디바이스에서 동일한 경험을 제공합니다."
+      }
+    ],
+    "links": [{ "to": "https://d-plus-clone.netlify.app/", "text": "보러가기" }]
+  },
+  {
+    "title": "틱택토 게임",
+    "period": "1개월 소요",
+    "imageUrl": "/assets/images/preview/preview_side02.png",
+    "details": [
+      { "label": "기술", "value": "React" },
+      {
+        "label": "설명",
+        "value": "React 기반의 틱택토 게임으로, 컴포넌트와 상태 관리를 통해 턴 변경과 승리 조건 체크 등 기본 기능을 구현했습니다."
+      }
+    ],
+    "links": [
+      {
+        "to": "https://tictactoe-side-project.netlify.app/",
+        "text": "보러가기"
+      }
+    ]
+  }
+]

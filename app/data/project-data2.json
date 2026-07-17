@@ -2,7 +2,7 @@
   {
     "title": "커머스 채널 데이터 수집 자동화",
     "period": "",
-    "imageUrl": "/assets/images/preview/preview14.png",
+    "imageUrl": "/assets/images/preview/preview16.png",
     "details": [
       { "label": "참여", "value": "75%" },
       { "label": "역할", "value": "데이터 파이프라인 설계·개발 (크롤러 / API 연동 / 적재 / 정합성 검증)" },
@@ -44,7 +44,7 @@
   {
     "title": "카페24 멀티브랜드 디자인 시스템",
     "period": "",
-    "imageUrl": "/assets/images/preview/preview15.png",
+    "imageUrl": "/assets/images/preview/preview17.png",
     "details": [
       { "label": "참여", "value": "100%" },
       { "label": "역할", "value": "멀티브랜드 디자인 시스템 설계" },

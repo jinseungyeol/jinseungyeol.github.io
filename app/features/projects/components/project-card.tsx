@@ -19,6 +19,7 @@ interface ProjectCardProps {
   title: string;
   period: string;
   imageUrl: string;
+  imageBg?: string;
   details: { label: string; value: string }[];
   links?: ProjectLink[];
   cardClassName?: string;
@@ -28,6 +29,7 @@ export default function ProjectCard({
   title,
   period,
   imageUrl,
+  imageBg = "gray",
   details,
   links,
   cardClassName = "relative",
@@ -47,7 +49,7 @@ export default function ProjectCard({
         className="h-full"
       >
         <Card className={cardClassName}>
-          <div className="flex justify-center items-center p-5 md:p-10 bg-gray-100">
+          <div className={`flex justify-center items-center p-5 md:p-10 ${imageBg === "white" ? "bg-white" : "bg-gray-100"}`}>
             <img src={imageUrl} alt={title} className="w-[80%] max-w-130 h-auto lg:w-auto lg:h-[250px]" />
           </div>
           <CardHeader>

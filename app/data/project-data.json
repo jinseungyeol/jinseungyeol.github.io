@@ -1,26 +1,5 @@
 [
   {
-    "title": "카페24 자사몰 통합 운영",
-    "period": "",
-    "imageUrl": "/assets/images/preview/preview12.png",
-    "details": [
-      { "label": "참여", "value": "100%" },
-      { "label": "역할", "value": "퍼블리싱 + AI 보조 워크플로우 설계 및 운영" },
-      {
-        "label": "기술",
-        "value": "HTML5, CSS3, JavaScript, GSAP, GitHub Actions"
-      },
-      { "label": "환경", "value": "Cafe24 " },
-      {
-        "label": "성과",
-        "value": "기존 퍼블리셔 3인이 4개 브랜드씩 분담하던 운영을 Claude Code 기반 작업 파이프라인을 직접 설계해 1인 전담으로 전환"
-      }
-    ],
-    "links": [
-      { "to": "https://tan-alibi-93d.notion.site/24-32415fb2e2a880ba8e27e6d235c0ebc2?source=copy_link", "text": "Notion" }
-    ]
-  },
-  {
     "title": "세모리포트",
     "period": "2024.01 ~ 2024.12",
     "imageUrl": "/assets/images/preview/preview03.png",

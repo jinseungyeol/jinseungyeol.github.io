@@ -43,25 +43,25 @@
     ]
   },
   {
-    "title": "카페24 멀티브랜드 디자인 시스템",
+    "title": "카페24 자사몰 통합 운영",
     "period": "",
     "imageUrl": "/assets/images/preview/preview17.png",
     "imageBg": "white",
     "details": [
       { "label": "참여", "value": "100%" },
-      { "label": "역할", "value": "멀티브랜드 디자인 시스템 설계" },
+      { "label": "역할", "value": "퍼블리싱 + AI 보조 워크플로우·디자인 토큰 체계 설계" },
       {
         "label": "기술",
-        "value": "Figma, Tokens Studio, Style Dictionary"
+        "value": "HTML, CSS, JavaScript, GSAP, GitHub Actions, Figma, Tokens Studio"
       },
-      { "label": "환경", "value": " Cafe24 13개 브랜드 monorepo" },
+      { "label": "환경", "value": "Cafe24 13개 브랜드 monorepo" },
       {
         "label": "성과",
-        "value": "흩어진 스타일을 토큰 체계로 통합, 브랜드 간 일관성과 유지보수성 확보"
+        "value": "퍼블리셔 3인이 4개 브랜드씩 분담하던 운영을 Claude Code 기반 파이프라인 설계로 1인 전담 전환, 브랜드별 디자인 토큰·Figma 기준(h2f)으로 디자인 기준 도구화"
       }
     ],
     "links": [
-      { "to": "https://tan-alibi-93d.notion.site/24-38f15fb2e2a8805dba86dd5fdcff3935?source=copy_link", "text": "Notion" }
+      { "to": "https://tan-alibi-93d.notion.site/24-32415fb2e2a880ba8e27e6d235c0ebc2?source=copy_link", "text": "Notion" }
     ]
   },
   {

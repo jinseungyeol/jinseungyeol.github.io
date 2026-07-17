@@ -50,16 +50,15 @@ jobs:
 
       # 3. wemembers-scheduler만 Vite 앱이라 빌드가 필요하다.
       #    base와 라우터 basename은 /project/wemembers-scheduler/ 로 맞춰져 있다.
+      # 이 앱은 클라이언트 라우팅을 쓰고(/output/login 등), 목록 페이지의 링크는
+      # 전부 새 탭으로 열려 항상 직접 진입이 된다. Netlify에서는 _redirects가
+      # 폴백을 맡았지만 Pages는 루트 404.html만 사용하므로(하위 404.html은 무시된다)
+      # build 스크립트가 라우트마다 실제 index.html을 생성한다.
       - name: Build wemembers-scheduler
         working-directory: projects/wemembers-scheduler
         run: |
           npm ci
           npm run build
-          # 이 앱은 클라이언트 라우팅을 쓴다(/output/login 등). Netlify에서는
-          # public/_redirects가 폴백을 맡았지만 Pages는 그 파일을 읽지 않는다.
-          # Pages는 없는 경로에 대해 가장 가까운 상위 404.html을 돌려주므로,
-          # 여기에 index.html 사본을 두면 하위 라우트 직접 진입이 동작한다.
-          cp dist/index.html dist/404.html
 
       - name: Copy wemembers-scheduler build
         run: cp -r projects/wemembers-scheduler/dist dist/project/wemembers-scheduler
@@ -81,10 +80,31 @@ jobs:
                    dist/project/nh-soho-app/index.html \
                    dist/project/linkpath/index.html \
                    dist/project/wemembers-scheduler/index.html \
-                   dist/project/wemembers-scheduler/404.html; do
+                   dist/project/wemembers-scheduler/output/index.html \
+                   dist/project/wemembers-scheduler/output/login/index.html \
+                   dist/project/wemembers-scheduler/output/clt/auto/index.html; do
             [ -f "$f" ] || { echo "MISSING: $f"; exit 1; }
           done
           echo "모든 배포 대상 확인됨"
+
+      # 스케줄러 목록 페이지(OutputList)가 링크하는 경로가 전부 실제 파일로
+      # 해석되는지 대조한다. 목록은 사용자가 실제로 클릭하는 대상이므로,
+      # 라우터나 목록이 바뀌었는데 프리렌더가 못 따라가면 여기서 잡힌다.
+      - name: Verify scheduler routes resolve
+        run: |
+          set -e
+          node -e '
+            const fs = require("fs");
+            const src = fs.readFileSync("projects/wemembers-scheduler/src/pages/OutputList.tsx", "utf8");
+            const paths = [...src.matchAll(/path:\s*"([^"]*)"/g)].map(m => m[1]);
+            if (paths.length < 20) throw new Error("목록 링크를 " + paths.length + "개만 찾았다. 정규식이 구조를 놓쳤을 수 있다.");
+            const missing = paths.filter(p => {
+              const f = "dist/project/wemembers-scheduler/output" + (p ? "/" + p : "") + "/index.html";
+              return !fs.existsSync(f);
+            });
+            if (missing.length) throw new Error("해석되지 않는 링크:\n  " + missing.map(m => "/output/" + m).join("\n  "));
+            console.log("스케줄러 목록 링크 " + paths.length + "개 모두 실제 파일로 해석됨");
+          '
 
       - uses: actions/upload-pages-artifact@v3
         with:

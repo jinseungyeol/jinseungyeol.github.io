@@ -2,10 +2,10 @@
   {
     "title": "세모리포트",
     "period": "2024.01 ~ 2024.12",
-    "imageUrl": "/assets/images/preview/preview19.png",
+    "imageUrl": "/assets/images/preview/preview20.png",
     "details": [
       { "label": "참여", "value": "100%" },
-      { "label": "역할", "value": "퍼블리싱, 앱 UIKit 설계 및 구축" },
+      { "label": "역할", "value": "퍼블리싱, 마크업 가이드 설계 및 구축" },
       {
         "label": "기술",
         "value": "HTML, CSS, jQuery"
@@ -13,13 +13,13 @@
       { "label": "환경", "value": "하이브리드 앱" },
       {
         "label": "성과",
-        "value": "앱 UIKit 구축으로 개발 속도 향상 및 효율성 개선"
+        "value": "공통 UI 컴포넌트를 정의한 마크업 가이드 구축으로 개발 속도 향상 및 효율성 개선"
       }
     ],
     "links": [
       {
         "to": "/project/semoreport/publGuide/markupUI/html/",
-        "text": "UIKit"
+        "text": "UI Guide"
       },
       { "to": "/project/semoreport/", "text": "App" }
     ]

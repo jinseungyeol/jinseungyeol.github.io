@@ -10,7 +10,10 @@
         "value": "TMDB API를 활용해 인기 콘텐츠를 실시간으로 제공하는 OTT 플랫폼 클론 프로젝트입니다. Firebase 인증으로 로그인·회원가입을 구현하고, 반응형 UI로 다양한 디바이스에서 동일한 경험을 제공합니다."
       }
     ],
-    "links": [{ "to": "https://github.com/jinseungyeol/disney-plus-app", "text": "GitHub" }]
+    "links": [
+      { "to": "https://jinseungyeol.github.io/disney-plus-app/", "text": "Demo" },
+      { "to": "https://github.com/jinseungyeol/disney-plus-app", "text": "GitHub" }
+    ]
   },
   {
     "title": "틱택토 게임",
@@ -24,10 +27,24 @@
       }
     ],
     "links": [
+      { "to": "https://jinseungyeol.github.io/react-tictactoe/", "text": "Demo" },
+      { "to": "https://github.com/jinseungyeol/react-tictactoe", "text": "GitHub" }
+    ]
+  },
+  {
+    "title": "여행 상품 주문 웹앱",
+    "period": "",
+    "imageUrl": "/assets/images/preview/preview_side04.png",
+    "details": [
+      { "label": "기술", "value": "React, Context API, Axios, Express" },
       {
-        "to": "https://github.com/jinseungyeol/react-tictactoe",
-        "text": "GitHub"
+        "label": "설명",
+        "value": "Context API로 주문 상태를 전역 관리하는 여행 상품 주문 웹앱입니다. 상품·옵션 선택부터 주문 요약, 완료까지 3단계 흐름을 구현했고, 상품·주문 API를 제공하는 Express 서버를 직접 만들었습니다. 데모는 서버 응답을 내장한 정적 빌드로 동작합니다."
       }
+    ],
+    "links": [
+      { "to": "https://jinseungyeol.github.io/react-context-app/", "text": "Demo" },
+      { "to": "https://github.com/jinseungyeol/react-context-app", "text": "GitHub" }
     ]
   }
 ]

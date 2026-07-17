@@ -47,6 +47,7 @@
 |---|---|
 | [디즈니플러스 클론 웹앱](docs/projects/disney-plus-clone.md) | TMDB API + Firebase 인증 OTT 클론 |
 | [틱택토 게임](docs/projects/tictactoe.md) | React 상태 관리 연습 게임 |
+| [여행 상품 주문 웹앱](docs/projects/react-context-app.md) | Context API 전역 상태 + Express API 직접 구현 |
 
 ## 콘텐츠는 데이터가 결정합니다
 

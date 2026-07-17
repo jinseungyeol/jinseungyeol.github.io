@@ -2,12 +2,40 @@
 
 > 퍼블리싱 · 2022.01 ~ 2023.12 · 앱(신규 40%, 유지운영 60%), 홈페이지(100%) · HTML, CSS, jQuery, AWS(S3, CloudFront, Route 53)
 
-홈페이지·하이브리드 앱 퍼블리싱과 프론트 개발·배포. **Ajax 데이터 렌더링, 신청 페이지 개발, 도메인 분리를 통한 PC/모바일 맞춤 UI**를 제공했습니다.
+KT 제휴 자영업자를 위한 간편 장부 서비스로, 하이브리드 앱과 웹 기반 경영지원 홈페이지를 함께 구축·운영한 프로젝트입니다. 앱 화면 퍼블리싱과 함께 홈페이지는 퍼블리싱부터 jQuery/Ajax 프론트 개발, AWS 정적 배포까지 100% 담당했으며, 클라이언트 요구에 따라 **PC와 모바일 UI를 서브도메인으로 분리 배포**했습니다.
 
-| 항목 | 내용 |
+## 프로젝트 배경
+
+모바일 앱과 연계된 웹 경영지원 시스템 구축이 목표였고, 모바일 사용자 중심의 접근성·사용성을 강화하는 동시에 검색엔진 노출(SEO)을 위한 정적 콘텐츠 페이지 구성이 함께 요구되었습니다. 기기 타입별로 최적화된 UI를 제공하기 위해 반응형 하나로 합치는 대신 `www`(PC) / `m`(모바일) 도메인 이원화 전략을 선택했습니다.
+
+## 주요 작업
+
+| 영역 | 내용 |
 |---|---|
-| 역할 | 퍼블리싱, 홈페이지 프론트 개발 및 배포 |
-| 환경 | 홈페이지, 하이브리드 앱 |
-| 성과 | Ajax 통신 데이터 렌더링·신청 페이지 개발, 도메인 분리로 PC/모바일 맞춤 UI |
+| 하이브리드 앱 | 모바일 앱 환경을 고려한 UI/UX 퍼블리싱 (신규 40% + 유지운영 60%) |
+| 홈페이지 | 신청·조회·상세 확인 등 Ajax 기반 동적 기능 구현, SEO·접근성을 고려한 정적 콘텐츠 페이지 구성 |
+| 배포 | AWS S3 + CloudFront + Route 53 기반 정적 배포, 배포 시 캐시 무효화 적용 |
 
-**데모**: [PC Web](https://jinseungyeol.github.io/project/kt-jangbu/) · [Mobile Web](https://jinseungyeol.github.io/project/m-kt-jangbu/) · [Mobile App](https://jinseungyeol.github.io/project/kt-jangbu-app/)
+## 구현 포인트
+
+- **PC/모바일 도메인 분리** — 기기별 맞춤 UI 제공을 위해 `www.domain.com`(PC)과 `m.domain.com`(모바일)로 분리 설계·배포. Route 53으로 서브도메인을 관리하고 각 도메인에 독립된 정적 빌드를 배포
+- **공통 Ajax 모듈** — API 호출부를 공통 모듈로 분리하고, `location.hostname` 기준으로 운영/개발 엔드포인트를 자동 분기. 알림톡 기반 앱 설치 링크 발송 신청, 무료 절세컨설팅 신청자 현황 조회 등 동적 기능을 이 모듈 위에서 구현
+- **SEO·트래킹** — OG 메타태그와 시맨틱 마크업으로 검색·공유 노출을 대비하고, GTM/전환 픽셀 스크립트를 연동해 마케팅 측정 기반을 마련
+- **인터랙션 퍼블리싱** — Swiper 슬라이더, 스크롤 등장 애니메이션(wow.js), 숫자 카운팅(odometer) 등을 조합해 랜딩 인터랙션을 구성. 모바일 웹에는 쿠키 기반 "다시 보지 않기" 팝업, 날짜 조건 분기형 시즌 팝업 등 운영성 기능 포함
+
+## 데모 구성
+
+실제 도메인 분리 구조 그대로 세 개의 빌드로 나뉘어 있습니다.
+
+| 데모 | 폴더 | 내용 |
+|---|---|---|
+| PC Web | `kt-jangbu` | 메인 랜딩 + 서브 3종(장부비서란·세모주치의·인증서 하이패스), fullPage/Swiper 인터랙션, Ajax 신청 폼 |
+| Mobile Web | `m-kt-jangbu` | 모바일 전용 단일 랜딩, bxslider, 약관 레이어, 쿠키 팝업 |
+| Mobile App | `kt-jangbu-app` | 하이브리드 앱 화면 42종 프로토타입. 화면ID 체계(IP·CP·CA·DS 등)로 폴더를 나누고, 워크리스트에서 호버 시 iframe 미리보기, 클릭 시 모바일 프레임으로 확인 |
+
+## 더 보기
+
+- [PC Web 데모](https://jinseungyeol.github.io/project/kt-jangbu/)
+- [Mobile Web 데모](https://jinseungyeol.github.io/project/m-kt-jangbu/)
+- [Mobile App 데모](https://jinseungyeol.github.io/project/kt-jangbu-app/)
+- [Notion 상세 페이지](https://tan-alibi-93d.notion.site/23a15fb2e2a8800fab13e9a59c394fef) — 진행 과정, 도메인 이원화 전략, 인사이트

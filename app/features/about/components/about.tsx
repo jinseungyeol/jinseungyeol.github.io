@@ -17,7 +17,7 @@ export default function AboutComponent() {
             viewport={{ once: true, amount: 0.3 }}
           >
             <img
-              src="/assets/images/profile/profile.jpeg"
+              src="/assets/images/profile/profile2.png"
               alt="about"
               className="w-full aspect-[452/581] max-w-[360px] border-1 border-gray-300 rounded-4xl"
             />

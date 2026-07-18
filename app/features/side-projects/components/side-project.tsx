@@ -18,7 +18,7 @@ import sideProjectData from "~/data/side-project-data.json";
 export const SideProject = () => {
   const autoplay = useRef(
     Autoplay({
-      delay: 3000,
+      delay: 6000,
       stopOnInteraction: false,
     })
   );
@@ -113,15 +113,15 @@ export const SideProject = () => {
               onMouseEnter={() => autoplay.current.stop()}
               onMouseLeave={() => autoplay.current.play()}
             >
-              <CarouselContent className="py-6">
+              <CarouselContent className="py-6 ml-0">
                 {sideProjectData.map((item, index) => (
-                  <CarouselItem key={index} className="basis-full">
+                  <CarouselItem key={index} className="basis-full pl-0">
                     <SideProjectCard key={item.title} {...item} />
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious className="hidden md:flex" />
-              <CarouselNext className="hidden md:flex" />
+              <CarouselPrevious className="hidden md:flex -left-16" />
+              <CarouselNext className="hidden md:flex -right-16" />
             </Carousel>
           </div>
         </motion.div>

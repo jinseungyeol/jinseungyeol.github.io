@@ -72,6 +72,8 @@ jobs:
                    dist/project/kt-jangbu/index.html \
                    dist/project/kt-jangbu/img/bg_cont02_tab01.png \
                    dist/project/m-kt-jangbu/index.html \
+                   dist/project/m-kt-jangbu/app.html \
+                   dist/project/m-kt-jangbu/worklist/img/mockup.png \
                    dist/project/kt-jangbu-app/index.html \
                    dist/project/ione-soho-app/index.html \
                    dist/project/semoreport/index.html \

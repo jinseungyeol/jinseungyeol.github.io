@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>승열 ♥ 신부이름 결혼합니다</title>
+<!-- ─────────────────────────────────────────────
+  ✏️ 수정 가이드
+  1) 이름: "승열", "가현" 검색해서 전부 교체
+  2) 사진: .photo-placeholder 를 <img> 로 교체
+  3) 계좌: ACCOUNTS 주석 아래 숫자 교체
+  4) 인사말: GREETING 주석 아래 문구 교체
+────────────────────────────────────────────── -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FDFCFA;
+    --ink:#3E3A36;
+    --soft:#8B857D;
+    --faint:#B5AFa6;
+    --accent:#BFA095;
+    --hairline:#EDE8E2;
+    --card:#F7F4EF;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:#EFEDE9;
+    font-family:'Gowun Batang',serif;
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+    line-height:1.7;
+  }
+  .frame{
+    max-width:430px;margin:0 auto;background:var(--bg);
+    box-shadow:0 0 40px rgba(0,0,0,.06);
+    overflow:hidden;
+  }
+  section{padding:88px 32px;}
+  .eyebrow{
+    font-family:'Noto Sans KR',sans-serif;
+    font-size:11px;letter-spacing:.35em;color:var(--accent);
+    text-align:center;font-weight:500;margin-bottom:14px;
+    text-transform:uppercase;
+  }
+  .sec-title{
+    text-align:center;font-size:21px;font-weight:700;
+    margin-bottom:44px;letter-spacing:.05em;
+  }
+
+  /* ── 인트로 ── */
+  .intro{
+    min-height:100svh;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;
+    padding:64px 32px 56px;text-align:center;position:relative;
+  }
+  .intro-date{
+    font-size:13px;letter-spacing:.5em;color:var(--soft);
+    margin-bottom:28px;padding-left:.5em;
+  }
+  .intro-names{
+    font-size:34px;font-weight:700;letter-spacing:.12em;
+    line-height:1.5;
+  }
+  .intro-and{
+    display:block;font-size:15px;font-weight:400;
+    color:var(--accent);letter-spacing:.3em;margin:6px 0;
+    padding-left:.3em;
+  }
+  .intro-photo{
+    width:100%;max-width:300px;aspect-ratio:3/4;
+    margin:44px 0 40px;border-radius:150px 150px 4px 4px;
+    overflow:hidden;
+  }
+  .intro-where{
+    font-size:14px;color:var(--soft);letter-spacing:.06em;
+    line-height:2;
+  }
+  .intro-scroll{
+    position:absolute;bottom:26px;left:50%;transform:translateX(-50%);
+    font-family:'Noto Sans KR',sans-serif;font-size:10px;
+    letter-spacing:.3em;color:var(--faint);padding-left:.3em;
+    animation:bob 2.4s ease-in-out infinite;
+  }
+  @keyframes bob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,7px)}}
+
+  /* 사진 자리표시 (img로 교체) */
+  .photo-placeholder{
+    width:100%;height:100%;
+    background:linear-gradient(160deg,#EDE6DE 0%,#E0D6CB 55%,#D6C9BC 100%);
+    display:flex;align-items:center;justify-content:center;
+    color:#A99C8D;font-family:'Noto Sans KR',sans-serif;
+    font-size:11px;letter-spacing:.2em;
+  }
+
+  /* ── GREETING · 인사말 ── */
+  .greeting{text-align:center;}
+  .greeting p{
+    font-size:15.5px;line-height:2.15;color:#55504A;
+    word-break:keep-all;
+  }
+  .greeting .divider{
+    width:1px;height:44px;background:var(--accent);
+    margin:40px auto;opacity:.5;
+  }
+  .parents{
+    font-size:14.5px;line-height:2.3;color:var(--ink);
+  }
+  .parents b{font-weight:700;}
+  .parents .rel{
+    font-size:12.5px;color:var(--soft);margin:0 6px;
+  }
+
+  /* ── 달력 ── */
+  .calendar{background:var(--card);}
+  .cal-month{
+    text-align:center;font-size:26px;letter-spacing:.25em;
+    padding-left:.25em;margin-bottom:8px;
+  }
+  .cal-sub{
+    text-align:center;font-size:13px;color:var(--soft);
+    margin-bottom:36px;letter-spacing:.1em;
+  }
+  .cal-grid{
+    display:grid;grid-template-columns:repeat(7,1fr);
+    row-gap:14px;text-align:center;font-size:14px;
+    max-width:320px;margin:0 auto;
+  }
+  .cal-grid .dow{
+    font-family:'Noto Sans KR',sans-serif;font-size:10.5px;
+    letter-spacing:.15em;color:var(--faint);padding-bottom:6px;
+    border-bottom:1px solid var(--hairline);margin-bottom:6px;
+  }
+  .cal-grid .sun{color:#C98A80;}
+  .cal-grid .day{position:relative;padding:6px 0;color:#6B655E;}
+  .cal-grid .today{
+    color:#fff;font-weight:700;
+  }
+  .cal-grid .today::before{
+    content:'';position:absolute;inset:0;margin:auto;
+    width:36px;height:36px;border-radius:50%;
+    background:var(--accent);z-index:-1;
+  }
+  .dday{
+    text-align:center;margin-top:40px;font-size:14px;color:var(--soft);
+  }
+  .dday b{color:var(--accent);font-size:16px;}
+
+  /* ── 갤러리 ── */
+  .gal-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:10px;
+  }
+  .gal-item{
+    aspect-ratio:3/4;border-radius:3px;overflow:hidden;
+  }
+  .gal-item.wide{grid-column:span 2;aspect-ratio:16/10;}
+
+  /* ── 오시는길 ── */
+  .place-name{
+    text-align:center;font-size:17px;font-weight:700;margin-bottom:6px;
+  }
+  .place-addr{
+    text-align:center;font-size:13.5px;color:var(--soft);margin-bottom:36px;
+  }
+  .map-btns{
+    display:flex;gap:8px;margin-bottom:44px;
+  }
+  .map-btns a{
+    flex:1;text-align:center;text-decoration:none;
+    font-family:'Noto Sans KR',sans-serif;font-size:12.5px;
+    color:var(--ink);padding:13px 0;border:1px solid var(--hairline);
+    border-radius:3px;background:#fff;letter-spacing:.05em;
+    transition:background .2s;
+  }
+  .map-btns a:active{background:var(--card);}
+  .way{border-top:1px solid var(--hairline);padding:24px 4px;}
+  .way:last-child{border-bottom:1px solid var(--hairline);}
+  .way h4{
+    font-family:'Noto Sans KR',sans-serif;font-size:12px;
+    letter-spacing:.2em;color:var(--accent);font-weight:500;
+    margin-bottom:10px;
+  }
+  .way p{font-size:14px;line-height:1.95;color:#5C5751;word-break:keep-all;}
+
+  /* ── 마음 전하실 곳 ── */
+  .accounts{background:var(--card);}
+  .acc-group{margin-bottom:14px;}
+  .acc-toggle{
+    width:100%;background:#fff;border:1px solid var(--hairline);
+    border-radius:3px;padding:16px;text-align:center;
+    font-family:'Gowun Batang',serif;font-size:14.5px;color:var(--ink);
+    cursor:pointer;letter-spacing:.1em;
+  }
+  .acc-body{display:none;padding:6px 4px 0;}
+  .acc-group.open .acc-body{display:block;}
+  .acc-row{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 12px;background:#fff;border:1px solid var(--hairline);
+    border-top:none;font-size:13px;
+  }
+  .acc-row .info{line-height:1.6;}
+  .acc-row .info b{font-size:13.5px;}
+  .acc-row .num{color:var(--soft);font-family:'Noto Sans KR',sans-serif;font-size:12.5px;}
+  .copy-btn{
+    font-family:'Noto Sans KR',sans-serif;font-size:11px;
+    border:1px solid var(--hairline);background:var(--bg);
+    padding:7px 12px;border-radius:2px;color:var(--soft);cursor:pointer;
+    letter-spacing:.05em;white-space:nowrap;
+  }
+  .copy-btn:active{background:var(--hairline);}
+
+  /* ── RSVP ── */
+  .rsvp{text-align:center;}
+  .rsvp p{font-size:14.5px;color:#5C5751;line-height:2.1;word-break:keep-all;margin-bottom:32px;}
+  .rsvp-btn{
+    display:inline-block;font-family:'Gowun Batang',serif;
+    font-size:14.5px;color:#fff;background:var(--accent);
+    padding:15px 52px;border:none;border-radius:2px;
+    letter-spacing:.15em;cursor:pointer;
+  }
+
+  /* ── 푸터 ── */
+  footer{
+    padding:60px 32px 72px;text-align:center;
+    font-size:12px;color:var(--faint);letter-spacing:.15em;
+    border-top:1px solid var(--hairline);
+  }
+  footer .heart{color:var(--accent);}
+
+  /* ── 스크롤 페이드인 ── */
+  .fade{opacity:0;transform:translateY(26px);
+    transition:opacity .9s ease,transform .9s ease;}
+  .fade.show{opacity:1;transform:none;}
+  @media (prefers-reduced-motion:reduce){
+    .fade{opacity:1;transform:none;transition:none;}
+    .intro-scroll{animation:none;}
+  }
+
+  /* 토스트 */
+  #toast{
+    position:fixed;bottom:36px;left:50%;transform:translateX(-50%) translateY(10px);
+    background:rgba(62,58,54,.92);color:#fff;
+    font-family:'Noto Sans KR',sans-serif;font-size:12.5px;
+    padding:11px 22px;border-radius:20px;opacity:0;
+    pointer-events:none;transition:opacity .3s,transform .3s;
+    letter-spacing:.05em;z-index:99;
+  }
+  #toast.on{opacity:1;transform:translateX(-50%) translateY(0);}
+</style>
+</head>
+<body>
+<div class="frame">
+
+  <!-- ═══ 인트로 ═══ -->
+  <section class="intro">
+    <p class="intro-date">2026 . 11 . 15</p>
+    <h1 class="intro-names">
+      승열
+      <span class="intro-and">그리고</span>
+      가현
+    </h1>
+    <div class="intro-photo">
+      <!-- ✏️ 메인 사진: 아래를 <img src="..." style="width:100%;height:100%;object-fit:cover"> 로 교체 -->
+      <div class="photo-placeholder">MAIN PHOTO</div>
+    </div>
+    <p class="intro-where">
+      2026년 11월 15일 일요일 오후 3시<br>
+      DMC타워웨딩 4층 펠리체홀
+    </p>
+    <span class="intro-scroll">SCROLL</span>
+  </section>
+
+  <!-- ═══ GREETING · 인사말 ═══ -->
+  <section class="greeting fade">
+    <p class="eyebrow">Invitation</p>
+    <h2 class="sec-title">소중한 분들을 초대합니다</h2>
+    <!-- ✏️ GREETING: 인사말 문구 교체 -->
+    <p>
+      서로가 마주 보며 걸어온 길을<br>
+      이제 함께 나란히 걷고자 합니다.<br><br>
+      저희 두 사람이 새로운 시작을 하는 자리에<br>
+      귀한 걸음 하시어<br>
+      축복해 주시면 감사하겠습니다.
+    </p>
+    <div class="divider"></div>
+    <!-- ✏️ 혼주 성함 교체 -->
+    <p class="parents">
+      <b>아버님성함</b> · <b>어머님성함</b><span class="rel">의 장남</span><b>승열</b><br>
+      <b>아버님성함</b> · <b>어머님성함</b><span class="rel">의 장녀</span><b>가현</b>
+    </p>
+  </section>
+
+  <!-- ═══ 달력 ═══ -->
+  <section class="calendar fade">
+    <p class="eyebrow">Save the date</p>
+    <p class="cal-month">11월</p>
+    <p class="cal-sub">2026년 11월 15일 일요일 오후 3시</p>
+    <div class="cal-grid">
+      <span class="dow sun">일</span><span class="dow">월</span><span class="dow">화</span><span class="dow">수</span><span class="dow">목</span><span class="dow">금</span><span class="dow">토</span>
+      <span class="day sun">1</span><span class="day">2</span><span class="day">3</span><span class="day">4</span><span class="day">5</span><span class="day">6</span><span class="day">7</span>
+      <span class="day sun">8</span><span class="day">9</span><span class="day">10</span><span class="day">11</span><span class="day">12</span><span class="day">13</span><span class="day">14</span>
+      <span class="day sun today">15</span><span class="day">16</span><span class="day">17</span><span class="day">18</span><span class="day">19</span><span class="day">20</span><span class="day">21</span>
+      <span class="day sun">22</span><span class="day">23</span><span class="day">24</span><span class="day">25</span><span class="day">26</span><span class="day">27</span><span class="day">28</span>
+      <span class="day sun">29</span><span class="day">30</span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <p class="dday" id="dday"></p>
+  </section>
+
+  <!-- ═══ 갤러리 ═══ -->
+  <section class="gallery fade">
+    <p class="eyebrow">Gallery</p>
+    <h2 class="sec-title">우리의 순간들</h2>
+    <div class="gal-grid">
+      <!-- ✏️ 각 placeholder를 <img>로 교체. .wide는 가로형 -->
+      <div class="gal-item wide"><div class="photo-placeholder">PHOTO 01</div></div>
+      <div class="gal-item"><div class="photo-placeholder">PHOTO 02</div></div>
+      <div class="gal-item"><div class="photo-placeholder">PHOTO 03</div></div>
+      <div class="gal-item"><div class="photo-placeholder">PHOTO 04</div></div>
+      <div class="gal-item"><div class="photo-placeholder">PHOTO 05</div></div>
+      <div class="gal-item wide"><div class="photo-placeholder">PHOTO 06</div></div>
+    </div>
+  </section>
+
+  <!-- ═══ 오시는길 ═══ -->
+  <section class="location fade">
+    <p class="eyebrow">Location</p>
+    <h2 class="sec-title">오시는 길</h2>
+    <p class="place-name">DMC타워웨딩 4층 펠리체홀</p>
+    <p class="place-addr">서울특별시 마포구 성암로 189 중소기업DMC타워</p>
+    <div class="map-btns">
+      <a href="https://map.kakao.com/link/search/DMC타워웨딩" target="_blank" rel="noopener">카카오맵</a>
+      <a href="https://map.naver.com/p/search/DMC타워웨딩" target="_blank" rel="noopener">네이버지도</a>
+      <a href="tmap://search?name=DMC타워웨딩">티맵</a>
+    </div>
+    <div class="way">
+      <h4>지하철</h4>
+      <p>6호선 · 공항철도 · 경의중앙선<br>
+      디지털미디어시티역 8번 출구 — 건물 바로 연결 (도보 3분)</p>
+    </div>
+    <div class="way">
+      <h4>자가용</h4>
+      <p>내비게이션에 <b>"DMC타워웨딩"</b> 검색<br>
+      건물 내 지하주차장 이용 가능 (500대 규모)</p>
+      <!-- ✏️ 주차 무료시간/등록 방식은 홀 확인 후 문구 추가 -->
+    </div>
+    <div class="way">
+      <h4>버스</h4>
+      <p>디지털미디어시티역 정류장 하차<br>
+      <!-- ✏️ 필요시 버스 번호 추가 --></p>
+    </div>
+  </section>
+
+  <!-- ═══ 마음 전하실 곳 ═══ -->
+  <section class="accounts fade">
+    <p class="eyebrow">Account</p>
+    <h2 class="sec-title">마음 전하실 곳</h2>
+    <!-- ✏️ ACCOUNTS: 은행/계좌/예금주 교체 -->
+    <div class="acc-group">
+      <button class="acc-toggle" onclick="this.parentElement.classList.toggle('open')">신랑측 계좌번호</button>
+      <div class="acc-body">
+        <div class="acc-row">
+          <div class="info"><b>신랑 승열</b><br><span class="num">국민 000000-00-000000</span></div>
+          <button class="copy-btn" data-copy="000000-00-000000">복사</button>
+        </div>
+        <div class="acc-row">
+          <div class="info"><b>아버님성함</b><br><span class="num">은행 000-000-000000</span></div>
+          <button class="copy-btn" data-copy="000-000-000000">복사</button>
+        </div>
+      </div>
+    </div>
+    <div class="acc-group">
+      <button class="acc-toggle" onclick="this.parentElement.classList.toggle('open')">신부측 계좌번호</button>
+      <div class="acc-body">
+        <div class="acc-row">
+          <div class="info"><b>신부 가현</b><br><span class="num">은행 000-0000-0000-00</span></div>
+          <button class="copy-btn" data-copy="000-0000-0000-00">복사</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ RSVP ═══ -->
+  <section class="rsvp fade">
+    <p class="eyebrow">Rsvp</p>
+    <h2 class="sec-title">참석 의사 전달</h2>
+    <p>
+      축하의 마음으로 참석해 주시는 한 분 한 분<br>
+      귀하게 모실 수 있도록<br>
+      참석 여부를 미리 알려주시면 감사하겠습니다.
+    </p>
+    <!-- ✏️ 구글폼 등 링크 연결 -->
+    <button class="rsvp-btn" onclick="location.href='#'">참석여부 전달하기</button>
+  </section>
+
+  <footer>
+    승열 <span class="heart">♥</span> 가현<br><br>
+    2026 . 11 . 15 SUN PM 3:00
+  </footer>
+</div>
+
+<div id="toast">복사되었습니다</div>
+
+<script>
+  // 스크롤 페이드인
+  const io = new IntersectionObserver(es=>{
+    es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target);} });
+  },{threshold:.12});
+  document.querySelectorAll('.fade').forEach(el=>io.observe(el));
+
+  // D-day
+  (function(){
+    const t = new Date('2026-11-15T15:00:00+09:00');
+    const now = new Date();
+    const d = Math.ceil((t - now) / 86400000);
+    const el = document.getElementById('dday');
+    if(d > 0) el.innerHTML = '승열 <span style="color:var(--accent)">♥</span> 가현의 결혼식이 <b>' + d + '일</b> 남았습니다';
+    else if(d === 0) el.innerHTML = '오늘, 저희 결혼합니다 <b>♥</b>';
+    else el.innerHTML = '저희의 결혼을 축복해 주셔서 감사합니다';
+  })();
+
+  // 계좌 복사
+  const toast = document.getElementById('toast');
+  let toastTimer;
+  document.querySelectorAll('.copy-btn').forEach(btn=>{
+    btn.addEventListener('click', async ()=>{
+      try{
+        await navigator.clipboard.writeText(btn.dataset.copy);
+        toast.classList.add('on');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(()=>toast.classList.remove('on'), 1800);
+      }catch(e){
+        prompt('아래 계좌번호를 복사하세요', btn.dataset.copy);
+      }
+    });
+  });
+</script>
+</body>
+</html>

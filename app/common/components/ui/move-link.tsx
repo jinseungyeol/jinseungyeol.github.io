@@ -1,14 +1,43 @@
 import { ArrowRight } from "lucide-react";
 
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+  }
+}
+
 // 링크 대상은 모두 이 사이트 밖(또는 /project 아래의 정적 데모)이라
 // react-router의 <Link> 대신 <a>를 쓴다. <Link>를 쓰면 "/project/..." 같은
 // 내부 경로를 클라이언트 라우팅으로 가로채는데, 매칭되는 라우트가 없어 깨진다.
-export default function MoveLink({ text, to }: { text: string; to: string }) {
+export default function MoveLink({
+  text,
+  to,
+  eventName = "portfolio_link_click",
+  eventParams,
+}: {
+  text: string;
+  to: string;
+  eventName?: string;
+  eventParams?: Record<string, string>;
+}) {
+  const handleClick = () => {
+    // GA4 미로드(개발 환경, 광고 차단기 등)면 조용히 건너뛴다.
+    // target="_blank"라 현재 페이지가 유지되므로 이벤트 유실 걱정은 없다.
+    if (typeof window !== "undefined" && typeof window.gtag === "function") {
+      window.gtag("event", eventName, {
+        ...eventParams,
+        link_text: text,
+        link_url: to,
+      });
+    }
+  };
+
   return (
     <a
       href={to}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={handleClick}
       className="inline-block group relative w-auto cursor-pointer overflow-hidden rounded-full border bg-background p-2 px-4 md:px-6 text-center text-sm lg:text-base font-semibold align-top"
     >
       <div className="flex items-center gap-2">

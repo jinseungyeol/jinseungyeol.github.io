@@ -75,7 +75,12 @@ export default function ProjectCard({
           {links && links.length > 0 && (
             <CardFooter className="flex gap-2 flex-wrap">
               {links.map((l, idx) => (
-                <MoveLink key={idx} to={l.to} text={l.text} />
+                <MoveLink
+                  key={idx}
+                  to={l.to}
+                  text={l.text}
+                  eventParams={{ project_title: title, button_label: l.text }}
+                />
               ))}
             </CardFooter>
           )}

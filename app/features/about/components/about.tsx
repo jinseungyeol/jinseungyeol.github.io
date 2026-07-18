@@ -97,6 +97,10 @@ export default function AboutComponent() {
               <MoveLink
                 to="https://www.notion.so/23a15fb2e2a880baa000ccde75a99daa"
                 text="자기소개 더보기"
+                eventParams={{
+                  project_title: "about",
+                  button_label: "자기소개 더보기",
+                }}
               />
             </div>
           </motion.div>

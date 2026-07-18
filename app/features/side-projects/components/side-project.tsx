@@ -3,7 +3,6 @@ import { TextAnimate } from "~/common/components/ui/text-animate";
 import SideProjectCard from "./side-project-card";
 import { DotPattern } from "~/common/components/ui/dot-pattern";
 import { cn } from "~/lib/utils";
-import { CardContent } from "~/common/components/ui/card";
 import {
   Carousel,
   CarouselContent,
@@ -11,7 +10,6 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "~/common/components/ui/carousel";
-import { Card } from "~/common/components/ui/card";
 import Autoplay from "embla-carousel-autoplay";
 import { useRef } from "react";
 import { motion } from "motion/react";
@@ -104,15 +102,27 @@ export const SideProject = () => {
           transition={{ duration: 0.5, ease: "easeOut" }}
           viewport={{ once: true, amount: 0.3 }}
         >
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-            {sideProjectData.map((item, index) => (
-              <div
-                key={index}
-                className="md:basis-full basis-[90%]"
-              >
-                <SideProjectCard key={item.title} {...item} />
-              </div>
-            ))}
+          <div className="relative max-w-[860px] mx-auto">
+            <Carousel
+              className="w-full"
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              plugins={[autoplay.current]}
+              onMouseEnter={() => autoplay.current.stop()}
+              onMouseLeave={() => autoplay.current.play()}
+            >
+              <CarouselContent className="py-6">
+                {sideProjectData.map((item, index) => (
+                  <CarouselItem key={index} className="basis-full">
+                    <SideProjectCard key={item.title} {...item} />
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="hidden md:flex" />
+              <CarouselNext className="hidden md:flex" />
+            </Carousel>
           </div>
         </motion.div>
       </div>

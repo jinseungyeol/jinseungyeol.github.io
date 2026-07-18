@@ -24,9 +24,9 @@ export const links: Route.LinksFunction = () => [
   },
 ];
 
-// GA4 측정 ID. 실제 ID(G-...)로 교체하기 전까지는 스니펫이 로드되지 않는다.
-const GA_MEASUREMENT_ID = "G-XXXXXXX";
-const gaEnabled = import.meta.env.PROD && !GA_MEASUREMENT_ID.includes("X");
+// GA4 측정 ID. 개발 환경에서는 로드하지 않는다.
+const GA_MEASUREMENT_ID = "G-NWT8Q6RSL2";
+const gaEnabled = import.meta.env.PROD;
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (

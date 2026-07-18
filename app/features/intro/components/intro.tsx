@@ -16,8 +16,8 @@ export default function IntroComponent() {
             className="text-center"
           >
             <h2 className="text-2xl md:text-4xl lg:text-6xl font-bold leading-10 md:leading-12 lg:leading-20">
-              <p>토끼처럼 빠르게 적응하며</p>
-              <p>거북이처럼 묵묵하게 일하는</p>
+              <p>반복되는 비효율을</p>
+              <p>AI와 자동화로 걷어내는</p>
             </h2>
           </motion.div>
           <motion.div
@@ -28,12 +28,9 @@ export default function IntroComponent() {
             className="py-10 lg:py-20 text-center font-medium text-lg lg:text-2xl leading-7 lg:leading-10 text-gray-500"
           >
             <p className="inline sm:block">
-              빠른 대응력으로 유연하게 움직이면서도{" "}
+              탄탄한 마크업을 기본으로, 도구가 필요하면 직접 만드는 개발자
+              진승열입니다.
             </p>
-            <p className="inline sm:block">
-              흐트러짐 없이 꾸준한 실행력으로 기본을 지키며 완성도를 높여가는{" "}
-            </p>
-            <p className="inline sm:block">퍼블리셔 진승열입니다.</p>
           </motion.div>
         </div>
       </div>

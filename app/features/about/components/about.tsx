@@ -83,8 +83,8 @@ export default function AboutComponent() {
             </TextAnimate>
             <div className="pt-5 md:pt-10 text-base md:text-lg text-gray-500 font-medium">
               <p>
-                끝까지 포기하지 않고, 꾸준히 도전하는 마음가짐으로 개발에
-                임하고 있습니다.
+                화면 구현에서 시작해, 지금은 서비스 전반의 비효율을 자동화로
+                해결하고 있습니다.
               </p>
               <p className="pt-6">
                 웹 표준을 준수한 탄탄한 마크업을 기본으로, React 환경 퍼블리싱부터 AI 도구를 활용한 Django·NestJS 백엔드 구현, 데이터 수집 자동화까지 폭넓게 다룹니다. 필요한 도구는 직접 만들어, 문제를 끝까지 해결하는 데 집중합니다.

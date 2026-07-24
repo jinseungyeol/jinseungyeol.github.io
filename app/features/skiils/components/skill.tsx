@@ -9,28 +9,28 @@ const slugs = [
   "typescript",
   "sass",
   "javascript",
-  "googleanalytics",
+  "python",
   "html5",
-  "firebase",
+  "django",
   "tailwindcss",
   "react",
   "github",
   "css3",
-  "jquery",
-  "visualstudiocode",
+  "nestjs",
+  "claude",
   "figma",
   "typescript",
   "sass",
   "javascript",
-  "googleanalytics",
+  "python",
   "html5",
-  "firebase",
+  "django",
   "tailwindcss",
   "react",
   "github",
   "css3",
-  "jquery",
-  "visualstudiocode",
+  "nestjs",
+  "claude",
 ];
 
 const skills = [
@@ -74,14 +74,14 @@ const skills = [
     imgAlt: "TypeScript",
     title: "TypeScript",
     description:
-      "TypeScript의 interface를 활용해 props 타입을 명확히 지정하고, 컴포넌트 간 데이터 흐름의 안정성을 높이는 데 기여했습니다.",
+      "interface로 props·데이터 타입을 명확히 정의해 컴포넌트 간 데이터 흐름의 안정성을 높였습니다. 이 포트폴리오를 포함한 React 프로젝트와 NestJS 백엔드까지 TypeScript 기반으로 작성하며, 타입이 문서 역할을 하는 코드를 지향합니다.",
   },
   {
     imgSrc: "/assets/images/ico/ico_python.png",
     imgAlt: "Python",
     title: "Python",
     description:
-      "Selenium·Playwright 기반 크롤링 자동화, 데이터 정제 로직, 외부 API 연동 등 서버 사이드 데이터 처리를 구현하는 데 활용했습니다.",
+      "Playwright 기반 봇 차단 우회 크롤링, 공식 API 연동, BigQuery append-only 적재 파이프라인, 다층 정합성 검증, 실패 자동진단 디스패처까지 — 수집부터 검증·운영까지 이어지는 데이터 자동화를 구현했습니다.",
   },
   {
     imgSrc: "/assets/images/ico/ico_django.png",
@@ -91,11 +91,18 @@ const skills = [
       "ORM, Middleware, F expression 등을 활용해 방문자 통계 집계, 관리자 기능, 엑셀 다운로드 등 서버 기반 데이터 처리 기능을 구현했습니다.",
   },
   {
+    imgSrc: "/assets/images/ico/ico_nestjs.svg",
+    imgAlt: "NestJS",
+    title: "NestJS",
+    description:
+      "카페24 상품 이미지 WebP 변환 앱의 백엔드를 NestJS로 설계·구현했습니다. 모듈 단위로 스캔·변환·서빙·드리프트 스캔 도메인을 분리하고, Prisma·PostgreSQL 기반 장부 설계와 pg-boss 작업 큐로 대량 변환을 안정적으로 처리했습니다.",
+  },
+  {
     imgSrc: "/assets/images/ico/ico_claude.png",
     imgAlt: "Claude Code",
     title: "Claude Code",
     description:
-      "Claude Code를 실무에 도입해 카페24 스킨 구조를 기반으로 반복 퍼블리싱·운영 작업을 자연어로 처리하고, 코드 수정부터 배포까지 효율화한 경험이 있습니다. MCP 연동으로 Figma·디자인 작업과도 연결했습니다.",
+      "Claude Code를 실무 운영의 중심에 도입했습니다. 카페24 13개 브랜드의 처리 절차를 브랜드별 스킬로 정의하고 반복 요청을 recipe로 축적해 자연어 → 수정 → 배포 파이프라인을 운영하며, 가드 프롬프트와 권한 격리를 설계해 헤드리스 에이전트 2종(Slack 요청 접수 처리, 크롤링 실패 자동진단)을 구축했습니다. MCP 연동으로 Figma·디자인 작업과도 연결했습니다.",
   },
 ];
 

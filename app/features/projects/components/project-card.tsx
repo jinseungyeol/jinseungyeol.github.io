@@ -19,7 +19,7 @@ interface ProjectLink {
 function renderWithEmphasis(text: string) {
   return text.split(/(\*\*[^*]+\*\*)/g).map((seg, i) =>
     seg.startsWith("**") && seg.endsWith("**") ? (
-      <strong key={i} className="font-bold text-primary">
+      <strong key={i} className="font-bold text-black">
         {seg.slice(2, -2)}
       </strong>
     ) : (

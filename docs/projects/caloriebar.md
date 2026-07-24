@@ -16,3 +16,4 @@
 ## 더 보기
 
 - [Notion 상세 페이지](https://tan-alibi-93d.notion.site/25a15fb2e2a8808d99f5cce0e24a09b0) — 방문자 통계·권역·홈쇼핑 다채널 구현 상세(하위 페이지)
+- [GitHub 케이스 스터디](https://github.com/jinseungyeol/case-studies/tree/main/caloriebar) — 아키텍처·데이터 모델·트러블슈팅 문서

@@ -23,3 +23,4 @@
 ## 더 보기
 
 - [Notion 상세 페이지](https://tan-alibi-93d.notion.site/38f15fb2e2a880c99190db253886ec9b) — 봇탐지 우회, 다층 검증, BigQuery 컬럼 설계
+- [GitHub 케이스 스터디](https://github.com/jinseungyeol/case-studies/tree/main/commerce-data-pipeline) — 아키텍처·기술 선택 이유·트러블슈팅·자동진단 봇 설계 문서

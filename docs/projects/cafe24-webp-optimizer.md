@@ -16,3 +16,4 @@
 ## 더 보기
 
 - [Notion 상세 페이지](https://tan-alibi-93d.notion.site/24-WebP-38f15fb2e2a880d0936fcfe6e405a09f) — 압축 전후 실측, 관리자 UI, 자산 테이블 설계
+- [GitHub 케이스 스터디](https://github.com/jinseungyeol/case-studies/tree/main/cafe24-webp-optimizer) — clean-body 아키텍처·기술 선택 이유·트러블슈팅 문서

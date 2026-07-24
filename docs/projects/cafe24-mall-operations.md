@@ -15,3 +15,4 @@
 ## 더 보기
 
 - [Notion 상세 페이지](https://tan-alibi-93d.notion.site/24-32415fb2e2a880ba8e27e6d235c0ebc2) — 배포 트러블슈팅, 디자인 시스템 상세(하위 페이지)
+- [GitHub 케이스 스터디](https://github.com/jinseungyeol/case-studies/tree/main/cafe24-mall-monorepo) — 아키텍처·기술 선택 이유·트러블슈팅·Slack 접수 에이전트 설계 문서

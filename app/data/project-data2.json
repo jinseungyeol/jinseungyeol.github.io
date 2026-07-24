@@ -18,7 +18,8 @@
       }
     ],
     "links": [
-      { "to": "https://tan-alibi-93d.notion.site/38f15fb2e2a880c99190db253886ec9b?source=copy_link", "text": "Notion" }
+      { "to": "https://tan-alibi-93d.notion.site/38f15fb2e2a880c99190db253886ec9b?source=copy_link", "text": "Notion" },
+      { "to": "https://github.com/jinseungyeol/case-studies/tree/main/commerce-data-pipeline", "text": "GitHub" }
     ]
   },
   {
@@ -39,7 +40,8 @@
       }
     ],
     "links": [
-      { "to": "https://tan-alibi-93d.notion.site/24-WebP-38f15fb2e2a880d0936fcfe6e405a09f?source=copy_link", "text": "Notion" }
+      { "to": "https://tan-alibi-93d.notion.site/24-WebP-38f15fb2e2a880d0936fcfe6e405a09f?source=copy_link", "text": "Notion" },
+      { "to": "https://github.com/jinseungyeol/case-studies/tree/main/cafe24-webp-optimizer", "text": "GitHub" }
     ]
   },
   {
@@ -60,7 +62,8 @@
       }
     ],
     "links": [
-      { "to": "https://tan-alibi-93d.notion.site/24-32415fb2e2a880ba8e27e6d235c0ebc2?source=copy_link", "text": "Notion" }
+      { "to": "https://tan-alibi-93d.notion.site/24-32415fb2e2a880ba8e27e6d235c0ebc2?source=copy_link", "text": "Notion" },
+      { "to": "https://github.com/jinseungyeol/case-studies/tree/main/cafe24-mall-monorepo", "text": "GitHub" }
     ]
   },
   {
@@ -81,7 +84,8 @@
       }
     ],
     "links": [
-      { "to": "https://tan-alibi-93d.notion.site/25a15fb2e2a8808d99f5cce0e24a09b0?source=copy_link", "text": "Notion" }
+      { "to": "https://tan-alibi-93d.notion.site/25a15fb2e2a8808d99f5cce0e24a09b0?source=copy_link", "text": "Notion" },
+      { "to": "https://github.com/jinseungyeol/case-studies/tree/main/caloriebar", "text": "GitHub" }
     ]
   }
 ]

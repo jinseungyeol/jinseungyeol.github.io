@@ -27,9 +27,9 @@ export default function IntroComponent() {
             viewport={{ once: true }}
             className="py-10 lg:py-20 text-center font-medium text-lg lg:text-2xl leading-7 lg:leading-10 text-gray-500"
           >
+            <p className="inline sm:block">탄탄한 마크업을 기본으로,</p>{" "}
             <p className="inline sm:block">
-              탄탄한 마크업을 기본으로, 도구가 필요하면 직접 만드는 개발자
-              진승열입니다.
+              도구가 필요하면 직접 만드는 개발자 진승열입니다.
             </p>
           </motion.div>
         </div>

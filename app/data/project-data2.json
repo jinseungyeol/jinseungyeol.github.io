@@ -1,5 +1,27 @@
 [
   {
+    "title": "카페24 자사몰 통합 운영",
+    "period": "",
+    "imageUrl": "/assets/images/preview/preview12.png",
+    "details": [
+      { "label": "참여", "value": "100%" },
+      { "label": "역할", "value": "퍼블리싱 + AI 보조 워크플로우·디자인 토큰 체계 설계" },
+      {
+        "label": "기술",
+        "value": "HTML, CSS, JavaScript, GSAP, GitHub Actions, Google Apps Script, Figma, Tokens Studio"
+      },
+      { "label": "환경", "value": "Cafe24 13개 브랜드 monorepo" },
+      {
+        "label": "성과",
+        "value": "퍼블리셔 3인이 4개 브랜드씩 분담하던 운영을 Claude Code 기반 파이프라인 설계로 1인 전담 전환, 브랜드별 디자인 토큰과 Figma 레퍼런스 추출 도구를 직접 만들어 디자인 기준까지 도구화. Slack 접수→AI 처리→staging 검증→운영 배포를 잇는 무인 요청 처리 파이프라인 설계·MVP 구축"
+      }
+    ],
+    "links": [
+      { "to": "https://tan-alibi-93d.notion.site/24-32415fb2e2a880ba8e27e6d235c0ebc2?source=copy_link", "text": "Notion" },
+      { "to": "https://github.com/jinseungyeol/case-studies/tree/main/cafe24-mall-monorepo", "text": "GitHub" }
+    ]
+  },
+  {
     "title": "커머스 채널 데이터 수집 자동화",
     "period": "",
     "imageUrl": "/assets/images/preview/preview18.png",
@@ -42,28 +64,6 @@
     "links": [
       { "to": "https://tan-alibi-93d.notion.site/24-WebP-38f15fb2e2a880d0936fcfe6e405a09f?source=copy_link", "text": "Notion" },
       { "to": "https://github.com/jinseungyeol/case-studies/tree/main/cafe24-webp-optimizer", "text": "GitHub" }
-    ]
-  },
-  {
-    "title": "카페24 자사몰 통합 운영",
-    "period": "",
-    "imageUrl": "/assets/images/preview/preview12.png",
-    "details": [
-      { "label": "참여", "value": "100%" },
-      { "label": "역할", "value": "퍼블리싱 + AI 보조 워크플로우·디자인 토큰 체계 설계" },
-      {
-        "label": "기술",
-        "value": "HTML, CSS, JavaScript, GSAP, GitHub Actions, Google Apps Script, Figma, Tokens Studio"
-      },
-      { "label": "환경", "value": "Cafe24 13개 브랜드 monorepo" },
-      {
-        "label": "성과",
-        "value": "퍼블리셔 3인이 4개 브랜드씩 분담하던 운영을 Claude Code 기반 파이프라인 설계로 1인 전담 전환, 브랜드별 디자인 토큰과 Figma 레퍼런스 추출 도구를 직접 만들어 디자인 기준까지 도구화. Slack 접수→AI 처리→staging 검증→운영 배포를 잇는 무인 요청 처리 파이프라인 설계·MVP 구축"
-      }
-    ],
-    "links": [
-      { "to": "https://tan-alibi-93d.notion.site/24-32415fb2e2a880ba8e27e6d235c0ebc2?source=copy_link", "text": "Notion" },
-      { "to": "https://github.com/jinseungyeol/case-studies/tree/main/cafe24-mall-monorepo", "text": "GitHub" }
     ]
   },
   {

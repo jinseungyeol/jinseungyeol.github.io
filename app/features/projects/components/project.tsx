@@ -6,7 +6,7 @@ import WorksTitle from "~/common/components/title";
 
 export default function ProjectComponent() {
   const [activeTab, setActiveTab] = useState<"publishing" | "development">(
-    "publishing"
+    "development"
   );
 
   const currentProjects =
@@ -18,17 +18,6 @@ export default function ProjectComponent() {
         <WorksTitle/>
         <div className="flex justify-center gap-3 mb-10">
           <button
-            onClick={() => setActiveTab("publishing")}
-            className={`px-5 py-2 border w-[100px] rounded-4xl cursor-pointer ${
-              activeTab === "publishing"
-                ? "bg-black text-white"
-                : "bg-white text-black"
-            }`}
-          >
-            퍼블리싱
-          </button>
-
-          <button
             onClick={() => setActiveTab("development")}
             className={`px-5 py-2 border w-[100px] rounded-4xl cursor-pointer ${
               activeTab === "development"
@@ -37,6 +26,17 @@ export default function ProjectComponent() {
             }`}
           >
             개발
+          </button>
+
+          <button
+            onClick={() => setActiveTab("publishing")}
+            className={`px-5 py-2 border w-[100px] rounded-4xl cursor-pointer ${
+              activeTab === "publishing"
+                ? "bg-black text-white"
+                : "bg-white text-black"
+            }`}
+          >
+            퍼블리싱
           </button>
         </div>
         <div key={activeTab} className="grid grid-cols-1 lg:grid-cols-2 gap-10">

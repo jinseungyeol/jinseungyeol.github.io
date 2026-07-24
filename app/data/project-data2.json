@@ -14,7 +14,7 @@
       { "label": "환경", "value": "쿠팡 WING, 네이버 스마트스토어, GCP" },
       {
         "label": "성과",
-        "value": "API를 제공하지 않는 쿠팡은 크롤링, 공식 API가 있는 네이버는 직접 연동해 13개 브랜드 광고비·매출을 자동 수집, 수기 집계 대비 일 2~3시간 절감"
+        "value": "API를 제공하지 않는 쿠팡은 크롤링, 공식 API가 있는 네이버는 직접 연동해 13개 브랜드 광고비·매출을 자동 수집, 수기 집계 대비 일 2~3시간 절감. 실패 알림을 Claude Code 자동진단 봇으로 연결해 원인 분석까지 슬랙 DM으로 회신"
       }
     ],
     "links": [
@@ -51,12 +51,12 @@
       { "label": "역할", "value": "퍼블리싱 + AI 보조 워크플로우·디자인 토큰 체계 설계" },
       {
         "label": "기술",
-        "value": "HTML, CSS, JavaScript, GSAP, GitHub Actions, Figma, Tokens Studio"
+        "value": "HTML, CSS, JavaScript, GSAP, GitHub Actions, Google Apps Script, Figma, Tokens Studio"
       },
       { "label": "환경", "value": "Cafe24 13개 브랜드 monorepo" },
       {
         "label": "성과",
-        "value": "퍼블리셔 3인이 4개 브랜드씩 분담하던 운영을 Claude Code 기반 파이프라인 설계로 1인 전담 전환, 브랜드별 디자인 토큰과 Figma 레퍼런스 추출 도구를 직접 만들어 디자인 기준까지 도구화"
+        "value": "퍼블리셔 3인이 4개 브랜드씩 분담하던 운영을 Claude Code 기반 파이프라인 설계로 1인 전담 전환, 브랜드별 디자인 토큰과 Figma 레퍼런스 추출 도구를 직접 만들어 디자인 기준까지 도구화. Slack 접수→AI 처리→staging 검증→운영 배포를 잇는 무인 요청 처리 파이프라인 설계·MVP 구축"
       }
     ],
     "links": [

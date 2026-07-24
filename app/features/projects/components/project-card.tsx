@@ -15,6 +15,19 @@ interface ProjectLink {
   text: string;
 }
 
+// value 문자열의 **...** 구간을 강조(<strong>)로 렌더
+function renderWithEmphasis(text: string) {
+  return text.split(/(\*\*[^*]+\*\*)/g).map((seg, i) =>
+    seg.startsWith("**") && seg.endsWith("**") ? (
+      <strong key={i} className="font-bold text-primary">
+        {seg.slice(2, -2)}
+      </strong>
+    ) : (
+      seg
+    )
+  );
+}
+
 interface ProjectCardProps {
   title: string;
   period: string;
@@ -66,7 +79,7 @@ export default function ProjectCard({
                   >
                     <p className="font-semibold">{item.label}</p>
                     <div>|</div>
-                    <p>{item.value}</p>
+                    <p>{renderWithEmphasis(item.value)}</p>
                   </li>
                 ))}
               </ul>

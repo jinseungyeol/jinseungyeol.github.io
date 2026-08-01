@@ -83,11 +83,11 @@ export default function AboutComponent() {
             </TextAnimate>
             <div className="pt-5 md:pt-10 text-base md:text-lg text-gray-500 font-medium">
               <p>
-                화면 구현에서 시작해, 지금은 서비스 전반의 비효율을 자동화로
-                해결하고 있습니다.
+                화면 구현에서 시작해, 지금은 AI 코딩 도구로 개발부터 배포·운영까지
+                자동화합니다.
               </p>
               <p className="pt-6">
-                웹 표준을 준수한 탄탄한 마크업을 기본으로, React 환경 퍼블리싱부터 AI 도구를 활용한 Django·NestJS 백엔드 구현, 데이터 수집 자동화까지 폭넓게 다룹니다. 필요한 도구는 직접 만들어, 문제를 끝까지 해결하는 데 집중합니다.
+                웹 표준을 준수한 탄탄한 마크업을 기본으로, AI 도구를 활용한 NestJS·Django 백엔드 구현과 데이터 수집 자동화, React 환경 퍼블리싱까지 폭넓게 다룹니다. 필요한 도구는 직접 만들어, 문제를 끝까지 해결하는 데 집중합니다.
               </p>
               <p className="pt-6">
                 항상 프로젝트의 목표를 중심에 두고 다양한 직군과 협업합니다. 최근에는 Claude Code 등 AI 도구를 실무 워크플로에 적극 도입해, 반복 작업을 효율화하고 1인으로 멀티브랜드 운영까지 수행하고 있습니다.
@@ -153,6 +153,30 @@ export default function AboutComponent() {
                 </p>
               </li>
             </ul>
+          </div>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.35, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.3 }}
+          className="mt-10 lg:mt-20 p-6 md:p-8 border-1 border-gray-300 rounded-2xl bg-white/60"
+        >
+          <strong className="text-xl font-semibold">CASE STUDIES</strong>
+          <p className="pt-3 text-base md:text-lg text-gray-500 font-medium">
+            실무에서 만든 시스템 4건의 아키텍처, 기술 선택 이유, 트러블슈팅 과정을
+            문서로 정리했습니다. 회사 코드의 사본이 아니라 일반화해 재구성한
+            문서입니다.
+          </p>
+          <div className="pt-6">
+            <MoveLink
+              to="https://github.com/jinseungyeol/case-studies"
+              text="설계 원칙과 트러블슈팅 문서"
+              eventParams={{
+                project_title: "case-studies",
+                button_label: "설계 원칙과 트러블슈팅 문서",
+              }}
+            />
           </div>
         </motion.div>
       </div>

@@ -17,8 +17,8 @@
       }
     ],
     "links": [
-      { "to": "https://tan-alibi-93d.notion.site/24-32415fb2e2a880ba8e27e6d235c0ebc2?source=copy_link", "text": "Notion" },
-      { "to": "https://github.com/jinseungyeol/case-studies/tree/main/cafe24-mall-monorepo", "text": "GitHub" }
+      { "to": "https://tan-alibi-93d.notion.site/24-32415fb2e2a880ba8e27e6d235c0ebc2?source=copy_link", "text": "프로젝트 소개" },
+      { "to": "https://github.com/jinseungyeol/case-studies/tree/main/cafe24-mall-monorepo", "text": "기술 문서" }
     ]
   },
   {
@@ -40,8 +40,8 @@
       }
     ],
     "links": [
-      { "to": "https://tan-alibi-93d.notion.site/38f15fb2e2a880c99190db253886ec9b?source=copy_link", "text": "Notion" },
-      { "to": "https://github.com/jinseungyeol/case-studies/tree/main/commerce-data-pipeline", "text": "GitHub" }
+      { "to": "https://tan-alibi-93d.notion.site/38f15fb2e2a880c99190db253886ec9b?source=copy_link", "text": "프로젝트 소개" },
+      { "to": "https://github.com/jinseungyeol/case-studies/tree/main/commerce-data-pipeline", "text": "기술 문서" }
     ]
   },
   {
@@ -53,17 +53,17 @@
       { "label": "역할", "value": "풀스택 설계 및 개발" },
       {
         "label": "기술",
-        "value": "NestJS, Next.js, PostgreSQL, Prisma, pg-boss, sharp, Cafe24 API"
+        "value": "NestJS, Next.js, PostgreSQL, Prisma, pg-boss, sharp, Cafe24 API, Docker"
       },
-      { "label": "환경", "value": "pnpm 모노레포, GCP, Cafe24 D2C" },
+      { "label": "환경", "value": "pnpm 모노레포, GCP(Cloud Run·Cloud Build·Cloud SQL), Cafe24 D2C" },
       {
         "label": "성과",
-        "value": "상품 본문 이미지 WebP 자동 변환으로 **평균 84% 용량 절감**"
+        "value": "상품 본문 이미지 WebP 자동 변환으로 **평균 84% 용량 절감**, 운영 **9개 몰**에 확장 적용(신규 몰을 무회귀 카나리아로 삼는 단계 배포). 라이브 이미지 표시 장애 발생 시 원인을 **3계층**(경로 정규화 실패로 인한 404 → 오류 응답이 CDN에 캐시되며 지속 → 서드파티 lazyloader가 클라이언트 폴백을 무력화)으로 규명해 각각 수정하고, **회귀 테스트 하네스를 구축**해 스크립트 버전업마다 자동 검증하도록 만들었습니다. 이후 점검 기준을 '스크립트 존재'에서 **'실서빙 여부'로 바꿔 일 1회 자동 점검·이상 시 알림**을 도입하고, 작업 큐의 **고아 작업 자동 회수**로 대량 처리 중 유실을 막았습니다."
       }
     ],
     "links": [
-      { "to": "https://tan-alibi-93d.notion.site/24-WebP-38f15fb2e2a880d0936fcfe6e405a09f?source=copy_link", "text": "Notion" },
-      { "to": "https://github.com/jinseungyeol/case-studies/tree/main/cafe24-webp-optimizer", "text": "GitHub" }
+      { "to": "https://tan-alibi-93d.notion.site/24-WebP-38f15fb2e2a880d0936fcfe6e405a09f?source=copy_link", "text": "프로젝트 소개" },
+      { "to": "https://github.com/jinseungyeol/case-studies/tree/main/cafe24-webp-optimizer", "text": "기술 문서" }
     ]
   },
   {
@@ -84,8 +84,8 @@
       }
     ],
     "links": [
-      { "to": "https://tan-alibi-93d.notion.site/25a15fb2e2a8808d99f5cce0e24a09b0?source=copy_link", "text": "Notion" },
-      { "to": "https://github.com/jinseungyeol/case-studies/tree/main/caloriebar", "text": "GitHub" }
+      { "to": "https://tan-alibi-93d.notion.site/25a15fb2e2a8808d99f5cce0e24a09b0?source=copy_link", "text": "프로젝트 소개" },
+      { "to": "https://github.com/jinseungyeol/case-studies/tree/main/caloriebar", "text": "기술 문서" }
     ]
   }
 ]

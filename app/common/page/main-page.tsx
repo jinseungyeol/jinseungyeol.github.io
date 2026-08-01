@@ -8,26 +8,26 @@ import SkillComponent from "~/features/skiils/components/skill";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "Jin's | 웹 포트폴리오" },
+    { title: "Jin's | 바이브 코딩 · 웹 개발 포트폴리오" },
     {
       name: "description",
       content:
-        "웹 퍼블리셔·프론트엔드 개발자 진승열의 포트폴리오. Cafe24 멀티브랜드 운영, AI 워크플로우, 데이터 자동화.",
+        "AI 코딩 도구로 개발부터 배포·운영까지 자동화하는 개발자 진승열의 포트폴리오. Claude Code 기반 운영 파이프라인, 카페24 13개 브랜드 자동 배포, NestJS·Python 백엔드, 데이터 수집 자동화. 웹 표준 마크업이 기본기입니다.",
     },
     {
       name: "keywords",
       content:
-        "portfolio, publisher, ui/ux engineer, 퍼블리셔, 웹 퍼블리셔, 포트폴리오, 퍼블리셔 포트폴리오, 프론트엔드 개발자, frontend developer, AI 워크플로우",
+        "바이브코딩, vibe coding, Claude Code, AI 코딩, AI 자동화, AI 워크플로우, 자동화 개발자, CI/CD, GitHub Actions, 배포 자동화, NestJS, TypeScript, Python, 데이터 자동화, 백엔드 개발자, 프론트엔드 개발자, frontend developer, 웹 퍼블리셔, 퍼블리셔, 포트폴리오, portfolio",
     },
     { name: "author", content: "Jin's Web Portfolio" },
     { name: "robots", content: "index, follow" },
     { property: "og:type", content: "website" },
     { property: "og:url", content: "https://jinseungyeol.github.io/" },
-    { property: "og:title", content: "Jin's | 웹 포트폴리오" },
+    { property: "og:title", content: "Jin's | 바이브 코딩 · 웹 개발 포트폴리오" },
     {
       property: "og:description",
       content:
-        "웹 퍼블리셔·프론트엔드 개발자 진승열의 포트폴리오. Cafe24 멀티브랜드 운영, AI 워크플로우, 데이터 자동화.",
+        "AI 코딩 도구로 개발부터 배포·운영까지 자동화하는 개발자 진승열의 포트폴리오. Claude Code 기반 운영 파이프라인, 카페24 13개 브랜드 자동 배포, NestJS·Python 백엔드, 데이터 수집 자동화. 웹 표준 마크업이 기본기입니다.",
     },
     {
       property: "og:image",

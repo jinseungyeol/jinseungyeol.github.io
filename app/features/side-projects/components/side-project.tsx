@@ -3,26 +3,10 @@ import { TextAnimate } from "~/common/components/ui/text-animate";
 import SideProjectCard from "./side-project-card";
 import { DotPattern } from "~/common/components/ui/dot-pattern";
 import { cn } from "~/lib/utils";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "~/common/components/ui/carousel";
-import Autoplay from "embla-carousel-autoplay";
-import { useRef } from "react";
 import { motion } from "motion/react";
 import sideProjectData from "~/data/side-project-data.json";
 
 export const SideProject = () => {
-  const autoplay = useRef(
-    Autoplay({
-      delay: 6000,
-      stopOnInteraction: false,
-    })
-  );
-
   return (
     <div
       id="sideProjects"
@@ -96,35 +80,20 @@ export const SideProject = () => {
             "[mask-image:radial-gradient(55vw_circle_at_center,_white,_transparent)]"
           )}
         />
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
-          viewport={{ once: true, amount: 0.3 }}
-        >
-          <div className="relative max-w-[860px] mx-auto">
-            <Carousel
-              className="w-full"
-              opts={{
-                align: "start",
-                loop: true,
-              }}
-              plugins={[autoplay.current]}
-              onMouseEnter={() => autoplay.current.stop()}
-              onMouseLeave={() => autoplay.current.play()}
+        <div className="relative max-w-[1400px] mx-auto px-0 md:px-20 grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+          {sideProjectData.map((item) => (
+            <motion.div
+              key={item.title}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              viewport={{ once: true, amount: 0.3 }}
+              className="h-full"
             >
-              <CarouselContent className="py-6 ml-0">
-                {sideProjectData.map((item, index) => (
-                  <CarouselItem key={index} className="basis-full pl-0">
-                    <SideProjectCard key={item.title} {...item} />
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <CarouselPrevious className="hidden md:flex -left-16" />
-              <CarouselNext className="hidden md:flex -right-16" />
-            </Carousel>
-          </div>
-        </motion.div>
+              <SideProjectCard {...item} />
+            </motion.div>
+          ))}
+        </div>
       </div>
     </div>
   );

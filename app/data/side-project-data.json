@@ -12,23 +12,7 @@
     ],
     "links": [
       { "to": "https://jinseungyeol.github.io/disney-plus-app/", "text": "Demo" },
-      { "to": "https://github.com/jinseungyeol/disney-plus-app", "text": "GitHub" }
-    ]
-  },
-  {
-    "title": "틱택토 게임",
-    "period": "1개월 소요",
-    "imageUrl": "/assets/images/preview/preview_side02.png",
-    "details": [
-      { "label": "기술", "value": "React" },
-      {
-        "label": "설명",
-        "value": "React 기반의 틱택토 게임으로, 컴포넌트와 상태 관리를 통해 턴 변경과 승리 조건 체크 등 기본 기능을 구현했습니다."
-      }
-    ],
-    "links": [
-      { "to": "https://jinseungyeol.github.io/react-tictactoe/", "text": "Demo" },
-      { "to": "https://github.com/jinseungyeol/react-tictactoe", "text": "GitHub" }
+      { "to": "https://github.com/jinseungyeol/disney-plus-app", "text": "소스 코드" }
     ]
   },
   {
@@ -44,7 +28,7 @@
     ],
     "links": [
       { "to": "https://jinseungyeol.github.io/react-context-app/", "text": "Demo" },
-      { "to": "https://github.com/jinseungyeol/react-context-app", "text": "GitHub" }
+      { "to": "https://github.com/jinseungyeol/react-context-app", "text": "소스 코드" }
     ]
   }
 ]

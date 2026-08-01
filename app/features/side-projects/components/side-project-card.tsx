@@ -24,7 +24,7 @@ export default function SideProjectCard({
 }: SideProjectCardProps) {
   return (
     <MagicCard
-      className="flex-1 hover:translate-y-[-10px] hover:shadow-lg transition-all duration-300"
+      className="h-full flex-1 hover:translate-y-[-10px] hover:shadow-lg transition-all duration-300"
       gradientFrom="var(--accent)"
       gradientTo="var(--accent)"
       gradientColor="var(--accent)"
@@ -36,7 +36,7 @@ export default function SideProjectCard({
         viewport={{ once: true, amount: 0.3 }}
         className="h-full"
       >
-        <Card className="relative">
+        <Card className="relative h-full">
           <div className="flex justify-center items-center">
             <img src={imageUrl} alt="" />
           </div>

@@ -42,66 +42,29 @@ const skills = [
     imgSrc: "/assets/images/ico/ico_claude.png",
     imgAlt: "Claude Code",
     title: "Claude Code",
-    description: (
-      <>
-        <p>
-          Claude Code를 실무 운영의 중심에 두고 자연어 요청 → 수정 → 배포
-          파이프라인을 운영합니다.
-        </p>
-        <ul className="pt-4 pl-5 space-y-3 list-disc">
-          <li>
-            <strong>브랜드별 스킬 13개</strong> — 13개 브랜드 각각의 디자인
-            시스템·처리 절차를 스킬로 정의해, 브랜드를 지정하면 그 브랜드의
-            규칙으로만 작업하도록 고정했습니다.
-          </li>
-          <li>
-            <strong>recipe 축적 59건</strong> — &ldquo;자연어 요청 ↔
-            파일·라인·현재값&rdquo;을 표로 묶은 변경 레시피입니다. 공통 패턴
-            카탈로그 19종과 자동 추출 스크립트로 신규 브랜드에 stub recipe를
-            자동 등록합니다.
-          </li>
-          <li>
-            <strong>가드 프롬프트·권한 격리</strong> — 절대 규칙 5개(staging 전용
-            / 브랜드 폴더 잠금 / 설정·워크플로 수정 금지 / 비밀값 금지 / 무소음
-            실패 금지)와 기계적 가드(변경 파일 3개·총 120줄 초과 시 자동 수동
-            전환)를 두어, 판단이 흔들려도 범위가 넘치지 않게 만들었습니다.
-          </li>
-          <li>
-            <strong>헤드리스 에이전트 2종</strong> — ①Slack 폼 접수를 받아
-            staging까지 처리하는 에이전트(요청 원장 기반 상태 게이트, 브랜드별
-            직렬 큐, 운영 반영은 구조적으로 차단) ②크롤링 실패 알림을 소비해
-            원인을 진단하는 에이전트(5분 주기 기동, 진단 전용 worktree로 격리,
-            allow/deny 권한 템플릿으로 조회·편집만 허용하고 push·인터프리터·클라우드
-            CLI는 전면 차단, 일일 호출 상한·타임아웃, 결과는 Slack DM 회신).
-          </li>
-          <li>
-            <strong>MCP 연동</strong> — Figma MCP로 디자인 원본에서 값을 직접
-            읽어 토큰·레퍼런스 추출 작업과 연결했습니다.
-          </li>
-        </ul>
-      </>
-    ),
+    description:
+      "카페24 13개 브랜드의 운영을 Claude Code로 돌립니다. 브랜드마다 디자인 시스템과 처리 절차를 스킬로 정의하고, 반복되는 요청은 어느 파일 어느 줄을 고치면 되는지 레시피로 쌓아두어 자연어 요청이 곧 수정과 배포로 이어집니다. 절대 규칙과 변경 범위 상한을 프롬프트와 설정 양쪽에 걸어, 판단이 흔들려도 staging 밖으로는 나가지 못하게 막았습니다. 이 위에서 Slack 요청을 처리하는 에이전트와 크롤링 실패를 진단하는 에이전트를 헤드리스로 돌리고 있고, Figma는 MCP로 연결해 디자인 원본에서 값을 직접 읽습니다.",
   },
   {
     imgSrc: "/assets/images/ico/ico_nestjs.svg",
     imgAlt: "NestJS",
     title: "NestJS",
     description:
-      "카페24 상품 이미지 WebP 변환 앱의 백엔드를 NestJS로 설계·구현했습니다. 모듈 단위로 스캔·변환·서빙·드리프트 스캔 도메인을 분리하고, Prisma·PostgreSQL 기반 장부 설계와 pg-boss 작업 큐로 대량 변환을 안정적으로 처리했습니다.",
+      "카페24 상품 이미지 WebP 변환 앱의 백엔드를 NestJS로 설계하고 구현했습니다. 스캔과 변환, 서빙, 드리프트 스캔을 모듈 단위로 분리하고, Prisma와 PostgreSQL 기반 장부 설계와 pg-boss 작업 큐로 대량 변환을 안정적으로 처리했습니다.",
   },
   {
     imgSrc: "/assets/images/ico/ico_ts.png",
     imgAlt: "TypeScript",
     title: "TypeScript",
     description:
-      "interface로 props·데이터 타입을 명확히 정의해 컴포넌트 간 데이터 흐름의 안정성을 높였습니다. 이 포트폴리오를 포함한 React 프로젝트와 NestJS 백엔드까지 TypeScript 기반으로 작성하며, 타입이 문서 역할을 하는 코드를 지향합니다.",
+      "interface로 props와 데이터 타입을 명확히 정의해 컴포넌트 간 데이터 흐름의 안정성을 높였습니다. 이 포트폴리오를 포함한 React 프로젝트와 NestJS 백엔드까지 TypeScript 기반으로 작성하며, 타입이 문서 역할을 하는 코드를 지향합니다.",
   },
   {
     imgSrc: "/assets/images/ico/ico_python.png",
     imgAlt: "Python",
     title: "Python",
     description:
-      "Playwright 기반 봇 차단 우회 크롤링, 공식 API 연동, BigQuery append-only 적재 파이프라인, 다층 정합성 검증, 실패 자동진단 디스패처까지 — 수집부터 검증·운영까지 이어지는 데이터 자동화를 구현했습니다.",
+      "Playwright 기반 봇 차단 우회 크롤링, 공식 API 연동, BigQuery append-only 적재 파이프라인, 다층 정합성 검증, 실패 자동진단 디스패처까지, 수집부터 검증과 운영으로 이어지는 데이터 자동화를 구현했습니다.",
   },
   {
     imgSrc: "/assets/images/ico/ico_react.png",
@@ -112,46 +75,17 @@ const skills = [
   },
   {
     imgSrc: "/assets/images/ico/ico_deploy.svg",
-    imgAlt: "배포·운영",
-    title: "배포·운영",
-    description: (
-      <>
-        <p>만든 것을 직접 배포하고 굴리는 데까지 책임집니다.</p>
-        <ul className="pt-4 pl-5 space-y-3 list-disc">
-          <li>
-            <strong>Docker</strong> — pnpm 모노레포를 단일 이미지로 묶었습니다.
-            4단계 멀티스테이지로 의존성·빌드·런타임을 분리하고, 빌드 단계에서
-            공용 패키지 빌드·Prisma 클라이언트 생성·관리자 UI 정적 export까지
-            마친 뒤 런타임에는 산출물만 복사합니다. 로컬은 docker-compose로 같은
-            파이프라인을 검증합니다.
-          </li>
-          <li>
-            <strong>GitHub Actions</strong> — 13개 브랜드 스킨 배포를 워크플로
-            18개로 운영합니다. main 푸시는 staging에 자동 배포되고, 운영 반영은
-            별도 수동 트리거로 분리해 검증을 거친 뒤에만 올립니다. 브랜드별 직렬
-            처리로 동시 배포 충돌을 막습니다.
-          </li>
-          <li>
-            <strong>GCP</strong> — Cloud Build로 이미지를 빌드해 Artifact
-            Registry에 올리고, Cloud Run 리비전 교체로 배포·롤백합니다. 장부는
-            Cloud SQL, 인증정보는 Secret Manager 참조로 코드에서 분리했습니다.
-          </li>
-          <li>
-            <strong>크론 운영</strong> — 별도 스케줄러 인프라 없이 앱 내장
-            pg-boss 스케줄러 3종(드리프트 스캔 02시 / ETag 스윕 03시 / 실서빙
-            워치독 04시)을 운영합니다. 잡·스케줄 상태가 DB에 있어 재시작에도
-            유지됩니다.
-          </li>
-        </ul>
-      </>
-    ),
+    imgAlt: "배포와 운영",
+    title: "배포와 운영",
+    description:
+      "만든 것을 직접 배포하고 운영합니다. pnpm 모노레포는 멀티스테이지 빌드로 묶어 이미지 하나로 만들고, 로컬에서는 docker-compose로 같은 파이프라인을 검증합니다. 13개 브랜드 스킨은 GitHub Actions로 배포하는데, main에 올리면 staging까지는 자동으로 가고 운영 반영은 수동 트리거로 따로 떼어 검증을 거친 뒤에만 올립니다. GCP에서는 Cloud Build로 빌드한 이미지를 Cloud Run 리비전으로 교체해 배포하거나 되돌리고, 인증정보는 Secret Manager로 코드에서 분리했습니다. 정기 점검은 별도 스케줄러 없이 앱에 내장한 pg-boss로 새벽에 돌립니다.",
   },
   {
     imgSrc: "/assets/images/ico/ico_html.png",
     imgAlt: "웹 표준 마크업",
-    title: "웹 표준 마크업 (HTML5 · CSS3 · JavaScript · jQuery)",
+    title: "웹 표준 마크업 (HTML5, CSS3, JavaScript, jQuery)",
     description:
-      "시멘틱 마크업으로 문서 구조를 명확히 정의하고, 웹 접근성과 SEO를 고려해 작성합니다. 크로스브라우징 호환성을 확보해 어느 브라우저에서도 같은 화면을 제공합니다. 미디어 쿼리와 Flexbox·Grid로 반응형 레이아웃을 구성하고, CSS 애니메이션·트랜지션으로 인터랙션을 다듬습니다. 스크롤 위치에 따라 변하는 인터랙션은 라이브러리 없이 바닐라 자바스크립트로 구현했고, jQuery에서는 공통 함수와 슬라이드·팝업을 모듈화해 재사용성과 유지보수성을 높였으며 Ajax로 신청 폼 전송과 실시간 가입자 정보 제공을 처리했습니다.",
+      "시멘틱 마크업으로 문서 구조를 명확히 정의하고, 웹 접근성과 SEO를 고려해 작성합니다. 크로스브라우징 호환성을 확보해 어느 브라우저에서도 같은 화면을 제공합니다. 미디어 쿼리와 Flexbox, Grid로 반응형 레이아웃을 구성하고 CSS 애니메이션과 트랜지션으로 인터랙션을 다듬습니다. 스크롤 위치에 따라 변하는 인터랙션은 라이브러리 없이 바닐라 자바스크립트로 구현했고, jQuery에서는 공통 함수와 슬라이드, 팝업을 모듈화해 재사용성과 유지보수성을 높였으며 Ajax로 신청 폼 전송과 실시간 가입자 정보 제공을 처리했습니다.",
   },
   {
     imgSrc: "/assets/images/ico/ico_django.png",

@@ -8,11 +8,11 @@ import SkillComponent from "~/features/skiils/components/skill";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "Jin's | 바이브 코딩 · 웹 개발 포트폴리오" },
+    { title: "Jin's | 바이브 코딩 웹 개발 포트폴리오" },
     {
       name: "description",
       content:
-        "AI 코딩 도구로 개발부터 배포·운영까지 자동화하는 개발자 진승열의 포트폴리오. Claude Code 기반 운영 파이프라인, 카페24 13개 브랜드 자동 배포, NestJS·Python 백엔드, 데이터 수집 자동화. 웹 표준 마크업이 기본기입니다.",
+        "AI 코딩 도구로 개발부터 배포와 운영까지 자동화하는 개발자 진승열의 포트폴리오. Claude Code 기반 운영 파이프라인, 카페24 13개 브랜드 자동 배포, NestJS와 Python 백엔드, 데이터 수집 자동화. 웹 표준 마크업이 기본기입니다.",
     },
     {
       name: "keywords",
@@ -23,11 +23,11 @@ export const meta: MetaFunction = () => {
     { name: "robots", content: "index, follow" },
     { property: "og:type", content: "website" },
     { property: "og:url", content: "https://jinseungyeol.github.io/" },
-    { property: "og:title", content: "Jin's | 바이브 코딩 · 웹 개발 포트폴리오" },
+    { property: "og:title", content: "Jin's | 바이브 코딩 웹 개발 포트폴리오" },
     {
       property: "og:description",
       content:
-        "AI 코딩 도구로 개발부터 배포·운영까지 자동화하는 개발자 진승열의 포트폴리오. Claude Code 기반 운영 파이프라인, 카페24 13개 브랜드 자동 배포, NestJS·Python 백엔드, 데이터 수집 자동화. 웹 표준 마크업이 기본기입니다.",
+        "AI 코딩 도구로 개발부터 배포와 운영까지 자동화하는 개발자 진승열의 포트폴리오. Claude Code 기반 운영 파이프라인, 카페24 13개 브랜드 자동 배포, NestJS와 Python 백엔드, 데이터 수집 자동화. 웹 표준 마크업이 기본기입니다.",
     },
     {
       property: "og:image",

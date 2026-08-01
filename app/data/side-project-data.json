@@ -1,13 +1,13 @@
 [
   {
     "title": "디즈니플러스 클론 웹앱",
-    "period": "2개월 소요",
+    "period": "",
     "imageUrl": "/assets/images/preview/preview_side03.png",
     "details": [
       { "label": "기술", "value": "React, Styled Components, Firebase, Axios" },
       {
         "label": "설명",
-        "value": "TMDB API를 활용해 인기 콘텐츠를 실시간으로 제공하는 OTT 플랫폼 클론 프로젝트입니다. Firebase 인증으로 로그인·회원가입을 구현하고, 반응형 UI로 다양한 디바이스에서 동일한 경험을 제공합니다."
+        "value": "TMDB API를 활용해 인기 콘텐츠를 실시간으로 제공하는 OTT 플랫폼 클론 프로젝트입니다. Firebase 인증으로 로그인과 회원가입을 구현하고, 반응형 UI로 다양한 디바이스에서 동일한 경험을 제공합니다."
       }
     ],
     "links": [
@@ -23,7 +23,7 @@
       { "label": "기술", "value": "React, Context API, Axios, Express" },
       {
         "label": "설명",
-        "value": "Context API로 주문 상태를 전역 관리하는 여행 상품 주문 웹앱입니다. 상품·옵션 선택부터 주문 요약, 완료까지 3단계 흐름을 구현했고, 상품·주문 API를 제공하는 Express 서버를 직접 만들었습니다. 데모는 서버 응답을 내장한 정적 빌드로 동작합니다."
+        "value": "Context API로 주문 상태를 전역 관리하는 여행 상품 주문 웹앱입니다. 상품과 옵션 선택부터 주문 요약, 완료까지 3단계 흐름을 구현했고, 상품과 주문 API를 제공하는 Express 서버를 직접 만들었습니다. 데모는 서버 응답을 내장한 정적 빌드로 동작합니다."
       }
     ],
     "links": [

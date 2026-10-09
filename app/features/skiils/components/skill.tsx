@@ -64,7 +64,7 @@ const skills = [
     imgAlt: "Python",
     title: "Python",
     description:
-      "Playwright 기반 봇 차단 우회 크롤링, 공식 API 연동, BigQuery append-only 적재 파이프라인, 다층 정합성 검증, 실패 자동진단 디스패처까지, 수집부터 검증과 운영으로 이어지는 데이터 자동화를 구현했습니다.",
+      "Playwright 기반 봇 차단 우회 크롤링, 공식 API 연동, BigQuery append-only 적재 파이프라인, 다층 정합성 검증, 아침 자동 슬랙 리포트까지, 수집부터 검증과 운영으로 이어지는 데이터 자동화를 구현했습니다.",
   },
   {
     imgSrc: "/assets/images/ico/ico_react.png",

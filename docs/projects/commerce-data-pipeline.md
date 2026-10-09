@@ -1,6 +1,6 @@
 # 커머스 채널 데이터 수집 자동화
 
-> 개발 · 참여 75% · Python, Patchright, BigQuery, Google Sheets API
+> 개발 · 참여 100% · Python, Patchright, BigQuery, Google Sheets API
 
 여러 커머스 채널에 흩어진 13개 브랜드의 광고비·매출을 매시간 자동 수집해 Google Sheets와 BigQuery에 적재하는 데이터 파이프라인. 담당자가 쿠팡 광고센터·WING·네이버 판매자센터를 직접 들여다보며 수기 집계하던 작업을 자동화해 **일 2~3시간을 절감**했습니다.
 
@@ -18,9 +18,10 @@
 - **append-only + CDC** — 광고 전환 성과는 며칠 뒤 확정되므로, 최근 N일을 매일 재적재하고 하류에서 최신값으로 수렴시키는 구조로 흡수. 적재용 서비스 계정은 insert 전용(조회 불가)으로 최소 권한
 - **UI 변경 내성** — 컬럼 위치 대신 헤더 텍스트 기준 동적 매핑, 해시 클래스 대신 텍스트·구조 기반 셀렉터, 실패 시 화면·DOM 캡처
 - **두 층의 슬랙 알림** — 실행 실패 요약과 적재값 이상(브랜드 누락·파싱 의심·급락·신선도) 다이제스트를 분리 운영
-- **실패 자동진단 봇** — 실패 알림을 JSON 큐로 적재하면 디스패처가 지문(fingerprint) 기반 중복 제거·24시간 쿨다운·노이즈 화이트리스트·일일 상한으로 걸러낸 뒤, 격리된 git worktree에서 Claude Code를 헤드리스로 실행해 원인을 자동 진단. BigQuery 접근은 SELECT 전용 래퍼로 제한하고, 진단 결과는 Slack 워크플로 웹훅으로 담당자 DM 회신(전송 실패 시 outbox 재시도). 시나리오별 시뮬레이션 검증을 거쳐 Windows 작업 스케줄러로 무인 운영
+- **교차검증 게이트** — 적재 전에 성과 그래프의 일별 시계열과 원 단위로 대조하고 캠페인 행수를 검증, 불일치면 적재 차단
+- **아침 자동 슬랙 리포트** — 전날 수집 결과를 매일 아침 슬랙으로 자동 보고해 상태 확인에 드는 시간을 제거
 
 ## 더 보기
 
 - [Notion 상세 페이지](https://tan-alibi-93d.notion.site/38f15fb2e2a880c99190db253886ec9b) — 봇탐지 우회, 다층 검증, BigQuery 컬럼 설계
-- [GitHub 케이스 스터디](https://github.com/jinseungyeol/case-studies/tree/main/commerce-data-pipeline) — 아키텍처·기술 선택 이유·트러블슈팅·자동진단 봇 설계 문서
+- [GitHub 케이스 스터디](https://github.com/jinseungyeol/case-studies/tree/main/commerce-data-pipeline) — 아키텍처·기술 선택 이유·트러블슈팅

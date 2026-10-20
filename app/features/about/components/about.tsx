@@ -8,13 +8,32 @@ const DEFAULT_PARAGRAPHS = [
   "항상 프로젝트의 목표를 중심에 두고 다양한 직군과 협업합니다. 최근에는 Claude Code 등 AI 도구를 실무 워크플로에 적극 도입해, 반복 작업을 효율화하고 1인으로 멀티브랜드 운영까지 수행하고 있습니다.",
 ];
 
+export interface AboutHighlight {
+  title: string;
+  text: string;
+  linkTo: string;
+  linkText: string;
+  eventTitle: string;
+}
+
+const DEFAULT_HIGHLIGHT: AboutHighlight = {
+  title: "CASE STUDIES",
+  text: "실무에서 만든 시스템 4건의 아키텍처, 기술 선택 이유, 트러블슈팅 과정을 문서로 정리했습니다. 회사 코드의 사본이 아니라 일반화해 재구성한 문서입니다.",
+  linkTo: "https://github.com/jinseungyeol/case-studies",
+  linkText: "설계 원칙과 트러블슈팅 문서",
+  eventTitle: "case-studies",
+};
+
 interface AboutProps {
   /** About 본문 문단. 첫 문단이 결론 역할을 한다 */
   paragraphs?: string[];
+  /** 경력 아래 강조 블록. 메인은 케이스 스터디, 퍼블리셔 경로는 마크업 가이드 */
+  highlight?: AboutHighlight;
 }
 
 export default function AboutComponent({
   paragraphs = DEFAULT_PARAGRAPHS,
+  highlight = DEFAULT_HIGHLIGHT,
 }: AboutProps) {
   return (
     <section
@@ -170,19 +189,17 @@ export default function AboutComponent({
           viewport={{ once: true, amount: 0.3 }}
           className="mt-10 lg:mt-20 p-6 md:p-8 border-1 border-gray-300 rounded-2xl bg-white/60"
         >
-          <strong className="text-xl font-semibold">CASE STUDIES</strong>
+          <strong className="text-xl font-semibold">{highlight.title}</strong>
           <p className="pt-3 text-base md:text-lg text-gray-500 font-medium">
-            실무에서 만든 시스템 4건의 아키텍처, 기술 선택 이유, 트러블슈팅 과정을
-            문서로 정리했습니다. 회사 코드의 사본이 아니라 일반화해 재구성한
-            문서입니다.
+            {highlight.text}
           </p>
           <div className="pt-6">
             <MoveLink
-              to="https://github.com/jinseungyeol/case-studies"
-              text="설계 원칙과 트러블슈팅 문서"
+              to={highlight.linkTo}
+              text={highlight.linkText}
               eventParams={{
-                project_title: "case-studies",
-                button_label: "설계 원칙과 트러블슈팅 문서",
+                project_title: highlight.eventTitle,
+                button_label: highlight.linkText,
               }}
             />
           </div>

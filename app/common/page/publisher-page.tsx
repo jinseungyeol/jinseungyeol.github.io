@@ -7,6 +7,7 @@ import { SideProject } from "~/features/side-projects/components/side-project";
 import SkillComponent from "~/features/skiils/components/skill";
 import { publisherSkills } from "~/features/skiils/publisher-skills";
 import projectData from "~/data/project-data.json";
+import projectData2 from "~/data/project-data2.json";
 import publisherExtra from "~/data/project-data-publisher.json";
 
 // 퍼블리셔, UI개발자 직무 지원용 진입점.
@@ -44,6 +45,18 @@ export const links: LinksFunction = () => {
 
 // 퍼블리싱 탭: 현재 맡고 있는 13개 브랜드 운영을 맨 앞에 두고 금융 퍼블리싱 8건이 따른다
 const publishingProjects = [...publisherExtra, ...projectData];
+// 개발 탭: 퍼블리싱 탭으로 옮긴 카드는 중복 노출하지 않는다
+const publisherTitles = new Set(publisherExtra.map((p) => p.title));
+const developmentProjects = projectData2.filter((p) => !publisherTitles.has(p.title));
+
+// 경력 아래 강조 블록: 퍼블리셔 검토자에게는 케이스 스터디보다 마크업 가이드 실물이 더 직접적인 근거다
+const markupGuideHighlight = {
+  title: "MARKUP GUIDE",
+  text: "세모리포트 앱의 공통 컴포넌트를 먼저 정의한 마크업 가이드입니다. 컴포넌트마다 구조와 클래스 기준 표, 예시 코드, 모바일 목업 프리뷰를 한 페이지에 두어, 이후 화면은 가이드에서 골라 조립하는 방식으로 만들었습니다.",
+  linkTo: "/project/semoreport/publGuide/markupUI/html/",
+  linkText: "마크업 가이드 보기",
+  eventTitle: "semoreport-markup-guide",
+};
 
 export default function PublisherPage() {
   return (
@@ -62,11 +75,13 @@ export default function PublisherPage() {
           "웹 표준을 지킨 시맨틱 마크업과 반응형 레이아웃, 크로스브라우징을 기본으로 하이브리드 앱과 홈페이지, React 환경까지 퍼블리싱합니다. 공통 컴포넌트를 먼저 정의한 마크업 가이드로 화면을 조립해 일관성과 속도를 함께 챙깁니다.",
           "항상 프로젝트의 목표를 중심에 두고 디자이너, 개발자와 협업합니다. 최근에는 Claude Code 같은 AI 도구를 퍼블리싱 워크플로에 들여 반복 수정과 배포를 자동화하고, 필요한 도구는 직접 만들어 씁니다.",
         ]}
+        highlight={markupGuideHighlight}
       />
       <SkillComponent items={publisherSkills} />
       <ProjectComponent
         defaultTab="publishing"
         publishing={publishingProjects}
+        development={developmentProjects}
       />
       <SideProject />
       <FooterComponent />

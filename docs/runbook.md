@@ -8,6 +8,17 @@
 
 ## 변경 이력
 
+### 2026-10-20 — 퍼블리셔 지원용 진입점 /publisher 신설 + 데모 접근성 보수
+
+메인(/)은 AI 자동화 개발자 포지셔닝을 그대로 두고, 퍼블리셔 공고에 낼 때 쓰는 경로를 따로 만들었다. `app/common/page/publisher-page.tsx`가 같은 카드 데이터를 퍼블리셔 검토자 순서로 다시 배열한다. 제목은 "웹 퍼블리셔 포트폴리오", 히어로는 "탄탄한 코드 위에 감각적인 인터페이스를 그리는", About 첫 문장은 금융 화면 구현에서 시작해 13개 브랜드 자사몰 퍼블리싱과 운영을 혼자 맡는다는 결론이다. Skills는 `app/features/skiils/publisher-skills.ts`의 8장(HTML5, CSS3, JavaScript, jQuery, React, TypeScript, Claude Code, 배포와 운영)으로, 2026-07-17 최초 빌드(ec4b3e1)의 마크업 4장을 문체 기준에 맞춰 다시 썼다. Works는 퍼블리싱 탭이 기본이고, 카페24 자사몰 통합 운영 카드를 퍼블리셔 역할 문구(`app/data/project-data-publisher.json`)로 맨 앞에 더했다. 개발 탭은 메인과 같다.
+
+이를 위해 Intro, About, Skills, Projects 컴포넌트에 선택 props(headline/subline, paragraphs, items, defaultTab/publishing/development)를 추가했다. 기본값은 기존 메인 문구 그대로라 메인 출력은 바뀌지 않는다. 프리렌더 목록과 sitemap, 배포 검증 목록에 `/publisher`를 넣었다. 지원서에는 퍼블리셔 공고면 `https://jinseungyeol.github.io/publisher`, 그 외는 루트를 적는다.
+
+데모 보수: 퍼블리셔 검토자가 먼저 열어볼 KT 장부비서 PC 메인(img 37개)과 세모리포트 마크업 가이드(img 23개)에 alt를 채웠다. 장식 아이콘(화살표, 재생, 업종 아이콘, 응원 아이콘)은 빈 alt, 영상 썸네일과 후기 사진은 캡션 기반 설명이다. 데모 HTML 147개(세모장부 81, KT 앱 34, 위멤버스 30, 기타)의 `<html lang="en">`을 `ko`로 바꿨다. 위멤버스는 소스 `index.html`과 `dist` 양쪽을 고쳤고 배포 시 소스에서 다시 빌드된다. 나머지 데모의 alt 누락(약 430개)은 그대로다.
+
+타입체크 기존 에러는 그대로이며 이번 변경 파일에서 새 에러는 없다.
+
+
 ### 2026-08-01 — 포지셔닝 개편 (퍼블리셔에서 AI 자동화 개발자로)
 
 지원 직무(바이브 코딩 전문 개발자, AX 엔지니어)와 실제 Works가 어긋나 손해를 보던 포장을 맞췄다. 프론트엔드와 퍼블리싱 역량은 다른 직무 지원용이라 삭제하지 않고 순서만 내렸다. 메타와 About을 "AI 코딩 도구로 개발부터 배포와 운영까지 자동화하는 개발자"로 상향하고, keywords는 바이브코딩과 Claude Code, CI/CD 계열을 앞으로 옮겼다. Skills는 10카드를 8카드로 재편하면서 HTML5와 CSS3, JavaScript, jQuery를 한 블록으로 합치고 **배포와 운영 카드를 신설**했다. WebP 앱 성과에는 운영 9개 몰 확장과 엑박 사고 3계층 규명, 회귀 하네스, 실서빙 점검, 고아 작업 회수를 더했다. case-studies 저장소를 About 하단에 독립 블록으로 노출했고, 사이드 프로젝트는 틱택토를 빼고 캐러셀을 2단 그리드로 바꿨다. 버튼 라벨은 본업 카드가 "프로젝트 소개"와 "기술 문서", 사이드 카드가 "Demo"와 "소스 코드"다. 사이드의 GitHub는 문서가 아니라 소스 저장소라서 구분했다.

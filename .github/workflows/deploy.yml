@@ -69,6 +69,7 @@ jobs:
           set -e
           for f in dist/index.html \
                    dist/404.html \
+                   dist/publisher/index.html \
                    dist/project/kt-jangbu/index.html \
                    dist/project/kt-jangbu/img/bg_cont02_tab01.png \
                    dist/project/m-kt-jangbu/index.html \

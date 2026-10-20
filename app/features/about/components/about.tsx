@@ -2,7 +2,20 @@ import { motion } from "motion/react";
 import MoveLink from "~/common/components/ui/move-link";
 import { TextAnimate } from "~/common/components/ui/text-animate";
 
-export default function AboutComponent() {
+const DEFAULT_PARAGRAPHS = [
+  "화면 구현에서 시작해, 지금은 AI 코딩 도구로 개발부터 배포와 운영까지 자동화합니다.",
+  "웹 표준을 준수한 탄탄한 마크업을 기본으로, AI 도구를 활용한 NestJS와 Django 백엔드 구현부터 데이터 수집 자동화, React 환경 퍼블리싱까지 폭넓게 다룹니다. 필요한 도구는 직접 만들어, 문제를 끝까지 해결하는 데 집중합니다.",
+  "항상 프로젝트의 목표를 중심에 두고 다양한 직군과 협업합니다. 최근에는 Claude Code 등 AI 도구를 실무 워크플로에 적극 도입해, 반복 작업을 효율화하고 1인으로 멀티브랜드 운영까지 수행하고 있습니다.",
+];
+
+interface AboutProps {
+  /** About 본문 문단. 첫 문단이 결론 역할을 한다 */
+  paragraphs?: string[];
+}
+
+export default function AboutComponent({
+  paragraphs = DEFAULT_PARAGRAPHS,
+}: AboutProps) {
   return (
     <section
       id="about"
@@ -82,16 +95,11 @@ export default function AboutComponent() {
               About
             </TextAnimate>
             <div className="pt-5 md:pt-10 text-base md:text-lg text-gray-500 font-medium">
-              <p>
-                화면 구현에서 시작해, 지금은 AI 코딩 도구로 개발부터 배포와 운영까지
-                자동화합니다.
-              </p>
-              <p className="pt-6">
-                웹 표준을 준수한 탄탄한 마크업을 기본으로, AI 도구를 활용한 NestJS와 Django 백엔드 구현부터 데이터 수집 자동화, React 환경 퍼블리싱까지 폭넓게 다룹니다. 필요한 도구는 직접 만들어, 문제를 끝까지 해결하는 데 집중합니다.
-              </p>
-              <p className="pt-6">
-                항상 프로젝트의 목표를 중심에 두고 다양한 직군과 협업합니다. 최근에는 Claude Code 등 AI 도구를 실무 워크플로에 적극 도입해, 반복 작업을 효율화하고 1인으로 멀티브랜드 운영까지 수행하고 있습니다.
-              </p>
+              {paragraphs.map((text, i) => (
+                <p key={i} className={i === 0 ? undefined : "pt-6"}>
+                  {text}
+                </p>
+              ))}
             </div>
             <div className="pt-8">
               <MoveLink

@@ -37,7 +37,14 @@ const slugs = [
   "googlecloud",
 ];
 
-const skills = [
+export interface SkillItem {
+  imgSrc: string;
+  imgAlt: string;
+  title: string;
+  description: string;
+}
+
+const skills: SkillItem[] = [
   {
     imgSrc: "/assets/images/ico/ico_claude.png",
     imgAlt: "Claude Code",
@@ -96,7 +103,12 @@ const skills = [
   },
 ];
 
-export default function SkillComponent() {
+interface SkillProps {
+  /** 카드 목록. 비우면 메인용 기본 목록 */
+  items?: SkillItem[];
+}
+
+export default function SkillComponent({ items = skills }: SkillProps) {
   const images = slugs.map(
     (slug) => `https://cdn.simpleicons.org/${slug}/${slug}`
   );
@@ -172,7 +184,7 @@ export default function SkillComponent() {
         </motion.div>
         <div className="relative">
           <div className="flex flex-col items-center lg:items-start md:px-10">
-            {skills.map((skill, idx) => (
+            {items.map((skill, idx) => (
               <SkillCard
                 key={skill.title}
                 imgSrc={skill.imgSrc}

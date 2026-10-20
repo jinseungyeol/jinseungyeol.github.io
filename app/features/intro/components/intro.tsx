@@ -2,7 +2,17 @@ import { motion } from "motion/react";
 import { RetroGrid } from "~/common/components/ui/retro-grid";
 import { VelocityScroll } from "~/common/components/ui/scroll-based-velocity";
 
-export default function IntroComponent() {
+interface IntroProps {
+  /** 히어로 큰 제목 두 줄 */
+  headline?: [string, string];
+  /** 히어로 아래 소개 두 줄 */
+  subline?: [string, string];
+}
+
+export default function IntroComponent({
+  headline = ["반복되는 비효율을", "AI와 자동화로 걷어내는"],
+  subline = ["탄탄한 마크업을 기본으로,", "도구가 필요하면 직접 만드는 개발자 진승열입니다."],
+}: IntroProps) {
   return (
     <section id="intro" className="mx-auto">
       <div className="relative">
@@ -16,8 +26,8 @@ export default function IntroComponent() {
             className="text-center"
           >
             <h2 className="text-2xl md:text-4xl lg:text-6xl font-bold leading-10 md:leading-12 lg:leading-20">
-              <p>반복되는 비효율을</p>
-              <p>AI와 자동화로 걷어내는</p>
+              <p>{headline[0]}</p>
+              <p>{headline[1]}</p>
             </h2>
           </motion.div>
           <motion.div
@@ -27,10 +37,8 @@ export default function IntroComponent() {
             viewport={{ once: true }}
             className="py-10 lg:py-20 text-center font-medium text-lg lg:text-2xl leading-7 lg:leading-10 text-gray-500"
           >
-            <p className="inline sm:block">탄탄한 마크업을 기본으로,</p>{" "}
-            <p className="inline sm:block">
-              도구가 필요하면 직접 만드는 개발자 진승열입니다.
-            </p>
+            <p className="inline sm:block">{subline[0]}</p>{" "}
+            <p className="inline sm:block">{subline[1]}</p>
           </motion.div>
         </div>
       </div>

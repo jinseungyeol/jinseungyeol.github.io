@@ -124,6 +124,9 @@ app/
 │       ├── project.tsx        # 퍼블리싱/개발 탭 + 카드 목록
 │       └── project-card.tsx   # 카드 레이아웃 (imageBg 분기 포함)
 ├── common/          # 공용 UI (shadcn/magicui 파생)
+│   └── page/
+│       ├── main-page.tsx       # 메인 (/) — AI 자동화 개발자 포지셔닝
+│       └── publisher-page.tsx  # 퍼블리셔 지원용 진입점 (/publisher), 카드 데이터 공유
 └── routes.ts        # 라우트 정의
 public/assets/       # 이미지 (썸네일, 아이콘)
 projects/            # 독립 데모 프로젝트 (자체 빌드 후 /project/*로 서빙)

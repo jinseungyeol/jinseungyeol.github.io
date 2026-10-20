@@ -1,0 +1,24 @@
+[
+  {
+    "title": "카페24 자사몰 통합 운영",
+    "period": "",
+    "imageUrl": "/assets/images/preview/preview12.png",
+    "details": [
+      { "label": "참여", "value": "100%" },
+      { "label": "역할", "value": "13개 브랜드 자사몰 퍼블리싱 전담, 디자인 토큰 체계와 AI 보조 워크플로우 설계" },
+      {
+        "label": "기술",
+        "value": "HTML, CSS, JavaScript, GSAP, GitHub Actions, Google Apps Script, Figma, Tokens Studio"
+      },
+      { "label": "환경", "value": "Cafe24 13개 브랜드 monorepo" },
+      {
+        "label": "성과",
+        "value": "퍼블리셔 3인이 4개 브랜드씩 분담하던 자사몰 운영을 **1인 전담**으로 맡아, 브랜드별 디자인 토큰과 수정 레시피를 정리하고 Claude Code 기반 파이프라인으로 요청 접수부터 staging 검증, 운영 배포까지 잇는 구조를 만들었습니다. 운영팀 실요청 대표 29건 자동 검증 통과(가동 예정)"
+      }
+    ],
+    "links": [
+      { "to": "https://tan-alibi-93d.notion.site/24-32415fb2e2a880ba8e27e6d235c0ebc2?source=copy_link", "text": "프로젝트 소개" },
+      { "to": "https://github.com/jinseungyeol/case-studies/tree/main/cafe24-mall-monorepo", "text": "기술 문서" }
+    ]
+  }
+]

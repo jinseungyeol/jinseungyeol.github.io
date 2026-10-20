@@ -50,7 +50,11 @@ export default function PublisherPage() {
     <main className="overflow-x-hidden">
       <IntroComponent
         headline={["토끼처럼 빠르게 흡수하고", "거북이처럼 묵묵히 일하는"]}
-        subline={["UI개발자 진승열입니다."]}
+        subline={[
+          "빠른 대응력으로 유연하게 움직이면서도",
+          "흐트러짐 없이 꾸준한 실행력으로 기본을 지키며 완성도를 높여가는",
+          "UI개발자 진승열입니다.",
+        ]}
       />
       <AboutComponent
         paragraphs={[

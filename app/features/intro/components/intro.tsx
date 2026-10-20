@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { motion } from "motion/react";
 import { RetroGrid } from "~/common/components/ui/retro-grid";
 import { VelocityScroll } from "~/common/components/ui/scroll-based-velocity";
@@ -5,8 +6,8 @@ import { VelocityScroll } from "~/common/components/ui/scroll-based-velocity";
 interface IntroProps {
   /** 히어로 큰 제목 두 줄 */
   headline?: [string, string];
-  /** 히어로 아래 소개 두 줄 */
-  subline?: [string, string];
+  /** 히어로 아래 소개. 한 줄 또는 두 줄 */
+  subline?: string[];
 }
 
 export default function IntroComponent({
@@ -37,8 +38,12 @@ export default function IntroComponent({
             viewport={{ once: true }}
             className="py-10 lg:py-20 text-center font-medium text-lg lg:text-2xl leading-7 lg:leading-10 text-gray-500"
           >
-            <p className="inline sm:block">{subline[0]}</p>{" "}
-            <p className="inline sm:block">{subline[1]}</p>
+            {subline.map((line, i) => (
+              <Fragment key={i}>
+                {i > 0 && " "}
+                <p className="inline sm:block">{line}</p>
+              </Fragment>
+            ))}
           </motion.div>
         </div>
       </div>

@@ -9,27 +9,27 @@ import { publisherSkills } from "~/features/skiils/publisher-skills";
 import projectData from "~/data/project-data.json";
 import publisherExtra from "~/data/project-data-publisher.json";
 
-// 퍼블리셔 직무 지원용 진입점.
+// 퍼블리셔, UI개발자 직무 지원용 진입점.
 // 메인(/)은 AI 자동화 개발자 포지셔닝을 유지하고, 이 경로는 같은 데이터를
 // 퍼블리셔 검토자 순서로 다시 배열한다. 카드 데이터는 공유한다.
 
 const DESCRIPTION =
-  "웹 퍼블리셔 진승열의 포트폴리오. 금융 하이브리드 앱과 홈페이지 퍼블리싱, 공통 컴포넌트 마크업 가이드 구축, 카페24 13개 브랜드 자사몰 운영, React 환경 퍼블리싱. 웹 표준과 반응형, 크로스브라우징이 기본기입니다.";
+  "UI개발자 진승열의 포트폴리오. 금융 하이브리드 앱과 홈페이지 퍼블리싱, 공통 컴포넌트 마크업 가이드 구축, 카페24 13개 브랜드 자사몰 운영, React 환경 퍼블리싱. 웹 표준과 반응형, 크로스브라우징이 기본기입니다.";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "Jin's | 웹 퍼블리셔 포트폴리오" },
+    { title: "Jin's | UI개발자 포트폴리오" },
     { name: "description", content: DESCRIPTION },
     {
       name: "keywords",
       content:
-        "웹 퍼블리셔, 퍼블리셔, 퍼블리셔 포트폴리오, publisher, UI 개발자, 마크업, HTML5, CSS3, JavaScript, jQuery, 반응형 웹, 웹 표준, 웹 접근성, 크로스브라우징, 하이브리드 앱, React 퍼블리싱, 카페24, 포트폴리오, portfolio",
+        "UI개발자, UI 개발자, UI 개발자 포트폴리오, 웹 퍼블리셔, 퍼블리셔, 퍼블리셔 포트폴리오, publisher, 마크업, HTML5, CSS3, JavaScript, jQuery, 반응형 웹, 웹 표준, 웹 접근성, 크로스브라우징, 하이브리드 앱, React 퍼블리싱, 카페24, 포트폴리오, portfolio",
     },
     { name: "author", content: "Jin's Web Portfolio" },
     { name: "robots", content: "index, follow" },
     { property: "og:type", content: "website" },
     { property: "og:url", content: "https://jinseungyeol.github.io/publisher" },
-    { property: "og:title", content: "Jin's | 웹 퍼블리셔 포트폴리오" },
+    { property: "og:title", content: "Jin's | UI개발자 포트폴리오" },
     { property: "og:description", content: DESCRIPTION },
     {
       property: "og:image",
@@ -49,11 +49,8 @@ export default function PublisherPage() {
   return (
     <main className="overflow-x-hidden">
       <IntroComponent
-        headline={["탄탄한 코드 위에", "감각적인 인터페이스를 그리는"]}
-        subline={[
-          "웹 표준 마크업을 기본으로,",
-          "필요한 도구는 직접 만드는 웹 퍼블리셔 진승열입니다.",
-        ]}
+        headline={["토끼처럼 빠르게 흡수하고", "거북이처럼 묵묵히 일하는"]}
+        subline={["UI개발자 진승열입니다."]}
       />
       <AboutComponent
         paragraphs={[
